@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 import { useRouter } from "next/router";
-
 import { supabase } from "@/src/utils/supabaseClient";
 
-import AdminReviewList from "@/src/components/AdminReviewList";
+const AdminReviewList = dynamic(() =>
+  import("@/src/components/AdminReviewList")
+);
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 
 const AdminSection = () => {
