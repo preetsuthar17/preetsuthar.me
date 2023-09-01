@@ -14,7 +14,7 @@ export default function Custom404() {
       </Head>
       <Navbar />
       <div className="notFoundDiv">
-        <h1>404</h1>
+        <h2>404</h2>
         <p className="p-color">You&apos;re on wrong path!</p>
       </div>
       <Footer />
