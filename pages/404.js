@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
