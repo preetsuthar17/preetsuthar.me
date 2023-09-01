@@ -44,9 +44,9 @@ export default function Home() {
         <meta name="subject" content="web development" />
       </Head>
 
-      <main>
+      <>
         <Showcase />
-      </main>
+      </>
     </Layout>
   );
 }

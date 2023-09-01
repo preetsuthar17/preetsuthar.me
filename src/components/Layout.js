@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     };
   }, [router.events]);
 
-  return <main>{children}</main>;
+  return <>{children}</>;
 };
 
 export default Layout;
