@@ -4,10 +4,12 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import Head from "next/head";
-import Navbar from "@/src/components/navbar";
-import Footer from "@/src/components/footer";
 
-import Layout from "@/src/components/Layout";
+import dynamic from "next/dynamic";
+
+const Navbar = dynamic(() => import("@/src/components/navbar"));
+const Footer = dynamic(() => import("@/src/components/footer"));
+const Layout = dynamic(() => import("@/src/components/Layout"));
 
 export default function Posts({ posts }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -59,7 +61,7 @@ export default function Posts({ posts }) {
         <div id="blog-title" className="blog-div">
           <div className="blog-headers">
             <div className="blog-title">
-              <h2>&#47;blogs</h2>
+              <h1>&#47;blogs</h1>
             </div>
             <div className="blog-header-text">
               <p>I do write blogs sometimes.</p>
@@ -110,12 +112,16 @@ export default function Posts({ posts }) {
                           searchQuery,
                         }}
                       />
-                      <p>
-                        <Link href={`/posts/${post.slug}`} passHref>
-                          Read more &rarr;
-                        </Link>
-                      </p>
                     </p>
+                    <div
+                      style={{
+                        marginTop: "0.6rem",
+                      }}
+                    >
+                      <Link href={`/posts/${post.slug}`} passHref>
+                        Read article &rarr;
+                      </Link>
+                    </div>
                   </div>
                   <div>
                     <p className="blog-text blog-date">

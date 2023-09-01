@@ -1,6 +1,6 @@
 import ReviewForm from "@/src/components/ReviewForm";
-import Navbar from "@/src/components/navbar";
-import Footer from "@/src/components/footer";
+const Navbar = dynamic(() => import("@/src/components/navbar"));
+const Footer = dynamic(() => import("@/src/components/footer"));
 import Layout from "@/src/components/Layout";
 
 import Head from "next/head";
@@ -10,8 +10,7 @@ const reviewPage = () => {
     <Layout>
       <Head>
         <title>Review | Preet Suthar 🚀</title>
-        <meta name="robots" content="all"/>
-
+        <meta name="robots" content="all" />
         <meta name="description" content="Review page" />
         <meta name="theme-color" content="#1c9cfc" />
         <meta httpEquiv="content-language" content="en" />

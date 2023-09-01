@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 import vscode from "../src/utils/icons/brands/vs-code.svg";
 import chrome from "../src/utils/icons/brands/chrome.svg";
@@ -22,9 +23,10 @@ import mysql from "../src/utils/icons/techs/mysql.svg";
 
 import preetSutharImage from "../src/utils/images/preetsuthar.png";
 
-import Navbar from "@/src/components/navbar";
-import Footer from "@/src/components/footer";
 import CustomTooltip from "@/src/components/CustomTooltip";
+
+const Navbar = dynamic(() => import("@/src/components/navbar"));
+const Footer = dynamic(() => import("@/src/components/footer"));
 
 function AutomaticAge({ birthdate }) {
   const calculateAge = useCallback(() => {
@@ -80,7 +82,7 @@ const Contact = () => {
         <>
           <div className="about-div">
             <div className="about-header">
-              <h2>&#47;about</h2>
+              <h1>&#47;about</h1>
               <p>Uh.. Um.. About me maybe, lol</p>
             </div>
             <div className="styled-hr"></div>
@@ -121,6 +123,21 @@ const Contact = () => {
                       full-stack development This website is just Front-End or
                       maybe Back-End because I have used database implementation
                       in reviews section.
+                    </p>
+
+                    <p style={{ fontSize: "0.9rem" }}>
+                      &#91; This website was part of Portfolio Fest 2023
+                      By&nbsp;
+                      <Link
+                        style={{
+                          color: "#bbb",
+                        }}
+                        target="_blank"
+                        href="https://www.youtube.com/@tanishgargcodes"
+                      >
+                        Tanish Garg{" "}
+                      </Link>
+                      &#93;{" "}
                     </p>
 
                     <p style={{ paddingTop: "1rem" }}>

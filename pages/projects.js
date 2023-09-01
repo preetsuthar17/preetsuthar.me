@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
-import Footer from "@/src/components/footer";
-import Navbar from "@/src/components/navbar";
-import Layout from "@/src/components/Layout";
+const Footer = dynamic(() => import("@/src/components/footer"));
+const Navbar = dynamic(() => import("@/src/components/navbar"));
+const Layout = dynamic(() => import("@/src/components/Layout"));
 
 const Projects = () => {
   return (
@@ -35,7 +36,7 @@ const Projects = () => {
         <div className="project-div">
           <div className="project-headers">
             <div className="project-title">
-              <h2>&#47;projects</h2>
+              <h1>&#47;projects</h1>
             </div>
             <div className="project-header-text">
               <p>You can view more on my github.</p>
@@ -99,8 +100,8 @@ const Projects = () => {
                 </div>
 
                 <p className="project-text">
-                  Embrace the mystery of the night with an elegant and
-                  immersive dark theme for a captivating coding experience.
+                  Embrace the mystery of the night with an elegant and immersive
+                  dark theme for a captivating coding experience.
                 </p>
               </Link>
             </div>

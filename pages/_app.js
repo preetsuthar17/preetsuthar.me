@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
       const showPopupAfterDelay = setTimeout(() => {
         setShowDialog(true);
         sessionStorage.setItem("dialogShownInThisSession", true);
-      }, 10000);
+      }, 11000);
 
       return () => clearTimeout(showPopupAfterDelay);
     }

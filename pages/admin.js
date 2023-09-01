@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { supabase } from "@/src/utils/supabaseClient";
 
 import AdminReviewList from "@/src/components/AdminReviewList";
-import Navbar from "@/src/components/navbar";
+const Navbar = dynamic(() => import("@/src/components/navbar"));
 
 const AdminSection = () => {
   const router = useRouter();
@@ -64,7 +64,7 @@ const AdminSection = () => {
     <div>
       <Head>
         <title>Admin Section</title>
-        <meta name="robots" content="noindex"/>
+        <meta name="robots" content="noindex" />
       </Head>
       {authorized ? (
         <AdminReviewList />

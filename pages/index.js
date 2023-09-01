@@ -1,15 +1,15 @@
-import Showcase from "@/src/components/showcase";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import Layout from "@/src/components/Layout";
+const Showcase = dynamic(() => import("@/src/components/showcase"));
+const Layout = dynamic(() => import("@/src/components/Layout"));
 
 export default function Home() {
   return (
     <Layout style={{ backgroundColor: "#080809" }}>
       <Head>
         <title>Preet Suthar 🚀 | Front-end developer</title>
-        <meta name="robots" content="all"/>
-
+        <meta name="robots" content="all" />
         <meta
           name="description"
           content="Preet's personal portfolio and blog website."

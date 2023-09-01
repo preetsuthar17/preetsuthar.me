@@ -19,7 +19,7 @@ const Dialog = ({ onClose }) => {
           </button>
         </div>
         <div className="dialog-box-review-p">
-          <p> Maybe if you would like to leave a review?</p>
+          <p>Mind leaving a review?</p>
         </div>
         <Link href="/reviews">
           <button

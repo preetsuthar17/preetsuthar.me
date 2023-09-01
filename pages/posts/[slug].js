@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
 import fs from "fs";
 import path from "path";
@@ -8,10 +9,11 @@ import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 
-import Navbar from "@/src/components/navbar";
 import readArticles from "@/src/utils/readArticles";
-import Layout from "@/src/components/Layout";
-import Footer from "@/src/components/footer";
+
+const Layout = dynamic(() => import("@/src/components/Layout"));
+const Navbar = dynamic(() => import("@/src/components/navbar"));
+const Footer = dynamic(() => import("@/src/components/footer"));
 
 import { supabase } from "@/src/utils/supabaseClient";
 
@@ -168,13 +170,13 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
             <div
               className="author p-color"
               style={{
-                marginBottom: " 0.5rem",
+                marginBottom: " 0.8rem",
               }}
             >
               <Link
                 style={{
                   color: "#aaa",
-                  borderBottom: "2px solid #ddd",
+                  borderBottom: "1px solid #ccc",
                   textDecoration: "none",
                 }}
                 href={post.frontmatter.authorGithub}
@@ -217,7 +219,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                   className="primary-btn"
                   onClick={copyLinkToClipboard}
                 >
-                  🔗 Copy post link!
+                  🔗 Copy link!
                 </button>
               </div>
             </div>

@@ -39,7 +39,7 @@ $color_5: #3dbbed;
 .project-title {
   color: $color_1;
   transition: 0.4s ease-in-out !important;
-  h2 {
+  h1 {
     font-size: 2.7rem;
     font-family: var(--heading-font-family);
     font-weight: 900 !important;
@@ -69,7 +69,7 @@ $color_5: #3dbbed;
 }
 
 .project-card {
-  border-left: 4px solid #ffffff1f;
+  border-left: 3px solid #ffffff20;
   margin-top: 2rem;
   padding: 0 1rem;
   transition: 0.3s ease-in-out !important;
