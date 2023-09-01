@@ -1,16 +1,15 @@
-const ShowBlogs = dynamic(() => import("./showBlogs"));
-const ReviewsSection = dynamic(() => import("./ReviewsSection"));
+import ReviewsSection from "./ReviewsSection";
+import ShowBlogs from "./showBlogs";
 
 import goDown from "../utils/icons/go-down.svg";
 
-const Footer = dynamic(() => import("./footer"));
-const Navbar = dynamic(() => import("./navbar"));
-const Layout = dynamic(() => import("./Layout"));
+import Footer from "./footer";
+import Navbar from "./navbar";
+import Layout from "./Layout";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
-import dynamic from "next/dynamic";
 
 const Showcase = () => {
   const elementRef = useRef(null);
