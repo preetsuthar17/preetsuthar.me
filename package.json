@@ -1,0 +1,37 @@
+{
+  "name": "next-link",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build && next-sitemap",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.26.0",
+    "animejs": "^3.2.1",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.1.1",
+    "gray-matter": "^4.0.3",
+    "next": "^13.4.10",
+    "next-pwa": "^5.6.0",
+    "next-sitemap": "^4.2.2",
+    "nprogress": "^0.2.0",
+    "path": "^0.12.7",
+    "react": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-top-loading-bar": "^2.3.1",
+    "remark": "^14.0.3",
+    "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "depcheck": "^1.4.5",
+    "sass": "^1.64.1"
+  },
+  "browser": {
+    "fs": false
+  }
+}

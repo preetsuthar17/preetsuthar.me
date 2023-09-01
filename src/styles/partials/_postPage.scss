@@ -1,0 +1,249 @@
+$color_1: var(--heading-color);
+$color_2: #666666;
+$color_3: var(--font-color);
+$color_4: #17b6ff;
+$color_5: rgb(200, 200, 200);
+$font-family_1: "firecode", sans-serif;
+$background-color_1: #180d23;
+
+.container {
+  max-width: 800px;
+  margin-top: 4rem !important;
+  margin-bottom: 2rem;
+  margin: 0 auto;
+  padding: 40px;
+  .post-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    .prev {
+      text-align: left;
+      width: 20rem;
+      margin: 0.3rem;
+    }
+    .next {
+      text-align: right;
+      width: 20rem;
+      margin: 0.3rem;
+    }
+    a {
+      color: #17b6ff;
+      text-decoration: none;
+    }
+  }
+}
+
+.title {
+  font-size: 37px;
+  color: $color_1;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.date {
+  color: $color_2;
+  margin-bottom: 40px;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ababab86;
+}
+
+.content {
+  color: $color_3;
+  line-height: 1.6;
+  word-wrap: break-word;
+  border-radius: 10px;
+  cursor: auto !important;
+
+  p {
+    color: $color_3;
+    margin-bottom: 20px;
+  }
+  h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: $color_3;
+  }
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+  h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+  h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+  h5 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+  h6 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+  a {
+    color: $color_4;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+  ul {
+    margin-left: 20px;
+  }
+  ol {
+    margin-left: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  code {
+    font-family: $font-family_1;
+    background-color: #2f2f2f;
+    padding: 0.1rem 0.4rem;
+    border-radius: 7px;
+    margin: 0.3rem;
+    font-size: 14px;
+    color: white;
+  }
+  pre {
+    background-color: #1d202692;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ffffff12;
+    font-size: 15px;
+    padding: 1rem;
+    display: flex;
+    margin: 1rem;
+    border-radius: 5px;
+    color: $color_5;
+    overflow-x: auto;
+
+    code {
+      font-family: $font-family_1;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      font-weight: normal;
+      margin: 0;
+      color: $color_5;
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+}
+
+.tableOfContent {
+  position: fixed;
+  right: 10px;
+  width: 20rem;
+  top: 70px;
+  color: $color_3;
+  line-height: 1.6;
+  word-wrap: break-word;
+  border-radius: 10px;
+  cursor: auto !important;
+
+  @media screen and (max-width: 1400px) {
+    position: inherit;
+    width: auto;
+  }
+
+  p {
+    color: $color_3;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: $color_3;
+  }
+
+  a {
+    color: $color_4;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin-left: 20px;
+  }
+  ol {
+    margin-left: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  .title {
+    font-size: 29px;
+  }
+  .content {
+    font-size: 14px;
+
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    pre {
+      font-size: 21px;
+    }
+  }
+}
+
+blockquote {
+  padding-top: 1.2rem;
+  padding-bottom: 0.1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  margin: 2rem 0;
+  border-left: 2px solid #17b6ff;
+  background-color: rgba(255, 255, 255, 0.057);
+}

@@ -1,0 +1,67 @@
+.primary-btn {
+  font-family: "sofiapro", sans-serif;
+  opacity: 90%;
+  color: #ababab;
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-weight: 500;
+  border: 2px solid #313333;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  text-decoration: none;
+}
+.primary-btn:hover {
+  background-color: #ffffff11;
+  border: 2px solid #a2aaaa;
+  color: #fff;
+}
+
+/*green*/
+.primary-btn-green {
+  font-family: "sofiapro", sans-serif;
+  opacity: 90%;
+  color: #ababab;
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-weight: 500;
+  border: 2px solid #313333;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  text-decoration: none;
+}
+.primary-btn-green:hover {
+  background-color: #ffffff11;
+  border: 2px solid green;
+  color: #fff;
+}
+
+/*red*/
+.primary-btn-red {
+  font-family: "sofiapro", sans-serif;
+  opacity: 90%;
+  color: #ababab;
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-weight: 500;
+  border: 2px solid #313333;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  text-decoration: none;
+}
+.primary-btn-red:hover {
+  background-color: #ffffff11;
+  border: 2px solid red;
+  color: #fff;
+}
