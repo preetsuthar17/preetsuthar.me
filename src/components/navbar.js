@@ -39,6 +39,7 @@ const Navbar = () => {
                   </svg>
                 </li>
               </ul>
+              <span className="hidden">Home</span>
             </Link>
             <Link href="/projects">
               <ul>
@@ -57,6 +58,7 @@ const Navbar = () => {
                   </svg>
                 </li>
               </ul>
+              <span className="hidden">Projects</span>
             </Link>
             <Link href="/posts">
               <ul>
@@ -75,6 +77,7 @@ const Navbar = () => {
                   </svg>
                 </li>
               </ul>
+              <span className="hidden">posts</span>
             </Link>
             <Link href="/about">
               <ul>
@@ -93,6 +96,7 @@ const Navbar = () => {
                   </svg>
                 </li>
               </ul>
+              <span className="hidden">About</span>
             </Link>
           </ul>
         </nav>
