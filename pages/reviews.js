@@ -1,7 +1,8 @@
-import ReviewForm from "@/src/components/ReviewForm";
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
-import Layout from "@/src/components/Layout";
+const Layout = dynamic(() => import("@/src/components/Layout"));
+const ReviewForm = dynamic(() => import("@/src/components/ReviewForm"));
+import dynamic from "next/dynamic";
 
 import Head from "next/head";
 
