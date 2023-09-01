@@ -43,7 +43,7 @@ const Showcase = () => {
   return (
     <Layout>
       <Navbar />
-      <>
+      <main>
         <section className="showcase">
           <div className="showcase-header ">
             <div className="styled-hr"></div>
@@ -77,7 +77,7 @@ const Showcase = () => {
           </div>
         </section>
         <Footer />
-      </>
+      </main>
     </Layout>
   );
 };
