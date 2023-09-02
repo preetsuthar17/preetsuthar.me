@@ -20,7 +20,9 @@ const ReviewForm = () => {
       await supabase
         .from("reviews")
         .upsert([{ name, content, rating, approved: false }]);
-      alert("Your review has been submitted for approval. Thank you!");
+      alert(
+        "Your review has been submitted for approval. Thank you!\n(Reviews require approval from owner to avoid spams.)"
+      );
       setName("");
       setContent("");
       setRating(0);

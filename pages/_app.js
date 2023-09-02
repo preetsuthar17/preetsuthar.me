@@ -16,6 +16,8 @@ import "../src/styles/partials/_404.scss";
 import Dialog from "@/src/components/Dialog";
 import Layout from "@/src/components/Layout";
 
+import { motion } from "framer-motion";
+
 import { useState, useEffect } from "react";
 
 import Head from "next/head";
@@ -41,12 +43,21 @@ export default function App({ Component, pageProps }) {
     setShowDialog(false);
   };
   return (
-    <Layout>
-      <Head></Head>
-      <>
-        {showDialog && <Dialog onClose={handleCloseDialog} className="show" />}
-      </>
-      <Component {...pageProps} />
-    </Layout>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.3, transition: "ease-in" }}
+    >
+      <Layout>
+        <Head></Head>
+        <>
+          {showDialog && (
+            <Dialog onClose={handleCloseDialog} className="show" />
+          )}
+        </>
+        <Component {...pageProps} />
+      </Layout>
+    </motion.div>
   );
 }

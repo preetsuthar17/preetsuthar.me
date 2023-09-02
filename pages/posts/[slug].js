@@ -9,6 +9,8 @@ import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 
+import { motion } from "framer-motion";
+
 import readArticles from "@/src/utils/readArticles";
 
 const Layout = dynamic(() => import("@/src/components/Layout"));
@@ -140,139 +142,148 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
   const toc = generateTableOfContents(post.content);
 
   return (
-    <Layout>
-      {" "}
-      <Head>
-        <title>{post.frontmatter.title}</title>
-        <meta name="robots" content="all" />
-        <meta name="theme-color" content="#1c9cfc" />
-        <meta httpEquiv="content-language" content="en" />
-        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta property="og:title" content={post.frontmatter.title} />
-        <meta property="og:url" content="https://preetsuthar.me" />
-        <meta property="og:type" content="website" />
-        <meta
-          name="keywords"
-          content="Preet Suthar, Front-end Developer, Portfolio, Blog"
-        />{" "}
-        <meta name="author" content="Preet Suthar" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:title" content={post.frontmatter.title} />
-        <meta name="subject" content="web development" />
-        <link rel="canonical" href="https://preetsuthar.me/posts" />
-      </Head>
-      <Navbar />
-      <>
-        <article id="post-top" className="container">
-          <h1 className="title">{post.frontmatter.title}</h1>
-          <div className="styled-hr"></div>
-          <div style={{ marginBottom: "2rem" }}>
-            <div
-              className="author p-color"
-              style={{
-                marginBottom: " 0.8rem",
-              }}
-            >
-              <Link
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <Layout>
+        <Head>
+          <title>{post.frontmatter.title}</title>
+          <meta name="robots" content="all" />
+          <meta name="theme-color" content="#1c9cfc" />
+          <meta httpEquiv="content-language" content="en" />
+          <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+          <meta property="og:title" content={post.frontmatter.title} />
+          <meta property="og:url" content="https://preetsuthar.me" />
+          <meta property="og:type" content="website" />
+          <meta
+            name="keywords"
+            content="Preet Suthar, Front-end Developer, Portfolio, Blog"
+          />{" "}
+          <meta name="author" content="Preet Suthar" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <meta name="twitter:title" content={post.frontmatter.title} />
+          <meta name="subject" content="web development" />
+          <link rel="canonical" href="https://preetsuthar.me/posts" />
+        </Head>
+        <Navbar />
+        <>
+          <article id="post-top" className="container">
+            <h1 className="title">{post.frontmatter.title}</h1>
+            <div className="styled-hr"></div>
+            <div style={{ marginBottom: "2rem" }}>
+              <div
+                className="author p-color"
                 style={{
-                  color: "#aaa",
-                  borderBottom: "1px solid #ccc",
-                  textDecoration: "none",
+                  marginBottom: " 0.8rem",
                 }}
-                href={post.frontmatter.authorGithub}
-                target="_blank"
               >
-                <span>{post.frontmatter.author}</span>
+                <Link
+                  style={{
+                    color: "#aaa",
+                    borderBottom: "1px solid #ccc",
+                    textDecoration: "none",
+                  }}
+                  href={post.frontmatter.authorGithub}
+                  target="_blank"
+                >
+                  <span>{post.frontmatter.author}</span>
+                </Link>
+              </div>
+              <time className="date">{post.frontmatter.date} - </time>
+              <span className="p-color date">{currentViews} views</span>
+            </div>
+
+            {toc.length > 0 && (
+              <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
+                <h2>Table of Contents</h2>
+                <ul>
+                  {toc.map((item, index) => (
+                    <li key={index}>
+                      <Link href={`#${item.slug}`}>{item.text}</Link>
+                      {item.children.length > 0 && (
+                        <ul>
+                          {item.children.map((child, childIndex) => (
+                            <li key={childIndex}>
+                              <Link href={`#${child.slug}`}>{child.text}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                <div
+                  className="copy-link"
+                  style={{
+                    marginBottom: "2rem",
+                  }}
+                >
+                  <button
+                    id="copyPostBtn"
+                    className="primary-btn"
+                    onClick={copyLinkToClipboard}
+                  >
+                    🔗 Copy link!
+                  </button>
+                </div>
+              </div>
+            )}
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{
+                __html: post.content.replace(
+                  /<(h[1-2])>(.*?)<\/\1>/g,
+                  (match, tag, content) =>
+                    `<${tag} id="${tag === "h1" ? "" : ""}${content
+                      .toLowerCase()
+                      .replace(/[^a-z0-9]+/g, "-")
+                      .replace(/(^-|-$)/g, "")}">${content}</${tag}>`
+                ),
+              }}
+            />
+            <div className="post-top">
+              <Link href="#post-top">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  fill="currentColor"
+                  className="bi bi-arrow-up-circle-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                </svg>
               </Link>
             </div>
-            <time className="date">{post.frontmatter.date} - </time>
-            <span className="p-color date">{currentViews} views</span>
-          </div>
-
-          {toc.length > 0 && (
-            <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
-              <h2>Table of Contents</h2>
-              <ul>
-                {toc.map((item, index) => (
-                  <li key={index}>
-                    <Link href={`#${item.slug}`}>{item.text}</Link>
-                    {item.children.length > 0 && (
-                      <ul>
-                        {item.children.map((child, childIndex) => (
-                          <li key={childIndex}>
-                            <Link href={`#${child.slug}`}>{child.text}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <div
-                className="copy-link"
-                style={{
-                  marginBottom: "2rem",
-                }}
-              >
-                <button
-                  id="copyPostBtn"
-                  className="primary-btn"
-                  onClick={copyLinkToClipboard}
-                >
-                  🔗 Copy link!
-                </button>
+            <div id="utterances-comments" />
+            <hr />
+            <div className="post-navigation">
+              <div className="prev">
+                {prevArticleData && (
+                  <Link href={`/posts/${prevArticleData.slug}`}>
+                    👈 {prevArticleData.title}
+                  </Link>
+                )}
+              </div>
+              <div className="next">
+                {nextArticleData && (
+                  <Link href={`/posts/${nextArticleData.slug}`}>
+                    {nextArticleData.title} 👉
+                  </Link>
+                )}
               </div>
             </div>
-          )}
-          <div
-            className="content"
-            dangerouslySetInnerHTML={{
-              __html: post.content.replace(
-                /<(h[1-2])>(.*?)<\/\1>/g,
-                (match, tag, content) =>
-                  `<${tag} id="${tag === "h1" ? "" : ""}${content
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, "-")
-                    .replace(/(^-|-$)/g, "")}">${content}</${tag}>`
-              ),
-            }}
-          />
-          <div className="post-top">
-            <Link href="#post-top">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="35"
-                height="35"
-                fill="currentColor"
-                className="bi bi-arrow-up-circle-fill"
-                viewBox="0 0 16 16"
-              >
-                <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-              </svg>
-            </Link>
-          </div>
-          <div id="utterances-comments" />
-          <hr />
-          <div className="post-navigation">
-            <div className="prev">
-              {prevArticleData && (
-                <Link href={`/posts/${prevArticleData.slug}`}>
-                  👈 {prevArticleData.title}
-                </Link>
-              )}
-            </div>
-            <div className="next">
-              {nextArticleData && (
-                <Link href={`/posts/${nextArticleData.slug}`}>
-                  {nextArticleData.title} 👉
-                </Link>
-              )}
-            </div>
-          </div>
-          <Footer />
-        </article>
-      </>
-    </Layout>
+            <Footer />
+          </article>
+        </>
+      </Layout>
+    </motion.div>
   );
 }
 

@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { supabase } from "@/src/utils/supabaseClient";
 
+import { motion } from "framer-motion";
+
 const AdminReviewList = dynamic(() =>
   import("@/src/components/AdminReviewList")
 );
@@ -63,81 +65,88 @@ const AdminSection = () => {
     fetchAuthorizedCredentials();
   }, []);
   return (
-    <div>
-      <Head>
-        <title>Admin Section</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      {authorized ? (
-        <AdminReviewList />
-      ) : (
-        <>
-          <Navbar />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              marginTop: "10rem",
-            }}
-          >
-            <h3
-              className="p-color"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div>
+        <Head>
+          <title>Admin Section</title>
+          <meta name="robots" content="noindex" />
+        </Head>
+        {authorized ? (
+          <AdminReviewList />
+        ) : (
+          <>
+            <Navbar />
+            <div
               style={{
-                marginBottom: "5rem",
-                fontWeight: "100",
-                fontSize: "1.9rem",
-                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "10rem",
               }}
             >
-              Authorization Required
-            </h3>
-            <form onSubmit={handleFormSubmit}>
-              <input
+              <h3
+                className="p-color"
                 style={{
-                  width: "15rem",
-                }}
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
-              />
-              <input
-                style={{
-                  width: "15rem",
-                }}
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-              />
-              <button className="primary-btn-red" type="submit">
-                Authorize
-              </button>
-            </form>
-            {showCustomToast && (
-              <div
-                style={{
-                  position: "fixed",
-                  bottom: "20px",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  backgroundColor: "red",
-                  color: "#ffffff",
-                  padding: "1rem",
-                  borderRadius: "5px",
-                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
-                  zIndex: 1000,
+                  marginBottom: "5rem",
+                  fontWeight: "100",
+                  fontSize: "1.9rem",
+                  textAlign: "center",
                 }}
               >
-                Authorization failed.
-              </div>
-            )}
-          </div>
-        </>
-      )}
-    </div>
+                Authorization Required
+              </h3>
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  style={{
+                    width: "15rem",
+                  }}
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter email"
+                />
+                <input
+                  style={{
+                    width: "15rem",
+                  }}
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter password"
+                />
+                <button className="primary-btn-red" type="submit">
+                  Authorize
+                </button>
+              </form>
+              {showCustomToast && (
+                <div
+                  style={{
+                    position: "fixed",
+                    bottom: "20px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    backgroundColor: "red",
+                    color: "#ffffff",
+                    padding: "1rem",
+                    borderRadius: "5px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
+                    zIndex: 1000,
+                  }}
+                >
+                  Authorization failed.
+                </div>
+              )}
+            </div>
+          </>
+        )}
+      </div>
+    </motion.div>
   );
 };
 
