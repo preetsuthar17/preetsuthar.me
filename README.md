@@ -15,3 +15,4 @@ My personal corner on the internet with blogs and everything :)
 - [ ]  Improve showcase UI
 - [ ]  Improve projects page
 - [ ]  Adding timeline to About Me page
+- [ ]  Adding free course section like blogs
