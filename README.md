@@ -12,7 +12,7 @@ My personal corner on the internet with blogs and everything :)
 ### Todo
 - [ ]  Tags system in blogs
 - [ ]  Syntax highlighting in blogs
-- [ ]  Improve showcase UI
-- [ ]  Improve projects page
+- [X]  Improve showcase UI
+- [X]  Improve projects page
 - [ ]  Adding timeline to About Me page
-- [ ]  Adding free course section like blogs
+- [ ]  Adding free course section like blogs [postponed]
