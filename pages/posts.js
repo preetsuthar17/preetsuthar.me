@@ -41,8 +41,8 @@ export default function Posts({ posts }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      exit={{ opacity: 1 }}
+      transition={{ duration: 1.2 }}
     >
       <Layout>
         <Head>
@@ -102,43 +102,75 @@ export default function Posts({ posts }) {
                   No blogs found.
                 </p>
               ) : (
-                searchResults.map((post) => (
+                searchResults.map((post, i) => (
                   <div key={post.slug} className="blog-card">
-                    <div>
-                      <Link href={`/posts/${post.slug}`} passHref>
-                        <h2 className="blog-header">
-                          {" "}
+                    <motion.div
+                      className="blog-card"
+                      initial={{ translateY: -50 }}
+                      animate={{ translateY: 0 }}
+                      exit={{ translateY: 0 }}
+                      transition={{ duration: 0.1, delay: i * 0.1 }}
+                      style={{
+                        flexDirection: "column",
+                      }}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 1 }}
+                        transition={{ duration: 0.1, delay: i * 0.3 }}
+                      >
+                        <Link href={`/posts/${post.slug}`} passHref>
+                          <h2 className="blog-header">
+                            {" "}
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: post.frontmatter.title,
+                                searchQuery,
+                              }}
+                            />
+                          </h2>
+                        </Link>
+                        <p className="blog-text">
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: post.frontmatter.title,
+                              __html: post.frontmatter.description,
                               searchQuery,
                             }}
                           />
-                        </h2>
-                      </Link>
-                      <p className="blog-text">
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: post.frontmatter.description,
-                            searchQuery,
+                        </p>
+                        <div
+                          style={{
+                            marginTop: "0.6rem",
                           }}
-                        />
-                      </p>
-                      <div
-                        style={{
-                          marginTop: "0.6rem",
-                        }}
+                        >
+                          <Link href={`/posts/${post.slug}`} passHref>
+                            Read article &rarr;
+                          </Link>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                    <motion.div
+                      className="blog-card"
+                      initial={{ translateY: -70 }}
+                      animate={{ translateY: -40 }}
+                      exit={{ translateY: -40 }}
+                      transition={{ duration: 0.1, delay: i * 0.1 }}
+                    >
+                      <motion.div
+                        className="blog-card"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 1 }}
+                        transition={{ duration: 0.1, delay: i * 0.3 }}
                       >
-                        <Link href={`/posts/${post.slug}`} passHref>
-                          Read article &rarr;
-                        </Link>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="blog-text blog-date">
-                        {post.frontmatter.date}
-                      </p>
-                    </div>
+                        <div>
+                          <p className="blog-text blog-date">
+                            {post.frontmatter.date}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </motion.div>
                   </div>
                 ))
               )}

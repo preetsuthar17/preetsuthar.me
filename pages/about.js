@@ -60,8 +60,8 @@ const Contact = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
       >
         <Head>
           <title>About | Preet Suthar 🚀</title>
@@ -113,10 +113,10 @@ const Contact = () => {
                   </p>
                 </div>
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  initial={{ opacity: 0, translateY: -50 }}
+                  animate={{ opacity: 1, translateY: 0 }}
+                  exit={{ opacity: 0, translateY: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
                 >
                   <div className="about-container">
                     <div className="about-text-img">

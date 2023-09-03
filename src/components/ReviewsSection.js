@@ -23,7 +23,7 @@ const ReviewsSection = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: 1 }}
       transition={{ duration: 1, delay: 2 }}
     >
       <section className="reviews-div" id="reviews">
@@ -37,7 +37,6 @@ const ReviewsSection = () => {
           <p className="reviews-text">Loading...</p>
         ) : (
           <div className="reviews-container">
-            {" "}
             {reviews?.map((review) => (
               <Card
                 key={review.id}
