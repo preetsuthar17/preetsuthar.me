@@ -107,8 +107,8 @@ export default function Posts({ posts }) {
                     <motion.div
                       className="blog-card"
                       initial={{ translateY: -50 }}
-                      animate={{ translateY: 0 }}
-                      exit={{ translateY: 0 }}
+                      animate={{ translateY: 30 }}
+                      exit={{ translateY: 30 }}
                       transition={{ duration: 0.1, delay: i * 0.1 }}
                       style={{
                         flexDirection: "column",
@@ -150,26 +150,19 @@ export default function Posts({ posts }) {
                         </div>
                       </motion.div>
                     </motion.div>
+
                     <motion.div
                       className="blog-card"
-                      initial={{ translateY: -70 }}
-                      animate={{ translateY: -40 }}
-                      exit={{ translateY: -40 }}
-                      transition={{ duration: 0.1, delay: i * 0.1 }}
+                      initial={{ opacity: 0, translateY: 0 }}
+                      animate={{ opacity: 1, translateY: 20 }}
+                      exit={{ opacity: 1, translateY: 20 }}
+                      transition={{ duration: 0.1, delay: i * 0.3 }}
                     >
-                      <motion.div
-                        className="blog-card"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 1 }}
-                        transition={{ duration: 0.1, delay: i * 0.3 }}
-                      >
-                        <div>
-                          <p className="blog-text blog-date">
-                            {post.frontmatter.date}
-                          </p>
-                        </div>
-                      </motion.div>
+                      <div>
+                        <p className="blog-text blog-date">
+                          {post.frontmatter.date}
+                        </p>
+                      </div>
                     </motion.div>
                   </div>
                 ))
