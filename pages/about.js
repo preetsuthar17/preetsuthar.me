@@ -23,8 +23,6 @@ import mysql from "../src/utils/icons/techs/mysql.svg";
 
 import preetSutharImage from "../src/utils/images/preetsuthar.png";
 
-import timelineFirstWebsite from "../src/utils/images/assets/first-website.png";
-
 import CustomTooltip from "@/src/components/CustomTooltip";
 
 import { motion } from "framer-motion";
@@ -572,7 +570,7 @@ const Contact = () => {
 
                   <div class="cd-timeline-content">
                     <h2>Beginning 🐢</h2>
-                
+
                     <p>
                       Created my first website using HTML. It was pretty bad lol
                       I found this image from my old computer system's
