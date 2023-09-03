@@ -78,7 +78,7 @@ $color_3: #aaaab5;
       p {
         font-family: "sofiapro";
         text-align: left;
-        font-size: 1.02rem;
+        font-size: 17px;
 
         padding: 1rem 0;
         @media screen and (max-width: 410px) {
@@ -257,7 +257,7 @@ $color_3: #aaaab5;
   }
   .timeline-content-info {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 12px;
+    font-size: 1rem;
     border-radius: 2px;
 
     .timeline-content-info-title,
@@ -288,7 +288,7 @@ $color_3: #aaaab5;
       color: rgba(255, 255, 255, 0.7);
       margin: 3px 2px;
       text-align: center;
-      flex-grow: 1;
+      flex-grow: 2;
     }
   }
 }
@@ -300,15 +300,13 @@ $color_3: #aaaab5;
 .cd-timeline-content h2 {
   color: #fff;
   font-weight: normal;
-
   margin-top: 0;
   margin-bottom: 5px;
 }
 .cd-timeline-content p,
 .cd-timeline-content .cd-date {
   color: rgba(255, 255, 255, 0.489);
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
 }
 .cd-timeline-content .cd-date {
   border-bottom: 1px solid #fff;
@@ -318,7 +316,8 @@ $color_3: #aaaab5;
 }
 .cd-timeline-content p {
   margin: 1em 0;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.6rem;
 }
 
 .cd-timeline-content::before {
@@ -334,17 +333,7 @@ $color_3: #aaaab5;
 
 @media only screen and (min-width: 768px) {
   .cd-timeline-content h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  .cd-timeline-content p {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  .cd-timeline-content .cd-read-more,
-  .cd-timeline-content .cd-date {
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 1.2rem;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -366,8 +355,6 @@ $color_3: #aaaab5;
     width: 100%;
     left: 122%;
     top: 6px;
-    font-size: 16px;
-    font-size: 1rem;
   }
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
     float: right;
