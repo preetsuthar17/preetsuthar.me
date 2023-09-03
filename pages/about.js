@@ -428,156 +428,167 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
-            <section id="cd-timeline" class="cd-container">
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture"></div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.5 }}
+            >
+              <section id="cd-timeline" class="cd-container">
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-picture"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>Preet Suthar ⭐</h2>
-                  <div class="timeline-content-info">
-                    <span class="timeline-content-info-title">
-                      <i class="fa fa-certificate" aria-hidden="true"></i>
-                      Front-End Developer
-                    </span>
+                  <div class="cd-timeline-content">
+                    <h2>Preet Suthar ⭐</h2>
+                    <div class="timeline-content-info">
+                      <span class="timeline-content-info-title">
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
+                        Front-End Developer
+                      </span>
+                    </div>
+                    <p>
+                      Dates in this timeline might not be the most accurate, but
+                      yeah, all the dates in this are somewhere around the
+                      actual dates.
+                    </p>
+                    <ul class="content-skills">
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>JavaScript</li>
+                      <li>Next.js</li>
+                      <li>React.js</li>
+                    </ul>
                   </div>
-                  <p>
-                    Dates in this timeline might not be the most accurate, but
-                    yeah, all the dates in this are somewhere around the actual
-                    dates.
-                  </p>
-                  <ul class="content-skills">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Next.js</li>
-                    <li>React.js</li>
-                  </ul>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>My first online competition 💻</h2>
-                  <p>
-                    I participated in the first online competition called
-                    Portfolio Fest 2023, organized by Tanish Garg. The vision
-                    was to learn, not necessarily to win. I actually learned
-                    about back-end development by participating in this
-                    competition and worked with back-end using Supabase and
-                    Next.js.
-                  </p>
-                  <span class="cd-date">Aug 31, 2023</span>
+                  <div class="cd-timeline-content">
+                    <h2>My first online competition 💻</h2>
+                    <p>
+                      I participated in the first online competition called
+                      Portfolio Fest 2023, organized by Tanish Garg. The vision
+                      was to learn, not necessarily to win. I actually learned
+                      about back-end development by participating in this
+                      competition and worked with back-end using Supabase and
+                      Next.js.
+                    </p>
+                    <span class="cd-date">Aug 31, 2023</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>my decision of switching framework, was it right? 🤔</h2>
-                  <p>
-                    Coming right to the point switching to Next js was one of
-                    the best decision I took. I learned so many new things when
-                    I switched frameworks and everything.
-                  </p>
-                  <span class="cd-date">Aug 7 , 2023</span>
+                  <div class="cd-timeline-content">
+                    <h2>
+                      my decision of switching framework, was it right? 🤔
+                    </h2>
+                    <p>
+                      Coming right to the point switching to Next js was one of
+                      the best decision I took. I learned so many new things
+                      when I switched frameworks and everything.
+                    </p>
+                    <span class="cd-date">Aug 7 , 2023</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>Next Js ⚡</h2>
-                  <p>
-                    When I was learning Gatsby js I heard about next js 13 which
-                    was pretty fast compared to gatsby js. That's when I
-                    researched more about Next js and I found that pretty
-                    interesting so soon after almost learning gatsby js I
-                    switched Next js [yeah, don't judge me].
-                  </p>
-                  <span class="cd-date">Feb 7 , 2023</span>
+                  <div class="cd-timeline-content">
+                    <h2>Next Js ⚡</h2>
+                    <p>
+                      When I was learning Gatsby js I heard about next js 13
+                      which was pretty fast compared to gatsby js. That's when I
+                      researched more about Next js and I found that pretty
+                      interesting so soon after almost learning gatsby js I
+                      switched Next js [yeah, don't judge me].
+                    </p>
+                    <span class="cd-date">Feb 7 , 2023</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>Gatsby Js 👻</h2>
-                  <p>
-                    I learned about react frameworks and I also found gatsby js
-                    so started to make websites and templates using gatsby js.
-                  </p>
-                  <span class="cd-date">Dec 7 , 2022</span>
+                  <div class="cd-timeline-content">
+                    <h2>Gatsby Js 👻</h2>
+                    <p>
+                      I learned about react frameworks and I also found gatsby
+                      js so started to make websites and templates using gatsby
+                      js.
+                    </p>
+                    <span class="cd-date">Dec 7 , 2022</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-picture"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>React Js ⚛️</h2>
-                  <p>
-                    I pretty much mastered HTMl, CSS and Javascript. Later i
-                    heard about React Js so I started to learn that to. I was
-                    still learning Fron-End only cause I knew nothing about
-                    Back-end systems.
-                  </p>
-                  <span class="cd-date">May 9, 2021</span>
+                  <div class="cd-timeline-content">
+                    <h2>React Js ⚛️</h2>
+                    <p>
+                      I pretty much mastered HTMl, CSS and Javascript. Later i
+                      heard about React Js so I started to learn that to. I was
+                      still learning Fron-End only cause I knew nothing about
+                      Back-end systems.
+                    </p>
+                    <span class="cd-date">May 9, 2021</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-location"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-location"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>Magic 🪄</h2>
-                  <p>
-                    Fast-forward to 2021, I was still creating websites using
-                    only HTML and CSS. But then I heard about Javascript. So I
-                    started to do more research about that.
-                  </p>
-                  <span class="cd-date">Feb 14, 2021</span>
+                  <div class="cd-timeline-content">
+                    <h2>Magic 🪄</h2>
+                    <p>
+                      Fast-forward to 2021, I was still creating websites using
+                      only HTML and CSS. But then I heard about Javascript. So I
+                      started to do more research about that.
+                    </p>
+                    <span class="cd-date">Feb 14, 2021</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-location"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-location"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>It's so cool! 🤩</h2>
-                  <p>
-                    I found web development pretty cool and awesome. I was
-                    having fun creating websites and all so I continued my
-                    journey by learning HTML and CSS.
-                  </p>
-                  <span class="cd-date">Sep 1, 2020</span>
+                  <div class="cd-timeline-content">
+                    <h2>It's so cool! 🤩</h2>
+                    <p>
+                      I found web development pretty cool and awesome. I was
+                      having fun creating websites and all so I continued my
+                      journey by learning HTML and CSS.
+                    </p>
+                    <span class="cd-date">Sep 1, 2020</span>
+                  </div>
                 </div>
-              </div>
 
-              <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie"></div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
 
-                <div class="cd-timeline-content">
-                  <h2>Beginning 🐢</h2>
-                  &nbsp;
-                  <Image
-                    src={timelineFirstWebsite}
-                    width="100%"
-                    height="auto"
-                    alt="First website image"
-                  ></Image>
-                  <p>
-                    Created my first website using HTML. It was pretty bad lol I
-                    found this image from my old computer system's hard-drive.
-                  </p>
-                  <span class="cd-date">Aug 21, 2020</span>
+                  <div class="cd-timeline-content">
+                    <h2>Beginning 🐢</h2>
+                    &nbsp;
+                    <Image
+                      src={timelineFirstWebsite}
+                      width="100%"
+                      height="auto"
+                      alt="First website image"
+                    ></Image>
+                    <p>
+                      Created my first website using HTML. It was pretty bad lol
+                      I found this image from my old computer system's
+                      hard-drive.
+                    </p>
+                    <span class="cd-date">Aug 21, 2020</span>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </motion.div>
           </>
         </div>
         <Footer />
