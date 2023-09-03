@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 import Head from "next/head";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const [showDialog, setShowDialog] = useState(false);
@@ -55,6 +56,15 @@ export default function App({ Component, pageProps }) {
           {showDialog && (
             <Dialog onClose={handleCloseDialog} className="show" />
           )}
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
+          <Script id="google-analytics">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PXPK7RW6DG');
+        `}
+          </Script>
         </>
         <Component {...pageProps} />
       </Layout>
