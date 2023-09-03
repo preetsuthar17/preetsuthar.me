@@ -500,11 +500,11 @@ const Contact = () => {
                   <div class="cd-timeline-content">
                     <h2>Next Js ⚡</h2>
                     <p>
-                      When I was learning Gatsby js I heard about next js 13
-                      which was pretty fast compared to gatsby js. That's when I
+                      When I was learning Gatsby Js I heard about Next Js 13
+                      which was pretty fast compared to Gatsby Js. That's when I
                       researched more about Next js and I found that pretty
-                      interesting so soon after almost learning gatsby js I
-                      switched Next js [yeah, don't judge me].
+                      interesting so soon after finishing Gatsby Js I switched
+                      Next js [yeah, don't judge me].
                     </p>
                     <span class="cd-date">Feb 7 , 2023</span>
                   </div>
@@ -516,9 +516,9 @@ const Contact = () => {
                   <div class="cd-timeline-content">
                     <h2>Gatsby Js 👻</h2>
                     <p>
-                      I learned about react frameworks and I also found gatsby
-                      js so started to make websites and templates using gatsby
-                      js.
+                      I learned about react frameworks and I also found Gatsby
+                      js to get started. so tried to make websites and templates
+                      using Gatsby Js.
                     </p>
                     <span class="cd-date">Dec 7 , 2022</span>
                   </div>
@@ -530,10 +530,10 @@ const Contact = () => {
                   <div class="cd-timeline-content">
                     <h2>React Js ⚛️</h2>
                     <p>
-                      I pretty much mastered HTMl, CSS and Javascript. Later i
-                      heard about React Js so I started to learn that to. I was
-                      still learning Fron-End only cause I knew nothing about
-                      Back-end systems.
+                      I pretty much mastered HTML, CSS and Javascript. Later I
+                      heard about React Js so I started to learn more about
+                      that. I was still learning Front-End only because I knew
+                      nothing about Back-end systems.
                     </p>
                     <span class="cd-date">May 9, 2021</span>
                   </div>
