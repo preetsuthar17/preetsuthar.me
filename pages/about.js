@@ -572,13 +572,7 @@ const Contact = () => {
 
                   <div class="cd-timeline-content">
                     <h2>Beginning 🐢</h2>
-                    &nbsp;
-                    <Image
-                      src={timelineFirstWebsite}
-                      width="100%"
-                      height="auto"
-                      alt="First website image"
-                    ></Image>
+                
                     <p>
                       Created my first website using HTML. It was pretty bad lol
                       I found this image from my old computer system's
