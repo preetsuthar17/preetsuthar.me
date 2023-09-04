@@ -119,6 +119,7 @@ const AdminSection = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter password"
+                  autoComplete="on"
                 />
                 <button className="primary-btn-red" type="submit">
                   Authorize
