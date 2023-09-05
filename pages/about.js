@@ -466,7 +466,7 @@ const Contact = () => {
                     <h2>Gave my first lecture 🎓</h2>
                     <p>
                       I gave first lecture in college which went fantastic. The
-                      lecture was about database and relation database
+                      lecture was about database systemd and relation database
                       management system using MySQL.
                     </p>
                     <span class="cd-date">Sep 4, 2023</span>
