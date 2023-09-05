@@ -463,6 +463,19 @@ const Contact = () => {
                   <div class="cd-timeline-img cd-movie"></div>
 
                   <div class="cd-timeline-content">
+                    <h2>Gave my first lecture 🎓</h2>
+                    <p>
+                      I gave first lecture in college which went fantastic. The
+                      lecture was about database and relation database
+                      management system using MySQL.
+                    </p>
+                    <span class="cd-date">Sep 4, 2023</span>
+                  </div>
+                </div>
+                <div class="cd-timeline-block">
+                  <div class="cd-timeline-img cd-movie"></div>
+
+                  <div class="cd-timeline-content">
                     <h2>My first online competition 💻</h2>
                     <p>
                       I participated in the first online competition called
