@@ -1,6 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+import gsap from "gsap";
+
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -53,7 +59,30 @@ function AutomaticAge({ birthdate }) {
   return <span> {age} </span>;
 }
 
-const Contact = () => {
+const About = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".cd-timeline-block");
+    elements.forEach((element, index) => {
+      const direction = index % 2 === 0 ? -1 : 1;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      tl.from(element, {
+        opacity: 0,
+        x: 100 * direction,
+        duration: 1,
+        ease: "Power2.easeInOut",
+      });
+    });
+  }, []);
+
   const birthdate = "2006-08-28";
   return (
     <>
@@ -426,174 +455,183 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1.5 }}
-            >
-              <section id="cd-timeline" class="cd-container">
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-picture"></div>
+            <div className="floating-container">
+              {Array.from({ length: 1 }, (_, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                >
+                  <section id="cd-timeline" className="cd-container">
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-picture"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Preet Suthar ⭐</h2>
-                    <div class="timeline-content-info">
-                      <span class="timeline-content-info-title">
-                        <i class="fa fa-certificate" aria-hidden="true"></i>
-                        Front-End Developer
-                      </span>
+                      <div className="cd-timeline-content">
+                        <h2>Preet Suthar ⭐</h2>
+                        <div className="timeline-content-info">
+                          <span className="timeline-content-info-title">
+                            <i
+                              className="fa fa-certificate"
+                              aria-hidden="true"
+                            ></i>
+                            Front-End Developer
+                          </span>
+                        </div>
+                        <p>
+                          Dates in this timeline might not be the most accurate,
+                          but yeah, all the dates in this are somewhere around
+                          the actual dates.
+                        </p>
+                        <ul className="content-skills">
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>JavaScript</li>
+                          <li>Next.js</li>
+                          <li>React.js</li>
+                        </ul>
+                      </div>
                     </div>
-                    <p>
-                      Dates in this timeline might not be the most accurate, but
-                      yeah, all the dates in this are somewhere around the
-                      actual dates.
-                    </p>
-                    <ul class="content-skills">
-                      <li>HTML</li>
-                      <li>CSS</li>
-                      <li>JavaScript</li>
-                      <li>Next.js</li>
-                      <li>React.js</li>
-                    </ul>
-                  </div>
-                </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Gave my first lecture 🎓</h2>
-                    <p>
-                      I gave first lecture in college which went fantastic. The
-                      lecture was about database systemd and relation database
-                      management system using MySQL.
-                    </p>
-                    <span class="cd-date">Sep 4, 2023</span>
-                  </div>
-                </div>
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                      <div className="cd-timeline-content">
+                        <h2>Gave my first lecture 🎓</h2>
+                        <p>
+                          I gave first lecture in college which went fantastic.
+                          The lecture was about database systemd and relation
+                          database management system using MySQL.
+                        </p>
+                        <span className="cd-date">Sep 4, 2023</span>
+                      </div>
+                    </div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>My first online competition 💻</h2>
-                    <p>
-                      I participated in the first online competition called
-                      Portfolio Fest 2023, organized by Tanish Garg. The vision
-                      was to learn, not necessarily to win. I actually learned
-                      about back-end development by participating in this
-                      competition and worked with back-end using Supabase and
-                      Next.js.
-                    </p>
-                    <span class="cd-date">Aug 31, 2023</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>My first online competition 💻</h2>
+                        <p>
+                          I participated in the first online competition called
+                          Portfolio Fest 2023, organized by Tanish Garg. The
+                          vision was to learn, not necessarily to win. I
+                          actually learned about back-end development by
+                          participating in this competition and worked with
+                          back-end using Supabase and Next.js.
+                        </p>
+                        <span className="cd-date">Aug 31, 2023</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>
-                      my decision of switching framework, was it right? 🤔
-                    </h2>
-                    <p>
-                      Coming right to the point switching to Next js was one of
-                      the best decision I took. I learned so many new things
-                      when I switched frameworks and everything.
-                    </p>
-                    <span class="cd-date">Aug 7 , 2023</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>
+                          my decision of switching framework, was it right? 🤔
+                        </h2>
+                        <p>
+                          Coming right to the point switching to Next js was one
+                          of the best decision I took. I learned so many new
+                          things when I switched frameworks and everything.
+                        </p>
+                        <span className="cd-date">Aug 7 , 2023</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Next Js ⚡</h2>
-                    <p>
-                      When I was learning Gatsby Js I heard about Next Js 13
-                      which was pretty fast compared to Gatsby Js. That's when I
-                      researched more about Next js and I found that pretty
-                      interesting so soon after finishing Gatsby Js I switched
-                      Next js [yeah, don't judge me].
-                    </p>
-                    <span class="cd-date">Feb 7 , 2023</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>Next Js ⚡</h2>
+                        <p>
+                          When I was learning Gatsby Js I heard about Next Js 13
+                          which was pretty fast compared to Gatsby Js. That's
+                          when I researched more about Next js and I found that
+                          pretty interesting so soon after finishing Gatsby Js I
+                          switched Next js [yeah, don't judge me].
+                        </p>
+                        <span className="cd-date">Feb 7 , 2023</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Gatsby Js 👻</h2>
-                    <p>
-                      I learned about react frameworks and I also found Gatsby
-                      js to get started. so tried to make websites and templates
-                      using Gatsby Js.
-                    </p>
-                    <span class="cd-date">Dec 7 , 2022</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>Gatsby Js 👻</h2>
+                        <p>
+                          I learned about react frameworks and I also found
+                          Gatsby js to get started. so tried to make websites
+                          and templates using Gatsby Js.
+                        </p>
+                        <span className="cd-date">Dec 7 , 2022</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-picture"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-picture"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>React Js ⚛️</h2>
-                    <p>
-                      I pretty much mastered HTML, CSS and Javascript. Later I
-                      heard about React Js so I started to learn more about
-                      that. I was still learning Front-End only because I knew
-                      nothing about Back-end systems.
-                    </p>
-                    <span class="cd-date">May 9, 2021</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>React Js ⚛️</h2>
+                        <p>
+                          I pretty much mastered HTML, CSS and Javascript. Later
+                          I heard about React Js so I started to learn more
+                          about that. I was still learning Front-End only
+                          because I knew nothing about Back-end systems.
+                        </p>
+                        <span className="cd-date">May 9, 2021</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-location"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-location"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Magic 🪄</h2>
-                    <p>
-                      Fast-forward to 2021, I was still creating websites using
-                      only HTML and CSS. But then I heard about Javascript. So I
-                      started to do more research about that.
-                    </p>
-                    <span class="cd-date">Feb 14, 2021</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>Magic 🪄</h2>
+                        <p>
+                          Fast-forward to 2021, I was still creating websites
+                          using only HTML and CSS. But then I heard about
+                          Javascript. So I started to do more research about
+                          that.
+                        </p>
+                        <span className="cd-date">Feb 14, 2021</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-location"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-location"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>It's so cool! 🤩</h2>
-                    <p>
-                      I found web development pretty cool and awesome. I was
-                      having fun creating websites and all so I continued my
-                      journey by learning HTML and CSS.
-                    </p>
-                    <span class="cd-date">Sep 1, 2020</span>
-                  </div>
-                </div>
+                      <div className="cd-timeline-content">
+                        <h2>It's so cool! 🤩</h2>
+                        <p>
+                          I found web development pretty cool and awesome. I was
+                          having fun creating websites and all so I continued my
+                          journey by learning HTML and CSS.
+                        </p>
+                        <span className="cd-date">Sep 1, 2020</span>
+                      </div>
+                    </div>
 
-                <div class="cd-timeline-block">
-                  <div class="cd-timeline-img cd-movie"></div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
 
-                  <div class="cd-timeline-content">
-                    <h2>Beginning 🐢</h2>
+                      <div className="cd-timeline-content">
+                        <h2>Beginning 🐢</h2>
 
-                    <p>
-                      Created my first website using HTML. It was pretty bad lol
-                      I found this image from my old computer system's
-                      hard-drive.
-                    </p>
-                    <span class="cd-date">Aug 21, 2020</span>
-                  </div>
-                </div>
-              </section>
-            </motion.div>
+                        <p>
+                          Created my first website using HTML. It was pretty bad
+                          lol I found this image from my old computer system's
+                          hard-drive.
+                        </p>
+                        <span className="cd-date">Aug 21, 2020</span>
+                      </div>
+                    </div>
+                  </section>
+                </motion.div>
+              ))}
+            </div>
           </>
         </div>
         <Footer />
@@ -601,4 +639,4 @@ const Contact = () => {
     </>
   );
 };
-export default Contact;
+export default About;
