@@ -26,9 +26,15 @@ const ReviewsSection = () => {
       exit={{ opacity: 1 }}
       transition={{ duration: 1, delay: 2 }}
     >
-      <section className="reviews-div" id="reviews">
+      <section
+        className="reviews-div"
+        style={{
+          marginTop: "12rem",
+        }}
+        id="reviews"
+      >
         {" "}
-        <h2 className="reviews-headings">#reviews</h2>{" "}
+        <h2 className="reviews-headings">reviews</h2>{" "}
         <p className="reviews-text">
           {" "}
           here are some awesome reviews left by awesome people!{" "}

@@ -61,6 +61,35 @@ function AutomaticAge({ birthdate }) {
 
 const About = () => {
   useEffect(() => {
+    const elements = document.querySelectorAll(".about-my-tools-icon");
+
+    elements.forEach((element, index) => {
+      gsap.set(element, { opacity: 0, y: "-20px" }); // Set initial opacity and position
+
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 80%",
+        onEnter: () => {
+          gsap.to(element, {
+            opacity: 1,
+            y: 0,
+            duration: 0.2,
+            ease: "power2.out",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(element, {
+            opacity: 0,
+            y: "-20px",
+            duration: 0.2,
+            ease: "power2.out",
+          });
+        },
+      });
+    });
+  }, []);
+
+  useEffect(() => {
     const elements = document.querySelectorAll(".cd-timeline-block");
     elements.forEach((element, index) => {
       const direction = index % 2 === 0 ? -1 : 1;
@@ -68,7 +97,7 @@ const About = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: element,
-          start: "top bottom",
+          start: "top 1000px",
           end: "bottom top",
           scrub: 1,
         },
@@ -169,21 +198,6 @@ const About = () => {
                           database implementation in reviews section.
                         </p>
 
-                        <p style={{ fontSize: "0.9rem" }}>
-                          &#91; This website was part of Portfolio Fest 2023
-                          By&nbsp;
-                          <Link
-                            style={{
-                              color: "#bbb",
-                            }}
-                            target="_blank"
-                            href="https://www.youtube.com/@tanishgargcodes"
-                          >
-                            Tanish Garg{" "}
-                          </Link>
-                          &#93;{" "}
-                        </p>
-
                         <p style={{ paddingTop: "1rem" }}>
                           I&apos;m also a freelancer,&nbsp;
                           <Link
@@ -253,208 +267,219 @@ const About = () => {
                   </div>
                 </motion.div>
               </div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 1,
-                  delay: 1,
-                }}
-              >
-                <div className="about-my-tools" id="my-skills-about">
-                  <p className="p-color sub-heading">#technologies</p>
-                  <div className="about-my-tools-icons">
-                    <CustomTooltip
-                      text="NextJs"
-                      description="One of the best React Framework."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="nextjs"
-                        width={55}
-                        height={55}
-                        src={nextjs}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Python"
-                      description="For advance scripting."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="Python"
-                        width={55}
-                        height={55}
-                        src={python}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip text="HTML" description="Creating websites.">
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="HTML"
-                        width={55}
-                        height={55}
-                        src={html}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip text="CSS" description="Styling websites.">
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="CSS"
-                        width={55}
-                        height={55}
-                        src={css}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="SASS"
-                      description="Because it's SASS :)"
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="SASS"
-                        width={55}
-                        height={55}
-                        src={sass}
-                      />
-                    </CustomTooltip>{" "}
-                    <CustomTooltip
-                      text="Javascript"
-                      description="Making things functional."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="Javascript"
-                        width={55}
-                        height={55}
-                        src={javascript}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="React"
-                      description="Because React, duh!"
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="React"
-                        width={55}
-                        height={55}
-                        src={react}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="MySQL"
-                      description="Database management."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="MySQL"
-                        width={55}
-                        height={55}
-                        src={mysql}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="VS code"
-                      description="My favourite code editor."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="vscode"
-                        width={55}
-                        height={55}
-                        src={vscode}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Brave"
-                      description="Debugging security."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="brave"
-                        width={55}
-                        height={55}
-                        src={brave}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip text="Firefox" description="Debugging CSS.">
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="firefox"
-                        width={55}
-                        height={55}
-                        src={firefox}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Chrome"
-                      description="Debugging Javascript."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="chrome"
-                        width={55}
-                        height={55}
-                        src={chrome}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Github"
-                      description="For publishing projects."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="github"
-                        width={55}
-                        height={55}
-                        src={github}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Vercel"
-                      description="For hosting my projects."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="vercel"
-                        width={55}
-                        height={55}
-                        src={vercel}
-                      />
-                    </CustomTooltip>
-                    <CustomTooltip
-                      text="Git"
-                      description="For Open-Source management."
-                    >
-                      <Image
-                        loading="lazy"
-                        className="about-my-tools-icon"
-                        alt="git"
-                        width={55}
-                        height={55}
-                        src={git}
-                      />
-                    </CustomTooltip>
-                  </div>
-                </div>
-              </motion.div>
             </div>
+            <div className="aboutToolsFloating-container">
+              {Array.from({ length: 1 }, (_, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 1,
+                    delay: 1,
+                  }}
+                >
+                  <div className="about-my-tools" id="my-skills-about">
+                    <p className="p-color sub-heading">#technologies</p>
+                    <div className="about-my-tools-icons">
+                      <CustomTooltip
+                        text="NextJs"
+                        description="One of the best React Framework."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="nextjs"
+                          width={55}
+                          height={55}
+                          src={nextjs}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Python"
+                        description="For advance scripting."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="Python"
+                          width={55}
+                          height={55}
+                          src={python}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="HTML"
+                        description="Creating websites."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="HTML"
+                          width={55}
+                          height={55}
+                          src={html}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip text="CSS" description="Styling websites.">
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="CSS"
+                          width={55}
+                          height={55}
+                          src={css}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="SASS"
+                        description="Because it's SASS :)"
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="SASS"
+                          width={55}
+                          height={55}
+                          src={sass}
+                        />
+                      </CustomTooltip>{" "}
+                      <CustomTooltip
+                        text="Javascript"
+                        description="Making things functional."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="Javascript"
+                          width={55}
+                          height={55}
+                          src={javascript}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="React"
+                        description="Because React, duh!"
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="React"
+                          width={55}
+                          height={55}
+                          src={react}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="MySQL"
+                        description="Database management."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="MySQL"
+                          width={55}
+                          height={55}
+                          src={mysql}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="VS code"
+                        description="My favourite code editor."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="vscode"
+                          width={55}
+                          height={55}
+                          src={vscode}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Brave"
+                        description="Debugging security."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="brave"
+                          width={55}
+                          height={55}
+                          src={brave}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Firefox"
+                        description="Debugging CSS."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="firefox"
+                          width={55}
+                          height={55}
+                          src={firefox}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Chrome"
+                        description="Debugging Javascript."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="chrome"
+                          width={55}
+                          height={55}
+                          src={chrome}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Github"
+                        description="For publishing projects."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="github"
+                          width={55}
+                          height={55}
+                          src={github}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Vercel"
+                        description="For hosting my projects."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="vercel"
+                          width={55}
+                          height={55}
+                          src={vercel}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="Git"
+                        description="For Open-Source management."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="git"
+                          width={55}
+                          height={55}
+                          src={git}
+                        />
+                      </CustomTooltip>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <div className="floating-container">
               {Array.from({ length: 1 }, (_, index) => (
                 <motion.div

@@ -22,7 +22,7 @@
             }
 
             svg{
-                animation: load 3s ease-in-out;
+                animation: load 7s ease;
             }
 
             @keyframes float1 {

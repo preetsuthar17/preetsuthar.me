@@ -55,6 +55,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+@keyframes scrollBarFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :root {
   --bg-color: #080809;
   --font-color: #ababab;

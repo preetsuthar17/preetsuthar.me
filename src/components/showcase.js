@@ -1,7 +1,4 @@
 import ReviewsSection from "./ReviewsSection";
-import ShowBlogs from "./showBlogs";
-
-import goDown from "../utils/icons/go-down.svg";
 
 import Footer from "./footer";
 import Navbar from "./navbar";
@@ -10,12 +7,91 @@ import CustomTooltip from "./CustomTooltip";
 
 import { motion } from "framer-motion";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect, useRef, useCallback } from "react";
 
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = "!<>-_\\/[]{}—=+*^?#____78945,./6123!@#$%^&*(";
+    this.update = this.update.bind(this);
+  }
+
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+
+  update() {
+    let output = "";
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span className="showcase-h1">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
 const Showcase = () => {
-  const elementRef = useRef(null);
+  const textRef = useRef(null);
+  let fx = null;
+
+  useEffect(() => {
+    if (textRef.current) {
+      fx = new TextScramble(textRef.current);
+      const phrases = ["Preet."];
+      let counter = 0;
+
+      const next = () => {
+        fx.setText(phrases[counter]).then(() => {
+          setTimeout(next, 900);
+        });
+        counter = (counter + 1) % phrases.length;
+      };
+
+      next();
+    }
+
+    return () => {
+      if (fx) {
+        cancelAnimationFrame(fx.frameRequest);
+      }
+    };
+  }, []);
 
   function AutomaticAge({ birthdate }) {
     const calculateAge = useCallback(() => {
@@ -50,20 +126,29 @@ const Showcase = () => {
       transition={{ duration: 1.2 }}
     >
       <Layout>
-        <Navbar />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
+          transition={{ duration: 1.4, delay: 1.6 }}
+        >
+          <Navbar />
+        </motion.div>
         <main>
           <section className="showcase">
             <div className="showcase-header ">
               <div className="styled-hr"></div>
 
-              <h1 className="showcase-h1">preet.</h1>
+              {/* <h1 className="showcase-h1">preet.</h1> */}
+
+              <h1 className="showcase-h1" ref={textRef}></h1>
               <div className="styled-hr"></div>
             </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 1.4, delay: 1.6 }}
             >
               <div className="showcase-about">
                 <p className="showcase-p">
@@ -100,20 +185,6 @@ const Showcase = () => {
                     </p>
                   </CustomTooltip>
                 </div>
-                <div>
-                  <Link href="#showcaseBlogs">
-                    <Image
-                      loading="lazy"
-                      className="showcase-scroll-down"
-                      alt="scroll-down"
-                      src={goDown}
-                    />
-                  </Link>
-                </div>
-
-                <ShowBlogs />
-                <div className="styled-hr"></div>
-
                 <ReviewsSection />
               </div>
             </motion.div>

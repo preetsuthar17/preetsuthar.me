@@ -149,11 +149,16 @@ $color_3: #aaaab5;
 }
 // Timeline
 
+.floating-container{
+  margin-bottom: 5rem;
+}
+
 .cd-container {
   overflow-x: hidden;
   width: 90%;
   max-width: 1080px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   background: transparent;
   padding: 0 10%;
   border-radius: 2px;

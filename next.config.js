@@ -6,6 +6,12 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  transpilePackages: [
+    "@mui/icons-material",
+    "@mui/x-date-pickers",
+    "@devexpress/dx-react-grid-material-ui",
+    "gsap",
+  ],
   webpack: (config, { isServer }) => {
     if (isServer) {
       const articlesDir = path.join(__dirname, "articles");
