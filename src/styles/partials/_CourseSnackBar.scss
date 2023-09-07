@@ -1,0 +1,21 @@
+.course-snackbar {
+  z-index: 999;
+  padding: 0.3rem;
+  display: flex;
+  margin-bottom: -0.8rem;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(119, 51, 228);
+  animation: courseSnackBarSlideIn 2s ease 3 forwards;
+  a {
+    color: #fff;
+  }
+  .course-snackbarClose {
+    cursor: pointer;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+}

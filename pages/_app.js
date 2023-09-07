@@ -12,7 +12,9 @@ import "../src/styles/partials/_buttons.scss";
 import "../src/styles/partials/_customTooltip.scss";
 import "../src/styles/partials/_postPage.scss";
 import "../src/styles/partials/_404.scss";
+import "../src/styles/partials/_CourseSnackBar.scss";
 
+import CourseSnackBar from "@/src/components/CourseSnackBar";
 import Dialog from "@/src/components/Dialog";
 import Layout from "@/src/components/Layout";
 
@@ -66,6 +68,7 @@ export default function App({ Component, pageProps }) {
         `}
           </Script>
         </>
+        <CourseSnackBar />
         <Component {...pageProps} />
       </Layout>
     </motion.div>

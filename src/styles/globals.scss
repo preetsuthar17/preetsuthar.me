@@ -29,6 +29,7 @@ body {
   width: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   background: rgb(21, 21, 24);
+  overflow-x: hidden;
 
   animation: bodyScrollHidden 2.7s ease-in-out;
 }
@@ -44,12 +45,15 @@ body {
 @keyframes bodyScrollHidden {
   0% {
     overflow-y: hidden;
+    overflow-x: hidden;
   }
   50% {
     overflow-y: hidden;
+    overflow-x: hidden;
   }
   100% {
     overflow-y: auto;
+    overflow-x: auto;
   }
 }
 
