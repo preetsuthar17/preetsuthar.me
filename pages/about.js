@@ -190,8 +190,8 @@ const About = () => {
                     <div className="about-text-img">
                       <div className="about-text">
                         <p>
-                          Hello! I&apos;m Preet Suthar , a self-taught web
-                          developer in india with more than two years of
+                          Hello! I&apos;m Preet Suthar, a self-taught web
+                          developer in India with more than two years of
                           experience. I&apos;m{" "}
                           <AutomaticAge birthdate={birthdate} /> years old and I
                           started this web development journey back in 2020, a
@@ -202,10 +202,10 @@ const About = () => {
                           <AutomaticAge birthdate={birthdate} />I am very much
                           passionate about Web development. I am constantly
                           learning and trying to keep up with new technologies
-                          about front-end developement. Not to mention I am also
+                          about front-end development. Not to mention I am also
                           learning full-stack development This website is just
                           Front-End or maybe Back-End because I have used
-                          database implementation in reviews section.
+                          database implementation in the reviews section.
                         </p>
 
                         <p style={{ paddingTop: "1rem" }}>
@@ -307,7 +307,7 @@ const About = () => {
                       </CustomTooltip>
                       <CustomTooltip
                         text="Python"
-                        description="For advance scripting."
+                        description="For advanced scripting."
                       >
                         <Image
                           loading="lazy"
@@ -395,7 +395,7 @@ const About = () => {
                       </CustomTooltip>
                       <CustomTooltip
                         text="VS code"
-                        description="My favourite code editor."
+                        description="My favorite code editor."
                       >
                         <Image
                           loading="lazy"
@@ -473,7 +473,7 @@ const About = () => {
                       </CustomTooltip>
                       <CustomTooltip
                         text="Git"
-                        description="For Open-Source management."
+                        description=" For Open-Source management."
                       >
                         <Image
                           loading="lazy"
@@ -516,7 +516,7 @@ const About = () => {
                         </div>
                         <p>
                           Dates in this timeline might not be the most accurate,
-                          but yeah, all the dates in this are somewhere around
+                          But yeah, all the dates in this are somewhere around
                           the actual dates.
                         </p>
                         <ul className="content-skills">
@@ -535,8 +535,8 @@ const About = () => {
                       <div className="cd-timeline-content">
                         <h2>Gave my first lecture 🎓</h2>
                         <p>
-                          I gave first lecture in college which went fantastic.
-                          The lecture was about database systemd and relation
+                          I gave my first lecture in college which went fantastic.
+                          The lecture was about database systems and relation
                           database management system using MySQL.
                         </p>
                         <span className="cd-date">Sep 4, 2023</span>
@@ -552,7 +552,7 @@ const About = () => {
                           Portfolio Fest 2023, organized by Tanish Garg. The
                           vision was to learn, not necessarily to win. I
                           actually learned about back-end development by
-                          participating in this competition and worked with
+                          participating in this competition and working with
                           back-end using Supabase and Next.js.
                         </p>
                         <span className="cd-date">Aug 31, 2023</span>
@@ -567,7 +567,7 @@ const About = () => {
                           my decision of switching framework, was it right? 🤔
                         </h2>
                         <p>
-                          Coming right to the point switching to Next js was one
+                          Coming right to the point switching to Next JS was one
                           of the best decision I took. I learned so many new
                           things when I switched frameworks and everything.
                         </p>
@@ -598,7 +598,7 @@ const About = () => {
                         <h2>Gatsby Js 👻</h2>
                         <p>
                           I learned about react frameworks and I also found
-                          Gatsby js to get started. so tried to make websites
+                          Gatsby JS to get started. so I tried to make websites
                           and templates using Gatsby Js.
                         </p>
                         <span className="cd-date">Dec 7 , 2022</span>
@@ -611,7 +611,7 @@ const About = () => {
                       <div className="cd-timeline-content">
                         <h2>React Js ⚛️</h2>
                         <p>
-                          I pretty much mastered HTML, CSS and Javascript. Later
+                          I had pretty much mastered HTML, CSS, and Javascript. Later
                           I heard about React Js so I started to learn more
                           about that. I was still learning Front-End only
                           because I knew nothing about Back-end systems.
@@ -656,8 +656,8 @@ const About = () => {
                         <h2>Beginning 🐢</h2>
 
                         <p>
-                          Created my first website using HTML. It was pretty bad
-                          lol I found this image from my old computer system's
+                          Created my first website using HTML. It wasn't good
+                          LOL I found this image from my old computer system's
                           hard-drive.
                         </p>
                         <span className="cd-date">Aug 21, 2020</span>
