@@ -7,11 +7,14 @@ import Head from "next/head";
 
 import dynamic from "next/dynamic";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import { motion } from "framer-motion";
 
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
-const Layout = dynamic(() => import("@/src/components/Layout"));
+import Layout from "@/src/components/Layout";
 
 export default function Posts({ posts }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,12 +23,38 @@ export default function Posts({ posts }) {
   const sanitizeQuery = (query) => {
     return query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   };
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  });
+
+  useEffect(() => {
+    const contentItems = document.querySelectorAll(".blog-card");
+
+    contentItems.forEach((item, index) => {
+      gsap.fromTo(
+        item,
+        { opacity: 0, x: -40 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: item,
+            start: "center 100%",
+            end: "center",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
       setSearchResults(posts);
     } else {
-      const sanitizedQuery = sanitizeQuery(searchQuery); // Sanitize the query
+      const sanitizedQuery = sanitizeQuery(searchQuery);
       const regex = new RegExp(`(${sanitizedQuery})`, "gi");
 
       const filteredResults = posts.filter(
@@ -67,26 +96,34 @@ export default function Posts({ posts }) {
           <meta name="twitter:title" content="Blogs | Preet Suthar 🚀" />
           <meta name="subject" content="web development" />
         </Head>
+
         <Navbar />
         <>
           <div id="blog-title" className="blog-div">
-            <div className="blog-headers">
-              <div className="blog-title">
-                <h1>&#47;blogs</h1>
-              </div>
-              <div className="blog-header-text">
-                <p>I do write blogs sometimes.</p>
-              </div>
+            <motion.div
+              initial={{ opacity: 1, translateX: -100 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              exit={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="blog-headers">
+                <div className="blog-title">
+                  <h1>&#47;blogs</h1>
+                </div>
+                <div className="blog-header-text">
+                  <p>I do write blogs sometimes.</p>
+                </div>
 
-              <input
-                style={{ marginTop: "2rem" }}
-                className="blog-search"
-                type="text"
-                placeholder="Search Article"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
+                <input
+                  style={{ marginTop: "2rem" }}
+                  className="blog-search"
+                  type="text"
+                  placeholder="Search Article"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+            </motion.div>
 
             <div className="styled-hr"></div>
 
@@ -103,52 +140,50 @@ export default function Posts({ posts }) {
                 </p>
               ) : (
                 searchResults.map((post, i) => (
-                  <motion.div
-                    key={post.slug}
-                    initial={{ translateY: -70 }}
-                    animate={{ translateY: 0 }}
-                    exit={{ translateY: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    <div className="blog-card">
-                      <div>
-                        <Link href={`/posts/${post.slug}`} passHref>
-                          <h2 className="blog-header">
-                            {" "}
-                            <span
-                              dangerouslySetInnerHTML={{
-                                __html: post.frontmatter.title,
-                                searchQuery,
-                              }}
-                            />
-                          </h2>
-                        </Link>
-                        <p className="blog-text">
+                  // <motion.div
+                  //   key={post.slug}
+                  //   initial={{ translateY: -70 }}
+                  //   animate={{ translateY: 0 }}
+                  //   exit={{ translateY: 0 }}
+                  //   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  // >
+                  <div className="blog-card">
+                    <div>
+                      <Link href={`/posts/${post.slug}`} passHref>
+                        <h2 className="blog-header">
+                          {" "}
                           <span
                             dangerouslySetInnerHTML={{
-                              __html: post.frontmatter.description,
+                              __html: post.frontmatter.title,
                               searchQuery,
                             }}
                           />
-                        </p>
-                        <div
-                          style={{
-                            marginTop: "0.6rem",
+                        </h2>
+                      </Link>
+                      <p className="blog-text">
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: post.frontmatter.description,
+                            searchQuery,
                           }}
-                        >
-                          <Link href={`/posts/${post.slug}`} passHref>
-                            Read article &rarr;
-                          </Link>
-                        </div>
-                      </div>
-
-                      <div>
-                        <p className="blog-text blog-date">
-                          {post.frontmatter.date}
-                        </p>
+                        />
+                      </p>
+                      <div
+                        style={{
+                          marginTop: "0.6rem",
+                        }}
+                      >
+                        <Link href={`/posts/${post.slug}`} passHref>
+                          Read article &rarr;
+                        </Link>
                       </div>
                     </div>
-                  </motion.div>
+
+                    <p className="blog-text blog-date">
+                      {post.frontmatter.date}
+                    </p>
+                  </div>
+                  // </motion.div>
                 ))
               )}
             </div>

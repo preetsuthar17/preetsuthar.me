@@ -61,31 +61,24 @@ function AutomaticAge({ birthdate }) {
 
 const About = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll(".about-my-tools-icon");
+    const contentItems = document.querySelectorAll(".about-my-tools-icon");
 
-    elements.forEach((element, index) => {
-      gsap.set(element, { opacity: 0, y: "-20px" }); // Set initial opacity and position
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contentItems,
+        start: "top 65%",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
 
-      ScrollTrigger.create({
-        trigger: element,
-        start: "top 80%",
-        onEnter: () => {
-          gsap.to(element, {
-            opacity: 1,
-            y: 0,
-            duration: 0.2,
-            ease: "power2.out",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(element, {
-            opacity: 0,
-            y: "-20px",
-            duration: 0.2,
-            ease: "power2.out",
-          });
-        },
-      });
+    contentItems.forEach((item, index) => {
+      tl.fromTo(
+        item,
+        { opacity: 0, y: "-40px" },
+        { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+        index * 0.2
+      );
     });
   }, []);
 
@@ -97,8 +90,8 @@ const About = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: element,
-          start: "top 1000px",
-          end: "bottom top",
+          start: "top 90%",
+          end: "bottom center",
           scrub: 1,
         },
       });
@@ -147,34 +140,51 @@ const About = () => {
         <div>
           <>
             <div className="about-div">
-              <div className="about-header">
-                <h1>&#47;about</h1>
-                <p>Uh.. Um.. About me maybe, lol</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 1, translateX: -100 }}
+                animate={{ opacity: 1, translateX: 0 }}
+                exit={{ opacity: 1, translateX: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="about-header">
+                  <h1>&#47;about</h1>
+                  <p>Uh.. Um.. About me maybe, lol</p>
+                </div>
+              </motion.div>
               <div className="styled-hr"></div>
               <div className="about-wrapper">
-                <div className="about-image">
-                  <Image
-                    className="about-PreetProfileImage"
-                    src={preetSutharImage}
-                    width={240}
-                    height={240}
-                    alt="Preet Suthar"
-                    loading="lazy"
-                    placeholder="blur"
-                  />
+                <motion.div
+                  initial={{ opacity: 0, translateX: -100 }}
+                  animate={{ opacity: 1, translateX: 0 }}
+                  exit={{ opacity: 1, translateX: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <div className="about-image">
+                    <Image
+                      className="about-PreetProfileImage"
+                      src={preetSutharImage}
+                      width={240}
+                      height={240}
+                      alt="Preet Suthar"
+                      loading="lazy"
+                      placeholder="blur"
+                    />
 
-                  <p style={{ margin: "1rem", padding: "2rem " }}>
-                    <Link href="mailto:preetsuthar.me" className="primary-btn">
-                      Hire me!
-                    </Link>
-                  </p>
-                </div>
+                    <p style={{ margin: "1rem", padding: "2rem " }}>
+                      <Link
+                        href="mailto:preetsuthar.me"
+                        className="primary-btn"
+                      >
+                        Hire me!
+                      </Link>
+                    </p>
+                  </div>
+                </motion.div>
                 <motion.div
                   initial={{ opacity: 0, translateY: -50 }}
                   animate={{ opacity: 1, translateY: 0 }}
                   exit={{ opacity: 0, translateY: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
                 >
                   <div className="about-container">
                     <div className="about-text-img">

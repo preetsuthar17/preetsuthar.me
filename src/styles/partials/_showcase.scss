@@ -16,14 +16,7 @@ $color_3: white;
     transform: translateY(0px);
   }
 }
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 0;
-  }
-  100% {
-    text-shadow: rgba(158, 158, 158, 0.543) 1px 0 15px;
-  }
-}
+
 .showcase {
   overflow-x: hidden;
   margin-top: 6rem;
@@ -33,8 +26,7 @@ $color_3: white;
   justify-content: center;
   transition: 0.4s ease-in-out !important;
   h1 {
-    letter-spacing: -0.3rem !important;
-    animation: glow 1000ms cubic-bezier(0.65, 0, 0.35, 1) 1 forwards;
+    animation: title 1s ease-out forwards;
   }
   .navbar {
     display: flex;
@@ -79,6 +71,32 @@ $color_3: white;
   font-family: var(--heading-font-family);
   font-weight: 900 !important;
 }
+
+@keyframes title {
+  0% {
+    text-shadow: 0 0 0;
+    letter-spacing: 1em;
+    opacity: 0;
+    font-size: 20rem;
+  }
+  25% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 100%;
+  }
+  90% {
+    text-shadow: rgba(158, 158, 158, 0.543) 1px 0 15px;
+    opacity: 100%;
+    letter-spacing: -0.3rem;
+  }
+  100% {
+    letter-spacing: -0.3rem;
+
+    text-shadow: rgba(158, 158, 158, 0.543) 1px 0 15px;
+  }
+}
+
 .showcase-p {
   animation-delay: 2000ms !important;
   font-size: var(--fontSize1);

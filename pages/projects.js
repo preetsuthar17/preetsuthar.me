@@ -5,11 +5,39 @@ import dynamic from "next/dynamic";
 
 import { motion } from "framer-motion";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Footer = dynamic(() => import("@/src/components/footer"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
-const Layout = dynamic(() => import("@/src/components/Layout"));
+import Layout from "@/src/components/Layout";
 
 const Projects = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  });
+
+  useEffect(() => {
+    const contentItems = document.querySelectorAll(".project-card");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contentItems,
+        start: "top 77%",
+        end: "bottom center",
+        scrub: 1,
+      },
+    });
+
+    contentItems.forEach((item, index) => {
+      tl.fromTo(
+        item,
+        { opacity: 0, x: "40px" },
+        { opacity: 1, x: 0, duration: 1, ease: "power1.inOut" }
+      );
+    });
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -45,18 +73,25 @@ const Projects = () => {
         <Navbar />
         <>
           <div className="project-div">
-            <div className="project-headers">
-              <div className="project-title">
-                <h1>&#47;projects</h1>
+            <motion.div
+              initial={{ opacity: 1, translateX: -100 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              exit={{ opacity: 1, translateX: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="project-headers">
+                <div className="project-title">
+                  <h1>&#47;projects</h1>
+                </div>
+                <div className="project-header-text">
+                  <p>You can view more on my github.</p>
+                </div>
               </div>
-              <div className="project-header-text">
-                <p>You can view more on my github.</p>
-              </div>
-            </div>
+            </motion.div>
             <div className="styled-hr"></div>
             <div className="project-container">
               {/* Project 1 */}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link target="_blank" href="https://preetsuthar.me">
                   <div className="project-header">
                     <span>preetsuthar.me</span>
@@ -73,7 +108,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 2 */}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link href="https://todozenith.vercel.app/">
                   <div className="project-header">
                     <span>TodoZenith</span>
@@ -90,7 +125,7 @@ const Projects = () => {
               </div>
               {/* Project 3 */}
 
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://discord-bot-webpage-template.vercel.app/"
@@ -113,7 +148,7 @@ const Projects = () => {
               </div>
               {/* Project 4 */}
 
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
@@ -135,7 +170,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 5 */}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://gatsby-blog-temp.netlify.app"
@@ -158,7 +193,7 @@ const Projects = () => {
               </div>
 
               {/* Project 6*/}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://gatsby-portfolio-temp.netlify.app"
@@ -180,7 +215,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 7*/}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://github.com/preetsuthar17/Vinlybot"
@@ -202,7 +237,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 8*/}
-              <div className="project-card">
+              <div className="project-card ">
                 <Link
                   target="_blank"
                   href="https://github.com/preetsuthar17/Zakbot"
