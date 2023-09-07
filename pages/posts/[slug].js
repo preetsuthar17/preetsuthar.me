@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+
+import UPISvg from "../../src/utils/icons/brands/UPISvg.svg";
 
 import fs from "fs";
 import path from "path";
@@ -18,6 +21,7 @@ const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
 import { supabase } from "@/src/utils/supabaseClient";
+import CustomTooltip from "@/src/components/CustomTooltip";
 
 function convertIdToUuid(id) {
   const hexId = id.toString(16);
@@ -140,6 +144,21 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
     return toc;
   };
   const toc = generateTableOfContents(post.content);
+  const [textToCopy, setTextToCopy] = useState("preetsuthar@fam");
+  const [copySuccess, setCopySuccess] = useState("");
+
+  const handleCopyClick = () => {
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        alert("UPI ID Copied!");
+        setCopySuccess("Text copied to clipboard");
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+        alert("Something went wrong!\nUPI: preetsuthar@fam");
+      });
+  };
 
   return (
     <motion.div
@@ -210,7 +229,6 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 ))}
               </div>
             </div>
-
             {toc.length > 0 && (
               <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
                 <h2>Table of Contents</h2>
@@ -259,6 +277,37 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 ),
               }}
             />
+            <div className="donateUs">
+              <p className="p-color">
+                I rely on your support to keep this website running. If you find
+                the content valuable, please consider making a donation. [ Only
+                India ]{" "}
+                <Link
+                  className="link-color"
+                  href="mailto:preetsutharxd@gmail.com"
+                  target="_blank"
+                >
+                  Let me know if you donated!
+                </Link>
+              </p>
+              <p
+                className="p-color"
+                style={{
+                  fontSize: "0.8rem",
+                  paddingTop: "0.8rem",
+                }}
+              >
+                Click to copy UPI ID...
+              </p>
+              <Image
+                alt="Click to copy UPI"
+                style={{ cursor: "pointer" }}
+                onClick={handleCopyClick}
+                src={UPISvg}
+                width={100}
+                height={100}
+              />
+            </div>
             <div className="post-top">
               <Link href="#post-top">
                 <svg
