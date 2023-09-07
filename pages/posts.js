@@ -16,7 +16,7 @@ const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 import Layout from "@/src/components/Layout";
 
-export default function Posts({ posts }) {
+export default function Posts({ posts, tags }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(posts);
 
@@ -122,6 +122,30 @@ export default function Posts({ posts }) {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                <div
+                  className="tags"
+                  style={{
+                    marginTop: "0.5rem",
+                    display: "flex",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {tags.map((tag) => (
+                    <Link
+                      style={{
+                        width: "fit-content",
+                      }}
+                      className="post-tag no-decoration p-color"
+                      href={`/tags/${tag}`}
+                      key={tag}
+                    >
+                      {tag}
+                    </Link>
+                  ))}
+                  <Link className="post-tag p-color" href="/tags">
+                    All Tags
+                  </Link>
+                </div>
               </div>
             </motion.div>
 
@@ -221,6 +245,7 @@ export async function getStaticProps() {
       title: data.title,
       date: formatDate(data.date.toString()),
       description: data.description,
+      tags: data.tags || [],
     };
     const lines = content.split("\n");
     let description = "";
@@ -237,20 +262,27 @@ export async function getStaticProps() {
       description = description.substring(0, 50) + "...";
     }
     frontmatter.description = description;
-
+    const tags = data.tags || [];
     return {
       slug: filename.replace(".mdx", ""),
       frontmatter,
       content,
+      tags,
     };
   });
 
   posts.sort(
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   );
+
+  const allTags = Array.from(
+    new Set(posts.flatMap((post) => post.frontmatter.tags))
+  );
+
   return {
     props: {
       posts,
+      tags: allTags,
     },
   };
 }

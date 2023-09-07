@@ -23,8 +23,8 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contentItems,
-        start: "top 77%",
-        end: "bottom center",
+        start: "top 80%",
+        end: "bottom top",
         scrub: 1,
       },
     });
@@ -33,7 +33,7 @@ const Projects = () => {
       tl.fromTo(
         item,
         { opacity: 0, x: "40px" },
-        { opacity: 1, x: 0, duration: 1, ease: "power1.inOut" }
+        { opacity: 1, x: 0, duration: 1, ease: "expo.inOut" }
       );
     });
   }, []);
@@ -91,7 +91,7 @@ const Projects = () => {
             <div className="styled-hr"></div>
             <div className="project-container">
               {/* Project 1 */}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link target="_blank" href="https://preetsuthar.me">
                   <div className="project-header">
                     <span>preetsuthar.me</span>

@@ -197,6 +197,18 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               </div>
               <time className="date">{post.frontmatter.date} - </time>
               <span className="p-color date">{currentViews} views</span>
+              <div className="post-tag ">
+                {post.frontmatter.tags.map((tag) => (
+                  <div key={tag}>
+                    <Link
+                      className="no-decoration p-color"
+                      href={`/tags/${tag}`}
+                    >
+                      {tag}
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {toc.length > 0 && (
@@ -314,6 +326,7 @@ export async function getStaticProps({ params }) {
     id: data.id,
     author: data.author,
     authorGithub: data.authorGithub,
+    tags: data.tags,
   };
 
   function formatDate(date) {

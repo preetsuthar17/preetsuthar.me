@@ -159,3 +159,14 @@ $color_3: #aaaab5;
     color: $color_2 !important;
   }
 }
+
+.post-tag {
+  background-color: #00000017;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-top: 0.7rem;
+  margin-right: 0.7rem;
+  border-radius: 5px;
+  border: 1px #aaaab579 solid;
+}
+
