@@ -1,5 +1,5 @@
 ---
-title: "Basics Data Stucture & Algorithm - Lecture 5"
+title: "Basics Data Structure & Algorithm - Lecture 5"
 date: 2023-09-1
 id: 21
 author: "Preet Suthar"
@@ -45,7 +45,7 @@ tags:
      - While loop
      - For loop
    - Example:
-     - Repeat while (condition\_
+     - Repeat while (condition)
 
 7. Goto statement:
 

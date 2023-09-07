@@ -302,7 +302,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
 export async function getStaticPaths() {
   const files = fs.readdirSync("articles");
   const paths = files.map((filename) => ({
-    params: { slug: filename.replace(".mdx", "") },
+    params: { slug: filename.replace(".md", "") },
   }));
 
   return {
@@ -313,7 +313,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const markdownWithMetadata = fs.readFileSync(
-    path.join("articles", `${params.slug}.mdx`),
+    path.join("articles", `${params.slug}.md`),
     "utf-8"
   );
 

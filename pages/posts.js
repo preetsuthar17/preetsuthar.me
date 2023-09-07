@@ -264,7 +264,7 @@ export async function getStaticProps() {
     frontmatter.description = description;
     const tags = data.tags || [];
     return {
-      slug: filename.replace(".mdx", ""),
+      slug: filename.replace(".md", ""),
       frontmatter,
       content,
       tags,

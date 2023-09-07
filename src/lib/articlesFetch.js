@@ -6,7 +6,7 @@ export function getAllArticles() {
   const articleFileNames = fs.readdirSync(articlesDirectory);
 
   const articleSlugs = articleFileNames.map((fileName) =>
-    fileName.replace(/\.mdx$/, "")
+    fileName.replace(/\.md$/, "")
   );
 
   return articleSlugs;

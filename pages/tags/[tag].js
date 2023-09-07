@@ -176,7 +176,7 @@ export async function getStaticProps({ params }) {
         description: data.description || "",
         date: formatDate(data.date.toString()),
       },
-      slug: fileName.replace(/\.mdx$/, ""),
+      slug: fileName.replace(/\.md$/, ""),
     };
   });
 

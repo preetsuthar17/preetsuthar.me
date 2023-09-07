@@ -23,11 +23,11 @@ module.exports = {
         const { data } = matter(fileContents);
         const slug = generateSlug(data.title);
 
-        const newFilePath = path.join(articlesDir, `${slug}.mdx`);
-        if (filename !== `${slug}.mdx`) {
+        const newFilePath = path.join(articlesDir, `${slug}.md`);
+        if (filename !== `${slug}.md`) {
           fs.renameSync(filePath, newFilePath);
         }
-        console.log(`slug renamed to ${slug}.mdx`);
+        console.log(`slug renamed to ${slug}.md`);
       });
     }
 

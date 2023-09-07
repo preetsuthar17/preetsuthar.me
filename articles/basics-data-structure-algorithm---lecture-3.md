@@ -1,5 +1,5 @@
 ---
-title: "Basics Data Stucture & Algorithm - Lecture 3"
+title: "Basics Data Structure & Algorithm - Lecture 3"
 date: 2023-08-30
 id: 19
 author: "Preet Suthar"

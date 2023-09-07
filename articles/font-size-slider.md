@@ -36,7 +36,7 @@ First of in your `index.html` file we write the structure code for slider and th
 </div>
 ```
 
-This is most basic code for stucture of slider and para. Here in the `<input>` we gave the type of input `range` so we get the slider and in attr we have min and max values and also we gave default value of slider which is 20, So whenever the page is opened that stays as default font size
+This is most basic code for Structure of slider and para. Here in the `<input>` we gave the type of input `range` so we get the slider and in attr we have min and max values and also we gave default value of slider which is 20, So whenever the page is opened that stays as default font size
 
 Now let's give it bit of css to make everything in center,
 

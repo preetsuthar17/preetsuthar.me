@@ -13,7 +13,7 @@ const readArticles = () => {
     const { data, content } = matter(fileContents);
 
     return {
-      slug: fileName.replace(/\.mdx$/, ""),
+      slug: fileName.replace(/\.md$/, ""),
       frontmatter: data,
       content,
     };
