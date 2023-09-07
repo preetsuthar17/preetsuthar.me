@@ -147,7 +147,7 @@ export default function Posts({ posts }) {
                   //   exit={{ translateY: 0 }}
                   //   transition={{ duration: 0.5, delay: i * 0.1 }}
                   // >
-                  <div className="blog-card">
+                  <div key={post.slug} className="blog-card">
                     <div>
                       <Link href={`/posts/${post.slug}`} passHref>
                         <h2 className="blog-header">
