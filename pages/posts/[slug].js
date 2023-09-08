@@ -234,9 +234,16 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 ))}
               </div>
             </div>
-            <div className="donateUs">
+            <div
+              className="donateUs"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <p
                 style={{
+                  textAlign: "left",
                   marginBottom: "1rem",
                 }}
                 className="p-color"
@@ -250,14 +257,17 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 className="donateButton"
                 style={{
                   color: "#aaa",
+                  textAlign: "left",
                 }}
               >
                 Donate
-              </Link>
+              </Link>{" "}
               <span
                 style={{
                   color: "#aaa",
                   fontSize: "0.8rem",
+                  textAlign: "left",
+                  marginTop: "0.6rem",
                 }}
               >
                 &nbsp;&nbsp;Secured by Stripe

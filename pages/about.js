@@ -312,6 +312,46 @@ const About = () => {
                         </div>
                       </div>
                     </div>
+                    <div
+                      className="donateUs"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <p
+                        style={{
+                          textAlign: "left",
+                          marginBottom: "1rem",
+                        }}
+                        className="p-color"
+                      >
+                        I rely on your support to keep this website running. If
+                        you find the content valuable, please consider making a
+                        small donation.
+                      </p>
+                      <Link
+                        href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
+                        target="_blank"
+                        className="donateButton"
+                        style={{
+                          color: "#aaa",
+                          textAlign: "left",
+                        }}
+                      >
+                        Donate
+                      </Link>{" "}
+                      <span
+                        style={{
+                          color: "#aaa",
+                          fontSize: "0.8rem",
+                          textAlign: "left",
+                          marginTop: '0.6rem'
+                        }}
+                      >
+                        &nbsp;&nbsp;Secured by Stripe
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               </div>
