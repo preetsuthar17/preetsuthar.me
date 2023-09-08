@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-
-import UPISvg from "../../src/utils/icons/brands/UPISvg.svg";
-
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -143,6 +141,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
 
     return toc;
   };
+
   const toc = generateTableOfContents(post.content);
   const [textToCopy, setTextToCopy] = useState("preetsuthar@fam");
   const [copySuccess, setCopySuccess] = useState("");
@@ -190,6 +189,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
           <meta name="subject" content="web development" />
           <link rel="canonical" href="https://preetsuthar.me/posts" />
         </Head>
+        <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
         <Navbar />
         <>
           <article id="post-top" className="container">
@@ -199,7 +199,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               <div
                 className="author p-color"
                 style={{
-                  marginBottom: " 0.8rem",
+                  marginBottom: " 0.5rem",
                 }}
               >
                 <Link
@@ -233,6 +233,35 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="donateUs">
+              <p
+                style={{
+                  marginBottom: "1rem",
+                }}
+                className="p-color"
+              >
+                I rely on your support to keep this website running. If you find
+                the content valuable, please consider making a small donation.
+              </p>
+              <Link
+                href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
+                target="_blank"
+                className="donateButton"
+                style={{
+                  color: "#aaa",
+                }}
+              >
+                Donate
+              </Link>
+              <span
+                style={{
+                  color: "#aaa",
+                  fontSize: "0.8rem",
+                }}
+              >
+                &nbsp;&nbsp;Secured by Stripe
+              </span>
             </div>
             {toc.length > 0 && (
               <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
@@ -282,37 +311,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 ),
               }}
             />
-            <div className="donateUs">
-              <p className="p-color">
-                I rely on your support to keep this website running. If you find
-                the content valuable, please consider making a donation. [ Only
-                India ]{" "}
-                <Link
-                  className="link-color"
-                  href="mailto:preetsutharxd@gmail.com"
-                  target="_blank"
-                >
-                  Let me know if you donated!
-                </Link>
-              </p>
-              <p
-                className="p-color"
-                style={{
-                  fontSize: "0.8rem",
-                  paddingTop: "0.8rem",
-                }}
-              >
-                Click to copy UPI ID...
-              </p>
-              <Image
-                alt="Click to copy UPI"
-                style={{ cursor: "pointer" }}
-                onClick={handleCopyClick}
-                src={UPISvg}
-                width={100}
-                height={100}
-              />
-            </div>
+
             <div className="post-top">
               <Link href="#topPage">
                 <svg
