@@ -223,9 +223,8 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 }}
               >
                 {post.frontmatter.tags.map((tag) => (
-                  <div className="post-tag ">
+                  <div className="post-tag " key={tag}>
                     <Link
-                      key={tag}
                       className="no-decoration p-color"
                       href={`/tags/${tag}`}
                     >
