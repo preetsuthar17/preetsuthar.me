@@ -33,7 +33,8 @@ export default function Posts({ posts, tags }) {
     contentItems.forEach((item, index) => {
       gsap.fromTo(
         item,
-        { opacity: 0, x: -40 },
+        { opacity: 0, x: 80 },
+
         {
           opacity: 1,
           x: 0,

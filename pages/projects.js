@@ -23,18 +23,19 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contentItems,
-        start: "top 90%",
-        end: "bottom top",
-        scrub: 1,
+        start: "center 100%",
+        end: "center",
+        scrub: 2,
       },
     });
 
     contentItems.forEach((item, index) => {
       tl.fromTo(
         item,
-        { opacity: 0, x: "40px" },
-        { opacity: 1, x: 0, duration: 1, ease: "expo.Out" }
-      );
+        { opacity: 0, x: "70px" },
+        { opacity: 1, x: 0, duration: 0.5, ease: "bounce.in" }
+      ),
+        index * 0.8;
     });
   }, []);
 

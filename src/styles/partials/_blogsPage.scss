@@ -90,15 +90,12 @@ $color_3: #aaaab5;
 .blog-card {
   display: flex;
   padding: 2rem;
-  border: 0.1px solid #ababab5e;
+  border: 02px solid #ababab28;
   backdrop-filter: blur(10px);
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 0.3s ease-in-out !important;
-  background: -webkit-linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.081),
-    rgba(255, 255, 255, 0.075)
-  );
+  background-color: #45454516;
+
   flex-direction: column;
   text-align: left;
   transition: 0.3s ease-in-out !important;
@@ -169,4 +166,3 @@ $color_3: #aaaab5;
   border-radius: 5px;
   border: 1px #aaaab579 solid;
 }
-

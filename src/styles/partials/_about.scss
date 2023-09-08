@@ -67,9 +67,8 @@ $color_3: #aaaab5;
       justify-content: left;
       align-items: left;
       border-radius: 5px;
-      box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
-      background-color: #ffffff09;
-      border: 2px solid #ffffff0c;
+      background-color: #45454516;
+      border: 02px solid #ababab28;
       backdrop-filter: blur(8px);
       padding: 1rem;
       text-align: left;
@@ -112,7 +111,7 @@ $color_3: #aaaab5;
       transition: 0.2s all ease-in-out;
       padding: 0.6rem;
       border-radius: 5px;
-      box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
+      // box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
       background-color: #ffffff0c;
       border: 2px solid #ffffff0c;
       backdrop-filter: blur(8px);
@@ -184,7 +183,7 @@ $color_3: #aaaab5;
   left: 25px;
   height: 100%;
   width: 4px;
-  background: #1d1d1f;
+  background-color: #ffffff0c;
 }
 @media only screen and (min-width: 1170px) {
   #cd-timeline {
@@ -253,10 +252,10 @@ $color_3: #aaaab5;
   position: relative;
   margin-left: 60px;
   margin-right: 30px;
-  background-color: #11111146;
-  border: 2px solid #ffffff0c;
+  background-color: #5c5c5c0c;
+  border: 2px solid #ababab28;
   backdrop-filter: blur(8px);
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 1em;
   img {
     max-width: 100%;

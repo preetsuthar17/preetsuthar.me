@@ -69,18 +69,16 @@ $color_5: #3dbbed;
 }
 
 .project-card {
-  border: 0.1px solid #ababab5e;
+  border: 02px solid #ababab28;
+
   backdrop-filter: blur(10px);
-  border-radius: 10px;
+  border-radius: 5px;
   flex-grow: 1;
   flex-basis: 20rem;
   padding: 2rem;
   transition: 0.3s ease-in-out !important;
-  background: -webkit-linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.081),
-    rgba(255, 255, 255, 0.075)
-  );
+
+  background-color: #45454516;
   a {
     color: $color_4;
     transition: 0.3s ease-in-out;

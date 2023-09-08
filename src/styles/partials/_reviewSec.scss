@@ -142,7 +142,7 @@ button[type="submit"] {
   }
   &::-webkit-scrollbar-thumb {
     background-color: #ababab86;
-    border-radius: 10px;
+    border-radius: 5px;
   }
 }
 .reviews-slider {
@@ -160,8 +160,8 @@ button[type="submit"] {
   margin: 1rem 1rem;
   border-radius: 8px;
   height: 10rem;
-  background-color: #0e0e0e68;
-  border: 2px solid #ffffff0c;
+  background-color: #45454516;
+  border: 2px solid #ababab28;
   backdrop-filter: blur(8px);
 
   scroll-snap-align: center;
