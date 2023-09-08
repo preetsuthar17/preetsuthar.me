@@ -157,4 +157,6 @@ And we're done!
 
 ## Wrapping up
 
+Check out [this codepen demo](https://codepen.io/preetsuthar17/pen/GRPrepx).
+
 It's is pretty basic to create masonry layout using only CSS and still you can spice it up by implementing Javascript and more feature.
