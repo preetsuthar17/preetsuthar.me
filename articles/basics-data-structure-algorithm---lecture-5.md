@@ -8,7 +8,7 @@ tags:
   - DSA
 ---
 
-# Notation for Algorithm design
+## Notation for Algorithm design
 
 1. Name of algorithm:
 

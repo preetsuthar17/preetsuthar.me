@@ -12,7 +12,25 @@ In this lecture we're going to cover basic about Types of Data Structure.
 
 ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/15e9c195-64ec-4714-ba22-18e74a4e2af0)
 
+## Types
+
+There are many types of Data Structure but in this lesson we're going to talk about two main types of data Structure.
+
 1. Primitive Data Structure
+2. Non Primitive Data Structure
+
+### Other Types
+
+1.  Primitive Data Structure
+2.  Non Primitive Data Structure
+3.  Linear Data Structure
+4.  Non Linear Data Structure
+5.  Static Data Structure
+6.  Dynamic Data Structure
+7.  Homogeneous Data Structure
+8.  Non Homogeneous Data Structure
+
+## 1. Primitive Data Structure
 
 - The primitive data types are the fundamental datatypes.
 - Example: Int Float Double, Char
@@ -61,13 +79,13 @@ In this lecture we're going to cover basic about Types of Data Structure.
        - A list can be defined as a collection of variables of a number of items.
          ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/1a17c6da-322e-426a-81fd-465b924b38f8)
 
-  2. Non-linear Data Structure:
+## 2. Non-linear Data Structure:
 
-     - Tree: [We'll learn more about this in upcoming lectures]
-       ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/9ed3cd66-8dae-407a-90ab-d54c3daec6fd)
+- Tree: [We'll learn more about this in upcoming lectures]
+  ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/9ed3cd66-8dae-407a-90ab-d54c3daec6fd)
 
-     - Graph:
-       - It is a collection of vertices (Node) and edges.
-         ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/2682c258-a635-4baf-bff4-fc279b2bc3d9)
+- Graph:
+  - It is a collection of vertices (Node) and edges.
+    ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/2682c258-a635-4baf-bff4-fc279b2bc3d9)
 
 > More details will be covered in upcoming lectures.
