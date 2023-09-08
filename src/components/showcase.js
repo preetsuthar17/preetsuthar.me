@@ -141,7 +141,7 @@ const Showcase = () => {
 
               {/* <h1 className="showcase-h1">preet.</h1> */}
 
-              <h1 className="showcase-h1" ref={textRef}></h1>
+              <h1 data-text="Preet" className="showcase-h1" ref={textRef}></h1>
               <div className="styled-hr"></div>
             </div>
             <motion.div
