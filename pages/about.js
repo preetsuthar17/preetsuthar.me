@@ -1,11 +1,13 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Head from "next/head";
+
+import React from "react";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 import gsap from "gsap";
+gsap.registerPlugin();
+gsap.registerPlugin(ScrollTrigger);
 
 import Image from "next/image";
 import Link from "next/link";
@@ -60,6 +62,51 @@ function AutomaticAge({ birthdate }) {
 }
 
 const About = () => {
+  const typingRefs = useRef([React.createRef(), React.createRef()]);
+
+  useEffect(() => {
+    const animateParagraph = (index) => {
+      const textElement = typingRefs.current[index].current;
+      const textContent = textElement.textContent.trim();
+
+      textElement.textContent = "";
+
+      for (const letter of textContent) {
+        const letterSpan = document.createElement("span");
+        letterSpan.textContent = letter === " " ? "\u00A0" : letter;
+        letterSpan.style.display = "inline-block";
+        letterSpan.style.opacity = 0;
+        textElement.appendChild(letterSpan);
+      }
+
+      requestAnimationFrame(() => {
+        const letterSpans = textElement.querySelectorAll("span");
+        letterSpans.forEach((letterSpan, letterIndex) => {
+          setTimeout(() => {
+            letterSpan.style.opacity = 1;
+          }, letterIndex * 50);
+        });
+      });
+    };
+
+    const animateSingleParagraph = (index) => {
+      if (
+        index < typingRefs.current.length &&
+        typingRefs.current[index].current
+      ) {
+        typingRefs.current[index].current.style.display = "block";
+
+        animateParagraph(index);
+
+        setTimeout(() => {
+          animateSingleParagraph(index + 1);
+        }, 50 * (typingRefs.current[index].current.textContent.length + 1));
+      }
+    };
+
+    animateSingleParagraph(0);
+  }, []);
+
   useEffect(() => {
     const contentItems = document.querySelectorAll(".about-my-tools-icon");
 
@@ -181,7 +228,7 @@ const About = () => {
                   </div>
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, translateY: -50 }}
+                  initial={{ opacity: 0, translateY: 50 }}
                   animate={{ opacity: 1, translateY: 0 }}
                   exit={{ opacity: 0, translateY: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -189,7 +236,7 @@ const About = () => {
                   <div className="about-container">
                     <div className="about-text-img">
                       <div className="about-text">
-                        <p>
+                        <p ref={typingRefs.current[0]}>
                           Hello! I&apos;m Preet Suthar, a self-taught web
                           developer in India with more than two years of
                           experience. I&apos;m{" "}
@@ -197,7 +244,10 @@ const About = () => {
                           started this web development journey back in 2020, a
                           clumsy kid creating webpages and all with HTML.
                         </p>
-                        <p>
+                        <p
+                          ref={typingRefs.current[1]}
+                          style={{ display: "none" }}
+                        >
                           Currently at the age of{" "}
                           <AutomaticAge birthdate={birthdate} />I am very much
                           passionate about Web development. I am constantly
@@ -205,19 +255,7 @@ const About = () => {
                           about front-end development. Not to mention I am also
                           learning full-stack development This website is just
                           Front-End or maybe Back-End because I have used
-                          database implementation in the reviews section.
-                        </p>
-
-                        <p style={{ paddingTop: "1rem" }}>
-                          I&apos;m also a freelancer,&nbsp;
-                          <Link
-                            href="#my-skills-about"
-                            style={{
-                              color: "#bbb",
-                            }}
-                          >
-                            Skills
-                          </Link>
+                          database implementation in the reviews section.{" "}
                         </p>
 
                         <div
@@ -535,43 +573,11 @@ const About = () => {
                       <div className="cd-timeline-content">
                         <h2>Gave my first lecture 🎓</h2>
                         <p>
-                          I gave my first lecture in college which went fantastic.
-                          The lecture was about database systems and relation
-                          database management system using MySQL.
+                          I gave my first lecture in college which went
+                          fantastic. The lecture was about database systems and
+                          relation database management system using MySQL.
                         </p>
                         <span className="cd-date">Sep 4, 2023</span>
-                      </div>
-                    </div>
-                    <div className="cd-timeline-block">
-                      <div className="cd-timeline-img cd-movie"></div>
-
-                      <div className="cd-timeline-content">
-                        <h2>My first online competition 💻</h2>
-                        <p>
-                          I participated in the first online competition called
-                          Portfolio Fest 2023, organized by Tanish Garg. The
-                          vision was to learn, not necessarily to win. I
-                          actually learned about back-end development by
-                          participating in this competition and working with
-                          back-end using Supabase and Next.js.
-                        </p>
-                        <span className="cd-date">Aug 31, 2023</span>
-                      </div>
-                    </div>
-
-                    <div className="cd-timeline-block">
-                      <div className="cd-timeline-img cd-movie"></div>
-
-                      <div className="cd-timeline-content">
-                        <h2>
-                          my decision of switching framework, was it right? 🤔
-                        </h2>
-                        <p>
-                          Coming right to the point switching to Next JS was one
-                          of the best decision I took. I learned so many new
-                          things when I switched frameworks and everything.
-                        </p>
-                        <span className="cd-date">Aug 7 , 2023</span>
                       </div>
                     </div>
 
@@ -592,28 +598,14 @@ const About = () => {
                     </div>
 
                     <div className="cd-timeline-block">
-                      <div className="cd-timeline-img cd-movie"></div>
-
-                      <div className="cd-timeline-content">
-                        <h2>Gatsby Js 👻</h2>
-                        <p>
-                          I learned about react frameworks and I also found
-                          Gatsby JS to get started. so I tried to make websites
-                          and templates using Gatsby Js.
-                        </p>
-                        <span className="cd-date">Dec 7 , 2022</span>
-                      </div>
-                    </div>
-
-                    <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-picture"></div>
 
                       <div className="cd-timeline-content">
                         <h2>React Js ⚛️</h2>
                         <p>
-                          I had pretty much mastered HTML, CSS, and Javascript. Later
-                          I heard about React Js so I started to learn more
-                          about that. I was still learning Front-End only
+                          I had pretty much mastered HTML, CSS, and Javascript.
+                          Later I heard about React Js so I started to learn
+                          more about that. I was still learning Front-End only
                           because I knew nothing about Back-end systems.
                         </p>
                         <span className="cd-date">May 9, 2021</span>
@@ -657,8 +649,7 @@ const About = () => {
 
                         <p>
                           Created my first website using HTML. It wasn't good
-                          LOL I found this image from my old computer system's
-                          hard-drive.
+                          ofcourse.
                         </p>
                         <span className="cd-date">Aug 21, 2020</span>
                       </div>

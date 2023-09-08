@@ -309,7 +309,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               />
             </div>
             <div className="post-top">
-              <Link href="#post-top">
+              <Link href="#topPage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"

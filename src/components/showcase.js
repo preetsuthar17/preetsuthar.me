@@ -3,7 +3,7 @@ import ReviewsSection from "./ReviewsSection";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";
-import CustomTooltip from "./CustomTooltip";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = "!<>-_\\/[]{}—=+*^?#____78945,./6123!@#$%^&*(";
+    this.chars = "@#&*__-<>";
     this.update = this.update.bind(this);
   }
 
@@ -98,7 +98,7 @@ const Showcase = () => {
 
       const next = () => {
         fx.setText(phrases[counter]).then(() => {
-          setTimeout(next, 900);
+          setTimeout(next, 1500);
         });
         counter = (counter + 1) % phrases.length;
       };
@@ -160,8 +160,7 @@ const Showcase = () => {
               <div className="styled-hr"></div>
 
               {/* <h1 className="showcase-h1">preet.</h1> */}
-
-              <h1 data-text="Preet" className="showcase-h1" ref={textRef}></h1>
+              <h1 data-text="Preet." className="showcase-h1" ref={textRef}></h1>
               <div className="styled-hr"></div>
             </div>
             <motion.div
@@ -182,30 +181,32 @@ const Showcase = () => {
                     Full-Stack web development.
                   </p>
                   <div style={{ marginTop: "0.5rem" }}>
-                    <CustomTooltip
-                      text="note!"
-                      description="Dynamic Imports may affect loading on some devices."
+                    <p
+                      style={{
+                        color: "#ff4f4f",
+                        fontSize: "1rem",
+                        cursor: "pointer",
+                      }}
                     >
-                      <p
+                      <Link
                         style={{
                           color: "#ff4f4f",
-                          fontSize: "1rem",
-                          cursor: "pointer",
                         }}
+                        href="#scrollToReviewSection"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="19"
-                          fill="currentColor"
-                          className="bi bi-exclamation-circle"
-                          viewBox="0 0 16 16"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
                         >
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                          <path
+                            fill="currentColor"
+                            d="m12 16.175l3.9-3.875q.275-.275.688-.288t.712.288q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.063T11.3 18.3l-4.6-4.6q-.275-.275-.288-.687T6.7 12.3q.275-.275.7-.275t.7.275l3.9 3.875Zm0-6L15.9 6.3q.275-.275.688-.287t.712.287q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.062T11.3 12.3L6.7 7.7q-.275-.275-.288-.688T6.7 6.3q.275-.275.7-.275t.7.275l3.9 3.875Z"
+                          />
                         </svg>
-                      </p>
-                    </CustomTooltip>
+                      </Link>
+                    </p>
                   </div>
                 </div>
 

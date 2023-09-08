@@ -33,7 +33,7 @@ const Projects = () => {
       tl.fromTo(
         item,
         { opacity: 0, x: "40px" },
-        { opacity: 1, x: 0, duration: 1, ease: "expo.inOut" }
+        { opacity: 1, x: 0, duration: 1, ease: "expo.Out" }
       );
     });
   }, []);

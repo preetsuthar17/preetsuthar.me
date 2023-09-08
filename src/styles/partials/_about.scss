@@ -66,7 +66,12 @@ $color_3: #aaaab5;
       display: flex;
       justify-content: left;
       align-items: left;
-
+      border-radius: 5px;
+      box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff09;
+      border: 2px solid #ffffff0c;
+      backdrop-filter: blur(8px);
+      padding: 1rem;
       text-align: left;
       flex-direction: column;
       ul {
@@ -108,7 +113,7 @@ $color_3: #aaaab5;
       padding: 0.6rem;
       border-radius: 5px;
       box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
-      background-color: #ffffff19;
+      background-color: #ffffff0c;
       border: 2px solid #ffffff0c;
       backdrop-filter: blur(8px);
     }
@@ -139,9 +144,6 @@ $color_3: #aaaab5;
     gap: 1rem;
     li {
       border-radius: 3px;
-      box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
-      background-color: #ffffff19;
-      border: 2px solid #ffffff0c;
       backdrop-filter: blur(8px);
       padding: 0.3rem 1rem;
     }

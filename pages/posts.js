@@ -212,7 +212,7 @@ export default function Posts({ posts, tags }) {
               )}
             </div>
             <div className="posts-post-top">
-              <Link href="#blog-title">
+              <Link href="#topPage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"

@@ -1,13 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { supabase } from "../utils/supabaseClient";
-
 import Link from "next/link";
 import Card from "./Card";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ReviewsSection = () => {
   const [reviews, setReviews] = useState([]);
+  const reviewsContainerRef = useRef(null);
+
   useEffect(() => {
     const fetchReviews = async () => {
       const { data } = await supabase
@@ -19,14 +23,34 @@ const ReviewsSection = () => {
     fetchReviews();
   }, []);
 
+  useEffect(() => {
+    const reviewsContainer = reviewsContainerRef.current;
+
+    if (reviewsContainer) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: reviewsContainer,
+          start: "top 20%",
+          end: "top center",
+          toggleActions: "play none reverse none",
+          once: false,
+          scrub: 1,
+        },
+      });
+
+      timeline.from(reviewsContainer, {
+        opacity: 0,
+        x: -100,
+        duration: 0.8,
+      });
+    }
+  }, []);
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 2 }}
-    >
-      <section
+    <>
+      <span id="scrollToReviewSection"></span>
+      <div
+        ref={reviewsContainerRef}
         className="reviews-div"
         style={{
           marginTop: "12rem",
@@ -61,8 +85,9 @@ const ReviewsSection = () => {
             <span>Review Here!</span>{" "}
           </Link>{" "}
         </p>{" "}
-      </section>
-    </motion.div>
+      </div>
+    </>
   );
 };
+
 export default ReviewsSection;

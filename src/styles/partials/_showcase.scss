@@ -25,9 +25,7 @@ $color_3: white;
   align-items: center;
   justify-content: center;
   transition: 0.4s ease-in-out !important;
-  h1 {
-    animation: title 1.5s ease-out forwards;
-  }
+
   .navbar {
     display: flex;
     margin-bottom: 7rem;
@@ -65,12 +63,15 @@ $color_3: white;
   text-align: center;
 }
 .showcase-h1 {
+  animation: title 1.5s ease-out forwards;
+
   transition: 0.2s ease-in-out;
   font-size: var(--fontSize9);
   color: $color_1;
   font-family: var(--heading-font-family);
   font-weight: 900 !important;
 }
+
 
 @keyframes title {
   0% {

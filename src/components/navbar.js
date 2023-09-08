@@ -5,7 +5,7 @@ import navbarIcon from "../../public/favicon.ico";
 
 const Navbar = () => {
   return (
-    <header className="navbar-div">
+    <header className="navbar-div" id="topPage">
       <nav className="navbar">
         <div className="nav-header">
           <Link href="/">

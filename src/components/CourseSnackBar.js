@@ -7,16 +7,15 @@ const CourseSnackBar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
-    
     setIsOpen(false);
   };
   return (
     <>
       {isOpen && (
         <motion.div
-          initial={{ y: -70 }}
-          animate={{ y: 0 }}
-          exit={{ y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 5 }}
         >
           <div className="course-snackbar">
