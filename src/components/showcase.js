@@ -7,6 +7,8 @@ import CustomTooltip from "./CustomTooltip";
 
 import { motion } from "framer-motion";
 
+import { gsap } from "gsap";
+
 import { useState, useEffect, useRef, useCallback } from "react";
 
 class TextScramble {
@@ -69,6 +71,24 @@ class TextScramble {
 const Showcase = () => {
   const textRef = useRef(null);
   let fx = null;
+
+  useEffect(() => {
+    const showcasePara = document.querySelectorAll(".showcase-p");
+    const tl = gsap.timeline();
+
+    tl.to({}, 2.7, {});
+
+    showcasePara.forEach((para, index) => {
+      const el = para.querySelectorAll("p");
+      const delay = index * 0.7;
+      tl.to(el, {
+        y: 0,
+        duration: 0.8,
+        delay: delay,
+        ease: "expo.out",
+      });
+    });
+  }, []);
 
   useEffect(() => {
     if (textRef.current) {
@@ -151,40 +171,44 @@ const Showcase = () => {
               transition={{ duration: 1.4, delay: 1.6 }}
             >
               <div className="showcase-about">
-                <p className="showcase-p">
-                  Hello! I&apos;m Preet Suthar,{" "}
-                  <AutomaticAge birthdate={birthdate} /> years old self-taught
-                  web developer with more than two years of experience.
-                  <br />
-                  Passionate about Front-End web development, soon going for
-                  Full-Stack web development.
-                </p>
-                <div style={{ marginTop: "0.5rem" }}>
-                  <CustomTooltip
-                    text="note!"
-                    description="Dynamic Imports may affect loading on some devices."
-                  >
-                    <p
-                      style={{
-                        color: "#ff4f4f",
-                        fontSize: "1rem",
-                        cursor: "pointer",
-                      }}
+                <div className="showcase-p">
+                  <p>
+                    Hello! I&apos;m Preet Suthar,{" "}
+                    <AutomaticAge birthdate={birthdate} /> years old self-taught
+                    web developer with more than two years of experience.
+                  </p>
+                  <p>
+                    Passionate about Front-End web development, soon going for
+                    Full-Stack web development.
+                  </p>
+                  <div style={{ marginTop: "0.5rem" }}>
+                    <CustomTooltip
+                      text="note!"
+                      description="Dynamic Imports may affect loading on some devices."
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="19"
-                        fill="currentColor"
-                        className="bi bi-exclamation-circle"
-                        viewBox="0 0 16 16"
+                      <p
+                        style={{
+                          color: "#ff4f4f",
+                          fontSize: "1rem",
+                          cursor: "pointer",
+                        }}
                       >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                      </svg>
-                    </p>
-                  </CustomTooltip>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="19"
+                          fill="currentColor"
+                          className="bi bi-exclamation-circle"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                        </svg>
+                      </p>
+                    </CustomTooltip>
+                  </div>
                 </div>
+
                 <ReviewsSection />
               </div>
             </motion.div>

@@ -165,3 +165,11 @@ $color_3: white;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
+
+.showcase-p {
+  overflow: hidden;
+}
+
+.showcase-p p {
+  transform: translateY(200px);
+}

@@ -23,7 +23,7 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: contentItems,
-        start: "top 80%",
+        start: "top 90%",
         end: "bottom top",
         scrub: 1,
       },
