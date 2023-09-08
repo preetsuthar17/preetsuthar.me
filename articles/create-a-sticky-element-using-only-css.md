@@ -6,6 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
+  - CSS
 ---
 
 Hey there, web developers! Want to make an element on your website stick to the top of the screen as users scroll down? Well, you're in luck! With just a few lines of CSS, you can create a fantastic sticky element effect. Let's dive right into it! 🚀💻

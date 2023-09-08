@@ -6,6 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
+  - CSS
 ---
 
 One effective technique to enhance navigation is by implementing a sticky navbar. A sticky navbar remains fixed at the top of the page as users scroll, providing easy access to important links and content. In this blog post, we'll delve into the process of creating a sticky navbar using HTML and CSS, with a focus on the `position: sticky` and `top: 0` properties.

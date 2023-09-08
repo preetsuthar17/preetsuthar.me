@@ -6,6 +6,9 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
+  - HTML
+  - CSS
+  - JavaScript
 ---
 
 Hey there, fellow developers! Ever wanted to add a cool theme toggler to your website that lets users switch between a bright and vibrant light theme and a sleek and mysterious dark theme? Well, I've got great news for you! With just a few lines of Javascript code, we can make this happen. Let's dive into the exciting world of **coding**! 🚀💻

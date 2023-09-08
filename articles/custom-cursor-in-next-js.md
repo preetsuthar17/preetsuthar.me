@@ -6,6 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
+  - JavaScript
 ---
 
 Creating a custom cursor in next js website is as easy as creating a component in next js. we can create a cursor component and then import it in `_app.js` to make it globally accessible.

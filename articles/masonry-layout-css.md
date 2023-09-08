@@ -7,6 +7,7 @@ authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
   - CSS
+  - HTML
 ---
 
 ## Introduction

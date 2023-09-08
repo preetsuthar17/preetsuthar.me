@@ -6,6 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - guide
+  - CSS
 ---
 
 Animations are pretty cool, aren't they? yes, they are, but you might think adding

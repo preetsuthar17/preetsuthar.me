@@ -6,6 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - cheatsheet
+  - HTML
 ---
 
 Hey there, aspiring web developers! Starting out with HTML and looking for a handy cheatsheet to reference? Look no further! Below is a comprehensive guide to some essential HTML tags and elements that will help you build the foundation of your web pages. Let's get started! 🚀💻

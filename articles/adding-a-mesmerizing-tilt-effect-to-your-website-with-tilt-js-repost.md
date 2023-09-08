@@ -6,6 +6,9 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - tutorial
+  - HTML
+  - CSS
+  - JavaScript
 ---
 
 In web design, adding subtle interactive effects can greatly improve the user experience. One popular effect that has gained attention recently is the tilt effect, which creates a dynamic and immersive visual experience in response to mouse movements. In this blog post, we'll explore how you can easily apply a tilt effect to your website using the Tilt.js library.
