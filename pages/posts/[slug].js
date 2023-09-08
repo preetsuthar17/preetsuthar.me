@@ -216,14 +216,20 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               </div>
               <time className="date">{post.frontmatter.date} - </time>
               <span className="p-color date">{currentViews} views</span>
-              <div className="post-tag ">
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                }}
+              >
                 {post.frontmatter.tags.map((tag) => (
-                  <div key={tag}>
+                  <div className="post-tag ">
                     <Link
+                      key={tag}
                       className="no-decoration p-color"
                       href={`/tags/${tag}`}
                     >
-                      {tag}
+                      {tag}&nbsp;
                     </Link>
                   </div>
                 ))}
