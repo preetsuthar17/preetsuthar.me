@@ -30,7 +30,7 @@ const ReviewsSection = () => {
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: reviewsContainer,
-          start: "top 20%",
+          start: "top 60%",
           end: "top center",
           toggleActions: "play none reverse none",
           once: false,
