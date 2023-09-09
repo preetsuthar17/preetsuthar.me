@@ -291,8 +291,10 @@ export async function getStaticProps() {
     let description = "";
     for (const line of lines) {
       if (line.trim().length > 0 && !line.trim().startsWith("#")) {
-        description = line.trim();
-        break;
+        if (!line.trim().startsWith("!") || !line.trim().startsWith("[")) {
+          description = line.trim();
+          break;
+        }
       }
     }
     if (!description) {
