@@ -5,7 +5,7 @@ id: 21
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA
+  - DSA Course
 ---
 
 ## Notation for Algorithm design

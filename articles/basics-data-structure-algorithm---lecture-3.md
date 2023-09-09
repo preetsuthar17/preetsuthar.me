@@ -5,7 +5,7 @@ id: 19
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA
+  - DSA Course
 ---
 
 # Let's talk about operations we can perform on data structures.

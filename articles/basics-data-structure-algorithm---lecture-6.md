@@ -5,7 +5,7 @@ id: 22
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA
+  - DSA Course
 ---
 
 ## Algorithm Analysis
@@ -34,20 +34,21 @@ tags:
 
 - The memory is primary memory not a hard drive or removable media.
 
-
 ## Notations
+
 1. Asymptotic Notation
 2. Big-O-Notation
 3. Omega Notation
 4. Theta Notation
-  
+
 ![Preview](https://i.imgur.com/xt0Fd2E.png)
 
-
 ## Asymptotic Notation
+
 - A Asymptotic notation is used to describe the running time of an algorithm its a order of growth of function
 
 ### Uses
+
 - They can be used to represent the complexities of algorithms for asymptotic analysis.
 
 - They allow the comparison of the performance of an algorithm.
@@ -60,8 +61,8 @@ tags:
 
 - The big-O notation is a method representing the upper bond of algorithm running time.
 
-- Using big-O-Notation we can give longest amount of time taken by the algorithm to 
-complete.
+- Using big-O-Notation we can give longest amount of time taken by the algorithm to
+  complete.
 
 - Let `f(n)` and `g(n)` being two non-negative functions
 
@@ -69,8 +70,7 @@ complete.
 
 - It is also denoted as `f(n (- Og(n))`
 
-- In other words `f(n) < g(n)` if `g(n)` is multiple of some constant. 
-
+- In other words `f(n) < g(n)` if `g(n)` is multiple of some constant.
 
 ## Omega Notation (lower bond; best case)
 
@@ -83,7 +83,6 @@ complete.
 - A function `f(n)` is said to be in `Ω(g(n))` if `f(n)` is bounded below some positive constant multiple of `y(n)` such that `f(n) >= C * g(n)`
 
 - For all `n >= no` is denoted as `f(n) (- g(n)`
-
 
 ## Theta Notation
 
