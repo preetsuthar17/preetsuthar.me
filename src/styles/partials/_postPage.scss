@@ -63,6 +63,7 @@ $background-color_1: #180d23;
   word-wrap: break-word;
   border-radius: 3px;
   cursor: auto !important;
+  font-size: 1.05rem !important;
 
   p {
     color: $color_3;
@@ -221,7 +222,8 @@ $background-color_1: #180d23;
     font-size: 29px;
   }
   .content {
-    font-size: 14px;
+    font-size: 1.03rem;
+
 
     h1 {
       font-size: 32px;
