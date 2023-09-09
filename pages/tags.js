@@ -34,7 +34,7 @@ const Tags = ({ tags }) => {
           ease: "expo.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 90%",
+            start: "top 100%",
             end: "center",
             toggleActions: "play none none reverse",
           },
