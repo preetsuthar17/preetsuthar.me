@@ -216,6 +216,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               </div>
               <time className="date">{post.frontmatter.date} - </time>
               <span className="p-color date">{currentViews} views</span>
+
               <div
                 style={{
                   display: "flex",
@@ -234,6 +235,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 ))}
               </div>
             </div>
+
             <div
               className="donateUs"
               style={{

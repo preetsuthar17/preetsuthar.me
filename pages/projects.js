@@ -18,24 +18,27 @@ const Projects = () => {
   });
 
   useEffect(() => {
-    const contentItems = document.querySelectorAll(".project-card");
+    const cardContainers = document.querySelectorAll(".project-card");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: contentItems,
-        start: "center 100%",
-        end: "center",
-        scrub: 2,
-      },
-    });
-
-    contentItems.forEach((item, index) => {
-      tl.fromTo(
-        item,
-        { opacity: 0, x: "70px" },
-        { opacity: 1, x: 0, duration: 0.5, ease: "bounce.in" }
-      ),
-        index * 0.8;
+    cardContainers.forEach((container, index) => {
+      gsap.to({}, 0.6, {});
+      gsap.fromTo(
+        container,
+        { opacity: 0, x: -80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.2,
+          delay: index * 0.01,
+          ease: "power1.in",
+          scrollTrigger: {
+            trigger: container,
+            start: "top 60%",
+            end: "center 100%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
     });
   }, []);
 

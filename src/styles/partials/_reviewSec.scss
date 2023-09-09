@@ -14,7 +14,7 @@ $background-color_3: #131314;
 .review-form-div {
   color: $color_1;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 3px;
   max-width: 400px;
   height: 100vh;
   font-family: $font-family_1 !important;
@@ -43,7 +43,7 @@ input {
   backdrop-filter: blur(8px);
   padding: 1rem;
   margin-bottom: 8px;
-  border-radius: 5px;
+  border-radius: 3px;
   font-family: $font-family_1;
   font-size: 14px;
   width: 100%;
@@ -62,11 +62,10 @@ textarea {
   }
   background-color: transparent;
   color: $color_2 !important;
-  border-radius: 14px;
   padding: 1rem;
   border: 2px solid #ffffff0c;
   backdrop-filter: blur(8px);
-  border-radius: 5px;
+  border-radius: 3px;
   margin-bottom: 8px;
   font-size: 14px;
   width: 100%;
@@ -121,7 +120,7 @@ button[type="submit"] {
     transition: 0.2s all ease-in-out;
     text-decoration: none;
     &:hover {
-      border-radius: 6px;
+      border-radius: 3px;
       color: $color_8;
       background-color: $background-color_1;
     }
@@ -142,7 +141,7 @@ button[type="submit"] {
   }
   &::-webkit-scrollbar-thumb {
     background-color: #ababab86;
-    border-radius: 5px;
+    border-radius: 3px;
   }
 }
 .reviews-slider {
@@ -158,7 +157,7 @@ button[type="submit"] {
   flex: 0 0 300px;
   padding: 1rem;
   margin: 1rem 1rem;
-  border-radius: 8px;
+  border-radius: 3px;
   height: 10rem;
   background-color: #45454516;
   border: 2px solid #ababab28;
@@ -250,7 +249,7 @@ button[type="submit"] {
 
 .dialog-box {
   background-color: $background-color_3;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 30px;
   width: 16rem;
   text-align: center;
@@ -273,7 +272,7 @@ button[type="submit"] {
 
 .dialog-box-review {
   background-color: $background-color_3;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 20px;
   width: 13rem;
   text-align: center;

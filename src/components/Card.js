@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-
-
 const Card = ({ heading, stars, description }) => {
   const [isLoading, setIsLoading] = useState(true);
 

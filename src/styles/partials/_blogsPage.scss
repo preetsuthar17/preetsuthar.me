@@ -23,7 +23,7 @@ $color_3: #aaaab5;
     background-color: #0e0e0e68;
     border: 2px solid #ffffff0c;
     backdrop-filter: blur(8px);
-    border-radius: 5px;
+    border-radius: 3px;
     &::selection {
       background-color: #0073ff;
       color: #fff;
@@ -92,11 +92,14 @@ $color_3: #aaaab5;
   --transition-duration: 1s;
   --transition-easing: ease-out;
   overflow: hidden;
+  transform: translateX(-80px);
+  opacity: 0;
+
   display: flex;
   padding: 2rem;
   border: 02px solid #ababab28;
   backdrop-filter: blur(10px);
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #45454516;
   flex-direction: column;
   text-align: left;
@@ -134,7 +137,6 @@ $color_3: #aaaab5;
     transform: skew(45deg);
     position: absolute;
     transition: left 900ms ease;
-    
   }
   &:hover {
     transform: translateY(-25%);
@@ -206,6 +208,6 @@ $color_3: #aaaab5;
   padding: 0.5rem 1rem;
   margin-top: 0.7rem;
   margin-right: 0.7rem;
-  border-radius: 5px;
-  border: 1px #aaaab579 solid;
+  border-radius: 3px;
+  border: 2px #aaaab533 solid;
 }

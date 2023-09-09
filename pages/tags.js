@@ -1,9 +1,9 @@
-// pages/tags.js
-
 import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+
+import { useEffect } from "react";
 
 import Navbar from "../src/components/navbar";
 import Footer from "../src/components/footer";
@@ -12,7 +12,37 @@ import Head from "next/head";
 
 import { motion } from "framer-motion";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Tags = ({ tags }) => {
+  useEffect(() => {
+    const contentItems = document.querySelectorAll(".post-tag");
+
+    contentItems.forEach((item, index) => {
+      gsap.fromTo(
+        item,
+        { opacity: 0, x: -80 },
+
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.2,
+          delay: index * 0.09,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "center",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -50,7 +80,7 @@ const Tags = ({ tags }) => {
               <p>List of tags for blog posts.</p>
             </div>
           </div>
-          <div className="project-container">
+          <div className="tags-container">
             {tags.map((tag) => (
               <div className="post-tag tags-item" key={tag}>
                 <Link className="no-decoration p-color" href={`/tags/${tag}`}>

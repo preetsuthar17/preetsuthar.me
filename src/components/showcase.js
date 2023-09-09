@@ -152,7 +152,14 @@ const Showcase = () => {
           exit={{ opacity: 1 }}
           transition={{ duration: 1.4, delay: 1.6 }}
         >
-          <Navbar />
+          <motion.div
+            initial={{ opacity: 1, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 2, ease: "circOut" }}
+          >
+            <Navbar />
+          </motion.div>
         </motion.div>
         <main>
           <section className="showcase">

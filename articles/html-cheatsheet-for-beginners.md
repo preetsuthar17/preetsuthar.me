@@ -5,7 +5,7 @@ id: 2
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - cheatsheet
+  - Cheatsheet
   - HTML
 ---
 

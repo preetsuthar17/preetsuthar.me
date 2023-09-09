@@ -5,7 +5,7 @@ id: 4
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - other
+  - Other
 ---
 
 Hello there! As a fellow techie, I understand the importance of having the right tools and gear to fuel our daily endeavors. Below is a list of my trusted tech and gear that I use on a daily basis to conquer the digital realm! Let's dive right in! 💻🔧

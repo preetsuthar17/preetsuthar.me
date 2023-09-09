@@ -6,7 +6,6 @@ import React from "react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import gsap from "gsap";
-gsap.registerPlugin();
 gsap.registerPlugin(ScrollTrigger);
 
 import Image from "next/image";
@@ -152,6 +151,34 @@ const About = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const contentItems = document.querySelectorAll(".about-contact-link");
+    const tl = gsap.timeline();
+
+    tl.to({}, 1.6, {});
+
+    contentItems.forEach((item, index) => {
+      tl.fromTo(
+        item,
+        { opacity: 0, x: -80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.2,
+          delay: index * 0.1,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            end: "center",
+            toggleActions: "play none none none",
+            once: true,
+          },
+        }
+      );
+    });
+  }, []);
+
   const birthdate = "2006-08-28";
   return (
     <>
@@ -228,7 +255,7 @@ const About = () => {
                   </div>
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, translateY: 50 }}
+                  initial={{ opacity: 0, translateY: 80 }}
                   animate={{ opacity: 1, translateY: 0 }}
                   exit={{ opacity: 0, translateY: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -258,15 +285,6 @@ const About = () => {
                           database implementation in the reviews section.{" "}
                         </p>
 
-                        <div
-                          className="sub-heading"
-                          style={{
-                            fontSize: "1.7rem",
-                            marginTop: "1rem",
-                          }}
-                        >
-                          #links
-                        </div>
                         <div className="about-contact-links">
                           <ul
                             style={{
@@ -274,37 +292,52 @@ const About = () => {
                             }}
                           >
                             <Link
-                              className="link-color no-decoration"
+                              className="link-color about-contact-link no-decoration"
                               href="https://github.com/preetsuthar17"
                               target="_blank"
+                              style={{
+                                flexGrow: "1",
+                              }}
                             >
                               <li> GitHub</li>
                             </Link>
                             <Link
-                              className="link-color no-decoration"
+                              className="link-color about-contact-link no-decoration"
                               href="mailto:preetsutharxd@gmail.com"
                               target="_blank"
+                              style={{
+                                flexGrow: "1",
+                              }}
                             >
                               <li>Email</li>
                             </Link>
                             <Link
-                              className="link-color no-decoration"
+                              className="link-color about-contact-link no-decoration"
                               href="https://discord.gg/XeQ95WzGq9"
                               target="_blank"
+                              style={{
+                                flexGrow: "1",
+                              }}
                             >
                               <li>Discord Server</li>
                             </Link>
                             <Link
-                              className="link-color no-decoration"
+                              className="link-color about-contact-link no-decoration"
                               href="https://twitter.com/preetsuthar17"
                               target="_blank"
+                              style={{
+                                flexGrow: "1",
+                              }}
                             >
                               <li>Twitter</li>
                             </Link>
                             <Link
-                              className="link-color no-decoration"
+                              className="link-color about-contact-link no-decoration"
                               href="https://instagram.com/nottpreet28"
                               target="_blank"
+                              style={{
+                                flexGrow: "1",
+                              }}
                             >
                               <li>Instagram</li>
                             </Link>
@@ -346,7 +379,7 @@ const About = () => {
                           color: "#aaa",
                           fontSize: "0.8rem",
                           textAlign: "left",
-                          marginTop: '0.6rem'
+                          marginTop: "0.6rem",
                         }}
                       >
                         &nbsp;&nbsp;Secured by Stripe

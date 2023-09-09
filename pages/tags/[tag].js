@@ -7,10 +7,42 @@ import { motion } from "framer-motion";
 
 import Head from "next/head";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 import Navbar from "../../src/components/navbar";
 import Footer from "../../src/components/footer";
+import { useEffect } from "react";
 
 const Tag = ({ blogs }) => {
+  useEffect(() => {
+    const cardItem = document.querySelectorAll(".blog-card");
+    const tl = gsap.timeline();
+
+    tl.to({}, 0.2, {});
+
+    cardItem.forEach((card, index) => {
+      tl.fromTo(
+        card,
+        { opacity: 0, x: -80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.2,
+          ease: "power1.in",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 60%",
+            end: "bottom",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  });
+
   const router = useRouter();
   const { tag } = router.query;
 

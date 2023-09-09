@@ -5,7 +5,7 @@ id: 10
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - guide
+  - Guide
   - CSS
 ---
 

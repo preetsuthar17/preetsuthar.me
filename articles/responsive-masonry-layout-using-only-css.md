@@ -5,7 +5,7 @@ id: 23
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - tutorial
+  - Tutorial
   - CSS
   - HTML
 ---

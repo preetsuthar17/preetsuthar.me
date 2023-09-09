@@ -5,7 +5,7 @@ id: 9
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - tutorial
+  - Tutorial
 ---
 
 ## Preview
