@@ -90,7 +90,6 @@ $color_3: #aaaab5;
 .blog-card {
   overflow: hidden;
   transform: translateX(-80px);
-  opacity: 0;
   display: flex;
   padding: 2rem;
   border: 02px solid #ababab28;
@@ -107,12 +106,12 @@ $color_3: #aaaab5;
 
   &::before,
   &::after {
-    border-radius: inherit;
     content: "";
     height: 100%;
     left: 0px;
     opacity: 0;
     position: absolute;
+    z-index: -1;
     top: 0px;
     transition: opacity 500ms;
     width: 100%;
@@ -124,7 +123,6 @@ $color_3: #aaaab5;
       rgba(255, 255, 255, 0.06),
       transparent 40%
     );
-    z-index: 3;
   }
 
   &::after {
@@ -133,11 +131,11 @@ $color_3: #aaaab5;
       rgba(255, 255, 255, 0.3),
       transparent 40%
     );
-    z-index: 1;
   }
 
   a {
     color: $color_1;
+    z-index: 99;
     transition: 0.3s ease-in-out;
     text-decoration: none;
     color: #40c9ff;

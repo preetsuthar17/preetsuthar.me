@@ -18,30 +18,21 @@ import { useEffect } from "react";
 
 const Tag = ({ blogs }) => {
   useEffect(() => {
-    const cardItem = document.querySelectorAll(".blog-card");
-    const tl = gsap.timeline();
+    const handleMousemove = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-    tl.to({}, 0.2, {});
-
-    cardItem.forEach((card, index) => {
-      tl.fromTo(
-        card,
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.2,
-          ease: "power1.in",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 100%",
-            end: "bottom",
-            toggleActions: "play none none none",
-          },
-        }
-      );
+      e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+      e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+    };
+    document.querySelectorAll(".blog-card").forEach((card) => {
+      card.addEventListener("mousemove", handleMousemove);
+      return () => {
+        card.removeEventListener("mousemove", handleMousemove);
+      };
     });
-  });
+  }, []);
 
   const router = useRouter();
   const { tag } = router.query;
@@ -114,7 +105,7 @@ const Tag = ({ blogs }) => {
         </h1>
 
         <motion.div
-          initial={{ opacity: 1, translateX: -100 }}
+          initial={{ opacity: 0, translateX: -100 }}
           animate={{ opacity: 1, translateX: 0 }}
           exit={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.5 }}
@@ -122,36 +113,46 @@ const Tag = ({ blogs }) => {
           <div className="blog-container">
             {filteredBlogs.map((blog, index) => (
               <div key={index}>
-                <div className="blog-card">
-                  <Link href={`/posts/${blog.slug}`}>
-                    <h2
-                      className="blog-header"
+                <motion.div
+                  initial={{ opacity: 1, x: -80 }}
+                  animate={{ opacity: 1, x: 80 }}
+                  exit={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="blog-card">
+                    <Link href={`/posts/${blog.slug}`}>
+                      <h2
+                        className="blog-header"
+                        style={{
+                          fontWeight: "500",
+                        }}
+                      >
+                        {blog.title}
+                      </h2>
+                    </Link>
+                    <p
+                      className="blog-text blog-date"
                       style={{
-                        fontWeight: "500",
+                        fontSize: "0.9rem",
                       }}
                     >
-                      {blog.title}
-                    </h2>
-                  </Link>
-                  <p
-                    className="blog-text blog-date"
-                    style={{
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    {blog.date}
-                  </p>
-                  <div
-                    style={{
-                      marginTop: "0.6rem",
-                    }}
-                  >
-                    <Link href={`/posts/${blog.slug}`} passHref>
-                      Read article &rarr;
-                    </Link>
+                      {blog.date}
+                    </p>
+                    <div
+                      style={{
+                        marginTop: "0.6rem",
+                      }}
+                    >
+                      <Link href={`/posts/${blog.slug}`} passHref>
+                        Read article &rarr;
+                      </Link>
+                    </div>
+                    <div className="p-color post-tag">
+                      {" "}
+                      {blog.tag.join(", ")}
+                    </div>
                   </div>
-                  <div className="p-color post-tag"> {blog.tag.join(", ")}</div>
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>
