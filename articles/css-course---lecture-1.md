@@ -49,7 +49,7 @@ What we did here is basically we called the element which has class of `para` us
 
 ## Syntax of CSS
 
-I am pretty sure that you must've learned basics of HTML before diving into CSS [check out this post](https://www.preetsuthar.me/posts/beautiful-background-animation-only-with-html-and-css).
+I am pretty sure that you must've learned basics of HTML before diving into CSS [check out this post](https://www.preetsuthar.me/posts/html-cheatsheet-for-beginners).
 
 For classes,
 
