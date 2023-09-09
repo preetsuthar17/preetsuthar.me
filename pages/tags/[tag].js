@@ -36,7 +36,7 @@ const Tag = ({ blogs }) => {
             trigger: card,
             start: "top 60%",
             end: "bottom",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         }
       );
