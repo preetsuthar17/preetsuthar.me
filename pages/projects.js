@@ -42,6 +42,23 @@ const Projects = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const handleMousemove = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+      e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+    };
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("mousemove", handleMousemove);
+      return () => {
+        card.removeEventListener("mousemove", handleMousemove);
+      };
+    });
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -112,7 +129,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 2 */}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link href="https://todozenith.vercel.app/">
                   <div className="project-header">
                     <span>TodoZenith</span>
@@ -129,7 +146,7 @@ const Projects = () => {
               </div>
               {/* Project 3 */}
 
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://discord-bot-webpage-template.vercel.app/"
@@ -152,7 +169,7 @@ const Projects = () => {
               </div>
               {/* Project 4 */}
 
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
@@ -174,7 +191,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 5 */}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://gatsby-blog-temp.netlify.app"
@@ -197,7 +214,7 @@ const Projects = () => {
               </div>
 
               {/* Project 6*/}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://gatsby-portfolio-temp.netlify.app"
@@ -219,7 +236,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 7*/}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://github.com/preetsuthar17/Vinlybot"
@@ -241,7 +258,7 @@ const Projects = () => {
                 </Link>
               </div>
               {/* Project 8*/}
-              <div className="project-card ">
+              <div className="project-card">
                 <Link
                   target="_blank"
                   href="https://github.com/preetsuthar17/Zakbot"

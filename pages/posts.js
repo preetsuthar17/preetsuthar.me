@@ -23,6 +23,7 @@ export default function Posts({ posts, tags }) {
   const sanitizeQuery = (query) => {
     return query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
   });
@@ -76,6 +77,23 @@ export default function Posts({ posts, tags }) {
       );
     });
   };
+
+  useEffect(() => {
+    const handleMousemove = (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+      e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+    };
+    document.querySelectorAll(".blog-card").forEach((card) => {
+      card.addEventListener("mousemove", handleMousemove);
+      return () => {
+        card.removeEventListener("mousemove", handleMousemove);
+      };
+    });
+  }, []);
 
   useEffect(() => {
     initializeCardAnimation();
