@@ -70,15 +70,56 @@ $color_5: #3dbbed;
 
 .project-card {
   border: 02px solid #ababab28;
-
+  overflow: hidden;
   backdrop-filter: blur(10px);
+
   border-radius: 5px;
   flex-grow: 1;
   flex-basis: 20rem;
   padding: 2rem;
   transition: 0.3s ease-in-out !important;
-
   background-color: #45454516;
+  &::before {
+    content: "";
+    background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.09) 50%,
+      rgba(128, 186, 232, 0) 99%,
+      rgba(125, 185, 232, 0) 100%
+    ); /* FF3.6+ */
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0%, rgba(255, 255, 255, 0)),
+      color-stop(50%, rgba(255, 255, 255, 0.09)),
+      color-stop(99%, rgba(128, 186, 232, 0)),
+      color-stop(100%, rgba(125, 185, 232, 0))
+    ); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.09) 50%,
+      rgba(128, 186, 232, 0) 99%,
+      rgba(125, 185, 232, 0) 100%
+    ); /* Chrome10+,Safari5.1+ */
+
+    width: 60%;
+    height: 100%;
+    top: 0%;
+    left: -125%;
+    transform: skew(45deg);
+    position: absolute;
+    transition: left 900ms ease;
+  }
+  &:hover {
+    transform: translateY(-25%);
+
+    &::before {
+      left: 150%;
+    }
+  }
   a {
     color: $color_4;
     transition: 0.3s ease-in-out;
