@@ -34,7 +34,7 @@ const Tag = ({ blogs }) => {
           ease: "power1.in",
           scrollTrigger: {
             trigger: card,
-            start: "top 60%",
+            start: "top 100%",
             end: "bottom",
             toggleActions: "play none none none",
           },
