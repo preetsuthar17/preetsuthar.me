@@ -45,7 +45,7 @@ export default function Posts({ posts, tags }) {
           scrollTrigger: {
             trigger: item,
             start: "top 90%",
-            end: "center",
+            end: "top",
             toggleActions: "play none none reverse",
           },
         }
@@ -53,31 +53,33 @@ export default function Posts({ posts, tags }) {
     });
   }, []);
 
-  useEffect(() => {
+  const initializeCardAnimation = () => {
     const contentItems = document.querySelectorAll(".blog-card");
 
     contentItems.forEach((item, index) => {
       gsap.fromTo(
         item,
         { opacity: 0, x: -80 },
-
         {
           opacity: 1,
           x: 0,
           duration: 0.2,
           delay: 0.1,
-
           ease: "expo.out",
           scrollTrigger: {
             trigger: item,
             start: "top 90%",
-            end: "center",
+            end: "top",
             toggleActions: "play none none reverse",
           },
         }
       );
     });
-  }, []);
+  };
+
+  useEffect(() => {
+    initializeCardAnimation();
+  }, [searchResults]);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
