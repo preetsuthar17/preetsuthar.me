@@ -147,10 +147,6 @@ const Tag = ({ blogs }) => {
                         Read article &rarr;
                       </Link>
                     </div>
-                    <div className="p-color post-tag">
-                      {" "}
-                      {blog.tag.join(", ")}
-                    </div>
                   </div>
                 </motion.div>
               </div>
