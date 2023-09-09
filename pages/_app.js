@@ -42,6 +42,14 @@ export default function App({ Component, pageProps }) {
     }
   }, []);
 
+  if (showDialog == true) {
+    document.addEventListener("keydown", (event) => {
+      if (event.keyCode === 27) {
+        setShowDialog(false);
+      }
+    });
+  }
+
   const handleCloseDialog = () => {
     setShowDialog(false);
   };
