@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   return (
     <>
-      <header className="navbar-div" id="topPage">
+      <div className="navbar-div" id="topPage">
         <nav className="navbar">
           <div className="nav-header">
             <Link href="/">
@@ -105,7 +105,7 @@ const Navbar = () => {
             </ul>
           </nav>
         </nav>
-      </header>
+      </div>
     </>
   );
 };

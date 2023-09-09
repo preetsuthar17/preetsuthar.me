@@ -21,7 +21,14 @@
 }
 
 html {
-  background-color: rgb(21, 21, 24);
+  background: linear-gradient(
+    -45deg,
+    rgb(5, 5, 5),
+    rgb(21, 21, 24),
+    rgb(5, 5, 5),
+    rgb(21, 21, 24)
+  );
+  background-size: 400% 400%;
 }
 
 body {
