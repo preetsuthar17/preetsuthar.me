@@ -611,20 +611,12 @@ const About = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                 >
                   <section id="cd-timeline" className="cd-container">
-                    <div className="cd-timeline-block">
+                    {/* <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-picture"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Preet Suthar ⭐</h2>
-                        <div className="timeline-content-info">
-                          <span className="timeline-content-info-title">
-                            <i
-                              className="fa fa-certificate"
-                              aria-hidden="true"
-                            ></i>
-                            Front-End Developer
-                          </span>
-                        </div>
+                        <h2>Currently</h2>
+
                         <p>
                           Dates in this timeline might not be the most accurate,
                           But yeah, all the dates in this are somewhere around
@@ -638,13 +630,26 @@ const About = () => {
                           <li>React.js</li>
                         </ul>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Gave my first lecture 🎓</h2>
+                        <h2>Learning more about Full-Stack</h2>
+                        <p>
+                          I am still a student pursuing my diploma @ECT in
+                          Computer Eng. I have a vision of becoming a Full-Stack
+                          Web Developer so I am learning about that too.
+                        </p>
+                        <span className="cd-date">Present</span>
+                      </div>
+                    </div>
+                    <div className="cd-timeline-block">
+                      <div className="cd-timeline-img cd-movie"></div>
+
+                      <div className="cd-timeline-content">
+                        <h2>Gave lecture about DB @ECT</h2>
                         <p>
                           I gave my first lecture in college which went
                           fantastic. The lecture was about database systems and
@@ -658,19 +663,18 @@ const About = () => {
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Next Js ⚡</h2>
+                        <h2>Learned React & Its Frameworks</h2>
                         <p>
-                          When I was learning Gatsby Js I heard about Next Js 13
-                          which was pretty fast compared to Gatsby Js. That's
-                          when I researched more about Next js and I found that
-                          pretty interesting so soon after finishing Gatsby Js I
-                          switched Next js [yeah, don't judge me].
+                          I learned React Js and also almost finished Gatsby Js.
+                          Later I heard that Next Js is lighting fast for SSR
+                          websites. I started to research about it and found
+                          Interesting to I started to learn Next Js via YouTube.
                         </p>
-                        <span className="cd-date">Feb 7 , 2023</span>
+                        <span className="cd-date">Feb 7, 2023</span>
                       </div>
                     </div>
 
-                    <div className="cd-timeline-block">
+                    {/* <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-picture"></div>
 
                       <div className="cd-timeline-content">
@@ -683,24 +687,23 @@ const About = () => {
                         </p>
                         <span className="cd-date">May 9, 2021</span>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-location"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Magic 🪄</h2>
+                        <h2>Learning @ home</h2>
                         <p>
-                          Fast-forward to 2021, I was still creating websites
-                          using only HTML and CSS. But then I heard about
-                          Javascript. So I started to do more research about
-                          that.
+                          Fast-forward to 2021, Pretty much mastered HTML & CSS.
+                          Then I heard about JavaScript. Started to Learn
+                          JavaScript via YouTube
                         </p>
                         <span className="cd-date">Feb 14, 2021</span>
                       </div>
                     </div>
 
-                    <div className="cd-timeline-block">
+                    {/* <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-location"></div>
 
                       <div className="cd-timeline-content">
@@ -712,17 +715,18 @@ const About = () => {
                         </p>
                         <span className="cd-date">Sep 1, 2020</span>
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className="cd-timeline-block">
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Beginning 🐢</h2>
+                        <h2>Learning @ JJIS</h2>
 
                         <p>
-                          Created my first website using HTML. It wasn't good
-                          ofcourse.
+                          Write my first lines of HTML and CSS using Chrome!
+                          Fell in love with web development. Started to learn
+                          more about HTML & CSS.
                         </p>
                         <span className="cd-date">Aug 21, 2020</span>
                       </div>

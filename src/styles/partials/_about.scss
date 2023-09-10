@@ -307,7 +307,7 @@ $color_3: #aaaab5;
 .cd-timeline-content h2 {
   color: #ffffffc5;
   font-weight: 100;
-  margin-top: 0;
+  margin: 1rem;
   margin-bottom: 5px;
 }
 .cd-timeline-content p,
@@ -316,13 +316,15 @@ $color_3: #aaaab5;
   font-size: 15px;
 }
 .cd-timeline-content .cd-date {
+  font-size: 1.1rem;
   border-bottom: 1px solid #fff;
   width: max-content !important;
+  margin: 1rem;
   padding-bottom: 1px;
   display: inline-block;
 }
 .cd-timeline-content p {
-  margin: 1em 0;
+  margin: 1em;
   font-size: 17px;
   line-height: 1.6rem;
 }
@@ -334,8 +336,8 @@ $color_3: #aaaab5;
   right: 100%;
   height: 0;
   width: 0;
-  border: 7px solid transparent;
-  border-right: 7px solid #1f1f22;
+  border: 12px solid transparent;
+  border-right: 12px solid #1f1f22;
 }
 
 @media only screen and (min-width: 768px) {
