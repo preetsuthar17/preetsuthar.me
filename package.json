@@ -30,6 +30,7 @@
     "react-icons": "^4.10.1",
     "react-top-loading-bar": "^2.3.1",
     "remark": "^14.0.3",
+    "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2"
   },
   "devDependencies": {
