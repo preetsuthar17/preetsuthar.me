@@ -1,16 +1,14 @@
 .course-snackbar {
-  z-index: 99999;
-  bottom: 10px;
+  z-index: 99999 !important;
+  bottom: 30px;
   font-size: 0.9rem;
   width: fit-content;
-  padding-top: 0.6rem;
-  padding-bottom: 0.3rem;
-  padding-right: 1rem;
-  padding-left: 0.8rem;
   border-radius: 0 5px 5px 0;
   position: fixed;
   display: flex;
   justify-content: center;
+  padding: 0.3rem;
+  padding-top: 0.6rem;
   gap: 0.5rem;
   text-align: center;
   color: #fff;
@@ -20,7 +18,6 @@
   }
   .course-snackbarClose {
     cursor: pointer;
-    padding: 0;
     background-color: transparent;
     border: none;
   }

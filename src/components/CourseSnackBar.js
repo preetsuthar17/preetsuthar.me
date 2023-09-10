@@ -9,6 +9,7 @@ const CourseSnackBar = () => {
   const handleClose = () => {
     setIsOpen(false);
   };
+
   return (
     <>
       {isOpen && (
@@ -21,11 +22,11 @@ const CourseSnackBar = () => {
           <div className="course-snackbar">
             <div>
               <p>
-                Check out our latest DSA series.{" "}
+                Check out latest CSS series.{" "}
                 <Link
                   onClick={handleClose}
                   className="p-color"
-                  href="/tags/DSA"
+                  href="https://preetsuthar.me/tags/CSS%20Course"
                 >
                   Here
                 </Link>
