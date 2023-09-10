@@ -21,6 +21,7 @@
     "fs-extra": "^11.1.1",
     "gray-matter": "^4.0.3",
     "gsap": "^3.12.2",
+    "markdown-it": "^13.0.1",
     "next": "^13.4.10",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^4.2.2",
