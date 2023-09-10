@@ -9,6 +9,7 @@ import path from "path";
 import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 
 import { motion } from "framer-motion";
 
@@ -423,8 +424,11 @@ export async function getStaticProps({ params }) {
       }
     : null;
 
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
+const processedContent = await remark()
+  .use(remarkGfm)
+  .use(html)
+  .process(content);
+const contentHtml = processedContent.toString();
 
   const { data: viewsData, error: viewsError } = await supabase
     .from("blog_views")

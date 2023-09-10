@@ -160,6 +160,27 @@ $background-color_1: #180d23;
       color: $color_5;
     }
   }
+
+  table {
+    width: 100%;
+    color: #ababab;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    border: 2px solid #dddddd09;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    font-weight: normal;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #19191b8f;
+  }
+
   img {
     max-width: 100%;
     height: auto;
