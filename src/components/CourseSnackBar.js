@@ -10,6 +10,10 @@ const CourseSnackBar = () => {
     setIsOpen(false);
   };
 
+  setTimeout(() => {
+    setIsOpen(false);
+  }, 10000);
+
   return (
     <>
       {isOpen && (
@@ -20,18 +24,6 @@ const CourseSnackBar = () => {
           transition={{ duration: 0.4, delay: 5 }}
         >
           <div className="course-snackbar">
-            <div>
-              <p>
-                Check out latest CSS series.{" "}
-                <Link
-                  onClick={handleClose}
-                  className="p-color"
-                  href="https://preetsuthar.me/tags/CSS%20Course"
-                >
-                  Here
-                </Link>
-              </p>
-            </div>
             <div>
               <button onClick={handleClose} className="course-snackbarClose">
                 <svg
@@ -46,6 +38,18 @@ const CourseSnackBar = () => {
                   />
                 </svg>
               </button>
+            </div>
+            <div>
+              <p>
+                Check out latest CSS series.{" "}
+                <Link
+                  onClick={handleClose}
+                  className="p-color"
+                  href="https://preetsuthar.me/tags/CSS%20Course"
+                >
+                  Here
+                </Link>
+              </p>
             </div>
           </div>
         </motion.div>
