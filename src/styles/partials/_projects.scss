@@ -100,12 +100,13 @@ $color_5: #3dbbed;
   }
 
   &::before {
+    z-index: -1 !important;
+
     background: radial-gradient(
       800px circle at var(--mouse-x) var(--mouse-y),
       rgba(255, 255, 255, 0.06),
       transparent 40%
     );
-    z-index: 3;
   }
 
   &::after {
@@ -114,11 +115,12 @@ $color_5: #3dbbed;
       rgba(255, 255, 255, 0.3),
       transparent 40%
     );
-    z-index: 1;
+    z-index: -1 !important;
   }
 
   a {
     color: $color_4;
+
     transition: 0.3s ease-in-out;
     text-decoration: none;
     &:hover {
@@ -129,17 +131,7 @@ $color_5: #3dbbed;
   .project-name {
     padding-top: 1rem;
   }
-  .overlay {
-    position: absolute;
-    z-index: -2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.01), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+
   img {
     &:hover {
       color: $color_3;

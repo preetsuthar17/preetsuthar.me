@@ -12,6 +12,8 @@ const Footer = dynamic(() => import("@/src/components/footer"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 import Layout from "@/src/components/Layout";
 
+import ProjectCard from "@/src/components/ProjectCard";
+
 const Projects = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -111,174 +113,46 @@ const Projects = () => {
             </motion.div>
             <div className="styled-hr"></div>
             <div className="project-container">
-              {/* Project 1 */}
-              <div className="project-card">
-                <Link target="_blank" href="https://preetsuthar.me">
-                  <div className="project-header">
-                    <span>preetsuthar.me</span>
-                  </div>
-
-                  <p className="project-text">
-                    This is my open-source personal portfolio website and blog
-                    website built running on next.js and react.js and deployed
-                    using Vercel.
-                  </p>
-                </Link>
-                <Link target="_blank" href="https://preetsuthar.me">
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 2 */}
-              <div className="project-card">
-                <Link href="https://todozenith.vercel.app/">
-                  <div className="project-header">
-                    <span>TodoZenith</span>
-                  </div>
-
-                  <p className="project-text">
-                    Simplified JavaScript to-do manager with advanced features
-                    for effortless task management. Get things done with ease!
-                  </p>
-                </Link>
-                <Link target="_blank" href="https://todozenith.vercel.app/">
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 3 */}
-
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://discord-bot-webpage-template.vercel.app/"
-                >
-                  <div className="project-header">
-                    <span>Discord bot website template</span>
-                  </div>
-
-                  <p className="project-text">
-                    Minimal and awesome discord bot website created with love
-                    using NextJS.
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://discord-bot-webpage-template.vercel.app/"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 4 */}
-
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
-                >
-                  <div className="project-header">
-                    <span>ShadowedNight</span>
-                  </div>
-
-                  <p className="project-text">
-                    Embrace the mystery of the night with an elegant and
-                    immersive dark theme for a captivating coding experience.
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 5 */}
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://gatsby-blog-temp.netlify.app"
-                >
-                  <div className="project-header">
-                    <span>Advance blog template</span>
-                  </div>
-
-                  <p className="project-text">
-                    Gatsby Blog Template - Open Source and Welcoming
-                    Contributions.
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://gatsby-blog-temp.netlify.app"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
-
-              {/* Project 6*/}
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://gatsby-portfolio-temp.netlify.app"
-                >
-                  <div className="project-header">
-                    <span>Advance portfolio template</span>
-                  </div>
-
-                  <p className="project-text">
-                    Portfolio Website Template - Open Source and Welcoming
-                    Contributions.
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://gatsby-portfolio-temp.netlify.app"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 7*/}
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://github.com/preetsuthar17/Vinlybot"
-                >
-                  <div className="project-header">
-                    <span>Vinlybot</span>
-                  </div>
-
-                  <p className="project-text">
-                    🐇 Vinlybot is a open-source discord bot with 100+ command
-                    where you can contribute!
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://github.com/preetsuthar17/Vinlybot"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
-              {/* Project 8*/}
-              <div className="project-card">
-                <Link
-                  target="_blank"
-                  href="https://github.com/preetsuthar17/Zakbot"
-                >
-                  <div className="project-header">
-                    <span>Zakbot</span>
-                  </div>
-
-                  <p className="project-text">
-                    Zak is a multipurpose discord bot made with discord.js v13,
-                    Created Using discord.js
-                  </p>
-                </Link>
-                <Link
-                  target="_blank"
-                  href="https://github.com/preetsuthar17/Zakbot"
-                >
-                  ⭐ Live Demo
-                </Link>
-              </div>
+              <ProjectCard
+                projectName="preetsuthar.me"
+                projectLink="https://preetsuthar.me"
+                projectAbout=" This is my open-source personal portfolio website and blog website built running on next.js and react.js and using Vercel."
+              />
+              <ProjectCard
+                projectName="TodoZenith"
+                projectLink="https://todozenith.vercel.app/"
+                projectAbout="Simplified JavaScript to-do manager with advanced features for effortless task management. Get things done with ease!"
+              />
+              <ProjectCard
+                projectName="Discord bot website template"
+                projectLink="https://discord-bot-webpage-template.vercel.app/"
+                projectAbout="Minimal and awesome discord bot website created with love using NextJS."
+              />
+              <ProjectCard
+                projectName="ShadowedNight"
+                projectLink="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
+                projectAbout="Embrace the mystery of the night with an elegant and immersive dark theme for a captivating coding experience."
+              />
+              <ProjectCard
+                projectName="Advance blog template"
+                projectLink="https://gatsby-blog-temp.netlify.app"
+                projectAbout="Gatsby Blog Template - Open Source and Welcoming Contributions."
+              />
+              <ProjectCard
+                projectName="Advance portfolio template"
+                projectLink="https://gatsby-portfolio-temp.netlify.app"
+                projectAbout=" Portfolio Website Template - Open Source and Welcoming Contributions."
+              />
+              <ProjectCard
+                projectName="Vinlybot"
+                projectLink="https://github.com/preetsuthar17/Vinlybot"
+                projectAbout="Vinlybot is a open-source discord bot with 100+ command where you can contribute!"
+              />
+              <ProjectCard
+                projectName="Zakbot"
+                projectLink="https://github.com/preetsuthar17/Zakbot"
+                projectAbout="Zak is a multipurpose discord bot made with discord js v13, Created Using discord.js"
+              />
             </div>
           </div>
         </>
