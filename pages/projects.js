@@ -121,18 +121,9 @@ const Projects = () => {
               <ProjectCard
                 projectName="TodoZenith"
                 projectLink="https://todozenith.vercel.app/"
-                projectAbout="Simplified JavaScript to-do manager with advanced features for effortless task management. Get things done with ease!"
+                projectAbout="Simplified JavaScript CRUD to-do manager with advanced features for effortless task management. Get things done with ease!"
               />
-              <ProjectCard
-                projectName="Discord bot website template"
-                projectLink="https://discord-bot-webpage-template.vercel.app/"
-                projectAbout="Minimal and awesome discord bot website created with love using NextJS."
-              />
-              <ProjectCard
-                projectName="ShadowedNight"
-                projectLink="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
-                projectAbout="Embrace the mystery of the night with an elegant and immersive dark theme for a captivating coding experience."
-              />
+
               <ProjectCard
                 projectName="Advance blog template"
                 projectLink="https://gatsby-blog-temp.netlify.app"
@@ -142,6 +133,17 @@ const Projects = () => {
                 projectName="Advance portfolio template"
                 projectLink="https://gatsby-portfolio-temp.netlify.app"
                 projectAbout=" Portfolio Website Template - Open Source and Welcoming Contributions."
+              />
+              <ProjectCard
+                projectName="Discord bot website template"
+                projectLink="https://discord-bot-webpage-template.vercel.app/"
+                projectAbout="Minimal and awesome discord bot website created with love using NextJS."
+              />
+
+              <ProjectCard
+                projectName="ShadowedNight"
+                projectLink="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
+                projectAbout="Embrace the mystery of the night with an elegant and immersive dark theme for a captivating coding experience."
               />
               <ProjectCard
                 projectName="Vinlybot"
