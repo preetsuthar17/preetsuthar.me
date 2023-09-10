@@ -11,6 +11,11 @@ import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 
+import MarkdownIt from "markdown-it";
+const md = new MarkdownIt();
+
+import twitterLogo from "../../src/utils/icons/twitter.svg";
+
 import { motion } from "framer-motion";
 
 import readArticles from "@/src/utils/readArticles";
@@ -21,6 +26,7 @@ const Footer = dynamic(() => import("@/src/components/footer"));
 
 import { supabase } from "@/src/utils/supabaseClient";
 import CustomTooltip from "@/src/components/CustomTooltip";
+import { FaDollarSign } from "react-icons/fa";
 
 function convertIdToUuid(id) {
   const hexId = id.toString(16);
@@ -36,20 +42,47 @@ function convertIdToUuid(id) {
   return uuid;
 }
 
+function calculateReadTime(content) {
+  const plainText = md.render(content);
+
+  const words = plainText.split(/\s+/).length;
+
+  const wordsPerMinute = 200;
+
+  const readTimeMinutes = words / wordsPerMinute;
+
+  const hours = Math.floor(readTimeMinutes / 60);
+  const remainingMinutes = Math.floor(readTimeMinutes % 60);
+  const seconds = Math.round((readTimeMinutes % 1) * 60);
+
+  let readTime = "";
+  if (hours > 0) {
+    readTime += `${hours} hour${hours > 1 ? "s" : ""} `;
+  }
+  if (remainingMinutes > 0) {
+    readTime += `${remainingMinutes} minute${remainingMinutes > 1 ? "s" : ""} `;
+  }
+
+  return readTime.trim();
+}
+
 export default function Post({ post, prevArticleData, nextArticleData }) {
   const [currentViews, setCurrentViews] = useState(post.views);
+  const [twitterHref, setTwitterHref] = useState("");
+
+  useEffect(() => {
+    const tweetText = encodeURIComponent(post.frontmatter.title);
+    const tweetUrl = encodeURIComponent(window.location.href);
+    const href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
+    setTwitterHref(href);
+  }, [post.frontmatter.title]);
 
   const copyLinkToClipboard = () => {
     const url = window.location.href;
-    let copyBtn = document.getElementById("copyPostBtn");
     navigator.clipboard
       .writeText(url)
       .then(() => {
         console.log("Link copied to clipboard:", url);
-        copyBtn.textContent = "❤️ Copied!";
-        setTimeout(() => {
-          copyBtn.textContent = "🔗 Copy post link!";
-        }, 7000);
       })
       .catch((error) => {
         console.error("Error copying link to clipboard:", error);
@@ -144,21 +177,6 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
   };
 
   const toc = generateTableOfContents(post.content);
-  const [textToCopy, setTextToCopy] = useState("preetsuthar@fam");
-  const [copySuccess, setCopySuccess] = useState("");
-
-  const handleCopyClick = () => {
-    navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => {
-        alert("UPI ID Copied!");
-        setCopySuccess("Text copied to clipboard");
-      })
-      .catch((err) => {
-        console.error("Failed to copy text: ", err);
-        alert("Something went wrong!\nUPI: preetsuthar@fam");
-      });
-  };
 
   return (
     <motion.div
@@ -195,6 +213,20 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
         <>
           <article id="post-top" className="container">
             <h1 className="title">{post.frontmatter.title}</h1>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+              }}
+            >
+              {post.frontmatter.tags.map((tag) => (
+                <div className="post-tag-slug" key={tag}>
+                  <Link className="no-decoration p-color" href={`/tags/${tag}`}>
+                    {tag}&nbsp;
+                  </Link>
+                </div>
+              ))}
+            </div>
             <div className="styled-hr"></div>
             <div style={{ marginBottom: "2rem" }}>
               <div
@@ -203,37 +235,68 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                   marginBottom: " 0.5rem",
                 }}
               >
+                <span className="date">By </span>
                 <Link
                   style={{
                     color: "#aaa",
-                    borderBottom: "1px solid #ccc",
+
                     textDecoration: "none",
                   }}
                   href={post.frontmatter.authorGithub}
                   target="_blank"
                 >
-                  <span>{post.frontmatter.author}</span>
+                  <span
+                    style={{
+                      borderBottom: "1px solid #ccc",
+                    }}
+                  >
+                    {post.frontmatter.author}
+                  </span>
                 </Link>
               </div>
               <time className="date">{post.frontmatter.date} - </time>
-              <span className="p-color date">{currentViews} views</span>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                }}
+              <span className="p-color date">{currentViews} views -</span>
+              <span
+                className="p-color date post-tag-slug"
+                style={{ margin: "0.5rem" }}
               >
-                {post.frontmatter.tags.map((tag) => (
-                  <div className="post-tag " key={tag}>
-                    <Link
-                      className="no-decoration p-color"
-                      href={`/tags/${tag}`}
+                {post.readTime} read
+              </span>
+
+              <div>
+                <abbr title="Share on X">
+                  <Link href={twitterHref} data-size="large" target="_blank">
+                    <Image
+                      src={twitterLogo}
+                      width={28}
+                      height={28}
+                      alt="Twitter (x)"
+                      style={{
+                        marginTop: "0.9rem",
+                      }}
+                    />
+                  </Link>
+                </abbr>
+                &nbsp; &nbsp;
+                <abbr title="copy post link">
+                  <span
+                    id="copyPostBtn"
+                    onClick={copyLinkToClipboard}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 256 256"
                     >
-                      {tag}&nbsp;
-                    </Link>
-                  </div>
-                ))}
+                      <path
+                        fill="#71717a"
+                        d="M165.66 90.34a8 8 0 0 1 0 11.32l-64 64a8 8 0 0 1-11.32-11.32l64-64a8 8 0 0 1 11.32 0ZM215.6 40.4a56 56 0 0 0-79.2 0l-30.06 30.05a8 8 0 0 0 11.32 11.32l30.06-30a40 40 0 0 1 56.57 56.56l-30.07 30.06a8 8 0 0 0 11.31 11.32l30.07-30.11a56 56 0 0 0 0-79.2Zm-77.26 133.82l-30.06 30.06a40 40 0 1 1-56.56-56.57l30.05-30.05a8 8 0 0 0-11.32-11.32L40.4 136.4a56 56 0 0 0 79.2 79.2l30.06-30.07a8 8 0 0 0-11.32-11.31Z"
+                      />
+                    </svg>
+                  </span>
+                </abbr>
               </div>
             </div>
 
@@ -265,7 +328,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               >
                 Donate
               </Link>{" "}
-              <span
+              <p
                 style={{
                   color: "#aaa",
                   fontSize: "0.8rem",
@@ -273,8 +336,8 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                   marginTop: "0.6rem",
                 }}
               >
-                &nbsp;&nbsp;Secured by Stripe
-              </span>
+                Secured by Stripe
+              </p>
             </div>
             {toc.length > 0 && (
               <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
@@ -295,20 +358,6 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                     </li>
                   ))}
                 </ul>
-                <div
-                  className="copy-link"
-                  style={{
-                    marginBottom: "2rem",
-                  }}
-                >
-                  <button
-                    id="copyPostBtn"
-                    className="primary-btn"
-                    onClick={copyLinkToClipboard}
-                  >
-                    🔗 Copy link!
-                  </button>
-                </div>
               </div>
             )}
             <div
@@ -338,6 +387,44 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                   <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                 </svg>
               </Link>
+            </div>
+            <div
+              className="sharePostBlock"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <p
+                style={{
+                  textAlign: "left",
+                  marginBottom: "1rem",
+                }}
+                className="p-color"
+              >
+                Did you enjoyed the post?
+              </p>
+
+              <span>
+                <Image
+                  src={twitterLogo}
+                  width={18}
+                  height={18}
+                  alt="Twitter (x)"
+                  style={{
+                    marginBottom: "-0.2rem",
+                  }}
+                />{" "}
+                &nbsp;
+                <Link
+                  href={twitterHref}
+                  data-size="large"
+                  target="_blank"
+                  className="twitter-share-button p-color"
+                >
+                  Share on X
+                </Link>{" "}
+              </span>
             </div>
             <div id="utterances-comments" />
             <hr />
@@ -424,11 +511,11 @@ export async function getStaticProps({ params }) {
       }
     : null;
 
-const processedContent = await remark()
-  .use(remarkGfm)
-  .use(html)
-  .process(content);
-const contentHtml = processedContent.toString();
+  const processedContent = await remark()
+    .use(remarkGfm)
+    .use(html)
+    .process(content);
+  const contentHtml = processedContent.toString();
 
   const { data: viewsData, error: viewsError } = await supabase
     .from("blog_views")
@@ -436,13 +523,16 @@ const contentHtml = processedContent.toString();
     .eq("blog_id", frontmatter.id)
     .single();
 
+  const readTime = calculateReadTime(contentHtml);
   const views = viewsData ? viewsData.views : 0;
+
   return {
     props: {
       post: {
         frontmatter,
         content: contentHtml,
         views,
+        readTime,
       },
       prevArticleData,
       nextArticleData,
