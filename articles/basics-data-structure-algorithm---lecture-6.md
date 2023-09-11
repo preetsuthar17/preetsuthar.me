@@ -1,6 +1,6 @@
 ---
 title: "Basics Data Structure & Algorithm - Lecture 6"
-date: 2023-09-7
+date: 2023-09-07
 id: 22
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
