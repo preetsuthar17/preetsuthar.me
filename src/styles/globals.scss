@@ -21,14 +21,7 @@
 }
 
 html {
-  background: linear-gradient(
-    -45deg,
-    rgb(5, 5, 5),
-    rgb(21, 21, 24),
-    rgb(5, 5, 5),
-    rgb(21, 21, 24)
-  );
-  background-size: 400% 400%;
+  background: #111010;
 }
 
 body {
@@ -37,13 +30,8 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   overflow-x: hidden;
 
-  background: linear-gradient(
-    -45deg,
-    rgb(5, 5, 5),
-    rgb(21, 21, 24),
-    rgb(5, 5, 5),
-    rgb(21, 21, 24)
-  );
+  background: #111010;
+
   background-size: 400% 400%;
 }
 
@@ -72,13 +60,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 0.4em;
-  background: linear-gradient(
-    -45deg,
-    rgb(15, 15, 15),
-    rgb(21, 21, 24),
-    rgb(15, 15, 15),
-    rgb(21, 21, 24)
-  );
+  background: #111010;
 }
 
 body::-webkit-scrollbar-track {

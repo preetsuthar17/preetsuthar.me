@@ -190,14 +190,14 @@ const Showcase = () => {
                   <div style={{ marginTop: "0.5rem" }}>
                     <p
                       style={{
-                        color: "#ff4f4f",
+                        color: "#ccc",
                         fontSize: "1rem",
                         cursor: "pointer",
                       }}
                     >
                       <Link
                         style={{
-                          color: "#ff4f4f",
+                          color: "#ccc",
                         }}
                         href="#scrollToReviewSection"
                       >
