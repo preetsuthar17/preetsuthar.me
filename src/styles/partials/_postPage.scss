@@ -266,11 +266,15 @@ blockquote {
   &::before {
     content: "💡";
     padding: 1rem;
+    font-size: 1.2rem;
+    align-items: center;
+    display: flex;
   }
   background-color: #2b2b2b92;
   backdrop-filter: blur(10px);
   border: 2px solid #ffffff12;
   font-size: 15px;
+  padding: 10px;
   display: flex;
   margin: 2rem 0;
   border-radius: 3px;
@@ -279,6 +283,9 @@ blockquote {
     display: flex;
     align-items: center;
     margin: 0 !important;
+  }
+  a {
+    margin: 0 5px;
   }
 }
 
