@@ -263,14 +263,23 @@ $background-color_1: #180d23;
 }
 
 blockquote {
-  padding-top: 1.2rem;
-  padding-bottom: 0.1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 1rem;
+  &::before {
+    content: "💡";
+    padding: 1rem;
+  }
+  background-color: #2b2b2b92;
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffffff12;
+  font-size: 15px;
+  display: flex;
   margin: 2rem 0;
-  border-left: 2px solid #17b6ff;
-  background-color: rgba(255, 255, 255, 0.057);
+  border-radius: 3px;
+  color: $color_5;
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+  }
 }
 
 .donateUs {
