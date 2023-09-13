@@ -724,7 +724,7 @@ const About = () => {
                         <h2>Learning @ JJIS</h2>
 
                         <p>
-                          Write my first lines of HTML and CSS using Chrome!
+                          Wrote my first lines of HTML and CSS using Chrome!
                           Fell in love with web development. Started to learn
                           more about HTML & CSS.
                         </p>
