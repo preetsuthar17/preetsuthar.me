@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }) {
         `}
           </Script>
         </>
-        <CourseSnackBar />
+        {/* <CourseSnackBar /> */}
         <Component {...pageProps} />
       </Layout>
     </motion.div>
