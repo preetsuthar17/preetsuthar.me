@@ -316,6 +316,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               >
                 I rely on your support to keep this website running. If you find
                 the content valuable, please consider making a small donation.
+                whether it’s ₹25/$1 or ₹500/$5.
               </p>
               <Link
                 href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
