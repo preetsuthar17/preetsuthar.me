@@ -72,11 +72,10 @@ char *str = "hello"
 "hello world" // it will only read till hello.
 ```
 
-````c
+```c
   char str[];
   scanf("%s", &s);
-  ```
-````
+```
 
 ### Reading string using `getchar()`
 
