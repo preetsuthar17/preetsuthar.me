@@ -106,11 +106,17 @@ export default function Posts({ posts, tags }) {
       const sanitizedQuery = sanitizeQuery(searchQuery);
       const regex = new RegExp(`(${sanitizedQuery})`, "gi");
 
-      const filteredResults = posts.filter(
-        (post) =>
+      const filteredResults = posts.filter((post) => {
+        const lowercaseTags = post.frontmatter.tags.map((tag) =>
+          tag.toLowerCase()
+        );
+        return (
           post.frontmatter.title.toLowerCase().match(regex) ||
-          post.frontmatter.description.toLowerCase().match(regex)
-      );
+          post.frontmatter.description.toLowerCase().match(regex) ||
+          lowercaseTags.some((tag) => tag.match(regex))
+        );
+      });
+
       setSearchResults(filteredResults);
     }
   }, [searchQuery, posts]);
@@ -164,10 +170,10 @@ export default function Posts({ posts, tags }) {
                 </div>
 
                 <input
-                  style={{ marginTop: "2rem" }}
+                  style={{ marginTop: "2rem", borderRadius: "5px" }}
                   className="blog-search"
                   type="text"
-                  placeholder="Search Article"
+                  placeholder="Search Article or Tag (e.g. DSA)"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
