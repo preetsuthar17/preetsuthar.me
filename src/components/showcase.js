@@ -181,7 +181,7 @@ const Showcase = () => {
                   <p>
                     Hello! I&apos;m Preet Suthar,{" "}
                     <AutomaticAge birthdate={birthdate} /> years old self-taught
-                    web developer with more than two years of experience.
+                    web developer with more than two years of experience. I can help you to create website with most appealing design.
                   </p>
                   <p>
                     Passionate about Front-End web development, soon going for

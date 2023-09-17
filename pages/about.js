@@ -271,7 +271,8 @@ const About = () => {
                           <AutomaticAge birthdate={birthdate} />
                           years old and I started this web development journey
                           back in 2020, a clumsy kid creating webpages and all
-                          with HTML.
+                          with HTML. I can help you to create website with most
+                          appealing design.
                         </p>
                         <p
                           ref={typingRefs.current[1]}
