@@ -1,7 +1,7 @@
-const Navbar = dynamic(() => import("@/src/components/navbar"));
-const Footer = dynamic(() => import("@/src/components/footer"));
-const Layout = dynamic(() => import("@/src/components/Layout"));
-const ReviewForm = dynamic(() => import("@/src/components/ReviewForm"));
+import Navbar from "@/src/components/navbar";
+import Footer from "@/src/components/footer";
+import Layout from "@/src/components/Layout";
+import ReviewForm from "@/src/components/ReviewForm";
 
 import { motion } from "framer-motion";
 
