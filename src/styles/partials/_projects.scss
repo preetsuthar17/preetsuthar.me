@@ -134,6 +134,19 @@ $color_5: #3dbbed;
     padding-top: 1rem;
   }
 
+  .project-stack {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #cccccc67;
+    font-size: 0.8rem;
+  }
+
+  .project-link {
+    position: absolute;
+    bottom: 10%;
+  }
+
   img {
     &:hover {
       color: $color_3;

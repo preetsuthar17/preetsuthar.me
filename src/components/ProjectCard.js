@@ -8,10 +8,12 @@ const ProjectCard = (props) => {
           <div className="project-header">
             <span>{props.projectName}</span>
           </div>
-
+          <div className="project-stack">
+            <span>{props.projectStack}</span>
+          </div>
           <p className="project-text">{props.projectAbout}</p>
         </Link>
-        <Link target="_blank" href={props.projectLink}>
+        <Link className="project-link" target="_blank" href={props.projectLink}>
           ⭐ Live Demo
         </Link>
       </div>
