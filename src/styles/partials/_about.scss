@@ -50,6 +50,12 @@ $color_3: #aaaab5;
   }
 }
 
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .about-container {
   display: flex;
   color: $color_2;
@@ -60,6 +66,7 @@ $color_3: #aaaab5;
   h3 {
     padding: 4rem 0;
   }
+
   .about-text-img {
     display: flex;
     margin-bottom: 2rem;

@@ -43,7 +43,7 @@ input {
   backdrop-filter: blur(8px);
   padding: 1rem;
   margin-bottom: 8px;
-  border-radius: 12px;
+  border-radius: 5px;
   font-family: $font-family_1;
   font-size: 14px;
   width: 100%;
@@ -307,7 +307,7 @@ button[type="submit"] {
   padding: 5px;
   margin-top: 0rem;
   margin-right: 0.5rem;
-  border-radius: 12px;
+  border-radius: 2px;
   border: 2px solid #313333;
   cursor: pointer;
   transition: 0.2s all ease-in-out;

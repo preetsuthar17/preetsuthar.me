@@ -8,16 +8,17 @@
   cursor: pointer;
   text-transform: lowercase;
   font-weight: 500;
-  border: 2px solid #313333;
+  background-color: #ffffff10;
   border-radius: 5px;
+  border: none;
   transition: 0.3s all ease;
-  background-color: transparent;
+
   text-decoration: none;
 }
 .primary-btn:hover {
   background-color: #ffffff11;
-  border: 2px solid #a2aaaa;
   color: #fff;
+  border: none;
 }
 
 /*green*/
@@ -31,16 +32,17 @@
   cursor: pointer;
   text-transform: lowercase;
   font-weight: 500;
-  border: 2px solid #313333;
+  background-color: #ffffff10;
   border-radius: 5px;
+  border: none;
   transition: 0.3s all ease;
-  background-color: transparent;
+
   text-decoration: none;
 }
 .primary-btn-green:hover {
   background-color: #ffffff11;
-  border: 2px solid green;
   color: #fff;
+  border: none;
 }
 
 /*red*/
@@ -54,14 +56,15 @@
   cursor: pointer;
   text-transform: lowercase;
   font-weight: 500;
-  border: 2px solid #313333;
+  background-color: #ffffff10;
   border-radius: 5px;
+  border: none;
   transition: 0.3s all ease;
-  background-color: transparent;
+
   text-decoration: none;
 }
 .primary-btn-red:hover {
   background-color: #ffffff11;
-  border: 2px solid red;
   color: #fff;
+  border: none;
 }
