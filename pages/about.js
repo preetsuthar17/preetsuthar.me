@@ -83,7 +83,7 @@ const About = () => {
         letterSpans.forEach((letterSpan, letterIndex) => {
           setTimeout(() => {
             letterSpan.style.opacity = 1;
-          }, letterIndex * 50);
+          }, letterIndex * 20);
         });
       });
     };
@@ -99,7 +99,7 @@ const About = () => {
 
         setTimeout(() => {
           animateSingleParagraph(index + 1);
-        }, 50 * (typingRefs.current[index].current.textContent.length + 1));
+        }, 20 * (typingRefs.current[index].current.textContent.length + 1));
       }
     };
 
@@ -146,7 +146,7 @@ const About = () => {
         opacity: 0,
         x: 100 * direction,
         duration: 1,
-        ease: "Power2.easeInOut",
+        ease: "Power1.out",
       });
     });
   }, []);
