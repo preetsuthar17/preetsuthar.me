@@ -91,6 +91,8 @@ $color_3: #aaaab5;
   overflow: hidden;
   transform: translateX(-80px);
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   padding: 2rem;
   border: 02px solid #161616;
   backdrop-filter: blur(10px);
@@ -194,6 +196,8 @@ $color_3: #aaaab5;
 .post-tag {
   background-color: #161616;
   width: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   padding: 0.5rem 1rem;
   margin-top: 0.7rem;
   margin-right: 0.7rem;
@@ -205,6 +209,8 @@ $color_3: #aaaab5;
   background-color: #b3b3b317;
   width: fit-content;
   padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   margin-right: 0.7rem;
   border-radius: 3px;
 }

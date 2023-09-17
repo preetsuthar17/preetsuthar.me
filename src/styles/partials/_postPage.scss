@@ -149,6 +149,8 @@ $background-color_1: #180d23;
     border-radius: 2px;
     color: $color_5;
     overflow-x: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 
     code {
       font-family: $font-family_1;
@@ -185,6 +187,9 @@ $background-color_1: #180d23;
   img {
     max-width: 100%;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
     margin-bottom: 20px;
     border-radius: 12px;
   }
@@ -279,6 +284,9 @@ blockquote {
   margin: 2rem 0;
   border-radius: 12px;
   color: $color_5;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
   p {
     display: flex;
     align-items: center;
@@ -292,6 +300,9 @@ blockquote {
 .donateUs {
   font-size: 1rem;
   padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
   margin: 2.5rem 0;
   background-color: #161616;
 }
@@ -300,6 +311,9 @@ blockquote {
   font-size: 1rem;
   padding: 2rem;
   margin: 2.2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
   border: 2px solid #ffffff07;
   background-color: #161616;
 
@@ -312,9 +326,17 @@ blockquote {
   background-color: #1e1e1e;
   color: #aaa;
   border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+
   // border: 2px solid #ababab13;
   width: fit-content;
   text-decoration: none;
   font-weight: 100;
   padding: 0.5rem 0.7rem;
+}
+
+.timeline-comment {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 }
