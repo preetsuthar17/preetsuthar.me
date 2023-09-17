@@ -268,15 +268,16 @@ const About = () => {
                           Hello! I&apos;m Preet Suthar, a self-taught web
                           developer in India with more than two years of
                           experience. I&apos;m{" "}
-                          <AutomaticAge birthdate={birthdate} /> years old and I
-                          started this web development journey back in 2020, a
-                          clumsy kid creating webpages and all with HTML.
+                          <AutomaticAge birthdate={birthdate} />
+                          years old and I started this web development journey
+                          back in 2020, a clumsy kid creating webpages and all
+                          with HTML.
                         </p>
                         <p
                           ref={typingRefs.current[1]}
                           style={{ display: "none" }}
                         >
-                          Currently at the age of{" "}
+                          Currently at the age of
                           <AutomaticAge birthdate={birthdate} />I am very much
                           passionate about Web development. I am constantly
                           learning and trying to keep up with new technologies
