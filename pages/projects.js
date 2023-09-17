@@ -82,7 +82,7 @@ const Projects = () => {
           <meta property="og:type" content="website" />
           <meta
             name="keywords"
-            content="Preet Suthar, Front-end Developer, Portfolio, Blog, web development, preet, front end development, front-end developemtn"
+            content="Preet Suthar, Front-end Developer, Portfolio, Blog, web development, preet, front end development, front-end developer"
           />
           <meta name="author" content="Preet Suthar" />
           <meta

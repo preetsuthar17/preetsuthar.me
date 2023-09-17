@@ -202,7 +202,7 @@ const About = () => {
           <meta property="og:type" content="website" />
           <meta
             name="keywords"
-            content="Preet Suthar, front-end development, Portfolio, Blog, web development, preet, front end development, front-end developemtn"
+            content="Preet Suthar, front-end development, Portfolio, Blog, web development, preet, front end development, front-end developer"
           />
           <meta name="author" content="Preet Suthar" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
