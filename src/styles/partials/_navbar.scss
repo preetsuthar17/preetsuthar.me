@@ -7,7 +7,7 @@ $background-color_1: rgba(255, 255, 255, 0.045);
   margin-bottom: -3rem;
   align-items: center;
   justify-content: space-evenly;
-  border-radius: 3px;
+  border-radius: 4px;
   .nav-header {
     a {
       text-decoration: none;
@@ -23,7 +23,7 @@ $background-color_1: rgba(255, 255, 255, 0.045);
   }
   @media screen and (max-width: 668px) {
     justify-content: center;
-    background-color: #80808024;
+    background-color: #161616;
     backdrop-filter: blur(6px);
     border: none;
     transition: 0.2s all ease-in-out;
@@ -49,7 +49,7 @@ $background-color_1: rgba(255, 255, 255, 0.045);
         transition: background-size 200ms ease-in-out;
         cursor: pointer;
         text-decoration: none;
-        border-radius: 3px;
+        border-radius: 4px;
         padding: 0.1rem;
         outline: 2px solid #80808000;
         margin: 0.9rem;

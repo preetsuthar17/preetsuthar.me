@@ -21,7 +21,7 @@
 }
 
 html {
-  background: #111010;
+  background: #101010;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   overflow-x: hidden;
 
-  background: #111010;
+  background: #101010;
 
   background-size: 400% 400%;
 }
@@ -60,7 +60,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 0.4em;
-  background: #111010;
+  background: #111111;
 }
 
 body::-webkit-scrollbar-track {
@@ -69,8 +69,8 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #ababab86;
-  border-radius: 3px;
+  background-color: #39393986;
+  border-radius: 12px;
 }
 
 @keyframes scrollBarFade {

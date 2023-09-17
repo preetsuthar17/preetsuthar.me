@@ -23,7 +23,7 @@ $color_3: #aaaab5;
     background-color: #0e0e0e68;
     border: 2px solid #ffffff0c;
     backdrop-filter: blur(8px);
-    border-radius: 3px;
+    border-radius: 12px;
     &::selection {
       background-color: #0073ff;
       color: #fff;
@@ -92,10 +92,10 @@ $color_3: #aaaab5;
   transform: translateX(-80px);
   display: flex;
   padding: 2rem;
-  border: 02px solid #ababab28;
+  border: 02px solid #161616;
   backdrop-filter: blur(10px);
-  border-radius: 3px;
-  background-color: #45454516;
+  border-radius: 12px;
+  background-color: #161616;
   flex-direction: column;
   text-align: left;
   transition: 0.3s ease-in-out !important;
@@ -192,19 +192,19 @@ $color_3: #aaaab5;
 }
 
 .post-tag {
-  background-color: #45454516;
+  background-color: #161616;
   width: fit-content;
   padding: 0.5rem 1rem;
   margin-top: 0.7rem;
   margin-right: 0.7rem;
   border-radius: 3px;
-  border: 2px #aaaab533 solid;
+  // border: 2px #aaaab533 solid;
 }
 
 .post-tag-slug {
   background-color: #b3b3b317;
   width: fit-content;
-  padding: 0.3rem;
-  margin-right: 0.7rem; 
+  padding: 0.4rem;
+  margin-right: 0.7rem;
   border-radius: 3px;
 }
