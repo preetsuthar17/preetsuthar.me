@@ -242,6 +242,7 @@ const About = () => {
                       alt="Preet Suthar"
                       loading="lazy"
                       placeholder="blur"
+                      quality={100}
                     />
 
                     <p style={{ margin: "1rem", padding: "2rem " }}>
