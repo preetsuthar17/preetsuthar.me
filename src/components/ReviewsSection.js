@@ -48,7 +48,7 @@ const ReviewsSection = () => {
 
   return (
     <>
-      <span id="scrollToReviewSection"></span>
+      <span id="reviewSection"></span>
       <div
         ref={reviewsContainerRef}
         className="reviews-div"

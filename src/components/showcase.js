@@ -197,9 +197,9 @@ const Showcase = () => {
                     >
                       <Link
                         style={{
-                          color: "#ccc",
+                          color: "#aaa",
                         }}
-                        href="#scrollToReviewSection"
+                        href="#reviewSection"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
