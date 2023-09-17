@@ -11,6 +11,7 @@ const AdminReviewList = dynamic(() =>
   import("@/src/components/AdminReviewList")
 );
 const Navbar = dynamic(() => import("@/src/components/navbar"));
+import Footer from "@/src/components/footer";
 
 const AdminSection = () => {
   const router = useRouter();
@@ -146,6 +147,7 @@ const AdminSection = () => {
             </div>
           </>
         )}
+        <Footer />
       </div>
     </motion.div>
   );
