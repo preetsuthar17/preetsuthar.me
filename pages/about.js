@@ -297,22 +297,45 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                    <Link
-                      href="https://github.com/preetsuthar17"
-                      className="no-decoration p-color"
-                      target="_blank"
-                    >
-                      <p>@preetsuthar17 on GitHub - {current_year}</p>
-                      <div
-                        style={{
-                          marginTop: "1rem",
-                        }}
-                      >
-                        <GitHubCalendar username="preetsuthar17" />
-                      </div>
-                    </Link>
                   </div>
                 </motion.div>
+              </div>
+              <div className="about-github-contribution-chart">
+                <Link
+                  style={{
+                    textAlign: "center",
+                    fontSize: "0.8rem",
+                  }}
+                  href="https://github.com/preetsuthar17"
+                  className="no-decoration p-color"
+                  target="_blank"
+                >
+                  <p>@preetsuthar17 on GitHub - {current_year}</p>
+                </Link>
+                <div className="about-github-contribution">
+                  <div
+                    className="contribute-div"
+                    style={{
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <GitHubCalendar
+                      style={{ marginBottom: "0.6rem" }}
+                      username="preetsuthar17"
+                    />
+                  </div>
+                </div>
+                <p
+                  style={{
+                    fontSize: "0.8rem",
+                    marginTop: "0.2rem",
+                    fontStyle: "italic",
+                  }}
+                  className="p-color"
+                >
+                  Scroll horizontally{" "}
+                  <span style={{ fontStyle: "normal" }}>❯</span>
+                </p>
               </div>
             </div>
             <div className="aboutToolsFloating-container">

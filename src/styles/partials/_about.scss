@@ -400,8 +400,52 @@ $color_3: #aaaab5;
   }
 }
 
-.styles-module_calendar__-Ozc6 [data-level="0"] {
-  fill: #161616 !important;
+@media screen and (max-width: 1056px) {
+  .about-github-contribution-chart {
+    display: flex;
+    flex-direction: column;
+    margin: auto !important;
+    .about-github-contribution {
+      margin: 0 auto !important;
+      display: flex;
+      flex-direction: column;
+      color: #aaaab5;
+      width: 80vw;
+      scroll-margin-block-start: end;
+      overflow-x: auto;
+      scroll-snap-stop: always !important;
+    }
+
+    .styles-module_calendar__-Ozc6 {
+      padding: 1rem 0 !important;
+      max-width: none !important;
+    }
+    .styles-module_calendar__-Ozc6 [data-level="0"] {
+      fill: #161616 !important;
+    }
+  }
+}
+.about-github-contribution-chart {
+  display: flex;
+  flex-direction: column;
+  margin: auto !important;
+  .about-github-contribution {
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    color: #aaaab5;
+    scroll-margin-block-start: end;
+    overflow-x: auto;
+    scroll-snap-stop: always !important;
+  }
+
+  .styles-module_calendar__-Ozc6 {
+    padding: 1rem 0 !important;
+    max-width: none !important;
+  }
+  .styles-module_calendar__-Ozc6 [data-level="0"] {
+    fill: #161616 !important;
+  }
 }
 
 @media screen and (max-width: 550px) {
