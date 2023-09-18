@@ -224,13 +224,12 @@ const About = () => {
                   <div className="about-container">
                     <div className="about-text-img">
                       <div className="about-text">
-                        <p style={{ textAlign: "justify" }}>
+                        <p>
                           Hello! I'm Preet Suthar, a self-taught web developer
                           in India with more than two years of experience. I'm{" "}
-                          <AutomaticAge birthdate={birthdate} />
-                          years old and I am very passionate about front-end development.
+                          <AutomaticAge birthdate={birthdate} />years old and I am very passionate about front-end development.
                         </p>
-                        <p style={{ textAlign: "justify" }}>
+                        <p>
                           My expertise lies in creating beautiful websites with
                           a very appealing design. I can help you create a
                           website with the most appealing design.
