@@ -126,14 +126,39 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "preetsuthar17/comments");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-dark");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "preetsuthar17/comments");
+    script.setAttribute("data-repo-id", "R_kgDOGIcPqw");
+    script.setAttribute("data-category", "Announcements");
+    script.setAttribute("data-category-id", "DIC_kwDOGIcPq84CZZYm");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "dark");
+    script.setAttribute("data-lang", "en");
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
 
-    const commentsContainer = document.getElementById("utterances-comments");
+    // <script
+    //   src="https://giscus.app/client.js"
+    //   data-repo="preetsuthar17/comments"
+    //   data-repo-id="R_kgDOGIcPqw"
+    //   data-category="Announcements"
+    //   data-category-id="DIC_kwDOGIcPq84CZZYm"
+    //   data-mapping="pathname"
+    //   data-strict="0"
+    //   data-reactions-enabled="1"
+    //   data-emit-metadata="0"
+    //   data-input-position="bottom"
+    //   data-theme="dark"
+    //   data-lang="en"
+    //   crossorigin="anonymous"
+    //   async
+    // ></script>;
+
+    const commentsContainer = document.getElementById("giscus-comments");
     if (commentsContainer) {
       commentsContainer.appendChild(script);
     }
@@ -431,7 +456,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </Link>{" "}
               </span>
             </div>
-            <div id="utterances-comments" />
+            <div id="giscus-comments" />
             <hr />
             <div className="post-navigation">
               <div className="prev">
