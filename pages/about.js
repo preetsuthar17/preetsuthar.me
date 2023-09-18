@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Head from "next/head";
 
+import GitHubCalendar from "react-github-calendar";
+
 import React from "react";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -27,6 +29,7 @@ import javascript from "../src/utils/icons/techs/javascript.svg";
 import python from "../src/utils/icons/techs/python.svg";
 import react from "../src/utils/icons/techs/react.svg";
 import mysql from "../src/utils/icons/techs/mysql.svg";
+import gsap_logo from "../src/utils/icons/techs/gsap.svg";
 
 import preetSutharImage from "../src/utils/images/preetsuthar.png";
 
@@ -61,51 +64,6 @@ function AutomaticAge({ birthdate }) {
 }
 
 const About = () => {
-  const typingRefs = useRef([React.createRef(), React.createRef()]);
-
-  useEffect(() => {
-    const animateParagraph = (index) => {
-      const textElement = typingRefs.current[index].current;
-      const textContent = textElement.textContent.trim();
-
-      textElement.textContent = "";
-
-      for (const letter of textContent) {
-        const letterSpan = document.createElement("span");
-        letterSpan.textContent = letter === " " ? "\u00A0" : letter;
-        letterSpan.style.display = "inline-block";
-        letterSpan.style.opacity = 0;
-        textElement.appendChild(letterSpan);
-      }
-
-      requestAnimationFrame(() => {
-        const letterSpans = textElement.querySelectorAll("span");
-        letterSpans.forEach((letterSpan, letterIndex) => {
-          setTimeout(() => {
-            letterSpan.style.opacity = 1;
-          }, letterIndex * 20);
-        });
-      });
-    };
-
-    const animateSingleParagraph = (index) => {
-      if (
-        index < typingRefs.current.length &&
-        typingRefs.current[index].current
-      ) {
-        typingRefs.current[index].current.style.display = "block";
-
-        animateParagraph(index);
-
-        setTimeout(() => {
-          animateSingleParagraph(index + 1);
-        }, 20 * (typingRefs.current[index].current.textContent.length + 1));
-      }
-    };
-
-    animateSingleParagraph(0);
-  }, []);
-
   useEffect(() => {
     const contentItems = document.querySelectorAll(".about-my-tools-icon");
 
@@ -178,6 +136,8 @@ const About = () => {
       );
     });
   }, []);
+
+  const current_year = new Date().getFullYear();
 
   const birthdate = "2006-08-28";
   return (
@@ -264,28 +224,17 @@ const About = () => {
                   <div className="about-container">
                     <div className="about-text-img">
                       <div className="about-text">
-                        <p ref={typingRefs.current[0]}>
-                          Hello! I&apos;m Preet Suthar, a self-taught web
-                          developer in India with more than two years of
-                          experience. I&apos;m{" "}
+                        <p style={{ textAlign: "justify" }}>
+                          Hello! I'm Preet Suthar, a self-taught web developer
+                          in India with more than two years of experience. I'm{" "}
                           <AutomaticAge birthdate={birthdate} />
-                          years old and I started this web development journey
-                          back in 2020, a clumsy kid creating webpages and all
-                          with HTML. I can help you to create website with most
-                          appealing design.
+                          years old, with passion to learn full-stack web
+                          development.
                         </p>
-                        <p
-                          ref={typingRefs.current[1]}
-                          style={{ display: "none" }}
-                        >
-                          Currently at the age of
-                          <AutomaticAge birthdate={birthdate} />I am very much
-                          passionate about Web development. I am constantly
-                          learning and trying to keep up with new technologies
-                          about front-end development. Not to mention I am also
-                          learning full-stack development This website is just
-                          Front-End or maybe Back-End because I have used
-                          database implementation in the reviews section.{" "}
+                        <p style={{ textAlign: "justify" }}>
+                          My expertise lies in creating beautiful websites with
+                          a very appealing design. I can help you create a
+                          website with the most appealing design.
                         </p>
 
                         <div className="about-contact-links">
@@ -348,46 +297,20 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className="donateUs"
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
+                    <Link
+                      href="https://github.com/preetsuthar17"
+                      className="no-decoration p-color"
+                      target="_blank"
                     >
-                      <p
+                      <p>@preetsuthar17 on GitHub - {current_year}</p>
+                      <div
                         style={{
-                          textAlign: "left",
-                          marginBottom: "1rem",
-                        }}
-                        className="p-color"
-                      >
-                        I rely on your support to keep this website running. If
-                        you find the content valuable, please consider making a
-                        small donation.
-                      </p>
-                      <Link
-                        href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
-                        target="_blank"
-                        className="donateButton"
-                        style={{
-                          color: "#aaa",
-                          textAlign: "left",
+                          marginTop: "1rem",
                         }}
                       >
-                        Donate
-                      </Link>{" "}
-                      <span
-                        style={{
-                          color: "#aaa",
-                          fontSize: "0.8rem",
-                          textAlign: "left",
-                          marginTop: "0.6rem",
-                        }}
-                      >
-                        &nbsp;&nbsp;Secured by Stripe
-                      </span>
-                    </div>
+                        <GitHubCalendar username="preetsuthar17" />
+                      </div>
+                    </Link>
                   </div>
                 </motion.div>
               </div>
@@ -596,6 +519,19 @@ const About = () => {
                           width={55}
                           height={55}
                           src={git}
+                        />
+                      </CustomTooltip>
+                      <CustomTooltip
+                        text="GSAP"
+                        description="For animations in website."
+                      >
+                        <Image
+                          loading="lazy"
+                          className="about-my-tools-icon"
+                          alt="GSAP"
+                          width={55}
+                          height={55}
+                          src={gsap_logo}
                         />
                       </CustomTooltip>
                     </div>
