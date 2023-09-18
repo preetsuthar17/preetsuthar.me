@@ -76,11 +76,7 @@ $color_3: #aaaab5;
       justify-content: left;
       align-items: left;
       border-radius: 3px;
-      background-color: #161616;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-        rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
       font-size: 0.98rem;
-      border: 02px solid #161616;
       backdrop-filter: blur(8px);
       padding: 1rem;
       text-align: left;
@@ -110,7 +106,7 @@ $color_3: #aaaab5;
   text-align: left;
   display: flex;
   width: 70%;
-  margin: 0 auto;
+  margin: 4rem auto;
   justify-content: left;
   align-items: left;
   flex-direction: column;
@@ -402,4 +398,8 @@ $color_3: #aaaab5;
     right: 122%;
     text-align: right;
   }
+}
+
+.styles-module_calendar__-Ozc6 [data-level="0"] {
+  fill: #161616 !important;
 }
