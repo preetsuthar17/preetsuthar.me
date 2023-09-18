@@ -228,8 +228,7 @@ const About = () => {
                           Hello! I'm Preet Suthar, a self-taught web developer
                           in India with more than two years of experience. I'm{" "}
                           <AutomaticAge birthdate={birthdate} />
-                          years old, with passion to learn full-stack web
-                          development.
+                          years old and I am very passionate about front-end development.
                         </p>
                         <p style={{ textAlign: "justify" }}>
                           My expertise lies in creating beautiful websites with
