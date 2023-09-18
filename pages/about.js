@@ -598,11 +598,11 @@ const About = () => {
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Learning more about Full-Stack</h2>
+                        <h2>Learning more about Front-End</h2>
                         <p>
-                          I am still a student pursuing my diploma @ECT in
-                          Computer Eng. I have a vision of becoming a Full-Stack
-                          Web Developer so I am learning about that too.
+                          I am still a student pursuing my diploma in Computer
+                          Engineering at ECT. I am honing my front-end skills to
+                          perfection.
                         </p>
                         <span className="cd-date">Present</span>
                       </div>
