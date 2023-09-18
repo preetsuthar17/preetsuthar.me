@@ -403,3 +403,26 @@ $color_3: #aaaab5;
 .styles-module_calendar__-Ozc6 [data-level="0"] {
   fill: #161616 !important;
 }
+
+@media screen and (max-width: 550px) {
+  .styles-module_calendar__-Ozc6 {
+    margin: 0;
+  }
+  .react-activity-calendar__count {
+    font-size: 0.7rem;
+    text-align: left;
+    margin: 0 0.3rem;
+  }
+  .react-activity-calendar__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left !important;
+    text-align: left;
+  }
+  .react-activity-calendar__legend-colors {
+    display: none !important;
+  }
+  .react-activity-calendar__legend-colors {
+    display: flex;
+  }
+}
