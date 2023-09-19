@@ -67,7 +67,7 @@ $color_3: white;
   font-family: var(--nunito-font-family) !important;
 
   transition: 0.2s ease-in-out;
-  font-size: 10rem;
+  font-size: 9rem;
   color: $color_1;
   font-weight: 900 !important;
 }
@@ -223,6 +223,8 @@ $color_3: white;
   padding-left: 1rem !important;
   align-items: left;
   margin-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
   text-align: left;
   font-size: var(--fontSize2);
   font-weight: 700;

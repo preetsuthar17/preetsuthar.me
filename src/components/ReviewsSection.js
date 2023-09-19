@@ -30,7 +30,6 @@ const ReviewsSection = () => {
     cards.forEach((card, index) => {
       gsap.from(card, {
         opacity: 0,
-        y: 50,
         duration: 0.5,
         scrollTrigger: {
           trigger: card,
