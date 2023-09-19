@@ -5,9 +5,12 @@
   margin: 0;
   padding: 0;
   font-smooth: always;
+  font-smooth: antialiased;
   scroll-behavior: smooth !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   -webkit-scroll-behavior: smooth !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 @font-face {
@@ -88,7 +91,9 @@ body::-webkit-scrollbar-thumb {
   --showcase-h-color: #ffffff;
   --heading-color: #dcdcdcc8;
   --body-font-family: "sofiapro", sans-serif;
-  --heading-font-family: "Nunito Sans", sans-serif;
+  --heading-font-family: LabilGrotesk, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
   --fontSize1: 1rem;
   --fontSize2: 2rem;
   --fontSize3: 3rem;
