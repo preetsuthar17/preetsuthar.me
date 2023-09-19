@@ -113,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 hr {
   opacity: 0.6;
   border: 0;
-  border-color: #313333;
+  background: linear-gradient(transparent, red, transparent);
   border-style: solid;
   border-bottom-width: 1px;
   width: 70%;
@@ -178,9 +178,15 @@ hr {
 
 .styled-hr {
   width: 90%;
-  background-color: rgb(39 39 42/1);
+  background: rgb(123, 104, 238);
+  background: linear-gradient(
+    90deg,
+    rgba(123, 104, 238, 0) 0%,
+    rgba(123, 104, 238, 1) 51%,
+    rgba(8, 205, 254, 0) 100%
+  );
   margin: 2rem auto;
-  height: 1px;
+  height: 0.8px;
 }
 
 .sub-heading {
