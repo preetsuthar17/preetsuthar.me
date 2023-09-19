@@ -168,7 +168,7 @@ const Showcase = () => {
           markers: true,
           trigger: para,
           markers: false,
-          start: "top 100%",
+          start: "top 80%",
           end: "bottom",
           scrub: true,
           toggleActions: "play none none none",
