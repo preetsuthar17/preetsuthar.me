@@ -64,11 +64,11 @@ $color_3: white;
 }
 .showcase-h1 {
   animation: title 1.5s ease-out forwards;
+  font-family: var(--nunito-font-family) !important;
 
   transition: 0.2s ease-in-out;
   font-size: 10rem;
   color: $color_1;
-  font-family: var(--heading-font-family);
   font-weight: 900 !important;
 }
 
@@ -102,6 +102,7 @@ $color_3: white;
   display: flex;
   text-align: left !important;
   flex-wrap: wrap;
+  letter-spacing: -0.1rem;
   margin: 0 0.8rem;
   font-size: var(--fontSize1);
   color: $color_2;
@@ -177,7 +178,10 @@ $color_3: white;
   font-family: var(--heading-font-family);
   display: flex;
   justify-content: left;
-  margin: 3rem 1rem;
+  margin: initial;
+  margin-left: 1rem;
+  padding-left: 1rem !important;
+  margin-top: 5rem;
   align-items: left;
   text-align: left;
   font-size: var(--fontSize3);
@@ -218,7 +222,7 @@ $color_3: white;
   justify-content: left;
   padding-left: 1rem !important;
   align-items: left;
-  margin-top: -2rem;
+  margin-left: 1rem;
   text-align: left;
   font-size: var(--fontSize2);
   font-weight: 700;
