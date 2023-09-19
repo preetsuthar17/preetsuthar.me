@@ -11,6 +11,10 @@ import { gsap } from "gsap";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
+
 class TextScramble {
   constructor(el) {
     this.el = el;
@@ -71,6 +75,9 @@ class TextScramble {
 const Showcase = () => {
   const textRef = useRef(null);
   let fx = null;
+  const birthdate = "2006-08-28";
+  const contactTextRef = useRef(null);
+  const showcaseTextRef = useRef(null);
 
   useEffect(() => {
     const showcasePara = document.querySelectorAll(".showcase-p");
@@ -136,7 +143,105 @@ const Showcase = () => {
     return <span> {age} </span>;
   }
 
-  const birthdate = "2006-08-28";
+  useEffect(() => {
+    const contactText = showcaseTextRef.current;
+    const words = contactText.innerText.split(" ");
+    const wordSpans = words.map((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      span.classList.add(`word-${index}`);
+      return span;
+    });
+
+    contactText.innerHTML = "";
+    wordSpans.forEach((span) => {
+      contactText.appendChild(span);
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contactText,
+        start: "top 50%",
+        scrub: false,
+        end: "bottom 100%",
+        anticipatePin: 10,
+        markers: false,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    wordSpans.forEach((span, index) => {
+      tl.to(span, {
+        color: "#9a9a9a",
+        duration: 0.2,
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    const contactText = contactTextRef.current;
+    const words = contactText.innerText.split(" ");
+    const wordSpans = words.map((word, index) => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      span.classList.add(`word-${index}`);
+      return span;
+    });
+
+    contactText.innerHTML = "";
+    wordSpans.forEach((span) => {
+      contactText.appendChild(span);
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: contactText,
+        start: "top 50%",
+        scrub: false,
+        end: "bottom 100%",
+        anticipatePin: 10,
+        markers: false,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    wordSpans.forEach((span, index) => {
+      tl.to(span, {
+        color: "#9a9a9a",
+        duration: 0.2,
+      });
+    });
+  }, []);
+
+  const langsRef = useRef(null);
+
+  useEffect(() => {
+    const programmingLanguages = [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "ReactJs",
+      "NextJs",
+      "Python",
+      "GSAP",
+    ];
+
+    const langsContainer = langsRef.current;
+
+    programmingLanguages.forEach((language, index) => {
+      const span = document.createElement("span");
+      span.textContent = language;
+      span.classList.add("language", `showcase-lang${index + 1}`);
+      langsContainer.appendChild(span);
+
+      gsap.to(span, {
+        y: -5,
+        repeat: -1,
+        yoyo: true,
+        duration: 1,
+      });
+    });
+  }, []);
 
   return (
     <motion.div
@@ -163,12 +268,15 @@ const Showcase = () => {
         </motion.div>
         <main>
           <section className="showcase">
+            <div className="showcase-langs p-color" ref={langsRef}></div>
             <div className="showcase-header ">
               <div className="styled-hr"></div>
 
-              {/* <h1 className="showcase-h1">preet.</h1> */}
               <h1 data-text="Preet." className="showcase-h1" ref={textRef}></h1>
               <div className="styled-hr"></div>
+            </div>
+            <div className="showcase-animated-stripe">
+              <p>Front-end web developer</p>
             </div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -177,45 +285,47 @@ const Showcase = () => {
               transition={{ duration: 1.4, delay: 1.6 }}
             >
               <div className="showcase-about">
-                <div className="showcase-p">
-                  <p>
-                    Hello! I&apos;m Preet Suthar,{" "}
-                    <AutomaticAge birthdate={birthdate} /> years old self-taught
-                    web developer with more than two years of experience. I can
-                    help you to create website with most appealing design.
+                <div className="showcase-p" id="showcase-p-animated">
+                  <p style={{ margin: "1rem 0" }} ref={showcaseTextRef}>
+                    Hello there! 👋 I'm Preet Suthar. I'm{" "}
+                    <AutomaticAge birthdate={birthdate} /> y/o Front-end web
+                    developer honing his front-end skills to the perfection. I
+                    can help you to create website with the most appealing
+                    designs. You can hire me from about page.
                   </p>
-                  <p>I am very passionate about front-end development.</p>
-                  <div style={{ marginTop: "0.5rem" }}>
-                    <p
-                      style={{
-                        color: "#ccc",
-                        fontSize: "1rem",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <Link
-                        style={{
-                          color: "#aaa",
-                        }}
-                        href="#reviewSection"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="32"
-                          height="32"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="m12 16.175l3.9-3.875q.275-.275.688-.288t.712.288q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.063T11.3 18.3l-4.6-4.6q-.275-.275-.288-.687T6.7 12.3q.275-.275.7-.275t.7.275l3.9 3.875Zm0-6L15.9 6.3q.275-.275.688-.287t.712.287q.275.275.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062q-.2 0-.375-.062T11.3 12.3L6.7 7.7q-.275-.275-.288-.688T6.7 6.3q.275-.275.7-.275t.7.275l3.9 3.875Z"
-                          />
-                        </svg>
-                      </Link>
-                    </p>
-                  </div>
                 </div>
-
-                <ReviewsSection />
+              </div>
+              <ReviewsSection />
+              <div className="showcase-contact-text">
+                <p ref={contactTextRef}>
+                  Come on! Don't be stranger. Let's connect
+                </p>
+              </div>
+              <div className="showcase-contact-text-2">
+                <p>
+                  <Link
+                    className="twitterLink"
+                    target="_blank"
+                    href="https://x.com/preetsuthar17"
+                  >
+                    Twitter?
+                  </Link>
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.167",
+                    }}
+                  >
+                    {" "}
+                    or{" "}
+                  </span>
+                  <Link
+                    className="githubLink"
+                    target="_blank"
+                    href="https://github.com/preetsuthar17"
+                  >
+                    GitHub?
+                  </Link>
+                </p>
               </div>
             </motion.div>
           </section>

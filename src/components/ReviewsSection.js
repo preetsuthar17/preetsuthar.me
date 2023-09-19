@@ -4,13 +4,14 @@ import Link from "next/link";
 import Card from "./Card";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion } from "framer-motion";
+import React, { useCallback } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ReviewsSection = () => {
   const [reviews, setReviews] = useState([]);
   const reviewsContainerRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -24,67 +25,89 @@ const ReviewsSection = () => {
   }, []);
 
   useEffect(() => {
-    const reviewsContainer = reviewsContainerRef.current;
+    const setupScrollTrigger = () => {
+      const skewTargets =
+        reviewsContainerRef.current.querySelectorAll(".reviews-div");
 
-    if (reviewsContainer) {
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: reviewsContainer,
-          start: "top 60%",
-          end: "top center",
-          toggleActions: "play none reverse none",
-          once: false,
-          scrub: 1,
-        },
+      skewTargets.forEach((card, index) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+          },
+        });
       });
+    };
 
-      timeline.from(reviewsContainer, {
-        opacity: 0,
-        x: -100,
-        duration: 0.8,
+    if (reviewsContainerRef.current && reviews.length > 0) {
+      const cards =
+        reviewsContainerRef.current.querySelectorAll(".review-card");
+      const totalWidth = Array.from(cards).reduce(
+        (acc, card) => acc + card.offsetWidth,
+        0
+      );
+
+      animationRef.current = gsap.to(reviewsContainerRef.current, {
+        x: `-=${totalWidth}`,
+        duration: totalWidth / 100,
+        ease: "linear",
+        repeat: -1,
+        paused: false,
+        onEnter: setupScrollTrigger,
       });
+    }
+  }, [reviews]);
+
+  const generateReviewCards = () => {
+    return reviews.map((review) => (
+      <Card
+        key={review.id}
+        heading={review.name}
+        stars={review.rating}
+        description={review.content}
+        className="review-card"
+      />
+    ));
+  };
+
+  const cardArray = new Array(40).fill(null);
+
+  const pauseAnimation = useCallback(() => {
+    if (animationRef.current) {
+      animationRef.current.pause();
+    }
+  }, []);
+
+  const resumeAnimation = useCallback(() => {
+    if (animationRef.current) {
+      animationRef.current.play();
     }
   }, []);
 
   return (
     <>
-      <span id="reviewSection"></span>
       <div
-        ref={reviewsContainerRef}
+        style={{ marginTop: "3rem" }}
         className="reviews-div"
-        style={{
-          marginTop: "12rem",
-        }}
         id="reviews"
+        onMouseEnter={pauseAnimation}
+        onMouseLeave={resumeAnimation}
       >
-        {" "}
-        <h2 className="reviews-headings">reviews</h2>{" "}
-        <p className="reviews-text">
-          {" "}
-          here are some awesome reviews left by awesome people!{" "}
-        </p>{" "}
-        {reviews.length === 0 ? (
-          <p className="reviews-text">Loading...</p>
-        ) : (
-          <div className="reviews-container">
-            {reviews?.map((review) => (
-              <Card
-                key={review.id}
-                heading={review.name}
-                stars={review.rating}
-                description={review.content}
-              />
-            ))}{" "}
-          </div>
-        )}{" "}
-        <p className="reviews-text">
-          {" "}
-          Mind leaving a review?{" "}
-          <Link href="/reviews">
-            {" "}
-            <span>Review Here!</span>{" "}
-          </Link>{" "}
-        </p>{" "}
+        <div className="reviews-container" ref={reviewsContainerRef}>
+          {reviews.length === 0 ? (
+            <p className="reviews-text">Loading...</p>
+          ) : (
+            <>
+              {cardArray.map((_, index) => (
+                <React.Fragment key={index}>
+                  {generateReviewCards()}
+                </React.Fragment>
+              ))}
+            </>
+          )}
+        </div>
       </div>
     </>
   );

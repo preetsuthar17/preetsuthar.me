@@ -18,7 +18,7 @@ $color_3: white;
 }
 
 .showcase {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
@@ -60,18 +60,17 @@ $color_3: white;
   margin-top: 3rem;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 .showcase-h1 {
   animation: title 1.5s ease-out forwards;
 
   transition: 0.2s ease-in-out;
-  font-size: var(--fontSize9);
+  font-size: 10rem;
   color: $color_1;
   font-family: var(--heading-font-family);
   font-weight: 900 !important;
 }
-
 
 @keyframes title {
   0% {
@@ -100,13 +99,16 @@ $color_3: white;
 }
 
 .showcase-p {
-  animation-delay: 2000ms !important;
+  display: flex;
+  text-align: left !important;
+  flex-wrap: wrap;
+  margin: 0 0.8rem;
   font-size: var(--fontSize1);
   color: $color_2;
 }
 @media screen and (max-width: 800px) {
   .showcase-h1 {
-    font-size: var(--fontSize7);
+    font-size: var(--fontSize8);
   }
   .showcase-about {
     margin-top: 3rem;
@@ -116,7 +118,7 @@ $color_3: white;
 }
 @media screen and (max-width: 400px) {
   .showcase-h1 {
-    font-size: var(--fontSize5);
+    font-size: var(--fontSize6);
   }
   .showcase-about {
     margin-top: 1rem;
@@ -171,6 +173,117 @@ $color_3: white;
   overflow: hidden;
 }
 
-.showcase-p p {
-  transform: translateY(200px);
+.showcase-contact-text {
+  font-family: var(--heading-font-family);
+  display: flex;
+  justify-content: left;
+  margin: 3rem 1rem;
+  align-items: left;
+  text-align: left;
+  font-size: var(--fontSize3);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.137);
+  @media screen and (max-width: 1078px) {
+    font-size: var(--fontSize3);
+  }
+  @media screen and (max-width: 700px) {
+    font-size: var(--fontSize2);
+  }
+}
+.showcase-p {
+  justify-content: left;
+  text-align: left;
+  font-family: var(--heading-font-family);
+  padding-left: 1rem !important;
+  display: flex;
+  line-height: normal;
+  justify-content: left;
+  align-items: left;
+  margin-top: 15rem;
+  margin-bottom: 10rem;
+  text-align: left;
+  font-size: var(--fontSize3);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.137);
+  @media screen and (max-width: 1078px) {
+    font-size: var(--fontSize3);
+  }
+  @media screen and (max-width: 700px) {
+    font-size: var(--fontSize2);
+  }
+}
+.showcase-contact-text-2 {
+  font-family: var(--heading-font-family);
+  display: flex;
+  justify-content: left;
+  padding-left: 1rem !important;
+  align-items: left;
+  margin-top: -2rem;
+  text-align: left;
+  font-size: var(--fontSize2);
+  font-weight: 700;
+  .twitterLink {
+    color: rgb(12, 138, 255);
+  }
+  .githubLink {
+    color: rgba(255, 255, 255, 0.603);
+  }
+  a {
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 1078px) {
+    font-size: var(--fontSize2);
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 1.5rem;
+  }
+}
+
+.showcase-langs {
+  opacity: 0.4;
+  .language {
+    text-shadow: rgba(255, 255, 255, 0.68) 0px 0px 39px;
+  }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+  p {
+    position: absolute;
+  }
+
+  .showcase-lang1 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .showcase-lang2 {
+    position: absolute;
+    top: 42%;
+    left: 70%;
+  }
+  .showcase-lang3 {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+  }
+  .showcase-lang4 {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+  }
+  .showcase-lang5 {
+    position: absolute;
+    top: 60%;
+    left: 10%;
+  }
+  .showcase-lang6 {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+  }
+  .showcase-lang7 {
+    position: absolute;
+    top: 90%;
+    left: 90%;
+  }
 }

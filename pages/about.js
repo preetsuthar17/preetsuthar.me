@@ -227,7 +227,9 @@ const About = () => {
                         <p>
                           Hello! I'm Preet Suthar, a self-taught web developer
                           in India with more than two years of experience. I'm{" "}
-                          <AutomaticAge birthdate={birthdate} />years old and I am very passionate about front-end development.
+                          <AutomaticAge birthdate={birthdate} />
+                          years old and I am very passionate about front-end
+                          development.
                         </p>
                         <p>
                           My expertise lies in creating beautiful websites with
@@ -348,7 +350,14 @@ const About = () => {
                   }}
                 >
                   <div className="about-my-tools" id="my-skills-about">
-                    <p className="p-color sub-heading">#technologies</p>
+                    <p
+                      className="p-color sub-heading"
+                      style={{
+                        fontWeight: "800",
+                      }}
+                    >
+                      #technologies
+                    </p>
                     <div className="about-my-tools-icons">
                       <CustomTooltip
                         text="NextJs"

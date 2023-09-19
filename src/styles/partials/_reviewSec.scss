@@ -101,7 +101,6 @@ button[type="submit"] {
   font-size: 1rem !important;
 }
 .reviews-div {
-  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -132,10 +131,11 @@ button[type="submit"] {
 }
 .reviews-container {
   display: flex;
+  opacity: 0.8;
   width: 60vw;
+  justify-content: center;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  overflow-x: scroll !important;
   margin-bottom: 2rem !important;
   &::-webkit-scrollbar {
     height: 0.3em;
@@ -148,31 +148,23 @@ button[type="submit"] {
     border-radius: 12px;
   }
 }
-.reviews-slider {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  margin: 0 auto;
-  scroll-snap-type: x mandatory;
-}
+
 .review-card {
   display: flex;
   flex-direction: column;
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 300px;
+  flex: 0 0 250px;
   padding: 1rem;
-  margin: 1rem 1rem;
+  margin: 1rem 2rem;
   border-radius: 12px;
-  height: 12rem;
-  background-color: #161616;
+  height: 10rem;
+  background-color: #121212;
   backdrop-filter: blur(8px);
 
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: $font-family_1;
     margin-bottom: 0.5rem;
     animation: fadeIn 1s forwards;
@@ -184,7 +176,7 @@ button[type="submit"] {
     color: $color_5;
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 1rem;
   }
 }
@@ -215,14 +207,14 @@ button[type="submit"] {
 @media screen and (max-width: 1024px) {
   .reviews-container {
     width: 90vw;
-    overflow-x: scroll;
+    overflow-x: visible;
     scrollbar-width: none;
   }
 }
 @media screen and (max-width: 768px) {
   .reviews-container {
     width: 90vw;
-    overflow-x: scroll;
+    overflow-x: visible;
     scrollbar-width: none;
   }
   .reviews-slider {
