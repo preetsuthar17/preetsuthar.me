@@ -102,10 +102,36 @@ button[type="submit"] {
 }
 .reviews-div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  gap: 5rem;
+  .reviews-header {
+    width: 30rem;
+    text-align: left;
+    h2 {
+      font-size: 3rem;
+      color: #ccc;
+      @media screen and (max-width: 1078px) {
+        font-size: 3rem;
+      }
+      @media screen and (max-width: 700px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1526px) {
+    flex-direction: column;
+    .reviews-header {
+      width: fit-content;
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
 }
 .reviews-headings {
   font-family: var(--heading-font-family);
@@ -130,11 +156,12 @@ button[type="submit"] {
   }
 }
 .reviews-container {
-  display: flex;
   opacity: 0.8;
   width: 60vw;
   justify-content: center;
+  flex-wrap: wrap;
   scroll-behavior: smooth;
+  display: flex;
   scrollbar-width: thin;
   margin-bottom: 2rem !important;
   &::-webkit-scrollbar {
@@ -159,12 +186,23 @@ button[type="submit"] {
   padding: 1rem;
   margin: 1rem 2rem;
   border-radius: 12px;
-  height: 10rem;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-position: 50% 50%;
+  background-size: 1.1rem 1.1rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  height: 13rem;
+  border: 1px solid rgb(255 255 255 / 5%);
   background-color: #121212;
   backdrop-filter: blur(8px);
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+
     font-family: $font-family_1;
     margin-bottom: 0.5rem;
     animation: fadeIn 1s forwards;
@@ -176,8 +214,30 @@ button[type="submit"] {
     color: $color_5;
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
+  }
+  &::after {
+    content: "";
+    height: 70px;
+    width: 1px;
+    position: absolute;
+    left: -1px;
+    top: 65%;
+    transition: top, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    background: linear-gradient(transparent, mediumslateblue, transparent);
+  }
+
+  &::after {
+    top: 65%;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    top: 25%;
+    opacity: 100%;
   }
 }
 

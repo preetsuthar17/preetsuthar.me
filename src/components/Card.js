@@ -7,7 +7,7 @@ const Card = ({ heading, stars, description }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,19 +25,11 @@ const Card = ({ heading, stars, description }) => {
               description Dummy description Dummy description Dummy description
             </p>
           </div>
-          <div className="stars">
-            <p>dummy stars</p>
-          </div>
         </>
       ) : (
         <>
           <h3>{heading}</h3>
           <p>{description}</p>
-          <div className="rating">
-            {[...Array(stars)].map((_, index) => (
-              <FaStar key={index} className="review-card-star" />
-            ))}
-          </div>
         </>
       )}
     </div>
