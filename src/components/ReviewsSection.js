@@ -1,23 +1,49 @@
-import { useEffect, useState, useRef } from "react";
-import { supabase } from "../utils/supabaseClient";
-import Link from "next/link";
 import Card from "./Card";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ReviewsSection = () => {
+  const headerRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 100%",
+        end: "center",
+        markers: false,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    tl.from(headerRef.current, {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    });
+
+    tl.from(containerRef.current, {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+    });
+  }, []);
+
   return (
     <>
       <div style={{ marginTop: "3rem" }} className="reviews-div" id="reviews">
-        <div className="reviews-header">
+        <div className="reviews-header" ref={headerRef}>
           <h2 className="sub-heading h2-color">
-            I got some reviews from people
+            I got some reviews from people...
           </h2>
         </div>
-        <div className="reviews-container">
+        <div className="reviews-container" ref={containerRef}>
           <>
             <Card
               heading="Soren"

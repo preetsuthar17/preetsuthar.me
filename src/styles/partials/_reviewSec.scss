@@ -124,7 +124,7 @@ button[type="submit"] {
     }
   }
 
-  @media screen and (max-width: 1526px) {
+  @media screen and (max-width: 1450px) {
     flex-direction: column;
     .reviews-header {
       width: fit-content;
@@ -184,7 +184,7 @@ button[type="submit"] {
   font-family: $font-family_1 !important;
   flex: 0 0 250px;
   padding: 1rem;
-  margin: 1rem 2rem;
+  margin: 1rem 1rem;
   border-radius: 12px;
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.1) 1px,
@@ -206,9 +206,9 @@ button[type="submit"] {
     font-family: $font-family_1;
     margin-bottom: 0.5rem;
     animation: fadeIn 1s forwards;
-    color: $color_6;
+    color: $color_1;
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 200;
   }
   p {
     color: $color_5;

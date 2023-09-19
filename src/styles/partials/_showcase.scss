@@ -100,7 +100,7 @@ $color_3: white;
 
 .showcase-p {
   display: flex;
-  text-align: left !important;
+  text-align: center !important;
   flex-wrap: wrap;
   letter-spacing: -0.1rem;
   margin: 0 0.8rem;
@@ -178,15 +178,20 @@ $color_3: white;
   font-family: var(--heading-font-family);
   display: flex;
   justify-content: left;
-  margin: initial;
+  margin-top: 15rem;
   margin-left: 1rem;
-  padding-left: 1rem !important;
-  margin-top: 5rem;
+  margin-right: 1rem;
+  padding: 0 1rem !important;
+  overflow: hidden;
   align-items: left;
   text-align: left;
   font-size: var(--fontSize3);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.137);
+  color: #ffffff9b;
+  transition: 0.3s all ease;
+  &:hover {
+    color: white;
+  }
   @media screen and (max-width: 1078px) {
     font-size: var(--fontSize3);
   }
@@ -195,39 +200,43 @@ $color_3: white;
   }
 }
 .showcase-p {
-  justify-content: left;
-  text-align: left;
+  transform: translateY(500) !important;
   font-family: var(--heading-font-family);
-  padding-left: 1rem !important;
+  padding: 0 1rem !important;
   display: flex;
   line-height: normal;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   margin-top: 15rem;
   margin-bottom: 10rem;
-  text-align: left;
+  text-align: center;
   font-size: var(--fontSize3);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.137);
+  color: #ffffff9b;
   @media screen and (max-width: 1078px) {
     font-size: var(--fontSize3);
   }
   @media screen and (max-width: 700px) {
     font-size: var(--fontSize2);
   }
+  transition: 0.3s all ease;
+  &:hover {
+    color: white;
+  }
 }
 .showcase-contact-text-2 {
   font-family: var(--heading-font-family);
   display: flex;
   justify-content: left;
-  padding-left: 1rem !important;
+  padding: 0 1rem !important;
   align-items: left;
-  margin-left: 1rem;
+  margin: 0rem 1rem;
   margin-top: 2rem;
   margin-bottom: 8rem;
-  text-align: left;
+  text-align: left !important;
   font-size: var(--fontSize2);
   font-weight: 700;
+
   .twitterLink {
     color: rgb(12, 138, 255);
   }
@@ -235,7 +244,11 @@ $color_3: white;
     color: rgba(255, 255, 255, 0.603);
   }
   a {
-    text-decoration: underline;
+    text-align: left;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   @media screen and (max-width: 1078px) {
     font-size: var(--fontSize2);

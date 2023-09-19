@@ -69,7 +69,8 @@ $color_5: #3dbbed;
 }
 
 .project-card {
-  border: 02px solid #121212;
+  border: 1px solid rgb(255 255 255 / 5%);
+
   opacity: 0;
   overflow: hidden;
   backdrop-filter: blur(10px);

@@ -124,8 +124,8 @@ $color_3: #aaaab5;
       border-radius: 12px;
       // box-shadow: inset 0px 0px 63px 25px rgba(0, 0, 0, 0.1);
       background-color: #ffffff0c;
-      // border: 2px solid #ffffff0c;
       backdrop-filter: blur(8px);
+      border: 1px solid rgb(255 255 255 / 5%);
     }
     @media screen and (max-width: 768px) {
       display: grid;
@@ -153,7 +153,7 @@ $color_3: #aaaab5;
     flex-wrap: wrap;
     gap: 1rem;
     li {
-      background-color: #1e1e1e;
+      background-color: #ffffff0c;
       border-radius: 2px;
       backdrop-filter: blur(8px);
       padding: 0.3rem 1rem;
@@ -271,8 +271,8 @@ $color_3: #aaaab5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   margin-right: 30px;
-  background-color: #5c5c5c0c;
-  // border: 2px solid #ababab28;
+  background-color: #0e0e0e;
+  border: 1px solid rgb(255 255 255 / 5%);
   backdrop-filter: blur(8px);
   border-radius: 12px;
   padding: 1em;

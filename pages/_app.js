@@ -25,6 +25,8 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Script from "next/script";
 
+import gsap from "gsap";
+
 export default function App({ Component, pageProps }) {
   const [showDialog, setShowDialog] = useState(false);
 
