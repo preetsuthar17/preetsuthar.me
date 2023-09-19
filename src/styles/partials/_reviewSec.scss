@@ -102,21 +102,22 @@ button[type="submit"] {
 }
 .reviews-div {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   text-align: center;
   align-items: center;
-  justify-content: space-between;
   padding: 0 1rem;
-  margin: 0 1rem;
+  margin: 0 auto;
+  width: 90%;
   gap: 5rem;
   .reviews-header {
     width: 30rem;
-    text-align: left;
     h2 {
       font-size: 3rem;
       color: #ccc;
       @media screen and (max-width: 1078px) {
         font-size: 3rem;
+        text-align: center;
+        margin: 0;
       }
       @media screen and (max-width: 700px) {
         font-size: 2rem;
@@ -157,7 +158,6 @@ button[type="submit"] {
 }
 .reviews-container {
   opacity: 0.8;
-  width: 60vw;
   justify-content: center;
   flex-wrap: wrap;
   scroll-behavior: smooth;

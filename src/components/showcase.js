@@ -75,24 +75,6 @@ const Showcase = () => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const showcasePara = document.querySelectorAll(".showcase-p");
-    const tl = gsap.timeline();
-
-    tl.to({}, 2.7, {});
-
-    showcasePara.forEach((para, index) => {
-      const el = para.querySelectorAll("p");
-      const delay = index * 0.7;
-      tl.to(el, {
-        y: 0,
-        duration: 0.8,
-        delay: delay,
-        ease: "expo.out",
-      });
-    });
-  }, []);
-
-  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (textRef.current) {
       fx = new TextScramble(textRef.current);
@@ -183,10 +165,11 @@ const Showcase = () => {
         duration: 1,
         stagger: 0.1,
         scrollTrigger: {
+          markers: true,
           trigger: para,
           markers: false,
-          start: "top 60%",
-          end: "center",
+          start: "top 100%",
+          end: "bottom",
           scrub: true,
           toggleActions: "play none none none",
         },
@@ -202,44 +185,45 @@ const Showcase = () => {
 
       gsap.from(el, {
         opacity: 0,
-        y: 1000,
+        y: 500,
         duration: 1,
         stagger: 0.1,
         scrollTrigger: {
           trigger: para,
           markers: false,
           start: "top 100%",
-          end: "top",
-          scrub: true,
+          end: "center 60%",
+          scrub: 3,
           toggleActions: "play none none reverse",
         },
       });
     });
   }, []);
-  useEffect(() => {
-    const showcasePara = document.querySelectorAll(
-      ".showcase-contact-text-links"
-    );
 
-    showcasePara.forEach((para) => {
-      const el = para.querySelectorAll("p");
+  // useEffect(() => {
+  //   const showcasePara = document.querySelectorAll(
+  //     ".showcase-contact-text-links"
+  //   );
 
-      gsap.from(el, {
-        opacity: 0,
-        y: 1000,
-        duration: 1,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: para,
-          markers: false,
-          start: "top 100%",
-          end: "top",
-          scrub: true,
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-  }, []);
+  //   showcasePara.forEach((para) => {
+  //     const el = para.querySelectorAll("p");
+
+  //     gsap.from(el, {
+  //       opacity: 0,
+  //       y: 500,
+  //       duration: 1,
+  //       stagger: 0.1,
+  //       scrollTrigger: {
+  //         trigger: para,
+  //         markers: false,
+  //         start: "center",
+  //         end: "center",
+  //         scrub: true,
+  //         toggleActions: "play none none reverse",
+  //       },
+  //     });
+  //   });
+  // }, []);
 
   return (
     <motion.div
@@ -295,37 +279,42 @@ const Showcase = () => {
               </div>
             </div>
             <ReviewsSection />
-            <div className="showcase-contact-text">
-              <p>Come on! Don't be stranger. Let's connect</p>
-            </div>
             <div
-              className="showcase-contact-text-2 showcase-contact-text-links"
-              style={{ overflow: "hidden" }}
+              className="showcase-contact-text"
+              style={{
+                flexDirection: "column",
+              }}
             >
-              <p>
-                <Link
-                  className="twitterLink"
-                  target="_blank"
-                  href="https://x.com/preetsuthar17"
-                >
-                  Twitter?
-                </Link>
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.167",
-                  }}
-                >
-                  {" "}
-                  or{" "}
-                </span>
-                <Link
-                  className="githubLink"
-                  target="_blank"
-                  href="https://github.com/preetsuthar17"
-                >
-                  GitHub?
-                </Link>
-              </p>
+              <p>Come on! Don't be stranger. Let's connect</p>
+              <div
+                className="showcase-contact-text-2 showcase-contact-text-links"
+                style={{ overflow: "hidden" }}
+              >
+                <p>
+                  <Link
+                    className="twitterLink"
+                    target="_blank"
+                    href="https://x.com/preetsuthar17"
+                  >
+                    Twitter?
+                  </Link>
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.167",
+                    }}
+                  >
+                    {" "}
+                    or{" "}
+                  </span>
+                  <Link
+                    className="githubLink"
+                    target="_blank"
+                    href="https://github.com/preetsuthar17"
+                  >
+                    GitHub?
+                  </Link>
+                </p>
+              </div>
             </div>
           </section>
           <Footer />
