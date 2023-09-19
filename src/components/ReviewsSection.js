@@ -3,7 +3,7 @@ import { supabase } from "../utils/supabaseClient";
 import Link from "next/link";
 import Card from "./Card";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/all";
 import React, { useCallback } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,22 +24,25 @@ const ReviewsSection = () => {
     fetchReviews();
   }, []);
 
-  useEffect(() => {
-    const setupScrollTrigger = () => {
-      const skewTargets =
-        reviewsContainerRef.current.querySelectorAll(".reviews-div");
+  const setupScrollTrigger = () => {
+    const cards = reviewsContainerRef.current.querySelectorAll(".review-card");
 
-      skewTargets.forEach((card, index) => {
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: "top center",
-            end: "bottom center",
-            scrub: true,
-          },
-        });
+    cards.forEach((card, index) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: card,
+          start: "top center+=100",
+          end: "center center",
+          scrub: true,
+        },
       });
-    };
+    });
+  };
+  useEffect(() => {
+    setupScrollTrigger();
 
     if (reviewsContainerRef.current && reviews.length > 0) {
       const cards =
@@ -73,15 +76,24 @@ const ReviewsSection = () => {
   };
 
   const cardArray = new Array(40).fill(null);
-
   const pauseAnimation = useCallback(() => {
+    console.log("Pausing animation");
     if (animationRef.current) {
+      console.log(
+        "Animation state before pause:",
+        animationRef.current.paused()
+      );
       animationRef.current.pause();
+      console.log(
+        "Animation state after pause:",
+        animationRef.current.paused()
+      );
     }
   }, []);
 
   const resumeAnimation = useCallback(() => {
     if (animationRef.current) {
+      console.log("Resuming animation");
       animationRef.current.play();
     }
   }, []);
