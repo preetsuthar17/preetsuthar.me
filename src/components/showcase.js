@@ -140,10 +140,10 @@ const Showcase = () => {
           markers: true,
           trigger: para,
           markers: false,
-          start: "top 100%",
-          end: "center",
-          scrub: true,
-          toggleActions: "play none none reverse",
+          start: "top 70%",
+          end: "center 60%",
+          scrub: 2,
+          toggleActions: "play none none none",
         },
       });
     });
@@ -240,7 +240,7 @@ const Showcase = () => {
                 "Student && Front-end web developer"
               </p>
             </div>
-            <div className="scrolling_text">
+            {/* <div className="scrolling_text">
               <div className="text">
                 <span className="text-only-outline">front-end devloper</span>
                 <span className="text-only-outline">front-end devloper</span>
@@ -273,7 +273,7 @@ const Showcase = () => {
                 <span className="text-only-outline">preet suthar?</span>
                 <span className="text-only-outline">preet suthar?</span>
               </div>
-            </div>
+            </div> */}
             <div className="showcase-about">
               <div className="showcase-p" id="showcase-p-animated">
                 <p style={{ margin: "1rem 0" }}>
