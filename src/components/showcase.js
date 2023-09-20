@@ -15,13 +15,13 @@ import { ScrollTrigger } from "gsap";
 class TextScramble {
   constructor(el) {
     this.el = el;
-    this.chars = "@#&*__-<>";
+    this.chars = "#*__-<>";
     this.update = this.update.bind(this);
   }
 
   setText(newText) {
     const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, newText.length);
+    const length = Math.max(oldText.length, 5);
     const promise = new Promise((resolve) => (this.resolve = resolve));
     this.queue = [];
     for (let i = 0; i < length; i++) {
@@ -98,35 +98,8 @@ const Showcase = () => {
     };
   }, []);
 
-  const langsRef = useRef(null);
 
-  useEffect(() => {
-    const programmingLanguages = [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "ReactJs",
-      "NextJs",
-      "Python",
-      "GSAP",
-    ];
 
-    const langsContainer = langsRef.current;
-
-    programmingLanguages.forEach((language, index) => {
-      const span = document.createElement("span");
-      span.textContent = language;
-      span.classList.add("language", `showcase-lang${index + 1}`);
-      langsContainer.appendChild(span);
-
-      gsap.to(span, {
-        y: -5,
-        repeat: -1,
-        yoyo: true,
-        duration: 1,
-      });
-    });
-  }, []);
 
   function AutomaticAge({ birthday }) {
     const calculateAge = useCallback(() => {
@@ -163,15 +136,14 @@ const Showcase = () => {
         opacity: 0,
         y: 500,
         duration: 1,
-        stagger: 0.1,
         scrollTrigger: {
           markers: true,
           trigger: para,
           markers: false,
-          start: "top 80%",
+          start: "top 100%",
           end: "center",
           scrub: true,
-          toggleActions: "play none none none",
+          toggleActions: "play none none reverse",
         },
       });
     });
@@ -250,8 +222,8 @@ const Showcase = () => {
         </motion.div>
         <main>
           <section className="showcase">
-            <div className="showcase-langs p-color" ref={langsRef}></div>
             <div className="showcase-header ">
+              
               <div className="styled-hr"></div>
 
               <h1 data-text="Preet." className="showcase-h1" ref={textRef}></h1>
@@ -261,31 +233,68 @@ const Showcase = () => {
               <p
                 style={{
                   color: "mediumslateblue",
+                  fontWeight: '300',
+
                 }}
               >
                 "Student && Front-end web developer"
               </p>
             </div>
-
+            <div className="scrolling_text">
+              <div className="text">
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+              </div>
+              <div className="text">
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end devloper</span>
+              </div>
+            </div>
+            <div className="scrolling_text" style={{
+              marginTop: '1rem'
+            }}>
+              <div className="text">
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+              </div>
+              <div className="text">
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+                <span className="text-only-outline">preet suthar?</span>
+              </div>
+            </div>
             <div className="showcase-about">
               <div className="showcase-p" id="showcase-p-animated">
                 <p style={{ margin: "1rem 0" }}>
                   Hello there! 👋 I'm Preet Suthar. I'm{" "}
                   <AutomaticAge birthday={birthdate} /> y/o Front-end web
                   developer honing his front-end skills to the perfection. I can
-                  help you to create website with the most appealing designs.
+                  help you to create website with the most <span className="color-mediumslateblue text-underline">appealing designs</span>.
                   You can hire me from about page.
                 </p>
               </div>
             </div>
+            <div className="styled-hr"></div>
             <ReviewsSection />
+
             <div
               className="showcase-contact-text"
               style={{
                 flexDirection: "column",
               }}
             >
-              <p>Come on! Don't be stranger. Let's connect</p>
+              <p>Come on! Don't be stranger. <span className="color-mediumslateblue text-underline">Let's connect</span></p>
               <div
                 className="showcase-contact-text-2 showcase-contact-text-links"
                 style={{ overflow: "hidden" }}

@@ -56,7 +56,7 @@ $color_3: white;
     opacity: 0;
     transition: all ease-in-out 0.4s;
     animation: go-down 1s infinite;
-  }
+  }  overflow-x: hidden !important;
   margin-top: 3rem;
   justify-content: center;
   align-items: center;
@@ -65,7 +65,7 @@ $color_3: white;
 .showcase-h1 {
   animation: title 1.5s ease-out forwards;
   font-family: var(--nunito-font-family) !important;
-
+  overflow-x: hidden !important;
   transition: 0.2s ease-in-out;
   font-size: 9rem;
   color: $color_1;
@@ -100,8 +100,9 @@ $color_3: white;
 
 .showcase-p {
   display: flex;
-  text-align: center !important;
+  text-align: left !important;
   flex-wrap: wrap;
+  overflow-x: hidden !important;
   letter-spacing: -0.1rem;
   margin: 0 0.8rem;
   font-size: var(--fontSize1);
@@ -119,7 +120,7 @@ $color_3: white;
 }
 @media screen and (max-width: 400px) {
   .showcase-h1 {
-    font-size: var(--fontSize4);
+    font-size: var(--fontSize6);
   }
   .showcase-about {
     margin-top: 1rem;
@@ -146,7 +147,7 @@ $color_3: white;
   left: 2px;
   text-shadow: -1px 0 red;
   top: 0;
-  overflow: hidden;
+  overflow: hidden !important;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
@@ -165,13 +166,13 @@ $color_3: white;
   left: -2px;
   text-shadow: 1px 0 blue;
   top: 0;
-  overflow: hidden;
+  overflow: hidden !important;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }
 
 .showcase-p {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 .showcase-contact-text {
@@ -187,7 +188,7 @@ $color_3: white;
   text-align: left;
   font-size: var(--fontSize3);
   font-weight: 700;
-  color: #ffffff9b;
+  color: white;
   transition: 0.3s all ease;
   &:hover {
     color: white;
@@ -203,15 +204,15 @@ $color_3: white;
   font-family: var(--heading-font-family);
   padding: 0 1rem !important;
   display: flex;
-  line-height: normal;
+  overflow-x: hidden !important;
   justify-content: center;
   align-items: center;
-  margin-top: 15rem;
+  margin-top: 8rem;
   margin-bottom: 10rem;
   text-align: center;
   font-size: var(--fontSize3);
   font-weight: 700;
-  color: #ffffff9b;
+  color: white;
   @media screen and (max-width: 1078px) {
     font-size: var(--fontSize3);
   }
@@ -247,6 +248,7 @@ $color_3: white;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+      text-decoration-thickness: 0.3rem;
     }
   }
   @media screen and (max-width: 1078px) {
@@ -257,51 +259,59 @@ $color_3: white;
   }
 }
 
-.showcase-langs {
-  opacity: 0.4;
-  .language {
-    text-shadow: rgba(255, 255, 255, 0.68) 0px 0px 39px;
-  }
-  @media screen and (max-width: 1024px) {
-    display: none;
-  }
-  p {
-    position: absolute;
-  }
 
-  .showcase-lang1 {
-    position: absolute;
-    top: 20%;
-    left: 10%;
+.scrolling_text {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  margin-top: 3rem;
+  white-space: nowrap;
+}
+.text {
+  font-size: 40px;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: animate_text 30s linear infinite;
+
+}
+.text span {
+  margin: 0 40px;
+}
+
+@keyframes animate_text {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  .showcase-lang2 {
-    position: absolute;
-    top: 42%;
-    left: 70%;
+  to {
+    transform: translate3d(-100%, 0, 0);
   }
-  .showcase-lang3 {
-    position: absolute;
-    top: 80%;
-    left: 30%;
+}
+
+.text-only-outline {
+  color: black;
+  text-shadow:
+   -1px -1px 0 #fff,  
+  1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+   1px 1px 0 #fff
+}
+
+
+@supports((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
+  .text-only-outline {
+    font-family: var(--heading-font-family);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.69);
+  text-stroke: 1px rgba(255, 255, 255, 0.69);
+      text-shadow: none;
   }
-  .showcase-lang4 {
-    position: absolute;
-    top: 30%;
-    left: 20%;
-  }
-  .showcase-lang5 {
-    position: absolute;
-    top: 60%;
-    left: 10%;
-  }
-  .showcase-lang6 {
-    position: absolute;
-    top: 20%;
-    left: 80%;
-  }
-  .showcase-lang7 {
-    position: absolute;
-    top: 90%;
-    left: 90%;
-  }
+}
+
+
+.showcase-stripe{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
 }

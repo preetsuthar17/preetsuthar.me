@@ -39,8 +39,11 @@ const ReviewsSection = () => {
     <>
       <div style={{ marginTop: "3rem" }} className="reviews-div" id="reviews">
         <div className="reviews-header" ref={headerRef}>
-          <h2 className="sub-heading h2-color">
-            I got some reviews from people...
+          <h2 className="sub-heading h2-color" style={{
+            margin: '3rem',
+            fontWeight: '900'
+          }}>
+            I got some <span className="color-mediumslateblue text-underline">reviews</span> from people...
           </h2>
         </div>
         <div className="reviews-container" ref={containerRef}>
