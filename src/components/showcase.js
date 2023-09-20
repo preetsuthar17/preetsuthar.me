@@ -169,7 +169,7 @@ const Showcase = () => {
           trigger: para,
           markers: false,
           start: "top 80%",
-          end: "bottom",
+          end: "center",
           scrub: true,
           toggleActions: "play none none none",
         },
