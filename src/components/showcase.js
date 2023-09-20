@@ -5,6 +5,8 @@ import Navbar from "./navbar";
 import Layout from "./Layout";
 import Link from "next/link";
 
+import VanillaTilt from "vanilla-tilt";
+
 import { motion } from "framer-motion";
 
 import { gsap } from "gsap";
@@ -98,8 +100,17 @@ const Showcase = () => {
     };
   }, []);
 
-
-
+  useEffect(() => {
+    const tiltContainer = document.querySelectorAll(".review-card");
+    VanillaTilt.init(tiltContainer, {
+      max: 8,
+      speed: 200,
+      easing: "cubic-bezier(.03,.98,.52,.99)",
+      transition: true,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  }, []);
 
   function AutomaticAge({ birthday }) {
     const calculateAge = useCallback(() => {
@@ -140,7 +151,7 @@ const Showcase = () => {
           markers: true,
           trigger: para,
           markers: false,
-          start: "top 70%",
+          start: "top 30%",
           end: "center 60%",
           scrub: 2,
           toggleActions: "play none none none",
@@ -222,10 +233,8 @@ const Showcase = () => {
         </motion.div>
         <main>
           <section className="showcase">
-            <div className="showcase-header ">
-              
+            <div className="showcase-header">
               <div className="styled-hr"></div>
-
               <h1 data-text="Preet." className="showcase-h1" ref={textRef}></h1>
               <div className="styled-hr"></div>
             </div>
@@ -233,8 +242,7 @@ const Showcase = () => {
               <p
                 style={{
                   color: "mediumslateblue",
-                  fontWeight: '300',
-
+                  fontWeight: "300",
                 }}
               >
                 "Student && Front-end web developer"
@@ -242,7 +250,7 @@ const Showcase = () => {
             </div>
             {/* <div className="scrolling_text">
               <div className="text">
-                <span className="text-only-outline">front-end devloper</span>
+                <span className="text-only-outline">front-end developer</span>
                 <span className="text-only-outline">front-end devloper</span>
                 <span className="text-only-outline">front-end devloper</span>
                 <span className="text-only-outline">front-end devloper</span>
@@ -280,8 +288,11 @@ const Showcase = () => {
                   Hello there! 👋 I'm Preet Suthar. I'm{" "}
                   <AutomaticAge birthday={birthdate} /> y/o Front-end web
                   developer honing his front-end skills to the perfection. I can
-                  help you to create website with the most <span className="color-mediumslateblue text-underline">appealing designs</span>.
-                  You can hire me from about page.
+                  help you to create website with the most{" "}
+                  <span className="color-mediumslateblue text-underline">
+                    appealing designs
+                  </span>
+                  . You can hire me from about page.
                 </p>
               </div>
             </div>
@@ -294,7 +305,12 @@ const Showcase = () => {
                 flexDirection: "column",
               }}
             >
-              <p>Come on! Don't be stranger. <span className="color-mediumslateblue text-underline">Let's connect</span></p>
+              <p>
+                Come on! Don't be stranger.{" "}
+                <span className="color-mediumslateblue text-underline">
+                  Let's connect
+                </span>
+              </p>
               <div
                 className="showcase-contact-text-2 showcase-contact-text-links"
                 style={{ overflow: "hidden" }}
@@ -322,7 +338,38 @@ const Showcase = () => {
                   >
                     GitHub?
                   </Link>
+                  <span
+                    style={{
+                      color: "rgba(255, 255, 255, 0.167",
+                    }}
+                  >
+                    {" "}
+                    or{" "}
+                  </span>
+                  <Link
+                    className="emailLink color-mailred"
+                    target="_blank"
+                    href="mailto:preetsutharxd@gmail.com"
+                  >
+                    Mail me?
+                  </Link>
                 </p>
+              </div>
+            </div>
+            <div className="scrolling_text">
+              <div className="text">
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+              </div>
+              <div className="text">
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
               </div>
             </div>
           </section>

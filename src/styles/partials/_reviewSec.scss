@@ -189,16 +189,17 @@ button[type="submit"] {
     rgba(255, 255, 255, 0.1) 1px,
     transparent 1px
   );
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px, rgba(0, 0, 0, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 1px 3px 1px;
   background-position: 50% 50%;
   background-size: 1.1rem 1.1rem;
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
   height: 13rem;
+  transform-style: preserve-3d;
   background-color: #121212;
   backdrop-filter: blur(8px);
-
   h3 {
     font-size: 1.3rem;
 
@@ -211,11 +212,12 @@ button[type="submit"] {
   }
   p {
     color: $color_5;
+
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
     font-size: 0.9rem;
     margin-bottom: 1rem;
-    text-align:left;
+    text-align: left;
   }
   &::after {
     content: "";

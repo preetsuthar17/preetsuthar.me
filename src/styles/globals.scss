@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -95,7 +95,7 @@ body::-webkit-scrollbar-thumb {
   --body-font-family: "sofiapro", sans-serif;
   --heading-font-family: "Open Sans", sans-serif;
   --nunito-font-family: "Nunito Sans", sans-serif;
-  --serif-font-family: 'Playfair Display', serif;
+  --serif-font-family: "Playfair Display", serif;
 
   --fontSize1: 1rem;
   --fontSize2: 2rem;
@@ -213,13 +213,18 @@ hr {
   display: none;
 }
 
-.color-mediumslateblue{
+.color-mediumslateblue {
   color: mediumslateblue;
 }
-.text-underline{
+
+.color-mailred {
+  color: #f8413a;
+}
+
+.text-underline {
   text-decoration: underline;
 }
 
-.text-lineThrough{
+.text-lineThrough {
   text-decoration: line-through;
 }

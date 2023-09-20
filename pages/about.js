@@ -5,6 +5,8 @@ import GitHubCalendar from "react-github-calendar";
 
 import React from "react";
 
+import VanillaTilt from "vanilla-tilt";
+
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import gsap from "gsap";
@@ -64,6 +66,18 @@ function AutomaticAge({ birthdate }) {
 }
 
 const About = () => {
+  useEffect(() => {
+    const tiltContainer = document.querySelectorAll(".about-PreetProfileImage");
+    VanillaTilt.init(tiltContainer, {
+      max: 15,
+      speed: 200,
+      scale: 1.01,
+      easing: "cubic-bezier(.03,.98,.52,.99)",
+      transition: true,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  }, []);
   useEffect(() => {
     const contentItems = document.querySelectorAll(".about-my-tools-icon");
 

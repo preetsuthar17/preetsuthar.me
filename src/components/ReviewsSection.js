@@ -2,12 +2,39 @@ import Card from "./Card";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ReviewsSection = () => {
   const headerRef = useRef(null);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    const reviewsHeader = document.querySelectorAll(".reviews-header");
+
+    gsap.utils.toArray(".reviews-container").forEach((container) => {
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+      });
+    });
+
+    reviewsHeader.forEach((card, index) => {
+      gsap.to(card, {
+        y: 100,
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+        },
+      });
+    });
+  });
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -39,11 +66,18 @@ const ReviewsSection = () => {
     <>
       <div style={{ marginTop: "3rem" }} className="reviews-div" id="reviews">
         <div className="reviews-header" ref={headerRef}>
-          <h2 className="sub-heading h2-color" style={{
-            margin: '3rem',
-            fontWeight: '900'
-          }}>
-            I got some <span className="color-mediumslateblue text-underline">reviews</span> from people...
+          <h2
+            className="sub-heading h2-color"
+            style={{
+              margin: "3rem",
+              fontWeight: "900",
+            }}
+          >
+            I got some{" "}
+            <span className="color-mediumslateblue text-underline">
+              reviews
+            </span>{" "}
+            from people...
           </h2>
         </div>
         <div className="reviews-container" ref={containerRef}>
@@ -61,6 +95,21 @@ const ReviewsSection = () => {
               description="Hey Bud the website looks clean and amazing , simple and fantastic i like the design and its looking good , Don't have much words for it .. . Keep going and reach your goals 👍"
             ></Card>
           </>
+          <p className="p-color">
+            You can leave a{" "}
+            <Link
+              href="/reviews"
+              style={{
+                color: "white",
+                textDecoration: "none",
+                backgroundColor: "rgba(255, 255, 255, 0.10)",
+                padding: "0 2px",
+                borderRadius: "2px",
+              }}
+            >
+              review here
+            </Link>
+          </p>
         </div>
       </div>
     </>

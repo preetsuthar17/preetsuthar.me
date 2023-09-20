@@ -56,7 +56,8 @@ $color_3: white;
     opacity: 0;
     transition: all ease-in-out 0.4s;
     animation: go-down 1s infinite;
-  }  overflow-x: hidden !important;
+  }
+  overflow-x: hidden !important;
   margin-top: 3rem;
   justify-content: center;
   align-items: center;
@@ -259,7 +260,6 @@ $color_3: white;
   }
 }
 
-
 .scrolling_text {
   width: 100%;
   overflow: hidden;
@@ -273,10 +273,9 @@ $color_3: white;
   font-weight: 700;
   text-transform: uppercase;
   animation: animate_text 30s linear infinite;
-
 }
 .text span {
-  margin: 0 40px;
+  margin: 0 5px;
 }
 
 @keyframes animate_text {
@@ -290,28 +289,23 @@ $color_3: white;
 
 .text-only-outline {
   color: black;
-  text-shadow:
-   -1px -1px 0 #fff,  
-  1px -1px 0 #fff,
-  -1px 1px 0 #fff,
-   1px 1px 0 #fff
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
 }
 
-
-@supports((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
+@supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
   .text-only-outline {
     font-family: var(--heading-font-family);
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.69);
-  text-stroke: 1px rgba(255, 255, 255, 0.69);
-      text-shadow: none;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.69);
+    text-stroke: 1px rgba(255, 255, 255, 0.69);
+    text-shadow: none;
   }
 }
 
-
-.showcase-stripe{
+.showcase-stripe {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align:center;
+  text-align: center;
 }
