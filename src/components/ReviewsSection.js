@@ -96,6 +96,8 @@ const ReviewsSection = () => {
               description="Hey Bud the website looks clean and amazing , simple and fantastic i like the design and its looking good , Don't have much words for it .. . Keep going and reach your goals 👍"
             ></Card>
           </>
+        </div>
+      </div>
           <p className="p-color">
             You can leave a{" "}
             <Link
@@ -111,8 +113,6 @@ const ReviewsSection = () => {
               review here
             </Link>
           </p>
-        </div>
-      </div>
     </>
   );
 };
