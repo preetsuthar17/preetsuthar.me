@@ -151,13 +151,7 @@ $color_3: #aaaab5;
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    gap: 1rem;
-    li {
-      background-color: #ffffff0c;
-      border-radius: 2px;
-      backdrop-filter: blur(8px);
-      padding: 0.3rem 1rem;
-    }
+    gap: 2rem;
   }
 }
 // Timeline

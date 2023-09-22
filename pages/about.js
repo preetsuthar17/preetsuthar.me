@@ -33,9 +33,16 @@ import react from "../src/utils/icons/techs/react.svg";
 import mysql from "../src/utils/icons/techs/mysql.svg";
 import gsap_logo from "../src/utils/icons/techs/gsap.svg";
 
+import LinkedIn from "../src/utils/icons/LinkedIn.svg";
+import github_logo from "../src/utils/icons/github.svg";
+import email from "../src/utils/icons/email.svg";
+import twitter from "../src/utils/icons/twitter.svg";
+import discord from "../src/utils/icons/discord.svg";
+
 import preetSutharImage from "../src/utils/images/preetsuthar.png";
 
 import CustomTooltip from "@/src/components/CustomTooltip";
+import CustomTooltip2 from "@/src/components/CustomTooltip2";
 
 import { motion } from "framer-motion";
 
@@ -262,50 +269,97 @@ const About = () => {
                               href="https://github.com/preetsuthar17"
                               target="_blank"
                               style={{
-                                flexGrow: "1",
+                                filter: "grayscale(100%)",
                               }}
                             >
-                              <li> GitHub</li>
+                              <CustomTooltip text="GitHub">
+                                <li>
+                                  <Image
+                                    src={github_logo}
+                                    width={30}
+                                    height={30}
+                                    alt="github"
+                                    loading="lazy"
+                                  />
+                                </li>
+                              </CustomTooltip>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="mailto:preetsutharxd@gmail.com"
                               target="_blank"
                               style={{
-                                flexGrow: "1",
+                                filter: "grayscale(100%)",
                               }}
                             >
-                              <li>Email</li>
+                              <CustomTooltip text="Email">
+                                <li>
+                                  <Image
+                                    src={email}
+                                    width={30}
+                                    height={30}
+                                    alt="email"
+                                    loading="lazy"
+                                  />
+                                </li>
+                              </CustomTooltip>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://discord.gg/XeQ95WzGq9"
                               target="_blank"
                               style={{
-                                flexGrow: "1",
+                                filter: "grayscale(100%)",
                               }}
                             >
-                              <li>Discord Server</li>
+                              <CustomTooltip text="Discord">
+                                <li>
+                                  <Image
+                                    src={discord}
+                                    width={30}
+                                    height={30}
+                                    alt="discord"
+                                    loading="lazy"
+                                  />
+                                </li>
+                              </CustomTooltip>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://twitter.com/preetsuthar17"
                               target="_blank"
                               style={{
-                                flexGrow: "1",
+                                filter: "grayscale(100%)",
                               }}
                             >
-                              <li>Twitter</li>
+                              <CustomTooltip text="X">
+                                <li>
+                                  <Image
+                                    src={twitter}
+                                    width={30}
+                                    height={30}
+                                    alt="twitter"
+                                    loading="lazy"
+                                  />
+                                </li>
+                              </CustomTooltip>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
-                              href="https://instagram.com/nottpreet28"
+                              href="https://www.linkedin.com/in/preet-suthar-41b460243/"
                               target="_blank"
-                              style={{
-                                flexGrow: "1",
-                              }}
                             >
-                              <li>Instagram</li>
+                              <CustomTooltip text="LinkedIn">
+                                <li>
+                                  <Image
+                                    src={LinkedIn}
+                                    width={30}
+                                    height={30}
+                                    alt="LinkedIn"
+                                    loading="lazy"
+                                  />
+                                </li>
+                              </CustomTooltip>
                             </Link>
                           </ul>
                         </div>
