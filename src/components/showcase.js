@@ -248,6 +248,9 @@ const Showcase = () => {
                 "Student && Front-end web developer"
               </p>
             </div>
+            <div className="showcase-go-down-arr">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ccc" d="M11 4h2v12l5.5-5.5l1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5L11 16V4Z"/></svg>
+            </div>
             {/* <div className="scrolling_text">
               <div className="text">
                 <span className="text-only-outline">front-end developer</span>
@@ -296,6 +299,7 @@ const Showcase = () => {
                 </p>
               </div>
             </div>
+
             <div className="styled-hr"></div>
             <ReviewsSection />
 

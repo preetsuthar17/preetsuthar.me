@@ -17,6 +17,11 @@ $color_3: white;
   }
 }
 
+.showcase-go-down-arr{
+  margin-top:6rem;
+  animation: go-down 0.9s infinite;
+}
+
 .showcase {
   overflow-x: hidden !important;
   margin-top: 6rem;
