@@ -42,7 +42,6 @@ const Tag = ({ blogs }) => {
   if (!tag) {
     return <div>Loading...</div>;
   }
-
   const filteredBlogs = blogs
     .filter(
       (blog) =>
@@ -55,6 +54,7 @@ const Tag = ({ blogs }) => {
       slug: blog.slug,
       description: blog.frontmatter.description || "",
       date: blog.frontmatter.date || "",
+      content: blog.content || "", // Add content field
     }))
     .sort((a, b) => {
       const regex = /(\d+)/;
@@ -146,6 +146,9 @@ const Tag = ({ blogs }) => {
                         {blog.title}
                       </h2>
                     </Link>
+                    <p className="blog-text">
+                      {getFirstFewLines(blog.content)}{" "}
+                    </p>
                     <p
                       className="blog-text blog-date"
                       style={{
@@ -175,6 +178,21 @@ const Tag = ({ blogs }) => {
   );
 };
 
+function getFirstFewLines(content) {
+  const lines = content.split("\n");
+  const firstFewLines = lines.slice(0, 1).join("\n");
+  let description = "";
+  for (const line of lines) {
+    if (line.trim().length > 0 && !line.trim().startsWith("#")) {
+      if (!line.trim().startsWith("![")) {
+        description = line.trim();
+        break;
+      }
+    }
+  }
+
+  return description;
+}
 export default Tag;
 
 export async function getStaticPaths() {
@@ -204,7 +222,6 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
 export async function getStaticProps({ params }) {
   const articlesDirectory = path.join(process.cwd(), "articles");
   const fileNames = fs.readdirSync(articlesDirectory);
@@ -212,16 +229,17 @@ export async function getStaticProps({ params }) {
   const blogs = fileNames.map((fileName) => {
     const filePath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data } = matter(fileContents);
+    const { data, content } = matter(fileContents); // Extract content here
 
     return {
       frontmatter: {
         tags: data.tags || [],
         title: data.title || "",
-        description: data.description || "",
+        description: data.description || getFirstFewLines(content), // Use content for description
         date: formatDate(data.date.toString()),
       },
       slug: fileName.replace(/\.md$/, ""),
+      content, // Add content field
     };
   });
 
