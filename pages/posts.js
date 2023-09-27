@@ -307,7 +307,7 @@ export async function getStaticProps() {
       description = lines[0].trim();
     }
     if (description.length > 100) {
-      description = description.substring(0, 50) + "...";
+      description = description.substring(0, 60) + "...";
     }
     frontmatter.description = description;
     const tags = data.tags || [];
