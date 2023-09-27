@@ -272,7 +272,7 @@ const About = () => {
                                 filter: "grayscale(100%)",
                               }}
                             >
-                              <CustomTooltip text="GitHub">
+                              <CustomTooltip2 text="GitHub">
                                 <li>
                                   <Image
                                     src={github_logo}
@@ -282,7 +282,7 @@ const About = () => {
                                     loading="lazy"
                                   />
                                 </li>
-                              </CustomTooltip>
+                              </CustomTooltip2>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
@@ -292,7 +292,7 @@ const About = () => {
                                 filter: "grayscale(100%)",
                               }}
                             >
-                              <CustomTooltip text="Email">
+                              <CustomTooltip2 text="Email">
                                 <li>
                                   <Image
                                     src={email}
@@ -302,7 +302,7 @@ const About = () => {
                                     loading="lazy"
                                   />
                                 </li>
-                              </CustomTooltip>
+                              </CustomTooltip2>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
@@ -312,7 +312,7 @@ const About = () => {
                                 filter: "grayscale(100%)",
                               }}
                             >
-                              <CustomTooltip text="Discord">
+                              <CustomTooltip2 text="Discord">
                                 <li>
                                   <Image
                                     src={discord}
@@ -322,7 +322,7 @@ const About = () => {
                                     loading="lazy"
                                   />
                                 </li>
-                              </CustomTooltip>
+                              </CustomTooltip2>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
@@ -332,7 +332,7 @@ const About = () => {
                                 filter: "grayscale(100%)",
                               }}
                             >
-                              <CustomTooltip text="X">
+                              <CustomTooltip2 text="X">
                                 <li>
                                   <Image
                                     src={twitter}
@@ -342,14 +342,14 @@ const About = () => {
                                     loading="lazy"
                                   />
                                 </li>
-                              </CustomTooltip>
+                              </CustomTooltip2>
                             </Link>
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://www.linkedin.com/in/preet-suthar-41b460243/"
                               target="_blank"
                             >
-                              <CustomTooltip text="LinkedIn">
+                              <CustomTooltip2 text="LinkedIn">
                                 <li>
                                   <Image
                                     src={LinkedIn}
@@ -359,7 +359,7 @@ const About = () => {
                                     loading="lazy"
                                   />
                                 </li>
-                              </CustomTooltip>
+                              </CustomTooltip2>
                             </Link>
                           </ul>
                         </div>

@@ -21,12 +21,12 @@ tags:
 - To insert any value at end of stack you have to delete all of the top values and then insert new value.
 - Whenever stack is empty the top stack value is "0" or "-1".
 
-
 ## Properties of Stack
+
 - Insertion operation in stack is called "Push Operation".
 - Deletion operation in stack is called "Pop Operation".
 - A pointer at top always keeps track of top elements in stack.
-- Initially when stack is empty top has value of "Zero (0) " and when stack contain single element top  has value of "One (1)" and this value increases according to insertion in stack and decreases according to deletion.
+- Initially when stack is empty top has value of "Zero (0) " and when stack contain single element top has value of "One (1)" and this value increases according to insertion in stack and decreases according to deletion.
 - Each time new element insert in stack the top pointer is incremented by "One (1)" and decrement by "One (1)" when element delete.
 
 ## Operations on Stack

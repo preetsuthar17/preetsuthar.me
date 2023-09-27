@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 
 import Head from "next/head";
 
+import { parseISO } from "date-fns";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -53,7 +55,21 @@ const Tag = ({ blogs }) => {
       slug: blog.slug,
       description: blog.frontmatter.description || "",
       date: blog.frontmatter.date || "",
-    }));
+    }))
+    .sort((a, b) => {
+      const regex = /(\d+)/;
+      const aMatch = a.title.match(regex);
+      const bMatch = b.title.match(regex);
+
+      if (aMatch && bMatch) {
+        const aNumber = parseInt(aMatch[0]);
+        const bNumber = parseInt(bMatch[0]);
+
+        return aNumber - bNumber;
+      }
+
+      return a.title.localeCompare(b.title);
+    });
 
   return (
     <>
