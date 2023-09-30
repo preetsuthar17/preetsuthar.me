@@ -15,6 +15,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+*::selection{
+  color: black;
+  background-color: white;
+}
+
 @font-face {
   font-family: "firecode";
   src: url("../utils/fonts/FiraCode.ttf");
