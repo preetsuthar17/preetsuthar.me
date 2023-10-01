@@ -7,34 +7,7 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const ReviewsSection = () => {
-  const headerRef = useRef(null);
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    const reviewsHeader = document.querySelectorAll(".reviews-header");
-
-    gsap.utils.toArray(".reviews-container").forEach((container) => {
-      ScrollTrigger.create({
-        trigger: container,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-      });
-    });
-
-    reviewsHeader.forEach((card, index) => {
-      gsap.to(card, {
-        y: 100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: card,
-          start: "top center",
-          end: "bottom center",
-          scrub: 1,
-        },
-      });
-    });
-  });
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -49,40 +22,22 @@ const ReviewsSection = () => {
       },
     });
 
-    tl.from(headerRef.current, {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-    });
-
     tl.from(containerRef.current, {
-      x: 100,
+      y: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.7,
     });
   }, []);
 
   return (
     <>
       <div style={{ marginTop: "3rem" }} className="reviews-div" id="reviews">
-        <div className="reviews-header" ref={headerRef}>
-          <h2
-            className="sub-heading h2-color"
-            style={{
-              margin: "3rem",
-              fontWeight: "900",
-            }}
-          >
-            I got some{" "}
-            <span className="color-mediumslateblue text-underline">
-              reviews
-            </span>{" "}
-            from people...
-          </h2>
-        </div>
         <div className="reviews-container" ref={containerRef}>
           <>
-            <Card heading="Ishita" description="Such a hardworking developer! Great work and dedication!! Lots of love <3"></Card>
+            <Card
+              heading="Ishita"
+              description="Such a hardworking developer! Great work and dedication!! Lots of love <3"
+            ></Card>
             <Card
               heading="Soren"
               description="Preet is one of the most friendliest person I know around and undoubtedly one of the most enthusiastic programmers I've seen in the tech community. I just can't rant enough about how generous and helpful he is. Love him."
@@ -98,21 +53,22 @@ const ReviewsSection = () => {
           </>
         </div>
       </div>
-          <p className="p-color">
-            You can leave a{" "}
-            <Link
-              href="/reviews"
-              style={{
-                color: "white",
-                textDecoration: "none",
-                backgroundColor: "rgba(255, 255, 255, 0.10)",
-                padding: "0 2px",
-                borderRadius: "2px",
-              }}
-            >
-              review here
-            </Link>
-          </p>
+      <p className="p-color">
+        You can also leave a{" "}
+        <Link
+          href="/reviews"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            backgroundColor: "rgba(255, 255, 255, 0.10)",
+            padding: "0 2px",
+            borderRadius: "2px",
+          }}
+        >
+          review here
+        </Link>
+        .
+      </p>
     </>
   );
 };

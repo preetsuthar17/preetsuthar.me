@@ -112,7 +112,7 @@ button[type="submit"] {
   .reviews-header {
     width: 30rem;
     h2 {
-      font-size: 3rem;
+      font-size: 2.4rem;
       @media screen and (max-width: 1078px) {
         font-size: 3rem;
         text-align: center;
@@ -181,7 +181,7 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 250px;
+  flex: 0 0 230px;
   padding: 1rem;
   margin: 1rem 1rem;
   border-radius: 12px;
@@ -196,7 +196,7 @@ button[type="submit"] {
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
-  height: 13rem;
+  height: 12rem;
   transform-style: preserve-3d;
   background-color: #121212;
   backdrop-filter: blur(8px);

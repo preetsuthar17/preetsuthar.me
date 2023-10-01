@@ -4,6 +4,9 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";
 import Link from "next/link";
+import Image from "next/image";
+
+import preet_suthar_image from "@/src/utils/images/preetsuthar.png";
 
 import VanillaTilt from "vanilla-tilt";
 
@@ -14,91 +17,91 @@ import { gsap } from "gsap";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 import { ScrollTrigger } from "gsap";
-class TextScramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = "#*__-<>";
-    this.update = this.update.bind(this);
-  }
+// class TextScramble {
+//   constructor(el) {
+//     this.el = el;
+//     this.chars = "#*__-<>";
+//     this.update = this.update.bind(this);
+//   }
 
-  setText(newText) {
-    const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, 5);
-    const promise = new Promise((resolve) => (this.resolve = resolve));
-    this.queue = [];
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || "";
-      const to = newText[i] || "";
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
-    }
-    cancelAnimationFrame(this.frameRequest);
-    this.frame = 0;
-    this.update();
-    return promise;
-  }
+//   setText(newText) {
+//     const oldText = this.el.innerText;
+//     const length = Math.max(oldText.length, 5);
+//     const promise = new Promise((resolve) => (this.resolve = resolve));
+//     this.queue = [];
+//     for (let i = 0; i < length; i++) {
+//       const from = oldText[i] || "";
+//       const to = newText[i] || "";
+//       const start = Math.floor(Math.random() * 40);
+//       const end = start + Math.floor(Math.random() * 40);
+//       this.queue.push({ from, to, start, end });
+//     }
+//     cancelAnimationFrame(this.frameRequest);
+//     this.frame = 0;
+//     this.update();
+//     return promise;
+//   }
 
-  update() {
-    let output = "";
-    let complete = 0;
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i];
-      if (this.frame >= end) {
-        complete++;
-        output += to;
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar();
-          this.queue[i].char = char;
-        }
-        output += `<span className="showcase-h1">${char}</span>`;
-      } else {
-        output += from;
-      }
-    }
-    this.el.innerHTML = output;
-    if (complete === this.queue.length) {
-      this.resolve();
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update);
-      this.frame++;
-    }
-  }
+//   update() {
+//     let output = "";
+//     let complete = 0;
+//     for (let i = 0, n = this.queue.length; i < n; i++) {
+//       let { from, to, start, end, char } = this.queue[i];
+//       if (this.frame >= end) {
+//         complete++;
+//         output += to;
+//       } else if (this.frame >= start) {
+//         if (!char || Math.random() < 0.28) {
+//           char = this.randomChar();
+//           this.queue[i].char = char;
+//         }
+//         output += `<span className="showcase-h1">${char}</span>`;
+//       } else {
+//         output += from;
+//       }
+//     }
+//     this.el.innerHTML = output;
+//     if (complete === this.queue.length) {
+//       this.resolve();
+//     } else {
+//       this.frameRequest = requestAnimationFrame(this.update);
+//       this.frame++;
+//     }
+//   }
 
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }
-}
+//   randomChar() {
+//     return this.chars[Math.floor(Math.random() * this.chars.length)];
+//   }
+// }
 
 const Showcase = () => {
   let fx = null;
   const birthdate = "2006-08-28";
-  const textRef = useRef(null);
+  // const textRef = useRef(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (textRef.current) {
-      fx = new TextScramble(textRef.current);
-      const phrases = ["Preet."];
-      let counter = 0;
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   if (textRef.current) {
+  //     fx = new TextScramble(textRef.current);
+  //     const phrases = ["Preet."];
+  //     let counter = 0;
 
-      const next = () => {
-        fx.setText(phrases[counter]).then(() => {
-          setTimeout(next, 1500);
-        });
-        counter = (counter + 1) % phrases.length;
-      };
+  //     const next = () => {
+  //       fx.setText(phrases[counter]).then(() => {
+  //         setTimeout(next, 1500);
+  //       });
+  //       counter = (counter + 1) % phrases.length;
+  //     };
 
-      next();
-    }
+  //     next();
+  //   }
 
-    return () => {
-      if (fx) {
-        cancelAnimationFrame(fx.frameRequest);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (fx) {
+  //       cancelAnimationFrame(fx.frameRequest);
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     const tiltContainer = document.querySelectorAll(".review-card");
@@ -234,22 +237,56 @@ const Showcase = () => {
         <main>
           <section className="showcase">
             <div className="showcase-header">
-              <div className="styled-hr"></div>
-              <h1 data-text="Preet." className="showcase-h1" ref={textRef}></h1>
-              <div className="styled-hr"></div>
-            </div>
-            <div className="showcase-stripe">
-              <p
-                style={{
-                  color: "mediumslateblue",
-                  fontWeight: "300",
-                }}
-              >
-                "Student && Front-end web developer"
-              </p>
+              <div className="showcase-header-hero">
+                <div className="showcase-header-image">
+                  <Image
+                    src={preet_suthar_image}
+                    alt="preet suthar"
+                    width="auto"
+                    height={250}
+                    quality={100}
+                    loading="lazy"
+                  ></Image>
+                </div>
+                <div className="showcase-header-title">
+                  <p>Hey, I am</p>
+                  <h1>Preet Suthar 👋</h1>
+                  <div className="styled-hr"></div>
+                  <div className="showcase-header-subtitle">
+                    <p>
+                      Hello there! 👋 I'm Preet Suthar. I'm{" "}
+                      <AutomaticAge birthday={birthdate} /> y/o Front-end web
+                      developer honing his front-end skills to the perfection. I
+                      can help you to create website with the most{" "}
+                      <span className="color-mediumslateblue ">
+                        appealing designs
+                      </span>
+                      .
+                    </p>
+                  </div>
+                  <div className="showcase-header-buttons">
+                    <Link className="primary-btn-main" href="/about">
+                      Contact me
+                    </Link>
+                    <Link className="primary-btn" href="/projects">
+                      Portfolio
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="showcase-go-down-arr">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="#ccc" d="M11 4h2v12l5.5-5.5l1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5L11 16V4Z"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#ccc"
+                  d="M11 4h2v12l5.5-5.5l1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5L11 16V4Z"
+                />
+              </svg>
             </div>
             {/* <div className="scrolling_text">
               <div className="text">
@@ -285,7 +322,7 @@ const Showcase = () => {
                 <span className="text-only-outline">preet suthar?</span>
               </div>
             </div> */}
-            <div className="showcase-about">
+            {/* <div className="showcase-about">
               <div className="showcase-p" id="showcase-p-animated">
                 <p style={{ margin: "1rem 0" }}>
                   Hello there! 👋 I'm Preet Suthar. I'm{" "}
@@ -298,9 +335,8 @@ const Showcase = () => {
                   . You can hire me from about page.
                 </p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="styled-hr"></div>
             <ReviewsSection />
 
             <div
