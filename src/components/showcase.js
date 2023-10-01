@@ -115,6 +115,22 @@ const Showcase = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const tiltContainer = document.querySelectorAll(
+      ".showcase-header-image > img"
+    );
+    VanillaTilt.init(tiltContainer, {
+      max: 10,
+      speed: 200,
+      scale: 1.01,
+      easing: "ease",
+      duration: 10,
+      transition: true,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  }, []);
+
   function AutomaticAge({ birthday }) {
     const calculateAge = useCallback(() => {
       const birthDate = new Date(birthday);
