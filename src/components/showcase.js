@@ -291,6 +291,24 @@ const Showcase = () => {
                 </div>
               </div>
             </div>
+
+            <div className="scrolling_text">
+              <div className="text">
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+              </div>
+              <div className="text">
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+                <span className="text-only-outline">front-end developer •</span>
+              </div>
+            </div>
+
             <div className="showcase-go-down-arr">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -410,22 +428,6 @@ const Showcase = () => {
                     Mail me?
                   </Link>
                 </p>
-              </div>
-            </div>
-            <div className="scrolling_text">
-              <div className="text">
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-              </div>
-              <div className="text">
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
-                <span className="text-only-outline">front-end developer •</span>
               </div>
             </div>
           </section>
