@@ -235,21 +235,7 @@ const Showcase = () => {
       transition={{ duration: 1.2 }}
     >
       <Layout>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 1 }}
-          transition={{ duration: 1.4, delay: 1.6 }}
-        >
-          <motion.div
-            initial={{ opacity: 1, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 2, ease: "easeIn" }}
-          >
-            <Navbar />
-          </motion.div>
-        </motion.div>
+        <Navbar />
         <main>
           <section className="showcase">
             <div className="showcase-header">
