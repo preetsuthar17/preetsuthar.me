@@ -673,11 +673,10 @@ const About = () => {
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Learning more about Front-End</h2>
+                        <h2>Wroking at EmpowrAI</h2>
                         <p>
-                          I am still a student pursuing my diploma in Computer
-                          Engineering at ECT. I am honing my front-end skills to
-                          perfection.
+                          As per current moment I'm working at EmpowrAI as
+                          front-end developer and also pursuing my studies.
                         </p>
                         <span className="cd-date">Present</span>
                       </div>

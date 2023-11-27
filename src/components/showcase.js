@@ -240,6 +240,7 @@ const Showcase = () => {
           <section className="showcase">
             <div className="showcase-header">
               <div className="showcase-header-hero">
+                {/**
                 <div className="showcase-header-image">
                   <Image
                     src={preet_suthar_image}
@@ -250,6 +251,8 @@ const Showcase = () => {
                     loading="lazy"
                   ></Image>
                 </div>
+ */}
+
                 <div className="showcase-header-title">
                   <p>Hey, I am</p>
                   <h1>Preet Suthar 👋</h1>
