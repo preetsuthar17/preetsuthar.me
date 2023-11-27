@@ -673,7 +673,7 @@ const About = () => {
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Wroking at EmpowrAI</h2>
+                        <h2>Working at EmpowrAI</h2>
                         <p>
                           As per current moment I'm working at EmpowrAI as
                           front-end developer and also pursuing my studies.
