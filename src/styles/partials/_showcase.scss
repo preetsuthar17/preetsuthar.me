@@ -59,20 +59,20 @@ $color_3: white;
 
 .showcase-header {
   display: flex;
-  flex-direction: row-reverse;
+  // flex-direction: row-reverse;
   .showcase-header-hero {
     display: flex;
     gap: 6rem;
-    margin: 5rem 15rem;
+    margin: 5rem 20rem;
     flex-direction: row-reverse;
     @media screen and (max-width: 1200px) {
-      margin: 0 10rem;
+      margin: 5rem 15rem;
     }
     @media screen and (max-width: 1070px) {
-      margin: 0 7rem;
+      margin: 5rem 7rem;
     }
     @media screen and (max-width: 940px) {
-      margin: 0 5rem;
+      margin: 2rem 2rem;
     }
     @media screen and (max-width: 910px) {
       justify-content: center;
@@ -89,14 +89,45 @@ $color_3: white;
   }
 
   .showcase-header-title {
+    display: flex;
+    flex-direction: column;
+
     p {
       color: #ccc;
+      font-family: "firecode", "sofiapro";
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    .showcase-header-about {
+      font-size: 1.1rem;
+      // width: 40rem;
+      font-family: "sofiapro", sans-serif;
+      font-weight: normal;
     }
     h1 {
       color: white;
-      font-size: 3em;
-      font-family: var(--heading-font-family);
+      background: -webkit-linear-gradient(
+        142deg,
+        rgba(255, 0, 241, 1) 60%,
+        rgba(0, 207, 255, 1) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3.8em;
+      // font-family: var(--heading-font-family);
+      font-family: "Poppins", sans-serif;
       letter-spacing: -0.1rem;
+    }
+    @media screen and (max-width: 1000px) {
+      p {
+        font-size: 1.4rem;
+      }
+      .showcase-header-about {
+        font-size: 0.9rem;
+      }
+      h1 {
+        font-size: 2.9rem;
+      }
     }
   }
 

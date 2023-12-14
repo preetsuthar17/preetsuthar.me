@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CustomTooltip2 = ({ text, description, children }) => {
+const CustomTooltip2 = ({ text, children }) => {
   return (
     <div className="tooltipContainer">
       {children}

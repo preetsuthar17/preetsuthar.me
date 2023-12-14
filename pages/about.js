@@ -229,7 +229,7 @@ const About = () => {
                     <p style={{ margin: "1rem", padding: "2rem " }}>
                       <Link
                         href="mailto:preetsuthar.me"
-                        className="primary-btn"
+                        className="primary-btn-main"
                       >
                         Hire me!
                       </Link>
@@ -424,7 +424,7 @@ const About = () => {
                         fontWeight: "800",
                       }}
                     >
-                      #technologies
+                      #Inventory
                     </p>
                     <div className="about-my-tools-icons">
                       <CustomTooltip

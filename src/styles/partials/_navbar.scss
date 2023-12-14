@@ -6,6 +6,9 @@ $background-color_1: rgba(255, 255, 255, 0.045);
   margin: 1rem;
   margin-bottom: -3rem;
   align-items: center;
+  background-color: #070707;
+  border: 1px solid #ffffff08;
+  backdrop-filter: blur(6px);
   justify-content: space-evenly;
   border-radius: 4px;
   .nav-header {
@@ -23,9 +26,9 @@ $background-color_1: rgba(255, 255, 255, 0.045);
   }
   @media screen and (max-width: 668px) {
     justify-content: center;
-    background-color: #121212;
+    background-color: #070707;
+    border: 1px solid #ffffff08;
     backdrop-filter: blur(6px);
-    border: none;
     transition: 0.2s all ease-in-out;
     svg:hover {
       fill: #fff;

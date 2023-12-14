@@ -179,7 +179,7 @@ const Tag = ({ blogs }) => {
 };
 
 function getFirstFewLines(content) {
-  const lines = content.split("\n");
+  const lines = content.slice(0, 150).split("\n");
   const firstFewLines = lines.slice(0, 1).join("\n");
   let description = "";
   for (const line of lines) {
@@ -193,6 +193,7 @@ function getFirstFewLines(content) {
 
   return description;
 }
+
 export default Tag;
 
 export async function getStaticPaths() {

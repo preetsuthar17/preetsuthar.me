@@ -35,10 +35,6 @@ const ReviewsSection = () => {
         <div className="reviews-container" ref={containerRef}>
           <>
             <Card
-              heading="Ishita"
-              description="Such a hardworking developer! Great work and dedication!! Lots of love <3"
-            ></Card>
-            <Card
               heading="Soren"
               description="Preet is one of the most friendliest person I know around and undoubtedly one of the most enthusiastic programmers I've seen in the tech community. I just can't rant enough about how generous and helpful he is. Love him."
             ></Card>

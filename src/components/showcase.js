@@ -254,14 +254,12 @@ const Showcase = () => {
  */}
 
                 <div className="showcase-header-title">
-                  <p>Hey, I am</p>
-                  <h1>Preet Suthar 👋</h1>
+                  <p>Namste(); I'm</p>
+                  <h1>Preet Suthar.</h1>
                   <div className="styled-hr"></div>
                   <div className="showcase-header-subtitle">
-                    <p>
-                      Hello there! 👋 I'm Preet Suthar. I'm{" "}
-                      <AutomaticAge birthday={birthdate} /> y/o Front-end web
-                      developer honing his front-end skills to the perfection. I
+                    <p className="showcase-header-about">
+                      A Front-end web developer. creating beautiful websites. I
                       can help you to create website with the most{" "}
                       <span className="color-mediumslateblue ">
                         appealing designs
@@ -272,9 +270,6 @@ const Showcase = () => {
                   <div className="showcase-header-buttons">
                     <Link className="primary-btn-main" href="/about">
                       Contact me
-                    </Link>
-                    <Link className="primary-btn" href="/projects">
-                      Portfolio
                     </Link>
                   </div>
                 </div>

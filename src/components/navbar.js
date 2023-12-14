@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import CustomTooltip from "./CustomTooltip";
+import CustomTooltip2 from "./CustomTooltip2";
 
 const Navbar = () => {
   return (
