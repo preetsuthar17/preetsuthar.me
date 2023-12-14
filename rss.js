@@ -1,11 +1,10 @@
-// rss.js
-import fs from "fs";
-import path from "path";
-import { Feed } from "next-rss";
-import matter from "gray-matter";
-import { remark } from "remark";
-import remarkGfm from "remark-gfm";
-import html from "remark-html";
+const fs = require("fs");
+const path = require("path");
+const { Feed } = require("next-rss");
+const matter = require("gray-matter");
+const { remark } = require("remark");
+const remarkGfm = require("remark-gfm");
+const html = require("remark-html");
 
 const articlesDirectory = path.join(process.cwd(), "articles");
 
