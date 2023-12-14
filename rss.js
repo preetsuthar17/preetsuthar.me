@@ -12,17 +12,12 @@ export default function RSS({ articles }) {
   return <Feed feed={createFeed(articles)} />;
 }
 
-export const getServerSideProps = async ({ res }) => {
+module.exports.getServerSideProps = async ({ res }) => {
   const articles = getAllArticles();
   const feed = createFeed(articles);
 
-  // Set the content type to 'text/xml'
   res.setHeader("Content-Type", "text/xml");
-
-  // Write the XML feed to the response
   res.write(feed.xml({ indent: true }));
-
-  // End the response
   res.end();
 
   return {
@@ -30,7 +25,6 @@ export const getServerSideProps = async ({ res }) => {
   };
 };
 
-// Function to retrieve all articles from the 'articles' directory
 function getAllArticles() {
   const fileNames = fs.readdirSync(articlesDirectory);
   const articles = fileNames.map((fileName) => {
@@ -49,7 +43,6 @@ function getAllArticles() {
   return articles;
 }
 
-// Function to convert Markdown content to HTML
 function convertMarkdownToHtml(markdown) {
   const processedContent = remark()
     .use(remarkGfm)
@@ -58,7 +51,6 @@ function convertMarkdownToHtml(markdown) {
   return processedContent.toString();
 }
 
-// Function to create the RSS feed
 function createFeed(articles) {
   return new Feed({
     title: "Preet Suthar",
