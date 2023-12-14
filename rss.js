@@ -8,9 +8,9 @@ const html = require("remark-html");
 
 const articlesDirectory = path.join(process.cwd(), "articles");
 
-export default function RSS({ articles }) {
-  return <Feed feed={createFeed(articles)} />;
-}
+module.exports = function RSS({ articles }) {
+  return { feed: createFeed(articles) };
+};
 
 module.exports.getServerSideProps = async ({ res }) => {
   const articles = getAllArticles();
