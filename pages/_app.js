@@ -65,9 +65,9 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Head></Head>
         <>
-          {showDialog && (
+          {/* {showDialog && (
             <Dialog onClose={handleCloseDialog} className="show" />
-          )}
+          )} */}
           <Script src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
           <Script id="google-analytics">
             {`
