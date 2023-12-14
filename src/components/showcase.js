@@ -16,7 +16,7 @@ import { gsap } from "gsap";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
-import { ScrollTrigger } from "gsap";
+// import { ScrollTrigger } from "gsap";
 // class TextScramble {
 //   constructor(el) {
 //     this.el = el;
@@ -155,7 +155,7 @@ const Showcase = () => {
   }
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     const showcasePara = document.querySelectorAll(".showcase-p");
 
