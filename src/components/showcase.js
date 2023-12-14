@@ -254,7 +254,7 @@ const Showcase = () => {
  */}
 
                 <div className="showcase-header-title">
-                  <p>Namste(); I'm</p>
+                  <p>Namaste(); I'm</p>
                   <h1>Preet Suthar.</h1>
                   <div className="styled-hr"></div>
                   <div className="showcase-header-subtitle">
