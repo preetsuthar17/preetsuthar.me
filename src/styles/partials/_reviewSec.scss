@@ -163,6 +163,7 @@ button[type="submit"] {
   display: flex;
   scrollbar-width: thin;
   margin-bottom: 2rem !important;
+  position: relative;
   &::-webkit-scrollbar {
     height: 0.3em;
   }
@@ -172,6 +173,36 @@ button[type="submit"] {
   &::-webkit-scrollbar-thumb {
     background-color: #39393986;
     border-radius: 12px;
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(26deg, #45caff 21%, #f41bff 47%);
+    transform: translate3d(200px, -180px, 0) scale(0.39);
+    filter: blur(280px);
+    opacity: 45%;
+    height: 450px;
+
+    transition: opacity 0.3s;
+    border-radius: inherit;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
   }
 }
 

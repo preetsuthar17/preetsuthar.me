@@ -11,6 +11,35 @@ $background-color_1: rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(6px);
   justify-content: space-evenly;
   border-radius: 4px;
+
+  &::before {
+    content: "";
+    z-index: -4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(26deg, #45caff 21%, #f41bff 47%);
+    transform: translate3d(0px, 50px, 0) scale(0.49);
+    height: 150px;
+    filter: blur(220px);
+    opacity: 55%;
+    transition: opacity 0.3s;
+    border-radius: inherit;
+  }
+
+  &::after {
+    content: "";
+    z-index: -4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+  }
   .nav-header {
     a {
       text-decoration: none;
