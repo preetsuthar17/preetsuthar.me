@@ -269,7 +269,12 @@ const Showcase = () => {
                   </div>
                   <div className="showcase-header-buttons">
                     <Link className="primary-btn-main" href="/about">
-                      Contact me
+                      <span>
+                        <em>Contact me</em>
+                      </span>
+                      <span>
+                        <em>Contact me</em>
+                      </span>
                     </Link>
                   </div>
                 </div>
