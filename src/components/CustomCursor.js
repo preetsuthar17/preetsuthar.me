@@ -67,18 +67,16 @@ const CustomCursor = () => {
   }, [position, isMouseMoving]);
 
   if (isMobile) {
-    return null; 
+    return null;
   }
 
   const cursorStyles = {
     left: `${position.x}px`,
     top: `${position.y}px`,
-    transform: `translate(-50%, -50%) scale(${isPointer ? 0.7 : 0.7})`,
-    border: `${isPointer ? 20 : 6}px solid #ccc`,
+    transform: `translate(-50%, -50%) scale(${isPointer ? 2.2 : 0.4})`,
     transformOrigin: "50% 50%",
     mixBlendMode: isPointer ? "difference" : "normal",
     transition: "transform 0.2s ease-out",
-    transition: "border 0.2s ease-out",
   };
 
   return (
