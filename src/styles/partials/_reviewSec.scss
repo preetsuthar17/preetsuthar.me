@@ -188,9 +188,15 @@ button[type="submit"] {
     filter: blur(280px);
     opacity: 45%;
     height: 450px;
-
-    transition: opacity 0.3s;
+    transition: all 0.3s;
     border-radius: inherit;
+
+    @media screen and (max-width: 760px) {
+      transform: translate3d(0px, -80px, 0) scale(0.49);
+      opacity: 80%;
+      filter: blur(200px);
+      height: 200px;
+    }
   }
 
   &::after {
