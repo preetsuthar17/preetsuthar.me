@@ -228,10 +228,15 @@ const About = () => {
 
                     <p style={{ margin: "1rem", padding: "2rem " }}>
                       <Link
-                        href="mailto:preetsuthar.me"
+                        href="mailto:preetsutharxd@gmail.com"
                         className="primary-btn-main"
                       >
-                        Hire me!
+                        <span>
+                          <em>Hire me</em>
+                        </span>
+                        <span>
+                          <em>Hire me</em>
+                        </span>
                       </Link>
                     </p>
                   </div>
@@ -373,6 +378,8 @@ const About = () => {
                   style={{
                     textAlign: "center",
                     fontSize: "0.8rem",
+                    width: "fit-content",
+                    textAlign: "center",
                   }}
                   href="https://github.com/preetsuthar17"
                   className="no-decoration p-color"
@@ -424,7 +431,7 @@ const About = () => {
                         fontWeight: "800",
                       }}
                     >
-                      #Inventory
+                      Technologies
                     </p>
                     <div className="about-my-tools-icons">
                       <CustomTooltip
