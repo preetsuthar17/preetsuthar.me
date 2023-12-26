@@ -31,7 +31,6 @@ $color_3: #aaaab5;
     &:focus {
       outline: none !important;
     }
-    width: 80%;
   }
 }
 .blog-header {
@@ -214,4 +213,10 @@ $color_3: #aaaab5;
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   margin-right: 0.7rem;
   border-radius: 3px;
+}
+
+.blog-search-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

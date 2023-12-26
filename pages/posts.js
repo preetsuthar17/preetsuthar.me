@@ -168,15 +168,16 @@ export default function Posts({ posts, tags }) {
                 <div className="blog-header-text">
                   <p>I do write blogs sometimes.</p>
                 </div>
-
-                <input
-                  style={{ marginTop: "2rem", borderRadius: "5px" }}
-                  className="blog-search"
-                  type="text"
-                  placeholder="Search Article or Tag (e.g. DSA)"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
+                <div className="blog-search-input">
+                  <input
+                    style={{ marginTop: "2rem", borderRadius: "5px" }}
+                    className="blog-search"
+                    type="text"
+                    placeholder="Search Article or Tag (e.g. DSA)"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
                 <div className="tags-container">
                   {tags.map((tag) => (
                     <div className="post-tag tags-item" key={tag}>

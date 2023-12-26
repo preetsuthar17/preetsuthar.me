@@ -200,7 +200,8 @@ $color_5: #3dbbed;
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem;
+  margin: 3rem auto;
+  width: 80%;
   div {
     flex-grow: 1;
   }
