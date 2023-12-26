@@ -13,10 +13,12 @@ import "../src/styles/partials/_customTooltip.scss";
 import "../src/styles/partials/_postPage.scss";
 import "../src/styles/partials/_404.scss";
 import "../src/styles/partials/_CourseSnackBar.scss";
+import "../src/styles/partials/_CustomCursor.scss";
 
 import CourseSnackBar from "@/src/components/CourseSnackBar";
 import Dialog from "@/src/components/Dialog";
 import Layout from "@/src/components/Layout";
+import CustomCursor from "../src/components/CustomCursor";
 
 import { motion } from "framer-motion";
 
@@ -79,6 +81,7 @@ export default function App({ Component, pageProps }) {
           </Script>
         </>
         {/* <CourseSnackBar /> */}
+        <CustomCursor />
         <Component {...pageProps} />
       </Layout>
     </motion.div>
