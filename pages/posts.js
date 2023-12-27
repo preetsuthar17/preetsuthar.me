@@ -343,9 +343,18 @@ export async function getStaticProps() {
     };
   });
 
-  posts.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  );
+  // Sort by date in descending order, then by name in descending numerical order
+  posts.sort((a, b) => {
+    const dateComparison =
+      new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+    if (dateComparison !== 0) {
+      return dateComparison;
+    }
+    // Assuming the names are numbers, use parseInt for numerical comparison
+    return (
+      parseInt(b.frontmatter.title, 10) - parseInt(a.frontmatter.title, 10)
+    );
+  });
 
   const allTags = Array.from(
     new Set(posts.flatMap((post) => post.frontmatter.tags))
