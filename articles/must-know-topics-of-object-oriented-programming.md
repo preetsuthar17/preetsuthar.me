@@ -1,7 +1,7 @@
 ---
-title: "Important Topics of Object Oriented Programming"
+title: "Must know Topics of Object Oriented Programming"
 date: 2023-12-27
-id: 34
+id: 35
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
@@ -99,6 +99,185 @@ There are five basic concepts of OOP:
      - A medicine capsule, It has multiple types of medicines combined in single capsule.
 7. Message Passing.
    - Message passing means when two objects communicate with each other and share messages it’s called “Message Passing”.
+
+## Advantages and application of OOP
+
+- There are so many advantages of OOP here are few of them,
+  - Code reusability:
+    - OOP code is something which can reused in any other OOP program that program will run and compile successfully\*.
+  - OOP functions:
+    - OOP supports advances processes and functions like Data hiding, Dynamic binding, Polymorphism, Inheritance
+  - Troubleshooting:
+    - Because OOP is divided into classes and objects it’s easier to troubleshoot the code.
+  - Security:
+    - OOP has better security function for data or variables in code.
+
+## Structure of C++ Program
+
+- Here is the basic structure for mostly any C++ program
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a = 10;
+	cout<<a;
+	return 0;
+}
+```
+
+- Header files:
+  - `#include <iostream>`
+  - This is a header file which is used to include external functions in program. There are so many of these header files we can use any according to our need.
+- Main function:
+  - `int main(){
+// Code
+}`
+  - This is main function where all the code should be written or defined. Our program can’t run without main function.
+- Variables:
+  - `int a = 10;`
+  - This is a variable which basically stores value for something in something.
+  - In this example we have stored 10 as value in variable named a.
+- Input/Output files:
+  - `cout<<a`
+  - To print any output in console we can use `cout<<` or to take any input from user we can use `cin>>`
+  - In this example we are using output so we used `cout<<a` and just like that we’re printing value of a.
+- Return 0:
+  - `return 0`
+  - We used return statement and this is used to return any information or variables from function.
+  - We cannot use this statement in any void functions.
+  - If we’re using `int main()` we are required to return something if nothing then return 0;
+
+## Basic data types
+
+- There are three types of datatypes:
+  1. Primitive datatypes.
+     - These are the types of datatypes which are default included in c++
+       - int
+       - boolean
+       - float
+       - string
+       - character
+  2. Derived datatypes.
+     - These are the types of datatypes which are derived from primitive or built from primitive datatypes.
+       - Functions
+       - Arrays
+       - Pointers
+  3. User-defined datatypes.
+     - These are custom datatypes which are defined by a particular user.
+       - Class
+       - Structure
+       - Union
+
+## User defined data types and derived data types
+
+- Derived datatypes:
+
+  1. Functions
+
+     - These are the type of datatypes which are used when our program is big and we need to make it easier so we divide it into multiple blocks which are called functions and than we can define those functions and call them into main function.
+
+     ```cpp
+
+     int sum(); //declaration
+
+     int main()
+     {
+     	a = sum(x,y); //calling function
+     	return 0;
+     }
+
+     int sum(int a, int b){ //defining function
+     	return a+b;
+     }
+     ```
+
+  2. Arrays
+
+  - Array is just collection of similar types of datatypes. we use arrays when we need to define multiple amount of variable with same datatype.
+
+  ```cpp
+  int arr[] = {10,20,30,40,50} // here we defined 5 variables with same datatype int.
+  ```
+
+  1. Constant
+
+     - Constant is a keyword which is used to make variable constant which means value of variable doesn’t change while or after or before compiling the program. the value of constant remains same.
+
+     ```cpp
+     const int a = 39; // the value of int a cannot be changed dynamically
+     ```
+
+  2. Pointers
+
+     - Pointers are just another datatypes which are used to target the memory location of particular variable
+     - using pointers we can directly work on memory level for variables.
+
+     ```cpp
+     int a = 10;
+     int *ptr;
+     ptr = &a;
+     ```
+
+- User defined datatypes:
+
+  1. Class
+
+     - Class is collection of multiple objects.
+     - It represent similar types of objects.
+
+     ```cpp
+     class student{
+     	string name; // objects
+     	int enroll_no; // objects
+     	int year; // objects
+     };
+     ```
+
+  2. Structure
+
+     - It is collection of different datatypes.
+
+     ```cpp
+     struct student{
+     	string name;
+     	int roll_no;
+     	int year;
+     };
+     ```
+
+  3. Union
+
+     - Union is similar to structure but it shares the same memory location of definition.
+
+     ```cpp
+     union share{
+     	int a;
+     	char ch;
+     };
+
+     Union share c;
+     ```
+
+## Reference variable
+
+Reference variable:
+
+- Basically reference variable means alias to existing variable.
+- It gives another name to an existing variable.
+- Which means both of the variables one existing and another reference will share same variable mean both are just single variable.
+- Whenever value of variable will be changed it will make changes on both of the variable.
+- We cannot give NULL value to reference variable.
+- You cannot have reference to reference.
+- They are easy.
+
+```cpp
+	int x = 1;
+	int *pX = &x;
+	*pX = 5 // x = 5
+```
 
 ## Scope resolution operator
 
@@ -204,6 +383,106 @@ int main(){
 
 ```
 
+## Function overloading and friend function
+
+Function overloading:
+
+- When any program has two or more functions with same name but with different types or parameters is called \***\*\*\*\***“Function Overloading”.\***\*\*\*\***
+- There’s a catch that when there are two functions with same name they must have different parameters in them. two functions with same name cannot have same parameters.
+
+```cpp
+int sum(int a, int b){
+	return a+b;
+}
+
+int sum(double a, double b){
+	return a+b;
+}
+
+int main(){
+	sum(10,10); /* Here because we gave integer parameters it will call the
+function which has integer args. */
+	sum(4.2,6.3); /* And here we gave point value double value it will call
+ function which has double args. */
+}
+
+/* Output:
+	20
+	10.5
+*/
+```
+
+Friend function:
+
+- It is a type of function which can access value of private or protected without even being member of class.
+- Friend function is declared in class with friend keyword.
+- Friend function can become friend to more than one class.
+
+Syntax:
+
+```cpp
+friend data_type name(){
+//code
+}
+```
+
+## Array
+
+- Array is basically collection of similar types of datatypes.
+- ex:
+  `{1,2,3}` ✅ (This is valid array, all integers)
+  `{’c’,’d’,’h’,’k’}` ✅ (This is valid array, all characters)
+  `{234,6.3,’s,”hello”}` ❌ (This isn’t valid array cause there are multiple datatypes)
+- Array index starts from 0.
+  - `int arr[4] = {1,2,3,4}`
+    - 0 index = 1
+    - 1 index = 2
+    - 2 index = 3
+    - 3 index = 4
+
+Syntax:
+
+- `datatype arrayName[size];`
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/de64b779-33ed-4f9b-a390-d72007222cf7/Untitled.png)
+
+## Characteristics of Constructor and Destructor
+
+Constructor:
+
+- It is special type of function which has same name as class.
+- Constructor is called automatically when an object is created.
+- Return type of constructor is same as class type.
+
+Destructor:
+
+- Destructor is used to deallocate the memory which was created by constructor.
+- Destructor is special member function.
+- It is executed automatically when an object is destroyed that has been created by constructor.
+- Destructor declaration should always begin with tilde sign `~`
+
+Example of constructor and destructor:
+
+```cpp
+#include <iostream.h>
+#include <conio.h>
+
+class test
+{
+	public:
+		test(){
+				cout<<"Constructor started";
+		}
+		~test(){
+				cout<<"Destructor started";
+		}
+};
+
+int main(){
+	test obj;
+}
+```
+
 ## Types of Constructor mainly three types ( Default , parameterized , copy )
 
 - There are three types of constructor:
@@ -265,10 +544,74 @@ int main(){
      - Syntax:
 
      ```cpp
-
+     class_name(class_name &var){
+     //code
+     }
      ```
 
-## Inheritance
+     - Example:
+
+     ```cpp
+     #include <iostream>
+
+     class A{
+     	private:
+     		int a,b;
+     	public:
+     		A(int x, int y){
+     			a=x;
+     			b=y;
+     		}
+     		A(A &ref){
+     			a = ref.a;
+     			b = ref.b;
+     		}
+
+     		void show(){
+     			cout<<a<<" "<<b;
+     		}
+     };
+
+     int main(){
+     		A obj(10,20);
+     		A obj2=obj;
+     		obj.show();
+     		obj2.show();
+     }
+
+     /* OUTPUT:
+     		10 20
+     		10 20
+     */
+     ```
+
+## Definition of public private protected and ambiguity
+
+- Public:
+  - members can be accessed outside of the class
+- Private:
+  - Members cannot be accessed directly outside of the class we can use functions like friend function to access them.
+- Protected:
+  - Members cannot be accessed no matter what. they can be accessed in inherit class.
+- Example:
+
+  ```cpp
+  class MyClass {
+    public:    // Public access specifier
+      int x;   // Public attribute
+    private:   // Private access specifier
+      int y;   // Private attribute
+  };
+
+  int main() {
+    MyClass myObj;
+    myObj.x = 25;  // Allowed (public)
+    myObj.y = 50;  // Not allowed (private)
+    return 0;
+  }
+  ```
+
+## Inheritance and types of inheritance
 
 - Inheritance:
   - It is type of function where child class can acquire properties of the parent class.
@@ -561,6 +904,32 @@ int main(){
        }
        ```
 
+## Virtual base class
+
+- Virtual base class is used to overcome issue of diamond problems. :) idk
+  ![Here in this diagram if notice closely data of `Students` is inherited into `Exams` and also into `Projects`.  Data of `Exam` and `Projects` is being inherited into `Results`. So basically what we can say is the data from `Student`Is inherited twice into `Results` right? like `Results` got two copies of data from `Student`. So in this case while compiling, compiler confuses which data it should process on and at last it gives us an error. To avoid this sorta problem we use ******************************************************Virtual base class******************************************************.](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3060760-d06b-483d-a1a6-632d89c480d3/Untitled.png)
+  Here in this diagram if notice closely data of `Students` is inherited into `Exams` and also into `Projects`. Data of `Exam` and `Projects` is being inherited into `Results`. So basically what we can say is the data from `Student`Is inherited twice into `Results` right? like `Results` got two copies of data from `Student`. So in this case while compiling, compiler confuses which data it should process on and at last it gives us an error. To avoid this sorta problem we use \***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***Virtual base class\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***\*\*\***\*\*\*\*\*\*\***.
+- Syntax:
+
+```cpp
+class Student{
+//code
+};
+
+class Exam:virtual public Student{
+//code
+};
+
+class Project:virtual public Student{
+//code
+};
+
+class Result: public Exam, public Project{
+// only one copy of student data will be inherited
+//code
+};
+```
+
 ## Pointer ( this pointer)
 
 - In CPP this pointer hold address of current object
@@ -613,3 +982,41 @@ this -> m = 10;
 
   */
   ```
+
+## Polymorphism
+
+Polymorphism:
+
+- Polymorphism word is made with two words poly which means many and morphism which means form. Same object with different behaviour.
+- Basically polymorphism means many forms.
+- When single function can work in many forms it is know as polymorphism.
+- For example:
+  - A men can be Father, Teacher, Friend at the same time. here Men is single thing but can work in many forms.
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f6f99ed-aba0-4157-bc75-0c795bd2e2bc/Untitled.png)
+- There are two types of polymorphism
+  1. Compile time polymorphism
+     - A compile time polymorphism is type of polymorphism which is worked in compile time.
+     - It is also known as static polymorphism and early binding polymorphism
+     - Example:
+       - Method overloading.
+       ```cpp
+       void add (int x, int y){
+       //code
+       }
+       void add (int x, float y){
+       //code
+       }
+       ```
+  2. Runtime polymorphism
+     - A Polymorphism which is achieved by runtime is called “\***\*\*\*\***Runtime Polymorphism\***\*\*\*\***”.
+     - It is also known as dynamic polymorphism
+     - Example:
+       - Method overriding.
+       ```cpp
+       void add () //base class
+       {
+       }
+       voi add () //derived
+       {
+       }
+       ```
