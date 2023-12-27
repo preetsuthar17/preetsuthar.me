@@ -395,6 +395,7 @@ const About = () => {
                     }}
                   >
                     <GitHubCalendar
+                      colorScheme="dark"
                       style={{ marginBottom: "0.6rem" }}
                       username="preetsuthar17"
                     />
