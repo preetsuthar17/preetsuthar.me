@@ -140,10 +140,22 @@ $color_3: #aaaab5;
     z-index: 99;
     transition: 0.3s ease-in-out;
     text-decoration: none;
-    color: #40c9ff;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     &:hover {
       opacity: 100%;
     }
+  }
+  .blog-read-link {
+    background-color: red;
+    width: fit-content;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem 0 0 0;
+    background-color: #cccccc10;
+    border-radius: 50rem;
+    border: 1px solid #cccccc2a;
   }
   .blog-name {
     padding-top: 1rem;
@@ -198,21 +210,26 @@ $color_3: #aaaab5;
   width: fit-content;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
-  padding: 0.5rem 1rem;
+  border: 1px solid #cccccc16;
+  padding: 0.5rem 0.7rem;
   margin-top: 0.7rem;
   margin-right: 0.7rem;
-  border-radius: 3px;
+  text-align: center;
+
+  border-radius: 50rem;
   // border: 2px #aaaab533 solid;
 }
 
 .post-tag-slug {
   background-color: #b3b3b317;
   width: fit-content;
-  padding: 0.4rem;
+  border: 1px solid #cccccc16;
+  padding: 0.5rem 0.7rem;
+  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   margin-right: 0.7rem;
-  border-radius: 3px;
+  border-radius: 50rem;
 }
 
 .blog-search-input {

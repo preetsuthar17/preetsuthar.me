@@ -302,6 +302,7 @@ blockquote {
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    border-radius: 6px;
 
   margin: 2.5rem 0;
   background-color: #121212;
@@ -313,8 +314,8 @@ blockquote {
   margin: 2.2rem 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
-
-  border: 2px solid #ffffff07;
+    border-radius: 6px;
+    border: 2px solid #ffffff07;
   background-color: #121212;
 
   p {
@@ -325,7 +326,8 @@ blockquote {
 .donateButton {
   background-color: #1e1e1e;
   color: #aaa;
-  border-radius: 2px;
+  border-radius: 6px;
+  border: 1px solid #cccccc16;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 
