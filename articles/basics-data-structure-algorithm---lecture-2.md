@@ -5,7 +5,7 @@ id: 18
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA Course
+  - DSA Tutorial
 ---
 
 In this lecture we're going to cover basic about Types of Data Structure.

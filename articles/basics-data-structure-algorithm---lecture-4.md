@@ -5,7 +5,7 @@ id: 20
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA Course
+  - DSA Tutorial
 ---
 
 ## Introduction to Algorithm

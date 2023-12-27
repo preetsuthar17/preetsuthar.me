@@ -5,7 +5,7 @@ id: 27
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA Course
+  - DSA Tutorial
 ---
 
 ## Arrays Operations
@@ -17,20 +17,24 @@ Let's talk about operations that can be done on array in Data Structure.
 - Accessing each data element in such a way that all the data elements are processed one by one.
 
 ## Insertion
+
 - Adding new data element in Array.
 
 ## Deletion
+
 - removing data element from Array.
 
 ## Searching
+
 - Finding location for specific data in Array.
-  
+
 ## Sorting
+
 - Arranging array data in some logical order
 
 ## Merging
-- Combining two array elements into single array.
 
+- Combining two array elements into single array.
 
 ## Array Traversing Example
 
@@ -44,7 +48,6 @@ Let's talk about operations that can be done on array in Data Structure.
   }
 
 ```
- 
 
 ## Array Insertion Example
 

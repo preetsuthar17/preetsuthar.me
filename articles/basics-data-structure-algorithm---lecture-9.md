@@ -5,7 +5,7 @@ id: 28
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
-  - DSA Course
+  - DSA Tutorial
 ---
 
 ## Strings
