@@ -370,7 +370,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               </p>
             </div>
             {toc.length > 0 && (
-              <div className="tableOfContent" style={{ paddingBottom: "1rem" }}>
+              <div className="tableOfContent" style={{ paddingBottom: "2rem" }}>
                 <h2>On this page</h2>
                 <ul>
                   {toc.map((item, index) => (

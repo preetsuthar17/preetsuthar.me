@@ -194,17 +194,38 @@ $background-color_1: #180d23;
     border-radius: 12px;
   }
 }
+.tableOfContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tableOfContent::-webkit-scrollbar-thumb {
+  background-color: #88888895;
+  border-radius: 6px;
+}
 
 .tableOfContent {
   position: fixed;
   right: 10px;
   width: 20rem;
-  top: 70px;
+  top: 120px;
   color: $color_3;
+  max-height: 30rem;
+  overflow: auto;
   line-height: 1.6;
   word-wrap: break-word;
-  border-radius: 12px;
   cursor: auto !important;
+  --scale: 1;
+  mask-image: linear-gradient(
+    360deg,
+    rgba(255, 255, 255, 0) calc(var(--scale) * -10%),
+    rgba(255, 255, 255, 0.1) calc(var(--scale) * 6%),
+    rgba(255, 255, 255, 0.5) calc(var(--scale) * 22.5%),
+    rgba(255, 255, 255, 0.6) calc(var(--scale) * 25.5%),
+    rgba(255, 255, 255, 0.7) calc(var(--scale) * 30%),
+    rgba(255, 255, 255, 0.8) calc(var(--scale) * 36%),
+    rgba(255, 255, 255, 0.9) calc(var(--scale) * 48%),
+    rgba(255, 255, 255, 1) calc(var(--scale) * 60%)
+  );
 
   @media screen and (max-width: 1400px) {
     position: inherit;
@@ -302,7 +323,7 @@ blockquote {
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
-    border-radius: 6px;
+  border-radius: 6px;
 
   margin: 2.5rem 0;
   background-color: #121212;
@@ -314,8 +335,8 @@ blockquote {
   margin: 2.2rem 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
-    border-radius: 6px;
-    border: 2px solid #ffffff07;
+  border-radius: 6px;
+  border: 2px solid #ffffff07;
   background-color: #121212;
 
   p {
