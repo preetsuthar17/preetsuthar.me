@@ -178,7 +178,7 @@ example_set = { 23, "Hii" , 2.3, "H"}
 
   - pop()
 
-    - Using pop function we can order the list and pop the duplicating element in the set and it’ll return us the ordered set.
+    - Pop operations removes any random element from the set and returns the removed element and returns the set in ordered manner.
 
     ```python
     example_set = {3,6,3,6,4}
