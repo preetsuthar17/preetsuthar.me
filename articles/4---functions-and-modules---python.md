@@ -227,7 +227,7 @@ import datetime
 - This isn’t pre-installed in python so it requires installation before usage.
 
 ```python
-pip install matplotlibz
+pip install matplotlib
 ```
 
 - matplotlib allows us wide variety of plots which helps to understand trends and patterns. Here are few of them listed,
