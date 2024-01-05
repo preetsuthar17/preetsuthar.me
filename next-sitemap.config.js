@@ -1,5 +1,10 @@
+const siteUrl = "https://www.preetsutahr.me";
+
 module.exports = {
-  siteUrl: "https://preetsuthar.me",
+  siteUrl,
   generateRobotsTxt: true,
-  exclude: ["/node_modules"],
+  robotsTxtOptions: {
+    policies: [{ userAgent: "*", allow: "/" }],
+    additionalSitemaps: [`${siteUrl}/sitemap-0.xml`],
+  },
 };
