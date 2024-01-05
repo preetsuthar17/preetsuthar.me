@@ -211,11 +211,13 @@ $color_3: #aaaab5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   border: 1px solid #cccccc16;
-  padding: 0.5rem 0.7rem;
+  padding: 0.8rem 0.9rem;
   margin-top: 0.7rem;
   margin-right: 0.7rem;
   text-align: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50rem;
   // border: 2px #aaaab533 solid;
 }
