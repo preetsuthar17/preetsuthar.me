@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /_next/

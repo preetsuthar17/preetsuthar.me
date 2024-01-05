@@ -70,7 +70,7 @@ export default function App({ Component, pageProps }) {
           {/* {showDialog && (
             <Dialog onClose={handleCloseDialog} className="show" />
           )} */}
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
+          <cript src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
           <Script id="google-analytics">
             {`
           window.dataLayer = window.dataLayer || [];
