@@ -5,9 +5,8 @@ export default async (req, res) => {
     console.log("API Route: Start");
 
     const { htmlContent } = req.body;
-
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: "new",
     });
     const page = await browser.newPage();
     await page.setContent(htmlContent);
