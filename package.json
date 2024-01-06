@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"node ./src/utils/pdfConverter.js\" \"next dev\"",
-    "build": "concurrently \"node ./src/utils/pdfConverter.js\" \"next build\" \"next-sitemap\"",
+    "build": "concurrently \"npm run build-client\" \"npm run build-server\"",
+    "build-client": "next build",
+    "build-server": "node ./src/utils/pdfConverter.js && next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
