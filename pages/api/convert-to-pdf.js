@@ -1,13 +1,18 @@
 import puppeteer from "puppeteer";
+const chrome = require("chrome-aws-lambda");
 
 export default async (req, res) => {
   try {
     console.log("API Route: Start");
 
     const { htmlContent } = req.body;
+
     const browser = await puppeteer.launch({
       headless: "new",
+      args: chrome.args,
+      executablePath: await chrome.executablePath,
     });
+
     const page = await browser.newPage();
     await page.setContent(htmlContent);
 
