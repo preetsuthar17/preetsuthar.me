@@ -8,10 +8,10 @@ export default async (req, res) => {
     const { htmlContent } = req.body;
 
     const browser = await puppeteer.launch({
+      headless: "new",
       args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
       defaultViewport: chromium.defaultViewport,
       executablePath: await chromium.executablePath,
-      headless: true,
     });
 
     const page = await browser.newPage();
