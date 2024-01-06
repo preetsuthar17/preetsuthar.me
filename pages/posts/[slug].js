@@ -10,7 +10,6 @@ import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
-import axios from "axios";
 
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt();
@@ -26,8 +25,6 @@ const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
 import { supabase } from "@/src/utils/supabaseClient";
-import CustomTooltip from "@/src/components/CustomTooltip";
-import { FaDollarSign } from "react-icons/fa";
 
 function convertIdToUuid(id) {
   const hexId = id.toString(16);
@@ -245,9 +242,17 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
           body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #111 !important;
+          }
+
+          pre{
+            color: #111 !important;
           }
   
+          code{
+            color: #111 !important;
+          }
+
           h1, h2, h3, h4, h5, h6 {
             color: #007bff;
           }
@@ -271,14 +276,14 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
           }
   
           @page {
-            margin: 20px;
+            margin: 40px;
           }
         </style>
       `;
 
       const htmlWithMarginAndWatermark = `<html>${additionalStyles}${modifiedHtmlContent}${watermarkHtml}</html>`;
 
-      const response = await fetch("http://localhost:3001/convert-to-pdf", {
+      const response = await fetch("/api/convert-to-pdf", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -286,11 +291,15 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
         body: JSON.stringify({ htmlContent: htmlWithMarginAndWatermark }),
       });
 
+      console.log("API Response Status:", response.status);
+
       if (!response.ok) {
         throw new Error(`Failed to generate PDF: ${response.statusText}`);
       }
 
       const pdfData = await response.arrayBuffer();
+
+      console.log("PDF Data Length:", pdfData.byteLength);
 
       const blob = new Blob([pdfData], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
@@ -306,7 +315,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
 
       URL.revokeObjectURL(url);
     } catch (error) {
-      console.error(`"Error generating PDF:"`, error);
+      console.error("Error generating PDF:", error);
     } finally {
       setLoading(false);
     }
