@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-const chrome = require("chrome-aws-lambda");
+import chromium from "chrome-aws-lambda";
 
 export default async (req, res) => {
   try {
@@ -8,9 +8,10 @@ export default async (req, res) => {
     const { htmlContent } = req.body;
 
     const browser = await puppeteer.launch({
-      headless: "new",
-      args: chrome.args,
-      executablePath: await chrome.executablePath,
+      args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: true,
     });
 
     const page = await browser.newPage();
