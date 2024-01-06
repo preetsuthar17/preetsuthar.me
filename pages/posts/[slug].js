@@ -10,6 +10,7 @@ import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
+import axios from "axios";
 
 import MarkdownIt from "markdown-it";
 const md = new MarkdownIt();
@@ -206,6 +207,121 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
   };
 
   const toc = generateTableOfContents(post.content);
+  const [loading, setLoading] = useState(false);
+  const handleDownloadPdf = async () => {
+    try {
+      setLoading(true);
+
+      const pdfContent = document.documentElement.outerHTML;
+
+      const elementsToExclude = [
+        ".tableOfContent",
+        ".navbar-div",
+        "#bmc-wbtn",
+        ".sharePostBlock",
+        ".post-navigation",
+        ".footer-div",
+        ".post-top",
+        ".gsc-main",
+        ".styled-hr",
+        ".post-tag-slug",
+        ".date",
+        "svg",
+        "button",
+        ".share_and_copy_link",
+        ".custom_cursor",
+      ];
+
+      const modifiedHtmlContent = excludeElements(
+        pdfContent,
+        elementsToExclude
+      );
+
+      const watermarkHtml =
+        '<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.2); font-size: 48px; font-family: Arial, sans-serif; font-weight: bold;">preetsuthar.me</div>';
+
+      const additionalStyles = `
+        <style>
+          body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+          }
+  
+          h1, h2, h3, h4, h5, h6 {
+            color: #007bff;
+          }
+  
+          p {
+            margin-bottom: 16px;
+          }
+  
+          a {
+            color: #007bff !important;
+            text-decoration: none;
+          }
+  
+          a:hover {
+            text-decoration: underline;
+          }
+  
+          .container {
+            max-width: 800px;
+            margin: 0 auto;
+          }
+  
+          @page {
+            margin: 20px;
+          }
+        </style>
+      `;
+
+      const htmlWithMarginAndWatermark = `<html>${additionalStyles}${modifiedHtmlContent}${watermarkHtml}</html>`;
+
+      const response = await fetch("http://localhost:3001/convert-to-pdf", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ htmlContent: htmlWithMarginAndWatermark }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to generate PDF: ${response.statusText}`);
+      }
+
+      const pdfData = await response.arrayBuffer();
+
+      const blob = new Blob([pdfData], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${post.frontmatter.title} - preetsuthar-me.pdf`;
+      document.body.appendChild(a);
+
+      a.click();
+
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error(`"Error generating PDF:"`, error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const excludeElements = (htmlContent, selectorsToExclude) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlContent, "text/html");
+
+    selectorsToExclude.forEach((selector) => {
+      const elementsToRemove = doc.querySelectorAll(selector);
+      elementsToRemove.forEach((element) => element.remove());
+    });
+
+    return doc.documentElement.outerHTML;
+  };
 
   return (
     <motion.div
@@ -257,7 +373,11 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
               ))}
             </div>
             <div className="styled-hr"></div>
-            <div style={{ marginBottom: "2rem" }}>
+            <div
+              style={{
+                marginBottom: "2rem",
+              }}
+            >
               <div
                 className="author p-color"
                 style={{
@@ -284,15 +404,12 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </Link>
               </div>
               <time className="date">{post.frontmatter.date} - </time>
-              <span className="p-color date">{currentViews} views -</span>
-              <span
-                className="p-color date post-tag-slug"
-                style={{ margin: "0.5rem" }}
-              >
+              <span className="p-color date">{currentViews} views - </span>
+              <span className="p-color date" style={{ margin: "0.5rem 0" }}>
                 {post.readTime} read
               </span>
 
-              <div>
+              <div className="share_and_copy_link">
                 <abbr title="Share on X">
                   <Link href={twitterHref} data-size="large" target="_blank">
                     <Image
@@ -328,7 +445,13 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </abbr>
               </div>
             </div>
-
+            <button
+              className="primary-btn-main"
+              onClick={handleDownloadPdf}
+              disabled={loading}
+            >
+              {loading ? "Downloading..." : "Download post as PDF"}
+            </button>
             <div
               className="donateUs"
               style={{
