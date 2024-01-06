@@ -2,6 +2,8 @@ import puppeteer from "puppeteer";
 
 export default async (req, res) => {
   try {
+    console.log("API Route: Start");
+
     const { htmlContent } = req.body;
 
     const browser = await puppeteer.launch({
@@ -13,6 +15,8 @@ export default async (req, res) => {
     const pdfBuffer = await page.pdf({ format: "A4" });
 
     await browser.close();
+
+    console.log("API Route: End");
 
     res.setHeader("Content-Type", "application/pdf");
     res.send(pdfBuffer);
