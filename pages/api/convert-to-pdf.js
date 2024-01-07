@@ -1,5 +1,4 @@
-import puppeteer from "puppeteer";
-import chromium from "chrome-aws-lambda";
+import { chromium } from "playwright";
 
 export default async (req, res) => {
   try {
@@ -7,13 +6,7 @@ export default async (req, res) => {
 
     const { htmlContent } = req.body;
 
-    const browser = await puppeteer.launch({
-      headless: "false",
-      args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-    });
-
+    const browser = await chromium.launch();
     const page = await browser.newPage();
     await page.setContent(htmlContent);
 
