@@ -1,6 +1,7 @@
 # preetsuthar.me
 
 My personal corner on the internet with blogs and everything :)
+
 ### Todo
 
 - [x] Tags system in blogs

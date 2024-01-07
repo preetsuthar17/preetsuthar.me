@@ -10,63 +10,19 @@ import matter from "gray-matter";
 import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
-
-import MarkdownIt from "markdown-it";
-const md = new MarkdownIt();
-
 import twitterLogo from "../../src/utils/icons/twitter.svg";
-
 import { motion } from "framer-motion";
-
-import readArticles from "@/src/utils/readArticles";
+import { supabase } from "@/src/utils/supabaseClient";
 
 const Layout = dynamic(() => import("@/src/components/Layout"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
-import { supabase } from "@/src/utils/supabaseClient";
-
-function convertIdToUuid(id) {
-  const hexId = id.toString(16);
-  const paddedHexId = hexId.padStart(32, "0");
-  const uuid = `${paddedHexId.substr(0, 8)}-${paddedHexId.substr(
-    8,
-    4
-  )}-${paddedHexId.substr(12, 4)}-${paddedHexId.substr(
-    16,
-    4
-  )}-${paddedHexId.substr(20)}`;
-
-  return uuid;
-}
-
-function calculateReadTime(content) {
-  const plainText = md.render(content);
-
-  const words = plainText.split(/\s+/).length;
-
-  const wordsPerMinute = 200;
-
-  const readTimeMinutes = words / wordsPerMinute;
-
-  const hours = Math.floor(readTimeMinutes / 60);
-  const remainingMinutes = Math.floor(readTimeMinutes % 60);
-  const seconds = Math.round((readTimeMinutes % 1) * 60);
-
-  let readTime = "";
-
-  if (hours > 0) {
-    readTime += `${hours} hour${hours > 1 ? "s" : ""} `;
-  }
-
-  if (remainingMinutes > 0 || (hours === 0 && seconds > 0)) {
-    readTime += `${Math.max(1, remainingMinutes)} minute${
-      remainingMinutes > 1 ? "s" : ""
-    } `;
-  }
-
-  return readTime.trim();
-}
+import convertIdToUuid from "@/src/utils/functions/convertIdToUuid";
+import calculateReadTime from "@/src/utils/functions/calculateReadTime";
+import generateTableOfContents from "@/src/utils/functions/generateTableOfContents";
+import formatDate from "@/src/utils/functions/formatDate";
+import readArticles from "@/src/utils/functions/readArticles";
 
 export default function Post({ post, prevArticleData, nextArticleData }) {
   const [currentViews, setCurrentViews] = useState(post.views);
@@ -139,198 +95,13 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
 
-    // <script
-    //   src="https://giscus.app/client.js"
-    //   data-repo="preetsuthar17/comments"
-    //   data-repo-id="R_kgDOGIcPqw"
-    //   data-category="Announcements"
-    //   data-category-id="DIC_kwDOGIcPq84CZZYm"
-    //   data-mapping="pathname"
-    //   data-strict="0"
-    //   data-reactions-enabled="1"
-    //   data-emit-metadata="0"
-    //   data-input-position="bottom"
-    //   data-theme="dark"
-    //   data-lang="en"
-    //   crossorigin="anonymous"
-    //   async
-    // ></script>;
-
     const commentsContainer = document.getElementById("giscus-comments");
     if (commentsContainer) {
       commentsContainer.appendChild(script);
     }
   }, []);
 
-  const generateTableOfContents = (content) => {
-    const headings = [];
-    const toc = [];
-    const regex = /<h([1-2])>(.*?)<\/h\1>/g;
-    let match;
-
-    while ((match = regex.exec(content)) !== null) {
-      const headingLevel = parseInt(match[1]);
-      const headingText = match[2];
-      const slug = headingText
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "");
-
-      headings.push({ level: headingLevel, text: headingText, slug });
-    }
-
-    let currentLevel = 1;
-    const stack = [toc];
-
-    headings.forEach((heading, index) => {
-      const entry = { text: heading.text, slug: heading.slug, children: [] };
-      entry.id = `${heading.level === 1 ? "h1" : "h2"}-${heading.slug}`;
-
-      if (heading.level === 2) {
-        toc.push(entry);
-        currentLevel = 1;
-        stack.length = 1;
-        stack[0] = toc;
-      } else if (heading.level === 2 && currentLevel === 1) {
-        stack[stack.length - 1].push(entry);
-        stack.push(entry.children);
-        currentLevel = 2;
-      } else if (heading.level === 2 && currentLevel === 2) {
-        stack[stack.length - 1].push(entry);
-      }
-    });
-
-    return toc;
-  };
-
   const toc = generateTableOfContents(post.content);
-  const [loading, setLoading] = useState(false);
-  // const handleDownloadPdf = async () => {
-  //   try {
-  //     setLoading(true);
-
-  //     const pdfContent = document.documentElement.outerHTML;
-
-  //     const elementsToExclude = [
-  //       ".tableOfContent",
-  //       ".navbar-div",
-  //       "#bmc-wbtn",
-  //       ".sharePostBlock",
-  //       ".post-navigation",
-  //       ".footer-div",
-  //       ".post-top",
-  //       ".gsc-main",
-  //       ".styled-hr",
-  //       ".post-tag-slug",
-  //       ".date",
-  //       "svg",
-  //       "button",
-  //       ".share_and_copy_link",
-  //       ".custom_cursor",
-  //     ];
-
-  //     const modifiedHtmlContent = excludeElements(
-  //       pdfContent,
-  //       elementsToExclude
-  //     );
-
-  //     const watermarkHtml =
-  //       '<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.2); font-size: 48px; font-family: Arial, sans-serif; font-weight: bold;">preetsuthar.me</div>';
-
-  //     const additionalStyles = `
-  //       <style>
-  //         body {
-  //           font-family: 'Arial', sans-serif;
-  //           line-height: 1.6;
-  //           color: #111 !important;
-  //         }
-
-  //         pre{
-  //           color: #111 !important;
-  //         }
-
-  //         code{
-  //           color: #111 !important;
-  //         }
-
-  //         h1, h2, h3, h4, h5, h6 {
-  //           color: #007bff;
-  //         }
-
-  //         p {
-  //           margin-bottom: 16px;
-  //         }
-
-  //         a {
-  //           color: #007bff !important;
-  //           text-decoration: none;
-  //         }
-
-  //         a:hover {
-  //           text-decoration: underline;
-  //         }
-
-  //         .container {
-  //           max-width: 800px;
-  //           margin: 0 auto;
-  //         }
-
-  //         @page {
-  //           margin: 40px;
-  //         }
-  //       </style>
-  //     `;
-
-  //     const htmlWithMarginAndWatermark = `<html>${additionalStyles}${modifiedHtmlContent}${watermarkHtml}</html>`;
-
-  //     const response = await fetch("/api/convert-to-pdf", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ htmlContent: htmlWithMarginAndWatermark }),
-  //     });
-
-  //     console.log("API Response Status:", response.status);
-
-  //     if (!response.ok) {
-  //       throw new Error(`Failed to generate PDF: ${response.statusText}`);
-  //     }
-
-  //     const pdfData = await response.arrayBuffer();
-
-  //     console.log("PDF Data Length:", pdfData.byteLength);
-
-  //     const blob = new Blob([pdfData], { type: "application/pdf" });
-  //     const url = URL.createObjectURL(blob);
-
-  //     const a = document.createElement("a");
-  //     a.href = url;
-  //     a.download = `${post.frontmatter.title} - preetsuthar-me.pdf`;
-  //     document.body.appendChild(a);
-
-  //     a.click();
-
-  //     document.body.removeChild(a);
-
-  //     URL.revokeObjectURL(url);
-  //   } catch (error) {
-  //     console.error("Error generating PDF:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-  const excludeElements = (htmlContent, selectorsToExclude) => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlContent, "text/html");
-
-    selectorsToExclude.forEach((selector) => {
-      const elementsToRemove = doc.querySelectorAll(selector);
-      elementsToRemove.forEach((element) => element.remove());
-    });
-
-    return doc.documentElement.outerHTML;
-  };
 
   return (
     <motion.div
@@ -454,13 +225,7 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </abbr>
               </div>
             </div>
-            {/* <button
-              className="primary-btn-main"
-              onClick={handleDownloadPdf}
-              disabled={loading}
-            >
-              {loading ? "Downloading..." : "Download post as PDF"}
-            </button> */}
+
             <div
               className="donateUs"
               style={{
@@ -643,14 +408,6 @@ export async function getStaticProps({ params }) {
     authorGithub: data.authorGithub,
     tags: data.tags,
   };
-
-  function formatDate(date) {
-    const options = { month: "short", day: "2-digit", year: "numeric" };
-    const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
-      new Date(date)
-    );
-    return formattedDate;
-  }
 
   const articles = readArticles();
   const currentIndex = articles.findIndex(

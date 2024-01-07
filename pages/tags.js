@@ -2,18 +2,14 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
 import { useEffect } from "react";
+import Head from "next/head";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 import Navbar from "../src/components/navbar";
 import Footer from "../src/components/footer";
-
-import Head from "next/head";
-
-import { motion } from "framer-motion";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 

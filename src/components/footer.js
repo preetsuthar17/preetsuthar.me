@@ -2,12 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 import github from "../utils/icons/github.svg";
-import instagram from "../utils/icons/insta.svg";
 import email from "../utils/icons/email.svg";
 import discord from "../utils/icons/discord.svg";
 import twitter from "../utils/icons/twitter.svg";
 
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
