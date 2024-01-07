@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const CourseSnackBar = () => {
   const [isOpen, setIsOpen] = useState(true);

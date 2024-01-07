@@ -4,9 +4,6 @@ import Layout from "@/src/components/Layout";
 import ReviewForm from "@/src/components/ReviewForm";
 
 import { motion } from "framer-motion";
-
-import dynamic from "next/dynamic";
-
 import Head from "next/head";
 
 const reviewPage = () => {

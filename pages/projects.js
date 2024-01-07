@@ -1,10 +1,7 @@
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-
 import { motion } from "framer-motion";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

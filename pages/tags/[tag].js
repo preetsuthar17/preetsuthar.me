@@ -4,19 +4,18 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { motion } from "framer-motion";
-
 import Head from "next/head";
-
-import { parseISO } from "date-fns";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect } from "react";
 
 import Navbar from "../../src/components/navbar";
 import Footer from "../../src/components/footer";
-import { useEffect } from "react";
+
+import getFirstFewLines from "@/src/utils/functions/getFirstFewLines";
+import formatDate from "@/src/utils/functions/formatDate";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Tag = ({ blogs }) => {
   useEffect(() => {
@@ -54,7 +53,7 @@ const Tag = ({ blogs }) => {
       slug: blog.slug,
       description: blog.frontmatter.description || "",
       date: blog.frontmatter.date || "",
-      content: blog.content || "", // Add content field
+      content: blog.content || "",
     }))
     .sort((a, b) => {
       const regex = /(\d+)/;
@@ -195,22 +194,6 @@ const Tag = ({ blogs }) => {
   );
 };
 
-function getFirstFewLines(content) {
-  const lines = content.slice(0, 150).split("\n");
-  const firstFewLines = lines.slice(0, 1).join("\n");
-  let description = "";
-  for (const line of lines) {
-    if (line.trim().length > 0 && !line.trim().startsWith("#")) {
-      if (!line.trim().startsWith("![")) {
-        description = line.trim();
-        break;
-      }
-    }
-  }
-
-  return description;
-}
-
 export default Tag;
 
 export async function getStaticPaths() {
@@ -247,17 +230,17 @@ export async function getStaticProps({ params }) {
   const blogs = fileNames.map((fileName) => {
     const filePath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data, content } = matter(fileContents); // Extract content here
+    const { data, content } = matter(fileContents);
 
     return {
       frontmatter: {
         tags: data.tags || [],
         title: data.title || "",
-        description: data.description || getFirstFewLines(content), // Use content for description
+        description: data.description || getFirstFewLines(content),
         date: formatDate(data.date.toString()),
       },
       slug: fileName.replace(/\.md$/, ""),
-      content, // Add content field
+      content,
     };
   });
 
@@ -266,12 +249,4 @@ export async function getStaticProps({ params }) {
       blogs,
     },
   };
-}
-
-function formatDate(date) {
-  const options = { month: "short", day: "2-digit", year: "numeric" };
-  const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
-    new Date(date)
-  );
-  return formattedDate;
 }

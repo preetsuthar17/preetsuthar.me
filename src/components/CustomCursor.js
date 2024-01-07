@@ -8,7 +8,6 @@ const CustomCursor = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect if the device is a mobile device
     const isMobileDevice = window.matchMedia("(max-width: 767px)").matches;
     setIsMobile(isMobileDevice);
 

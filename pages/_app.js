@@ -15,8 +15,6 @@ import "../src/styles/partials/_404.scss";
 import "../src/styles/partials/_CourseSnackBar.scss";
 import "../src/styles/partials/_CustomCursor.scss";
 
-import CourseSnackBar from "@/src/components/CourseSnackBar";
-import Dialog from "@/src/components/Dialog";
 import Layout from "@/src/components/Layout";
 import CustomCursor from "../src/components/CustomCursor";
 
@@ -26,8 +24,6 @@ import { useState, useEffect } from "react";
 
 import Head from "next/head";
 import Script from "next/script";
-
-import gsap from "gsap";
 
 export default function App({ Component, pageProps }) {
   const [showDialog, setShowDialog] = useState(false);
@@ -54,9 +50,6 @@ export default function App({ Component, pageProps }) {
     });
   }
 
-  const handleCloseDialog = () => {
-    setShowDialog(false);
-  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -67,10 +60,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Head></Head>
         <>
-          {/* {showDialog && (
-            <Dialog onClose={handleCloseDialog} className="show" />
-          )} */}
-          <cript src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-PXPK7RW6DG" />
           <Script id="google-analytics">
             {`
           window.dataLayer = window.dataLayer || [];
@@ -92,7 +82,6 @@ export default function App({ Component, pageProps }) {
             data-y_margin="18"
           ></script>
         </>
-        {/* <CourseSnackBar /> */}
         <CustomCursor />
         <Component {...pageProps} />
       </Layout>

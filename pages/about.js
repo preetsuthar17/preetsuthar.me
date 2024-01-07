@@ -1,16 +1,10 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect } from "react";
 import Head from "next/head";
-
 import GitHubCalendar from "react-github-calendar";
-
 import React from "react";
-
 import VanillaTilt from "vanilla-tilt";
-
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
 
 import Image from "next/image";
 import Link from "next/link";
@@ -32,7 +26,6 @@ import python from "../src/utils/icons/techs/python.svg";
 import react from "../src/utils/icons/techs/react.svg";
 import mysql from "../src/utils/icons/techs/mysql.svg";
 import gsap_logo from "../src/utils/icons/techs/gsap.svg";
-
 import LinkedIn from "../src/utils/icons/LinkedIn.svg";
 import github_logo from "../src/utils/icons/github.svg";
 import email from "../src/utils/icons/email.svg";
@@ -49,28 +42,9 @@ import { motion } from "framer-motion";
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
-function AutomaticAge({ birthdate }) {
-  const calculateAge = useCallback(() => {
-    const birthDate = new Date(birthdate);
-    const currentDate = new Date();
-    const age = Math.floor(
-      (currentDate - birthDate) / (365.25 * 24 * 60 * 60 * 1000)
-    );
-    return age;
-  }, [birthdate]);
+gsap.registerPlugin(ScrollTrigger);
 
-  const [age, setAge] = useState(calculateAge());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAge(calculateAge());
-    }, 24 * 60 * 60 * 1000);
-
-    return () => clearInterval(interval);
-  }, [calculateAge]);
-
-  return <span> {age} </span>;
-}
+import AutomaticAge from "@/src/utils/functions/AutomaticAge";
 
 const About = () => {
   useEffect(() => {
@@ -161,6 +135,7 @@ const About = () => {
   const current_year = new Date().getFullYear();
 
   const birthdate = "2006-08-28";
+
   return (
     <>
       <motion.div
