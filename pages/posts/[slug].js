@@ -205,121 +205,121 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
 
   const toc = generateTableOfContents(post.content);
   const [loading, setLoading] = useState(false);
-  const handleDownloadPdf = async () => {
-    try {
-      setLoading(true);
+  // const handleDownloadPdf = async () => {
+  //   try {
+  //     setLoading(true);
 
-      const pdfContent = document.documentElement.outerHTML;
+  //     const pdfContent = document.documentElement.outerHTML;
 
-      const elementsToExclude = [
-        ".tableOfContent",
-        ".navbar-div",
-        "#bmc-wbtn",
-        ".sharePostBlock",
-        ".post-navigation",
-        ".footer-div",
-        ".post-top",
-        ".gsc-main",
-        ".styled-hr",
-        ".post-tag-slug",
-        ".date",
-        "svg",
-        "button",
-        ".share_and_copy_link",
-        ".custom_cursor",
-      ];
+  //     const elementsToExclude = [
+  //       ".tableOfContent",
+  //       ".navbar-div",
+  //       "#bmc-wbtn",
+  //       ".sharePostBlock",
+  //       ".post-navigation",
+  //       ".footer-div",
+  //       ".post-top",
+  //       ".gsc-main",
+  //       ".styled-hr",
+  //       ".post-tag-slug",
+  //       ".date",
+  //       "svg",
+  //       "button",
+  //       ".share_and_copy_link",
+  //       ".custom_cursor",
+  //     ];
 
-      const modifiedHtmlContent = excludeElements(
-        pdfContent,
-        elementsToExclude
-      );
+  //     const modifiedHtmlContent = excludeElements(
+  //       pdfContent,
+  //       elementsToExclude
+  //     );
 
-      const watermarkHtml =
-        '<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.2); font-size: 48px; font-family: Arial, sans-serif; font-weight: bold;">preetsuthar.me</div>';
+  //     const watermarkHtml =
+  //       '<div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(0, 0, 0, 0.2); font-size: 48px; font-family: Arial, sans-serif; font-weight: bold;">preetsuthar.me</div>';
 
-      const additionalStyles = `
-        <style>
-          body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #111 !important;
-          }
+  //     const additionalStyles = `
+  //       <style>
+  //         body {
+  //           font-family: 'Arial', sans-serif;
+  //           line-height: 1.6;
+  //           color: #111 !important;
+  //         }
 
-          pre{
-            color: #111 !important;
-          }
-  
-          code{
-            color: #111 !important;
-          }
+  //         pre{
+  //           color: #111 !important;
+  //         }
 
-          h1, h2, h3, h4, h5, h6 {
-            color: #007bff;
-          }
-  
-          p {
-            margin-bottom: 16px;
-          }
-  
-          a {
-            color: #007bff !important;
-            text-decoration: none;
-          }
-  
-          a:hover {
-            text-decoration: underline;
-          }
-  
-          .container {
-            max-width: 800px;
-            margin: 0 auto;
-          }
-  
-          @page {
-            margin: 40px;
-          }
-        </style>
-      `;
+  //         code{
+  //           color: #111 !important;
+  //         }
 
-      const htmlWithMarginAndWatermark = `<html>${additionalStyles}${modifiedHtmlContent}${watermarkHtml}</html>`;
+  //         h1, h2, h3, h4, h5, h6 {
+  //           color: #007bff;
+  //         }
 
-      const response = await fetch("/api/convert-to-pdf", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ htmlContent: htmlWithMarginAndWatermark }),
-      });
+  //         p {
+  //           margin-bottom: 16px;
+  //         }
 
-      console.log("API Response Status:", response.status);
+  //         a {
+  //           color: #007bff !important;
+  //           text-decoration: none;
+  //         }
 
-      if (!response.ok) {
-        throw new Error(`Failed to generate PDF: ${response.statusText}`);
-      }
+  //         a:hover {
+  //           text-decoration: underline;
+  //         }
 
-      const pdfData = await response.arrayBuffer();
+  //         .container {
+  //           max-width: 800px;
+  //           margin: 0 auto;
+  //         }
 
-      console.log("PDF Data Length:", pdfData.byteLength);
+  //         @page {
+  //           margin: 40px;
+  //         }
+  //       </style>
+  //     `;
 
-      const blob = new Blob([pdfData], { type: "application/pdf" });
-      const url = URL.createObjectURL(blob);
+  //     const htmlWithMarginAndWatermark = `<html>${additionalStyles}${modifiedHtmlContent}${watermarkHtml}</html>`;
 
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${post.frontmatter.title} - preetsuthar-me.pdf`;
-      document.body.appendChild(a);
+  //     const response = await fetch("/api/convert-to-pdf", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ htmlContent: htmlWithMarginAndWatermark }),
+  //     });
 
-      a.click();
+  //     console.log("API Response Status:", response.status);
 
-      document.body.removeChild(a);
+  //     if (!response.ok) {
+  //       throw new Error(`Failed to generate PDF: ${response.statusText}`);
+  //     }
 
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     const pdfData = await response.arrayBuffer();
+
+  //     console.log("PDF Data Length:", pdfData.byteLength);
+
+  //     const blob = new Blob([pdfData], { type: "application/pdf" });
+  //     const url = URL.createObjectURL(blob);
+
+  //     const a = document.createElement("a");
+  //     a.href = url;
+  //     a.download = `${post.frontmatter.title} - preetsuthar-me.pdf`;
+  //     document.body.appendChild(a);
+
+  //     a.click();
+
+  //     document.body.removeChild(a);
+
+  //     URL.revokeObjectURL(url);
+  //   } catch (error) {
+  //     console.error("Error generating PDF:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   const excludeElements = (htmlContent, selectorsToExclude) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, "text/html");
@@ -454,13 +454,13 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </abbr>
               </div>
             </div>
-            <button
+            {/* <button
               className="primary-btn-main"
               onClick={handleDownloadPdf}
               disabled={loading}
             >
               {loading ? "Downloading..." : "Download post as PDF"}
-            </button>
+            </button> */}
             <div
               className="donateUs"
               style={{
