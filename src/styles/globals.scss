@@ -231,3 +231,29 @@ hr {
 .text-lineThrough {
   text-decoration: line-through;
 }
+
+.chip_component {
+  display: flex;
+  .chip_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ::before {
+      content: "💡";
+    }
+    margin: 1.4rem 0 0.3rem 0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 5rem;
+    background-color: rgba(255, 0, 0, 0.308);
+    border: 1px solid rgba(255, 0, 0, 0.342);
+    width: fit-content;
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      font-weight: normal;
+      color: white;
+    }
+    color: white;
+  }
+}

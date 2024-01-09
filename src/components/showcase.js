@@ -4,9 +4,8 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";
 import Link from "next/link";
-import Image from "next/image";
 
-import preet_suthar_image from "@/src/utils/images/preetsuthar.png";
+import CustomTooltip2 from "./CustomTooltip2";
 
 import VanillaTilt from "vanilla-tilt";
 
@@ -127,6 +126,18 @@ const Showcase = () => {
                         <em>Contact me</em>
                       </span>
                     </Link>
+                  </div>
+                  <div className="chip_component">
+                    <CustomTooltip2 text="more information">
+                      <div className="chip_content">
+                        <Link
+                          href="https://www.youtube.com/watch?v=itHctPXzwnM"
+                          target="_blank"
+                        >
+                          Assistify AI beta release
+                        </Link>
+                      </div>
+                    </CustomTooltip2>
                   </div>
                 </div>
               </div>

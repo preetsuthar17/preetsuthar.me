@@ -656,11 +656,28 @@ const About = () => {
                       <div className="cd-timeline-img cd-movie"></div>
 
                       <div className="cd-timeline-content">
-                        <h2>Working at EmpowrAI</h2>
+                        <h2>Working at Assistify Labs</h2>
                         <p>
-                          As per current moment I'm working at EmpowrAI as
-                          front-end developer and also pursuing my studies.
+                          As per current moment I'm working at Assistify Labs as
+                          Front-End developer and also pursuing my studies.
                         </p>
+                        <div
+                          style={{
+                            margin: "1em",
+                          }}
+                          className="chip_component"
+                        >
+                          <CustomTooltip2 text="more information">
+                            <div className="chip_content">
+                              <Link
+                                href="https://www.youtube.com/watch?v=itHctPXzwnM"
+                                target="_blank"
+                              >
+                                Assistify AI beta release
+                              </Link>
+                            </div>
+                          </CustomTooltip2>
+                        </div>
                         <span className="cd-date">Present</span>
                       </div>
                     </div>
