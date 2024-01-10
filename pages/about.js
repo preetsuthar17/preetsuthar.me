@@ -370,6 +370,7 @@ const About = () => {
                     }}
                   >
                     <GitHubCalendar
+                      year={2024}
                       colorScheme="dark"
                       style={{ marginBottom: "0.6rem" }}
                       username="preetsuthar17"
