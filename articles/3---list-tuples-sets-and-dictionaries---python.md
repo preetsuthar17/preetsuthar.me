@@ -1,6 +1,6 @@
 ---
 title: "3 - List, Tuples, Sets and Dictionaries - Python"
-date: 2023-12-27
+date: 2023-12-30
 id: 32
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"

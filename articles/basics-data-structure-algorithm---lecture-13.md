@@ -1,6 +1,6 @@
 ---
 title: "Basics Data Structure & Algorithm - Lecture 13"
-date: 2023-12-29
+date: 2024-01-05
 id: 38
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"

@@ -1,6 +1,6 @@
 ---
 title: "2 - Control Flow Structure - Python"
-date: 2023-12-27
+date: 2023-12-29
 id: 31
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"

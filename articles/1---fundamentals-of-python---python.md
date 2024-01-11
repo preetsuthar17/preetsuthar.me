@@ -1,6 +1,6 @@
 ---
 title: "1 - Fundamentals of Python - Python"
-date: 2023-12-27
+date: 2023-12-28
 id: 30
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
