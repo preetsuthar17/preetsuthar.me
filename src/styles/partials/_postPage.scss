@@ -365,3 +365,57 @@ blockquote {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 }
+
+.related-blogs {
+  .accordion {
+    background-color: #121212;
+    color: rgb(170, 170, 170);
+    cursor: pointer;
+    padding: 18px;
+    justify-content: space-between;
+    display: flex !important;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    outline: none;
+    transition: background-color 0.2s ease-out !important;
+  }
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    li::before {
+      content: "○";
+      color: #17b6ff;
+      font-size: 11px;
+    }
+    padding: 1rem;
+    list-style: disc;
+    border-radius: 0px 0 8px 8px;
+    transform: translateY(-6px);
+    display: flex;
+    background-color: #121212;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out !important;
+  }
+
+  .accordion-items {
+    a {
+      color: #17b6ff;
+      font-size: 15px;
+      text-decoration: none;
+    }
+  }
+}
+.panel.open {
+  height: auto;
+}

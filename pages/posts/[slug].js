@@ -11,7 +11,7 @@ import html from "remark-html";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import twitterLogo from "../../src/utils/icons/twitter.svg";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/src/utils/supabaseClient";
 
 const Layout = dynamic(() => import("@/src/components/Layout"));
@@ -24,7 +24,12 @@ import generateTableOfContents from "@/src/utils/functions/generateTableOfConten
 import formatDate from "@/src/utils/functions/formatDate";
 import readArticles from "@/src/utils/functions/readArticles";
 
-export default function Post({ post, prevArticleData, nextArticleData }) {
+export default function Post({
+  post,
+  prevArticleData,
+  nextArticleData,
+  similarTagArticles,
+}) {
   const [currentViews, setCurrentViews] = useState(post.views);
   const [twitterHref, setTwitterHref] = useState("");
 
@@ -102,6 +107,22 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
   }, []);
 
   const toc = generateTableOfContents(post.content);
+
+  const [activeAccordion, setActiveAccordion] = useState(null);
+
+  // Sort articles in ascending order based on date
+  const sortedSimilarTagArticles = [...similarTagArticles].sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+    return dateA - dateB;
+  });
+  const handleAccordionClick = (articleId) => {
+    setActiveAccordion((prevActive) =>
+      prevActive === articleId ? null : articleId
+    );
+  };
+
+  const isAccordionActive = (articleId) => activeAccordion === articleId;
 
   return (
     <motion.div
@@ -225,7 +246,78 @@ export default function Post({ post, prevArticleData, nextArticleData }) {
                 </abbr>
               </div>
             </div>
-
+            <div className="related-blogs">
+              <div
+                className={`accordion ${isAccordionActive("") ? "active" : ""}`}
+                onClick={() => handleAccordionClick("")}
+              >
+                Blogs with {post.frontmatter.tags.join(", ")} tag(s)
+                <p>{` ${isAccordionActive("") ? "▲" : "▼ "}`}</p>
+              </div>
+              <AnimatePresence>
+                {isAccordionActive("") && (
+                  <motion.div
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={{
+                      open: { opacity: 1, height: "auto" },
+                      collapsed: { opacity: 0, height: 0 },
+                    }}
+                  >
+                    {sortedSimilarTagArticles.length > 0 ? (
+                      <ul>
+                        {sortedSimilarTagArticles.map((article) => (
+                          <li key={article.frontmatter.id}>
+                            <div className="accordion-items">
+                              <motion.div
+                                initial="collapsed"
+                                animate={
+                                  isAccordionActive(article.frontmatter.id)
+                                    ? "open"
+                                    : "collapsed"
+                                }
+                                variants={{
+                                  open: { opacity: 1, height: "auto" },
+                                }}
+                              >
+                                <Link href={`/posts/${article.slug}`}>
+                                  {article.frontmatter.title}
+                                </Link>
+                                {isAccordionActive(article.frontmatter.id) && (
+                                  <div className="accordion-content"></div>
+                                )}
+                              </motion.div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <ul>
+                        <li>
+                          <div className="accordion-items">
+                            <motion.div
+                              initial="collapsed"
+                              variants={{
+                                open: { opacity: 1, height: "auto" },
+                              }}
+                            >
+                              <p
+                                style={{
+                                  color: "#aaa",
+                                }}
+                              >
+                                No blogs found
+                              </p>
+                            </motion.div>
+                          </div>
+                        </li>
+                      </ul>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <div
               className="donateUs"
               style={{
@@ -445,6 +537,24 @@ export async function getStaticProps({ params }) {
   const readTime = calculateReadTime(contentHtml);
   const views = viewsData ? viewsData.views : 0;
 
+  const similarTagArticles = articles.filter(
+    (article) =>
+      article.frontmatter.id !== frontmatter.id &&
+      article.frontmatter.tags.some((tag) => frontmatter.tags.includes(tag))
+  );
+
+  // Convert date objects to strings only if it's a valid Date object
+  const serializableSimilarTagArticles = similarTagArticles.map((article) => ({
+    ...article,
+    frontmatter: {
+      ...article.frontmatter,
+      date:
+        article.frontmatter.date instanceof Date
+          ? article.frontmatter.date.toISOString()
+          : article.frontmatter.date,
+    },
+  }));
+
   return {
     props: {
       post: {
@@ -455,6 +565,7 @@ export async function getStaticProps({ params }) {
       },
       prevArticleData,
       nextArticleData,
+      similarTagArticles: serializableSimilarTagArticles,
     },
   };
 }
