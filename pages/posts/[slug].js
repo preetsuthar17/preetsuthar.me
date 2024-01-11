@@ -413,8 +413,8 @@ export async function getStaticProps({ params }) {
   const currentIndex = articles.findIndex(
     (article) => article.slug === params.slug
   );
-  const prevArticle = articles[currentIndex + 1] || null;
-  const nextArticle = articles[currentIndex - 1] || null;
+  const prevArticle = articles[currentIndex - 1] || null;
+  const nextArticle = articles[currentIndex + 1] || null;
 
   const prevArticleData = prevArticle
     ? {

@@ -343,17 +343,17 @@ export async function getStaticProps() {
     };
   });
 
-  // Sort by date in descending order, then by name in descending numerical order
   posts.sort((a, b) => {
-    const dateComparison =
-      new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
-    if (dateComparison !== 0) {
-      return dateComparison;
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+
+    if (dateA > dateB) {
+      return -1;
+    } else if (dateA < dateB) {
+      return 1;
+    } else {
+      return b.frontmatter.title.localeCompare(a.frontmatter.title);
     }
-    // Assuming the names are numbers, use parseInt for numerical comparison
-    return (
-      parseInt(b.frontmatter.title, 10) - parseInt(a.frontmatter.title, 10)
-    );
   });
 
   const allTags = Array.from(
