@@ -311,12 +311,18 @@ export async function getStaticProps() {
       "utf-8"
     );
     const { data, content } = matter(markdownWithMetadata);
+
+    if (!data.title) {
+      console.warn(`Title is missing in the post: ${filename}`);
+      data.title = "Untitled post";
+    }
     const frontmatter = {
       title: data.title,
-      date: formatDate(data.date.toString()),
+      date: data.date ? formatDate(data.date.toString()) : "",
       description: data.description,
       tags: data.tags || [],
     };
+
     const lines = content.split("\n");
     let description = "";
     for (const line of lines) {
