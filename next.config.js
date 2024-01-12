@@ -29,6 +29,8 @@ module.exports = {
         }
         console.log(`slug renamed to ${slug}.md`);
       });
+
+      generateSitemap();
     }
 
     return config;
@@ -41,4 +43,54 @@ function generateSlug(title) {
     .replace(/[^\w-]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .trim();
+}
+
+function generateSitemap() {
+  const articlesDir = path.join(__dirname, "articles");
+  const files = fs.readdirSync(articlesDir);
+  const dynamicPaths = files.map((filename) => {
+    const { data } = matter(
+      fs.readFileSync(path.join(articlesDir, filename), "utf8")
+    );
+    const slug = generateSlug(data.title);
+    return `/posts/${slug}`;
+  });
+
+  const sitemap = `
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+  <url>
+    <loc>https://preetsuthar.me</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://preetsuthar.me/about</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://preetsuthar.me/projects</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://preetsuthar.me/posts</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+    ${dynamicPaths
+      .map(
+        (path) =>
+          `<url><loc>https://preetsuthar.me${path}</loc><priority>1.0</priority><changefreq>daily</changefreq></url>`
+      )
+      .join("")}
+    </urlset>
+  `;
+
+  fs.writeFileSync(
+    path.join(__dirname, "public", "sitemap.xml"),
+    sitemap,
+    "utf8"
+  );
+
+  console.log("Sitemap generated successfully!");
 }
