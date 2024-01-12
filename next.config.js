@@ -56,6 +56,9 @@ function generateSitemap() {
     return `/posts/${slug}`;
   });
 
+  const tagPages = getTagPages();
+  const tagPaths = tagPages.map((tag) => `/tags/${tag}`);
+
   const sitemap = `
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
@@ -83,6 +86,13 @@ function generateSitemap() {
           `<url><loc>https://preetsuthar.me${path}</loc><priority>1.0</priority><changefreq>daily</changefreq></url>`
       )
       .join("")}
+      ${tagPaths
+        .map(
+          (tagPath) =>
+            `<url><loc>https://preetsuthar.me${tagPath}</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>`
+        )
+        .join("")}
+
     </urlset>
   `;
 
@@ -93,4 +103,22 @@ function generateSitemap() {
   );
 
   console.log("Sitemap generated successfully!");
+}
+
+function getTagPages() {
+  const articlesDir = path.join(__dirname, "articles");
+  const files = fs.readdirSync(articlesDir);
+  const tags = new Set();
+
+  files.forEach((filename) => {
+    const { data } = matter(
+      fs.readFileSync(path.join(articlesDir, filename), "utf8")
+    );
+
+    if (data.tags && Array.isArray(data.tags)) {
+      data.tags.forEach((tag) => tags.add(tag));
+    }
+  });
+
+  return Array.from(tags);
 }
