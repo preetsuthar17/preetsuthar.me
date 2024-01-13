@@ -62,17 +62,17 @@ tags:
 
 ## Advantages of normalization —
 
-    - Reduces data redundancy and inconsistency.
-    - Helps achieving data integrity.
-    - Provides clear structure to the data.
-    - Makes data retrieval more efficient.
-    - By organizing data it'll enhances the reliability of the database.
-    - Normalization improves performance of the database and makes it faster.
+- Reduces data redundancy and inconsistency.
+- Helps achieving data integrity.
+- Provides clear structure to the data.
+- Makes data retrieval more efficient.
+- By organizing data it'll enhances the reliability of the database.
+- Normalization improves performance of the database and makes it faster.
 
 ## Disadvantages of normalization —
 
-    - Very complex to implement.
-    - May require extra joins in tables to make it work.
-    - Makes the structure complex which can slow down the queries and processes.
-    - It increases the database size.
-    - Using normalization it can reduce flexibility.
+- Very complex to implement.
+- May require extra joins in tables to make it work.
+- Makes the structure complex which can slow down the queries and processes.
+- It increases the database size.
+- Using normalization it can reduce flexibility.
