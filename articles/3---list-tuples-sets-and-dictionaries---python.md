@@ -17,18 +17,24 @@ tags:
   - list can have strings, characters, numbers, float, etc.
   - list are dynamic array which means we don’t need to provide any length for our lists.
   - how to create list
+
     - list are stored in variable and to create a list the data are stored between `[]`
     - syntax
+
       ```python
       my_list = [1,3,4,5,]
       ```
+
       ```python
       my_list = ["hi", "hello", "hola!"]
       ```
+
   - list can consist multiple types of data which means list can be dynamic,
+
     ```python
     my_list = ["Hi", 23, 4.3, "H", True]
     ```
+
   - Characteristics of lists:
     - Lists are in order
     - elements can be accessed by index numbers
@@ -68,7 +74,7 @@ tags:
       ```python
       list1 = [3,4,5]
       for x in list1:
-      	print(x)
+       print(x)
 
       # output: 3 4 5
       ```
@@ -90,10 +96,12 @@ tags:
 - Tuple is collection which is ordered and unchangeable
 - they are defined with `()` and stored in single variable
 - syntax
+
   ```python
   my_tuple = ("apple", "banana", "cherry")
   print(my_tuple)
   ```
+
 - Characteristics of tuples
   - Tuples are immutable data type which means their data cannot be changed after they are generated
   - Tuples allows duplicate data to be processed on.
@@ -132,7 +140,7 @@ tags:
     ```python
     tuple1 = (3,4,5)
     for x in tuple1:
-    	print(x)
+     print(x)
 
     # output: 3 4 5
     ```
@@ -232,8 +240,8 @@ example_set = { 23, "Hii" , 2.3, "H"}
 
 ```python
 new_dict = {
-	"key": "value",
-	"key1": "value1"
+ "key": "value",
+ "key1": "value1"
 }
 ```
 
@@ -251,9 +259,9 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.clear()
@@ -265,9 +273,9 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.copy()
@@ -279,9 +287,9 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.pop("three")
@@ -293,13 +301,13 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.update({
-    	"four": 4
+     "four": 4
     })
     ```
 
@@ -309,9 +317,9 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.values()
@@ -323,9 +331,9 @@ new_dict = {
 
     ```python
     my_dict = {
-    	"one": 1,
-    	"two": 2,
-    	"three": 3
+     "one": 1,
+     "two": 2,
+     "three": 3
     }
 
     my_dict.get("three")

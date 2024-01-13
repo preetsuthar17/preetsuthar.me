@@ -14,124 +14,193 @@ tags:
   - Single row functions return single row for every row of queried table or view.
   - These functions can appear in select lists, WHERE clauses, START WITH clauses, CONNECT BY clauses and HAVING clauses.
 - Date Functions -
+
   - ADD_MONTHS() -
+
     - It adds or subtracts months from a date.
+
     ```sql
     SELECT ADD_MONTHS(DATE '2023-01-31', 5) FROM dual;
     -- Adds 5 months to the date '2023-01-31'
     ```
+
   - MONTHS_BETWEEN() -
+
     - Get total number of months between given date.
+
     ```sql
     SELECT MONTHS_BETWEEN(DATE '2023-07-30', DATE '2022-02-1') FROM dual;
     -- returns total number of months between two dates.
     ```
+
   - ROUND() -
+
     - Rounds a date to specified unit.
+
     ```sql
     SELECT ROUND(DATE '2023-01-02', 'MONTH') FROM dual;
     -- Rounds the date to nearest month.
     ```
+
   - TRUNC() -
+
     - Truncates the date to specified unit.
+
     ```sql
     SELECT TRUNC(DATE '2023-01-19', 'MONTH') FROM dual;
     -- truncates the date to first day of month
     ```
+
 - Numeric Functions -
+
   - ABS() -
+
     - Returns absolute value.
+
     ```sql
     SELECT ABS(-15) FROM dual;
     ```
+
   - POWER() -
+
     - Returns exponential of passed numbers.
+
     ```sql
     SELECT POWER(3, 3) FROM dual;
     ```
+
   - MOD() -
+
     - Returns modulus of passed numbers.
+
     ```sql
     SELECT MOD(10, 5) FROM dual;
     ```
+
   - ROUND() -
+
     - Rounds up the value to nearest number.
+
     ```sql
     SELECT ROUND(3.2) FROM dual;
     ```
+
   - TRUNC() -
+
     - Truncates to previous integer decimal or given unit.
+
     ```sql
     SELECT TRUNC(111.11, 1) FROM dual;
     -- will truncate last 1 decimal so output will be '111.1'
     ```
+
   - SQRT() -
+
     - Returns square root of passed number.
+
     ```sql
     SELECT SQRT(25) FROM dual;
     ```
+
   - RAND() -
+
     - Returns random value from between 0 to 1.
+
     ```sql
     SELECT RDBMS_RANDOM.VALUE() from dual;
     ```
+
 - Character Functions -
+
   - INITCAP() -
+
     - Capitalize first letter of words.
+
     ```sql
     SELECT INITCAP('hello world') FROM dual;
     ```
+
   - LOWER() -
+
     - Converts text into lowercase()
+
     ```sql
     SELECT LOWER('HELLO WORLD') FROM dual;
     ```
+
   - UPPER() -
+
     - Converts text into uppercase()
+
     ```sql
     SELECT UPPER('hello world') FROM dual;
     ```
+
   - LTRIM() -
+
     - Trims extra and unnecessary spaces from the beginning of the sentence.
+
     ```sql
     SELECT LTRIM('          hello world') FROM dual;
     ```
+
   - RTRIM() -
+
     - Trims extra and unnecessary space at the end of the sentence.
+
     ```sql
     SELECT RTRIM('hello world          ') FROM dual;
     ```
+
   - REPLACE() -
+
     - Replaces text with some other text.
+
     ```sql
     SELECT REPLACE('Hello world', 'lo', 'p') FROM dual;
     -- will replace `lo` with `p` so output will be 'Help world'.
     ```
+
   - SUBSTR() -
+
     - Extracts the substring from the string.
+
     ```sql
     SELECT SUBSTR('Hello world', 3) FROM dual;
     -- Extracts the string from the index 3.
     ```
+
   - INSTR() -
+
     - Used to get position of the sub string in string.
+
     ```sql
     SELECT INSTR('Hello world', 'o') FROM dual;
     -- will return the first 'o' in the string.
     ```
+
 - Conversion Functions -
+
   - TO_CHAR() -
+
     - Converts number/date to string.
+
     ```sql
     SELECT TO_CHAR(69, "99") FROM dual;
     ```
+
   - TO_DATE() -
+
     - Converts a string to date.
+
     ```sql
     SELECT TO_DATE('January 15, 2023', 'Month dd, yyyy') FROM dual;
     ```
+
   - TO_NUMBER() -
+
     - Converts a string to number.
+
     ```sql
     SELECT TO_NUMBER('23', '99') FROM dual;
     ```
@@ -214,7 +283,7 @@ tags:
 
   - In above example we have ordered the students data in Descending order which means greater → less.
 
-## Joins: Simple (Cross join), Equi-join & Non-Equi-join (Inner join), Self-Joins, Outer-joins.
+## Joins: Simple (Cross join), Equi-join & Non-Equi-join (Inner join), Self-Joins, Outer-joins
 
 - CROSS JOIN -
 
@@ -277,6 +346,7 @@ tags:
         ![Untitled](https://i.imgur.com/tTLHyYX.png)
 
       - Example -
+
         ```sql
         SELECT * FROM table1 RIGHT JOIN table2
         ON table1.column_name = table2.column_name;
@@ -290,6 +360,7 @@ tags:
         ![Untitled](https://i.imgur.com/EeDilot.png)
 
       - Example -
+
         ```sql
         SELECT * FROM table1 LEFT JOIN table2
         ON table1.column_name = table2.column_name;
@@ -303,6 +374,7 @@ tags:
         ![Untitled](https://i.imgur.com/pl72NUa.png)
 
       - Example -
+
         ```sql
         SELECT * FROM table1 FULL OUTER JOIN table2
         ON table1.column_name = table2.column_name
@@ -312,22 +384,27 @@ tags:
 ## Subqueries - Multiple, Correlated
 
 - Multiple Subqueries -
+
   - It allows combining multiple subqueries using logical operators like AND, OR.
   - Each Sub query is typically enclosed in its own parentheses.
   - Outer query reference the main table and the result of sub queries.
   - Useful for applying multiple criteria from the same or different table.
   - Example -
+
   ```sql
   SELECT * FROM Employees as e
   WHERE e.salary > (SELECT AVG(salary) FROM Employees
   AND e.hire_date IN (SELECT hire_date FROM Employees WHERE name LIKE "A%");
   ```
+
 - Co-related Queries -
+
   - Sub query reference to outer column.
   - Sub query is re-run for each row processed by the outer query.
   - It can perform comparisons, filtering based on outer query data.
   - Useful when subquery logic needs to utilize columns for each outer query row
   - Example -
+
   ```sql
   SELECT * FROM employees AS e1
   WHERE e1.salary > (SELECT AVG(salary) FROM employees e2

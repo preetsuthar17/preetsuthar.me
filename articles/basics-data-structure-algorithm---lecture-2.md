@@ -21,14 +21,14 @@ There are many types of Data Structure but in this lesson we're going to talk ab
 
 ### Other Types
 
-1.  Primitive Data Structure
-2.  Non Primitive Data Structure
-3.  Linear Data Structure
-4.  Non Linear Data Structure
-5.  Static Data Structure
-6.  Dynamic Data Structure
-7.  Homogeneous Data Structure
-8.  Non Homogeneous Data Structure
+1. Primitive Data Structure
+2. Non Primitive Data Structure
+3. Linear Data Structure
+4. Non Linear Data Structure
+5. Static Data Structure
+6. Dynamic Data Structure
+7. Homogeneous Data Structure
+8. Non Homogeneous Data Structure
 
 ## 1. Primitive Data Structure
 
@@ -43,17 +43,17 @@ There are many types of Data Structure but in this lesson we're going to talk ab
     - Real numbers or float numbers: These represent numbers having decimal points.
       - Example: 1.5, 3.534, 0.43
 
-  - 2.  Non Numeric:
+  - 2. Non Numeric:
 
     - CHAR: character type of data.
       - Example: a to OR A to Z
     - Pointer: It is a datatype that represents the memory address of a variable. Pointers can also be used to access the memory address of a variable.
 
-  - 3.  Booleans: AKA logical,
+  - 3. Booleans: AKA logical,
     - It can represent value either as TRUE or FALSE.
       - 0 = False, 1 = True
 
-2. Non Primitive Data Structure
+## 2. Non Primitive Data Structure
 
 - These can be derived using any primitive datatype
 - There are two types of Primitive Datatype
@@ -79,7 +79,7 @@ There are many types of Data Structure but in this lesson we're going to talk ab
        - A list can be defined as a collection of variables of a number of items.
          ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/1a17c6da-322e-426a-81fd-465b924b38f8)
 
-## 2. Non-linear Data Structure:
+## 2. Non-linear Data Structure
 
 - Tree: [We'll learn more about this in upcoming lectures]
   ![image](https://github.com/preetsuthar17/basic-DSA-notes/assets/75468116/9ed3cd66-8dae-407a-90ab-d54c3daec6fd)

@@ -18,7 +18,7 @@ tags:
 
   ```sql
   CREATE TABLE t1(
-  	name VARCHAR(50) NOT NULL;
+   name VARCHAR(50) NOT NULL;
   );
   ```
 
@@ -32,14 +32,14 @@ tags:
 
   ```sql
   CREATE TABLE t1(
-  	age int,
-  	CHECK (age>=18)
+   age int,
+   CHECK (age>=18)
   );
   ```
 
   - Here using check constraint will make sure that the inserting age is equal to 18 or above 18.
 
-## Entity Integrity constraints: Unique, Primary key.
+## Entity Integrity constraints: Unique, Primary key
 
 - Unique -
 
@@ -54,8 +54,8 @@ tags:
 
   ```sql
   CREATE TABLE employee(
-  	id INT NOT NULL UNIQUE,
-  	name VARCHAR(50)
+   id INT NOT NULL UNIQUE,
+   name VARCHAR(50)
   );
   ```
 
@@ -73,8 +73,8 @@ tags:
 
   ```sql
   CREATE TABLE t1(
-  	id INT PRIMARY KEY NOT NULL,
-  	name VARCHAR(50);
+   id INT PRIMARY KEY NOT NULL,
+   name VARCHAR(50);
   );
   ```
 

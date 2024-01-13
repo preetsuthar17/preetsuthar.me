@@ -30,41 +30,45 @@ tags:
 
 - basic structure of python program looks like this,
 
-  ```python
-  import random
+```python
+import random
 
-  def generate_random_num():
-  	random_num = random.randint()
-  	print(random_num)
+def generate_random_num():
+  random_num = random.randint()
+  print(random_num)
 
-  generate_random_num()
+generate_random_num()
 
-  # This python program will generate random number and print in outptu
-  ```
+# This python program will generate random number and print in outptu
+```
 
 - Import Libraries:
   - Using import method we can import external functions or modules in our program.
 - functions:
-  ```python
-  def function_name():
-  	# code
-  ```
-  - We can create user defined function with `def` keyword and use them where ever we like to
+
+```python
+def function_name():
+  # code
+```
+
+- We can create user defined function with `def` keyword and use them where ever we like to
 - Comments
-  ```python
-  # This is comment in python code
-  ```
-  - Comments are just pseudo code which is ignored by the compiler.
+
+```python
+# This is comment in python code
+```
+
+- Comments are just pseudo code which is ignored by the compiler.
 - I/O operations
 
-  ```python
-  name = input("enter your name: ")
-  print("Hello, ", name)
-  ```
+```python
+name = input("enter your name: ")
+print("Hello, ", name)
+```
 
-  - I/O means Input/output operations
-  - we can take input from user using `input()` function.
-  - we can give output to our console or screen using `print()` function.
+- I/O means Input/output operations
+- we can take input from user using `input()` function.
+- we can give output to our console or screen using `print()` function.
 
 ## Keywords and identifiers
 
@@ -83,32 +87,40 @@ tags:
   - etc.
   - we cannot use this names for naming variables or function or anything.
 - Identifiers:
+
   - Identifiers are basically words that identity any object in program.
   - we can name any variable or function to identify them throughout program and these are called identifiers.
   - for example,
-    ```python
-    name = "Preet"
-    age = 17
-    ```
-    - Here in this program the `name` and `age` is called identifier because it identifies the value of the variable.
+
+  ```python
+  name = "Preet"
+  age = 17
+  ```
+
+  - Here in this program the `name` and `age` is called identifier because it identifies the value of the variable.
   - Identifiers cannot be same as keywords.
 
 ## Data Types and Variables
 
 - Data Types:
+
   - Data types is basically type of data in our program.
   - These types are automatically defined by python as the python is interpreted programming language.
   - we don’t need to define the type of data we store separately.
-  ```python
-  int age = 17 ❌
-  age = 17 ✅
-  ```
-  - There are multiple data types in python,
-    - Integer = 1, 2, 3, 4…
-    - Float = 1.3, 5.3, 6.9…
-    - String = “Hello world!”
-    - Char = “H”, “E”
-    - Boolean = True, False
+
+```python
+int age = 17 ❌
+age = 17 ✅
+```
+
+- There are multiple data types in python,
+
+  - Integer = 1, 2, 3, 4…
+  - Float = 1.3, 5.3, 6.9…
+  - String = “Hello world!”
+  - Char = “H”, “E”
+  - Boolean = True, False
+
 - Variables:
 
   - Variables are basically containers that are used to store some data in our memory.
@@ -118,16 +130,16 @@ tags:
   - variable names cannot be same as keywords.
   - example:
 
-    ```python
-    name = "Preet Suthar"
+```python
+name = "Preet Suthar"
 
-    # here the `name` is identifier
-    	# for variable which can value of "Preet Suthar".
-    # now we can access the value of variable `name`,
-    	# using the identifier.
+# here the `name` is identifier
+  # for variable which can value of "Preet Suthar".
+# now we can access the value of variable `name`,
+  # using the identifier.
 
-    print(name) # output: Preet Suthar
-    ```
+print(name) # output: Preet Suthar
+```
 
 ## Type Casting
 
@@ -157,38 +169,38 @@ tags:
       - `input()`
     - Example:
 
-      ```python
-      name = input("Enter your name: ")
-      print("Hello, ", name)
+```python
+name = input("Enter your name: ")
+print("Hello, ", name)
 
-      # output:
-      # Enter your name: Preet
-      # Hello, Preet
-      ```
+# output:
+# Enter your name: Preet
+# Hello, Preet
+```
 
-  - Output:
+- Output:
 
-    - we use `print()` function to provide any output to the console or screen in python programming language.
-    - this output can be anything from someone’s name to value of variable which was taken from the user.
-    - Syntax:
-      - `print(data_to_print)`
-    - Example:
+  - we use `print()` function to provide any output to the console or screen in python programming language.
+  - this output can be anything from someone’s name to value of variable which was taken from the user.
+  - Syntax:
+    - `print(data_to_print)`
+  - Example:
 
-      ```python
-      name = "Preet Suthar"
+```python
+name = "Preet Suthar"
 
-      # printing number
-      print(1)
-      # output: 1
+# printing number
+print(1)
+# output: 1
 
-      #printing string
-      print("Hello world!")
-      # output: Hello world!
+#printing string
+print("Hello world!")
+# output: Hello world!
 
-      # printing data from the variable
-      print(name)
-      # output: Preet Suthar
-      ```
+# printing data from the variable
+print(name)
+# output: Preet Suthar
+```
 
 ## Operators
 

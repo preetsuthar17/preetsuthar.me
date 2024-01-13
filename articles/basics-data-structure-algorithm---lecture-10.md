@@ -42,8 +42,9 @@ tags:
 - After every push operation the top of stack value is increased by 1.
 - When you try to insert value in stack when stack is full, you create condition which is called `Stack Full condition` or `Stack overflow condition`.
 
-### Stack Push Algorithm:
+### Stack Push Algorithm
 
+```plain
 Step 1: [Initialization]
 if ( top >= N)
 then write("Stack overflow)
@@ -57,6 +58,7 @@ S[Top] = X
 
 Step 4: [Finish]
 Return ()
+```
 
 ## Stack operation - Pop
 
@@ -65,8 +67,9 @@ Return ()
 - After every pop operation the top of stack value is decreased by 1.
 - When you try to delete value from stack when stack is empty, you create condition which is called `Stack underflow condition`
 
-### Stack Pop Algorithm:
+### Stack Pop Algorithm
 
+```plain
 Step 1:
 if (Top = 0)
 then write("Stack Underflow")
@@ -80,3 +83,4 @@ Top <- Top - 1
 
 Step 4:
 return()
+```

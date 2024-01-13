@@ -28,7 +28,6 @@ So enough Introduction, Let's get started!
 Well you must be thinking how this works like it requires no database nothing and even sets up in mintues how is possible? It's possible cause Utteranc uses github issues as database I mean not database but "So called database" to store the comments by user
 
 > When Utterances loads, the GitHub issue search API is used to find the issue associated with the age based on url, pathname or title. If we cannot find an issue that matches the page, no problem, utterances-bot will automatically create an issue the first time someone comments.
-
 > To comment, users must authorize the utterances app to post on their behalf using the GitHub OAuth flow. Alternatively, users can comment on the GitHub issue directly.
 
 ## Setup
@@ -91,7 +90,6 @@ And we're done! We successfully added comments to our website.
 ![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/li03zzwm9j9j9ji7qhiv.png)
 
 > Check out the demo [here](https://preetsuthar.me/posts/add-comments-to-blog-website-in-minutes)
-
 > Note: make sure your `comments` repo is public and doesn't contain any sorta file`
 
 So that's it for this blog! Thanks for reading!

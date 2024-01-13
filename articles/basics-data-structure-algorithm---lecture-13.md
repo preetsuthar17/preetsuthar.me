@@ -12,7 +12,7 @@ tags:
 
 ## Non-linear data Structure — Tree, Graph
 
-### Tree:
+### Tree
 
 - Is hierarchical structure with root node, siblings, nodes, parent nodes, etc.
 - Nodes are connected with edges/branches from parents to children.

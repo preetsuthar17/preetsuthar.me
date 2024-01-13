@@ -61,7 +61,7 @@ Now let's give it bit of css to make everything in center,
 
 Now it's time for magic of javaScript,
 
-## Logic...
+## Logic
 
 Here is basic logic what we want is to get the value of slider and we want to give the slider value to font size value in CSS which means, `slider value == fontSize` correct? yeah. Now to do this let's fetch the value of slider first,
 

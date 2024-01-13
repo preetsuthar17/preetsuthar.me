@@ -84,7 +84,9 @@ print(list1[2])
 ### Basic functions
 
 - `len()`
+
   - len function is used to get length of specified string
+
     ```python
     my_str = "1234567890"
     print(len(my_str))
@@ -93,37 +95,57 @@ print(list1[2])
 ### Testing functions
 
 - `isalnum()`
+
   - Returns true if specified string is in alpha numeric format.
+
     ```python
     print(isalnum(str))
     ```
+
 - `isalpha()`
+
   - Returns true if specified string is in alphabetic format.
+
     ```python
-    	print(isalpha(str))
+     print(isalpha(str))
     ```
+
 - `isdigit()`
+
   - Returns true if specified string is in numeric format.
+
     ```python
     print(isdigit(str))
     ```
+
 - `isidentifier()`
+
   - Returns true if specified string is an identifier.
+
     ```python
     print(isidentifier(str))
     ```
+
 - `islower()`
+
   - Returns true if specified string is in lower text format.
+
     ```python
     print(islower(str))
     ```
+
 - `isupper()`
+
   - Returns true if specified string is in upper text format.
+
     ```python
     print(islower(str))
     ```
+
 - `isspace()`
+
   - Returns true if specified string is space.
+
     ```python
     print(isspace(str))
     ```
@@ -131,17 +153,23 @@ print(list1[2])
 ### Searching functions
 
 - `endswith()`
+
   - Returns True if specified string ends with passed parameter.
+
     ```python
     my_str = "Hii John"
     print(my_str.endswith("John")
     ```
+
 - `startswith()`
+
   - Returns True if specified string starts with passed parameter.
+
     ```python
     my_str = "Hii John"
     print(my_str.startswith("Hii")
     ```
+
 - `find()`
 
   - Returns the index number if specified parameter is found.
@@ -256,12 +284,17 @@ print(list1[2])
 - `a+` - Append and Read
 
 - `open()`
+
   - We use open() function to open file.
+
   ```python
   my_file = file.open("readme.txt", w+)
   ```
+
 - `close()`
+
   - We use close() function to close opened file.
+
   ```python
   my_file.close()
   ```
@@ -271,12 +304,17 @@ print(list1[2])
 ### Basic Functions
 
 - `open()`
+
   - We use open() function to open file.
+
   ```python
   my_file = file.open("readme.txt", w+)
   ```
+
 - `close()`
+
   - We use close() function to close opened file.
+
   ```python
   my_file.close()
   ```
@@ -284,19 +322,27 @@ print(list1[2])
 ### Reading File
 
 - `read()`
+
   - Using read function we can read entire file.
+
   ```python
   my_file = file.open("readme.txt", r)
   print(my_file.read())
   ```
+
 - `readline()`
+
   - Using readline function we can read just single line from the file.
+
   ```python
   my_file = file.open("readme.txt", r)
   print(my_file.readline())
   ```
+
 - `readlines()`
+
   - Using readlines function we can read multiple lines from the file.
+
   ```python
   my_file = file.open("readme.txt", r)
   print(my_file.readlines())
@@ -305,17 +351,23 @@ print(list1[2])
 ### Writing File
 
 - `write()`
+
   - Using write function we can write data in a file.
+
   ```python
   my_file = open("writeme.txt", w)
   my_file.write("Helloo world!!")
   ```
+
 - `append()`
+
   - Using append function we can add new text at the last of the file, only at the end of the file.
+
   ```python
   my_file = open("writeme.txt", w)
   my_file.append("This text was added at the end.")
   ```
+
 - `writelines()`
 
   - Using writelines function we can add multiple lines in the file.

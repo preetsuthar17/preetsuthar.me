@@ -8,7 +8,7 @@ tags:
   - DSA Tutorial
 ---
 
-# Let's talk about operations we can perform on data structures.
+## Let's talk about operations we can perform on data structures
 
 Here operations basically means changing the existing data structure or creating a new one.
 

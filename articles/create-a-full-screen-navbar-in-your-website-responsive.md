@@ -22,7 +22,7 @@ let's get started!
 
 - Basic knowledge about CSS & HTML and you're good to go!
 
-## Coding time!
+## Coding time
 
 First of all, let's create base files
 
@@ -225,7 +225,7 @@ Now to make the buttons work we have to add onClick properties in buttons in `in
 <!-- And here when the user clicks on the cross svg in opened nav menu it closes the menu calling the function closeNav()  -->
 ```
 
-## It's done!
+## It's done
 
 So yeah that was it for this much now we can add extras to out website like the main heading and other styles whatever you want
 

@@ -11,11 +11,11 @@ tags:
 
 One effective technique to enhance navigation is by implementing a sticky navbar. A sticky navbar remains fixed at the top of the page as users scroll, providing easy access to important links and content. In this blog post, we'll delve into the process of creating a sticky navbar using HTML and CSS, with a focus on the `position: sticky` and `top: 0` properties.
 
-## Understanding the sticky position Property:
+## Understanding the sticky position Property
 
 The `position: sticky` property is a powerful CSS attribute that blends the behaviors of both `position: relative` and `position: fixed`. It allows an element to behave as relatively positioned within its parent container until a certain threshold (usually defined by the viewport) is reached. Once this threshold is crossed during scrolling, the element becomes fixed to the specified position.
 
-### HTML Structure:
+### HTML Structure
 
 Before we dive into the CSS, let's set up the HTML structure for our sticky navbar:
 
@@ -42,7 +42,7 @@ Before we dive into the CSS, let's set up the HTML structure for our sticky navb
 </html>
 ```
 
-### Applying the CSS:
+### Applying the CSS
 
 Now, let's bring our sticky navbar to life using the `position: sticky` property and the `top: 0` value:
 
@@ -84,7 +84,7 @@ body {
 }
 ```
 
-## Achieving a Smooth User Experience:
+## Achieving a Smooth User Experience
 
 Implementing a sticky navbar isn't just about sticking an element to the top. To create a smooth and engaging user experience, consider these additional tips:
 

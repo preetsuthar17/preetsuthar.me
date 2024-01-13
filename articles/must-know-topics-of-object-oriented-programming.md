@@ -32,9 +32,9 @@ There are five basic concepts of OOP:
 
    ```cpp
    class cars{
-   	bmw;
-   	audi;
-   	tata;
+    bmw;
+    audi;
+    tata;
    };
 
    // In this example cars is an class
@@ -47,9 +47,9 @@ There are five basic concepts of OOP:
 
    ```cpp
    class cars{
-   	bmw;
-   	audi;
-   	tata;
+    bmw;
+    audi;
+    tata;
    };
 
    // In this example cars is an class and bmw, audi and tata are objects
@@ -68,15 +68,15 @@ There are five basic concepts of OOP:
 
      ```cpp
      class Person{
-     	public:
-     		string name;
-     		int age;
-     	class Person1
-     		{
-     			Person p;
-     			p.name = "Rahul";
-     			p.age = 30
-     		}
+      public:
+       string name;
+       int age;
+      class Person1
+       {
+        Person p;
+        p.name = "Rahul";
+        p.age = 30
+       }
      }
 
      // In above example Person is parent class and Person1 is child class
@@ -122,9 +122,9 @@ using namespace std;
 
 int main()
 {
-	int a = 10;
-	cout<<a;
-	return 0;
+ int a = 10;
+ cout<<a;
+ return 0;
 }
 ```
 
@@ -185,12 +185,12 @@ int main()
 
      int main()
      {
-     	a = sum(x,y); //calling function
-     	return 0;
+      a = sum(x,y); //calling function
+      return 0;
      }
 
      int sum(int a, int b){ //defining function
-     	return a+b;
+      return a+b;
      }
      ```
 
@@ -230,9 +230,9 @@ int main()
 
      ```cpp
      class student{
-     	string name; // objects
-     	int enroll_no; // objects
-     	int year; // objects
+      string name; // objects
+      int enroll_no; // objects
+      int year; // objects
      };
      ```
 
@@ -242,9 +242,9 @@ int main()
 
      ```cpp
      struct student{
-     	string name;
-     	int roll_no;
-     	int year;
+      string name;
+      int roll_no;
+      int year;
      };
      ```
 
@@ -254,8 +254,8 @@ int main()
 
      ```cpp
      union share{
-     	int a;
-     	char ch;
+      int a;
+      char ch;
      };
 
      Union share c;
@@ -274,9 +274,9 @@ Reference variable:
 - They are easy.
 
 ```cpp
-	int x = 1;
-	int *pX = &x;
-	*pX = 5 // x = 5
+ int x = 1;
+ int *pX = &x;
+ *pX = 5 // x = 5
 ```
 
 ## Scope resolution operator
@@ -289,9 +289,9 @@ Reference variable:
 int a = 10; //global variable
 
 int main(){
-	int a = 9; //local variable
-	cout<<::a;
-	return 0
+ int a = 9; //local variable
+ cout<<::a;
+ return 0
 }
 
 //output
@@ -310,13 +310,13 @@ Call by reference:
 
 ```cpp
 int main(){
-	int x = 10, y = 20;
-	sum(&x, &y)
+ int x = 10, y = 20;
+ sum(&x, &y)
 }
 
 int sum(int *ptr1, int *ptr2){ // we use pointers here because we are working on memory level.
-	*ptr1 = 20;
-	*ptr2 = 10;
+ *ptr1 = 20;
+ *ptr2 = 10;
 }
 
 /* These & are called address of operators.
@@ -334,13 +334,13 @@ Return by reference:
 int a = 10;
 
 int &ref(){
-	return a; // this variable must be global
+ return a; // this variable must be global
 }
 
 int main(){
-	ref()=9; // changing the value of function
-	cout<<ref();
-	return 0;
+ ref()=9; // changing the value of function
+ cout<<ref();
+ return 0;
 }
 
 //Output:
@@ -357,7 +357,7 @@ Inline function:
 
 ```cpp
 inline sum(int a, int b){
-	return a+b;
+ return a+b;
 }
 ```
 
@@ -374,11 +374,11 @@ Default Arguments:
 ```cpp
 int sum(int a, int b = 10)
 {
-	return a+b;
+ return a+b;
 }
 
 int main(){
-	sum(10);
+ sum(10);
 }
 
 ```
@@ -392,23 +392,23 @@ Function overloading:
 
 ```cpp
 int sum(int a, int b){
-	return a+b;
+ return a+b;
 }
 
 int sum(double a, double b){
-	return a+b;
+ return a+b;
 }
 
 int main(){
-	sum(10,10); /* Here because we gave integer parameters it will call the
+ sum(10,10); /* Here because we gave integer parameters it will call the
 function which has integer args. */
-	sum(4.2,6.3); /* And here we gave point value double value it will call
+ sum(4.2,6.3); /* And here we gave point value double value it will call
  function which has double args. */
 }
 
 /* Output:
-	20
-	10.5
+ 20
+ 10.5
 */
 ```
 
@@ -469,17 +469,17 @@ Example of constructor and destructor:
 
 class test
 {
-	public:
-		test(){
-				cout<<"Constructor started";
-		}
-		~test(){
-				cout<<"Destructor started";
-		}
+ public:
+  test(){
+    cout<<"Constructor started";
+  }
+  ~test(){
+    cout<<"Destructor started";
+  }
 };
 
 int main(){
-	test obj;
+ test obj;
 }
 ```
 
@@ -494,7 +494,7 @@ int main(){
 
      ```cpp
      class_name(){
-     	// code
+      // code
      }
      ```
 
@@ -516,26 +516,26 @@ int main(){
      #include <iostream>
 
      class A{
-     	private:
-     		int a,b;
-     	public:
-     		A(int x, int y){
-     			a=x;
-     			b=y;
-     		}
-     		void show(){
-     			cout<<a" "b;
-     		}
+      private:
+       int a,b;
+      public:
+       A(int x, int y){
+        a=x;
+        b=y;
+       }
+       void show(){
+        cout<<a" "b;
+       }
      };
 
      int main()
      {
-     	A obj(10,20);
-     	obj.show();
+      A obj(10,20);
+      obj.show();
      }
 
      /* Output:
-     		10,20 */
+       10,20 */
      ```
 
   3. Copy constructor.
@@ -555,33 +555,33 @@ int main(){
      #include <iostream>
 
      class A{
-     	private:
-     		int a,b;
-     	public:
-     		A(int x, int y){
-     			a=x;
-     			b=y;
-     		}
-     		A(A &ref){
-     			a = ref.a;
-     			b = ref.b;
-     		}
+      private:
+       int a,b;
+      public:
+       A(int x, int y){
+        a=x;
+        b=y;
+       }
+       A(A &ref){
+        a = ref.a;
+        b = ref.b;
+       }
 
-     		void show(){
-     			cout<<a<<" "<<b;
-     		}
+       void show(){
+        cout<<a<<" "<<b;
+       }
      };
 
      int main(){
-     		A obj(10,20);
-     		A obj2=obj;
-     		obj.show();
-     		obj2.show();
+       A obj(10,20);
+       A obj2=obj;
+       obj.show();
+       obj2.show();
      }
 
      /* OUTPUT:
-     		10 20
-     		10 20
+       10 20
+       10 20
      */
      ```
 
@@ -622,6 +622,7 @@ int main(){
      - In single inheritance there are only two classes base class and derived class.
        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eaa8ded2-35a9-4a4d-845a-d98b5f86f4eb/Untitled.png)
      - Syntax:
+
        ```cpp
        class A{
        //code
@@ -630,6 +631,7 @@ int main(){
        //code
        }
        ```
+
      - Example:
 
        ```cpp
@@ -638,23 +640,23 @@ int main(){
        using namespace std;
 
        class A{
-       	public:
-       		void show_a(){
-       			cout<<"a";
-       		}
+        public:
+         void show_a(){
+          cout<<"a";
+         }
        };
 
        class B: public A{
            public:
-           	void show_b(){
-           		cout<<"b";
-           	}
+            void show_b(){
+             cout<<"b";
+            }
        };
 
        int main(){
-       	B obj;
-       	obj.show_a();
-       	obj.show_b();
+        B obj;
+        obj.show_a();
+        obj.show_b();
        }
        ```
 
@@ -663,6 +665,7 @@ int main(){
      - When one class inherits another class and that class further inherits another class is called “multilevel inheritance”.
        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cb05b47c-2d0c-492b-ad3e-09e46aae3a4c/Untitled.png)
      - Syntax:
+
        ```cpp
        class A{
        //code
@@ -674,6 +677,7 @@ int main(){
        //code
        };
        ```
+
      - Example:
 
      ```cpp
@@ -682,31 +686,31 @@ int main(){
      using namespace std;
 
      class A{
-     	public:
-     		void show_a(){
-     			cout<<"a";
-     		}
+      public:
+       void show_a(){
+        cout<<"a";
+       }
      };
 
      class B: public A{
          public:
-         	void show_b(){
-         		cout<<"b";
-         	}
+          void show_b(){
+           cout<<"b";
+          }
      };
 
      class C: public B{
-     		public:
-     			void show_c(){
-     				cout<<"c";
-     			}
+       public:
+        void show_c(){
+         cout<<"c";
+        }
      };
 
      int main(){
-     	C obj;
-     	obj.show_a();
-     	obj.show_b();
-     	obj.show_c();
+      C obj;
+      obj.show_a();
+      obj.show_b();
+      obj.show_c();
      }
      ```
 
@@ -739,40 +743,40 @@ int main(){
      using namespace std;
 
      class A{
-     	public:
-     		void show_a(){
-     			cout<<"a";
-     		}
+      public:
+       void show_a(){
+        cout<<"a";
+       }
      };
 
      class B{
-     	public:
-     		void show_b(){
-     			cout<<"b";
-     	}
+      public:
+       void show_b(){
+        cout<<"b";
+      }
      };
 
      class C{
-     	public:
-     		void show_c(){
-     			cout<<"c";
-     	}
+      public:
+       void show_c(){
+        cout<<"c";
+      }
      };
 
      class child_class:public A, public B, public C{
-     	public:
-     		void show_out(){
-     			cout<<"Child Class exit";
-     		}
+      public:
+       void show_out(){
+        cout<<"Child Class exit";
+       }
      };
 
      int main(){
-     	child_class obj;
-     	obj.show_a();
-     	obj.show_b();
-     	obj.show_c();
-     	obj.show_out();
-     	return 0;
+      child_class obj;
+      obj.show_a();
+      obj.show_b();
+      obj.show_c();
+      obj.show_out();
+      return 0;
      }
      ```
 
@@ -783,6 +787,7 @@ int main(){
      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/50cd2792-4650-4709-9c08-f7c1729c9b28/Untitled.png)
 
      - Syntax:
+
        ```cpp
        class A{
        //code
@@ -794,6 +799,7 @@ int main(){
        //code
        };
        ```
+
      - Example:
 
        ```cpp
@@ -801,34 +807,34 @@ int main(){
        using namespace std;
 
        class A{
-       	public:
-       		void show_a(){
-       			cout<<"a";
-       		}
+        public:
+         void show_a(){
+          cout<<"a";
+         }
        };
 
        class B:public A{
-       	public:
-       		void show_b(){
-       			cout<<"b";
-       		}
+        public:
+         void show_b(){
+          cout<<"b";
+         }
        };
 
        class C:public A{
-       	public:
-       		void show_c(){
-       			cout<<"c";
-       		}
+        public:
+         void show_c(){
+          cout<<"c";
+         }
        };
 
        int main(){
-       	C obj;
-       	obj.show_a();
-       	obj.show_c();
-       	B obj2;
-       	obj2.show_a();
-       	obj2.show_b();
-       	return 0;
+        C obj;
+        obj.show_a();
+        obj.show_c();
+        B obj2;
+        obj2.show_a();
+        obj2.show_b();
+        return 0;
        }
        ```
 
@@ -865,24 +871,24 @@ int main(){
        using namespace std;
 
        class A{
-       	public:
-       		void show_a(){
-       			cout<<"a";
-       		}
+        public:
+         void show_a(){
+          cout<<"a";
+         }
        };
 
        class B:public A{
-       	public:
-       		void show_b(){
-       			cout<<"b";
-       		}
+        public:
+         void show_b(){
+          cout<<"b";
+         }
        };
 
        class C:public A{
-       	public:
-       		void show_c(){
-       			cout<<"c";
-       		}
+        public:
+         void show_c(){
+          cout<<"c";
+         }
        };
 
        class D:public B, public C{
@@ -894,13 +900,13 @@ int main(){
        };
 
        int main(){
-       	B obj;
-       	obj.show_a();
-       	obj.show_b();
-       	D obj2;
-       	obj2.show_b();
-       	obj2.show_c();
-       	return 0;
+        B obj;
+        obj.show_a();
+        obj.show_b();
+        D obj2;
+        obj2.show_b();
+        obj2.show_c();
+        return 0;
        }
        ```
 
@@ -937,8 +943,8 @@ class Result: public Exam, public Project{
 
 ```cpp
 int main(){
-	cname obj;
-	obj.add(); //this pointer holds the address of obj
+ cname obj;
+ obj.add(); //this pointer holds the address of obj
 }
 ```
 
@@ -994,11 +1000,15 @@ Polymorphism:
   - A men can be Father, Teacher, Friend at the same time. here Men is single thing but can work in many forms.
     ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0f6f99ed-aba0-4157-bc75-0c795bd2e2bc/Untitled.png)
 - There are two types of polymorphism
+
   1. Compile time polymorphism
+
      - A compile time polymorphism is type of polymorphism which is worked in compile time.
      - It is also known as static polymorphism and early binding polymorphism
      - Example:
+
        - Method overloading.
+
        ```cpp
        void add (int x, int y){
        //code
@@ -1007,11 +1017,15 @@ Polymorphism:
        //code
        }
        ```
+
   2. Runtime polymorphism
+
      - A Polymorphism which is achieved by runtime is called “\***\*\*\*\***Runtime Polymorphism\***\*\*\*\***”.
      - It is also known as dynamic polymorphism
      - Example:
+
        - Method overriding.
+
        ```cpp
        void add () //base class
        {

@@ -20,7 +20,7 @@ In this article we are going to create a Image Gallery website using masonry lay
 
 ![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cz5k7dqncu0v5a97djlh.png)
 
-## Let's get started!
+## Let's get started
 
 Before learning to create masonry layouts let's learn how to make images responsive using CSS only.
 

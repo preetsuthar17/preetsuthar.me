@@ -80,27 +80,34 @@ tags:
 - CREATE -
   - CREATE command is used to create new database, table or other objects.
   - Example -
-  ```sql
-   CREATE DATABASE students;
-  ```
+
+```sql
+  CREATE DATABASE students;
+```
+
 - ALTER -
   - ALTER command is used to modify or update tables r object in database.
   - Example -
-  ```sql
-  ALTER TABLE students ADD email VARCHAR(100);
-  ```
+
+```sql
+ALTER TABLE students ADD email VARCHAR(100);
+```
+
 - TRUNCATE -
   - TRUNCATE command is used to clear entire data from the database table without deleting rows or columns.
   - Example -
-  ```sql
-  TRUCATE TABLE students;
-  ```
+
+```sql
+TRUCATE TABLE students;
+```
+
 - DROP -
   - DROP command is used to drop means delete entire objects like tables or entire database.
   - Example -
-  ```sql
-  DROP DATABASE students;
-  ```
+
+```sql
+DROP DATABASE students;
+```
 
 ## Database Language: Data Manipulation Language (DML): INSERT, SELECT, UPDATE, DELETE
 
@@ -108,29 +115,36 @@ tags:
 - INSERT -
   - INSERT command is used to insert new data in table of database.
   - Example -
-  ```sql
-  INSERT INTO students(name, fees, email)
-  VALUES ('John', 5000, 'john@example.com');
-  ```
+
+```sql
+INSERT INTO students(name, fees, email)
+VALUES ('John', 5000, 'john@example.com');
+```
+
 - SELECT -
   - SELECT command is used to select data from the table and print in console.
   - Example -
-  ```sql
-  SELECT * FROM student_data;
-  -- using * we can select entire table data.
-  ```
+
+```sql
+SELECT * FROM student_data;
+-- using * we can select entire table data.
+```
+
 - UPDATE -
   - UPDATE command is used to update existing data or modify data in specific columns of table.
   - Example -
-  ```sql
-  UPDATE students
-  SET fees = 2600
-  WHERE id = 2;
-  ```
+
+```sql
+UPDATE students
+SET fees = 2600
+WHERE id = 2;
+```
+
 - DELETE -
   - DELETE command is used to delete specific record from the table based on given conditions.
   - Example -
-  ```sql
-  DELETE FROM students
-  WhERE id = 3;
-  ```
+
+```sql
+DELETE FROM students
+WhERE id = 3;
+```

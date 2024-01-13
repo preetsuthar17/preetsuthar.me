@@ -13,10 +13,12 @@ tags:
 - User defined function are kind of functions which are defined by user in python program to do some specific tasks with specific requirements.
 - To define a function in python we use `def` keyword which means define.
 - syntax:
+
   ```python
   def function_name(parameters)
     # code
   ```
+
 - example:
 
   ```python
@@ -64,22 +66,28 @@ tags:
 - here are few of the built-in function in python,
 - len()
   - len function is used to find length of passed object.
+
   ```python
   my_list = [1,3,545,6,7,3,6]
   print(len(my_list))
   ```
+
 - print()
   - print function is used to print any output on our console.
+
   ```python
   print("Hello world")
   print(143)
   ```
+
 - input()
   - input function is used to take input from user, store it in variable and use later in our python program.
+
   ```python
   age = input("Enter your age: ")
   print("User is ", age, " years old!")
   ```
+
 - type()
 
   - type function is used to find type of any object.
@@ -94,21 +102,27 @@ tags:
 
 - min()
   - min function is used to find minimum value from passed parameters.
+
   ```python
   print(min(3,5,2,5,7,3,1))
   ```
+
 - max()
   - max function is used to find maximum value from passed parameters.
+
   ```python
   print(max(3,5,2,6,8,234,456,33,3))
   ```
+
 - sum()
   - sum function is used to sum up two passed parameters.
+
   ```python
   x = 10
   y = 20
   print(sum(10,20))
   ```
+
 - etc.
 
 ## Modules and Packages
@@ -142,7 +156,7 @@ tags:
   print(random_color)
 
   # output:
-  #	red
+  # red
   ```
 
 ## Math Module
@@ -158,19 +172,25 @@ import math
 - Here are few function from the math module
   - `math.sum()`
     - Returns sum of two numbers
+
     ```python
     math.sum(10,20)
     ```
+
   - `math.pow()`
     - Return answer of A to the B
+
     ```python
     math.pow(a,b)
     ```
+
   - `math.exp()`
     - Returns exponential of the number
+
     ```python
     math.exp(65)
     ```
+
   - `math.asin()`
     - Returns Arc sin of a number.
   - `math.acos()`
@@ -187,11 +207,14 @@ import math
     - Returns log of given number.
   - `math.sqrt()`
     - Returns Square root of given number.
+
     ```python
     math.sqrt(25)
     ```
+
   - `math.fact()`
     - Returns factorial of given number.
+
     ```python
     math.fact(25)
     ```
@@ -307,15 +330,15 @@ pip install matplotlib
 
 ```python
 def sum(x,y):
-		return x + y
+  return x + y
 def sub(x,y):
-		return x - y
+  return x - y
 def multi(x,y):
-		return x * y
+  return x * y
 def mod(x,y):
-		return x % y
+  return x % y
 def div(x,y):
-		return x / y
+  return x / y
 ```
 
 - now in our main file `main.py` we can import our user defined module
