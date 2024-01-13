@@ -4,6 +4,9 @@ const matter = require("gray-matter");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
+  experimental: {
+    nextScriptWorkers: true,
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },

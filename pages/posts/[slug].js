@@ -18,6 +18,21 @@ const Layout = dynamic(() => import("@/src/components/Layout"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 
+import hljs from "highlight.js/lib/core";
+import sql from "highlight.js/lib/languages/sql";
+import javascript from "highlight.js/lib/languages/javascript";
+import c from "highlight.js/lib/languages/c";
+import css from "highlight.js/lib/languages/css";
+import vbscriptHtml from "highlight.js/lib/languages/vbscript-html";
+import scss from "highlight.js/lib/languages/scss";
+import shell from "highlight.js/lib/languages/shell";
+import python from "highlight.js/lib/languages/python";
+import powershell from "highlight.js/lib/languages/powershell";
+import cpp from "highlight.js/lib/languages/cpp";
+import php from "highlight.js/lib/languages/php";
+import phpTemplate from "highlight.js/lib/languages/php-template";
+import xml from "highlight.js/lib/languages/xml";
+
 import convertIdToUuid from "@/src/utils/functions/convertIdToUuid";
 import calculateReadTime from "@/src/utils/functions/calculateReadTime";
 import generateTableOfContents from "@/src/utils/functions/generateTableOfContents";
@@ -110,12 +125,12 @@ export default function Post({
 
   const [activeAccordion, setActiveAccordion] = useState(null);
 
-  // Sort articles in ascending order based on date
   const sortedSimilarTagArticles = [...similarTagArticles].sort((a, b) => {
     const dateA = new Date(a.frontmatter.date);
     const dateB = new Date(b.frontmatter.date);
     return dateA - dateB;
   });
+
   const handleAccordionClick = (articleId) => {
     setActiveAccordion((prevActive) =>
       prevActive === articleId ? null : articleId
@@ -123,6 +138,26 @@ export default function Post({
   };
 
   const isAccordionActive = (articleId) => activeAccordion === articleId;
+
+  useEffect(() => {
+    hljs.registerLanguage("sql", sql);
+    hljs.registerLanguage("javascript", javascript);
+    hljs.registerLanguage("python", python);
+    hljs.registerLanguage("c", c);
+    hljs.registerLanguage("cpp", cpp);
+    hljs.registerLanguage("powershell", powershell);
+    hljs.registerLanguage("shell", shell);
+    hljs.registerLanguage("scss", scss);
+    hljs.registerLanguage("css", css);
+    hljs.registerLanguage("php", php);
+    hljs.registerLanguage("php-template", phpTemplate);
+    hljs.registerLanguage("html", xml);
+    hljs.registerLanguage("xml", xml);
+  });
+
+  useEffect(() => {
+    hljs.highlightAll({ detectLanguage: true });
+  });
 
   return (
     <motion.div
@@ -154,6 +189,7 @@ export default function Post({
           <meta name="subject" content="web development" />
           <link rel="canonical" href="https://preetsuthar.me/posts" />
         </Head>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
         <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
         <Navbar />
         <>
@@ -505,8 +541,8 @@ export async function getStaticProps({ params }) {
   const currentIndex = articles.findIndex(
     (article) => article.slug === params.slug
   );
-  const prevArticle = articles[currentIndex - 1] || null;
-  const nextArticle = articles[currentIndex + 1] || null;
+  const prevArticle = articles[currentIndex + 1] || null;
+  const nextArticle = articles[currentIndex - 1] || null;
 
   const prevArticleData = prevArticle
     ? {

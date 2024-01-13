@@ -20,36 +20,10 @@ import CustomCursor from "../src/components/CustomCursor";
 
 import { motion } from "framer-motion";
 
-import { useState, useEffect } from "react";
-
 import Head from "next/head";
 import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
-  const [showDialog, setShowDialog] = useState(false);
-
-  useEffect(() => {
-    const dialogShownInThisSession = sessionStorage.getItem(
-      "dialogShownInThisSession"
-    );
-    if (!dialogShownInThisSession) {
-      const showPopupAfterDelay = setTimeout(() => {
-        setShowDialog(true);
-        sessionStorage.setItem("dialogShownInThisSession", true);
-      }, 11000);
-
-      return () => clearTimeout(showPopupAfterDelay);
-    }
-  }, []);
-
-  if (showDialog == true) {
-    document.addEventListener("keydown", (event) => {
-      if (event.keyCode === 27) {
-        setShowDialog(false);
-      }
-    });
-  }
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
