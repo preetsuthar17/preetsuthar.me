@@ -8,7 +8,7 @@ tags:
   - Tutorial
   - HTML
   - CSS
-  - JavaScript
+  - Javascript
 ---
 
 In web design, adding subtle interactive effects can greatly improve the user experience. One popular effect that has gained attention recently is the tilt effect, which creates a dynamic and immersive visual experience in response to mouse movements. In this blog post, we'll explore how you can easily apply a tilt effect to your website using the Tilt.js library.
@@ -69,7 +69,7 @@ Let's go through the code step by step to understand how the tilt effect is impl
 
 2. The `<a>` element has various `data-tilt` attributes that control the behavior of the tilt effect. For example, `data-tilt-glare="true"` adds a subtle glare effect, `data-tilt-transition="true"` enables smooth transitions, and `data-tilt-scale="1.1"` sets the maximum scale for the tilt effect.
 
-3. Inside the `<script>` tag, we add an event listener for the "DOMContentLoaded" event. This ensures that the JavaScript code is executed after the HTML content has been loaded.
+3. Inside the `<script>` tag, we add an event listener for the "DOMContentLoaded" event. This ensures that the Javascript code is executed after the HTML content has been loaded.
 
 4. Within the event listener, we select the tilt element using `document.querySelector('.c-logo')`. You can modify the selector to target your desired element.
 

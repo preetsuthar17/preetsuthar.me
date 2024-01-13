@@ -161,7 +161,7 @@ Okay, there we go simple navbar styling is done!
 
 ![image](https://github-production-user-asset-6210df.s3.amazonaws.com/75468116/261016815-fbf96d8b-ef0b-4465-b4a3-9608bbe9ab8c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230816%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230816T133255Z&X-Amz-Expires=300&X-Amz-Signature=6cea28d1d4ec434c642e4e52b8bd3e5f0719804377033d07c6a56cee3d01cd5f&X-Amz-SignedHeaders=host&actor_id=75468116&key_id=0&repo_id=676061621)
 
-Now the logic part let's implement JavaScript to make this functional!
+Now the logic part let's implement Javascript to make this functional!
 
 write this code before the body closing tag in `index.html` or you can create a separate file for it named `script.js` and import it in html via
 

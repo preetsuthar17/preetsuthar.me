@@ -6,7 +6,7 @@ author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
   - Tutorial
-  - JavaScript
+  - Javascript
 ---
 
 ## Introduction

@@ -8,7 +8,7 @@ tags:
   - Tutorial
   - HTML
   - CSS
-  - JavaScript
+  - Javascript
 ---
 
 ## Introduction
@@ -83,7 +83,7 @@ We target the slider by its ID we gave in HTML and we also target the text of wh
 </div>
 ```
 
-We got the element it self. Now to get the value of range slider we need to use `eventListener` in JavaScript
+We got the element it self. Now to get the value of range slider we need to use `eventListener` in Javascript
 
 ```javascript
 fontSizeSlider.addEventListener("input", () => {});
@@ -101,7 +101,7 @@ Now we got the value of range input. The last step is to set the value of slider
 displayText.style.fontSize = `${fontSize}px`;
 ```
 
-And yeah here we are done! Your JavaScript code should look something like this,
+And yeah here we are done! Your Javascript code should look something like this,
 
 ```javascript
 const fontSizeSlider = document.getElementById("font-size-slider");
@@ -113,6 +113,6 @@ fontSizeSlider.addEventListener("input", () => {
 });
 ```
 
-So that's how we easily created Font Size Adjusting slider using HTML and JavaScript. We can also achieve this functionality in `React` but code will be different because we'll need to make use of `useSate` to set the font size and all. Let me know in the comments if you want the article for same functionality but using `reactjs`. That's for this article!
+So that's how we easily created Font Size Adjusting slider using HTML and Javascript. We can also achieve this functionality in `React` but code will be different because we'll need to make use of `useSate` to set the font size and all. Let me know in the comments if you want the article for same functionality but using `reactjs`. That's for this article!
 
 Thanks for reading!
