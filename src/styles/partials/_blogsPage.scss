@@ -154,7 +154,9 @@ $color_3: #aaaab5;
     padding: 0.4rem 0.8rem;
     margin: 1rem 0 0 0;
     background-color: #cccccc10;
-    border-radius: 50rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
     border: 1px solid #cccccc2a;
   }
   .blog-name {
