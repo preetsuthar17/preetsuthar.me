@@ -14,6 +14,8 @@ import twitterLogo from "../../src/utils/icons/twitter.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/src/utils/supabaseClient";
 
+import { useRouter } from "next/router";
+
 const Layout = dynamic(() => import("@/src/components/Layout"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
@@ -47,6 +49,8 @@ export default function Post({
 }) {
   const [currentViews, setCurrentViews] = useState(post.views);
   const [twitterHref, setTwitterHref] = useState("");
+  const router = useRouter();
+  const { slug } = router.query;
 
   useEffect(() => {
     const tweetText = encodeURIComponent(post.frontmatter.title);
@@ -158,6 +162,7 @@ export default function Post({
   useEffect(() => {
     hljs.highlightAll({ detectLanguage: true });
   });
+  const editPageUrl = `https://github.com/preetsuthar17/preetsuthar.me/edit/main/articles/${slug}.md?plain=1`;
 
   return (
     <motion.div
@@ -202,7 +207,15 @@ export default function Post({
               }}
             >
               {post.frontmatter.tags.map((tag) => (
-                <div className="post-tag-slug" key={tag}>
+                <div
+                  className="post-tag-slug"
+                  key={tag}
+                  style={{
+                    borderRadius: "5px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   <Link className="no-decoration p-color" href={`/tags/${tag}`}>
                     {tag}&nbsp;
                   </Link>
@@ -281,7 +294,38 @@ export default function Post({
                   </span>
                 </abbr>
               </div>
+              <Link
+                href={editPageUrl}
+                target="_blank"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  margin: "1rem 0",
+                  color: "#aaa",
+                  textDecoration: "none",
+                  marginBottom: "-1rem",
+                  gap: "0.4rem",
+                  background: "#cccccc15",
+                  width: "fit-content",
+                  padding: "0.3rem",
+                  borderRadius: "3px",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="m16 2.012l3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287l-3-3zm0 6h16v2H4z"
+                  />
+                </svg>
+                Edit this post
+              </Link>
             </div>
+
             <div className="related-blogs">
               <div
                 className={`accordion ${isAccordionActive("") ? "active" : ""}`}
@@ -354,6 +398,7 @@ export default function Post({
                 )}
               </AnimatePresence>
             </div>
+
             <div
               className="donateUs"
               style={{
@@ -480,7 +525,9 @@ export default function Post({
                   Share on X
                 </Link>{" "}
               </span>
+              <div></div>
             </div>
+
             <div id="giscus-comments" />
             <hr />
             <div className="post-navigation">
