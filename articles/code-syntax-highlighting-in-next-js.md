@@ -7,6 +7,7 @@ authorGithub: "https://github.com/preetsuthar17"
 tags:
   - Tutorial
   - Javascript
+  - NextJs
 ---
 
 If you're running blog page or website you know that adding syntax highlighting can be very tough and complex process. but fortunately I have found a way to add syntax highlighting in your `next js` blog website.
