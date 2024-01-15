@@ -1,45 +1,31 @@
 const fs = require("fs-extra");
 const path = require("path");
 const matter = require("gray-matter");
-const RSS = require("feed").Feed;
-const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const RSS = require("feed").Feed;
 
 module.exports = {
-  images: {
-    disableStaticImages: true,
+  experimental: {
+    nextScriptWorkers: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  transpileModules: [
+  transpilePackages: [
     "@mui/icons-material",
     "@mui/x-date-pickers",
     "@devexpress/dx-react-grid-material-ui",
     "gsap",
   ],
   webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.plugins.push(new CompressionPlugin());
+    if (isServer) {
+      generateSitemap();
+      generateRSSFeed();
+      config.optimization.minimizer.push(new TerserPlugin());
+      console.log("Optimized project!");
     }
-    config.optimization.minimizer.push(new TerserPlugin());
 
-    generateSitemap();
-    generateRSSFeed();
     return config;
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, must-revalidate",
-          },
-        ],
-      },
-    ];
   },
 };
 
