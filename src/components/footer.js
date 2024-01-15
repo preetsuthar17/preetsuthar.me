@@ -5,6 +5,7 @@ import github from "../utils/icons/github.svg";
 import email from "../utils/icons/email.svg";
 import discord from "../utils/icons/discord.svg";
 import twitter from "../utils/icons/twitter.svg";
+import rss from "../utils/icons/rss_logo.svg";
 
 import { motion } from "framer-motion";
 
@@ -93,6 +94,19 @@ const Footer = () => {
                     src={email}
                     height={20}
                     widht={20}
+                  />
+                </ul>
+              </Link>
+            </li>
+            <li>
+              <Link href="/rss.xml" target="_blank">
+                <ul>
+                  <Image
+                    loading="lazy"
+                    alt="RSS"
+                    src={rss}
+                    height={22}
+                    widht={22}
                   />
                 </ul>
               </Link>
