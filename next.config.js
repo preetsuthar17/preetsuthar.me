@@ -2,6 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const matter = require("gray-matter");
 const TerserPlugin = require("terser-webpack-plugin");
+const RSS = require("feed").Feed;
 
 module.exports = {
   experimental: {
@@ -19,6 +20,7 @@ module.exports = {
   webpack: (config, { isServer }) => {
     if (isServer) {
       generateSitemap();
+      generateRSSFeed();
       config.optimization.minimizer.push(new TerserPlugin());
       console.log("Optimized project!");
     }
@@ -130,3 +132,51 @@ function generateSitemap() {
 
   console.log("Sitemap generated successfully!");
 }
+
+const generateRSSFeed = async () => {
+  const feed = new RSS({
+    title: "preetsuthar.me",
+    description: "Welcome to my personal blogging website!",
+    id: "https://preetsuthar.me",
+    link: "https://preetsuthar.me",
+    favicon: "https://preetsuthar.me/favicon.ico",
+    language: "en",
+    feedLinks: {
+      rss: "https://preetsuthar.me/rss.xml",
+    },
+  });
+
+  const articlesPath = path.resolve(__dirname, "articles");
+  const articleFiles = fs.readdirSync(articlesPath);
+
+  articleFiles.forEach((fileName) => {
+    const filePath = path.join(articlesPath, fileName);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+
+    const frontMatterObject = matter(fileContent).data;
+    const content = matter(fileContent).content;
+
+    try {
+      const { title, date } = frontMatterObject;
+      const formattedDate = new Date(date);
+      const slug = fileName.replace(/\.md$/, "");
+      const url = `https://preetsuthar.me/posts/${slug}`;
+
+      feed.addItem({
+        title,
+        id: url,
+        link: url,
+        description: content,
+        date: formattedDate,
+      });
+    } catch (error) {
+      console.error(`Error parsing front matter of ${fileName}:`, error);
+      console.log("Front Matter Content:", frontMatterObject);
+      console.log("Date Content:", date);
+    }
+  });
+
+  const rssFeedPath = path.join("public", "rss.xml");
+  fs.writeFileSync(rssFeedPath, feed.rss2({ pretty: true }));
+  console.log("RSS feed generated successfully!");
+};
