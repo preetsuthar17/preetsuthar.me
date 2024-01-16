@@ -8,7 +8,7 @@ tags:
   - RDBMS Tutorial
 ---
 
-## Operators Arithmetic, Comparison, Logical SQL functions- Single row function
+## Operators Arithmetic, Comparison, Logical, SQL functions-
 
 - Single Row Function -
   - Single row functions return single row for every row of queried table or view.
