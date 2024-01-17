@@ -320,8 +320,14 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onTouchStart={() => handleArrowButtonPress("UP")}
-          onTouchEnd={() => handleArrowButtonRelease("UP")}
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleArrowButtonPress("UP");
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleArrowButtonRelease("UP");
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -345,8 +351,14 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onTouchStart={() => handleArrowButtonPress("LEFT")}
-          onTouchEnd={() => handleArrowButtonRelease("LEFT")}
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleArrowButtonPress("LEFT");
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleArrowButtonRelease("LEFT");
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -361,8 +373,14 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onTouchStart={() => handleArrowButtonPress("DOWN")}
-          onTouchEnd={() => handleArrowButtonRelease("DOWN")}
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleArrowButtonPress("DOWN");
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleArrowButtonRelease("DOWN");
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -377,8 +395,14 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onTouchStart={() => handleArrowButtonPress("RIGHT")}
-          onTouchEnd={() => handleArrowButtonRelease("RIGHT")}
+          onTouchStart={(e) => {
+            e.preventDefault();
+            handleArrowButtonPress("RIGHT");
+          }}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleArrowButtonRelease("RIGHT");
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
