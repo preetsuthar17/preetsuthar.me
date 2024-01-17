@@ -49,8 +49,15 @@ export default function Post({
 }) {
   const [currentViews, setCurrentViews] = useState(post.views);
   const [twitterHref, setTwitterHref] = useState("");
+  const [activeAccordion, setActiveAccordion] = useState(null);
+
   const router = useRouter();
+
   const { slug } = router.query;
+  const editPageUrl = `https://github.com/preetsuthar17/preetsuthar.me/edit/main/articles/${slug}.md?plain=1`;
+
+  const toc = generateTableOfContents(post.content);
+  const isAccordionActive = (articleId) => activeAccordion === articleId;
 
   useEffect(() => {
     const tweetText = encodeURIComponent(post.frontmatter.title);
@@ -58,18 +65,6 @@ export default function Post({
     const href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
     setTwitterHref(href);
   }, [post.frontmatter.title]);
-
-  const copyLinkToClipboard = () => {
-    const url = window.location.href;
-    navigator.clipboard
-      .writeText(url)
-      .then(() => {
-        console.log("Link copied to clipboard:", url);
-      })
-      .catch((error) => {
-        console.error("Error copying link to clipboard:", error);
-      });
-  };
 
   useEffect(() => {
     const uuidId = convertIdToUuid(post.frontmatter.id);
@@ -125,24 +120,6 @@ export default function Post({
     }
   }, []);
 
-  const toc = generateTableOfContents(post.content);
-
-  const [activeAccordion, setActiveAccordion] = useState(null);
-
-  const sortedSimilarTagArticles = [...similarTagArticles].sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
-    return dateA - dateB;
-  });
-
-  const handleAccordionClick = (articleId) => {
-    setActiveAccordion((prevActive) =>
-      prevActive === articleId ? null : articleId
-    );
-  };
-
-  const isAccordionActive = (articleId) => activeAccordion === articleId;
-
   useEffect(() => {
     hljs.registerLanguage("sql", sql);
     hljs.registerLanguage("javascript", javascript);
@@ -162,7 +139,30 @@ export default function Post({
   useEffect(() => {
     hljs.highlightAll({ detectLanguage: true });
   });
-  const editPageUrl = `https://github.com/preetsuthar17/preetsuthar.me/edit/main/articles/${slug}.md?plain=1`;
+
+  const sortedSimilarTagArticles = [...similarTagArticles].sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+    return dateA - dateB;
+  });
+
+  const handleAccordionClick = (articleId) => {
+    setActiveAccordion((prevActive) =>
+      prevActive === articleId ? null : articleId
+    );
+  };
+
+  const copyLinkToClipboard = () => {
+    const url = window.location.href;
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        console.log("Link copied to clipboard:", url);
+      })
+      .catch((error) => {
+        console.error("Error copying link to clipboard:", error);
+      });
+  };
 
   return (
     <motion.div
