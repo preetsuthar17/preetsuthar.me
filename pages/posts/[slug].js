@@ -141,9 +141,16 @@ export default function Post({
   });
 
   const sortedSimilarTagArticles = [...similarTagArticles].sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
-    return dateA - dateB;
+    const titleA = a.frontmatter.title.toLowerCase();
+    const titleB = b.frontmatter.title.toLowerCase();
+
+    if (titleA < titleB) {
+      return -1;
+    } else if (titleA > titleB) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
 
   const handleAccordionClick = (articleId) => {

@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Mon, 15 Jan 2024 11:12:42 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Jan 2024 14:30:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -847,7 +847,7 @@ match lang:
             <guid>https://preetsuthar.me/posts/2---sql-in-built-functions-and-joins-rdbms</guid>
             <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[
-## Operators Arithmetic, Comparison, Logical SQL functions- Single row function
+## Operators Arithmetic, Comparison, Logical, SQL functions-
 
 - Single Row Function -
   - Single row functions return single row for every row of queried table or view.
