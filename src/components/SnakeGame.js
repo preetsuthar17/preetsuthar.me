@@ -26,6 +26,12 @@ export const SnakeGame = ({
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [fruitsConsumed, setFruitsConsumed] = useState(0);
   const [score, setScore] = useState(0);
+  const [arrowButtons, setArrowButtons] = useState({
+    UP: false,
+    DOWN: false,
+    LEFT: false,
+    RIGHT: false,
+  });
 
   function generateFoodPosition() {
     const x = Math.floor(Math.random() * gridSize);
@@ -191,6 +197,17 @@ export const SnakeGame = ({
     };
   }, []);
 
+  const handleArrowButtonPress = (direction) => {
+    setDirection(direction);
+    setArrowButtons((prevButtons) => ({ ...prevButtons, [direction]: true }));
+  };
+
+  const handleArrowButtonRelease = (direction) => {
+    setArrowButtons((prevButtons) => ({ ...prevButtons, [direction]: false }));
+  };
+
+  const displayArrowKeys = isGameStarted && !isGameOver;
+
   const gridCells = useMemo(() => {
     return Array.from({ length: gridSize * gridSize }).map((_, index) => {
       const x = index % gridSize;
@@ -283,6 +300,97 @@ export const SnakeGame = ({
         >
           Score: {score}
         </div>
+      </div>
+      {/* {displayArrowKeys && (
+        <div style={{ margin: "10px", fontSize: "18px" }}>
+          <span style={{ fontWeight: "bold", color: "green" }}>
+            {arrowButtons.UP && "↑"} {arrowButtons.DOWN && "↓"}{" "}
+            {arrowButtons.LEFT && "←"} {arrowButtons.RIGHT && "→"}
+          </span>
+        </div>
+      )} */}
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "-0.6rem",
+        }}
+        className="arrow-keys-snake"
+      >
+        <button
+          className="primary-btn-main"
+          onTouchStart={() => handleArrowButtonPress("UP")}
+          onTouchEnd={() => handleArrowButtonRelease("UP")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            className="bi bi-caret-up-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "1.3rem",
+          marginBottom: "1.2rem",
+        }}
+      >
+        <button
+          className="primary-btn-main"
+          onTouchStart={() => handleArrowButtonPress("LEFT")}
+          onTouchEnd={() => handleArrowButtonRelease("LEFT")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            className="bi bi-caret-left-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+          </svg>
+        </button>
+        <button
+          className="primary-btn-main"
+          onTouchStart={() => handleArrowButtonPress("DOWN")}
+          onTouchEnd={() => handleArrowButtonRelease("DOWN")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            className="bi bi-caret-down-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg>
+        </button>
+        <button
+          className="primary-btn-main"
+          onTouchStart={() => handleArrowButtonPress("RIGHT")}
+          onTouchEnd={() => handleArrowButtonRelease("RIGHT")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="bi bi-caret-right-fill"
+            viewBox="0 0 16 16"
+          >
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+          </svg>
+        </button>
       </div>
       {isGameStarted ? (
         isGameOver ? (

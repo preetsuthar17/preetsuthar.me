@@ -11,16 +11,13 @@ import Head from "next/head";
 export default function Custom404() {
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Prevent scrolling for arrow keys
       if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
         e.preventDefault();
       }
     };
 
-    // Attach the event listener when the component mounts
     window.addEventListener("keydown", handleKeyDown);
 
-    // Remove the event listener when the component unmounts
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -40,7 +37,7 @@ export default function Custom404() {
         </Head>
         <Navbar />
         <div className="notFoundDiv">
-          <div>
+          <div className="main_div">
             <h2>404</h2>
             <p className="p-color">You&apos;re on wrong path!</p>
           </div>
