@@ -197,16 +197,9 @@ export const SnakeGame = ({
     };
   }, []);
 
-  const handleArrowButtonPress = (direction) => {
+  const handleArrowButtonClick = (direction) => {
     setDirection(direction);
-    setArrowButtons((prevButtons) => ({ ...prevButtons, [direction]: true }));
   };
-
-  const handleArrowButtonRelease = (direction) => {
-    setArrowButtons((prevButtons) => ({ ...prevButtons, [direction]: false }));
-  };
-
-  const displayArrowKeys = isGameStarted && !isGameOver;
 
   const gridCells = useMemo(() => {
     return Array.from({ length: gridSize * gridSize }).map((_, index) => {
@@ -301,14 +294,6 @@ export const SnakeGame = ({
           Score: {score}
         </div>
       </div>
-      {/* {displayArrowKeys && (
-        <div style={{ margin: "10px", fontSize: "18px" }}>
-          <span style={{ fontWeight: "bold", color: "green" }}>
-            {arrowButtons.UP && "↑"} {arrowButtons.DOWN && "↓"}{" "}
-            {arrowButtons.LEFT && "←"} {arrowButtons.RIGHT && "→"}
-          </span>
-        </div>
-      )} */}
 
       <div
         style={{
@@ -320,14 +305,7 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onTouchStart={(e) => {
-            e.preventDefault();
-            handleArrowButtonPress("UP");
-          }}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            handleArrowButtonRelease("UP");
-          }}
+          onClick={() => handleArrowButtonClick("UP")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -351,14 +329,7 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onTouchStart={(e) => {
-            e.preventDefault();
-            handleArrowButtonPress("LEFT");
-          }}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            handleArrowButtonRelease("LEFT");
-          }}
+          onClick={() => handleArrowButtonClick("LEFT")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -373,14 +344,7 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onTouchStart={(e) => {
-            e.preventDefault();
-            handleArrowButtonPress("DOWN");
-          }}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            handleArrowButtonRelease("DOWN");
-          }}
+          onClick={() => handleArrowButtonClick("DOWN")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -395,14 +359,7 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onTouchStart={(e) => {
-            e.preventDefault();
-            handleArrowButtonPress("RIGHT");
-          }}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            handleArrowButtonRelease("RIGHT");
-          }}
+          onClick={() => handleArrowButtonClick("RIGHT")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
