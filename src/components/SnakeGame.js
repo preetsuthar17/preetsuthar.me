@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { debounce } from "lodash";
 
 export const SnakeGame = ({
   initialSnake,
@@ -191,9 +192,11 @@ export const SnakeGame = ({
     };
   }, []);
 
-  const handleArrowButtonClick = (direction) => {
+  const handleArrowButtonClick = (direction, event) => {
+    event.preventDefault();
     setDirection(direction);
   };
+  const debouncedHandleArrowButtonClick = debounce(handleArrowButtonClick, 300);
 
   const gridCells = useMemo(() => {
     return Array.from({ length: gridSize * gridSize }).map((_, index) => {
@@ -299,7 +302,7 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onClick={() => handleArrowButtonClick("UP")}
+          onClick={(event) => debouncedHandleArrowButtonClick("UP", event)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -323,7 +326,7 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onClick={() => handleArrowButtonClick("LEFT")}
+          onClick={(event) => debouncedHandleArrowButtonClick("LEFT", event)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -338,7 +341,7 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onClick={() => handleArrowButtonClick("DOWN")}
+          onClick={(event) => debouncedHandleArrowButtonClick("DOWN", event)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -353,7 +356,7 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onClick={() => handleArrowButtonClick("RIGHT")}
+          onClick={(event) => debouncedHandleArrowButtonClick("RIGHT", event)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
