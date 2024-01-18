@@ -180,14 +180,16 @@ export default function Posts({ posts, tags }) {
                 </div>
                 <div className="tags-container">
                   {tags.map((tag) => (
-                    <div className="post-tag tags-item" key={tag}>
-                      <Link
-                        className="no-decoration p-color"
-                        href={`/tags/${tag}`}
-                      >
-                        {tag}
-                      </Link>
-                    </div>
+                    <Link
+                      className="no-decoration p-color post-tag"
+                      style={{
+                        display: "flex",
+                      }}
+                      href={`/tags/${tag}`}
+                      key={tag}
+                    >
+                      <div className=" tags-item">{tag}</div>
+                    </Link>
                   ))}
                   <Link className="post-tag p-color" href="/tags">
                     All Tags
