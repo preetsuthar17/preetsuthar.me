@@ -211,22 +211,27 @@ export default function Post({
               style={{
                 display: "flex",
                 flexWrap: "wrap",
+                gap: "0.8rem",
               }}
             >
               {post.frontmatter.tags.map((tag) => (
-                <div
-                  className="post-tag-slug"
+                <Link
+                  className="no-decoration p-color"
+                  href={`/tags/${tag}`}
                   key={tag}
-                  style={{
-                    borderRadius: "5px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
                 >
-                  <Link className="no-decoration p-color" href={`/tags/${tag}`}>
+                  <div
+                    className="post-tag-slug"
+                    style={{
+                      borderRadius: "5px",
+                      display: "flex",
+                      alignItems: "center",
+                      margin: "0",
+                    }}
+                  >
                     {tag}&nbsp;
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="styled-hr"></div>
