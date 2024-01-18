@@ -26,12 +26,6 @@ export const SnakeGame = ({
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [fruitsConsumed, setFruitsConsumed] = useState(0);
   const [score, setScore] = useState(0);
-  const [arrowButtons, setArrowButtons] = useState({
-    UP: false,
-    DOWN: false,
-    LEFT: false,
-    RIGHT: false,
-  });
 
   function generateFoodPosition() {
     const x = Math.floor(Math.random() * gridSize);
