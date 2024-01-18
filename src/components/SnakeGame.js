@@ -196,7 +196,7 @@ export const SnakeGame = ({
     event.preventDefault();
     setDirection(direction);
   };
-  const debouncedHandleArrowButtonClick = debounce(handleArrowButtonClick, 300);
+  const debouncedHandleArrowButtonClick = debounce(handleArrowButtonClick, 100);
 
   const gridCells = useMemo(() => {
     return Array.from({ length: gridSize * gridSize }).map((_, index) => {
