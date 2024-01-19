@@ -192,10 +192,10 @@ export default function Posts({ posts, tags }) {
             >
               <div className="blog-headers">
                 <div className="blog-title">
-                  <h1>&#47;blogs</h1>
+                  <h1>&#47;posts</h1>
                 </div>
                 <div className="blog-header-text">
-                  <p>I do write blogs sometimes.</p>
+                  <p>I also write articles!</p>
                 </div>
                 <div className="blog-search-input">
                   <input
@@ -236,7 +236,7 @@ export default function Posts({ posts, tags }) {
                     fontSize: "1.3rem",
                   }}
                 >
-                  No blogs found.
+                  No posts found.
                 </p>
               ) : (
                 visiblePosts.map((post, i) => (
