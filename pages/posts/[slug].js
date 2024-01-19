@@ -180,7 +180,7 @@ export default function Post({
     >
       <Layout>
         <Head>
-          <title>{post.frontmatter.title}</title>
+          <title>{post.frontmatter.title.toString()}</title>
           <meta name="robots" content="all" />
           <meta name="theme-color" content="#1c9cfc" />
           <meta httpEquiv="content-language" content="en" />
