@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
@@ -19,14 +20,18 @@ import Layout from "@/src/components/Layout";
 export default function Posts({ posts, tags }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(posts);
+  const [visiblePosts, setVisiblePosts] = useState(posts);
+  const [displayedPostsCount, setDisplayedPostsCount] = useState(6);
+  const [lazyLoadOffset, setLazyLoadOffset] = useState(6);
+  const animatedPostsRef = useRef(new Set());
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
 
   const sanitizeQuery = (query) => {
     return query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   };
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  });
 
   useEffect(() => {
     const contentItems = document.querySelectorAll(".post-tag");
@@ -35,13 +40,11 @@ export default function Posts({ posts, tags }) {
       gsap.fromTo(
         item,
         { opacity: 0, x: -80 },
-
         {
           opacity: 1,
           x: 0,
           duration: 0.2,
           delay: index * 0.01,
-
           ease: "power1.in",
           scrollTrigger: {
             trigger: item,
@@ -53,28 +56,31 @@ export default function Posts({ posts, tags }) {
       );
     });
   }, []);
-
   const initializeCardAnimation = () => {
     const contentItems = document.querySelectorAll(".blog-card");
 
     contentItems.forEach((item, index) => {
-      gsap.fromTo(
-        item,
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.2,
-          delay: 0.1,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 90%",
-            end: "top",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+      if (!animatedPostsRef.current.has(item)) {
+        gsap.fromTo(
+          item,
+          { opacity: 0, x: -80 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.2,
+            delay: 0.1,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              end: "top",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+
+        animatedPostsRef.current.add(item);
+      }
     });
   };
 
@@ -100,6 +106,10 @@ export default function Posts({ posts, tags }) {
   }, [searchResults]);
 
   useEffect(() => {
+    initializeCardAnimation();
+  }, [visiblePosts]);
+
+  useEffect(() => {
     if (searchQuery.trim() === "") {
       setSearchResults(posts);
     } else {
@@ -118,9 +128,28 @@ export default function Posts({ posts, tags }) {
       });
 
       setSearchResults(filteredResults);
+      setVisiblePosts(filteredResults.slice(0, displayedPostsCount));
     }
-  }, [searchQuery, posts]);
+  }, [searchQuery, posts, displayedPostsCount]);
 
+  useEffect(() => {
+    setVisiblePosts(searchResults.slice(0, displayedPostsCount));
+    initializeCardAnimation();
+  }, [searchResults, displayedPostsCount]);
+
+  const handleLazyLoad = () => {
+    setVisiblePosts((prevVisiblePosts) => {
+      const remainingPosts = searchResults.slice(
+        prevVisiblePosts.length,
+        prevVisiblePosts.length + lazyLoadOffset
+      );
+      // console.log("Remaining posts:", remainingPosts);
+      const newVisiblePosts = [...prevVisiblePosts, ...remainingPosts];
+      // console.log("New visible posts:", newVisiblePosts);
+
+      return newVisiblePosts;
+    });
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -197,11 +226,9 @@ export default function Posts({ posts, tags }) {
                 </div>
               </div>
             </motion.div>
-
             <div className="styled-hr"></div>
-
             <div className="blog-container">
-              {searchResults.length === 0 ? (
+              {visiblePosts.length === 0 ? (
                 <p
                   style={{
                     margin: "1rem 0",
@@ -212,19 +239,11 @@ export default function Posts({ posts, tags }) {
                   No blogs found.
                 </p>
               ) : (
-                searchResults.map((post, i) => (
-                  // <motion.div
-                  //   key={post.slug}
-                  //   initial={{ translateY: -70 }}
-                  //   animate={{ translateY: 0 }}
-                  //   exit={{ translateY: 0 }}
-                  //   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  // >
+                visiblePosts.map((post, i) => (
                   <div key={post.slug} className="blog-card">
                     <div>
                       <Link href={`/posts/${post.slug}`} passHref>
                         <h2 className="blog-header">
-                          {" "}
                           <span
                             dangerouslySetInnerHTML={{
                               __html: post.frontmatter.title,
@@ -241,36 +260,13 @@ export default function Posts({ posts, tags }) {
                           }}
                         />
                       </p>
-                      <div
-                        style={
-                          {
-                            // marginTop: "0.6rem",
-                          }
-                        }
-                      >
+                      <div>
                         <Link
                           href={`/posts/${post.slug}`}
                           className="blog-read-link"
                           passHref
                         >
-                          Read{" "}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            fill="currentColor"
-                            className="bi bi-box-arrow-in-up-right"
-                            viewBox="0 0 16 16"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5"
-                            />
-                            <path
-                              fillRule="evenodd"
-                              d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0z"
-                            />
-                          </svg>
+                          Read
                         </Link>
                       </div>
                     </div>
@@ -279,8 +275,20 @@ export default function Posts({ posts, tags }) {
                       {post.frontmatter.date}
                     </p>
                   </div>
-                  // </motion.div>
                 ))
+              )}
+            </div>
+            <div
+              className="lazy-load-more-button"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              {visiblePosts.length < searchResults.length && (
+                <button onClick={handleLazyLoad} className=" primary-btn-main">
+                  Load More posts
+                </button>
               )}
             </div>
             <div className="posts-post-top">
