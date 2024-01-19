@@ -134,7 +134,12 @@ const Tag = ({ blogs }) => {
                   exit={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="blog-card">
+                  <div
+                    className="blog-card"
+                    style={{
+                      opacity: 1,
+                    }}
+                  >
                     <Link href={`/posts/${blog.slug}`}>
                       <h2
                         className="blog-header"
