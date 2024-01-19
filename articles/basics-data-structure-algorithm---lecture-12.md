@@ -200,10 +200,10 @@ free(ptr)
 
 ### Applications of singly linked List
 
-    - Implementing stacks and queues.
-    - Dynamic memory allocation.
-    - Undo - Redo functionality.
-    - media playback applications
+  - Implementing stacks and queues.
+  - Dynamic memory allocation.
+  - Undo - Redo functionality.
+  - media playback applications
 
 ## Concept of circular linked list
 
