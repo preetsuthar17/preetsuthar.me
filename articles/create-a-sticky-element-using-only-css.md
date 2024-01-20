@@ -1,7 +1,7 @@
 ---
 title: "Create a Sticky Element using only CSS"
 date: 2021-08-28
-id: 1
+id: 6
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

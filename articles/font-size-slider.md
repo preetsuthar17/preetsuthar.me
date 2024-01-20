@@ -1,7 +1,7 @@
 ---
 title: "Font-size slider"
 date: 2023-08-22
-id: 11
+id: 8
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

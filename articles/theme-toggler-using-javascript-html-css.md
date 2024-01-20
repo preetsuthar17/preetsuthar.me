@@ -1,7 +1,7 @@
 ---
 title: "Theme Toggler using Javascript, HTML, CSS"
 date: 2021-09-06
-id: 3
+id: 15
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

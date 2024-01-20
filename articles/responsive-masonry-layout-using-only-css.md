@@ -1,7 +1,7 @@
 ---
 title: "Responsive Masonry Layout using only CSS"
 date: 2023-09-08
-id: 23
+id: 13
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Sticky navbar only using CSS"
 date: 2023-08-05
-id: 6
+id: 14
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

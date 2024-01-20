@@ -1,7 +1,7 @@
 ---
 title: "My Tech and Gear: A Daily Companion"
 date: 2021-09-28
-id: 4
+id: 12
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

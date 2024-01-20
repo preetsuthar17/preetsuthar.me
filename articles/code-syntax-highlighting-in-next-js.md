@@ -1,7 +1,7 @@
 ---
 title: "Code Syntax highlighting in Next Js"
 date: 2024-01-13
-id: 43
+id: 4
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

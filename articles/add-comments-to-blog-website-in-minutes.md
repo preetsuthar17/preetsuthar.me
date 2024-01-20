@@ -1,7 +1,7 @@
 ---
 title: "Add comments to blog website in minutes"
 date: 2023-08-23
-id: 12
+id: 1
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "@media screens - CSS"
 date: 2023-08-21
-id: 10
+id: 11 
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:

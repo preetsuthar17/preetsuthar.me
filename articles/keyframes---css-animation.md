@@ -1,7 +1,7 @@
 ---
 title: "@keyframes - CSS Animation"
 date: 2023-08-24
-id: 13
+id: 10
 author: "Preet Suthar"
 authorGithub: "https://github.com/preetsuthar17"
 tags:
