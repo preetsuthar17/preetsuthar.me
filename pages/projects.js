@@ -109,6 +109,25 @@ const Projects = () => {
               </div>
             </motion.div>
             <div className="styled-hr"></div>
+            <div className="project-headers">
+              <div className="featured-section">
+                <h2>Featured</h2>
+                <ProjectCard
+                  projectName="preetsuthar.me"
+                  projectLink="https://preetsuthar.me"
+                  projectStack="NextJs"
+                  projectAbout=" This is my open-source personal portfolio website and blog website built running on next.js and react.js and using Vercel."
+                />
+                <ProjectCard
+                  projectName="Dracodemy"
+                  projectLink="https://Dracodemy.tech"
+                  projectStack="NextJs"
+                  projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
+                />
+              </div>
+            </div>
+            <div className="styled-hr"></div>
+
             <div className="project-container">
               <ProjectCard
                 projectName="preetsuthar.me"
@@ -122,7 +141,12 @@ const Projects = () => {
                 projectStack="JavaScript"
                 projectAbout="Simplified JavaScript CRUD to-do manager with advanced features for effortless task management. Get things done with ease!"
               />
-
+              <ProjectCard
+                projectName="Dracodemy"
+                projectLink="https://Dracodemy.tech"
+                projectStack="NextJs"
+                projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
+              />
               <ProjectCard
                 projectName="Advance blog template"
                 projectLink="https://gatsby-blog-temp.netlify.app"

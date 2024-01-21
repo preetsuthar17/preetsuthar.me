@@ -22,6 +22,16 @@ $color_5: #3dbbed;
   width: 90%;
   margin: 0 auto;
   justify-content: left;
+  .featured-section {
+    h2 {
+      color: $color_1;
+      font-weight: bolder;
+      font-family: var(--heading-font-family);
+    }
+    div {
+      margin: 1rem 0;
+    }
+  }
 }
 
 .project-title {
