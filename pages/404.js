@@ -33,6 +33,10 @@ export default function Custom404() {
       >
         <Head>
           <title>Oops!</title>
+          <meta
+            property="og:image"
+            content="https://preetsuthar.me/website-icon.png"
+          />
           <meta name="robots" content="noindex" />
         </Head>
         <Navbar />

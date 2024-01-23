@@ -157,6 +157,10 @@ const About = () => {
           <meta property="og:url" content="https://preetsuthar.me/about" />
           <meta property="og:type" content="website" />
           <meta
+            property="og:image"
+            content="https://preetsuthar.me/website-icon.png"
+          />
+          <meta
             name="keywords"
             content="Preet Suthar, front-end development, Portfolio, Blog, web development, preet, front end development, front-end developer"
           />
