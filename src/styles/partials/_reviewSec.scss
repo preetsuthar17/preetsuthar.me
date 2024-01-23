@@ -218,7 +218,7 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 270px;
+  flex: 0 0 260px;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;
@@ -274,6 +274,7 @@ button[type="submit"] {
     left: 0;
     transition: 0.5s transform ease;
     right: 0;
+    scale: (0.9);
     position: absolute;
     svg {
       border-radius: 50%;
