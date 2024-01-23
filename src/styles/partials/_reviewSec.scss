@@ -218,7 +218,7 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 260px;
+  flex: 0 0 270px;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;
@@ -232,19 +232,29 @@ button[type="submit"] {
   background-position: 50% 50%;
   background-size: 1.1rem 1.1rem;
   border-radius: 1.25rem;
-  overflow: hidden;
   position: relative;
-  height: 15rem;
-  transform-style: preserve-3d;
+  height: 13rem;
+  transform-style: preserve-3d !important;
   background-color: #070707;
+  perspective: 1000px;
   border: 1px solid #ffffff08;
   backdrop-filter: blur(8px);
+
+  &:hover {
+    h3 {
+      transform: translateZ(20px);
+    }
+    .stars-container {
+      transform: translateZ(180px);
+    }
+  }
   h3 {
     font-size: 1.3rem;
 
+    transition: 1s transform ease;
     font-family: $font-family_1;
     margin-bottom: 0.5rem;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 0.5s forwards;
     color: $color_1;
     text-transform: capitalize;
     font-weight: 400;
@@ -254,13 +264,15 @@ button[type="submit"] {
 
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 13px;
+    font-size: 12px;
+    transition: 0.5s transform ease;
     margin-bottom: 1rem;
     text-align: left;
   }
   .stars-container {
     bottom: 10px;
     left: 0;
+    transition: 0.5s transform ease;
     right: 0;
     position: absolute;
     svg {
@@ -270,18 +282,6 @@ button[type="submit"] {
       -moz-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
       box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
     }
-  }
-  &::after {
-    content: "";
-    height: 70px;
-    width: 1px;
-    position: absolute;
-    left: -1px;
-    top: 65%;
-    transition: top, opacity;
-    transition-duration: 600ms;
-    transition-timing-function: ease;
-    background: linear-gradient(transparent, mediumslateblue, transparent);
   }
 
   &::after {

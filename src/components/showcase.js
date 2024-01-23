@@ -22,10 +22,10 @@ const Showcase = () => {
     VanillaTilt.init(tiltContainer, {
       max: 8,
       speed: 200,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
+      easing: "ease",
       transition: true,
       glare: true,
-      "max-glare": 0.2,
+      "max-glare": 0.1,
     });
   }, []);
 

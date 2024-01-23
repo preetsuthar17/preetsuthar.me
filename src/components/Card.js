@@ -13,7 +13,10 @@ const Card = ({ heading, stars, description }) => {
   }, []);
 
   return (
-    <div className={`review-card${isLoading ? " loading" : ""}`}>
+    <div
+      data-tilt-axis="y"
+      className={`review-card${isLoading ? " loading" : ""}`}
+    >
       {isLoading ? (
         <>
           <div className="heading">
