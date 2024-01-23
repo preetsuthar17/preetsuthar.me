@@ -63,8 +63,8 @@ $color_3: white;
   .showcase-header-hero {
     display: flex;
     gap: 6rem;
-    margin: 5rem 20rem;
     flex-direction: row-reverse;
+    margin-bottom: 8rem;
     @media screen and (max-width: 1200px) {
       margin: 5rem 15rem;
     }
@@ -91,6 +91,9 @@ $color_3: white;
   .showcase-header-title {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     p {
       color: #ccc;
       font-family: "JetBrains Mono", "poppins";
@@ -99,25 +102,63 @@ $color_3: white;
     }
     .showcase-header-about {
       font-size: 16px;
-      // width: 40rem;
+      text-align: justify;
       font-family: "poppins", sans-serif;
       font-weight: normal;
+    }
+
+    .showcase-header-name {
+      overflow-x: hidden !important;
+      margin: auto;
+      p {
+        color: white;
+        background: -webkit-linear-gradient(
+          142deg,
+          rgb(255, 52, 245) 40%,
+          rgba(0, 207, 255, 1) 80%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        flex-direction: column;
+        font-size: 80px;
+        margin-top: -2rem;
+        font-weight: 900;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: -0.1rem;
+        @media screen and (max-width: 400px) {
+          font-size: 65px;
+        }
+      }
     }
     h1 {
       color: white;
       background: -webkit-linear-gradient(
         142deg,
-        rgb(255, 84, 246) 60%,
-        rgba(0, 207, 255, 1) 100%
+        rgb(255, 52, 245) 40%,
+        rgba(0, 207, 255, 1) 80%
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 3.8em;
-      // font-family: var(--heading-font-family);
+      display: flex;
+      flex-direction: column;
+      font-size: 80px;
+      font-weight: 900;
       font-family: "Poppins", sans-serif;
       letter-spacing: -0.1rem;
+      span {
+        &:nth-child(1) {
+          margin-bottom: -2rem;
+        }
+        &:nth-child(2) {
+        }
+      }
+      @media screen and (max-width: 400px) {
+        width: 15rem;
+        margin: auto;
+      }
     }
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 400px) {
       p {
         font-size: 1.4rem;
       }
@@ -125,7 +166,7 @@ $color_3: white;
         font-size: 0.9rem;
       }
       h1 {
-        font-size: 2.9rem;
+        font-size: 65px;
       }
     }
   }
@@ -276,7 +317,6 @@ $color_3: white;
   width: 100%;
   overflow: hidden;
   display: flex;
-  margin-top: 3rem;
   white-space: nowrap;
   cursor: pointer;
 }

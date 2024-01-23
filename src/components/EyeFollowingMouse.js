@@ -72,7 +72,7 @@ const EyeFollowingMouse = () => {
         position: "absolute",
         top: "-1.3rem",
         right: 0,
-        transform: "rotate(0deg)",
+        transform: "rotate(10deg)",
       };
   const styleLeftEyebrow = shake
     ? {
@@ -93,13 +93,14 @@ const EyeFollowingMouse = () => {
         position: "absolute",
         top: "-1.3rem",
         right: 0,
-        transform: "rotate(0deg)",
+        transform: "rotate(-10deg)",
       };
 
   return (
     <>
       <div className="eyes-follow-tired">
         <div className="container">
+          {shake ? <p className="angry-symbol">💢</p> : <></>}
           <div className="eyes">
             <div className="left-eyebrow" style={styleLeftEyebrow}></div>
             <div
@@ -126,11 +127,7 @@ const EyeFollowingMouse = () => {
       {shake ? (
         <div className="ouch-text">
           <p>
-            <span>O</span>
-            <span>U</span>
-            <span>C</span>
-            <span>H</span>
-            <span>!</span>
+            <span>It hurts!</span>
           </p>
         </div>
       ) : (

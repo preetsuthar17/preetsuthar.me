@@ -12,7 +12,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-
+    .angry-symbol {
+      position: absolute;
+      z-index: 99999;
+      font-size: 3rem;
+      rotate: (20deg);
+      top: -4rem;
+      right: -5rem;
+    }
     .eyes {
       position: absolute;
       display: flex;
@@ -25,7 +32,7 @@
         border: 5px solid #1d1813;
         height: 90px;
         width: 90px;
-        background-color: #f3efef;
+        background-color: #f3efefd9;
 
         .pupil {
           position: absolute;
@@ -47,7 +54,7 @@
       .left-eyebrow {
         width: 70px;
         height: 10px;
-        background-color: white;
+        background-color: #f3efefd9;
         position: absolute;
         top: -2rem;
         left: 0;
@@ -104,15 +111,18 @@
 .ouch-text {
   display: flex;
   justify-content: center;
-  margin-top: -3rem;
+  margin-top: -2.8rem;
+  margin-left: -2rem;
   position: absolute;
   margin-bottom: 4rem;
   p {
     transform: rotate(-10deg);
-    font-family: "Archivo Black", sans-serif;
     color: white;
     font-size: 2rem;
-    font-weight: bolder;
+    font-weight: 900;
+    span {
+      font-family: "Archivo Black", sans-serif;
+    }
     span:nth-child(1) {
       font-size: 2.4rem;
     }

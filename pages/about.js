@@ -347,6 +347,18 @@ const About = () => {
                             </Link>
                           </ul>
                         </div>
+                        <div className="chip_component">
+                          <CustomTooltip2 text="Learn programming">
+                            <div className="chip_content">
+                              <Link
+                                href="https://dracodemy.tech"
+                                target="_blank"
+                              >
+                                Dracodemy
+                              </Link>
+                            </div>
+                          </CustomTooltip2>
+                        </div>
                       </div>
                     </div>
                   </div>
