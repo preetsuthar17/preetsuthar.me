@@ -90,12 +90,12 @@ textarea {
   margin-right: 3px;
   font-size: 18px;
 }
-.star.active {
-  color: $color_4;
-  -webkit-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
-  -moz-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
-  box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
-}
+// .star.active {
+//   color: $color_4;
+//   -webkit-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+//   -moz-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+//   box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+// }
 button[type="submit"] {
   width: fit-content;
   font-size: 1rem !important;
@@ -218,7 +218,7 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 230px;
+  flex: 0 0 260px;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;
@@ -234,7 +234,7 @@ button[type="submit"] {
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
-  height: 12rem;
+  height: 13.5rem;
   transform-style: preserve-3d;
   background-color: #070707;
   border: 1px solid #ffffff08;
@@ -257,6 +257,19 @@ button[type="submit"] {
     font-size: 0.9rem;
     margin-bottom: 1rem;
     text-align: left;
+  }
+  .stars-container {
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    svg {
+      border-radius: 50%;
+      fill: $color_4;
+      -webkit-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+      -moz-box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+      box-shadow: 0px 0px 123px 3px rgba(252, 255, 46, 0.57);
+    }
   }
   &::after {
     content: "";

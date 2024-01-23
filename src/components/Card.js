@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaStar } from "react-icons/fa";
 
 const Card = ({ heading, stars, description }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,13 @@ const Card = ({ heading, stars, description }) => {
         <>
           <h3>{heading}</h3>
           <p>{description}</p>
+          <div className="stars-container">
+            <FaStar className="star active"></FaStar>
+            <FaStar className="star active"></FaStar>
+            <FaStar className="star active"></FaStar>
+            <FaStar className="star active"></FaStar>
+            <FaStar className="star active"></FaStar>
+          </div>
         </>
       )}
     </div>
