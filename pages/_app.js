@@ -14,6 +14,7 @@ import "../src/styles/partials/_postPage.scss";
 import "../src/styles/partials/_404.scss";
 import "../src/styles/partials/_CourseSnackBar.scss";
 import "../src/styles/partials/_CustomCursor.scss";
+import "../src/styles/partials/_EyeFollowingMouse.scss";
 
 import Layout from "@/src/components/Layout";
 import CustomCursor from "../src/components/CustomCursor";

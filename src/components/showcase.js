@@ -4,6 +4,7 @@ import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";
 import Link from "next/link";
+import EyeFollowingMouse from "./EyeFollowingMouse";
 
 import CustomTooltip2 from "./CustomTooltip2";
 
@@ -104,18 +105,20 @@ const Showcase = () => {
             <div className="showcase-header">
               <div className="showcase-header-hero">
                 <div className="showcase-header-title">
-                  <p>Namaste(); I'm</p>
-                  <h1>Preet Suthar.</h1>
-                  <div className="styled-hr"></div>
-                  <div className="showcase-header-subtitle">
-                    <p className="showcase-header-about">
-                      A Front-end web developer. creating beautiful websites. I
-                      can help you to create website with the most{" "}
-                      <span className="color-mediumslateblue ">
-                        appealing designs
-                      </span>
-                      .
-                    </p>
+                  <div>
+                    <p>Namaste(); I'm</p>
+                    <h1>Preet Suthar.</h1>
+                    <div className="styled-hr"></div>
+                    <div className="showcase-header-subtitle">
+                      <p className="showcase-header-about">
+                        A Front-end web developer. creating beautiful websites.
+                        I can help you to create website with the most{" "}
+                        <span className="color-mediumslateblue ">
+                          appealing designs
+                        </span>
+                        .
+                      </p>
+                    </div>
                   </div>
                   <div className="showcase-header-buttons">
                     <Link className="primary-btn-main" href="/about">
@@ -126,23 +129,22 @@ const Showcase = () => {
                         <em>Contact me</em>
                       </span>
                     </Link>
-                  </div>
-                  <div className="chip_component">
-                    <CustomTooltip2 text="more information">
-                      <div className="chip_content">
-                        <Link
-                          href="https://www.youtube.com/watch?v=itHctPXzwnM"
-                          target="_blank"
-                        >
-                          Assistify AI beta release
-                        </Link>
-                      </div>
-                    </CustomTooltip2>
+                    <div className="chip_component">
+                      <CustomTooltip2 text="Learn programming">
+                        <div className="chip_content">
+                          <Link href="https://dracodemy.tech" target="_blank">
+                            Dracodemy
+                          </Link>
+                        </div>
+                      </CustomTooltip2>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
+            <div>
+              <EyeFollowingMouse />
+            </div>
             <div className="scrolling_text">
               <div className="text">
                 <span className="text-only-outline">front-end developer •</span>

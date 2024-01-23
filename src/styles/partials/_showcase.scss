@@ -91,7 +91,6 @@ $color_3: white;
   .showcase-header-title {
     display: flex;
     flex-direction: column;
-
     p {
       color: #ccc;
       font-family: "firecode", "sofiapro";
@@ -133,8 +132,16 @@ $color_3: white;
 
   .showcase-header-buttons {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
+    a {
+      margin: 0;
+    }
+    div {
+      margin: 0;
+    }
   }
 }
 
@@ -149,12 +156,12 @@ $color_3: white;
   margin-top: 3rem;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
 }
 
 .showcase-p {
   display: flex;
-  text-align: left !important;
+  text-align: center !important;
   flex-wrap: wrap;
   overflow-x: hidden !important;
   letter-spacing: -0.1rem;

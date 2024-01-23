@@ -37,6 +37,7 @@
     "react-activity-calendar": "2.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.0.1",
+    "react-hook-mighty-mouse": "^1.4.31",
     "react-icons": "^4.10.1",
     "react-top-loading-bar": "^2.3.1",
     "remark": "^14.0.3",
