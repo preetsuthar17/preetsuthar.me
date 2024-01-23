@@ -5,9 +5,19 @@ const EyeFollowingMouse = () => {
   const leftEyeMouse = useMightyMouse(true, "left-eye", { x: 45, y: 45 });
   const rightEyeMouse = useMightyMouse(true, "right-eye", { x: 45, y: 45 });
 
+  const texts = ["It hurts!", "Ouch!", "Stop!", "Enough!"];
+
+  const [isClicked, setIsClicked] = useState(false);
+  const [isDebouncing, setIsDebouncing] = useState(false);
+
   const [mouseX, setMouseX] = useState(0);
   const [shake, setShake] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+
+  const [randomText, setRandomText] = useState(
+    texts[Math.floor(Math.random() * texts.length)]
+  );
+
   const handleScroll = () => {
     setScrollY(window.scrollY);
   };
@@ -16,10 +26,35 @@ const EyeFollowingMouse = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const handleEyeClick = () => {
+    if (isDebouncing) return;
+
+    setIsDebouncing(true);
     setShake(true);
-    setTimeout(() => setShake(false), 500);
+    setIsClicked(true);
+
+    setTimeout(() => {
+      setShake(false);
+      setIsClicked(false);
+    }, 500);
+
+    setTimeout(() => {
+      setIsDebouncing(false);
+    }, 1000);
   };
+
+  useEffect(() => {
+    const handleMouseMove = () => {
+      if (!isClicked) {
+        setRandomText(texts[Math.floor(Math.random() * texts.length)]);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isClicked]);
+
   useEffect(() => {
     window.addEventListener("mousemove", (e) => setMouseX(e.clientX));
     return () =>
@@ -127,7 +162,7 @@ const EyeFollowingMouse = () => {
       {shake ? (
         <div className="ouch-text">
           <p>
-            <span>It hurts!</span>
+            <span>{randomText}</span>
           </p>
         </div>
       ) : (
