@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -18,16 +21,6 @@
 *::selection {
   color: black;
   background-color: white;
-}
-
-@font-face {
-  font-family: "firecode";
-  src: url("../utils/fonts/FiraCode.ttf");
-}
-
-@font-face {
-  font-family: "sofiapro";
-  src: url("../utils/fonts/SofiaPro.otf");
 }
 
 html {
@@ -95,7 +88,7 @@ body::-webkit-scrollbar-thumb {
   --font-color: #ababab;
   --showcase-h-color: #ffffff;
   --heading-color: #dcdcdcc8;
-  --body-font-family: "sofiapro", sans-serif;
+  --body-font-family: "poppins", sans-serif;
   --heading-font-family: "Open Sans", sans-serif;
   --nunito-font-family: "Nunito Sans", sans-serif;
   --serif-font-family: "Playfair Display", serif;

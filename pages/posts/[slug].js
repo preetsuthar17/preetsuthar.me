@@ -323,8 +323,9 @@ export default function Post({
                   gap: "0.4rem",
                   background: "#cccccc15",
                   width: "fit-content",
-                  padding: "0.3rem",
+                  padding: "0.4rem",
                   borderRadius: "3px",
+                  fontSize: '14px'
                 }}
               >
                 <svg

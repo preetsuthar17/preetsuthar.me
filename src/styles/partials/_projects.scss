@@ -45,7 +45,7 @@ $color_5: #3dbbed;
 }
 .project-header {
   color: $color_2;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   transition: 0.4s ease-in-out !important;
   span {
     font-size: 1.5rem;
@@ -59,8 +59,8 @@ $color_5: #3dbbed;
 
 .project-text {
   color: $color_2;
-  font-size: 1rem;
-  margin-bottom: 23px;
+  font-size: 15px;
+  margin-bottom: 30px;
   font-weight: 400;
   opacity: 70% !important;
   color: #ababab !important;

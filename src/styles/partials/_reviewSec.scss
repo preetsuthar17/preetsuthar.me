@@ -234,7 +234,7 @@ button[type="submit"] {
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
-  height: 13.5rem;
+  height: 15rem;
   transform-style: preserve-3d;
   background-color: #070707;
   border: 1px solid #ffffff08;
@@ -247,14 +247,14 @@ button[type="submit"] {
     animation: fadeIn 1s forwards;
     color: $color_1;
     text-transform: capitalize;
-    font-weight: 200;
+    font-weight: 400;
   }
   p {
     color: $color_5;
 
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 0.9rem;
+    font-size: 13px;
     margin-bottom: 1rem;
     text-align: left;
   }
