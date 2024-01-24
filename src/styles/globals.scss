@@ -6,6 +6,14 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+$text: #f0edf3;
+$background: #100d14;
+$primary: #bbacc9;
+$secondary: #654244;
+$third: #18151d;
+$accent: #ac9080;
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +32,7 @@
 }
 
 html {
-  background: #000000;
+  background: #100d14;
 }
 
 body {
@@ -32,7 +40,7 @@ body {
   width: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   overflow-x: hidden;
-  background: #000000;
+  background: #100d14;
   background-size: 400% 400%;
 }
 
@@ -85,10 +93,10 @@ body::-webkit-scrollbar-thumb {
 
 :root {
   --bg-color: #080809;
-  --font-color: #ababab;
+  --font-color: #f0edf3;
   --showcase-h-color: #ffffff;
-  --heading-color: #dcdcdcc8;
-  --body-font-family: "poppins", sans-serif;
+  --heading-color: #fff;
+  --body-font-family: "Poppins", sans-serif;
   --heading-font-family: "Open Sans", sans-serif;
   --nunito-font-family: "Nunito Sans", sans-serif;
   --serif-font-family: "Playfair Display", serif;
@@ -240,13 +248,40 @@ hr {
     background-color: rgba(255, 0, 0, 0.308);
     border: 1px solid rgba(255, 0, 0, 0.342);
     width: fit-content;
-    font-weight: normal;
 
     a {
       text-decoration: none;
-      font-weight: normal;
+      font-weight: 600;
       color: white;
     }
     color: white;
+  }
+}
+
+.font-effect {
+  font-style: italic;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent !important;
+}
+
+.highlighted {
+  position: relative;
+  &::before {
+    bottom: 4px;
+    content: "";
+    height: 50%;
+    width: 100%;
+    display: block;
+    z-index: -5;
+    opacity: 30%;
+    position: absolute;
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, transparent 50%, #ac9180 50%);
+  }
+  &:hover {
+    .highlighted::before {
+      height: 60%;
+    }
   }
 }

@@ -208,11 +208,8 @@ const About = () => {
                     <p style={{ margin: "1rem", padding: "2rem " }}>
                       <Link
                         href="mailto:preetsutharxd@gmail.com"
-                        className="primary-btn-main"
+                        className="primary-btn-secondary"
                       >
-                        <span>
-                          <em>Hire me</em>
-                        </span>
                         <span>
                           <em>Hire me</em>
                         </span>

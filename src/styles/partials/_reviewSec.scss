@@ -2,10 +2,10 @@ $color_1: #fff;
 $color_2: var(--font-color);
 $color_3: #ccc;
 $color_4: gold;
-$color_5: #ffffff89;
+$color_5: var(--font-color);
 $color_6: var(--heading-color);
 $color_7: #ffffffc7;
-$color_8: #ffffff9f;
+$color_8: var(--font-color);
 $font-family_1: var(--body-font-family);
 $background-color_1: rgba(255, 255, 255, 0.045);
 $background-color_2: var(--showcase-h-color);
@@ -175,41 +175,41 @@ button[type="submit"] {
     border-radius: 12px;
   }
 
-  &::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(26deg, #45caff 41%, #f41bff 47%);
-    transform: translate3d(200px, -180px, 0) scale(0.39);
-    filter: blur(280px);
-    opacity: 45%;
-    height: 450px;
-    transition: all 0.3s;
-    border-radius: inherit;
+  // &::before {
+  //   content: "";
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   background: linear-gradient(26deg, #45caff 41%, #f41bff 47%);
+  //   transform: translate3d(200px, -180px, 0) scale(0.39);
+  //   filter: blur(280px);
+  //   opacity: 45%;
+  //   height: 450px;
+  //   transition: all 0.3s;
+  //   border-radius: inherit;
 
-    @media screen and (max-width: 760px) {
-      transform: translate3d(0px, -80px, 0) scale(0.49);
-      opacity: 80%;
-      filter: blur(200px);
-      height: 200px;
-    }
-  }
+  //   @media screen and (max-width: 760px) {
+  //     transform: translate3d(0px, -80px, 0) scale(0.49);
+  //     opacity: 80%;
+  //     filter: blur(200px);
+  //     height: 200px;
+  //   }
+  // }
 
-  &::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: inherit;
-    border-radius: inherit;
-  }
+  // &::after {
+  //   content: "";
+  //   z-index: -1;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   background: inherit;
+  //   border-radius: inherit;
+  // }
 }
 
 .review-card {
@@ -218,29 +218,23 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 260px;
+  flex: 0 0 19rem;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;
-  border-radius: 12px;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 1px
-  );
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px,
-    rgba(0, 0, 0, 0.15) 0px 1px 3px 1px;
-  background-position: 50% 50%;
-  background-size: 1.1rem 1.1rem;
-  border-radius: 1.25rem;
+  border-radius: 17px;
+  text-align: justify !important;
   position: relative;
-  height: 13rem;
+  height: 16rem;
   transform-style: preserve-3d !important;
-  background-color: #070707;
+  background-color: #18151d;
   perspective: 1000px;
-  border: 1px solid #ffffff08;
   backdrop-filter: blur(8px);
-
+  justify-content: left;
   &:hover {
+    .highlighted::before {
+      height: 90%;
+    }
     h3 {
       transform: translateZ(20px);
     }
@@ -249,33 +243,48 @@ button[type="submit"] {
     }
   }
   h3 {
-    font-size: 1.3rem;
-
+    font-size: 1.5rem;
+    width: fit-content;
     transition: 1s transform ease;
     font-family: $font-family_1;
     margin-bottom: 0.5rem;
     animation: fadeIn 0.5s forwards;
     color: $color_1;
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: left;
   }
   p {
     color: $color_5;
 
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.5s transform ease;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     text-align: left;
   }
+
+  .review-card-headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .review-card-sub-heading {
+      position: absolute;
+      top: 34px;
+      opacity: 40% !important;
+      margin: 0;
+    }
+  }
+
   .stars-container {
     bottom: 10px;
     left: 0;
     transition: 0.5s transform ease;
     right: 0;
     scale: (0.9);
-    position: absolute;
     svg {
       border-radius: 50%;
       fill: $color_4;

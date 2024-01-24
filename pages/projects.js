@@ -115,7 +115,6 @@ const Projects = () => {
             <div className="styled-hr"></div>
             <div className="project-headers">
               <div className="featured-section">
-                <h2>Featured</h2>
                 <ProjectCard
                   projectName="preetsuthar.me"
                   projectLink="https://preetsuthar.me"

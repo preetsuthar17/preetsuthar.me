@@ -1,5 +1,5 @@
-$color_1: var(--heading-color);
-$color_2: var(--font-color);
+$color_1: #f0edf3;
+$color_2: #f0edf3;
 $color_3: #aaaab5;
 $color_4: #40c9ff;
 $color_5: #3dbbed;
@@ -25,11 +25,18 @@ $color_5: #3dbbed;
   .featured-section {
     h2 {
       color: $color_1;
-      font-weight: bolder;
-      font-family: var(--heading-font-family);
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
     }
     div {
       margin: 1rem 0;
+    }
+    .project-card {
+      height: 7rem;
+      border: 2px solid #664244aa;
+      .project-header {
+        margin: 10px 0;
+      }
     }
   }
 }
@@ -39,8 +46,7 @@ $color_5: #3dbbed;
   transition: 0.4s ease-in-out !important;
   h1 {
     font-size: 2.7rem;
-    font-family: var(--heading-font-family);
-    font-weight: 900 !important;
+    font-family: "Poppins", sans-serif;
   }
 }
 .project-header {
@@ -48,8 +54,8 @@ $color_5: #3dbbed;
   margin-bottom: 10px;
   transition: 0.4s ease-in-out !important;
   span {
-    font-size: 1.5rem;
-    font-weight: 400 !important;
+    font-size: 1.3rem;
+    font-weight: 500 !important;
   }
 }
 .project-header-text {
@@ -63,7 +69,7 @@ $color_5: #3dbbed;
   margin-bottom: 30px;
   font-weight: 400;
   opacity: 70% !important;
-  color: #ababab !important;
+  color: #f0edf3;
 }
 
 .project-container {
@@ -79,7 +85,6 @@ $color_5: #3dbbed;
 }
 
 .project-card {
-  border: 1px solid #ffffff08;
   opacity: 0;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -89,8 +94,9 @@ $color_5: #3dbbed;
   flex-grow: 1;
   flex-basis: 20rem;
   padding: 2rem;
+  // height: 10rem;
   transition: 0.3s ease-in-out !important;
-  background-color: #070707;
+  background-color: #18151d;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 
@@ -141,6 +147,7 @@ $color_5: #3dbbed;
     }
   }
   .project-name {
+    color: #f0edf3;
     padding-top: 1rem;
   }
 

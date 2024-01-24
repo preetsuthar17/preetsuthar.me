@@ -17,8 +17,7 @@ $color_3: #aaaab5;
   margin: 0 auto;
   h1 {
     font-size: 2.7rem;
-    font-family: var(--heading-font-family);
-    font-weight: 900 !important;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -268,7 +267,7 @@ $color_3: #aaaab5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   margin-right: 30px;
-  background-color: #0e0e0e;
+  background-color: #18151d;
   border: 1px solid rgb(255 255 255 / 5%);
   backdrop-filter: blur(8px);
   border-radius: 12px;
@@ -325,20 +324,19 @@ $color_3: #aaaab5;
   clear: both;
 }
 .cd-timeline-content h2 {
-  color: #ffffffc5;
+  color: #f0edf3;
 
-  font-weight: 500;
   margin: 1rem;
   margin-bottom: 5px;
 }
 .cd-timeline-content p,
 .cd-timeline-content .cd-date {
-  color: rgba(255, 255, 255, 0.489);
-  font-size: 15px;
+  color: #f0edf3;
+  font-size: 12px;
 }
 .cd-timeline-content .cd-date {
   font-size: 1rem;
-  // border-bottom: 1px solid #121212;
+  // border-bottom: 1px solid #18151d;
   width: max-content !important;
   margin: 1rem;
   padding-bottom: 1px;
@@ -346,7 +344,7 @@ $color_3: #aaaab5;
 }
 .cd-timeline-content p {
   margin: 1em;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6rem;
 }
 
@@ -359,7 +357,7 @@ $color_3: #aaaab5;
   height: 0;
   width: 0;
   border: 12px solid transparent;
-  border-right: 12px solid #121212;
+  border-right: 12px solid #18151d;
 }
 
 @media only screen and (min-width: 768px) {
@@ -369,7 +367,7 @@ $color_3: #aaaab5;
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
-    color: white;
+    color: #f0edf3;
     margin-left: 0;
     padding: 1.6em;
     width: 36%;
@@ -428,7 +426,7 @@ $color_3: #aaaab5;
       max-width: none !important;
     }
     .styles-module_calendar__-Ozc6 [data-level="0"] {
-      fill: #121212 !important;
+      fill: #18151d !important;
     }
   }
 }
@@ -440,7 +438,7 @@ $color_3: #aaaab5;
     margin: 0 auto !important;
     display: flex;
     flex-direction: column;
-    color: #aaaab5;
+    color: #f0edf3;
     scroll-margin-block-start: end;
     overflow-x: auto;
     scroll-snap-stop: always !important;
@@ -451,7 +449,7 @@ $color_3: #aaaab5;
     max-width: none !important;
   }
   .styles-module_calendar__-Ozc6 [data-level="0"] {
-    fill: #121212 !important;
+    fill: #18151d !important;
   }
 }
 

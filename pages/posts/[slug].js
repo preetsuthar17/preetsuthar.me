@@ -253,7 +253,7 @@ export default function Post({
                 <span className="date">By </span>
                 <Link
                   style={{
-                    color: "#aaa",
+                    color: "#f0edf3e8",
 
                     textDecoration: "none",
                   }}
@@ -317,7 +317,7 @@ export default function Post({
                   display: "flex",
                   alignItems: "center",
                   margin: "1rem 0",
-                  color: "#aaa",
+                  color: "#f0edf3e8",
                   textDecoration: "none",
                   marginBottom: "-1rem",
                   gap: "0.4rem",
@@ -325,7 +325,7 @@ export default function Post({
                   width: "fit-content",
                   padding: "0.4rem",
                   borderRadius: "3px",
-                  fontSize: '14px'
+                  fontSize: "14px",
                 }}
               >
                 <svg
@@ -378,7 +378,12 @@ export default function Post({
                                   open: { opacity: 1, height: "auto" },
                                 }}
                               >
-                                <Link href={`/posts/${article.slug}`}>
+                                <Link
+                                  style={{
+                                    fontWeight: "900",
+                                  }}
+                                  href={`/posts/${article.slug}`}
+                                >
                                   {article.frontmatter.title}
                                 </Link>
                                 {isAccordionActive(article.frontmatter.id) && (
@@ -437,9 +442,8 @@ export default function Post({
               <Link
                 href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
                 target="_blank"
-                className="donateButton"
+                className="donateButton primary-btn-secondary"
                 style={{
-                  color: "#aaa",
                   textAlign: "left",
                 }}
               >
