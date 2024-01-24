@@ -1,8 +1,9 @@
 $color_1: var(--heading-color);
-$color_2: #666666;
+$color_2: #afafaf;
 $color_3: var(--font-color);
 $color_4: #17b6ff;
 $color_5: rgb(200, 200, 200);
+$color_6: #ffffff;
 $font-family_1: "JetBrains Mono", monospace;
 $background-color_1: #180d23;
 
@@ -35,9 +36,10 @@ $background-color_1: #180d23;
 
 .title {
   font-size: 37px;
-  color: $color_1;
-  font-family: var(--heading-font-family);
-  font-weight: bold;
+  color: $color_3;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  z-index: 99999 !important;
   margin-bottom: 20px;
 }
 .date {
@@ -59,29 +61,26 @@ $background-color_1: #180d23;
 }
 
 .content {
-  color: $color_3;
-  line-height: 1.6;
+  color: #f0edf3e8;
+  line-height: 1.7;
   word-wrap: break-word;
   border-radius: 12px;
   cursor: auto !important;
   font-size: 1rem !important;
-
   p {
-    color: $color_3;
+    color: #f0edf3e8;
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: 16px;
   }
   h1 {
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 1.9rem;
-    font-weight: normal;
     color: $color_3;
   }
   h2 {
     margin-top: 40px;
     margin-bottom: 20px;
-    font-weight: normal;
     color: $color_3;
   }
   h3 {
@@ -132,18 +131,16 @@ $background-color_1: #180d23;
   }
   code {
     font-family: $font-family_1;
-    background-color: rgb(198 198 198 / 18%);
+    background-color: rgba(198, 198, 198, 0.123);
     padding: 0.1rem 0.4rem;
     border-radius: 2px;
     margin: 0.3rem;
-    font-size: 14px;
     color: $color_5;
   }
   pre {
     background-color: #1d202692;
     backdrop-filter: blur(10px);
     border: 2px solid #39393912;
-    font-size: 15px;
     padding: 1rem;
     display: flex;
     margin: 2rem 0;
@@ -241,7 +238,7 @@ $background-color_1: #180d23;
   h2 {
     margin-top: 40px;
     margin-bottom: 20px;
-    font-weight: normal;
+    font-weight: 600;
     color: $color_3;
   }
 
@@ -300,7 +297,7 @@ blockquote {
     flex-wrap: wrap;
   }
   overflow: auto;
-  background-color: #121212;
+  background-color: #18151d;
   backdrop-filter: blur(10px);
   border: 2px solid #ffffff12;
   font-size: 15px;
@@ -323,15 +320,17 @@ blockquote {
 }
 
 .donateUs {
-  font-size: 1rem;
+  font-size: 14px;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   border-radius: 6px;
   margin: 2.5rem 0;
-  background-color: #121212;
-  a{
-    font-weight: 500;
+  color: #f0edf39e;
+  background-color: #18151d;
+  a {
+    margin: 0;
+    width: fit-content;
   }
 }
 
@@ -343,26 +342,12 @@ blockquote {
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   border-radius: 6px;
   border: 2px solid #ffffff07;
-  background-color: #121212;
+  background-color: #18151d;
 
   p {
+    font-weight: 500;
     font-size: 1.5rem;
   }
-}
-
-.donateButton {
-  background-color: #1e1e1e;
-  color: #aaa;
-  border-radius: 6px;
-  border: 1px solid #cccccc16;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
-
-  // border: 2px solid #ababab13;
-  width: fit-content;
-  text-decoration: none;
-  font-weight: 100;
-  padding: 0.5rem 0.7rem;
 }
 
 .timeline-comment {
@@ -372,8 +357,9 @@ blockquote {
 
 .related-blogs {
   .accordion {
-    background-color: #121212;
+    background-color: #18151d;
     color: rgb(170, 170, 170);
+    font-weight: 500;
     cursor: pointer;
     padding: 18px;
     justify-content: space-between;
@@ -400,7 +386,7 @@ blockquote {
     border-radius: 0px 0 8px 8px;
     transform: translateY(-6px);
     display: flex;
-    background-color: #121212;
+    background-color: #18151d;
     flex-direction: column;
     gap: 0.7rem;
   }

@@ -20,7 +20,7 @@ $color_3: #aaaab5;
   margin-bottom: 2rem;
   transition: 0.4s ease-in-out !important;
   .blog-search {
-    background-color: #0e0e0e68;
+    background-color: #18151d68;
     border: 2px solid #ffffff0c;
     backdrop-filter: blur(8px);
     border-radius: 12px;
@@ -45,8 +45,7 @@ $color_3: #aaaab5;
   transition: 0.4s ease-in-out !important;
   h1 {
     font-size: 2.7rem;
-    font-family: var(--heading-font-family);
-    font-weight: 900 !important;
+    font-family: "Poppins", sans-serif;
   }
 }
 .blog-text {
@@ -98,7 +97,7 @@ $color_3: #aaaab5;
 
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  background-color: #070707;
+  background-color: #18151d;
   flex-direction: column;
   text-align: left;
   transition: 0.3s ease-in-out !important;
@@ -209,7 +208,7 @@ $color_3: #aaaab5;
 }
 
 .post-tag {
-  background-color: #121212;
+  background-color: #18151d;
   width: fit-content;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;

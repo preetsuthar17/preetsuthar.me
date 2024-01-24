@@ -239,7 +239,7 @@ export const SnakeGame = ({
               ? fruitColor || (lightTheme ? "lightcoral" : "red")
               : isBlueFoodCell
               ? blueFruitColor || (lightTheme ? "lightblue" : "blue")
-              : cellColor || (lightTheme ? "#eeeeee70" : "#121212"),
+              : cellColor || (lightTheme ? "#eeeeee70" : "#18151d"),
             borderRadius: isSnakeHead ? "8px 8px 0px 0px" : "3px",
             transition: "all ease 0.2ms",
             color: darkTheme ? "white" : "black",

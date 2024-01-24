@@ -65,14 +65,10 @@ $color_3: white;
     gap: 6rem;
     flex-direction: row-reverse;
     margin-bottom: 8rem;
-    @media screen and (max-width: 1200px) {
-      margin: 5rem 15rem;
-    }
     @media screen and (max-width: 1070px) {
-      margin: 5rem 7rem;
     }
     @media screen and (max-width: 940px) {
-      margin: 5rem 2rem;
+      margin: 0 2rem;
     }
     @media screen and (max-width: 910px) {
       justify-content: center;
@@ -90,10 +86,31 @@ $color_3: white;
 
   .showcase-header-title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    gap: 16rem;
+    flex-wrap: wrap;
+    text-align: left;
+    margin: 2rem;
+    @media screen and (max-width: 870px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: -2rem;
+      gap: 4rem;
+    }
+
+    .showcase-btn {
+      display: flex;
+      gap: 10px;
+      a {
+        flex-grow: 1;
+      }
+    }
+
+    .showcase-section-1 {
+      margin: auto;
+
+      width: 20rem;
+    }
     p {
       color: #ccc;
       font-family: "JetBrains Mono", "poppins";
@@ -110,15 +127,11 @@ $color_3: white;
     .showcase-header-name {
       overflow-x: hidden !important;
       margin: auto;
+      display: flex;
+      justify-content: space-around;
       p {
         color: white;
-        background: -webkit-linear-gradient(
-          142deg,
-          rgb(255, 52, 245) 40%,
-          rgba(0, 207, 255, 1) 80%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        margin-left: -10px;
         display: flex;
         flex-direction: column;
         font-size: 80px;
@@ -127,19 +140,20 @@ $color_3: white;
         font-family: "Poppins", sans-serif;
         letter-spacing: -0.1rem;
         @media screen and (max-width: 400px) {
-          font-size: 65px;
+          font-size: 75px;
+          margin: inherit 0 !important;
+          margin-left: 0 !important;
         }
+      }
+      @media screen and (max-width: 400px) {
+        display: flex;
+        justify-content: center;
       }
     }
     h1 {
       color: white;
-      background: -webkit-linear-gradient(
-        142deg,
-        rgb(255, 52, 245) 40%,
-        rgba(0, 207, 255, 1) 80%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      overflow-x: hidden !important;
+      width: fit-content;
       display: flex;
       flex-direction: column;
       font-size: 80px;
@@ -154,19 +168,7 @@ $color_3: white;
         }
       }
       @media screen and (max-width: 400px) {
-        width: 15rem;
         margin: auto;
-      }
-    }
-    @media screen and (max-width: 400px) {
-      p {
-        font-size: 1.4rem;
-      }
-      .showcase-header-about {
-        font-size: 0.9rem;
-      }
-      h1 {
-        font-size: 65px;
       }
     }
   }
@@ -231,7 +233,7 @@ $color_3: white;
 }
 
 .showcase-contact-text {
-  font-family: var(--heading-font-family);
+  font-family: "poppins", sans-serif;
   display: flex;
   justify-content: left;
   margin-top: 15rem;
@@ -279,7 +281,7 @@ $color_3: white;
   }
 }
 .showcase-contact-text-2 {
-  font-family: var(--heading-font-family);
+  font-family: "poppins", sans-serif;
   display: flex;
   justify-content: left;
   padding: 0 1rem !important;
@@ -321,10 +323,11 @@ $color_3: white;
   cursor: pointer;
 }
 .text {
-  font-size: 40px;
+  font-size: 45px;
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-transform: uppercase;
+  // font-style: italic/;
   animation: animate_text 40s linear infinite;
 }
 .text span {
@@ -348,7 +351,9 @@ $color_3: white;
 
 @supports ((text-stroke: 1px white) or (-webkit-text-stroke: 1px white)) {
   .text-only-outline {
-    font-family: var(--heading-font-family);
+    // font-style: italic;
+
+    font-family: "Poppins", sans-serif;
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.69);
     text-stroke: 1px rgba(255, 255, 255, 0.69);
@@ -361,4 +366,10 @@ $color_3: white;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.contact-lets-connect-span {
+  color: #ac9180;
+  font-weight: bold;
+  font-style: italic;
 }

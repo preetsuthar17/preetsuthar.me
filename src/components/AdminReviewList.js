@@ -132,7 +132,7 @@ const AdminReviewList = () => {
                   alignItems: "center",
                   padding: "1.4rem",
                   borderRadius: "5px",
-                  backgroundColor: "#121212",
+                  backgroundColor: "#18151d",
                   // border: "2px solid #1d1d1f",
                 }}
               >

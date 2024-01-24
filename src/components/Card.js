@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({ heading, stars, description }) => {
+const Card = ({ heading, subHeading, description }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,15 +31,22 @@ const Card = ({ heading, stars, description }) => {
         </>
       ) : (
         <>
-          <h3>{heading}</h3>
-          <p>{description}</p>
-          <div className="stars-container">
-            <FaStar className="star active"></FaStar>
-            <FaStar className="star active"></FaStar>
-            <FaStar className="star active"></FaStar>
-            <FaStar className="star active"></FaStar>
-            <FaStar className="star active"></FaStar>
+          <div className="review-card-headings">
+            <div>
+              <h3 className="highlighted">{heading}</h3>
+              <p className="review-card-sub-heading">{heading}</p>
+            </div>
+            <div>
+              <div className="stars-container">
+                <FaStar className="star active"></FaStar>
+                <FaStar className="star active"></FaStar>
+                <FaStar className="star active"></FaStar>
+                <FaStar className="star active"></FaStar>
+                <FaStar className="star active"></FaStar>
+              </div>
+            </div>
           </div>
+          <p>{description}</p>
         </>
       )}
     </div>

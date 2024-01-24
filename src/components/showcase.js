@@ -90,43 +90,6 @@ const Showcase = () => {
       });
     });
   }, []);
-  const letters = "ABCDHIJKLMNOPQRSTUVWXYZ";
-  let interval = null;
-
-  useEffect(() => {
-    const handleMouseOver = (event) => {
-      let iteration = 0;
-
-      clearInterval(interval);
-
-      interval = setInterval(() => {
-        event.target.innerText = event.target.innerText
-          .split("")
-          .map((letter, index) => {
-            if (index < iteration) {
-              return event.target.dataset.value[index];
-            }
-
-            return letters[Math.floor(Math.random() * 23)];
-          })
-          .join("");
-
-        if (iteration >= event.target.dataset.value.length) {
-          clearInterval(interval);
-        }
-
-        iteration += 1 / 3;
-      }, 30);
-    };
-
-    const h1Element = document.querySelector("h1");
-    h1Element.addEventListener("mouseover", handleMouseOver);
-
-    return () => {
-      clearInterval(interval);
-      h1Element.removeEventListener("mouseover", handleMouseOver);
-    };
-  }, [interval]);
 
   return (
     <motion.div
@@ -142,29 +105,54 @@ const Showcase = () => {
             <div className="showcase-header">
               <div className="showcase-header-hero">
                 <div className="showcase-header-title">
-                  <div>
+                  <div className="showcase-section-1">
                     <div className="showcase-header-name">
-                      <h1 data-value="Preet">Preet</h1>
-                      <p>Suthar</p>
+                      <div>
+                        <h1>Preet</h1>
+                        <p className="font-effect">Suthar</p>
+                      </div>
                     </div>
                     <div className="styled-hr"></div>
                     <div className="showcase-header-subtitle">
                       <p className="showcase-header-about">
                         A Front-end web developer. creating beautiful websites.
                         I will help you to create websites with the most{" "}
-                        <span className="color-mediumslateblue ">
+                        <span
+                          style={{
+                            color: "#AC9180",
+                          }}
+                        >
                           appealing designs
                         </span>
                         .
                       </p>
                     </div>
+                    <div className="showcase-btn">
+                      <Link
+                        className="primary-btn-main"
+                        style={{
+                          width: "fit-content",
+                        }}
+                        href="mailto:preetsutharxd@gmail.com"
+                      >
+                        <span>
+                          <em>Contact me</em>
+                        </span>
+                      </Link>
+                      <Link
+                        className="primary-btn-secondary"
+                        style={{
+                          width: "fit-content",
+                        }}
+                        href="/about"
+                      >
+                        <span>
+                          <em>About me</em>
+                        </span>
+                      </Link>
+                    </div>
                   </div>
-
-                  <div
-                    style={{
-                      marginTop: "3rem",
-                    }}
-                  >
+                  <div className="showcase-section-2">
                     <EyeFollowingMouse />
                   </div>
                 </div>
@@ -210,9 +198,7 @@ const Showcase = () => {
             >
               <p>
                 Come on! Don't be stranger.{" "}
-                <span className="color-mediumslateblue text-underline">
-                  Let's connect
-                </span>
+                <span className="contact-lets-connect-span">Let's connect</span>
               </p>
               <div
                 className="showcase-contact-text-2 showcase-contact-text-links"
