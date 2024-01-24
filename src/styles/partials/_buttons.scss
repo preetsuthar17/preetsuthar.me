@@ -17,7 +17,8 @@
   align-items: center;
   overflow: hidden;
   text-decoration: none;
-
+  outline: none;
+  border: none;
   &:hover {
     transform: translateY(-7px);
   }
@@ -40,6 +41,8 @@
   justify-content: "center";
   padding: 0.7rem 0.9rem;
   margin-top: 2rem;
+  outline: none;
+  border: none;
   cursor: pointer;
   text-transform: lowercase;
   font-weight: 500;
@@ -58,7 +61,7 @@
     font-size: 16px;
     color: black;
 
-    font-weight: 600;
+    // font-weight: 600;
     will-change: transform, opacity, transition;
     transition: transform 0.1s linear, opacity 0.35s linear 0.2s;
   }
