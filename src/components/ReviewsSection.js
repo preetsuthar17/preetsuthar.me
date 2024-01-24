@@ -36,7 +36,7 @@ const ReviewsSection = () => {
           <>
             <Card
               heading="Joel"
-              subHeading="Full-Stack Developer"
+              subHeading="Back-End Developer"
               description="The best web developer who is working with me. We both connected on discord. My guy is down to earth humble and im proud to say, he comes in as one of the best guys ive worked with. 
               Homie can spin up a ui design in seconds, test it, and its ready for the world!! Its only upwards with him! :3
               "

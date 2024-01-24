@@ -34,7 +34,7 @@ const Card = ({ heading, subHeading, description }) => {
           <div className="review-card-headings">
             <div>
               <h3 className="highlighted">{heading}</h3>
-              <p className="review-card-sub-heading">{heading}</p>
+              <p className="review-card-sub-heading">{subHeading}</p>
             </div>
             <div>
               <div className="stars-container">
