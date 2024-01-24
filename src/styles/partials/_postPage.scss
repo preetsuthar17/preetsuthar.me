@@ -109,6 +109,7 @@ $background-color_1: #180d23;
   }
   a {
     color: $color_4;
+    font-weight: 500;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -245,6 +246,7 @@ $background-color_1: #180d23;
   a {
     color: $color_4;
     text-decoration: none;
+    font-weight: 500;
     font-size: 15px;
     &:hover {
       text-decoration: underline;
@@ -258,6 +260,7 @@ $background-color_1: #180d23;
     margin-left: 20px;
   }
   li {
+    font-weight: 500;
     margin-bottom: 10px;
   }
 }
@@ -374,6 +377,7 @@ blockquote {
     li {
       display: flex;
       align-items: center;
+      font-weight: 500;
       gap: 0.4rem;
     }
     li::before {
@@ -402,6 +406,7 @@ blockquote {
     a {
       color: #17b6ff;
       font-size: 15px;
+      font-weight: 500;
       text-decoration: none;
     }
   }
