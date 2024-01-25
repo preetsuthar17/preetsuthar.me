@@ -25,7 +25,6 @@ $color_3: white;
 .showcase {
   overflow-x: hidden;
   margin-top: 6rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +58,6 @@ $color_3: white;
 
 .showcase-header {
   display: flex;
-  // flex-direction: row-reverse;
   .showcase-header-hero {
     display: flex;
     gap: 6rem;
@@ -101,6 +99,7 @@ $color_3: white;
     .showcase-btn {
       display: flex;
       gap: 10px;
+      margin: auto 1rem;
       a {
         flex-grow: 1;
       }
@@ -108,7 +107,6 @@ $color_3: white;
 
     .showcase-section-1 {
       margin: auto;
-
       width: 20rem;
     }
     p {
@@ -116,6 +114,7 @@ $color_3: white;
       font-family: "JetBrains Mono", "poppins";
       font-size: 1.7rem;
       font-weight: 900;
+      margin: auto auto;
     }
     .showcase-header-about {
       font-size: 16px;
@@ -123,7 +122,9 @@ $color_3: white;
       font-family: "poppins", sans-serif;
       font-weight: normal;
     }
-
+    .showcase-header-subtitle {
+      margin: auto 1rem;
+    }
     .showcase-header-name {
       overflow-x: hidden !important;
       margin: auto;
@@ -131,7 +132,7 @@ $color_3: white;
       justify-content: space-around;
       p {
         color: white;
-        margin-left: -10px;
+        margin: inherit auto !important;
         display: flex;
         flex-direction: column;
         font-size: 80px;
@@ -327,7 +328,6 @@ $color_3: white;
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-transform: uppercase;
-  // font-style: italic/;
   animation: animate_text 40s linear infinite;
 }
 .text span {

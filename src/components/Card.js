@@ -33,7 +33,7 @@ const Card = ({ heading, subHeading, description }) => {
         <>
           <div className="review-card-headings">
             <div>
-              <h3 className="highlighted">{heading}</h3>
+              <h2 className="highlighted">{heading}</h2>
               <p className="review-card-sub-heading">{subHeading}</p>
             </div>
             <div>

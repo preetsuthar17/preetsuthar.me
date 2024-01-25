@@ -4,7 +4,7 @@ $color_3: #ccc;
 $color_4: gold;
 $color_5: var(--font-color);
 $color_6: var(--heading-color);
-$color_7: #ffffffc7;
+$color_7: #fff;
 $color_8: var(--font-color);
 $font-family_1: var(--body-font-family);
 $background-color_1: rgba(255, 255, 255, 0.045);
@@ -218,14 +218,14 @@ button[type="submit"] {
   align-items: left;
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
-  flex: 0 0 19rem;
+  flex: 0 0 17rem;
+  height: 17rem;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;
   border-radius: 17px;
   text-align: justify !important;
   position: relative;
-  height: 16rem;
   transform-style: preserve-3d !important;
   background-color: #18151d;
   perspective: 1000px;
@@ -235,14 +235,14 @@ button[type="submit"] {
     .highlighted::before {
       height: 90%;
     }
-    h3 {
+    h2 {
       transform: translateZ(20px);
     }
     .stars-container {
       transform: translateZ(180px);
     }
   }
-  h3 {
+  h2 {
     font-size: 1.5rem;
     width: fit-content;
     transition: 1s transform ease;
