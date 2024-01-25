@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 1 }}
-      transition={{ duration: 0.6, transition: "ease-in" }}
+      transition={{ duration: 0.3, transition: "ease-in" }}
     >
       <Layout>
         <Head></Head>
