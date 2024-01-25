@@ -11,7 +11,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
         width: isOpen ? "100vw" : "0",
       }}
     >
-      <button className="sidebar_close_btn" onClick={onClose}>
+      <div className="sidebar_close_btn" onClick={onClose}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="60"
@@ -23,7 +23,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
             d="m8.382 17.025l-1.407-1.4L10.593 12L6.975 8.4L8.382 7L12 10.615L15.593 7L17 8.4L13.382 12L17 15.625l-1.407 1.4L12 13.41l-3.618 3.615Z"
           />
         </svg>
-      </button>
+      </div>
       <div className="sidebar_links">
         <Link className="sidebar_link" href="/">
           Home
@@ -93,7 +93,7 @@ const Navbar = ({}) => {
         <div className="nav_links">
           <ul>
             <li>
-              <button className="navbar_sidebar_toggle" onClick={toggleSidebar}>
+              <div className="navbar_sidebar_toggle" onClick={toggleSidebar}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -105,7 +105,7 @@ const Navbar = ({}) => {
                     d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
                   />
                 </svg>
-              </button>
+              </div>
             </li>
           </ul>
         </div>

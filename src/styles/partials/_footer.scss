@@ -27,11 +27,16 @@ $color_2: #fff;
         font-weight: 400;
         list-style: none;
         margin: 0 1rem;
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
       }
     }
   }
   a {
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
     color: $color_2;
   }
