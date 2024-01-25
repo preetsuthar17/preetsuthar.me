@@ -85,7 +85,7 @@ const Navbar = ({}) => {
             >
               <Image
                 src={navbarIcon}
-                width={40}
+                width={37}
                 alt="PreetSuthar"
                 loading="lazy"
               ></Image>
@@ -99,13 +99,17 @@ const Navbar = ({}) => {
                 <div className="navbar_sidebar_toggle" onClick={toggleSidebar}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="28"
+                    width="32"
                     height="32"
-                    viewBox="0 0 448 512"
+                    viewBox="0 0 24 24"
                   >
                     <path
-                      fill="#eee"
-                      d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
+                      fill="none"
+                      stroke="#fff"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
                     />
                   </svg>
                 </div>
