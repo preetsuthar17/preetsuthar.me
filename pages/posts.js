@@ -56,6 +56,7 @@ export default function Posts({ posts, tags }) {
       );
     });
   }, []);
+
   const initializeCardAnimation = () => {
     const contentItems = document.querySelectorAll(".blog-card");
 
@@ -143,10 +144,7 @@ export default function Posts({ posts, tags }) {
         prevVisiblePosts.length,
         prevVisiblePosts.length + lazyLoadOffset
       );
-      // console.log("Remaining posts:", remainingPosts);
       const newVisiblePosts = [...prevVisiblePosts, ...remainingPosts];
-      // console.log("New visible posts:", newVisiblePosts);
-
       return newVisiblePosts;
     });
   };
@@ -155,7 +153,7 @@ export default function Posts({ posts, tags }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.5 }}
     >
       <Layout>
         <Head>

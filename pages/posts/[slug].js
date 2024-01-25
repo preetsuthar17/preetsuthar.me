@@ -550,7 +550,7 @@ export default function Post({
             </div>
 
             <div id="giscus-comments" />
-            <hr />
+            <hr className="styled-hr"></hr>
             <div className="post-navigation">
               <div className="prev">
                 {prevArticleData && (

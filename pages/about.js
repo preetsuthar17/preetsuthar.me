@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Head from "next/head";
 import GitHubCalendar from "react-github-calendar";
 import React from "react";
-import VanillaTilt from "vanilla-tilt";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
 
@@ -48,18 +47,6 @@ import AutomaticAge from "@/src/utils/functions/AutomaticAge";
 
 const About = () => {
   useEffect(() => {
-    const tiltContainer = document.querySelectorAll(".about-PreetProfileImage");
-    VanillaTilt.init(tiltContainer, {
-      max: 15,
-      speed: 200,
-      scale: 1.01,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
-      transition: true,
-      glare: true,
-      "max-glare": 0.2,
-    });
-  }, []);
-  useEffect(() => {
     const contentItems = document.querySelectorAll(".about-my-tools-icon");
 
     const tl = gsap.timeline({
@@ -104,34 +91,6 @@ const About = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const contentItems = document.querySelectorAll(".about-contact-link");
-    const tl = gsap.timeline();
-
-    tl.to({}, 1.6, {});
-
-    contentItems.forEach((item, index) => {
-      tl.fromTo(
-        item,
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.2,
-          delay: index * 0.1,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 90%",
-            end: "center",
-            toggleActions: "play none none none",
-            once: true,
-          },
-        }
-      );
-    });
-  }, []);
-
   const current_year = new Date().getFullYear();
 
   const birthdate = "2006-08-28";
@@ -142,7 +101,7 @@ const About = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 0.5 }}
       >
         <Head>
           <title>About | Preet Suthar 🚀</title>
@@ -642,7 +601,7 @@ const About = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 1.5 }}
+                  transition={{ duration: 0.5, delay: 1.5 }}
                 >
                   <section id="cd-timeline" className="cd-container">
                     {/* <div className="cd-timeline-block">

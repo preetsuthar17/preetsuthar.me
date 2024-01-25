@@ -6,15 +6,13 @@ import Layout from "./Layout";
 import Link from "next/link";
 import EyeFollowingMouse from "./EyeFollowingMouse";
 
-import CustomTooltip2 from "./CustomTooltip2";
-
 import VanillaTilt from "vanilla-tilt";
 
 import { motion } from "framer-motion";
 
 import { gsap } from "gsap";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useEffect } from "react";
 
 const Showcase = () => {
   useEffect(() => {
@@ -26,45 +24,6 @@ const Showcase = () => {
       transition: true,
       glare: true,
       "max-glare": 0.1,
-    });
-  }, []);
-
-  useEffect(() => {
-    const tiltContainer = document.querySelectorAll(
-      ".showcase-header-image > img"
-    );
-    VanillaTilt.init(tiltContainer, {
-      max: 10,
-      speed: 200,
-      scale: 1.01,
-      easing: "ease",
-      duration: 10,
-      transition: true,
-      glare: true,
-      "max-glare": 0.2,
-    });
-  }, []);
-
-  useEffect(() => {
-    const showcasePara = document.querySelectorAll(".showcase-p");
-
-    showcasePara.forEach((para) => {
-      const el = para.querySelectorAll("p");
-
-      gsap.from(el, {
-        opacity: 0,
-        y: 500,
-        duration: 1,
-        scrollTrigger: {
-          markers: true,
-          trigger: para,
-          markers: false,
-          start: "top 30%",
-          end: "center 60%",
-          scrub: 2,
-          toggleActions: "play none none none",
-        },
-      });
     });
   }, []);
 
@@ -96,7 +55,7 @@ const Showcase = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
+      transition={{ duration: 0.1 }}
     >
       <Layout>
         <Navbar />

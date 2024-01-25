@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
+
 import { SnakeGame } from "@/src/components/SnakeGame";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
@@ -29,7 +30,7 @@ export default function Custom404() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 0.5 }}
       >
         <Head>
           <title>Oops!</title>
