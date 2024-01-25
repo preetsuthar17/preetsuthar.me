@@ -4,7 +4,10 @@ const matter = require("gray-matter");
 const TerserPlugin = require("terser-webpack-plugin");
 const RSS = require("feed").Feed;
 
-module.exports = {
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+module.exports = withBundleAnalyzer({
   experimental: {
     nextScriptWorkers: true,
   },
@@ -27,7 +30,7 @@ module.exports = {
 
     return config;
   },
-};
+});
 
 function generateSlug(title) {
   return title

@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.8.2",
+    "@next/bundle-analyzer": "^14.1.0",
     "concurrently": "^8.2.2",
     "depcheck": "^1.4.5",
     "depcheck-es6": "^0.5.6",
