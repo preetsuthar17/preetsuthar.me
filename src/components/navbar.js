@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import navbarIcon from "../../public/favicon.ico";
 import React, { useState, useEffect } from "react";
+import CustomTooltip2 from "./CustomTooltip2";
 
 const Sidebar = ({ isOpen, onClose, user }) => {
   return (
@@ -24,6 +25,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
           />
         </svg>
       </div>
+
       <div className="sidebar_links">
         <Link className="sidebar_link" href="/">
           Home
@@ -93,19 +95,21 @@ const Navbar = ({}) => {
         <div className="nav_links">
           <ul>
             <li>
-              <div className="navbar_sidebar_toggle" onClick={toggleSidebar}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="28"
-                  height="32"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    fill="#eee"
-                    d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
-                  />
-                </svg>
-              </div>
+              <CustomTooltip2 text="esc">
+                <div className="navbar_sidebar_toggle" onClick={toggleSidebar}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="32"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="#eee"
+                      d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32m448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32"
+                    />
+                  </svg>
+                </div>
+              </CustomTooltip2>
             </li>
           </ul>
         </div>
