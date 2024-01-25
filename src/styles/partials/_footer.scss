@@ -4,60 +4,81 @@ $color_2: #fff;
 .footer-div {
   display: flex;
   font-size: 15px;
-  flex-direction: column;
-  margin-top: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  margin: 3rem 2rem !important ;
+  border-radius: 15px;
+  padding: 3rem 1rem;
+  justify-content: space-between;
+  align-items: center;
 
+  background-color: #16131b;
+  @media screen and (max-width: 972px) {
+    gap: 1.3rem;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    flex-direction: column;
+
+    .footer-text {
+      text-align: left;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    flex-wrap: wrap;
+  }
   .footer-text {
-    text-align: center;
     color: $color_1;
-    margin: 0 1rem;
+    width: 16rem;
+    margin: auto !important;
+    text-align: justify;
+    @media screen and (max-width: 972px) {
+      width: 18rem;
+      text-align: center;
+    }
+    @media screen and (max-width: 385px) {
+      width: auto;
+      
+    }
+    @media screen and (max-width: 960px) {
+      text-align: center;
+    }
   }
   .footer-links {
+    width: 18rem;
+    margin: 0 auto !important;
     text-align: center;
-    margin: 0 1rem;
-    margin-top: 1rem !important;
+    @media screen and (max-width: 380px) {
+      width: 10rem;
+      margin: auto;
+    }
+    @media screen and (max-width: 385px) {
+      width: auto;
+      
+    }
     ul {
+      align-items: center;
       padding: 0;
       margin: 0;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      @media screen and (max-width: 380px) {
+        gap: 10px;
+        font-size: 14px;
+      }
       li {
         font-weight: 400;
         list-style: none;
-        margin: 0 1rem;
         a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          font-weight: 500;
+          color: $color_2;
+          text-underline-offset: 4px;
         }
       }
     }
   }
   a {
-    font-weight: 600;
-    text-decoration: none;
+    font-weight: 500;
     color: $color_2;
-  }
-}
-@media (max-width: 861px) {
-  .footer-div {
-    .footer-text {
-      margin: 0 10rem;
-    }
-    .footer-links {
-      margin: 0 10rem;
-    }
-  }
-}
-@media (max-width: 1300px) {
-  .footer-div {
-    .footer-text {
-      margin: 0 2rem;
-    }
-    .footer-links {
-      margin: 0 6rem;
-    }
   }
 }

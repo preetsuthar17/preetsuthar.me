@@ -18,17 +18,19 @@ const Footer = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <footer className="footer-div">
-        <div
-          className="styled-hr"
-          style={{
-            width: "20%",
-          }}
-        ></div>
-
         <div className="footer-text">
           <p>
-            Created with ❤️ by{" "}
-            <Link href="https://github.com/preetsuthar17">Preet Suthar</Link>{" "}
+            Created by{" "}
+            <Link href="https://github.com/preetsuthar17" target="_blank">
+              Preet Suthar
+            </Link>{" "}
+            with ❤️
+          </p>
+          <p>
+            Built with{" "}
+            <Link href="https://nextjs.org/" target="_blank">
+              Next.js
+            </Link>
           </p>
         </div>
         <div className="footer-links">
