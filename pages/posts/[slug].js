@@ -380,7 +380,7 @@ export default function Post({
                               >
                                 <Link
                                   style={{
-                                    fontWeight: "900",
+                                    fontWeight: "500",
                                   }}
                                   href={`/posts/${article.slug}`}
                                 >
@@ -554,21 +554,31 @@ export default function Post({
             <div className="post-navigation">
               <div className="prev">
                 {prevArticleData && (
-                  <Link href={`/posts/${prevArticleData.slug}`}>
+                  <Link
+                    style={{
+                      fontWeight: "500",
+                    }}
+                    href={`/posts/${prevArticleData.slug}`}
+                  >
                     👈 {prevArticleData.title}
                   </Link>
                 )}
               </div>
               <div className="next">
                 {nextArticleData && (
-                  <Link href={`/posts/${nextArticleData.slug}`}>
+                  <Link
+                    style={{
+                      fontWeight: "500",
+                    }}
+                    href={`/posts/${nextArticleData.slug}`}
+                  >
                     {nextArticleData.title} 👉
                   </Link>
                 )}
               </div>
             </div>
-            <Footer />
           </article>
+          <Footer />
         </>
       </Layout>
     </motion.div>
