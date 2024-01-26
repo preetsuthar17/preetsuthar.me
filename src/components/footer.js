@@ -41,20 +41,24 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="https://discord.gg/XeQ95WzGq9" target="_blank">
-                Discord
-              </Link>
-            </li>
-            <li>
-              <Link href="https://twitter.com/preetsuthar17" target="_blank">
-                Twitter
-              </Link>
-            </li>
-            <li>
               <Link href="mailto:preetsutharxd@gmail.com" target="_blank">
                 Email
               </Link>
             </li>
+            <li>
+              <Link
+                href="https://www.linkedin.com/in/preet-suthar-41b460243/"
+                target="_blank"
+              >
+                LinkedIn
+              </Link>
+            </li>
+            <li>
+              <Link href="https://discord.gg/XeQ95WzGq9" target="_blank">
+                Discord
+              </Link>
+            </li>
+
             <li>
               <Link href="/rss.xml" target="_blank">
                 RSS
