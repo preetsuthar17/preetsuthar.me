@@ -133,23 +133,12 @@ const Projects = () => {
 
             <div className="project-container">
               <ProjectCard
-                projectName="preetsuthar.me"
-                projectLink="https://preetsuthar.me"
-                projectStack="NextJs"
-                projectAbout=" This is my open-source personal portfolio website and blog website built running on next.js and react.js and using Vercel."
-              />
-              <ProjectCard
                 projectName="TodoZenith"
                 projectLink="https://todozenith.vercel.app/"
                 projectStack="JavaScript"
                 projectAbout="Simplified JavaScript CRUD to-do manager with advanced features for effortless task management. Get things done with ease!"
               />
-              <ProjectCard
-                projectName="Dracodemy"
-                projectLink="https://Dracodemy.tech"
-                projectStack="NextJs"
-                projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
-              />
+
               <ProjectCard
                 projectName="Advance blog template"
                 projectLink="https://gatsby-blog-temp.netlify.app"
@@ -164,28 +153,15 @@ const Projects = () => {
               />
               <ProjectCard
                 projectName="Discord bot website template"
-                projectLink="https://discord-bot-webpage-template.vercel.app/"
+                projectLink="https://discord-bot-webpage-template.netlify.app/"
                 projectStack="NextJs"
                 projectAbout="Minimal and awesome discord bot website created with love using NextJS."
               />
-
               <ProjectCard
                 projectName="ShadowedNight"
                 projectLink="https://marketplace.visualstudio.com/items?itemName=Pritudev.shadowednight"
                 projectStack="JavaScript"
                 projectAbout="Embrace the mystery of the night with an elegant and immersive dark theme for a captivating coding experience."
-              />
-              <ProjectCard
-                projectName="Vinlybot"
-                projectLink="https://github.com/preetsuthar17/Vinlybot"
-                projectStack="DiscordJs"
-                projectAbout="Vinlybot is a open-source discord bot with 100+ command where you can contribute!"
-              />
-              <ProjectCard
-                projectName="Zakbot"
-                projectLink="https://github.com/preetsuthar17/Zakbot"
-                projectStack="DiscordJs"
-                projectAbout="Zak is a multipurpose discord bot made with discord js v13, Created Using discord.js"
               />
             </div>
           </div>
