@@ -167,9 +167,9 @@ const Showcase = () => {
                   <Link
                     className="twitterLink"
                     target="_blank"
-                    href="https://x.com/preetsuthar17"
+                    href="https://www.linkedin.com/in/preet-suthar-41b460243/"
                   >
-                    Twitter?
+                    LinkedIn?
                   </Link>
                   <span
                     style={{
