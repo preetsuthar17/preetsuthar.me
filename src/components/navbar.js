@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
     <div
       className="sidebar"
       style={{
-        width: isOpen ? "100vw" : "0",
+        width: isOpen ? "100vw" : "-10px,
       }}
     >
       <div className="sidebar_close_btn" onClick={onClose}>
