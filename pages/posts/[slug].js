@@ -207,7 +207,7 @@ export default function Post({
         </Head>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
         <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
-        <Navbar />
+        <Navbar goback={true} />
         <>
           <article id="post-top" className="container">
             <h1 className="title">{post.frontmatter.title}</h1>

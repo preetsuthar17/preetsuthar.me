@@ -95,7 +95,8 @@ const Tag = ({ blogs }) => {
         <meta name="twitter:title" content={tag} />
         <meta name="subject" content="web development" />
       </Head>
-      <Navbar />
+      <Navbar goback={true} />
+
       <div id="blog-title" className="blog-div">
         <motion.div
           initial={{ opacity: 1, translateX: -100 }}
