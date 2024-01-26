@@ -235,6 +235,7 @@ hr {
 
 .chip_component {
   display: flex;
+  z-index: -1 !important;
   .chip_content {
     display: flex;
     justify-content: center;
@@ -251,7 +252,7 @@ hr {
 
     a {
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
       color: white;
     }
     color: white;
