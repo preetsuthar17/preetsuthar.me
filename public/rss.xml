@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Fri, 26 Jan 2024 07:05:43 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jan 2024 14:00:57 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -934,6 +934,24 @@ As the user scrolls down, the sticky element behaves as `relative` until it reac
 **Important Note:** While `position: sticky;` is well-supported in modern browsers, be aware that Internet Explorer and Edge 15 (and earlier versions) do not support sticky positioning. Fear not, though! For Safari compatibility, you'll need to add the `-webkit-` prefix (as shown in the example above). Also, remember that you must specify at least one of `top`, `right`, `bottom`, or `left` for the sticky positioning to work correctly.
 
 And that's it! You now have a sticky element that'll enhance your website's user experience. 🌟
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Create Responsive images using only css]]></title>
+            <link>https://preetsuthar.me/posts/create-responsive-images-using-only-css</link>
+            <guid>https://preetsuthar.me/posts/create-responsive-images-using-only-css</guid>
+            <pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+![Demo](https://i.imgur.com/405PHLw.gif)
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+By adding `100%` max-width and adding `auto` height we can make image resize automatically according to the width of the device.
 ]]></description>
         </item>
         <item>
