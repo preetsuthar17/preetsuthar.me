@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Tue, 30 Jan 2024 04:12:32 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 12:08:08 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -955,6 +955,37 @@ img {
 ]]></description>
         </item>
         <item>
+            <title><![CDATA[Creating sections inside html select tag]]></title>
+            <link>https://preetsuthar.me/posts/creating-sections-inside-html-select</link>
+            <guid>https://preetsuthar.me/posts/creating-sections-inside-html-select</guid>
+            <pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+To create section inside `<select/>` tag we can use `<hr/>` in between options.
+
+```html
+<h1>Selector</h1>
+
+<select>
+  <option>HTML</option>
+  <option>CSS</option>
+  <option>Javascript</option>
+  <!-- Using <hr/> to separate sections -->
+  <hr />
+  <option>ReactJs</option>
+  <option>NextJs</option>
+  <option>Angular</option>
+</select>
+```
+
+<p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="wvOyGMJ" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/wvOyGMJ">
+  Dividing options in select tag</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+]]></description>
+        </item>
+        <item>
             <title><![CDATA[Custom cursor in Next Js]]></title>
             <link>https://preetsuthar.me/posts/custom-cursor-in-next-js</link>
             <guid>https://preetsuthar.me/posts/custom-cursor-in-next-js</guid>
@@ -1812,6 +1843,39 @@ And we're done!
 Check out [this codepen demo](https://codepen.io/preetsuthar17/pen/GRPrepx).
 
 It's is pretty basic to create masonry layout using only CSS and still you can spice it up by implementing Javascript and more feature.
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Snapping sections on scroll only using CSS]]></title>
+            <link>https://preetsuthar.me/posts/snapping-sections-on-scroll-only-using-css</link>
+            <guid>https://preetsuthar.me/posts/snapping-sections-on-scroll-only-using-css</guid>
+            <pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+By using CSS `scroll-snap-type` and `scroll-snap-align` properties we can create snapping sections on scroll.
+
+```css
+html,
+body {
+  overflow: hidden;
+}
+
+.sections {
+  height: 100vh;
+  overflow-y: scroll;
+  snap-scroll-type: y mandatory;
+}
+
+.section {
+  snap-scroll-align: start;
+}
+```
+
+<p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="KKEZOmN" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/KKEZOmN">
+  Snapping Scroll</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 ]]></description>
         </item>
         <item>
