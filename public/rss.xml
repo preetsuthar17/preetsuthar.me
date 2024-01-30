@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Tue, 30 Jan 2024 12:08:08 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 12:54:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -960,7 +960,7 @@ img {
             <guid>https://preetsuthar.me/posts/creating-sections-inside-html-select</guid>
             <pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[
-To create section inside `<select/>` tag we can use `<hr/>` in between options.
+To create section inside `select` tag we can use `hr` tag in between options.
 
 ```html
 <h1>Selector</h1>

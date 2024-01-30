@@ -121,7 +121,9 @@ export default function Post({
   }, []);
 
   useEffect(() => {
-    console.clear();
+    setTimeout(() => {
+      console.clear();
+    }, 2000);
   });
 
   useEffect(() => {
