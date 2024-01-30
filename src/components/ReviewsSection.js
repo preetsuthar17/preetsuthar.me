@@ -60,7 +60,21 @@ const ReviewsSection = () => {
         </div>
       </div>
       <p className="p-color">
-        You can also leave a{" "}
+        Check out all{" "}
+        <Link
+          href="/testimonials"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            backgroundColor: "rgba(255, 255, 255, 0.10)",
+            padding: "0 2px",
+            borderRadius: "2px",
+            fontWeight: "600",
+          }}
+        >
+          reviews
+        </Link>{" "}
+        or leave a{" "}
         <Link
           href="/reviews"
           style={{
