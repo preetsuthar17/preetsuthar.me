@@ -8,7 +8,7 @@ tags:
   - Snippets
 ---
 
-To create section inside `<select/>` tag we can use `<hr/>` in between options.
+To create section inside `select` tag we can use `hr` tag in between options.
 
 ```html
 <h1>Selector</h1>
