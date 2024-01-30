@@ -631,8 +631,9 @@ const About = () => {
                       <div className="cd-timeline-content">
                         <h2>Working at Assistify Labs</h2>
                         <p>
-                          As per current moment I'm working at Assistify Labs as
-                          Front-End developer and also pursuing my studies.
+                          As per current moment I'm working as a Freelancer and
+                          also working at Assistify Labs as Front-End developer
+                          and also pursuing my studies.
                         </p>
                         <div
                           style={{
