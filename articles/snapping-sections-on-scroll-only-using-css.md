@@ -27,7 +27,7 @@ body {
 }
 ```
 
-<p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="KKEZOmN" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="600" data-default-tab="result" data-resizable="true"  data-slug-hash="KKEZOmN" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/KKEZOmN">
   Snapping Scroll</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
