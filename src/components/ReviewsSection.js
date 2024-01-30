@@ -54,7 +54,7 @@ const ReviewsSection = () => {
             <Card
               heading="Mustafa"
               subHeading="Web Developer"
-              description="Hey Preet ! The new look of the website is soo sleek and decent , i like those small details that you made on this website , the time the dedication you have hats off to it , overall i like this new design of your portfolio :)"
+              description="Hey Preet! The new look of the website is soo sleek and decent, I like those small details that you made on this website, the time the dedication you have hats off to it, overall I like this new design of your portfolio :)"
             ></Card>
           </>
         </div>
