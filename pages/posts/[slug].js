@@ -121,6 +121,10 @@ export default function Post({
   }, []);
 
   useEffect(() => {
+    console.clear();
+  });
+
+  useEffect(() => {
     hljs.registerLanguage("sql", sql);
     hljs.registerLanguage("javascript", javascript);
     hljs.registerLanguage("python", python);
