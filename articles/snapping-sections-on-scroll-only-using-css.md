@@ -32,4 +32,3 @@ body {
   Snapping Scroll</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>

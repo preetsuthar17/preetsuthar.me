@@ -30,4 +30,3 @@ To create section inside `select` tag we can use `hr` tag in between options.
   Dividing options in select tag</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
