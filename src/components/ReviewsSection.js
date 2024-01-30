@@ -51,6 +51,11 @@ const ReviewsSection = () => {
               subHeading="Full-Stack Developer"
               description="I highly recommend this guy, if you are trying to find someone to make your website,and has great customer support with a quick and reliable response time."
             ></Card>
+            <Card
+              heading="Mustafa"
+              subHeading="Web Developer"
+              description="Hey Preet ! The new look of the website is soo sleek and decent , i like those small details that you made on this website , the time the dedication you have hats off to it , overall i like this new design of your portfolio :)"
+            ></Card>
           </>
         </div>
       </div>
