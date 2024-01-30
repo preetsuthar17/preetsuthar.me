@@ -638,7 +638,7 @@ export async function getStaticProps({ params }) {
 
   const processedContent = await remark()
     .use(remarkGfm)
-    .use(html)
+    .use(html, { sanitize: false })
     .process(content);
   const contentHtml = processedContent.toString();
 
