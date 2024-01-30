@@ -122,10 +122,10 @@ const Projects = () => {
                   projectAbout=" This is my open-source personal portfolio website and blog website built running on next.js and react.js and using Vercel."
                 />
                 <ProjectCard
-                  projectName="Dracodemy"
-                  projectLink="https://Dracodemy.tech"
+                  projectName="Nooder Bot Website"
+                  projectLink="https://nooderbot.com"
                   projectStack="NextJs"
-                  projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
+                  projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has inbuild protection from scams and phishing. nooderbot.com is website for the bot built by Preet Suthar"
                 />
               </div>
             </div>
@@ -138,7 +138,12 @@ const Projects = () => {
                 projectStack="JavaScript"
                 projectAbout="Simplified JavaScript CRUD to-do manager with advanced features for effortless task management. Get things done with ease!"
               />
-
+              <ProjectCard
+                  projectName="Dracodemy"
+                  projectLink="https://Dracodemy.tech"
+                  projectStack="NextJs"
+                  projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
+                />
               <ProjectCard
                 projectName="Advance blog template"
                 projectLink="https://gatsby-blog-temp.netlify.app"
