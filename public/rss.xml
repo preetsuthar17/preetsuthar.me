@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Mon, 29 Jan 2024 14:00:57 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 04:12:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -942,6 +942,8 @@ And that's it! You now have a sticky element that'll enhance your website's user
             <guid>https://preetsuthar.me/posts/create-responsive-images-using-only-css</guid>
             <pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[
+By adding `100%` max-width and adding `auto` height we can make image resize automatically according to the width of the device.
+
 ![Demo](https://i.imgur.com/405PHLw.gif)
 
 ```css
@@ -950,8 +952,6 @@ img {
   height: auto;
 }
 ```
-
-By adding `100%` max-width and adding `auto` height we can make image resize automatically according to the width of the device.
 ]]></description>
         </item>
         <item>
@@ -1209,6 +1209,25 @@ fontSizeSlider.addEventListener("input", () => {
 So that's how we easily created Font Size Adjusting slider using HTML and Javascript. We can also achieve this functionality in `React` but code will be different because we'll need to make use of `useSate` to set the font size and all. Let me know in the comments if you want the article for same functionality but using `reactjs`. That's for this article!
 
 Thanks for reading!
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Hide overflowing text with trails (...)]]></title>
+            <link>https://preetsuthar.me/posts/hide-overflowing-text-with-trails</link>
+            <guid>https://preetsuthar.me/posts/hide-overflowing-text-with-trails</guid>
+            <pubDate>Mon, 29 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+We can use `text-overflow: ellipsis` to hide any overflowing text
+
+![Demo](https://i.imgur.com/IpRLe5m.gif)
+
+```css
+p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+```
 ]]></description>
         </item>
         <item>
