@@ -4,7 +4,6 @@ const matter = require("gray-matter");
 const TerserPlugin = require("terser-webpack-plugin");
 const RSS = require("feed").Feed;
 
-const securityHeaders = require("./src/utils/next/headers");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -12,14 +11,7 @@ module.exports = withBundleAnalyzer({
   experimental: {
     nextScriptWorkers: true,
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
+
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
