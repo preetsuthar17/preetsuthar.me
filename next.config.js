@@ -4,6 +4,7 @@ const matter = require("gray-matter");
 const TerserPlugin = require("terser-webpack-plugin");
 const RSS = require("feed").Feed;
 
+const securityHeaders = require("./src/utils/next/headers");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -14,22 +15,8 @@ module.exports = withBundleAnalyzer({
   async headers() {
     return [
       {
-        source: "/[slug]",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: `
-              default-src 'self';
-              script-src 'self' 'unsafe-eval' 'nonce-4FcJAmQSelo=' cpwebassets.codepen.io apc.codepen.io *.buysellads.com *.buysellads.net *.doubleclick.net *.carbonads.com *.carbonads.net *.filestackapi.com *.firebaseio.com *.paypal.com *.paypalobjects.com *.braintreegateway.com *.stripe.com *.wufoo.com wufoo.com www.google.com www.gstatic.com;
-              style-src 'self' 'unsafe-inline';
-              img-src 'self' data: https:;
-              font-src 'self' https:;
-              connect-src 'self' https://api.example.com;
-              frame-src https://codepen.io;
-              object-src 'none';
-            `,
-          },
-        ],
+        source: "/:path*",
+        headers: securityHeaders,
       },
     ];
   },
