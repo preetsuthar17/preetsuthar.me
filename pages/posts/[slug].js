@@ -121,9 +121,7 @@ export default function Post({
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      // console.clear();
-    }, 2000);
+    console.clear();
   });
 
   useEffect(() => {
@@ -212,6 +210,7 @@ export default function Post({
           <link rel="canonical" href="https://preetsuthar.me/posts" />
         </Head>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+        <Script async src="https://js.stripe.com/v3/buy-button.js"></Script>
         <Navbar goback={true} />
         <>
           <article id="post-top" className="container">
@@ -551,8 +550,10 @@ export default function Post({
                   Share on X
                 </Link>{" "}
               </span>
+              <div></div>
             </div>
 
+            <div id="giscus-comments" />
             <hr className="styled-hr"></hr>
             <div className="post-navigation">
               <div className="prev">
