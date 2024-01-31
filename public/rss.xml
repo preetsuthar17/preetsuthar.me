@@ -4,7 +4,7 @@
         <title>preetsuthar.me</title>
         <link>https://preetsuthar.me</link>
         <description>Welcome to my personal blogging website!</description>
-        <lastBuildDate>Tue, 30 Jan 2024 15:26:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 31 Jan 2024 14:23:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -955,6 +955,29 @@ img {
 ]]></description>
         </item>
         <item>
+            <title><![CDATA[Creating Gradient text only using CSS]]></title>
+            <link>https://preetsuthar.me/posts/creating-gradient-text-using-only-css</link>
+            <guid>https://preetsuthar.me/posts/creating-gradient-text-using-only-css</guid>
+            <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+To create gradient text using only css we can use `background-clip` property in css.
+
+```css
+h1 {
+  background: -webkit-linear-gradient(blue, blueviolet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+```
+
+<p class="codepen" data-height="494.9090881347656" data-default-tab="result" data-slug-hash="qBvxwyy" data-user="preetsuthar17" style="height: 494.9090881347656px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/qBvxwyy">
+  Creating gradient text</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+]]></description>
+        </item>
+        <item>
             <title><![CDATA[Creating sections inside html select tag]]></title>
             <link>https://preetsuthar.me/posts/creating-sections-inside-html-select</link>
             <guid>https://preetsuthar.me/posts/creating-sections-inside-html-select</guid>
@@ -977,12 +1000,11 @@ To create section inside `select` tag we can use `hr` tag in between options.
 </select>
 ```
 
-<p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="wvOyGMJ" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="540.7272644042969" data-default-tab="result" data-slug-hash="wvOyGMJ" data-user="preetsuthar17" style="height: 540.7272644042969px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/wvOyGMJ">
   Dividing options in select tag</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 ]]></description>
         </item>
         <item>
@@ -1870,12 +1892,11 @@ body {
 }
 ```
 
-<p class="codepen" data-height="600" data-default-tab="result" data-slug-hash="KKEZOmN" data-user="preetsuthar17" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="506.5454559326172" data-default-tab="result" data-slug-hash="KKEZOmN" data-user="preetsuthar17" style="height: 506.5454559326172px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/preetsuthar17/pen/KKEZOmN">
   Snapping Scroll</a> by Preet Suthar (<a href="https://codepen.io/preetsuthar17">@preetsuthar17</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 ]]></description>
         </item>
         <item>
