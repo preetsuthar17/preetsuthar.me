@@ -125,7 +125,7 @@ const Projects = () => {
                   projectName="Nooder Bot Website"
                   projectLink="https://nooderbot.com"
                   projectStack="NextJs"
-                  projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has inbuild protection from scams and phishing. nooderbot.com is website for the bot built by Preet Suthar"
+                  projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has in built protection from scams and phishing, nooderbot.com is website for the bot built by Preet Suthar."
                 />
               </div>
             </div>
@@ -139,11 +139,11 @@ const Projects = () => {
                 projectAbout="Simplified JavaScript CRUD to-do manager with advanced features for effortless task management. Get things done with ease!"
               />
               <ProjectCard
-                  projectName="Dracodemy"
-                  projectLink="https://Dracodemy.tech"
-                  projectStack="NextJs"
-                  projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
-                />
+                projectName="Dracodemy"
+                projectLink="https://Dracodemy.tech"
+                projectStack="NextJs"
+                projectAbout="Dracodemy is online learning website with a lot of resource to learn the most basic to advance content related to programming."
+              />
               <ProjectCard
                 projectName="Advance blog template"
                 projectLink="https://gatsby-blog-temp.netlify.app"
