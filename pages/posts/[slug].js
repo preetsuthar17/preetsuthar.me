@@ -236,6 +236,36 @@ export default function Post({
       });
   };
 
+  const defaults = {
+    spread: 360,
+    ticks: 100,
+    gravity: 0,
+    decay: 0.94,
+    startVelocity: 30,
+    shapes: ["heart"],
+    colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+  };
+
+  const postLikedAnimation = () => {
+    confetti({
+      ...defaults,
+      particleCount: 50,
+      scalar: 2,
+    });
+
+    confetti({
+      ...defaults,
+      particleCount: 25,
+      scalar: 3,
+    });
+
+    confetti({
+      ...defaults,
+      particleCount: 10,
+      scalar: 4,
+    });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -288,7 +318,7 @@ export default function Post({
           async
           src="https://cpwebassets.codepen.io/assets/embed/ei.js"
         ></Script>
-
+        <Script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></Script>
         <Navbar goback={true} />
         <>
           <article id="post-top" className="container">
@@ -405,7 +435,9 @@ export default function Post({
               <div className="like-section">
                 <div
                   className={`like-button ${liked ? "liked" : ""}`}
-                  onClick={handleLikeClick}
+                  onClick={() => {
+                    handleLikeClick();
+                  }}
                   disabled={liked}
                 >
                   {liked ? (
@@ -424,16 +456,18 @@ export default function Post({
                       />
                     </svg>
                   ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="#ff3860"
-                      className="bi bi-heart"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                    </svg>
+                    <div onClick={postLikedAnimation}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#ff3860"
+                        className="bi bi-heart"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                      </svg>
+                    </div>
                   )}
                 </div>
                 <p
