@@ -68,6 +68,11 @@ const testimonials = () => {
               description="Preet is one of the most friendliest person I know around and undoubtedly one of the most enthusiastic programmers I've seen in the tech community. I just can't rant enough about how generous and helpful he is. Love him."
             ></Card>
             <Card
+              heading="Tazhys"
+              subHeading="Back-End Developer"
+              description="Preet was really quick to complete a commission, even though he had to go out for a couple of days. He really crunched everything into a few days, thus making him quicker than other website commissions I've had."
+            ></Card>
+            <Card
               heading="Y345"
               subHeading="Full-Stack Developer"
               description="I highly recommend this guy, if you are trying to find someone to make your website,and has great customer support with a quick and reliable response time."
