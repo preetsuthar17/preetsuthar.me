@@ -24,6 +24,7 @@ $color_3: white;
 
 .showcase {
   overflow-x: hidden;
+  will-change: transform;
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
@@ -165,8 +166,6 @@ $color_3: white;
         &:nth-child(1) {
           margin-bottom: -2rem;
         }
-        &:nth-child(2) {
-        }
       }
       @media screen and (max-width: 400px) {
         margin: auto;
@@ -266,6 +265,7 @@ $color_3: white;
   align-items: center;
   margin-top: 8rem;
   margin-bottom: 10rem;
+  will-change: transform;
   text-align: center;
   font-size: var(--fontSize2);
   font-weight: 700;
@@ -287,6 +287,7 @@ $color_3: white;
   justify-content: left;
   padding: 0 1rem !important;
   align-items: left;
+  will-change: transform;
   margin: 0rem -1rem;
   margin-top: 1rem;
   margin-bottom: 8rem;
@@ -295,12 +296,15 @@ $color_3: white;
   font-weight: 700;
 
   .twitterLink {
+    will-change: transform;
     color: rgb(12, 138, 255);
   }
   .githubLink {
+    will-change: transform;
     color: rgba(255, 255, 255, 0.603);
   }
   a {
+    will-change: transform;
     text-align: left;
     text-decoration: none;
     &:hover {

@@ -107,6 +107,7 @@ button[type="submit"] {
   align-items: center;
   padding: 0 1rem;
   margin: 0 auto;
+  will-change: transform;
   z-index: 1;
   gap: 5rem;
   .reviews-header {
@@ -160,6 +161,7 @@ button[type="submit"] {
   justify-content: center;
   flex-wrap: wrap;
   scroll-behavior: smooth;
+  will-change: transform;
   display: flex;
   scrollbar-width: thin;
   margin-bottom: 2rem !important;
@@ -220,6 +222,7 @@ button[type="submit"] {
   font-family: $font-family_1 !important;
   flex: 0 0 17rem;
   height: 17rem;
+  will-change: transform;
   padding: 1rem;
   margin: 1rem 1rem;
   cursor: pointer;

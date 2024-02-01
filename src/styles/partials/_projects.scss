@@ -32,7 +32,8 @@ $color_5: #3dbbed;
       margin: 1rem 0;
     }
     .project-card {
-    
+      will-change: transform;
+
       .project-header {
         margin: 10px 0;
       }
@@ -93,7 +94,7 @@ $color_5: #3dbbed;
   flex-grow: 1;
   flex-basis: 20rem;
   padding: 2rem;
-  // height: 10rem;
+  will-change: transform;
   transition: 0.3s ease-in-out !important;
   background-color: #18151d;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,

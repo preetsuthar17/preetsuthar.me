@@ -94,7 +94,7 @@ $color_3: #aaaab5;
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   padding: 2rem;
   border: 1px solid #ffffff08;
-
+  will-change: transform;
   backdrop-filter: blur(10px);
   border-radius: 12px;
   background-color: #18151d;
