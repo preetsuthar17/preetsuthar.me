@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 
-const Card = ({ heading, subHeading, description }) => {
+const ReviewCard = ({ heading, subHeading, description }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -53,4 +53,4 @@ const Card = ({ heading, subHeading, description }) => {
   );
 };
 
-export default Card;
+export default ReviewCard;

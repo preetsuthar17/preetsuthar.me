@@ -1,7 +1,9 @@
 import Footer from "@/src/components/footer";
 import Navbar from "@/src/components/navbar";
 
-const { default: Card } = require("@/src/components/Card");
+const {
+  default: Card,
+} = require("@/src/components/ReviewsComponents/ReviewCard");
 
 const testimonials = () => {
   return (

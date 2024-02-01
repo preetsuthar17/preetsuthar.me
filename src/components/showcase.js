@@ -1,4 +1,4 @@
-import ReviewsSection from "./ReviewsSection";
+import ReviewsSection from "./ReviewsComponents/ReviewsSection";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";

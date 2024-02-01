@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { playClickSound } from "../utils/functions/ClickAudioPlayer";
+import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
 
 const ProjectCard = (props) => {
   return (

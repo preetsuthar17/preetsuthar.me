@@ -1,7 +1,7 @@
 import Navbar from "@/src/components/navbar";
 import Footer from "@/src/components/footer";
 import Layout from "@/src/components/Layout";
-import ReviewForm from "@/src/components/ReviewForm";
+import ReviewForm from "@/src/components/ReviewsComponents/ReviewForm";
 
 import { motion } from "framer-motion";
 import Head from "next/head";

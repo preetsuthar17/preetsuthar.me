@@ -1,7 +1,7 @@
-import Card from "./Card";
+import Card from "./ReviewCard";
 import React from "react";
 import Link from "next/link";
-import { playClickSound } from "../utils/functions/ClickAudioPlayer";
+import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
