@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { debounce } from "lodash";
+import { playClickSound } from "../utils/functions/ClickAudioPlayer";
 
 export const SnakeGame = ({
   initialSnake,
@@ -170,15 +171,19 @@ export const SnakeGame = ({
       switch (event.key) {
         case "ArrowUp":
           setDirection("UP");
+          playClickSound();
           break;
         case "ArrowDown":
           setDirection("DOWN");
+          playClickSound();
           break;
         case "ArrowLeft":
           setDirection("LEFT");
+          playClickSound();
           break;
         case "ArrowRight":
           setDirection("RIGHT");
+          playClickSound();
           break;
         default:
           break;
@@ -302,7 +307,10 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onClick={(event) => debouncedHandleArrowButtonClick("UP", event)}
+          onClick={(event) => {
+            debouncedHandleArrowButtonClick("UP", event);
+            playClickSound();
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +334,10 @@ export const SnakeGame = ({
       >
         <button
           className="primary-btn-main"
-          onClick={(event) => debouncedHandleArrowButtonClick("LEFT", event)}
+          onClick={(event) => {
+            debouncedHandleArrowButtonClick("LEFT", event);
+            playClickSound();
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -341,7 +352,10 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onClick={(event) => debouncedHandleArrowButtonClick("DOWN", event)}
+          onClick={(event) => {
+            debouncedHandleArrowButtonClick("DOWN", event);
+            playClickSound();
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -356,7 +370,10 @@ export const SnakeGame = ({
         </button>
         <button
           className="primary-btn-main"
-          onClick={(event) => debouncedHandleArrowButtonClick("RIGHT", event)}
+          onClick={(event) => {
+            debouncedHandleArrowButtonClick("RIGHT", event);
+            playClickSound();
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -384,7 +401,10 @@ export const SnakeGame = ({
                 cursor: "pointer",
                 borderRadius: "5px",
               }}
-              onClick={restartGame}
+              onClick={() => {
+                restartGame();
+                playClickSound();
+              }}
             >
               Restart Game
             </button>
@@ -392,7 +412,10 @@ export const SnakeGame = ({
         ) : null
       ) : (
         <button
-          onClick={startGame}
+          onClick={() => {
+            startGame();
+            playClickSound();
+          }}
           style={{
             padding: "10px 20px",
             fontSize: "18px",

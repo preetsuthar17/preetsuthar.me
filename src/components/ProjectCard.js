@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { playClickSound } from "../utils/functions/ClickAudioPlayer";
 
 const ProjectCard = (props) => {
   return (
     <>
       <div className="project-card">
-        <Link target="_blank" href={props.projectLink}>
+        <Link onClick={playClickSound} target="_blank" href={props.projectLink}>
           <div className="project-header">
             <span>{props.projectName}</span>
           </div>
@@ -13,7 +14,12 @@ const ProjectCard = (props) => {
           </div>
           <p className="project-text">{props.projectAbout}</p>
         </Link>
-        <Link className="project-link" target="_blank" href={props.projectLink}>
+        <Link
+          className="project-link"
+          onClick={playClickSound}
+          target="_blank"
+          href={props.projectLink}
+        >
           <abbr title="Open preview">
             <svg
               xmlns="http://www.w3.org/2000/svg"

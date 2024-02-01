@@ -14,6 +14,8 @@ import { gsap } from "gsap";
 
 import { useEffect } from "react";
 
+import { playClickSound } from "../utils/functions/ClickAudioPlayer";
+
 const Showcase = () => {
   useEffect(() => {
     const tiltContainer = document.querySelectorAll(".review-card");
@@ -89,25 +91,23 @@ const Showcase = () => {
                     <div className="showcase-btn">
                       <Link
                         className="primary-btn-main"
+                        onClick={playClickSound}
                         style={{
                           width: "fit-content",
                         }}
                         href="mailto:preetsutharxd@gmail.com"
                       >
-                        <span>
-                          <em>Contact me</em>
-                        </span>
+                        Contact me
                       </Link>
                       <Link
                         className="primary-btn-secondary"
+                        onClick={playClickSound}
                         style={{
                           width: "fit-content",
                         }}
                         href="/about"
                       >
-                        <span>
-                          <em>About me</em>
-                        </span>
+                        About me
                       </Link>
                     </div>
                   </div>
@@ -166,6 +166,7 @@ const Showcase = () => {
                 <p>
                   <Link
                     className="twitterLink"
+                    onClick={playClickSound}
                     target="_blank"
                     href="https://www.linkedin.com/in/preet-suthar-41b460243/"
                   >
@@ -181,6 +182,7 @@ const Showcase = () => {
                   </span>
                   <Link
                     className="githubLink"
+                    onClick={playClickSound}
                     target="_blank"
                     href="https://github.com/preetsuthar17"
                   >
@@ -196,6 +198,7 @@ const Showcase = () => {
                   </span>
                   <Link
                     className="emailLink color-mailred"
+                    onClick={playClickSound}
                     target="_blank"
                     href="mailto:preetsutharxd@gmail.com"
                   >

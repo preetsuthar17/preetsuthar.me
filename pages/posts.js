@@ -16,6 +16,7 @@ import { useRef } from "react";
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
 import Layout from "@/src/components/Layout";
+import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
 
 export default function Posts({ posts, tags }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -216,13 +217,18 @@ export default function Posts({ posts, tags }) {
                       style={{
                         display: "flex",
                       }}
+                      onClick={playClickSound}
                       href={`/tags/${tag}`}
                       key={tag}
                     >
                       <div className=" tags-item">{tag}</div>
                     </Link>
                   ))}
-                  <Link className="post-tag p-color" href="/tags">
+                  <Link
+                    className="post-tag p-color"
+                    onClick={playClickSound}
+                    href="/tags"
+                  >
                     All Tags
                   </Link>
                 </div>
@@ -244,7 +250,11 @@ export default function Posts({ posts, tags }) {
                 visiblePosts.map((post, i) => (
                   <div key={post.slug} className="blog-card">
                     <div>
-                      <Link href={`/posts/${post.slug}`} passHref>
+                      <Link
+                        onClick={playClickSound}
+                        href={`/posts/${post.slug}`}
+                        passHref
+                      >
                         <h2 className="blog-header">
                           <span
                             dangerouslySetInnerHTML={{
@@ -264,6 +274,7 @@ export default function Posts({ posts, tags }) {
                       </p>
                       <div>
                         <Link
+                          onClick={playClickSound}
                           href={`/posts/${post.slug}`}
                           className="blog-read-link"
                           passHref
@@ -299,13 +310,19 @@ export default function Posts({ posts, tags }) {
               }}
             >
               {visiblePosts.length < searchResults.length && (
-                <button onClick={handleLazyLoad} className=" primary-btn-main">
+                <button
+                  onClick={() => {
+                    handleLazyLoad();
+                    playClickSound();
+                  }}
+                  className=" primary-btn-main"
+                >
                   Load More posts
                 </button>
               )}
             </div>
             <div className="posts-post-top">
-              <Link href="#topPage">
+              <Link onClick={playClickSound} href="#topPage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"

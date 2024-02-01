@@ -40,6 +40,7 @@ import calculateReadTime from "@/src/utils/functions/calculateReadTime";
 import generateTableOfContents from "@/src/utils/functions/generateTableOfContents";
 import formatDate from "@/src/utils/functions/formatDate";
 import readArticles from "@/src/utils/functions/readArticles";
+import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
 
 export default function Post({
   post,
@@ -98,7 +99,7 @@ export default function Post({
   }, []);
 
   useEffect(() => {
-    const script = document.createElement("script");
+    const script = document.createElement("Script");
     script.src = "https://giscus.app/client.js";
     script.setAttribute("data-repo", "preetsuthar17/comments");
     script.setAttribute("data-repo-id", "R_kgDOGIcPqw");
@@ -230,6 +231,7 @@ export default function Post({
               {post.frontmatter.tags.map((tag) => (
                 <Link
                   className="no-decoration p-color"
+                  onClick={playClickSound}
                   href={`/tags/${tag}`}
                   key={tag}
                 >
@@ -266,6 +268,7 @@ export default function Post({
 
                     textDecoration: "none",
                   }}
+                  onClick={playClickSound}
                   href={post.frontmatter.authorGithub}
                   target="_blank"
                 >
@@ -286,7 +289,12 @@ export default function Post({
 
               <div className="share_and_copy_link">
                 <abbr title="Share on X">
-                  <Link href={twitterHref} data-size="large" target="_blank">
+                  <Link
+                    onClick={playClickSound}
+                    href={twitterHref}
+                    data-size="large"
+                    target="_blank"
+                  >
                     <Image
                       src={twitterLogo}
                       width={28}
@@ -302,7 +310,10 @@ export default function Post({
                 <abbr title="copy post link">
                   <span
                     id="copyPostBtn"
-                    onClick={copyLinkToClipboard}
+                    onClick={() => {
+                      copyLinkToClipboard();
+                      playClickSound();
+                    }}
                     style={{ cursor: "pointer" }}
                   >
                     <svg
@@ -320,6 +331,7 @@ export default function Post({
                 </abbr>
               </div>
               <Link
+                onClick={playClickSound}
                 href={editPageUrl}
                 target="_blank"
                 style={{
@@ -391,6 +403,7 @@ export default function Post({
                                   style={{
                                     fontWeight: "500",
                                   }}
+                                  onClick={playClickSound}
                                   href={`/posts/${article.slug}`}
                                 >
                                   {article.frontmatter.title}
@@ -449,6 +462,7 @@ export default function Post({
                 whether it’s ₹25/$1 or ₹500/$5.
               </p>
               <Link
+                onClick={playClickSound}
                 href="https://donate.stripe.com/fZeaGJeU23Cn9u8288"
                 target="_blank"
                 className="donateButton primary-btn-secondary"
@@ -475,12 +489,19 @@ export default function Post({
                 <ul>
                   {toc.map((item, index) => (
                     <li key={index}>
-                      <Link href={`#${item.slug}`}>{item.text}</Link>
+                      <Link onClick={playClickSound} href={`#${item.slug}`}>
+                        {item.text}
+                      </Link>
                       {item.children.length > 0 && (
                         <ul>
                           {item.children.map((child, childIndex) => (
                             <li key={childIndex}>
-                              <Link href={`#${child.slug}`}>{child.text}</Link>
+                              <Link
+                                onClick={playClickSound}
+                                href={`#${child.slug}`}
+                              >
+                                {child.text}
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -505,7 +526,7 @@ export default function Post({
             />
 
             <div className="post-top">
-              <Link href="#topPage">
+              <Link onClick={playClickSound} href="#topPage">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="35"
@@ -547,6 +568,7 @@ export default function Post({
                 />{" "}
                 &nbsp;
                 <Link
+                  onClick={playClickSound}
                   href={twitterHref}
                   data-size="large"
                   target="_blank"
@@ -567,6 +589,7 @@ export default function Post({
                     style={{
                       fontWeight: "500",
                     }}
+                    onClick={playClickSound}
                     href={`/posts/${prevArticleData.slug}`}
                   >
                     👈 {prevArticleData.title}
@@ -579,6 +602,7 @@ export default function Post({
                     style={{
                       fontWeight: "500",
                     }}
+                    onClick={playClickSound}
                     href={`/posts/${nextArticleData.slug}`}
                   >
                     {nextArticleData.title} 👉

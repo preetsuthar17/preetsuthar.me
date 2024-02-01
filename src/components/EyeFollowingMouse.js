@@ -1,5 +1,6 @@
 import useMightyMouse from "react-hook-mighty-mouse";
 import React, { useState, useEffect } from "react";
+import { playRandomScream } from "../utils/functions/ClickAudioPlayer";
 
 const EyeFollowingMouse = () => {
   const leftEyeMouse = useMightyMouse(true, "left-eye", { x: 45, y: 45 });
@@ -33,11 +34,12 @@ const EyeFollowingMouse = () => {
     setIsDebouncing(true);
     setShake(true);
     setIsClicked(true);
+    playRandomScream();
 
     setTimeout(() => {
       setShake(false);
       setIsClicked(false);
-    }, 500);
+    }, 1000);
 
     setTimeout(() => {
       setIsDebouncing(false);
@@ -75,7 +77,7 @@ const EyeFollowingMouse = () => {
   const styleRightEye = {
     transform: `rotate(${-angleRightEye}deg)`,
     backgroundColor: shake ? color : "#f3efef",
-    animation: shake ? "shake 0.1s linear 10" : "none",
+    animation: shake ? "shake 0.2s linear 10" : "none",
   };
 
   const stylePupil = shake
@@ -142,7 +144,9 @@ const EyeFollowingMouse = () => {
               id="left-eye"
               className="eye"
               style={styleLeftEye}
-              onClick={handleEyeClick}
+              onClick={() => {
+                handleEyeClick();
+              }}
             >
               <div className="pupil" style={stylePupil} />
             </div>
@@ -152,7 +156,9 @@ const EyeFollowingMouse = () => {
               id="right-eye"
               className="eye"
               style={styleRightEye}
-              onClick={handleEyeClick}
+              onClick={() => {
+                handleEyeClick();
+              }}
             >
               <div className="pupil" style={stylePupil} />
             </div>

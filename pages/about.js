@@ -44,6 +44,7 @@ const Footer = dynamic(() => import("@/src/components/footer"));
 gsap.registerPlugin(ScrollTrigger);
 
 import AutomaticAge from "@/src/utils/functions/AutomaticAge";
+import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
 
 const About = () => {
   useEffect(() => {
@@ -167,11 +168,10 @@ const About = () => {
                     <p style={{ margin: "1rem", padding: "2rem " }}>
                       <Link
                         href="mailto:preetsutharxd@gmail.com"
+                        onClick={playClickSound}
                         className="primary-btn-secondary"
                       >
-                        <span>
-                          <em>Hire me</em>
-                        </span>
+                        Hire me
                       </Link>
                     </p>
                   </div>
@@ -207,6 +207,7 @@ const About = () => {
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://github.com/preetsuthar17"
+                              onClick={playClickSound}
                               target="_blank"
                               style={{
                                 filter: "grayscale(100%)",
@@ -227,6 +228,7 @@ const About = () => {
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="mailto:preetsutharxd@gmail.com"
+                              onClick={playClickSound}
                               target="_blank"
                               style={{
                                 filter: "grayscale(100%)",
@@ -247,6 +249,7 @@ const About = () => {
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://discord.gg/XeQ95WzGq9"
+                              onClick={playClickSound}
                               target="_blank"
                               style={{
                                 filter: "grayscale(100%)",
@@ -267,6 +270,7 @@ const About = () => {
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://twitter.com/preetsuthar17"
+                              onClick={playClickSound}
                               target="_blank"
                               style={{
                                 filter: "grayscale(100%)",
@@ -287,6 +291,7 @@ const About = () => {
                             <Link
                               className="link-color about-contact-link no-decoration"
                               href="https://www.linkedin.com/in/preet-suthar-41b460243/"
+                              onClick={playClickSound}
                               target="_blank"
                             >
                               <CustomTooltip2 text="LinkedIn">
@@ -308,6 +313,7 @@ const About = () => {
                             <div className="chip_content">
                               <Link
                                 href="https://dracodemy.tech"
+                                onClick={playClickSound}
                                 target="_blank"
                               >
                                 Dracodemy
@@ -329,6 +335,7 @@ const About = () => {
                     textAlign: "center",
                   }}
                   href="https://github.com/preetsuthar17"
+                  onClick={playClickSound}
                   className="no-decoration p-color"
                   target="_blank"
                 >
@@ -645,6 +652,7 @@ const About = () => {
                             <div className="chip_content">
                               <Link
                                 href="https://www.youtube.com/watch?v=itHctPXzwnM"
+                                onClick={playClickSound}
                                 target="_blank"
                               >
                                 Assistify AI beta release

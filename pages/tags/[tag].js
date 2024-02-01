@@ -14,6 +14,7 @@ import Footer from "../../src/components/footer";
 
 import getFirstFewLines from "@/src/utils/functions/getFirstFewLines";
 import formatDate from "@/src/utils/functions/formatDate";
+import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -145,7 +146,7 @@ const Tag = ({ blogs }) => {
                       opacity: 1,
                     }}
                   >
-                    <Link href={`/posts/${blog.slug}`}>
+                    <Link onClick={playClickSound} href={`/posts/${blog.slug}`}>
                       <h2
                         className="blog-header"
                         style={{
@@ -160,6 +161,7 @@ const Tag = ({ blogs }) => {
                     </p>
                     <div>
                       <Link
+                        onClick={playClickSound}
                         href={`/posts/${blog.slug}`}
                         className="blog-read-link"
                         passHref

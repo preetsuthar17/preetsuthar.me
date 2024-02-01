@@ -56,7 +56,7 @@ const CustomCursor = () => {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseStop);
+    // document.addEventListener("mouseup", handleMouseStop);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);

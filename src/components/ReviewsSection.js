@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
+import { playClickSound } from "../utils/functions/ClickAudioPlayer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,7 @@ const ReviewsSection = () => {
         Check out all{" "}
         <Link
           href="/testimonials"
+          onClick={playClickSound}
           style={{
             color: "white",
             textDecoration: "none",
@@ -77,6 +79,7 @@ const ReviewsSection = () => {
         or leave a{" "}
         <Link
           href="/reviews"
+          onClick={playClickSound}
           style={{
             color: "white",
             textDecoration: "none",
