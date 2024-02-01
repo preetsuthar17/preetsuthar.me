@@ -35,6 +35,7 @@ import preetSutharImage from "../src/utils/images/preetsuthar.png";
 
 import CustomTooltip from "@/src/components/CustomTooltip";
 import CustomTooltip2 from "@/src/components/CustomTooltip2";
+import { useInView } from "react-intersection-observer";
 
 import { motion } from "framer-motion";
 
@@ -47,27 +48,21 @@ import AutomaticAge from "@/src/utils/functions/AutomaticAge";
 import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
 
 const About = () => {
-  useEffect(() => {
-    const contentItems = document.querySelectorAll(".about-my-tools-icon");
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: contentItems,
-        start: "top 65%",
-        end: "bottom center",
-        scrub: 1,
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
       },
-    });
+    },
+  };
 
-    contentItems.forEach((item, index) => {
-      tl.fromTo(
-        item,
-        { opacity: 0, y: "-40px" },
-        { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
-        index * 0.2
-      );
-    });
-  }, []);
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+  });
 
   useEffect(() => {
     const elements = document.querySelectorAll(".cd-timeline-block");
@@ -398,206 +393,334 @@ const About = () => {
                         text="NextJs"
                         description="One of the best React Framework."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="nextjs"
-                          width={55}
-                          height={55}
-                          src={nextjs}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="nextjs"
+                            width={55}
+                            height={55}
+                            src={nextjs}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Python"
                         description="For advanced scripting."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="Python"
-                          width={55}
-                          height={55}
-                          src={python}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="Python"
+                            width={55}
+                            height={55}
+                            src={python}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="HTML"
                         description="Creating websites."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="HTML"
-                          width={55}
-                          height={55}
-                          src={html}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="HTML"
+                            width={55}
+                            height={55}
+                            src={html}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip text="CSS" description="Styling websites.">
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="CSS"
-                          width={55}
-                          height={55}
-                          src={css}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="CSS"
+                            width={55}
+                            height={55}
+                            src={css}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="SASS"
                         description="Because it's SASS :)"
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="SASS"
-                          width={55}
-                          height={55}
-                          src={sass}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="SASS"
+                            width={55}
+                            height={55}
+                            src={sass}
+                          />
+                        </motion.div>
                       </CustomTooltip>{" "}
                       <CustomTooltip
                         text="Javascript"
                         description="Making things functional."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="Javascript"
-                          width={55}
-                          height={55}
-                          src={javascript}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="Javascript"
+                            width={55}
+                            height={55}
+                            src={javascript}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="React"
                         description="Because React, duh!"
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="React"
-                          width={55}
-                          height={55}
-                          src={react}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="React"
+                            width={55}
+                            height={55}
+                            src={react}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="MySQL"
                         description="Database management."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="MySQL"
-                          width={55}
-                          height={55}
-                          src={mysql}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="MySQL"
+                            width={55}
+                            height={55}
+                            src={mysql}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="VS code"
                         description="My favorite code editor."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="vscode"
-                          width={55}
-                          height={55}
-                          src={vscode}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="vscode"
+                            width={55}
+                            height={55}
+                            src={vscode}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Brave"
                         description="Debugging security."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="brave"
-                          width={55}
-                          height={55}
-                          src={brave}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="brave"
+                            width={55}
+                            height={55}
+                            src={brave}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Firefox"
                         description="Debugging CSS."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="firefox"
-                          width={55}
-                          height={55}
-                          src={firefox}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="firefox"
+                            width={55}
+                            height={55}
+                            src={firefox}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Chrome"
                         description="Debugging Javascript."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="chrome"
-                          width={55}
-                          height={55}
-                          src={chrome}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="chrome"
+                            width={55}
+                            height={55}
+                            src={chrome}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Github"
                         description="For publishing projects."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="github"
-                          width={55}
-                          height={55}
-                          src={github}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="github"
+                            width={55}
+                            height={55}
+                            src={github}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Vercel"
                         description="For hosting my projects."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="vercel"
-                          width={55}
-                          height={55}
-                          src={vercel}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="vercel"
+                            width={55}
+                            height={55}
+                            src={vercel}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="Git"
                         description=" For Open-Source management."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="git"
-                          width={55}
-                          height={55}
-                          src={git}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="git"
+                            width={55}
+                            height={55}
+                            src={git}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                       <CustomTooltip
                         text="GSAP"
                         description="For animations in website."
                       >
-                        <Image
-                          loading="lazy"
+                        <motion.div
+                          ref={ref}
+                          variants={variants}
+                          initial="hidden"
+                          animate={inView ? "show" : "hidden"}
                           className="about-my-tools-icon"
-                          alt="GSAP"
-                          width={55}
-                          height={55}
-                          src={gsap_logo}
-                        />
+                        >
+                          <Image
+                            loading="lazy"
+                            className="about-my-tools-icon"
+                            alt="GSAP"
+                            width={55}
+                            height={55}
+                            src={gsap_logo}
+                          />
+                        </motion.div>
                       </CustomTooltip>
                     </div>
                   </div>
