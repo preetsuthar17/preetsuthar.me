@@ -83,97 +83,94 @@ $color_5: #3dbbed;
   text-align: left;
   transition: 0.4s ease-in-out !important;
 }
+  .project-card {
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    position: relative;
+    border-radius: 12px;
+    flex-grow: 1;
+    flex-basis: 20rem;
+    padding: 2rem;
+    will-change: transform;
+    transition: 0.3s ease-in-out !important;
+    background-color: #18151d;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
 
-.project-card {
-  opacity: 0;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  transform: translateX(-80px);
-  position: relative;
-  border-radius: 12px;
-  flex-grow: 1;
-  flex-basis: 20rem;
-  padding: 2rem;
-  will-change: transform;
-  transition: 0.3s ease-in-out !important;
-  background-color: #18151d;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    &:hover::before {
+      opacity: 1;
+    }
 
-  &:hover::before {
-    opacity: 1;
-  }
+    &::before,
+    &::after {
+      border-radius: inherit;
+      content: "";
+      height: 100%;
+      left: 0px;
+      opacity: 0;
+      position: absolute;
+      top: 0px;
+      transition: opacity 500ms;
+      width: 100%;
+    }
 
-  &::before,
-  &::after {
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    left: 0px;
-    opacity: 0;
-    position: absolute;
-    top: 0px;
-    transition: opacity 500ms;
-    width: 100%;
-  }
+    &::before {
+      z-index: -1 !important;
 
-  &::before {
-    z-index: -1 !important;
+      background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+      );
+    }
 
-    background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.06),
-      transparent 40%
-    );
-  }
+    &::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.3),
+        transparent 40%
+      );
+      z-index: -1 !important;
+    }
 
-  &::after {
-    background: radial-gradient(
-      600px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.3),
-      transparent 40%
-    );
-    z-index: -1 !important;
-  }
+    a {
+      color: $color_4;
 
-  a {
-    color: $color_4;
+      transition: 0.3s ease-in-out;
+      text-decoration: none;
+      &:hover {
+        color: $color_5;
+        opacity: 100%;
+      }
+    }
+    .project-name {
+      color: #f0edf3;
+      padding-top: 1rem;
+    }
 
-    transition: 0.3s ease-in-out;
-    text-decoration: none;
-    &:hover {
-      color: $color_5;
-      opacity: 100%;
+    .project-stack {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      color: #cccccc67;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      position: absolute;
+      bottom: 10%;
+    }
+
+    img {
+      &:hover {
+        color: $color_3;
+        opacity: 100%;
+      }
+      transition: opacity 0.3s ease;
+      opacity: 0.7;
+      padding: 1rem;
     }
   }
-  .project-name {
-    color: #f0edf3;
-    padding-top: 1rem;
-  }
-
-  .project-stack {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    color: #cccccc67;
-    font-size: 0.8rem;
-  }
-
-  .project-link {
-    position: absolute;
-    bottom: 10%;
-  }
-
-  img {
-    &:hover {
-      color: $color_3;
-      opacity: 100%;
-    }
-    transition: opacity 0.3s ease;
-    opacity: 0.7;
-    padding: 1rem;
-  }
-}
 
 @media screen and (max-width: 1222px) {
   .project-title {

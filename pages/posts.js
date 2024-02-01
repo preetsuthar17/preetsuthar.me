@@ -4,14 +4,8 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import Head from "next/head";
-
 import dynamic from "next/dynamic";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
-
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 const Navbar = dynamic(() => import("@/src/components/navbar"));
 const Footer = dynamic(() => import("@/src/components/footer"));
@@ -24,66 +18,14 @@ export default function Posts({ posts, tags }) {
   const [visiblePosts, setVisiblePosts] = useState(posts);
   const [displayedPostsCount, setDisplayedPostsCount] = useState(6);
   const [lazyLoadOffset, setLazyLoadOffset] = useState(6);
-  const animatedPostsRef = useRef(new Set());
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
+  const fadeInLeft = {
+    initial: { opacity: 0, x: -80 },
+    animate: { opacity: 1, x: 0 },
+  };
 
   const sanitizeQuery = (query) => {
     return query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  };
-
-  useEffect(() => {
-    const contentItems = document.querySelectorAll(".post-tag");
-
-    contentItems.forEach((item, index) => {
-      gsap.fromTo(
-        item,
-        { opacity: 0, x: -80 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.2,
-          delay: index * 0.01,
-          ease: "power1.in",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 90%",
-            end: "top",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  }, []);
-
-  const initializeCardAnimation = () => {
-    const contentItems = document.querySelectorAll(".blog-card");
-
-    contentItems.forEach((item, index) => {
-      if (!animatedPostsRef.current.has(item)) {
-        gsap.fromTo(
-          item,
-          { opacity: 0, x: -80 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.2,
-            delay: 0.1,
-            ease: "expo.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 90%",
-              end: "top",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-
-        animatedPostsRef.current.add(item);
-      }
-    });
   };
 
   useEffect(() => {
@@ -102,14 +44,6 @@ export default function Posts({ posts, tags }) {
       };
     });
   }, []);
-
-  useEffect(() => {
-    initializeCardAnimation();
-  }, [searchResults]);
-
-  useEffect(() => {
-    initializeCardAnimation();
-  }, [visiblePosts]);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -136,7 +70,6 @@ export default function Posts({ posts, tags }) {
 
   useEffect(() => {
     setVisiblePosts(searchResults.slice(0, displayedPostsCount));
-    initializeCardAnimation();
   }, [searchResults, displayedPostsCount]);
 
   const handleLazyLoad = () => {
@@ -248,57 +181,65 @@ export default function Posts({ posts, tags }) {
                 </p>
               ) : (
                 visiblePosts.map((post, i) => (
-                  <div key={post.slug} className="blog-card">
-                    <div>
-                      <Link
-                        onClick={playClickSound}
-                        href={`/posts/${post.slug}`}
-                        passHref
-                      >
-                        <h2 className="blog-header">
-                          <span
-                            dangerouslySetInnerHTML={{
-                              __html: post.frontmatter.title,
-                              searchQuery,
-                            }}
-                          />
-                        </h2>
-                      </Link>
-                      <p className="blog-text">
-                        <span
-                          dangerouslySetInnerHTML={{
-                            __html: post.frontmatter.description,
-                            searchQuery,
-                          }}
-                        />
-                      </p>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={fadeInLeft}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div key={post.slug} className="blog-card">
                       <div>
                         <Link
                           onClick={playClickSound}
                           href={`/posts/${post.slug}`}
-                          className="blog-read-link"
                           passHref
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              fill="#ccc"
-                              d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
+                          <h2 className="blog-header">
+                            <span
+                              dangerouslySetInnerHTML={{
+                                __html: post.frontmatter.title,
+                                searchQuery,
+                              }}
                             />
-                          </svg>
-                          Read
+                          </h2>
                         </Link>
+                        <p className="blog-text">
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: post.frontmatter.description,
+                              searchQuery,
+                            }}
+                          />
+                        </p>
+                        <div>
+                          <Link
+                            onClick={playClickSound}
+                            href={`/posts/${post.slug}`}
+                            className="blog-read-link"
+                            passHref
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fill="#ccc"
+                                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
+                              />
+                            </svg>
+                            Read
+                          </Link>
+                        </div>
                       </div>
-                    </div>
 
-                    <p className="blog-text blog-date">
-                      {post.frontmatter.date}
-                    </p>
-                  </div>
+                      <p className="blog-text blog-date">
+                        {post.frontmatter.date}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))
               )}
             </div>

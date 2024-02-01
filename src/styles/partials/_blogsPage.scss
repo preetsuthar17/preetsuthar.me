@@ -86,9 +86,7 @@ $color_3: #aaaab5;
 }
 
 .blog-card {
-  opacity: 0;
   overflow: hidden;
-  transform: translateX(-80px);
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;

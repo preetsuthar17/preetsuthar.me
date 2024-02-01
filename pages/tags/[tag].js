@@ -5,8 +5,6 @@ import path from "path";
 import matter from "gray-matter";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
 
 import Navbar from "../../src/components/navbar";
@@ -15,8 +13,6 @@ import Footer from "../../src/components/footer";
 import getFirstFewLines from "@/src/utils/functions/getFirstFewLines";
 import formatDate from "@/src/utils/functions/formatDate";
 import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Tag = ({ blogs }) => {
   useEffect(() => {
@@ -136,7 +132,7 @@ const Tag = ({ blogs }) => {
               <div key={index}>
                 <motion.div
                   initial={{ opacity: 1, x: -80 }}
-                  animate={{ opacity: 1, x: 80 }}
+                  animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                 >

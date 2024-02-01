@@ -1,20 +1,14 @@
 import ReviewsSection from "./ReviewsSection";
-
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Layout from "./Layout";
 import Link from "next/link";
 import EyeFollowingMouse from "./EyeFollowingMouse";
-
 import VanillaTilt from "vanilla-tilt";
-
-import { motion } from "framer-motion";
-
-import { gsap } from "gsap";
-
 import { useEffect } from "react";
-
 import { playClickSound } from "../utils/functions/ClickAudioPlayer";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 const Showcase = () => {
   useEffect(() => {
@@ -29,28 +23,19 @@ const Showcase = () => {
     });
   }, []);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
   useEffect(() => {
-    const showcasePara = document.querySelectorAll(".showcase-contact-text");
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
-    showcasePara.forEach((para) => {
-      const el = para.querySelectorAll("p");
-
-      gsap.from(el, {
-        opacity: 0,
-        y: 500,
-        duration: 1,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: para,
-          markers: false,
-          start: "top 100%",
-          end: "center 60%",
-          scrub: 3,
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-  }, []);
+  const fadeInUp = {
+    hidden: { y: 80 },
+    visible: { y: 0 },
+  };
 
   return (
     <motion.div
@@ -155,56 +140,74 @@ const Showcase = () => {
                 flexDirection: "column",
               }}
             >
-              <p>
-                Come on! Don't be stranger.{" "}
-                <span className="contact-lets-connect-span">Let's connect</span>
-              </p>
+              {" "}
+              <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={fadeInUp}
+                transition={{ duration: 0.7 }}
+              >
+                <p>
+                  Come on! Don't be stranger.{" "}
+                  <span className="contact-lets-connect-span">
+                    Let's connect
+                  </span>
+                </p>
+              </motion.div>
               <div
                 className="showcase-contact-text-2 showcase-contact-text-links"
                 style={{ overflow: "hidden" }}
               >
-                <p>
-                  <Link
-                    className="twitterLink"
-                    onClick={playClickSound}
-                    target="_blank"
-                    href="https://www.linkedin.com/in/preet-suthar-41b460243/"
-                  >
-                    LinkedIn?
-                  </Link>
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.167",
-                    }}
-                  >
-                    {" "}
-                    or{" "}
-                  </span>
-                  <Link
-                    className="githubLink"
-                    onClick={playClickSound}
-                    target="_blank"
-                    href="https://github.com/preetsuthar17"
-                  >
-                    GitHub?
-                  </Link>
-                  <span
-                    style={{
-                      color: "rgba(255, 255, 255, 0.167",
-                    }}
-                  >
-                    {" "}
-                    or{" "}
-                  </span>
-                  <Link
-                    className="emailLink color-mailred"
-                    onClick={playClickSound}
-                    target="_blank"
-                    href="mailto:preetsutharxd@gmail.com"
-                  >
-                    Mail me?
-                  </Link>
-                </p>
+                <motion.div
+                  initial="hidden"
+                  animate={controls}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <p>
+                    <Link
+                      className="twitterLink"
+                      onClick={playClickSound}
+                      target="_blank"
+                      href="https://www.linkedin.com/in/preet-suthar-41b460243/"
+                    >
+                      LinkedIn?
+                    </Link>
+                    <span
+                      style={{
+                        color: "rgba(255, 255, 255, 0.167",
+                      }}
+                    >
+                      {" "}
+                      or{" "}
+                    </span>
+                    <Link
+                      className="githubLink"
+                      onClick={playClickSound}
+                      target="_blank"
+                      href="https://github.com/preetsuthar17"
+                    >
+                      GitHub?
+                    </Link>
+                    <span
+                      style={{
+                        color: "rgba(255, 255, 255, 0.167",
+                      }}
+                    >
+                      {" "}
+                      or{" "}
+                    </span>
+                    <Link
+                      className="emailLink color-mailred"
+                      onClick={playClickSound}
+                      target="_blank"
+                      href="mailto:preetsutharxd@gmail.com"
+                    >
+                      Mail me?
+                    </Link>
+                  </p>
+                </motion.div>
               </div>
             </div>
           </section>

@@ -2,43 +2,13 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { useEffect } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 import Navbar from "../src/components/navbar";
 import Footer from "../src/components/footer";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Tags = ({ tags }) => {
-  useEffect(() => {
-    const contentItems = document.querySelectorAll(".post-tag");
-
-    contentItems.forEach((item, index) => {
-      gsap.fromTo(
-        item,
-        { opacity: 0, x: -80 },
-
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.2,
-          delay: index * 0.09,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: item,
-            start: "top 100%",
-            end: "center",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  }, []);
-
   return (
     <>
       <Head>
@@ -64,7 +34,7 @@ const Tags = ({ tags }) => {
         <meta name="twitter:title" content="Tags | Preet Suthar 🚀" />
         <meta name="subject" content="web development" />
       </Head>
-      <Navbar />
+      <Navbar goback={true} />
       <div className="project-div">
         <motion.div
           initial={{ opacity: 1, translateX: -100 }}

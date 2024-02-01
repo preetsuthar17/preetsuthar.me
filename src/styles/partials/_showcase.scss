@@ -303,6 +303,9 @@ $color_3: white;
     will-change: transform;
     color: rgba(255, 255, 255, 0.603);
   }
+  p {
+    overflow-y: hidden;
+  }
   a {
     will-change: transform;
     text-align: left;
