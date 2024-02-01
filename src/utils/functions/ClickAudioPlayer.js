@@ -4,7 +4,7 @@ let isMuted = false;
 
 const clickSound = new Howl({
   src: ["/click.mp3"],
-  volume: 0.2,
+  volume: 0.5,
 });
 
 const audioSources = ["/scream_1.mp3", "/scream_3.mp3"];
