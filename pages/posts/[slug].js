@@ -266,6 +266,10 @@ export default function Post({
     });
   };
 
+  useEffect(() => {
+    console.clear();
+  });
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
