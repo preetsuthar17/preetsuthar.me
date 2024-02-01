@@ -416,6 +416,7 @@ export default function Post({
                       fill="#ff3860"
                       classNamee="bi bi-heart-fill"
                       viewBox="0 0 16 16"
+                      style={{ animation: "pop 0.3s ease" }}
                     >
                       <path
                         fillRule="evenodd"
