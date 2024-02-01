@@ -187,6 +187,7 @@ export default function Posts({ posts, tags }) {
                     exit="exit"
                     variants={fadeInLeft}
                     transition={{ duration: 0.5 }}
+                    key={i}
                   >
                     <div key={post.slug} className="blog-card">
                       <div>
