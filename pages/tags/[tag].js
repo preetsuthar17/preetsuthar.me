@@ -92,15 +92,15 @@ const Tag = ({ blogs }) => {
         <meta name="subject" content="web development" />
         <meta
           name="description"
-          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          content="My personal portfolio website with informative web development blogs free of cost ✨."
         />
         <meta
           property="og:description"
-          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          content="My personal portfolio website with informative web development blogs free of cost ✨."
         />
         <meta
           name="twitter:description"
-          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          content="My personal portfolio website with informative web development blogs free of cost ✨."
         />{" "}
       </Head>
       <Navbar goback={true} />

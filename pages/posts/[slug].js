@@ -305,15 +305,15 @@ export default function Post({
           <link rel="canonical" href="https://preetsuthar.me/posts" />
           <meta
             name="description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+            content="My personal portfolio website with informative web development blogs free of cost ✨."
           />
           <meta
             property="og:description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+            content="My personal portfolio website with informative web development blogs free of cost ✨."
           />
           <meta
             name="twitter:description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+            content="My personal portfolio website with informative web development blogs free of cost ✨."
           />{" "}
         </Head>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>

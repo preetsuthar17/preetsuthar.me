@@ -22,7 +22,7 @@ const Projects = () => {
           <meta name="robots" content="all" />
           <meta
             name="description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!w"
+            content="My personal portfolio website with informative web development blogs free of cost ✨.w"
           />
           <meta name="theme-color" content="#1c9cfc" />
           <meta httpEquiv="content-language" content="en" />
@@ -30,7 +30,7 @@ const Projects = () => {
           <meta property="og:title" content="Projects | Preet Suthar 🚀" />
           <meta
             property="og:description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!w"
+            content="My personal portfolio website with informative web development blogs free of cost ✨.w"
           />
           <meta property="og:url" content="https://preetsuthar.me/projects" />
           <meta property="og:type" content="website" />
@@ -50,7 +50,7 @@ const Projects = () => {
           <meta name="twitter:title" content="Projects | Preet Suthar 🚀" />
           <meta
             name="twitter:description"
-            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!w"
+            content="My personal portfolio website with informative web development blogs free of cost ✨.w"
           />{" "}
           <meta name="subject" content="web development" />
         </Head>
