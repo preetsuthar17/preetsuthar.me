@@ -446,7 +446,7 @@ export default function Post({
                       width="24"
                       height="24"
                       fill="#ff3860"
-                      classNamee="bi bi-heart-fill"
+                      className="bi bi-heart-fill"
                       viewBox="0 0 16 16"
                       style={{ animation: "pop 0.3s ease" }}
                     >
