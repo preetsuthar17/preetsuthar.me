@@ -439,6 +439,10 @@ blockquote {
     margin: 0;
     padding: 0;
     background-color: transparent;
+    transition: 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 @keyframes pop {
