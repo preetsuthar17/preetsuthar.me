@@ -23,12 +23,18 @@ const About = () => {
           <title>About | Preet Suthar 🚀</title>
           <meta name="robots" content="all" />
 
-          <meta name="description" content="About page" />
+          <meta
+            name="description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />
           <meta name="theme-color" content="#1c9cfc" />
           <meta httpEquiv="content-language" content="en" />
           <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
           <meta property="og:title" content="About | Preet Suthar 🚀" />
-          <meta property="og:description" content="About page" />
+          <meta
+            property="og:description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />
           <meta property="og:url" content="https://preetsuthar.me/about" />
           <meta property="og:type" content="website" />
           <meta
@@ -42,7 +48,10 @@ const About = () => {
           <meta name="author" content="Preet Suthar" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="twitter:title" content="About | Preet Suthar 🚀" />
-          <meta name="twitter:description" content="About page" />
+          <meta
+            name="twitter:description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />
           <meta name="subject" content="web development" />
         </Head>
         <Navbar />

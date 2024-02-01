@@ -1,5 +1,6 @@
 import Footer from "@/src/components/footer";
 import Navbar from "@/src/components/navbar";
+import Head from "next/head";
 
 const {
   default: Card,
@@ -9,6 +10,40 @@ const testimonials = () => {
   return (
     <>
       <Navbar goback={true} />
+      <Head>
+        <title>Testimonials | Preet Suthar 🚀</title>
+        <meta name="robots" content="all" />
+        <meta
+          name="description"
+          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+        />
+        <meta name="theme-color" content="#1c9cfc" />
+        <meta httpEquiv="content-language" content="en" />
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+        <meta property="og:title" content="Testimonials | Preet Suthar 🚀" />
+        <meta
+          property="og:description"
+          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+        />
+        <meta property="og:url" content="https://preetsuthar.me/testimonials" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://preetsuthar.me/website-icon.png"
+        />
+        <meta
+          name="keywords"
+          content="Preet Suthar, Front-end Developer, Portfolio, Blog, web development, preet, front end development, front-end developer"
+        />
+        <meta name="author" content="Preet Suthar" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:title" content="Testimonials | Preet Suthar 🚀" />
+        <meta
+          name="twitter:description"
+          content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+        />{" "}
+        <meta name="subject" content="web development" />
+      </Head>
       <h1
         className="h2-color"
         style={{

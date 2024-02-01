@@ -1,10 +1,11 @@
-import Card from "./ReviewCard";
+import Card from "../ReviewsComponents/ReviewCard";
 import React from "react";
 import Link from "next/link";
 import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import VanillaTilt from "vanilla-tilt";
 
 const ReviewsSection = () => {
   const controls = useAnimation();
@@ -15,7 +16,17 @@ const ReviewsSection = () => {
       controls.start("visible");
     }
   }, [controls, inView]);
-
+  useEffect(() => {
+    const tiltContainer = document.querySelectorAll(".review-card");
+    VanillaTilt.init(tiltContainer, {
+      max: 8,
+      speed: 200,
+      easing: "ease",
+      transition: true,
+      glare: true,
+      "max-glare": 0.1,
+    });
+  }, []);
   const fadeInUp = {
     hidden: { opacity: 0, y: 80 },
     visible: { opacity: 1, y: 0 },

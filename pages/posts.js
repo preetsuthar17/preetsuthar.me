@@ -93,7 +93,6 @@ export default function Posts({ posts, tags }) {
         <Head>
           <title>Blogs | Preet Suthar 🚀</title>
           <meta name="robots" content="all" />
-
           <meta name="theme-color" content="#1c9cfc" />
           <meta httpEquiv="content-language" content="en" />
           <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
@@ -115,6 +114,18 @@ export default function Posts({ posts, tags }) {
           />
           <meta name="twitter:title" content="Blogs | Preet Suthar 🚀" />
           <meta name="subject" content="web development" />
+          <meta
+            name="description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />
+          <meta
+            property="og:description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />
+          <meta
+            name="twitter:description"
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
+          />{" "}
         </Head>
 
         <Navbar />

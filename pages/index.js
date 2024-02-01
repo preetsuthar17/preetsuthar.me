@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { motion } from "framer-motion";
 
-const Showcase = dynamic(() => import("@/src/components/showcase"));
+import Showcase from "@/src/components/MainPageComponents/ShowcaseComponent";
 const Layout = dynamic(() => import("@/src/components/Layout"));
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
           <meta name="robots" content="all" />
           <meta
             name="description"
-            content="Preet's personal portfolio and blog website."
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
           />
           <meta name="theme-color" content="#1c9cfc" />
           <meta httpEquiv="content-language" content="en" />
@@ -31,7 +31,7 @@ export default function Home() {
           />
           <meta
             property="og:description"
-            content="Preet's personal portfolio and blog website."
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
           />
           <meta property="og:url" content="https://preetsuthar.me" />
           <meta property="og:type" content="website" />
@@ -54,14 +54,11 @@ export default function Home() {
           />
           <meta
             name="twitter:description"
-            content="Preet's personal portfolio and blog website."
+            content="Check out My cool website for simple web development blogs. Learn easy tricks and tips that make building websites a piece of cake!"
           />{" "}
           <meta name="subject" content="web development" />
         </Head>
-
-        <>
-          <Showcase />
-        </>
+        <Showcase />
       </Layout>
     </motion.div>
   );
