@@ -415,3 +415,29 @@ blockquote {
 .panel.open {
   height: auto;
 }
+
+.like-section {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin: 1.6rem 0 1rem 0 !important;
+  padding: 0;
+  gap: 10px;
+  > div {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
+    padding: 0 0 6px 0;
+    font-family: "Jetbrains Mono";
+  }
+  .like-button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}

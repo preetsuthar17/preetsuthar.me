@@ -51,6 +51,8 @@ export default function Post({
   const [currentViews, setCurrentViews] = useState(post.views);
   const [twitterHref, setTwitterHref] = useState("");
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(post.likes || 0);
 
   const router = useRouter();
 
@@ -60,12 +62,74 @@ export default function Post({
   const toc = generateTableOfContents(post.content);
   const isAccordionActive = (articleId) => activeAccordion === articleId;
 
+  const handleLikeClick = async () => {
+    const uuidId = convertIdToUuid(post.frontmatter.id);
+    if (!liked) {
+      const { data, error } = await supabase
+        .from("blog_views")
+        .upsert([{ blog_id: uuidId, likes: likesCount + 1 }], {
+          onConflict: ["blog_id"],
+        });
+
+      if (error) {
+        console.error("Error incrementing like count:", error);
+      } else {
+        console.log("Like count incremented successfully");
+        setLiked(true);
+        setLikesCount(likesCount + 1);
+        localStorage.setItem(`liked_${post.frontmatter.id}`, "true");
+      }
+    } else {
+      const { data, error } = await supabase
+        .from("blog_views")
+        .upsert([{ blog_id: uuidId, likes: likesCount - 1 }], {
+          onConflict: ["blog_id"],
+        });
+
+      if (error) {
+        console.error("Error decrementing like count:", error);
+      } else {
+        console.log("Like count decremented successfully");
+        setLiked(false);
+        setLikesCount(likesCount - 1);
+        localStorage.removeItem(`liked_${post.frontmatter.id}`);
+      }
+    }
+  };
+
   useEffect(() => {
     const tweetText = encodeURIComponent(post.frontmatter.title);
     const tweetUrl = encodeURIComponent(window.location.href);
     const href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
     setTwitterHref(href);
   }, [post.frontmatter.title]);
+
+  useEffect(() => {
+    const uuidId = convertIdToUuid(post.frontmatter.id);
+
+    const fetchLikeCount = async () => {
+      const { data, error } = await supabase
+        .from("blog_views")
+        .select("likes")
+        .eq("blog_id", uuidId)
+        .single();
+
+      if (error) {
+        console.error("Error fetching like count:", error);
+      } else {
+        const initialLikesCount = data ? data.likes : 0;
+        setLikesCount(initialLikesCount);
+      }
+    };
+
+    fetchLikeCount();
+
+    const likedKey = `liked_${post.frontmatter.id}`;
+    const isLiked = localStorage.getItem(likedKey);
+    if (isLiked) {
+      setLiked(true);
+    }
+  }, []);
 
   useEffect(() => {
     const uuidId = convertIdToUuid(post.frontmatter.id);
@@ -120,10 +184,6 @@ export default function Post({
       commentsContainer.appendChild(script);
     }
   }, []);
-
-  useEffect(() => {
-    console.clear();
-  });
 
   useEffect(() => {
     hljs.registerLanguage("sql", sql);
@@ -342,6 +402,51 @@ export default function Post({
                   </span>
                 </abbr>
               </div>
+              <div className="like-section">
+                <div
+                  className={`like-button ${liked ? "liked" : ""}`}
+                  onClick={handleLikeClick}
+                  disabled={liked}
+                >
+                  {liked ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="#ff3860"
+                      classNamee="bi bi-heart-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="#ff3860"
+                      className="bi bi-heart"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                    </svg>
+                  )}
+                </div>
+                <p
+                  style={{
+                    fontWeight: "900",
+                    opacity: "80%",
+                    fontSize: "1.3rem",
+                  }}
+                  className="likes-count p-color"
+                >
+                  {likesCount}
+                </p>
+              </div>
+
               <Link
                 onClick={playClickSound}
                 href={editPageUrl}
