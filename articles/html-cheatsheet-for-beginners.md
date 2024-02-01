@@ -39,6 +39,8 @@ HTML provides six levels of headings, from h1 (largest) to h6 (smallest):
 <h6>Heading 6</h6>
 ```
 
+![preview](https://i.imgur.com/KUFNKUe.png)
+
 ## Container
 
 Container tags are used to group content. Commonly used container tags are:
@@ -50,6 +52,8 @@ Container tags are used to group content. Commonly used container tags are:
 <pre>Hello World</pre>
 <code>import python</code>
 ```
+
+![preview](https://i.imgur.com/fesqzUh.png)
 
 ## Text Formatting
 
@@ -64,40 +68,109 @@ Use text formatting tags to emphasize or style text:
 <sup>Superscript</sup>
 ```
 
+![preview](https://i.imgur.com/wdWCB3l.png)
+
+## Break tag
+
+`<br>` means break tag is used to add break line in content
+
+```html
+<br />
+```
+
+- Example
+
+```html
+<span>without</span>
+<br />
+<span>break tag</span>
+```
+
+![preview](https://i.imgur.com/6rpWoGf.png)
+
+```html
+<span>with</span>
+<br />
+<span>break tag</span>
+```
+
+![preview](https://i.imgur.com/tnH7KqI.png)
+
 ## Lists
 
 Create ordered and unordered lists:
 
 ```html
+<!-- Ordered List -->
 <ol>
   <li>Data 1</li>
   <li>Data 2</li>
   <li>Data 3</li>
 </ol>
+```
+
+![preview](https://i.imgur.com/vxep5RS.png)
+
+```html
+<!-- UnOrdered List -->
 
 <ul>
-  <li>Your Data</li>
-  <li>Your Data</li>
+  <li>Data 1</li>
+  <li>Data 2</li>
+  <li>Data 3</li>
 </ul>
 ```
+
+![preview](https://i.imgur.com/5hdnkRy.png)
 
 ## Media
 
 Embed images, audio, and video into your web page:
+
+- Embedding Audio
 
 ```html
 <audio controls>
   <source src="demo.mp3" type="audio/mpeg" />
   Your browser does not support the audio element.
 </audio>
+```
 
+![preview](https://i.imgur.com/HPFVywz.png)
+
+- Embedding Images
+
+```html
 <img src="Source_of_image" alt="Alternate text" />
+```
 
+- `<img>` properties
+  - width - width of image
+  - height - height of image
+  - alt - alternate text if the image doesn't load
+  - src - source of the image
+
+```html
+<img
+  src="https://source.unsplash.com/random"
+  width="1920"
+  height="1080"
+  alt="An Image"
+/>
+```
+
+![preview](https://i.imgur.com/RRWpGod.png)
+
+- Embedding Videos
+
+```html
 <video width="480" height="320" controls>
   <source src="demo_move.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 ```
+
+![preview](https://i.imgur.com/rde9bQB.png)
 
 ## Table
 
@@ -111,7 +184,8 @@ Present data in a tabular format:
   <thead>
     <tr>
       <th>Column1</th>
-      <th colspan="2">Column2</th>
+      <th>Column2</th>
+      <th>Column3</th>
     </tr>
   </thead>
   <tbody>
@@ -126,15 +200,10 @@ Present data in a tabular format:
       <td>Data2</td>
     </tr>
   </tbody>
-  <tfoot>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Data</td>
-      <td>Data</td>
-    </tr>
-  </tfoot>
 </table>
 ```
+
+![preview](https://i.imgur.com/gUlWw4u.png)
 
 ## Links
 
@@ -143,6 +212,8 @@ Create hyperlinks to navigate between pages:
 ```html
 <a href="https://preetsuthar.me/">Visit preetsuthar portfolio!</a>
 ```
+
+![preview](https://i.imgur.com/fNZU3XJ.png)
 
 ## Form
 
@@ -168,7 +239,9 @@ Capture user input using HTML forms:
 </form>
 ```
 
-## Characters & Symbols
+![preview](https://i.imgur.com/0xQjccA.png)
+
+## Characters and Symbols
 
 Display special characters using HTML entities:
 
@@ -184,6 +257,8 @@ Display special characters using HTML entities:
 &dollar;
 <!-- Dollar ($) -->
 ```
+
+![preview](https://i.imgur.com/va7Ee4V.png)
 
 ## Random Text
 
