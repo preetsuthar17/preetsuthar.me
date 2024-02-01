@@ -131,7 +131,11 @@ const About = () => {
           <meta name="subject" content="web development" />
         </Head>
         <Navbar />
-        <div>
+        <div
+          style={{
+            overflowX: "hidden",
+          }}
+        >
           <>
             <div className="about-div">
               <motion.div
