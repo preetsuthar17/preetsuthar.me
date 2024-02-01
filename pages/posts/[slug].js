@@ -478,7 +478,7 @@ export default function Post({
                   }}
                   className="likes-count p-color"
                 >
-                  {likesCount}
+                  {likesCount < 1 ? "0" : likesCount}{" "}
                 </p>
               </div>
 
