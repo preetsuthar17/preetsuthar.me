@@ -40,7 +40,10 @@ import calculateReadTime from "@/src/utils/functions/calculateReadTime";
 import generateTableOfContents from "@/src/utils/functions/generateTableOfContents";
 import formatDate from "@/src/utils/functions/formatDate";
 import readArticles from "@/src/utils/functions/readArticles";
-import { playClickSound } from "@/src/utils/functions/ClickAudioPlayer";
+import {
+  playClickSound,
+  playPostLikedSound,
+} from "@/src/utils/functions/ClickAudioPlayer";
 
 export default function Post({
   post,
@@ -460,7 +463,12 @@ export default function Post({
                       />
                     </svg>
                   ) : (
-                    <div onClick={postLikedAnimation}>
+                    <div
+                      onClick={() => {
+                        postLikedAnimation();
+                        playPostLikedSound();
+                      }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"

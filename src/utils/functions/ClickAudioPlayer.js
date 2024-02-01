@@ -17,6 +17,17 @@ const screamSounds = audioSources.map(
     })
 );
 
+const postLikedSound = new Howl({
+  src: ["/post_liked.mp3"],
+  volume: 0.1,
+});
+
+export const playPostLikedSound = () => {
+  if (!isMuted) {
+    postLikedSound.play();
+  }
+};
+
 export const playClickSound = () => {
   if (!isMuted) {
     clickSound.play();
