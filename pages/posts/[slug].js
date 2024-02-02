@@ -155,7 +155,7 @@ export default function Post({
   useEffect(() => {
     setLiked(false);
 
-    const likedKey = `liked_${slug}`;
+    const likedKey = `liked_${post.frontmatter.id}`;
     const isLiked = localStorage.getItem(likedKey);
     if (isLiked) {
       setLiked(true);
@@ -278,9 +278,9 @@ export default function Post({
     });
   };
 
-  useEffect(() => {
-    console.clear();
-  });
+  // useEffect(() => {
+  //   console.clear();
+  // });
 
   return (
     <motion.div
