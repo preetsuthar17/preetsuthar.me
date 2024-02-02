@@ -25,7 +25,6 @@ import sql from "highlight.js/lib/languages/sql";
 import javascript from "highlight.js/lib/languages/javascript";
 import c from "highlight.js/lib/languages/c";
 import css from "highlight.js/lib/languages/css";
-import vbscriptHtml from "highlight.js/lib/languages/vbscript-html";
 import scss from "highlight.js/lib/languages/scss";
 import shell from "highlight.js/lib/languages/shell";
 import python from "highlight.js/lib/languages/python";
@@ -65,6 +64,104 @@ export default function Post({
   const toc = generateTableOfContents(post.content);
   const isAccordionActive = (articleId) => activeAccordion === articleId;
 
+  useEffect(() => {
+    const tweetText = encodeURIComponent(post.frontmatter.title);
+    const tweetUrl = encodeURIComponent(window.location.href);
+    const href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
+    setTwitterHref(href);
+  }, [post.frontmatter.title]);
+
+  useEffect(() => {
+    const uuidId = convertIdToUuid(post.frontmatter.id);
+
+    const fetchLikeCount = async () => {
+      const { data, error } = await supabase
+        .from("blog_views")
+        .select("likes")
+        .eq("blog_id", uuidId)
+        .single();
+
+      if (error) {
+        console.error("Error fetching like count:", error);
+      } else {
+        const initialLikesCount = data ? data.likes : 0;
+        setLikesCount(initialLikesCount);
+      }
+    };
+
+    fetchLikeCount();
+
+    const likedKey = `liked_${post.frontmatter.id}`;
+    const isLiked = localStorage.getItem(likedKey);
+    if (isLiked) {
+      setLiked(true);
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    const uuidId = convertIdToUuid(post.frontmatter.id);
+
+    const incrementView = async () => {
+      const { data: currentData, error: currentError } = await supabase
+        .from("blog_views")
+        .select("views")
+        .eq("blog_id", uuidId)
+        .single();
+
+      const currentViews = currentData ? currentData.views : 0;
+
+      const updatedViews = currentViews + 1;
+
+      const { data, error } = await supabase
+        .from("blog_views")
+        .upsert([{ blog_id: uuidId, views: updatedViews }], {
+          onConflict: ["blog_id"],
+        });
+
+      if (error) {
+        console.error("Error incrementing view count:", error);
+      } else {
+        console.log("View count incremented successfully");
+        setCurrentViews(updatedViews);
+      }
+    };
+
+    incrementView();
+  }, [slug]);
+
+  useEffect(() => {
+    const script = document.createElement("Script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "preetsuthar17/comments");
+    script.setAttribute("data-repo-id", "R_kgDOGIcPqw");
+    script.setAttribute("data-category", "Announcements");
+    script.setAttribute("data-category-id", "DIC_kwDOGIcPq84CZZYm");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "dark");
+    script.setAttribute("data-lang", "en");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+
+    const commentsContainer = document.getElementById("giscus-comments");
+    if (commentsContainer) {
+      commentsContainer.appendChild(script);
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    setLiked(false);
+
+    const likedKey = `liked_${slug}`;
+    const isLiked = localStorage.getItem(likedKey);
+    if (isLiked) {
+      setLiked(true);
+    }
+  }, [slug]);
+
   const handleLikeClick = async () => {
     const uuidId = convertIdToUuid(post.frontmatter.id);
     if (!liked) {
@@ -99,94 +196,6 @@ export default function Post({
       }
     }
   };
-
-  useEffect(() => {
-    const tweetText = encodeURIComponent(post.frontmatter.title);
-    const tweetUrl = encodeURIComponent(window.location.href);
-    const href = `https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}`;
-    setTwitterHref(href);
-  }, [post.frontmatter.title]);
-
-  useEffect(() => {
-    const uuidId = convertIdToUuid(post.frontmatter.id);
-
-    const fetchLikeCount = async () => {
-      const { data, error } = await supabase
-        .from("blog_views")
-        .select("likes")
-        .eq("blog_id", uuidId)
-        .single();
-
-      if (error) {
-        console.error("Error fetching like count:", error);
-      } else {
-        const initialLikesCount = data ? data.likes : 0;
-        setLikesCount(initialLikesCount);
-      }
-    };
-
-    fetchLikeCount();
-
-    const likedKey = `liked_${post.frontmatter.id}`;
-    const isLiked = localStorage.getItem(likedKey);
-    if (isLiked) {
-      setLiked(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    const uuidId = convertIdToUuid(post.frontmatter.id);
-
-    const incrementView = async () => {
-      const { data: currentData, error: currentError } = await supabase
-        .from("blog_views")
-        .select("views")
-        .eq("blog_id", uuidId)
-        .single();
-
-      const currentViews = currentData ? currentData.views : 0;
-
-      const updatedViews = currentViews + 1;
-
-      const { data, error } = await supabase
-        .from("blog_views")
-        .upsert([{ blog_id: uuidId, views: updatedViews }], {
-          onConflict: ["blog_id"],
-        });
-
-      if (error) {
-        console.error("Error incrementing view count:", error);
-      } else {
-        console.log("View count incremented successfully");
-        setCurrentViews(updatedViews);
-      }
-    };
-
-    incrementView();
-  }, []);
-
-  useEffect(() => {
-    const script = document.createElement("Script");
-    script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "preetsuthar17/comments");
-    script.setAttribute("data-repo-id", "R_kgDOGIcPqw");
-    script.setAttribute("data-category", "Announcements");
-    script.setAttribute("data-category-id", "DIC_kwDOGIcPq84CZZYm");
-    script.setAttribute("data-mapping", "pathname");
-    script.setAttribute("data-strict", "0");
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "dark");
-    script.setAttribute("data-lang", "en");
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-
-    const commentsContainer = document.getElementById("giscus-comments");
-    if (commentsContainer) {
-      commentsContainer.appendChild(script);
-    }
-  }, []);
 
   useEffect(() => {
     hljs.registerLanguage("sql", sql);
