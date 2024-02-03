@@ -335,10 +335,16 @@ export default function Post({
               width="50"
               height="50"
               viewBox="0 0 100 100"
-              class="progress-wheel"
+              className="progress-wheel"
             >
-              <circle cx="50" cy="50" r="30" pathLength="1" class="bg" />
-              <circle cx="50" cy="50" r="30" pathLength="1" class="progress" />
+              <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+              <circle
+                cx="50"
+                cy="50"
+                r="30"
+                pathLength="1"
+                className="progress"
+              />
             </svg>
             <div
               style={{
