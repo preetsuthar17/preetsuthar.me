@@ -69,12 +69,10 @@ export default function Post({
   const isAccordionActive = (articleId) => activeAccordion === articleId;
 
   useEffect(() => {
-    document.addEventListener("DOMContentLoaded", (event) => {
-      const progressWheel = document.querySelector(".progress");
+    const progressWheel = document.querySelector(".progress");
 
-      scroll((progress) => {
-        progressWheel.style.strokeDasharray = `${progress}, 1`;
-      });
+    scroll((progress) => {
+      progressWheel.style.strokeDasharray = `${progress}, 1`;
     });
   }, [slug]);
 
