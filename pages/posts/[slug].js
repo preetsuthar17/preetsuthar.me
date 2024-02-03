@@ -44,6 +44,8 @@ import {
   playPostLikedSound,
 } from "@/src/utils/functions/ClickAudioPlayer";
 
+import Giscus from "@giscus/react";
+
 export default function Post({
   post,
   prevArticleData,
@@ -127,29 +129,6 @@ export default function Post({
     };
 
     incrementView();
-  }, [slug]);
-
-  useEffect(() => {
-    const script = document.createElement("Script");
-    script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "preetsuthar17/comments");
-    script.setAttribute("data-repo-id", "R_kgDOGIcPqw");
-    script.setAttribute("data-category", "Announcements");
-    script.setAttribute("data-category-id", "DIC_kwDOGIcPq84CZZYm");
-    script.setAttribute("data-mapping", "pathname");
-    script.setAttribute("data-strict", "0");
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "dark");
-    script.setAttribute("data-lang", "en");
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-
-    const commentsContainer = document.getElementById("giscus-comments");
-    if (commentsContainer) {
-      commentsContainer.appendChild(script);
-    }
   }, [slug]);
 
   useEffect(() => {
@@ -536,7 +515,6 @@ export default function Post({
                 Edit this post
               </Link>
             </div>
-
             <div className="related-blogs">
               <div
                 className={`accordion ${isAccordionActive("") ? "active" : ""}`}
@@ -615,7 +593,6 @@ export default function Post({
                 )}
               </AnimatePresence>
             </div>
-
             <div
               className="donateUs"
               style={{
@@ -697,7 +674,6 @@ export default function Post({
                 ),
               }}
             />
-
             <div className="post-top">
               <Link onClick={playClickSound} href="#topPage">
                 <svg
@@ -753,7 +729,22 @@ export default function Post({
               <div></div>
             </div>
 
-            <div id="giscus-comments" />
+            <Giscus
+              id="comments"
+              repo="preetsuthar17/comments"
+              repoId="R_kgDOGIcPqw"
+              category="Announcements"
+              categoryId="DIC_kwDOGIcPq84CZZYm"
+              mapping="pathname"
+              term={`Comment on ${post.frontmatter.slug}`}
+              reactionsEnabled="1"
+              emitMetadata="0"
+              inputPosition="top"
+              theme="dark"
+              lang="en"
+              loading="lazy"
+            />
+
             <hr className="styled-hr"></hr>
             <div className="post-navigation">
               <div className="prev">
