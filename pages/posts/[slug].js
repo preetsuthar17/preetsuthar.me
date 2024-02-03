@@ -57,6 +57,7 @@ export default function Post({
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(post.likes || 0);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const router = useRouter();
 
@@ -140,6 +141,10 @@ export default function Post({
       setLiked(true);
     }
   }, [slug]);
+
+  useEffect(() => {
+    setRefreshKey((prevKey) => prevKey + 1); // increment refreshKey to force a re-render
+  }, [router.asPath]); // re-run the effect when the path changes
 
   const handleLikeClick = async () => {
     const uuidId = convertIdToUuid(post.frontmatter.id);
@@ -730,16 +735,17 @@ export default function Post({
             </div>
 
             <Giscus
+              key={refreshKey}
               id="comments"
               repo="preetsuthar17/comments"
               repoId="R_kgDOGIcPqw"
-              category="Announcements"
-              categoryId="DIC_kwDOGIcPq84CZZYm"
+              category="Comments"
+              categoryId="DIC_kwDOGIcPq84Cc6bo"
               mapping="pathname"
               term={`Comment on ${post.frontmatter.slug}`}
               reactionsEnabled="1"
               emitMetadata="0"
-              inputPosition="top"
+              inputPosition="bottom"
               theme="dark"
               lang="en"
               loading="lazy"
