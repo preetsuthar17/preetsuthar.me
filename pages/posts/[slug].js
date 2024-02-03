@@ -61,19 +61,22 @@ export default function Post({
   const [refreshKey, setRefreshKey] = useState(0);
 
   const router = useRouter();
-  useEffect(() => {
-    const progressWheel = document.querySelector(".progress");
-
-    scroll((progress) => {
-      progressWheel.style.strokeDasharray = `${progress}, 1`;
-    });
-  });
 
   const { slug } = router.query;
   const editPageUrl = `https://github.com/preetsuthar17/preetsuthar.me/edit/main/articles/${slug}.md?plain=1`;
 
   const toc = generateTableOfContents(post.content);
   const isAccordionActive = (articleId) => activeAccordion === articleId;
+
+  useEffect(() => {
+    document.addEventListener("DOMContentLoaded", (event) => {
+      const progressWheel = document.querySelector(".progress");
+
+      scroll((progress) => {
+        progressWheel.style.strokeDasharray = `${progress}, 1`;
+      });
+    });
+  }, [slug]);
 
   useEffect(() => {
     const tweetText = encodeURIComponent(post.frontmatter.title);
