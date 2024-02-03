@@ -15,6 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/src/utils/supabaseClient";
 
 import { useRouter } from "next/router";
+import { scroll } from "framer-motion/dom";
 
 const Layout = dynamic(() => import("@/src/components/Layout"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
@@ -60,6 +61,13 @@ export default function Post({
   const [refreshKey, setRefreshKey] = useState(0);
 
   const router = useRouter();
+  useEffect(() => {
+    const progressWheel = document.querySelector(".progress");
+
+    scroll((progress) => {
+      progressWheel.style.strokeDasharray = `${progress}, 1`;
+    });
+  });
 
   const { slug } = router.query;
   const editPageUrl = `https://github.com/preetsuthar17/preetsuthar.me/edit/main/articles/${slug}.md?plain=1`;
@@ -321,8 +329,17 @@ export default function Post({
         <Script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></Script>
         <Navbar goback={true} />
         <>
-          <article id="post-top" className="container">
+          <article id="topPage" className="container">
             <h1 className="title">{post.frontmatter.title}</h1>
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 100 100"
+              class="progress-wheel"
+            >
+              <circle cx="50" cy="50" r="30" pathLength="1" class="bg" />
+              <circle cx="50" cy="50" r="30" pathLength="1" class="progress" />
+            </svg>
             <div
               style={{
                 display: "flex",

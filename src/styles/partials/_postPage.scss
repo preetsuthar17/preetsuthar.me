@@ -456,3 +456,27 @@ blockquote {
     transform: scale(1);
   }
 }
+
+.progress-wheel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
+  transform: rotate(-90deg);
+}
+
+.progress-wheel circle {
+  stroke-dashoffset: 0;
+  stroke-width: 20%;
+  fill: none;
+}
+
+.progress-wheel .bg {
+  opacity: 0.2;
+  stroke: #bbacc9;
+}
+
+.progress-wheel .progress {
+  stroke: #bbacc9;
+  stroke-dasharray: 0, 1;
+}
