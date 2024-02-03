@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@giscus/react": "^2.4.0",
+    "@motionone/utils": "^10.17.0",
     "@supabase/supabase-js": "^2.26.0",
     "@types/gsap": "^3.0.0",
     "@types/react": "^18.2.21",

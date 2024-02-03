@@ -323,33 +323,6 @@ $color_3: white;
   }
 }
 
-.scrolling_text {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.text {
-  font-size: 45px;
-  letter-spacing: 0.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  animation: animate_text 40s linear infinite;
-}
-.text span {
-  margin: 0 5px;
-}
-
-@keyframes animate_text {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
 .text-only-outline {
   color: black;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
@@ -379,4 +352,34 @@ $color_3: white;
   color: #ac9180;
   font-weight: bold;
   font-style: italic;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  span {
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 20px;
 }

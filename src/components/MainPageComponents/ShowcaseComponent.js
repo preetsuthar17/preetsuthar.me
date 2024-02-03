@@ -8,7 +8,7 @@ import EyeFollowingMouse from "../EyeFollowingMouse";
 import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
 import { motion } from "framer-motion";
 import ContactComponent from "./ContactComponent";
-import ScrollingTextComponent from "./ScrollingTextComponent";
+import ScrollingText from "./ScrollingText";
 
 const Showcase = () => {
   return (
@@ -76,7 +76,9 @@ const Showcase = () => {
                 </div>
               </div>
             </div>
-            <ScrollingTextComponent />
+            <ScrollingText baseVelocity={-1}>
+              FRONT END DEVELOPER ◦
+            </ScrollingText>
             <div className="showcase-go-down-arr">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
