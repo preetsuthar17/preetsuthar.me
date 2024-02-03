@@ -1,85 +1,84 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isMouseMoving, setIsMouseMoving] = useState(false);
-  const [cursorType, setCursorType] = useState("default");
-  const [isPointer, setIsPointer] = useState(false);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const springConfig = { damping: 30, stiffness: 300 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPointerActive, setIsPointerActive] = useState(false);
 
   useEffect(() => {
-    const isMobileDevice = window.matchMedia("(max-width: 767px)").matches;
-    setIsMobile(isMobileDevice);
-
-    let animation;
-
-    const handleMouseMove = (e) => {
-      const { clientX, clientY, target } = e;
-
-      if (!isMouseMoving) {
-        setIsMouseMoving(true);
-      }
-
-      cancelAnimationFrame(animation);
-
-      animation = requestAnimationFrame(() => {
-        setPosition({
-          x: clientX,
-          y: clientY,
-        });
-
-        const cursor = window.getComputedStyle(target).cursor;
-        setCursorType(cursor);
-
-        setIsPointer(cursor === "pointer");
-
-        if (
-          Math.abs(position.x - clientX) < 0.1 &&
-          Math.abs(position.y - clientY) < 0.1
-        ) {
-          setIsMouseMoving(false);
-        }
-      });
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
-
-    const handleMouseStop = () => {
-      if (!isMouseMoving) {
-        cancelAnimationFrame(animation);
-
-        animation = requestAnimationFrame(() => {
-          setPosition({
-            x: position.x + 0.2 * (0 - position.x),
-            y: position.y + 0.2 * (0 - position.y),
-          });
-        });
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", checkMobile);
+      checkMobile();
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", checkMobile);
       }
     };
+  }, []);
 
-    document.addEventListener("mousemove", handleMouseMove);
-    // document.addEventListener("mouseup", handleMouseStop);
+  useEffect(() => {
+    if (isMobile) return;
+
+    const moveCursor = (e) => {
+      cursorX.set(e.clientX - 9);
+      cursorY.set(e.clientY - 40);
+    };
+
+    const addPointerCursor = (e) => {
+      e.target.classList.add("pointerCursorActive");
+      setIsPointerActive(true);
+    };
+
+    const removePointerCursor = (e) => {
+      e.target.classList.remove("pointerCursorActive");
+      setIsPointerActive(false);
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+    const pointerElements = document.querySelectorAll(".pointerCursor");
+    pointerElements.forEach((el) => {
+      el.addEventListener("mouseenter", addPointerCursor);
+      el.addEventListener("mouseleave", removePointerCursor);
+    });
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseStop);
-      cancelAnimationFrame(animation);
+      window.removeEventListener("mousemove", moveCursor);
+      pointerElements.forEach((el) => {
+        el.removeEventListener("mouseenter", addPointerCursor);
+        el.removeEventListener("mouseleave", removePointerCursor);
+      });
     };
-  }, [position, isMouseMoving]);
+  }, [cursorX, cursorY, isMobile]);
 
-  if (isMobile) {
-    return null;
-  }
+  if (isMobile) return null;
 
-  const cursorStyles = {
-    left: `${position.x}px`,
-    top: `${position.y}px`,
-    transform: `translate(-50%, -50%) scale(${isPointer ? 2.2 : 0.4})`,
-    transformOrigin: "50% 50%",
-    mixBlendMode: isPointer ? "difference" : "normal",
-    transition: "transform 0.2s ease-out",
-  };
+  const cursorSize = isPointerActive ? 30 : 20;
 
   return (
-    <div id="custom-cursor" className={`custom_cursor`} style={cursorStyles} />
+    <motion.div
+      className={`cursor ${isPointerActive ? "active" : ""}`}
+      style={{
+        translateX: cursorXSpring,
+        translateY: cursorYSpring,
+        backgroundColor: "#ccc",
+        mixBlendMode: "difference",
+        width: `${cursorSize}px`,
+        height: `${cursorSize}px`,
+        borderRadius: "50%",
+        pointerEvents: "none",
+        zIndex: 99999,
+      }}
+    />
   );
 };
 

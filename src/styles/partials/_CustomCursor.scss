@@ -1,11 +1,8 @@
-.custom_cursor {
+.cursor {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  z-index: 9999 !important;
-  border-radius: 50%;
-  background-color: #ccc;
+  width: 20px;
+  height: 20px;
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform ease 0.2s;
+  outline: 2px solid rgba(255, 255, 255, 0.561);
+  z-index: 9999;
 }
