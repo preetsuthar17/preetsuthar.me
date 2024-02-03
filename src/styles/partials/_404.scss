@@ -1,6 +1,5 @@
 .notFoundDiv {
   height: 130vh;
-
   gap: 6rem;
   display: flex;
   justify-content: center;
@@ -8,13 +7,16 @@
   text-align: center;
   flex-wrap: wrap;
   overflow: hidden !important;
+
   .snakeGame {
+    z-index: 9999 !important;
+
     p {
       font-size: 1rem !important;
       margin: 1rem 0;
     }
-    z-index: 9999 !important;
   }
+
   h2 {
     color: #ffff;
     font-family: "Poppins", sans-serif;
@@ -23,38 +25,40 @@
     margin-bottom: -2rem;
     text-shadow: 0px 0px 17px rgba(255, 255, 255, 0.389);
   }
+
   button {
     font-family: "poppins" !important;
   }
+
   @media screen and (max-width: 887px) {
     height: 160vh;
     gap: 1rem;
     display: flex;
     flex-wrap: wrap;
-    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+
     .snakeGame {
       margin-top: -20rem;
-      // transform: scale(0.7);
       margin: 1rem !important;
     }
   }
+
   @media screen and (max-width: 774px) {
     height: 150vh;
     justify-content: center;
     align-items: center;
-    display: flex;
+
     .snakeGame {
       transform: scale(0.798);
-
       margin-bottom: -6rem !important;
     }
+
     .main_div {
       margin-top: -10rem;
       margin-bottom: -25rem;
     }
+
     @media screen and (max-width: 455px) {
       .snakeGame {
         margin-bottom: -6rem !important;
@@ -62,6 +66,7 @@
       }
     }
   }
+
   .arrow-keys-snake {
     display: flex;
   }
