@@ -143,8 +143,8 @@ export default function Post({
   }, [slug]);
 
   useEffect(() => {
-    setRefreshKey((prevKey) => prevKey + 1); // increment refreshKey to force a re-render
-  }, [router.asPath]); // re-run the effect when the path changes
+    setRefreshKey((prevKey) => prevKey + 1);
+  }, [router.asPath]);
 
   const handleLikeClick = async () => {
     const uuidId = convertIdToUuid(post.frontmatter.id);
