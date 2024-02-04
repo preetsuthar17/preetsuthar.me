@@ -131,11 +131,7 @@ export default function Posts({ posts, tags }) {
         <Navbar />
         <>
           <div id="blog-title" className="blog-div">
-            <motion.div
-              initial={{ opacity: 1, translateX: -100 }}
-              animate={{ opacity: 1, translateX: 0 }}
-              exit={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 0.5 }}
+            <div
             >
               <div className="blog-headers">
                 <div className="blog-title">
@@ -177,7 +173,7 @@ export default function Posts({ posts, tags }) {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
             <div className="styled-hr"></div>
             <div className="blog-container">
               {visiblePosts.length === 0 ? (
