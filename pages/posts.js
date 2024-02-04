@@ -192,7 +192,7 @@ export default function Posts({ posts, tags }) {
                 </p>
               ) : (
                 visiblePosts.map((post, i) => (
-                  <div>
+                  <div key={i}>
                   
                     <div key={post.slug} className="blog-card">
                       <div>
