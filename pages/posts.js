@@ -192,14 +192,8 @@ export default function Posts({ posts, tags }) {
                 </p>
               ) : (
                 visiblePosts.map((post, i) => (
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={fadeInLeft}
-                    transition={{ duration: 0.5 }}
-                    key={i}
-                  >
+                  <div>
+                  
                     <div key={post.slug} className="blog-card">
                       <div>
                         <Link
@@ -251,7 +245,7 @@ export default function Posts({ posts, tags }) {
                         {post.frontmatter.date}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))
               )}
             </div>
