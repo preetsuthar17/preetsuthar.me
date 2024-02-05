@@ -1,11 +1,20 @@
 import Link from "next/link";
 import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
+import Image from "next/image";
 
 const ProjectCard = (props) => {
   return (
     <>
       <div className="project-card">
         <Link onClick={playClickSound} target="_blank" href={props.projectLink}>
+          {props.projectImage && (
+            <Image
+              width={1920}
+              height={1080}
+              alt="Assistify Preview"
+              src={`${props.projectImage}`}
+            ></Image>
+          )}
           <div className="project-header">
             <span>{props.projectName}</span>
           </div>

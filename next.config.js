@@ -11,6 +11,9 @@ module.exports = withBundleAnalyzer({
   experimental: {
     nextScriptWorkers: true,
   },
+  images: {
+    domains: ["i.imgur.com"],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
