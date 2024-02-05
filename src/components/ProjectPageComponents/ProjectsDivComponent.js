@@ -4,8 +4,9 @@ import { useEffect } from "react";
 
 const ProjectDivComponent = () => {
   const fadeInLeft = {
-    initial: { opacity: 0, x: -80 },
-    animate: { opacity: 1, x: 0 },
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
   };
   useEffect(() => {
     const handleMousemove = (e) => {
@@ -49,7 +50,7 @@ const ProjectDivComponent = () => {
             animate="animate"
             exit="exit"
             variants={fadeInLeft}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ProjectCard
               projectName="preetsuthar.me"

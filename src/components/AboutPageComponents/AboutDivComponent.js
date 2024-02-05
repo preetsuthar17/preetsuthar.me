@@ -19,9 +19,9 @@ const AboutDivComponent = () => {
   return (
     <div className="about-div">
       <motion.div
-        initial={{ opacity: 1, translateX: -100 }}
-        animate={{ opacity: 1, translateX: 0 }}
-        exit={{ opacity: 1, translateX: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
         <div className="about-header">
@@ -32,9 +32,9 @@ const AboutDivComponent = () => {
       <div className="styled-hr"></div>
       <div className="about-wrapper">
         <motion.div
-          initial={{ opacity: 0, translateX: -100 }}
-          animate={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 1, translateX: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <div className="about-image">
@@ -61,9 +61,9 @@ const AboutDivComponent = () => {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, translateY: 80 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          exit={{ opacity: 0, translateY: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <div className="about-container">
