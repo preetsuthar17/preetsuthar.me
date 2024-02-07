@@ -107,9 +107,9 @@ const Tag = ({ blogs }) => {
 
       <div id="blog-title" className="blog-div">
         <motion.div
-          initial={{ opacity: 1, translateX: -100 }}
-          animate={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 1, translateX: 0 }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <div className="blog-headers">
@@ -133,18 +133,18 @@ const Tag = ({ blogs }) => {
         </h1>
 
         <motion.div
-          initial={{ opacity: 0, translateX: -100 }}
-          animate={{ opacity: 1, translateX: 0 }}
-          exit={{ opacity: 1, translateX: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <div className="blog-container">
             {filteredBlogs.map((blog, index) => (
               <div key={index}>
                 <motion.div
-                  initial={{ opacity: 1, x: -80 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
                   <div
