@@ -271,6 +271,9 @@ export const SnakeGame = ({
 
   return (
     <div style={{ textAlign: "center", marginTop: "20px" }}>
+      {isGameOver && (
+        <p style={{ color: "red", fontSize: "24px" }}>Game Over!</p>
+      )}
       <div
         style={{
           position: "relative",
@@ -390,7 +393,6 @@ export const SnakeGame = ({
       {isGameStarted ? (
         isGameOver ? (
           <div>
-            <p style={{ color: "red", fontSize: "24px" }}>Game Over!</p>
             <button
               style={{
                 padding: "10px 20px",
