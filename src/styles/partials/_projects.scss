@@ -166,13 +166,14 @@ $color_5: #3dbbed;
       color: $color_3;
       opacity: 100%;
       transform: translateZ(20px);
-    }
-    perspective: 1000px;
-    -webkit-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
     box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
+    }
+    perspective: 1000px;
+  
     transition: opacity 0.3s ease;
-    opacity: 0.7;
+    opacity: 100%;
     margin-bottom: 1em;
     object-fit: cover;
     max-width: 100%;
