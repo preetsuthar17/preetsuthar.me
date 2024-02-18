@@ -13,9 +13,8 @@ import remarkGfm from "remark-gfm";
 import twitterLogo from "../../src/utils/icons/twitter.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/src/utils/supabaseClient";
-
+import { Suspense } from "react";
 import { useRouter } from "next/router";
-import { scroll } from "framer-motion/dom";
 
 const Layout = dynamic(() => import("@/src/components/Layout"));
 const Navbar = dynamic(() => import("@/src/components/navbar"));
@@ -67,14 +66,6 @@ export default function Post({
 
   const toc = generateTableOfContents(post.content);
   const isAccordionActive = (articleId) => activeAccordion === articleId;
-
-  useEffect(() => {
-    const progressWheel = document.querySelector(".progress");
-
-    scroll((progress) => {
-      progressWheel.style.strokeDasharray = `${progress}, 1`;
-    });
-  }, [slug]);
 
   useEffect(() => {
     const tweetText = encodeURIComponent(post.frontmatter.title);
@@ -332,21 +323,7 @@ export default function Post({
         <>
           <article id="topPage" className="container">
             <h1 className="title">{post.frontmatter.title}</h1>
-            <svg
-              width="50"
-              height="50"
-              viewBox="0 0 100 100"
-              className="progress-wheel"
-            >
-              <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
-              <circle
-                cx="50"
-                cy="50"
-                r="30"
-                pathLength="1"
-                className="progress"
-              />
-            </svg>
+
             <div
               style={{
                 display: "flex",
@@ -757,23 +734,24 @@ export default function Post({
               </span>
               <div></div>
             </div>
-
-            <Giscus
-              key={refreshKey}
-              id="comments"
-              repo="preetsuthar17/comments"
-              repoId="R_kgDOGIcPqw"
-              category="Comments"
-              categoryId="DIC_kwDOGIcPq84Cc6bo"
-              mapping="pathname"
-              term={`Comment on ${post.frontmatter.slug}`}
-              reactionsEnabled="1"
-              emitMetadata="0"
-              inputPosition="bottom"
-              theme="dark"
-              lang="en"
-              loading="lazy"
-            />
+            <Suspense fallback={<p>Loading...</p>}>
+              <Giscus
+                key={refreshKey}
+                id="comments"
+                repo="preetsuthar17/comments"
+                repoId="R_kgDOGIcPqw"
+                category="Comments"
+                categoryId="DIC_kwDOGIcPq84Cc6bo"
+                mapping="pathname"
+                term={`Comment on ${post.frontmatter.slug}`}
+                reactionsEnabled="1"
+                emitMetadata="0"
+                inputPosition="bottom"
+                theme="dark"
+                lang="en"
+                loading="lazy"
+              />
+            </Suspense>
 
             <hr className="styled-hr"></hr>
             <div className="post-navigation">
