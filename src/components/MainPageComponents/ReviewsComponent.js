@@ -76,7 +76,7 @@ const ReviewsSection = () => {
           className="p-color"
           style={{
             fontSize: "13px",
-            margin: "0 20px",
+            margin: "-4rem 20px 1rem 20px",
           }}
         >
           Check out all{" "}
