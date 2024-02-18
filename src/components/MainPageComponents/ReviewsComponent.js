@@ -77,7 +77,7 @@ const ReviewsSection = () => {
       <p
         className="p-color"
         style={{
-          fontSize: "16px",
+          fontSize: "13px",
           margin: "0 20px",
         }}
       >
@@ -91,7 +91,7 @@ const ReviewsSection = () => {
             backgroundColor: "rgba(255, 255, 255, 0.10)",
             padding: "0 2px",
             borderRadius: "2px",
-            fontWeight: "600",
+            fontWeight: "500",
           }}
         >
           reviews
@@ -106,7 +106,7 @@ const ReviewsSection = () => {
             backgroundColor: "rgba(255, 255, 255, 0.10)",
             padding: "0 2px",
             borderRadius: "2px",
-            fontWeight: "600",
+            fontWeight: "500",
           }}
         >
           review here

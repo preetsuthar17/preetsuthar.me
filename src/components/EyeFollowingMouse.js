@@ -1,6 +1,5 @@
 import useMightyMouse from "react-hook-mighty-mouse";
 import React, { useState, useEffect } from "react";
-import { playRandomScream } from "../utils/functions/ClickAudioPlayer";
 
 const EyeFollowingMouse = () => {
   const leftEyeMouse = useMightyMouse(true, "left-eye", { x: 45, y: 45 });
@@ -34,7 +33,6 @@ const EyeFollowingMouse = () => {
     setIsDebouncing(true);
     setShake(true);
     setIsClicked(true);
-    playRandomScream();
 
     setTimeout(() => {
       setShake(false);
@@ -165,7 +163,7 @@ const EyeFollowingMouse = () => {
           </div>
         </div>
       </div>
-      {shake ? (
+      {/* {shake ? (
         <div className="ouch-text">
           <p>
             <span>{randomText}</span>
@@ -173,7 +171,7 @@ const EyeFollowingMouse = () => {
         </div>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 };
