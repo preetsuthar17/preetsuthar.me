@@ -9,6 +9,7 @@ import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
 import { motion } from "framer-motion";
 import ContactComponent from "./ContactComponent";
 import ScrollingText from "./ScrollingText";
+import ShowcaseProjects from "./ShowcaseProjects";
 
 const Showcase = () => {
   return (
@@ -93,6 +94,7 @@ const Showcase = () => {
               </svg>
             </div>
             <ReviewsSection />
+            <ShowcaseProjects />
             <ContactComponent />
           </section>
           <Footer />

@@ -14,6 +14,7 @@ import "../src/styles/partials/_404.scss";
 import "../src/styles/partials/_CourseSnackBar.scss";
 import "../src/styles/partials/_CustomCursor.scss";
 import "../src/styles/partials/_EyeFollowingMouse.scss";
+import "../src/styles/partials/_showcase_projects.scss";
 import "../src/styles/tokyo-night-dark.css";
 
 import Layout from "@/src/components/Layout";

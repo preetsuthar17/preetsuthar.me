@@ -1,0 +1,74 @@
+.showcase-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .showcase-projects-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      color: white;
+      font-size: 32px;
+      letter-spacing: -1px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      background-color: rgba(255, 255, 255, 0.084);
+    }
+  }
+  .showcase-projects-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8rem 2rem 4rem 2rem;
+    flex-direction: column;
+    gap: 8rem;
+
+    .showcase-projects-card:nth-child(even) {
+      flex-direction: row;
+    }
+  }
+  .showcase-projects-card {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+    width: 60rem;
+
+    @media screen and (max-width: 1015px) {
+      width: auto;
+
+      flex-direction: column !important;
+    }
+    .showcase-projects-card-image {
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+    }
+    .showcase-projects-card-content {
+      color: white;
+      display: flex;
+      flex-direction: column;
+
+      p:nth-child(1) {
+        font-size: 1.3rem;
+        font-family: "JetBrains Mono", monospace;
+        opacity: 50%;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+
+      p:nth-child(3) {
+        font-size: 0.9rem;
+        color: rgba(245, 245, 245, 0.858);
+      }
+    }
+  }
+}
