@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 8rem 2rem 4rem 2rem;
+    margin: 4rem 2rem 4rem 2rem;
     flex-direction: column;
     gap: 8rem;
 
@@ -46,7 +46,7 @@
     .showcase-projects-card-image {
       img {
         max-width: 100%;
-        height: auto;
+        height: 100%;
         border-radius: 15px;
         object-fit: cover;
       }
@@ -62,11 +62,11 @@
         opacity: 50%;
       }
       h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
 
       p:nth-child(3) {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: rgba(245, 245, 245, 0.858);
       }
     }
