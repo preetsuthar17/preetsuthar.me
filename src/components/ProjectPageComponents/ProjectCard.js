@@ -1,20 +1,11 @@
 import Link from "next/link";
 import { playClickSound } from "../../utils/functions/ClickAudioPlayer";
-import Image from "next/image";
 
 const ProjectCard = (props) => {
   return (
     <>
       <div className="project-card">
         <Link onClick={playClickSound} target="_blank" href={props.projectLink}>
-          {props.projectImage && (
-            <Image
-              width={1920}
-              height={1080}
-              alt="Assistify Preview"
-              src={`${props.projectImage}`}
-            ></Image>
-          )}
           <div className="project-header">
             <span>{props.projectName}</span>
           </div>
@@ -29,19 +20,18 @@ const ProjectCard = (props) => {
           target="_blank"
           href={props.projectLink}
         >
-          <abbr title="Open preview">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#777"
-                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
-              />
-            </svg>
-          </abbr>
+          View project
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="m16.288 7.208l-9.765 9.746q-.14.14-.344.13q-.204-.009-.344-.15q-.14-.14-.14-.334t.14-.335L15.58 6.5H6.788q-.212 0-.356-.144t-.144-.357t.144-.356q.144-.143.356-.143h9.693q.343 0 .575.232q.232.232.232.576V16q0 .213-.143.356t-.357.144q-.213 0-.356-.144T16.288 16z"
+            />
+          </svg>
         </Link>
       </div>
     </>

@@ -88,9 +88,11 @@ $color_5: #3dbbed;
   backdrop-filter: blur(10px);
   position: relative;
   border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
   flex-grow: 1;
   flex-basis: 20rem;
-  padding: 2rem;
+  padding: 2rem 2rem 3rem 2rem;
   will-change: transform;
   transform-style: preserve-3d !important;
   transition: 0.3s ease-in-out !important;
@@ -150,15 +152,28 @@ $color_5: #3dbbed;
 
   .project-stack {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 2%;
+    right: 3%;
     color: #cccccc67;
     font-size: 0.8rem;
   }
 
   .project-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
     position: absolute;
-    bottom: 19px;
+    bottom: 40px;
+
+    &:hover {
+      color: white;
+      gap: 6px;
+    }
   }
 
   img {
@@ -166,12 +181,12 @@ $color_5: #3dbbed;
       color: $color_3;
       opacity: 100%;
       transform: translateZ(20px);
-  -webkit-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
-    box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
+      box-shadow: inset 0px 0px 300px 61px rgba(0, 0, 0, 0.75);
     }
     perspective: 1000px;
-  
+
     transition: opacity 0.3s ease;
     opacity: 100%;
     margin-bottom: 1em;

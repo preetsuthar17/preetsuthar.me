@@ -35,9 +35,20 @@ const ProjectDivComponent = () => {
       >
         <div className="project-headers">
           <div className="project-title">
-            <h1>&#47;projects</h1>
+            <h1
+              style={{
+                letterSpacing: "-1px",
+              }}
+            >
+              Projects 🚀
+            </h1>
           </div>
-          <div className="project-header-text">
+          <div
+            className="project-header-text"
+            style={{
+              fontSize: "14px",
+            }}
+          >
             <p>You can view more on my github.</p>
           </div>
         </div>
