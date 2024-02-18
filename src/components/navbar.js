@@ -138,6 +138,19 @@ const Navbar = ({ goback }) => {
             </span>
           </Link>
         </div>
+        <div className="nav_links_only_pc">
+          <ul>
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
+              <Link href="/posts">Blogs</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+          </ul>
+        </div>
         <div className="nav_links">
           <ul>
             {goback && (

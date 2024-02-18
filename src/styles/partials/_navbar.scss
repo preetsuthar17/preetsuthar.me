@@ -5,7 +5,30 @@
   margin: 2rem;
   background-color: #16131b;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
+
+  .nav_links_only_pc {
+    color: white;
+    ul {
+      display: flex;
+      gap: 2rem;
+      li {
+        a {
+          padding: 0;
+          opacity: 80%;
+          font-size: 14px;
+          &:hover {
+            opacity: 100%;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 672px) {
+      display: none;
+    }
+  }
   button {
     &:focus {
       outline: none;
@@ -76,32 +99,23 @@
     }
   }
 }
-
 .sidebar {
   position: fixed;
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  text-align: left;
   top: 0;
   left: 0;
-  background-color: #000000c6;
+  background-color: #000000e7;
   backdrop-filter: blur(10px);
   overflow-x: hidden;
   transition: 0.5s;
-  border-right: 1px #100d14 solid;
-  z-index: 10000;
+  z-index: 9999999;
 
   button {
     width: fit-content;
-    border: none;
-    cursor: pointer;
-    &:focus {
-      outline: none;
-      border: none;
-    }
   }
   .sidebar_close_btn {
     background-color: transparent;
@@ -114,21 +128,30 @@
   }
 
   .sidebar_links {
+    position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: flex-start;
     flex-direction: column;
+    margin: 0 0 0 4rem;
+
+    @media screen and (max-width: 514px) {
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 0 0 1rem;
+    }
 
     .sidebar_link {
       padding: 0.3rem;
-      border-radius: 5px;
-      font-size: 2.7rem;
-      margin: 0.2rem auto;
+      margin: 0.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.184);
+      font-size: 2rem;
       font-weight: bold;
       color: rgba(255, 255, 255, 0.805);
       background-color: transparent;
       text-decoration: none;
       &:hover {
+        background-color: transparent;
         text-decoration: underline;
       }
     }
