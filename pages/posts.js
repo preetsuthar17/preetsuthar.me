@@ -131,15 +131,26 @@ export default function Posts({ posts, tags }) {
         <Navbar />
         <>
           <div id="blog-title" className="blog-div">
-            <div
-            >
+            <div>
               <div className="blog-headers">
                 <div className="blog-title">
-                  <h1>&#47;posts</h1>
+                  <h1
+                    style={{
+                      letterSpacing: "-1px",
+                    }}
+                  >
+                    Posts 📖
+                  </h1>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "white",
+                    }}
+                  >
+                    I also write articles!
+                  </p>
                 </div>
-                <div className="blog-header-text">
-                  <p>I also write articles!</p>
-                </div>
+
                 <div className="blog-search-input">
                   <input
                     style={{ marginTop: "2rem", borderRadius: "5px" }}
@@ -189,7 +200,6 @@ export default function Posts({ posts, tags }) {
               ) : (
                 visiblePosts.map((post, i) => (
                   <div key={i}>
-                  
                     <div key={post.slug} className="blog-card">
                       <div>
                         <Link

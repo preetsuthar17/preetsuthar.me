@@ -25,8 +25,20 @@ const AboutDivComponent = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="about-header">
-          <h1>&#47;about</h1>
-          <p>Uh.. Um.. About me maybe, lol</p>
+          <h1
+            style={{
+              letterSpacing: "-1px",
+            }}
+          >
+            About 👋
+          </h1>
+          <p
+            style={{
+              fontSize: "14px",
+            }}
+          >
+            Uh.. Um.. About me maybe, lol
+          </p>
         </div>
       </motion.div>
       <div className="styled-hr"></div>

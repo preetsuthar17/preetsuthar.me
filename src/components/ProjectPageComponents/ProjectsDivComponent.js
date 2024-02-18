@@ -42,14 +42,15 @@ const ProjectDivComponent = () => {
             >
               Projects 🚀
             </h1>
-          </div>
-          <div
-            className="project-header-text"
-            style={{
-              fontSize: "14px",
-            }}
-          >
-            <p>You can view more on my github.</p>
+
+            <p
+              style={{
+                fontSize: "14px",
+                color: "white",
+              }}
+            >
+              You can view more on my github.
+            </p>
           </div>
         </div>
       </motion.div>
