@@ -4,7 +4,7 @@ $color_2: #fff;
 .footer-div {
   display: flex;
   font-size: 15px;
-  margin: 3rem 2rem !important ;
+  margin: 3rem 1rem !important ;
   border-radius: 15px;
   padding: 3rem 1rem;
   justify-content: space-between;
@@ -36,7 +36,6 @@ $color_2: #fff;
     }
     @media screen and (max-width: 385px) {
       width: auto;
-      
     }
     @media screen and (max-width: 960px) {
       text-align: center;
@@ -52,7 +51,6 @@ $color_2: #fff;
     }
     @media screen and (max-width: 385px) {
       width: auto;
-      
     }
     ul {
       align-items: center;
