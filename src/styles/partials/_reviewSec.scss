@@ -221,7 +221,7 @@ button[type="submit"] {
   animation: fadeIn 1s forwards;
   font-family: $font-family_1 !important;
   flex: 0 0 17rem;
-  height: 17rem;
+  height: 15rem;
   will-change: transform;
   padding: 1rem;
   margin: 1rem 1rem;
@@ -246,7 +246,8 @@ button[type="submit"] {
     }
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
     width: fit-content;
     transition: 1s transform ease;
     font-family: $font-family_1;
@@ -254,15 +255,13 @@ button[type="submit"] {
     animation: fadeIn 0.5s forwards;
     color: $color_1;
     text-transform: capitalize;
-    font-weight: 500;
     text-align: left;
   }
   p {
     color: $color_5;
-
     font-family: $font-family_1;
     animation: fadeIn 1s forwards;
-    font-size: 14px;
+    font-size: 13px;
     transition: 0.5s transform ease;
     margin-top: 2rem;
     margin-bottom: 1rem;
