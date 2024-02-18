@@ -41,7 +41,6 @@ const ReviewsSection = () => {
           variants={fadeInUp}
           transition={{ duration: 0.7 }}
         >
-          <hr />
           <div className="reviews-heading">
             <h2>Happy clients ✨</h2>
           </div>
@@ -73,46 +72,46 @@ const ReviewsSection = () => {
             </>
           </div>
         </motion.div>
+        <p
+          className="p-color"
+          style={{
+            fontSize: "13px",
+            margin: "0 20px",
+          }}
+        >
+          Check out all{" "}
+          <Link
+            href="/testimonials"
+            onClick={playClickSound}
+            style={{
+              color: "white",
+              textDecoration: "none",
+              backgroundColor: "rgba(255, 255, 255, 0.10)",
+              padding: "0 2px",
+              borderRadius: "2px",
+              fontWeight: "500",
+            }}
+          >
+            reviews
+          </Link>{" "}
+          or leave a{" "}
+          <Link
+            href="/reviews"
+            onClick={playClickSound}
+            style={{
+              color: "white",
+              textDecoration: "none",
+              backgroundColor: "rgba(255, 255, 255, 0.10)",
+              padding: "0 2px",
+              borderRadius: "2px",
+              fontWeight: "500",
+            }}
+          >
+            review here
+          </Link>
+          .
+        </p>
       </div>
-      <p
-        className="p-color"
-        style={{
-          fontSize: "13px",
-          margin: "0 20px",
-        }}
-      >
-        Check out all{" "}
-        <Link
-          href="/testimonials"
-          onClick={playClickSound}
-          style={{
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "rgba(255, 255, 255, 0.10)",
-            padding: "0 2px",
-            borderRadius: "2px",
-            fontWeight: "500",
-          }}
-        >
-          reviews
-        </Link>{" "}
-        or leave a{" "}
-        <Link
-          href="/reviews"
-          onClick={playClickSound}
-          style={{
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "rgba(255, 255, 255, 0.10)",
-            padding: "0 2px",
-            borderRadius: "2px",
-            fontWeight: "500",
-          }}
-        >
-          review here
-        </Link>
-        .
-      </p>
     </>
   );
 };
