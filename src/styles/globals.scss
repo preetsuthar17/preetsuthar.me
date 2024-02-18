@@ -123,18 +123,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 hr {
-  opacity: 0.6;
-  border: 0;
-  background: linear-gradient(transparent, red, transparent);
-  border-style: solid;
-  border-bottom-width: 1px;
-  width: 70%;
-  border-top-width: 1px;
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
-  margin-left: auto;
-  margin-right: auto;
+  opacity: 8%;
+  margin: 4rem 0;
 }
 
 .post-top {

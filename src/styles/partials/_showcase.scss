@@ -237,6 +237,7 @@ $color_3: white;
   display: flex;
   justify-content: left;
   margin-top: 15rem;
+  letter-spacing: -1px;
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 0 1rem !important;
@@ -287,6 +288,8 @@ $color_3: white;
   justify-content: left;
   padding: 0 1rem !important;
   align-items: left;
+  letter-spacing: -1px;
+
   will-change: transform;
   margin: 0rem -1rem;
   margin-top: 1rem;

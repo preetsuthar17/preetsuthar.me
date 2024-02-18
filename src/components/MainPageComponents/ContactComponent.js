@@ -27,7 +27,6 @@ const ContactComponent = () => {
           flexDirection: "column",
         }}
       >
-        {" "}
         <motion.div
           ref={ref}
           initial="hidden"

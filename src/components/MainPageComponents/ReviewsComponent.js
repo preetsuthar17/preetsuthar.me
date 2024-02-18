@@ -41,6 +41,10 @@ const ReviewsSection = () => {
           variants={fadeInUp}
           transition={{ duration: 0.7 }}
         >
+          <hr />
+          <div className="reviews-heading">
+            <h2>Happy clients ✨</h2>
+          </div>
           <div className="reviews-container">
             <>
               {" "}
