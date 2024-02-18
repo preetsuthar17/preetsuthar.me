@@ -760,11 +760,29 @@ export default function Post({
                   <Link
                     style={{
                       fontWeight: "500",
+                      fontSize: "15px",
                     }}
                     onClick={playClickSound}
                     href={`/posts/${prevArticleData.slug}`}
                   >
-                    👈 {prevArticleData.title}
+                    <div
+                      style={{
+                        border: "1px solid #cccccc10",
+                        padding: "20px 30px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <p
+                        style={{
+                          color: "#ccc",
+                          opacity: "100%",
+                          fontSize: "13px",
+                        }}
+                      >
+                        Previous page
+                      </p>
+                      {prevArticleData.title}
+                    </div>
                   </Link>
                 )}
               </div>
@@ -773,11 +791,29 @@ export default function Post({
                   <Link
                     style={{
                       fontWeight: "500",
+                      fontSize: "15px",
                     }}
                     onClick={playClickSound}
                     href={`/posts/${nextArticleData.slug}`}
                   >
-                    {nextArticleData.title} 👉
+                    <div
+                      style={{
+                        border: "1px solid #cccccc10",
+                        padding: "20px 30px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <p
+                        style={{
+                          color: "#ccc",
+                          opacity: "100%",
+                          fontSize: "13px",
+                        }}
+                      >
+                        Next page
+                      </p>
+                      {nextArticleData.title}
+                    </div>
                   </Link>
                 )}
               </div>

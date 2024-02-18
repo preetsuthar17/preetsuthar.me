@@ -15,14 +15,17 @@ $background-color_1: #180d23;
   padding: 40px;
   .post-navigation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2rem 0;
     .prev {
+      flex-grow: 1;
       text-align: left;
       width: 20rem;
       margin: 0.3rem;
     }
     .next {
+      flex-grow: 1;
       text-align: right;
       width: 20rem;
       margin: 0.3rem;
@@ -455,28 +458,4 @@ blockquote {
   100% {
     transform: scale(1);
   }
-}
-
-.progress-wheel {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 9;
-  transform: rotate(-90deg);
-}
-
-.progress-wheel circle {
-  stroke-dashoffset: 0;
-  stroke-width: 20%;
-  fill: none;
-}
-
-.progress-wheel .bg {
-  opacity: 0.2;
-  stroke: #bbacc9;
-}
-
-.progress-wheel .progress {
-  stroke: #bbacc9;
-  stroke-dasharray: 0, 1;
 }
