@@ -13,6 +13,35 @@ const ShowcaseProjects = () => {
           <div className="showcase-projects-card">
             <div className="showcase-projects-card-image">
               <Image
+                src="https://i.imgur.com/ljZUo4R.png"
+                width={1920}
+                height={1080}
+                alt="Werktar"
+              />
+            </div>
+            <div className="showcase-projects-card-content">
+              <p>01 —</p>
+              <h2>Werktar</h2>
+              <p>
+                Connect with talented web creators and bring your project to
+                life. Find the perfect freelance writer, editor, designer, or
+                programmer for your needs. Sign up today and start
+                collaborating!
+              </p>
+              <div className="showcase-projects-card-links">
+                <Link
+                  className="primary-btn-main"
+                  href="https://werktar.vercel.app"
+                  target="_blank"
+                >
+                  View Project
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="showcase-projects-card">
+            <div className="showcase-projects-card-image">
+              <Image
                 src="https://i.imgur.com/ceTjZMq.png"
                 width={1920}
                 height={1080}
@@ -20,7 +49,7 @@ const ShowcaseProjects = () => {
               />
             </div>
             <div className="showcase-projects-card-content">
-              <p>01 —</p>
+              <p>02 —</p>
               <h2>AssistifyAI</h2>
               <p>
                 Assistify AI is an Artificial Intelligence which uses COHERE
@@ -48,7 +77,7 @@ const ShowcaseProjects = () => {
               />
             </div>
             <div className="showcase-projects-card-content">
-              <p>02 —</p>
+              <p>03 —</p>
               <h2>Nooderbot</h2>
               <p>
                 Nooder bot is all in one discord bot used to manage your server

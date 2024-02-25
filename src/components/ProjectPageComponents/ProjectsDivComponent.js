@@ -65,6 +65,13 @@ const ProjectDivComponent = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ProjectCard
+              projectName="Werktar"
+              projectImage="https://i.imgur.com/ljZUo4R.png"
+              projectLink="https://werktar.vercel.app"
+              projectStack="NextJs, Supabase, Firebase"
+              projectAbout="Connect with talented web creators and bring your project to life. Find the perfect freelance writer, editor, designer, or programmer for your needs. Sign up today and start collaborating!"
+            />
+            <ProjectCard
               projectName="Assisitify dashboard"
               projectImage="https://i.imgur.com/S3ycVwo.png"
               projectLink="https://assistifyai.org"
