@@ -8,4 +8,4 @@ My personal corner on the internet with blogs and everything.
 - [x] Improve showcase UI
 - [x] Improve projects page
 - [x] Adding timeline to About Me page
-- [] Adding freelancing section maybe?
+- [ ] Adding freelancing section maybe?
