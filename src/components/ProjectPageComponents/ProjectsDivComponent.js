@@ -75,7 +75,7 @@ const ProjectDivComponent = () => {
               projectName="Assisitify dashboard"
               projectImage="https://i.imgur.com/S3ycVwo.png"
               projectLink="https://assistifyai.org"
-              projectStack="NextJs"
+              projectStack="NextJs, Surreal DB, Open AI"
               projectAbout="Assistify AI is an Artificial Intelligence which can help you to process your documents and use them as token to answer your queries, You can choose the AI model you want to use for example GPT4 or Cohere completely for free."
             />
             <ProjectCard
@@ -84,6 +84,13 @@ const ProjectDivComponent = () => {
               projectLink="https://nooderbot.com"
               projectStack="NextJs"
               projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has in built protection from scams and phishing, nooderbot.com is website for the bot built by Preet Suthar."
+            />
+            <ProjectCard
+              projectName="Bidme.bot"
+              projectImage="https://i.imgur.com/SkEKoPn.png"
+              projectLink="https://telegram-bot-website.netlify.app/"
+              projectStack="NextJs"
+              projectAbout="Bidme.bot is a fully automated Telegram, bot system that requires absolutely 0 knowledge for coding, use us to host your auctions with ease! (this is self hosted version of actual site)"
             />
           </motion.div>
         </div>

@@ -95,6 +95,34 @@ const ShowcaseProjects = () => {
               </div>
             </div>
           </div>
+          <div className="showcase-projects-card">
+            <div className="showcase-projects-card-image">
+              <Image
+                src="https://i.imgur.com/tjSxkK1.png"
+                width={1920}
+                height={1080}
+                alt="bidme.bot website"
+              />
+            </div>
+            <div className="showcase-projects-card-content">
+              <p>04 —</p>
+              <h2>Bidme.bot</h2>
+              <p>
+                Bidme.bot is a fully automated Telegram, bot system that
+                requires absolutely 0 knowledge for coding, use us to host your
+                auctions with ease! (this is self hosted version of actual site)
+              </p>
+              <div className="showcase-projects-card-links">
+                <Link
+                  className="primary-btn-main"
+                  target="_blank"
+                  href="https://telegram-bot-website.netlify.app/"
+                >
+                  View Project
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
         <Link
           href="/projects"
