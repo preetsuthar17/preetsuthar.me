@@ -55,9 +55,9 @@ const Showcase = () => {
                         style={{
                           width: "fit-content",
                         }}
-                        href="mailto:preetsutharxd@gmail.com"
+                        href="/preet_suthar_resume.pdf"
                       >
-                        Contact me
+                        My Resume
                       </Link>
                       <Link
                         className="primary-btn-secondary"
