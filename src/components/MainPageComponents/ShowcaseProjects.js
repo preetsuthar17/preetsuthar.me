@@ -70,53 +70,26 @@ const ShowcaseProjects = () => {
           <div className="showcase-projects-card">
             <div className="showcase-projects-card-image">
               <Image
-                src="https://i.imgur.com/hz5bJ67.png"
+                src="https://i.imgur.com/lkd1nWF.png"
                 width={1920}
                 height={1080}
-                alt="Nooderbot website"
+                alt="Snippix website"
               />
             </div>
             <div className="showcase-projects-card-content">
               <p>03 —</p>
-              <h2>Nooderbot</h2>
+              <h2>Snippix</h2>
               <p>
-                Nooder bot is all in one discord bot used to manage your server
-                seamlessly. It has in built protection from scams and phishing,
-                nooderbot.com is website for the bot built by Preet Suthar.
+                Snippix allows you to convert your boring code blocks in
+                beautiful images and let your export as PNG with so many
+                customization options. You can use it right now it's completely
+                free, no watermark and you can share it anywhere you want to!
               </p>
               <div className="showcase-projects-card-links">
                 <Link
                   className="primary-btn-main"
                   target="_blank"
-                  href="https://nooderbot.com"
-                >
-                  View Project
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="showcase-projects-card">
-            <div className="showcase-projects-card-image">
-              <Image
-                src="https://i.imgur.com/tjSxkK1.png"
-                width={1920}
-                height={1080}
-                alt="bidme.bot website"
-              />
-            </div>
-            <div className="showcase-projects-card-content">
-              <p>04 —</p>
-              <h2>Bidme.bot</h2>
-              <p>
-                Bidme.bot is a fully automated Telegram, bot system that
-                requires absolutely 0 knowledge for coding, use us to host your
-                auctions with ease! (this is self hosted version of actual site)
-              </p>
-              <div className="showcase-projects-card-links">
-                <Link
-                  className="primary-btn-main"
-                  target="_blank"
-                  href="https://telegram-bot-website.netlify.app/"
+                  href="https://snippix.netlify.app"
                 >
                   View Project
                 </Link>

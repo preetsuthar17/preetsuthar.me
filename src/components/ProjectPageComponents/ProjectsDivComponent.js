@@ -79,18 +79,11 @@ const ProjectDivComponent = () => {
               projectAbout="Assistify AI is an Artificial Intelligence which can help you to process your documents and use them as token to answer your queries, You can choose the AI model you want to use for example GPT4 or Cohere completely for free."
             />
             <ProjectCard
-              projectName="Nooder Bot Website"
-              projectImage="https://i.imgur.com/SkEKoPn.png"
-              projectLink="https://nooderbot.com"
-              projectStack="NextJs"
-              projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has in built protection from scams and phishing, nooderbot.com is website for the bot built by Preet Suthar."
-            />
-            <ProjectCard
-              projectName="Bidme.bot"
-              projectImage="https://i.imgur.com/SkEKoPn.png"
-              projectLink="https://telegram-bot-website.netlify.app/"
-              projectStack="NextJs"
-              projectAbout="Bidme.bot is a fully automated Telegram, bot system that requires absolutely 0 knowledge for coding, use us to host your auctions with ease! (this is self hosted version of actual site)"
+              projectName="Snippix"
+              projectImage="https://i.imgur.com/S3ycVwo.png"
+              projectLink="https://snippix.netlify.app"
+              projectStack="NextJs, SCSS, React"
+              projectAbout="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. You can use it right now it's completely free, no watermark and you can share it anywhere you want to!"
             />
           </motion.div>
         </div>
@@ -104,6 +97,20 @@ const ProjectDivComponent = () => {
         transition={{ duration: 0.5, delay: 0.7 }}
       >
         <div className="project-container">
+          <ProjectCard
+            projectName="Nooder Bot Website"
+            projectImage="https://i.imgur.com/SkEKoPn.png"
+            projectLink="https://nooderbot.com"
+            projectStack="NextJs"
+            projectAbout="Nooder bot is all in one discord bot used to manage your server seamlessly. It has in built protection from scams and phishing, nooderbot.com is website for the bot built by Preet Suthar."
+          />
+          <ProjectCard
+            projectName="Bidme.bot"
+            projectImage="https://i.imgur.com/SkEKoPn.png"
+            projectLink="https://telegram-bot-website.netlify.app/"
+            projectStack="NextJs"
+            projectAbout="Bidme.bot is a fully automated Telegram, bot system that requires absolutely 0 knowledge for coding, use us to host your auctions with ease! (this is self hosted version of actual site)"
+          />
           <ProjectCard
             projectName="TodoZenith"
             projectLink="https://todozenith.vercel.app/"
