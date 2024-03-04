@@ -1,19 +1,21 @@
-import { FreelancePageHead } from "@/src/components/FreelancePageComponents/FreelancePageHeader"
-import { FreelancePageTestimonials } from "@/src/components/FreelancePageComponents/FreelancePageTestimonials"
-import Footer from "@/src/components/footer"
-import Navbar from "@/src/components/navbar"
+import { FreelancePageHead } from "@/src/components/FreelancePageComponents/FreelancePageHeader";
+import { FreelancePageServices } from "@/src/components/FreelancePageComponents/FreelancePageServices";
+import { FreelancePageTestimonials } from "@/src/components/FreelancePageComponents/FreelancePageTestimonials";
+import Footer from "@/src/components/footer";
+import Navbar from "@/src/components/navbar";
 
 const freelance = () => {
-    return (
-        <>
-        <main>
-                <Navbar/>
-                <FreelancePageHead/>
-                <FreelancePageTestimonials/>
-                <Footer/>
-        </main>
-        </>
-    )
-}
+  return (
+    <>
+      <main>
+        <Navbar />
+        <FreelancePageHead />
+        <FreelancePageTestimonials />
+        <FreelancePageServices />
+        <Footer />
+      </main>
+    </>
+  );
+};
 
-export default freelance
+export default freelance;

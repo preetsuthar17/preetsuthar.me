@@ -77,7 +77,7 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    animation: scroll 540s linear infinite;
+    animation: slide 200s linear infinite;
     .testimonial-card {
       color: white;
       display: flex;
@@ -85,6 +85,7 @@
       height: 15rem;
       border: 1px solid rgba(255, 255, 255, 0.124);
       padding: 1rem;
+      flex-shrink: 0;
       border-radius: 10px;
       flex-direction: column;
       position: relative;
@@ -128,12 +129,49 @@
   }
 }
 
-@keyframes scroll {
+.freelance-page-services {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  h2 {
+    font-size: 1.9rem;
+    letter-spacing: -1px;
+    padding-bottom: 2rem;
+    color: white;
+  }
+  .freelance-page-services-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .freelance-page-services-card {
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+      gap: 12px;
+      padding: 1rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.136);
+      border-radius: 10px;
+      opacity: 85%;
+      flex-grow: 1;
+    }
+  }
+}
+
+@keyframes slide {
   0% {
     transform: translateX(0);
   }
-
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
