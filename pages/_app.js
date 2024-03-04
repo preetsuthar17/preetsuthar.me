@@ -15,6 +15,7 @@ import "../src/styles/partials/_CourseSnackBar.scss";
 import "../src/styles/partials/_CustomCursor.scss";
 import "../src/styles/partials/_EyeFollowingMouse.scss";
 import "../src/styles/partials/_showcase_projects.scss";
+import "../src/styles/partials/_freelancePage.scss"
 import "../src/styles/tokyo-night-dark.css";
 
 import Layout from "@/src/components/Layout";
@@ -31,7 +32,7 @@ export default function App({ Component, pageProps }) {
       transition={{ duration: 0.3, transition: "ease-in" }}
     >
       <Layout>
-        <Head></Head>
+
         <CustomCursor />
         <Component {...pageProps} />
       </Layout>
