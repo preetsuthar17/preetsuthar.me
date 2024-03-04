@@ -1,3 +1,4 @@
+import { FreelancePageContact } from "@/src/components/FreelancePageComponents/FreelancePageContact";
 import { FreelancePageHead } from "@/src/components/FreelancePageComponents/FreelancePageHeader";
 import { FreelancePageServices } from "@/src/components/FreelancePageComponents/FreelancePageServices";
 import { FreelancePageTestimonials } from "@/src/components/FreelancePageComponents/FreelancePageTestimonials";
@@ -12,6 +13,7 @@ const freelance = () => {
         <FreelancePageHead />
         <FreelancePageTestimonials />
         <FreelancePageServices />
+        <FreelancePageContact />
         <Footer />
       </main>
     </>

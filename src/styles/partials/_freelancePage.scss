@@ -45,13 +45,15 @@
 
 .freelancing-page-testimonials {
   margin: 7rem 0;
+  padding: 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.135);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow-x: hidden !important;
   position: relative;
-  width: 70%;
+  width: 80%;
   margin-inline: auto;
   &::before,
   &::after {
@@ -86,7 +88,7 @@
       border: 1px solid rgba(255, 255, 255, 0.124);
       padding: 1rem;
       flex-shrink: 0;
-      border-radius: 10px;
+      border-radius: 7px;
       flex-direction: column;
       position: relative;
       .testimonial-card-header {
@@ -134,8 +136,12 @@
   color: white;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  margin-inline: auto;
   flex-direction: column;
-  margin: 3rem 1rem;
+  margin: 3rem;
+  padding: 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.135);
   gap: 2rem;
   flex-wrap: wrap;
   h2 {
@@ -159,8 +165,53 @@
       gap: 12px;
       padding: 1rem;
       font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.136);
-      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.086);
+      border-radius: 7px;
+      opacity: 85%;
+      flex-grow: 1;
+    }
+  }
+}
+
+.freelance-page-contact {
+  width: 80%;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 7rem;
+  margin-inline: auto;
+
+  padding: 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.135);
+  gap: 2rem;
+  flex-wrap: wrap;
+  h2 {
+    font-size: 1.9rem;
+    letter-spacing: -1px;
+    padding-bottom: 2rem;
+    color: white;
+  }
+  .freelance-page-contact-cards-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .freelance-page-contact-card {
+      flex-direction: column;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      width: 6rem;
+      align-items: center;
+      justify-content: space-evenly;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.086);
+      border-radius: 7px;
       opacity: 85%;
       flex-grow: 1;
     }
