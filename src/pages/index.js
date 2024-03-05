@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Reviews } from "@/components/Reviews";
+import { Projects } from "@/components/Projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,7 @@ const Home = () => {
       <Hero />
       <About ref={aboutRef} />
       <Reviews />
+      <Projects />
     </>
   );
 };
