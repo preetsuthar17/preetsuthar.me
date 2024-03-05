@@ -1,0 +1,113 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 1rem;
+  padding: 2rem 0;
+  .section-1 {
+    width: 100%;
+    p {
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      opacity: 85%;
+    }
+    h3 {
+      font-weight: 900;
+      font-family: var(--switzer-font);
+      font-size: 7rem;
+      margin: 1rem 0;
+      line-height: 60px;
+    }
+
+    @media screen and (max-width: 1121px) {
+      p {
+        font-size: 1.1rem;
+      }
+      h3 {
+        font-size: 5rem;
+        line-height: 60px;
+      }
+    }
+    @media screen and (max-width: 418px) {
+      p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 4.3rem;
+        line-height: 60px;
+      }
+    }
+    @media screen and (max-width: 358px) {
+      p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 3.34em;
+        line-height: 60px;
+      }
+    }
+    @media screen and (max-width: 390px) {
+      p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 3.84em;
+        line-height: 50px;
+      }
+    }
+    @media screen and (max-width: 328px) {
+      p {
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 3.24em;
+        line-height: 50px;
+      }
+    }
+  }
+
+  .section-2 {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    gap: 2rem;
+    .link_section {
+      p {
+        font-family: var(--switzer-font);
+        opacity: 90%;
+        border-bottom: 1px solid var(--background-color-1);
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+      }
+
+      flex-grow: 1;
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        li {
+          a {
+            color: var(--second-text-color-2);
+            font-weight: bold;
+            text-decoration: none;
+            opacity: 85%;
+            &:hover {
+              opacity: 100%;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-3 {
+    padding: 2rem 0;
+    p {
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
