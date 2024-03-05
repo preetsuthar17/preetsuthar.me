@@ -14,8 +14,8 @@ export const About = React.forwardRef((props, ref) => {
         <div className="about-image">
           <Image
             src={preetsuthar_image}
-            width={450}
-            height={450}
+            width={360}
+            height={360}
             priority={true}
             quality={100}
             placeholder="blur"
