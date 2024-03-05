@@ -1,5 +1,5 @@
 {
-  "name": "next-link",
+  "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,57 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@giscus/react": "^2.4.0",
-    "@motionone/utils": "^10.17.0",
-    "@supabase/supabase-js": "^2.26.0",
-    "@types/gsap": "^3.0.0",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "animejs": "^3.2.1",
-    "axios": "^1.6.5",
-    "cors": "^2.8.5",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "express": "^4.18.2",
-    "feed": "^4.2.2",
-    "framer-motion": "^10.16.4",
-    "fs": "^0.0.1-security",
-    "fs-extra": "^11.1.1",
-    "gray-matter": "^4.0.3",
-    "gsap": "^3.12.2",
-    "highlight.js": "^11.9.0",
-    "howler": "^2.2.4",
-    "lodash": "^4.17.21",
-    "markdown-it": "^13.0.2",
-    "next": "^13.4.10",
-    "next-pwa": "^5.6.0",
-    "next-rss": "^1.0.1",
-    "nprogress": "^0.2.0",
-    "path": "^0.12.7",
-    "react": "18.2.0",
-    "react-activity-calendar": "2.2.0",
-    "react-dom": "^18.2.0",
-    "react-github-calendar": "^4.0.1",
-    "react-hook-mighty-mouse": "^1.4.31",
-    "react-icons": "^4.10.1",
-    "react-intersection-observer": "^9.5.4",
-    "react-top-loading-bar": "^2.3.1",
-    "remark": "^14.0.3",
-    "remark-gfm": "^3.0.1",
-    "remark-html": "^15.0.2",
-    "terser-webpack-plugin": "^5.3.10",
-    "tilt.js": "^1.2.1",
-    "vanilla-tilt": "^1.8.1"
-  },
-  "devDependencies": {
-    "@builder.io/partytown": "^0.8.2",
-    "@next/bundle-analyzer": "^14.1.0",
-    "concurrently": "^8.2.2",
-    "depcheck": "^1.4.5",
-    "depcheck-es6": "^0.5.6",
-    "sass": "^1.64.1"
-  },
-  "browser": {
-    "fs": false
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.2"
   }
 }
