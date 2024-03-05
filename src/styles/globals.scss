@@ -61,3 +61,21 @@ html.lenis {
 .orange-color {
   color: #ff7b00;
 }
+
+.text-only-outline {
+  color: var(--black-color);
+  text-shadow: -1px -1px 0 var(--black-color), 1px -1px 0 var(--black-color),
+    -1px 1px 0 var(--black-color), 1px 1px 0 var(--black-color);
+}
+
+@supports (
+  (text-stroke: 1px var(--black-color)) or
+    (-webkit-text-stroke: 1px var(--black-color))
+) {
+  .text-only-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--black-color);
+    text-stroke: 1px var(--black-color);
+    text-shadow: none;
+  }
+}
