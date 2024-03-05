@@ -1,12 +1,16 @@
 import Link from "next/link";
 
 export const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <>
       <footer className="footer">
         <section className="section-1">
           <p>Got a project?</p>
-          <h3>LET'S GET IN TOUCH<span className="orange-color">.</span></h3>
+          <h3>
+            LET'S GET IN TOUCH<span className="orange-color">.</span>
+          </h3>
         </section>
         <section className="section-2">
           <div className="link_section link_section_1">
@@ -61,7 +65,7 @@ export const Footer = () => {
           </div>
         </section>
         <section className="section-3">
-          <p>Made with 💖 by Preet Suthar 2024 </p>
+          <p>Made with 💖 by Preet Suthar - {year} </p>
         </section>
       </footer>
     </>
