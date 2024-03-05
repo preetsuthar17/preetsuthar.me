@@ -1,39 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   return (
-    <Link href={projectLink} target="_blank" className="project-card">
-      <div className="project-card-image">
-        <Image src={image} width={1920} height={1080} />
-      </div>
-      <div className="project-card-content">
-        <p className="project-card-numbering">{numbering} -</p>
-        <h3 className="project-card-heading">{title}</h3>
-        <p className="project-card-content">{content}</p>
-        <Link href={projectLink} className="primary-button" target="_blank">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
-            ></path>
-          </svg>{" "}
-          View project
-        </Link>
-      </div>
-    </Link>
+    <div>
+      <Link href={projectLink} target="_blank" className="project-card">
+        <div className="project-card-image">
+          <Image src={image} width={1920} height={1080} alt={title} />
+        </div>
+        <div className="project-card-content">
+          <p className="project-card-numbering">{numbering} -</p>
+          <h3 className="project-card-heading">{title}</h3>
+          <p className="project-card-content">{content}</p>
+          <Link href={projectLink} className="primary-button" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
+              ></path>
+            </svg>{" "}
+            View project
+          </Link>
+        </div>
+      </Link>
+    </div>
   );
 };
 
 export const Projects = React.forwardRef((props, ref) => {
+  const projectsRef = useRef(null);
+
+  useEffect(() => {
+    const projectsSection = projectsRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.from(".project-card", {
+              y: 100,
+              opacity: 0,
+              stagger: 0.3,
+              scrollTrigger: {
+                trigger: projectsSection,
+                start: "top 80%",
+                end: "bottom bottom",
+                scrub: true,
+              },
+            });
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust the threshold as needed
+    );
+
+    if (projectsSection) {
+      observer.observe(projectsSection);
+    }
+
+    return () => {
+      if (projectsSection) {
+        observer.unobserve(projectsSection);
+      }
+    };
+  }, []);
   return (
-    <section className="projects">
+    <section className="projects" ref={projectsRef}>
       <div className="projects-heading">
         <h2>
           MY WORK <span className="orange-color">.</span>
