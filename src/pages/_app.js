@@ -1,6 +1,9 @@
-import { Layout } from "@/components/Layout";
 import "@/styles/globals.scss";
+import "@/styles/components/_navbar.scss";
+
 import Head from "next/head";
+import { Layout } from "@/components/Layout";
+import { SmoothScroll } from "@/utils/functions/SmoothScroll";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -11,9 +14,11 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <SmoothScroll>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SmoothScroll>
     </>
   );
 }
