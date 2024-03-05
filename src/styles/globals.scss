@@ -1,0 +1,30 @@
+:root {
+  --satoshi-font: "Satoshi", sans-serif;
+  --switzer-font: "Switzer", sans-serif;
+  --clash-font: "Clash Grotesk", sans-serif;
+  --background-color: #10100e;
+  --font-color: #ffffe3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-smooth: always;
+  font-smooth: antialiased;
+  scroll-behavior: smooth !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  -webkit-scroll-behavior: smooth !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+html {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--satoshi-font);
+}
