@@ -6,10 +6,10 @@ export const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar_icon section-1">
+        <section className="navbar_icon section-1">
           <Image src={website_logo} width={50} height={50} />
-        </div>
-        <div className="section-2">
+        </section>
+        <section className="section-2">
           <div className="navbar_links">
             <ul>
               <li className="navbar_link">
@@ -25,7 +25,7 @@ export const Navbar = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </section>
       </nav>
     </>
   );
