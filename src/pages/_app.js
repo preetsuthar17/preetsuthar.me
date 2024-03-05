@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 import "@/styles/components/_navbar.scss";
+import "@/styles/components/_footer.scss";
 import "@/styles/components/_buttons.scss";
 
 import Head from "next/head";
