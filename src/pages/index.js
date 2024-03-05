@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Reviews } from "@/components/Reviews";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +33,7 @@ const Home = () => {
     <>
       <Hero />
       <About ref={aboutRef} />
+      <Reviews />
     </>
   );
 };

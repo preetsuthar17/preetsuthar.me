@@ -4,6 +4,7 @@ import "@/styles/components/_footer.scss";
 import "@/styles/components/_buttons.scss";
 import "@/styles/components/_hero.scss";
 import "@/styles/components/_about.scss";
+import "@/styles/components/_reviews.scss";
 
 import Head from "next/head";
 import { Layout } from "@/components/Layout";
