@@ -33,6 +33,7 @@ html {
 }
 
 body {
+  margin-inline: 1rem;
   min-height: 100vh;
   font-family: var(--satoshi-font);
 }
@@ -55,4 +56,8 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+.orange-color {
+  color: #ff7b00;
 }
