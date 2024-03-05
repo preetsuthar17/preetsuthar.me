@@ -78,3 +78,63 @@ html.lenis {
     text-shadow: none;
   }
 }
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+button {
+  background: unset;
+  border: unset;
+  outline: unset;
+}
+
+.primary-button {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  color: var(--white-color);
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+  border: 2px solid var(--white-color);
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  margin: 2rem 0;
+  font-size: 15px;
+}
+
+.primary-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: var(--background-color-2);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.primary-button:hover::before {
+  scale: 18;
+}
+
+.primary-button:hover {
+  color: #212121;
+  scale: 1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.primary-button:active {
+  scale: 1;
+}
