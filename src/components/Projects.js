@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   return (
     <div>
-      <Link href={projectLink} target="_blank" className="project-card">
+      <Link href={projectLink} className="project-card">
         <div className="project-card-image">
           <Image src={image} width={1920} height={1080} alt={title} />
         </div>
@@ -62,7 +62,7 @@ export const Projects = React.forwardRef((props, ref) => {
           }
         });
       },
-      { threshold: 0.1 } // Adjust the threshold as needed
+      { threshold: 0.1 }
     );
 
     if (projectsSection) {

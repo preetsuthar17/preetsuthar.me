@@ -19,6 +19,7 @@ export const About = React.forwardRef((props, ref) => {
             priority={true}
             quality={100}
             placeholder="blur"
+            alt="Preet Suthar"
           />
         </div>
         <div className="about-text">
