@@ -1,11 +1,13 @@
 import Link from "next/link";
+import React from "react";
 
-export const Footer = () => {
+export const Footer = React.forwardRef((props, ref) => {
   const date = new Date();
   const year = date.getFullYear();
+
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" ref={ref}>
         <section className="section-1">
           <p>Got a project?</p>
           <h3>
@@ -70,4 +72,4 @@ export const Footer = () => {
       </footer>
     </>
   );
-};
+});
