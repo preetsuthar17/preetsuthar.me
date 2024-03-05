@@ -1,6 +1,8 @@
-export const Hero = () => {
+import React from "react";
+
+export const Hero = React.forwardRef((props, ref) => {
   return (
-    <section className="hero">
+    <section className="hero" ref={ref}>
       <div className="section-1">
         <p className="hero-main-heading">
           <span className="text-only-outline">HEY THERE</span>
@@ -16,4 +18,4 @@ export const Hero = () => {
       </div>
     </section>
   );
-};
+});

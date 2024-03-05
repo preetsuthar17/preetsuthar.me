@@ -1,9 +1,9 @@
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 7rem 1rem;
+  padding: 7rem 1rem 10rem 1rem;
+  margin-inline: 1rem;
   text-align: center;
   .section-1 {
     .hero-main-heading {
