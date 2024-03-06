@@ -21,6 +21,7 @@
       font-size: 5rem;
       font-weight: bold;
       font-family: var(--switzer-font);
+      text-wrap: nowrap;
       @media screen and (max-width: 522px) {
         font-size: 3rem;
       }
@@ -47,7 +48,7 @@
         // width: 80%;
         color: var(--first-text-color-1);
         text-decoration: none;
-        padding: 2rem;
+        padding: 1rem;
         cursor: pointer !important;
         &:nth-child(even) {
           flex-direction: row-reverse;
@@ -57,7 +58,7 @@
         }
         .project-card-image {
           img {
-            border-radius: 15px;
+            border-radius: 10px;
             object-fit: cover;
             max-width: 100%;
             height: auto;
