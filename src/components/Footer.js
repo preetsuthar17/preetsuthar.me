@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { Parallax } from "react-scroll-parallax";
 
 export const Footer = React.forwardRef((props, ref) => {
   const date = new Date();
@@ -9,10 +10,12 @@ export const Footer = React.forwardRef((props, ref) => {
     <>
       <footer className="footer" ref={ref}>
         <section className="section-1">
-          <p>Got a project?</p>
-          <h3>
-            LET'S GET IN TOUCH<span className="orange-color">.</span>
-          </h3>
+          <Parallax translateY={[100, -30]}>
+            <p>Got a project?</p>
+            <h3>
+              LET'S GET IN TOUCH<span className="orange-color">.</span>
+            </h3>
+          </Parallax>
         </section>
         <section className="section-2">
           <div className="link_section link_section_1">
