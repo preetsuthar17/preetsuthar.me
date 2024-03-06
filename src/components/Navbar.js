@@ -7,7 +7,7 @@ export const Navbar = () => {
     <>
       <nav className="navbar">
         <section className="navbar_icon section-1">
-          <Image src={website_logo} width={50} height={50} />
+          <Image src={website_logo} width={50} height={50} alt="Preet" />
         </section>
         <section className="section-2">
           <div className="navbar_links">
