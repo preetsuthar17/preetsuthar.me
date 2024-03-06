@@ -1,37 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useState } from "react";
+
+import { ProjectCardCursor } from "./other/ProjectCardCursor";
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
+  const [cursorPosition, setCursorPosition] = useState({ x: null, y: null });
+  const [isHovered, setIsHovered] = useState(false);
+  const [cursorScale, setCursorScale] = useState(0);
+
+  const handleMouseMove = (event) => {
+    setCursorPosition({ x: event.clientX, y: event.clientY });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setCursorScale(1);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setCursorScale(0);
+  };
+
   const handleClick = () => {
     window.open(projectLink, "_blank");
   };
 
   return (
-    <div onClick={handleClick} className="project-card">
-      <div className="project-card-image">
-        <Image src={image} width={1920} height={1080} alt={title} />
-      </div>
-      <div className="project-card-content">
-        <p className="project-card-numbering">{numbering} -</p>
-        <h3 className="project-card-heading">{title}</h3>
-        <p className="project-card-content">{content}</p>
-        <Link href={projectLink} target="_blank" className="primary-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+    <>
+      <div
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
+        className="project-card"
+      >
+        <div className="project-card-image">
+          <Image src={image} width={1920} height={1080} alt={title} />
+        </div>
+        <div className="project-card-content">
+          <p className="project-card-numbering">{numbering} -</p>
+          <h3 className="project-card-heading">{title}</h3>
+          <p className="project-card-content">{content}</p>
+          <Link
+            href={projectLink}
+            target="_blank"
+            className="secondary-button project-card-link"
           >
-            <path
-              fill="currentColor"
-              d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
-            ></path>
-          </svg>{" "}
-          View project
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"
+              ></path>
+            </svg>{" "}
+            View project
+          </Link>
+        </div>
+        {isHovered && (
+          <ProjectCardCursor position={cursorPosition} scale={cursorScale} />
+        )}
       </div>
-    </div>
+    </>
   );
 };
 

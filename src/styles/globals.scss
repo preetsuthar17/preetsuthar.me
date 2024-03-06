@@ -12,6 +12,7 @@
   --second-text-color-1: rgb(57, 54, 50);
   --second-text-color-2: rgb(58, 55, 51);
   --second-text-color-3: rgb(119, 113, 106);
+  --orange-color: #ff7b00;
 }
 
 * {
@@ -58,7 +59,7 @@ html.lenis {
 }
 
 .orange-color {
-  color: #ff7b00;
+  color: var(--orange-color);
 }
 
 .text-only-outline {
@@ -137,4 +138,39 @@ button {
 
 .primary-button:active {
   scale: 1;
+}
+.secondary-button {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 18px;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  margin: 2rem 0;
+  scale: 1;
+  color: #212121;
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+  font-size: 15px;
+}
+
+.secondary-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  z-index: -1;
+  background-color: var(--background-color-2);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  scale: 18;
 }
