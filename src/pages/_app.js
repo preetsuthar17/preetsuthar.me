@@ -6,6 +6,7 @@ import "@/styles/components/_hero.scss";
 import "@/styles/components/_about.scss";
 import "@/styles/components/_reviews.scss";
 import "@/styles/components/_projects.scss";
+import "@/styles/components/_services.scss";
 
 import { Layout } from "@/components/Layout";
 import { SmoothScroll } from "@/utils/functions/SmoothScroll";

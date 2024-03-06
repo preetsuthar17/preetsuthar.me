@@ -4,6 +4,7 @@ import { Reviews } from "@/components/Reviews";
 import { Projects } from "@/components/Projects";
 import Head from "next/head";
 import { ScrollToTopButton } from "@/components/other/ScrollToTopButton";
+import { Services } from "@/components/Services";
 
 const Home = () => {
   return (
@@ -66,6 +67,7 @@ const Home = () => {
       <About />
       <Reviews />
       <Projects />
+      <Services />
       <ScrollToTopButton />
     </>
   );
