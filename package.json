@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next-sitemap --config=next-sitemap.config.mjs && next dev",
+    "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap --config=next-sitemap.config.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,7 +12,6 @@
     "@studio-freight/react-lenis": "^0.0.45",
     "gsap": "^3.12.5",
     "next": "14.1.2",
-    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-scroll": "^1.9.0",
