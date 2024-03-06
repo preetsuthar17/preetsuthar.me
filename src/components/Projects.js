@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   const handleClick = () => {
     window.open(projectLink, "_blank");
@@ -42,11 +48,22 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 };
 
 export const Projects = React.forwardRef((props, ref) => {
+  useEffect(() => {
+    gsap.to(".projects", {
+      borderRadius: "50px 50px 0 0",
+      scrollTrigger: {
+        trigger: ".projects",
+        start: "top 90%",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  });
   return (
     <section className="projects" id="projects">
       <div className="projects-heading">
         <h2>
-          MY WORK <span className="orange-color">.</span>
+          TOP PICKED <span className="orange-color">.</span>
         </h2>
       </div>
       <div className="projects-content">
