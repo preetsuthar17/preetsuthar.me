@@ -1,0 +1,15 @@
+.notFoundPage {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-color-1);
+  border-radius: 20px;
+  color: var(--first-text-color-1);
+  h1 {
+    font-size: clamp(8rem, 15vw, 20rem);
+    font-family: var(--switzer-font);
+    line-height: clamp(4rem, 15vw, 10rem);
+  }
+}
