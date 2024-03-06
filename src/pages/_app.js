@@ -15,11 +15,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <SmoothScroll>
-        <Layout>
-          <Providers>
+        <Providers>
+          <Layout>
             <Component {...pageProps} />
-          </Providers>
-        </Layout>
+          </Layout>
+        </Providers>
       </SmoothScroll>
     </>
   );
