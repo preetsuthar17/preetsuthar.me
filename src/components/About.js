@@ -25,7 +25,17 @@ export const About = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     gsap.to(".about", {
-      borderRadius: "80px 80px 0 0",
+      borderRadius: "40px 40px 0 0",
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 90%",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
+    });
+    gsap.to(".preet-suthar-image", {
+      borderRadius: "10px",
       scrollTrigger: {
         trigger: ".about",
         start: "top 90%",
@@ -58,6 +68,7 @@ export const About = React.forwardRef((props, ref) => {
             priority={true}
             quality={100}
             placeholder="blur"
+            className="preet-suthar-image"
             alt="Preet Suthar"
           />
         </Parallax>
