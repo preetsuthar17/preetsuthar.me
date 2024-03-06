@@ -7,9 +7,9 @@ export const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <section className="navbar_icon section-1">
+        <Link href="/" className="navbar_icon section-1">
           <Image src={website_logo} width={50} height={50} alt="Preet" />
-        </section>
+        </Link>
         <section className="section-2">
           <div className="navbar_links">
             <ul>
