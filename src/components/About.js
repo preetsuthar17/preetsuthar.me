@@ -3,6 +3,11 @@ import preetsuthar_image from "../../public/preetsuthar.webp";
 import React, { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export const About = React.forwardRef((props, ref) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -18,10 +23,23 @@ export const About = React.forwardRef((props, ref) => {
     };
   }, []);
 
+  useEffect(() => {
+    gsap.to(".about", {
+      borderRadius: "80px 80px 0 0",
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 90%",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
+    });
+  });
+
   const parallaxValues = isMobile ? [10, -10] : [50, -50];
 
   return (
-    <section className="about">
+    <Parallax className="about">
       <div className="about-heading">
         <h2>
           ABOUT ME <span className="orange-color">.</span>
@@ -57,6 +75,6 @@ export const About = React.forwardRef((props, ref) => {
           </p>
         </Parallax>
       </div>
-    </section>
+    </Parallax>
   );
 });
