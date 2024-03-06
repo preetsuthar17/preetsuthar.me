@@ -18,13 +18,13 @@ export const Navbar = () => {
                   style={{
                     cursor: "pointer",
                   }}
-                  to="#"
+                  to="about"
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={500}
                 >
-                  Home
+                  About
                 </ScrollLink>
               </li>
               <li className="navbar_link">
@@ -42,7 +42,10 @@ export const Navbar = () => {
                 </ScrollLink>
               </li>
               <li>
-                <Link href="#" className="navbar_contact_button">
+                <Link
+                  href="mailto:preetsutharxd@gmail.com"
+                  className="navbar_contact_button"
+                >
                   Let's talk
                 </Link>
               </li>

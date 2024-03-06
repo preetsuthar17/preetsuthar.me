@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
+import { Link as ScrollLink } from "react-scroll";
 
 export const Footer = React.forwardRef((props, ref) => {
   const date = new Date();
@@ -22,47 +23,105 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <Link href="#">Home</Link>
+                <ScrollLink
+                  to="home"
+                  duration={600}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  smooth={true}
+                  spy={true}
+                  offset={-70}
+                >
+                  Home
+                </ScrollLink>
               </li>
               <li>
-                <Link href="#">About</Link>
+                <ScrollLink
+                  to="about"
+                  duration={600}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  smooth={true}
+                  spy={true}
+                  offset={-70}
+                >
+                  About
+                </ScrollLink>
               </li>
               <li>
-                <Link href="#">Projects</Link>
+                <ScrollLink
+                  to="projects"
+                  duration={600}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  smooth={true}
+                  spy={true}
+                  offset={-70}
+                >
+                  Projects
+                </ScrollLink>
               </li>
               <li>
-                <Link href="#">Services</Link>
+                <ScrollLink
+                  to="services"
+                  duration={600}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  smooth={true}
+                  spy={true}
+                  offset={-70}
+                >
+                  Services
+                </ScrollLink>
               </li>
               <li>
-                <Link href="#">Contact</Link>
+                <ScrollLink
+                  to="contact"
+                  duration={600}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  smooth={true}
+                  spy={true}
+                  offset={-70}
+                >
+                  Contact
+                </ScrollLink>
               </li>
             </ul>
           </div>
           <div className="link_section link_section_2">
-            <p>SOCIAL</p>
+            <p>LET'S CONNECT</p>
             <ul>
               <li>
-                <Link href="#" target="_blank">
+                <Link href="https://github.com/preetsuthar17" target="_blank">
                   GitHub
                 </Link>
               </li>
               <li>
-                <Link href="#" target="_blank">
+                <Link
+                  href="https://linkedin.com/in/preetsuthar17"
+                  target="_blank"
+                >
                   LinkedIn
                 </Link>
               </li>
               <li>
-                <Link href="#" target="_blank">
+                <Link href="mailto:preetsutharxd@gmail.com" target="_blank">
                   Email
                 </Link>
               </li>
               <li>
-                <Link href="#" target="_blank">
+                <Link href="https://dsc.gg/preet" target="_blank">
                   Discord
                 </Link>
               </li>
               <li>
-                <Link href="#" target="_blank">
+                <Link href="https://x.com/preetsuthar17" target="_blank">
                   Twitter (X)
                 </Link>
               </li>

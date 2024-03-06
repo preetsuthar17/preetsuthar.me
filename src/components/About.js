@@ -38,7 +38,7 @@ export const About = React.forwardRef((props, ref) => {
   const parallaxValues = isMobile ? [10, -10] : [50, -50];
 
   return (
-    <Parallax className="about">
+    <Parallax className="about" id="about">
       <div className="about-heading">
         <h2>
           ABOUT ME <span className="orange-color">.</span>
