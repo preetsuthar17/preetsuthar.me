@@ -122,4 +122,15 @@
       font-weight: 700;
     }
   }
+  .section-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    line-height: 6rem;
+    span {
+      font-family: var(--switzer-font);
+      font-size: clamp(5rem, 17vw, 10rem);
+    }
+  }
 }
