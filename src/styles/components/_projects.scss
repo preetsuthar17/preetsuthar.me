@@ -9,6 +9,13 @@
   flex-direction: column;
   padding: 7rem 1rem;
   height: 100%;
+  position: relative;
+  .parallax-rocket {
+    z-index: 1;
+    top: 5%;
+    right: 2%;
+    position: absolute;
+  }
   .projects-heading {
     h2 {
       font-size: 5rem;
@@ -21,6 +28,7 @@
   }
 
   .projects-content {
+    z-index: 2;
     margin-inline: 1rem;
     .projects-cards-lists {
       display: flex;
@@ -40,7 +48,7 @@
         color: var(--first-text-color-1);
         text-decoration: none;
         padding: 2rem;
-        cursor: none !important;
+        cursor: pointer !important;
         &:nth-child(even) {
           flex-direction: row-reverse;
         }

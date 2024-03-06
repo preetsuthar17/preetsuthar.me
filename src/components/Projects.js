@@ -1,42 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useState } from "react";
-
-import { ProjectCardCursor } from "./other/ProjectCardCursor";
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
-  const [cursorPosition, setCursorPosition] = useState({ x: null, y: null });
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorScale, setCursorScale] = useState(0);
-
-  const handleMouseMove = (event) => {
-    setCursorPosition({ x: event.clientX, y: event.clientY });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    setCursorScale(1);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setCursorScale(0);
-  };
-
   const handleClick = () => {
     window.open(projectLink, "_blank");
   };
 
   return (
     <>
-      <div
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleClick}
-        className="project-card"
-      >
+      <div onClick={handleClick} className="project-card">
         <div className="project-card-image">
           <Image src={image} width={1920} height={1080} alt={title} />
         </div>
@@ -63,9 +36,6 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
             View project
           </Link>
         </div>
-        {isHovered && (
-          <ProjectCardCursor position={cursorPosition} scale={cursorScale} />
-        )}
       </div>
     </>
   );
