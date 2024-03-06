@@ -9,13 +9,16 @@ import "@/styles/components/_projects.scss";
 
 import { Layout } from "@/components/Layout";
 import { SmoothScroll } from "@/utils/functions/SmoothScroll";
+import { Providers } from "@/components/Providers";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <SmoothScroll>
         <Layout>
-          <Component {...pageProps} />
+          <Providers>
+            <Component {...pageProps} />
+          </Providers>
         </Layout>
       </SmoothScroll>
     </>
