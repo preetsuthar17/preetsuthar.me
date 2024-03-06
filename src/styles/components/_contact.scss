@@ -52,9 +52,12 @@
       &:nth-child(1) {
         border-top: 1px solid #e5e5e02d;
       }
+      &:last-child {
+        border: none;
+      }
       display: flex;
       justify-content: space-between;
-      padding: 4rem 2rem;
+      padding: 3rem 2rem;
       text-transform: uppercase;
       border-bottom: 1px solid #e5e5e02d;
       align-items: center;
