@@ -31,7 +31,6 @@ export const About = React.forwardRef((props, ref) => {
         start: "top 90%",
         end: "bottom center",
         scrub: true,
-        markers: true,
       },
     });
     gsap.to(".preet-suthar-image", {
