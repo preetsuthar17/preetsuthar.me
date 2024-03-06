@@ -43,7 +43,7 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 
 export const Projects = React.forwardRef((props, ref) => {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="projects-heading">
         <h2>
           MY WORK <span className="orange-color">.</span>

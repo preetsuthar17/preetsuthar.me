@@ -1,5 +1,6 @@
 import Image from "next/image";
 import website_logo from "../../public/website_logo.svg";
+import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
 export const Navbar = () => {
@@ -13,10 +14,32 @@ export const Navbar = () => {
           <div className="navbar_links">
             <ul>
               <li className="navbar_link">
-                <Link href="#">Home</Link>
+                <ScrollLink
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  to="#"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Home
+                </ScrollLink>
               </li>
               <li className="navbar_link">
-                <Link href="#">Projects</Link>
+                <ScrollLink
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={600}
+                >
+                  Projects
+                </ScrollLink>
               </li>
               <li>
                 <Link href="#" className="navbar_contact_button">
