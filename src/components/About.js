@@ -1,9 +1,25 @@
 import Image from "next/image";
 import preetsuthar_image from "../../public/preetsuthar.webp";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 
 export const About = React.forwardRef((props, ref) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 920);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const parallaxValues = isMobile ? [10, -10] : [50, -50];
+
   return (
     <section className="about">
       <div className="about-heading">
@@ -12,7 +28,12 @@ export const About = React.forwardRef((props, ref) => {
         </h2>
       </div>
       <div className="about-content">
-        <Parallax translateX={[-20, 5]} className="about-image">
+        <Parallax
+          translateY={parallaxValues}
+          rotateZ={[10, -10]}
+          speed={4}
+          className="about-image"
+        >
           <Image
             src={preetsuthar_image}
             width={360}
@@ -23,7 +44,7 @@ export const About = React.forwardRef((props, ref) => {
             alt="Preet Suthar"
           />
         </Parallax>
-        <Parallax translateX={[20, -5]} className="about-text">
+        <Parallax translateY={parallaxValues} className="about-text">
           <p>
             Hello! I'm Preet Suthar, a self-taught web developer in India with
             more than two years of experience. I'm 17 years old and I am very
