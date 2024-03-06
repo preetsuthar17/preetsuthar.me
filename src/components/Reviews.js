@@ -1,3 +1,7 @@
+import { Parallax } from "react-scroll-parallax";
+import rocketSvg from "../../public/rocket.svg";
+import Image from "next/image";
+
 const ReviewCard = ({ review }) => {
   return (
     <div className="review-card">
@@ -52,6 +56,19 @@ export const Reviews = () => {
   return (
     <div>
       <section className="reviews">
+        <div className="rocketSvg">
+          <Parallax translateX={[0, 1000]}>
+            <Image
+              src={rocketSvg}
+              className="rocket-image"
+              width={90}
+              style={{
+                transform: "rotate(44deg)",
+              }}
+            />
+          </Parallax>
+        </div>
+
         <div className="reviews-heading">
           <h2>
             REVIEWS <span className="orange-color">.</span>

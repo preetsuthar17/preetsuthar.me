@@ -10,8 +10,16 @@
   padding: 7rem 1rem;
   height: 100%;
   border-radius: 40px 40px 0 0;
+  width: 100%;
+  position: relative;
+  .rocketSvg {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+  }
   .reviews-heading {
     h2 {
+      margin-inline: auto !important;
       font-size: 5rem;
       font-weight: bold;
       font-family: var(--switzer-font);
