@@ -17,6 +17,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-scroll-parallax": "^3.4.5",
+    "react-scrollmagic": "^2.3.0",
     "sass": "^1.71.1"
   }
 }
