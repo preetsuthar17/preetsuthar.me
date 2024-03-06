@@ -59,6 +59,7 @@ export const Reviews = () => {
         <div className="rocketSvg">
           <Parallax translateX={[0, 1000]}>
             <Image
+              alt="Rocket"
               src={rocketSvg}
               className="rocket-image"
               width={90}

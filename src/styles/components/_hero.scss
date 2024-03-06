@@ -52,24 +52,10 @@
       font-size: clamp(2.6rem, 17vw, 8rem);
       font-weight: 900;
     }
-
-    .hero-main-heading-2 {
-      animation: slideIn 1s cubic-bezier(0.96, 0, 0.59, 0.79);
-    }
-    .hero-main-heading-1 {
-      animation: slideIn 1.2s cubic-bezier(0.96, 0, 0.59, 0.79);
-    }
-    @keyframes slideIn {
-      0% {
-        transform: translateY(300px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
   }
   .section-2 {
     padding: 1rem 0;
+    overflow-y: hidden;
     p {
       font-weight: bold;
       opacity: 85%;
