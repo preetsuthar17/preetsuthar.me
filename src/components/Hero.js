@@ -17,11 +17,15 @@ export const Hero = React.forwardRef((props, ref) => {
         ></Parallax>
       </div>
       <div className="section-1">
-        <p className="hero-main-heading">
-          <span className="text-only-outline">HEY THERE</span>
-          <span className="orange-color">,</span>
-        </p>
-        <h1 className="hero-main-heading"> I'M PREET</h1>
+        <div className="heading-div">
+          <p className="hero-main-heading  hero-main-heading-1">
+            <span className="text-only-outline">HEY THERE</span>
+            <span className="orange-color">,</span>
+          </p>
+        </div>
+        <div className="heading-div">
+          <h1 className="hero-main-heading hero-main-heading-2"> I'M PREET</h1>
+        </div>
       </div>
       <div className="section-2">
         <p>
