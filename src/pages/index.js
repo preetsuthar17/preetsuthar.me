@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Reviews } from "@/components/Reviews";
 import { Projects } from "@/components/Projects";
 import Head from "next/head";
-import { ScrollToTopButton } from "@/components/other/scrollToTopButton";
+import { ScrollToTopButton } from "@/components/other/ScrollToTopButton";
 
 const Home = () => {
   return (
