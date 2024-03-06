@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && next-sitemap",
+    "dev": "next-sitemap --config=next-sitemap.config.mjs && next dev",
     "build": "next build",
     "postbuild": "next-sitemap --config=next-sitemap.config.mjs",
     "start": "next start",
