@@ -1,6 +1,7 @@
 import Image from "next/image";
 import preetsuthar_image from "../../public/preetsuthar.webp";
 import React from "react";
+import { Parallax } from "react-scroll-parallax";
 
 export const About = React.forwardRef((props, ref) => {
   return (
@@ -11,7 +12,7 @@ export const About = React.forwardRef((props, ref) => {
         </h2>
       </div>
       <div className="about-content">
-        <div className="about-image">
+        <Parallax translateX={[-20, 5]} className="about-image">
           <Image
             src={preetsuthar_image}
             width={360}
@@ -21,8 +22,8 @@ export const About = React.forwardRef((props, ref) => {
             placeholder="blur"
             alt="Preet Suthar"
           />
-        </div>
-        <div className="about-text">
+        </Parallax>
+        <Parallax translateX={[20, -5]} className="about-text">
           <p>
             Hello! I'm Preet Suthar, a self-taught web developer in India with
             more than two years of experience. I'm 17 years old and I am very
@@ -33,7 +34,7 @@ export const About = React.forwardRef((props, ref) => {
             appealing design. I can help you create a website with the most
             appealing design.
           </p>
-        </div>
+        </Parallax>
       </div>
     </section>
   );
