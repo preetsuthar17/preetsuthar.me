@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   return (
@@ -39,44 +35,8 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 };
 
 export const Projects = React.forwardRef((props, ref) => {
-  const projectsRef = useRef(null);
-
-  useEffect(() => {
-    const projectsSection = projectsRef.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.from(".project-card", {
-              y: 100,
-              opacity: 0,
-              stagger: 0.3,
-              scrollTrigger: {
-                trigger: projectsSection,
-                start: "top 80%",
-                end: "bottom bottom",
-                scrub: true,
-              },
-            });
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (projectsSection) {
-      observer.observe(projectsSection);
-    }
-
-    return () => {
-      if (projectsSection) {
-        observer.unobserve(projectsSection);
-      }
-    };
-  }, []);
   return (
-    <section className="projects" ref={projectsRef}>
+    <section className="projects">
       <div className="projects-heading">
         <h2>
           MY WORK <span className="orange-color">.</span>
