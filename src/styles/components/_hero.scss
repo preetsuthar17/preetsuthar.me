@@ -30,6 +30,14 @@
       opacity: 10%;
       transform: rotate(30deg);
       background: var(--background-color-1);
+      span {
+        display: flex;
+        width: 10px;
+        background-color: red;
+        border-radius: 5rem;
+        height: 150px;
+        z-index: 9999;
+      }
     }
   }
   .section-1 {

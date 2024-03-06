@@ -14,7 +14,9 @@ export const Hero = React.forwardRef((props, ref) => {
           translateY={[50, -100]}
           rotateZ={[0, 360]}
           className="circle-1"
-        ></Parallax>
+        >
+          <span></span>
+        </Parallax>
       </div>
       <div className="section-1">
         <div className="heading-div">
