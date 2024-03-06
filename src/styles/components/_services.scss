@@ -29,7 +29,7 @@
       }
       border-bottom: 1px solid #39363238;
       display: flex;
-      padding: 5rem 1rem;
+      padding: 7rem 1rem;
       position: relative;
       align-items: center;
       flex-wrap: wrap;
@@ -43,9 +43,6 @@
       .service-heading {
         height: 100%;
         width: 60%;
-        @media screen and (max-width: 725px) {
-          width: 100%;
-        }
         h3 {
           font-family: var(--switzer-font);
           font-size: 2.3rem;
@@ -71,11 +68,11 @@
         }
         .service-number {
           position: absolute;
-          font-size: 7rem;
+          font-size: 6rem;
           font-family: var(--switzer-font);
           opacity: 20%;
           right: 10px;
-          bottom: -3px;
+          bottom: 0px;
         }
       }
     }

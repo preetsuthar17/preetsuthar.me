@@ -7,6 +7,8 @@
   height: 100vh;
   border-radius: 40px 40px 0 0;
   background-color: var(--background-color-2);
+  z-index: 2;
+  position: relative;
   .section-1 {
     width: 100%;
     overflow-y: hidden;
