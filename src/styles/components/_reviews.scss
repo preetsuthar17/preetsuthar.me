@@ -20,8 +20,10 @@
       }
     }
   }
+
   .reviews-cards-list {
     display: flex;
+    overflow: auto;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -36,7 +38,7 @@
       border-radius: 10px;
       border: 1px solid rgba(0, 0, 0, 0.116);
       @media screen and (max-width: 368px) {
-        width: auto;
+        width: 19rem;
       }
       .review-header {
         h3 {
