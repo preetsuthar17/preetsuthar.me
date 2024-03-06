@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const Contact = () => {
   useEffect(() => {
     gsap.to(".contact", {
-      borderRadius: "50px 50px 0 0",
+      borderRadius: "30px ",
       scrollTrigger: {
         trigger: ".contact",
         start: "top 90%",

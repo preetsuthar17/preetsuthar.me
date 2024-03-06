@@ -50,7 +50,7 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 export const Projects = React.forwardRef((props, ref) => {
   useEffect(() => {
     gsap.to(".projects", {
-      borderRadius: "50px 50px 0 0",
+      borderRadius: "20px",
       scrollTrigger: {
         trigger: ".projects",
         start: "top 90%",

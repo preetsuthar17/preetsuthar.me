@@ -42,12 +42,15 @@ export const Navbar = () => {
                 </ScrollLink>
               </li>
               <li>
-                <Link
-                  href="mailto:preetsutharxd@gmail.com"
+                <ScrollLink
+                  to="contact"
+                  duration={600}
+                  smooth={true}
                   className="navbar_contact_button"
+                  spy={true}
                 >
                   Let's talk
-                </Link>
+                </ScrollLink>
               </li>
             </ul>
           </div>

@@ -25,7 +25,7 @@ export const About = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     gsap.to(".about", {
-      borderRadius: "40px 40px 0 0",
+      borderRadius: "20px",
       scrollTrigger: {
         trigger: ".about",
         start: "top 90%",
