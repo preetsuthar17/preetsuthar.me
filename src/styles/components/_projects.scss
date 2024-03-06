@@ -39,6 +39,7 @@
         color: var(--first-text-color-1);
         text-decoration: none;
         padding: 2rem;
+        cursor: pointer;
         &:nth-child(even) {
           flex-direction: row-reverse;
         }
