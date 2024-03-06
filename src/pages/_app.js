@@ -1,4 +1,5 @@
 import "@/styles/globals.scss";
+import "@/styles/404.scss";
 import "@/styles/components/_buttons.scss";
 import "@/styles/components/_navbar.scss";
 import "@/styles/components/_hero.scss";
@@ -16,6 +17,12 @@ import { Providers } from "@/components/Providers";
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <svg className="grainy-filter pointer-events-none absolute cursor-none ">
+        <filter id="grainy">
+          <feTurbulence type="turbulence" baseFrequency="0.5"></feTurbulence>
+          <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        </filter>
+      </svg>
       <SmoothScroll>
         <Providers>
           <Layout>
