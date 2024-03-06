@@ -31,6 +31,7 @@ body,
 html {
   background-color: var(--background-color-2);
   color: var(--second-text-color-2);
+  overflow-x: hidden !important;
 }
 
 body {
