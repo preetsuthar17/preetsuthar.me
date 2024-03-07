@@ -3,7 +3,6 @@ import { Hero } from "@/components/Hero";
 import { Reviews } from "@/components/Reviews";
 import { Projects } from "@/components/Projects";
 import Head from "next/head";
-import { ScrollToTopButton } from "@/components/other/ScrollToTopButton";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 
