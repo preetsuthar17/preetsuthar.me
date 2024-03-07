@@ -31,7 +31,7 @@ export const Hero = React.forwardRef((props, ref) => {
       </div>
       <div className="section-2">
         <p>
-          I'm Front-end Developer, Designer & Freelancer, crafting experiences
+          A Freelance Front-end Developer & Designer, crafting experiences
           that exceed expectations.
         </p>
       </div>
