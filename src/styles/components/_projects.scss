@@ -58,7 +58,6 @@
         flex-direction: row;
         gap: 3rem;
         align-items: center;
-        // width: 80%;
         color: var(--first-text-color-1);
         text-decoration: none;
         padding: 1rem;
@@ -70,6 +69,7 @@
 
         @media screen and (max-width: 922px) {
           flex-wrap: wrap !important;
+          gap: 1rem;
         }
 
         .project-card-image {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
@@ -17,7 +17,7 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
     <>
       <div onClick={handleClick} className="project-card">
         <div className="project-card-image">
-          <Image src={image} width={1920} height={1080} alt={title} />
+          <Image src={image} width={1920} height={1080} alt={title} priority={true} quality={100} />
         </div>
         <div className="project-card-content">
           <p className="project-card-numbering">{numbering} -</p>
@@ -48,7 +48,6 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 };
 
 export const Projects = React.forwardRef((props, ref) => {
-  const projectCardListRef = useRef()
   const [isAllProjects, setIsAllProjects] = useState(false)
 
   useEffect(() => {
