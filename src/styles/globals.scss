@@ -61,6 +61,8 @@ body {
   position: absolute;
   pointer-events: none;
   cursor: none;
+  max-width: 100%;
+  height: auto;
 }
 
 html.lenis {
