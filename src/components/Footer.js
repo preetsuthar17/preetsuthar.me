@@ -11,12 +11,10 @@ export const Footer = React.forwardRef((props, ref) => {
     <>
       <footer className="footer" ref={ref}>
         <section className="section-1">
-          <Parallax translateY={[100, -20]}>
-            <p>Got a project?</p>
-            <h3>
-              LET'S GET IN TOUCH<span className="orange-color">.</span>
-            </h3>
-          </Parallax>
+          <p>Got a project?</p>
+          <h3>
+            LET'S GET IN TOUCH<span className="orange-color">.</span>
+          </h3>
         </section>
         <section className="section-2">
           <div className="link_section link_section_1">
