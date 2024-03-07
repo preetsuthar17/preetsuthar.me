@@ -4,19 +4,25 @@ import { EmailTemplate } from "@/components/other/EmailTemplate";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
- const { name, email, subject, description } = req.body;
+  const { name, email, description, budgetAmount, selectedServices } = req.body;
 
- try {
+  try {
     const data = await resend.emails.send({
-      from: "hello@preetsuthar.me",
+      from: "freelance@preetsuthar.me",
       to: `preetsutharxd@gmail.com`,
-      subject: `${subject}`,
-      react: EmailTemplate({ name, email, description })
+      subject: `Mail from ${name}`,
+      react: EmailTemplate({
+        name,
+        email,
+        description,
+        budgetAmount,
+        selectedServices,
+      }),
     });
 
     res.status(200).json(data);
- } catch (error) {
-    console.error(error); 
+  } catch (error) {
+    console.error(error);
     res.status(400).json({ error: error.message });
- }
-};
+  }
+}

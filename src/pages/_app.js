@@ -7,6 +7,7 @@ import "@/styles/components/_about.scss";
 import "@/styles/components/_reviews.scss";
 import "@/styles/components/_projects.scss";
 import "@/styles/components/_services.scss";
+import "@/styles/components/_contact_form.scss";
 import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
 

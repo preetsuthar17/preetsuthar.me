@@ -1,0 +1,82 @@
+.contact-form-wrapper {
+  width: 80vw;
+  > form {
+    width: 100%;
+    font-family: var(--satoshi-font);
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    .invalid {
+      border: 2px solid red;
+    }
+    .service-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      .service-option {
+        border-radius: 5rem;
+        @media screen and (max-width: 655px) {
+          flex-grow: 1;
+        }
+        text-align: center;
+        &::selection {
+          background: transparent;
+        }
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 17px;
+        border: 2px solid var(--background-color-2);
+      }
+
+      .service-option.selected {
+        background-color: var(--background-color-2);
+        color: var(--second-text-color-1);
+      }
+    }
+    button {
+      font-family: var(--satoshi-font);
+      width: fit-content;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      &:hover {
+        gap: 10px;
+      }
+    }
+    label {
+      font-size: 19px;
+      font-weight: bolder;
+      padding: 2rem 0 10px 0;
+    }
+    input {
+      height: 3rem;
+      padding: 12px;
+      font-family: var(--satoshi-font);
+      font-weight: bold;
+      font-size: 17px;
+      border-radius: 10px;
+      border: none;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    textarea {
+      height: 3rem;
+      padding: 12px;
+      font-family: var(--satoshi-font);
+      font-weight: bold;
+      font-size: 17px;
+      border-radius: 10px;
+      border: none;
+      height: 8rem;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
