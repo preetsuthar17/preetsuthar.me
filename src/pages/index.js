@@ -70,7 +70,6 @@ const Home = () => {
       <Projects />
       <Services />
       <Contact />
-      <ScrollToTopButton />
     </>
   );
 };

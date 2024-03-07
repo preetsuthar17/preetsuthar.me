@@ -14,18 +14,14 @@ export const Navbar = () => {
           <div className="navbar_links">
             <ul>
               <li className="navbar_link">
-                <ScrollLink
+                <Link
                   style={{
                     cursor: "pointer",
                   }}
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
+                  href="/"
                 >
-                  About
-                </ScrollLink>
+                  Home
+                </Link>
               </li>
               <li className="navbar_link">
                 <ScrollLink
@@ -33,9 +29,8 @@ export const Navbar = () => {
                     cursor: "pointer",
                   }}
                   to="projects"
-                  spy={true}
                   smooth={true}
-                  offset={-70}
+                  offset={70}
                   duration={600}
                 >
                   Projects
@@ -45,9 +40,9 @@ export const Navbar = () => {
                 <ScrollLink
                   to="contact"
                   duration={600}
+                  offset={0}
                   smooth={true}
                   className="navbar_contact_button"
-                  spy={true}
                 >
                   Let's talk
                 </ScrollLink>

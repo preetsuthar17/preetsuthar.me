@@ -67,7 +67,7 @@ export const Projects = React.forwardRef((props, ref) => {
         </h2>
       </div>
       <div className="projects-content">
-        <div className="projects-cards-lists">
+        <div className="projects-cards-lists ">
           <ProjectCard
             image="https://i.imgur.com/FO5kakY.png"
             title="Snippix"
@@ -91,8 +91,23 @@ export const Projects = React.forwardRef((props, ref) => {
             numbering="3"
             projectLink="https://werktar.vercel.app"
           />
+            <ProjectCard
+            image="https://i.imgur.com/0wptgip.png"
+            title="Nooderbot landing page"
+            content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
+            numbering="5"
+            projectLink="https://nooderbot.com"
+          />
+          <ProjectCard
+            image="https://i.imgur.com/TRwjnli.png"
+            title="Discord bot landing page template"
+            content="Minimal template for a discord bot landing page including so many components and also has multiple pages. Best started website for your next discord bot to increase your reach."
+            numbering="6"
+            projectLink="https://discord-bot-webpage-template.netlify.app/"
+          />
         </div>
       </div>
+        <Link className="primary-button view-all-projects-btn" href="/projects"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.188 17.288L5.5 16.6L15.58 6.5H6.289v-1h11v11h-1V7.208z"/></svg> View all projects </Link>
     </section>
   );
 });

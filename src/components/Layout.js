@@ -1,5 +1,6 @@
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
+import { ScrollToTopButton } from "./other/ScrollToTopButton";
 
 export const Layout = ({ children }) => {
   return (
@@ -7,6 +8,7 @@ export const Layout = ({ children }) => {
       <span id="home"></span>
       <Navbar />
       <main>{children}</main>
+      <ScrollToTopButton/>
       <Footer />
     </>
   );
