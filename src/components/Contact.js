@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { ContactForm } from "./ContactForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,9 @@ export const Contact = () => {
           CONTACT <span className="orange-color">.</span>
         </h2>
       </div>
-
+    <div className="contact-form">
+      <ContactForm/>
+    </div>
       <div className="contact-cards-list">
         <div
           onClick={() => {
