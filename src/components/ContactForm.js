@@ -42,6 +42,16 @@ export const ContactForm = () => {
       selectedServices.length === 0 ||
       !selectedBudget
     ) {
+      if (!name) document.getElementById("name").classList.add("invalid");
+      if (!email)
+        document.getElementById("email-address").classList.add("invalid");
+      if (!description)
+        document.getElementById("description").classList.add("invalid");
+      if (selectedServices.length === 0)
+        document.getElementById("services").classList.add("invalid");
+      if (!selectedBudget)
+        document.getElementById("budget").classList.add("invalid");
+
       setLoading(false);
       toast.error("Please fill all details!");
       return;
@@ -100,7 +110,6 @@ export const ContactForm = () => {
           value={name}
           placeholder="Charles Smith"
           onChange={(e) => setName(e.target.value)}
-          className={!name ? "invalid" : ""}
         />
         <label htmlFor="email-address">
           Email<span className="orange-color">*</span>
@@ -114,7 +123,6 @@ export const ContactForm = () => {
           value={email}
           placeholder="charles.smith@yahoo.com"
           onChange={(e) => setEmail(e.target.value)}
-          className={!email ? "invalid" : ""}
         />
         <label>
           Services <span className="orange-color">*</span>
@@ -181,7 +189,6 @@ export const ContactForm = () => {
           value={description}
           placeholder="brief summary, goals, requirements, etc."
           onChange={(e) => setDescription(e.target.value)}
-          className={!description ? "invalid" : ""}
         />
         {loading ? (
           <button type="submit" className="primary-button">
