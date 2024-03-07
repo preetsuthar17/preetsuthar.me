@@ -85,25 +85,19 @@ const projects = () => {
             numbering="4"
             projectLink="https://werktar.vercel.app"
           />
-          <ProjectCard
-            image="https://i.imgur.com/t3JP8cT.png"
-            title="Werktar"
-            content="Connect with talented web creators and bring your project to life. Find the perfect freelance writer, editor, designer, or programmer for your needs. Sign up today and start collaborating!"
-            numbering="5"
-            projectLink="https://nooderbot.com"
-          />
+
           <ProjectCard
             image="https://i.imgur.com/0wptgip.png"
             title="Nooderbot landing page"
             content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
-            numbering="6"
+            numbering="5"
             projectLink="https://nooderbot.com"
           />
           <ProjectCard
             image="https://i.imgur.com/TRwjnli.png"
             title="Discord bot landing page template"
             content="Minimal template for a discord bot landing page including so many components and also has multiple pages. Best started website for your next discord bot to increase your reach."
-            numbering="7"
+            numbering="6"
             projectLink="https://discord-bot-webpage-template.netlify.app/"
           />
         </div>
