@@ -10,6 +10,14 @@
   background-color: var(--background-color-2);
   z-index: 2;
   position: relative;
+  .shape {
+    // top: 100%;
+    bottom: -10rem;
+    position: absolute;
+    img {
+      transform: rotate(180deg);
+    }
+  }
   .section-1 {
     z-index: 999;
     width: 100%;

@@ -1,21 +1,20 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
+import shape1 from "../assets/shape-1.svg";
+import Image from "next/image";
+
 export const Hero = React.forwardRef((props, ref) => {
   return (
     <section className="hero" ref={ref}>
       <div className="floating-blocks-1">
         <Parallax
           translateY={[-100, 50]}
-          rotateZ={[0, 360]}
-          className="square-1"
-        ></Parallax>
-        <Parallax
-          translateY={[50, -100]}
-          rotateZ={[0, 360]}
-          className="circle-1"
+          rotate={[180, 360]}
+          scale={[0, 3]}
+          className="shape-1"
         >
-          <span></span>
+          <Image src={shape1} />
         </Parallax>
       </div>
       <div className="section-1">
@@ -31,8 +30,8 @@ export const Hero = React.forwardRef((props, ref) => {
       </div>
       <div className="section-2">
         <p>
-          A Freelance Front-end Developer & Designer, crafting experiences
-          that exceed expectations.
+          A Freelance Front-end Developer & Designer, crafting experiences that
+          exceed expectations.
         </p>
       </div>
     </section>

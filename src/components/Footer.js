@@ -3,6 +3,9 @@ import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Link as ScrollLink } from "react-scroll";
 
+import shape from "../assets/shape-1.svg";
+import Image from "next/image";
+
 export const Footer = React.forwardRef((props, ref) => {
   const date = new Date();
   const year = date.getFullYear();
@@ -10,12 +13,16 @@ export const Footer = React.forwardRef((props, ref) => {
   return (
     <>
       <footer className="footer" ref={ref}>
+        <Parallax scale={[0, 10]} className="shape">
+          <Image src={shape} />
+        </Parallax>
         <section className="section-1">
           <p>Got a project?</p>
           <h3>
             LET'S GET IN TOUCH<span className="orange-color">.</span>
           </h3>
         </section>
+
         <section className="section-2">
           <div className="link_section link_section_1">
             <p>EXPLORE</p>

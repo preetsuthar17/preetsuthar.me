@@ -8,39 +8,18 @@
   padding: 8rem 1rem 14rem 1rem;
   text-align: center;
   position: relative;
-  .floating-blocks-1 {
-    .square-1 {
-      left: 10%;
-      top: 10%;
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border-radius: 40px;
-      opacity: 10%;
-      transform: rotate(30deg);
-      background: var(--background-color-1);
-    }
-    .circle-1 {
-      right: 10%;
-      bottom: 10%;
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      opacity: 10%;
-      transform: rotate(30deg);
-      background: var(--background-color-1);
-      span {
-        display: flex;
-        width: 10px;
-        background-color: red;
-        border-radius: 5rem;
-        height: 150px;
-        z-index: 9999;
-      }
+  .shape-1 {
+    top: 60%;
+    right: 0;
+    left: 0;
+    position: absolute;
+    opacity: 70%;
+    img {
+      z-index: 1 !important;
     }
   }
   .section-1 {
+    z-index: 1;
     .heading-div {
       overflow-y: hidden;
     }

@@ -1,5 +1,5 @@
 import { Parallax } from "react-scroll-parallax";
-import rocketSvg from "../../public/rocket.svg";
+import rocketSvg from "../assets/rocket.svg";
 import Image from "next/image";
 
 const ReviewCard = ({ review }) => {

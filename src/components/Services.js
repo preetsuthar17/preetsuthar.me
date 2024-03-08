@@ -1,3 +1,7 @@
+import Image from "next/image";
+import shape from "../assets/shape-1.svg";
+import { Parallax } from "react-scroll-parallax";
+
 const ServiceCard = ({ service }) => {
   return (
     <div className="service-card">
