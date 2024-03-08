@@ -1,6 +1,6 @@
 import Image from "next/image";
 import preetsuthar_image from "../../public/preetsuthar.webp";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 
 import gsap from "gsap";
@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const About = React.forwardRef((props, ref) => {
   const [isMobile, setIsMobile] = useState(false);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,6 +45,17 @@ export const About = React.forwardRef((props, ref) => {
     });
   });
 
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(imageRef.current, {
+        x: (e.clientX - window.innerWidth / 2) / 40,
+        y: (e.clientY - window.innerHeight / 2) / 40,
+        ease: "Power1.easeOut",
+        duration: 1.3,
+      });
+    });
+  }, []);
+
   const parallaxValues = isMobile ? [10, -10] : [50, -50];
 
   return (
@@ -69,6 +81,7 @@ export const About = React.forwardRef((props, ref) => {
             placeholder="blur"
             className="preet-suthar-image"
             alt="Preet Suthar"
+            ref={imageRef}
           />
         </Parallax>
         <Parallax translateY={parallaxValues} className="about-text">

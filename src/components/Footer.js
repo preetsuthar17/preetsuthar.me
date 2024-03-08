@@ -3,18 +3,33 @@ import React from "react";
 import { Parallax } from "react-scroll-parallax";
 import { Link as ScrollLink } from "react-scroll";
 
+import { useEffect, useRef } from "react";
+
+import gsap from "gsap";
+
 import shape from "../assets/shape-1.svg";
 import Image from "next/image";
 
 export const Footer = React.forwardRef((props, ref) => {
   const date = new Date();
   const year = date.getFullYear();
+  const imageRef = useRef(null);
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(imageRef.current, {
+        x: (e.clientX - window.innerWidth / 2) / 40,
+        y: (e.clientY - window.innerHeight / 2) / 40,
+        ease: "Power1.easeOut",
+        duration: 1.3,
+      });
+    });
+  }, []);
 
   return (
     <>
       <footer className="footer" ref={ref}>
         <Parallax scale={[0, 10]} className="shape">
-          <Image src={shape} />
+          <Image ref={imageRef} src={shape} />
         </Parallax>
         <section className="section-1">
           <p>Got a project?</p>

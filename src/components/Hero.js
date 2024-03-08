@@ -4,7 +4,23 @@ import { Parallax } from "react-scroll-parallax";
 import shape1 from "../assets/shape-1.svg";
 import Image from "next/image";
 
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 export const Hero = React.forwardRef((props, ref) => {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      gsap.to(imageRef.current, {
+        x: (e.clientX - window.innerWidth / 2) / 20,
+        y: (e.clientY - window.innerHeight / 2) / 20,
+        ease: "Power1.easeOut",
+        duration: 1.3,
+      });
+    });
+  }, []);
+
   return (
     <section className="hero" ref={ref}>
       <div className="floating-blocks-1">
@@ -14,7 +30,7 @@ export const Hero = React.forwardRef((props, ref) => {
           scale={[0, 3]}
           className="shape-1"
         >
-          <Image src={shape1} />
+          <Image src={shape1} ref={imageRef} />
         </Parallax>
       </div>
       <div className="section-1">
