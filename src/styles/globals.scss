@@ -34,6 +34,11 @@ html {
   overflow-x: hidden !important;
 }
 
+html {
+  overflow-x: hidden !important;
+  background-color: var(--background-color-1);
+}
+
 body {
   min-height: 100vh;
   font-family: var(--satoshi-font);

@@ -5,6 +5,7 @@ import { Projects } from "@/components/Projects";
 import Head from "next/head";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
+import { IntroCurtain } from "@/components/other/IntroCurtain";
 
 const Home = () => {
   return (
@@ -64,6 +65,7 @@ const Home = () => {
         </script>
       </Head>
       <Hero />
+      <IntroCurtain />
       <About />
       <Reviews />
       <Projects />

@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 import "@/styles/404.scss";
+import "@/styles/components/_intro_curtain.scss";
 import "@/styles/components/_buttons.scss";
 import "@/styles/components/_navbar.scss";
 import "@/styles/components/_hero.scss";

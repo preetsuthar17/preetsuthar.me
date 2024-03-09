@@ -1,0 +1,65 @@
+.intro-curtain {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color-1);
+  color: var(--first-text-color-1);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  overflow: hidden;
+  animation: curtainSlideOut 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 1s;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    font-family: var(--switzer-font);
+    letter-spacing: -1px;
+    position: relative;
+    &::before {
+      animation: textUnderline 0.8s ease-in-out forwards;
+      animation-delay: 0.5s;
+      width: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      content: " ";
+      bottom: 0;
+      height: 2px;
+      background-color: var(--first-text-color-1);
+      position: absolute;
+    }
+  }
+  p {
+    letter-spacing: -1px;
+    font-family: var(--switzer-font);
+    font-size: 3rem;
+  }
+}
+
+@keyframes curtainSlideOut {
+  0% {
+    height: 100vh;
+    border-radius: 0;
+  }
+  30% {
+    border-radius: 0 0 10px 10px;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes textUnderline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
