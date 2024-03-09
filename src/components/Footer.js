@@ -4,6 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 import { Link as ScrollLink } from "react-scroll";
 
 import { useEffect, useRef } from "react";
+import { ScrollToTopButton } from "./other/ScrollToTopButton";
 
 import gsap from "gsap";
 
@@ -157,6 +158,8 @@ export const Footer = React.forwardRef((props, ref) => {
             <span className="orange-color">.</span>
           </Parallax>
         </section>
+
+        <ScrollToTopButton />
       </footer>
     </>
   );

@@ -200,22 +200,3 @@ button {
   scale: 18;
 }
 
-.scroll-to-top-button {
-  position: fixed;
-  bottom: 5%;
-  left: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  z-index: 99999;
-  padding: 4px;
-  opacity: 85%;
-  color: var(--black-color);
-  background-color: var(--orange-color);
-  &:hover {
-    opacity: 100%;
-  }
-}
