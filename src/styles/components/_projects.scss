@@ -86,6 +86,10 @@
           flex-direction: column;
           position: relative;
 
+          .project-card-link {
+            cursor: none;
+          }
+
           .project-card-heading {
             font-family: var(--switzer-font);
             font-size: 2rem;
