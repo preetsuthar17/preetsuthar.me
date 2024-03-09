@@ -2,22 +2,45 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { y: "-20%" },
+      {
+        y: "1%",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          scrub: 1,
+        },
+      }
+    );
+  }, []);
+
   const handleClick = () => {
     window.open(projectLink, "_blank");
   };
-
   return (
     <>
       <div onClick={handleClick} className="project-card">
         <div className="project-card-image">
-          <Image src={image} width={1920} height={1080} alt={title} priority={true} quality={100} />
+          <Image
+            src={image}
+            width={1920}
+            height={1080}
+            alt={title}
+            priority={true}
+            quality={100}
+            ref={imageRef}
+          />
         </div>
         <div className="project-card-content">
           <p className="project-card-numbering">{numbering} -</p>
@@ -48,7 +71,7 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 };
 
 export const Projects = React.forwardRef((props, ref) => {
-  const [isAllProjects, setIsAllProjects] = useState(false)
+  const [isAllProjects, setIsAllProjects] = useState(false);
 
   useEffect(() => {
     gsap.to(".projects", {
@@ -63,12 +86,16 @@ export const Projects = React.forwardRef((props, ref) => {
   });
 
   const projectCardsListStyle = {
-    maskImage: `${isAllProjects ? "" : "linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%)"}`
-  }
+    maskImage: `${
+      isAllProjects
+        ? ""
+        : "linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%)"
+    }`,
+  };
 
   const handleViewAllProjects = () => {
-    setIsAllProjects(!isAllProjects)
-  }
+    setIsAllProjects(!isAllProjects);
+  };
   return (
     <section className="projects" id="projects">
       <div className="projects-heading">
@@ -94,46 +121,57 @@ export const Projects = React.forwardRef((props, ref) => {
             numbering="2"
             projectLink="https://assistifyai.org"
           />
-          <ProjectCard
-            image="https://i.imgur.com/0wptgip.png"
-            title="Nooderbot landing page"
-            content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
-            numbering="3"
-            projectLink="https://nooderbot.com"
-          />
-          {
-            isAllProjects && (
-              <>
-                <ProjectCard
-                  image="https://i.imgur.com/t3JP8cT.png"
-                  title="Werktar"
-                  content="Connect with talented web creators and bring your project to life. Find the perfect freelance writer, editor, designer, or programmer for your needs. Sign up today and start collaborating!"
-                  numbering="4"
-                  projectLink="https://werktar.vercel.app"
-                />
-                <ProjectCard
-                  image="https://i.imgur.com/TRwjnli.png"
-                  title="Discord bot landing page template"
-                  content="Minimal template for a discord bot landing page including so many components and also has multiple pages. Best started website for your next discord bot to increase your reach."
-                  numbering="5"
-                  projectLink="https://discord-bot-webpage-template.netlify.app/"
-                />
-              </>
-            )
-          }
 
+          {isAllProjects && (
+            <>
+              <ProjectCard
+                image="https://i.imgur.com/0wptgip.png"
+                title="Nooderbot landing page"
+                content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
+                numbering="3"
+                projectLink="https://nooderbot.com"
+              />
+            </>
+          )}
         </div>
       </div>
-      {
-        isAllProjects ?
-          <span className="primary-button view-all-projects-btn" onClick={handleViewAllProjects}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M11 20V7.825l-5.6 5.6L4 12l8-8l8 8l-1.4 1.425l-5.6-5.6V20z"/></svg>
-            Collapse list </span>
-          :
-          <span className="primary-button view-all-projects-btn" onClick={handleViewAllProjects}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4v12.175l-5.6-5.6L4 12l8 8l8-8l-1.4-1.425l-5.6 5.6V4z" /></svg>
-            Expand list </span>
-      }
+      {isAllProjects ? (
+        <span
+          className="primary-button view-all-projects-btn"
+          onClick={handleViewAllProjects}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M11 20V7.825l-5.6 5.6L4 12l8-8l8 8l-1.4 1.425l-5.6-5.6V20z"
+            />
+          </svg>
+          Collapse list{" "}
+        </span>
+      ) : (
+        <span
+          className="primary-button view-all-projects-btn"
+          onClick={handleViewAllProjects}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M11 4v12.175l-5.6-5.6L4 12l8 8l8-8l-1.4-1.425l-5.6 5.6V4z"
+            />
+          </svg>
+          Expand list{" "}
+        </span>
+      )}
     </section>
   );
 });

@@ -11,13 +11,13 @@
   height: 100%;
   position: relative;
 
-  .view-all-projects-btn{
-    display:flex;
+  .view-all-projects-btn {
+    display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
   }
- 
+
   .parallax-rocket {
     z-index: 1;
     top: 5%;
@@ -43,7 +43,6 @@
     margin-inline: 1rem;
 
     .projects-cards-lists {
-    
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -73,6 +72,7 @@
         }
 
         .project-card-image {
+          overflow: hidden;
           img {
             border-radius: 10px;
             object-fit: cover;
