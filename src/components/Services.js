@@ -48,7 +48,7 @@ export const Services = () => {
   ];
 
   return (
-    <section className="services">
+    <section className="services" id="services">
       <div className="services-heading">
         <h2>
           WHAT I DO<span className="orange-color"> .</span>

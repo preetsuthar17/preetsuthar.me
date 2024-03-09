@@ -1,3 +1,4 @@
+import SmoothScrollLink from "./other/SmoothLinkScroll";
 import Link from "next/link";
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
@@ -43,54 +44,19 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <Link
-                  href="#home"
-                  style={{
-                    cursor: "pointer",
-                  }}
-                >
-                  Home
-                </Link>
+                <SmoothScrollLink href="#home">Home</SmoothScrollLink>
               </li>
               <li>
-                <Link
-                  href="#about"
-                  style={{
-                    cursor: "pointer",
-                  }}
-                >
-                  About
-                </Link>
+                <SmoothScrollLink href="#about">About</SmoothScrollLink>
               </li>
               <li>
-                <Link
-                  href="#projects"
-                  style={{
-                    cursor: "pointer",
-                  }}
-                >
-                  Projects
-                </Link>
+                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
               </li>
               <li>
-                <Link
-                  href="#services"
-                  style={{
-                    cursor: "pointer",
-                  }}
-                >
-                  Services
-                </Link>
+                <SmoothScrollLink href="#services">Services</SmoothScrollLink>
               </li>
               <li>
-                <Link
-                  href="#contact"
-                  style={{
-                    cursor: "pointer",
-                  }}
-                >
-                  Contact
-                </Link>
+                <SmoothScrollLink href="#contact">Contact</SmoothScrollLink>
               </li>
             </ul>
           </div>

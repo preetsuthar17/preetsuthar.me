@@ -1,14 +1,8 @@
-import Link from "next/link";
+import SmoothScrollLink from "./SmoothLinkScroll";
 
 export const ScrollToTopButton = () => {
   return (
-    <Link
-      href="#home"
-      style={{
-        cursor: "pointer",
-      }}
-      className="scroll-to-top-button"
-    >
+    <SmoothScrollLink href="#home" className="scroll-to-top-button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -20,6 +14,6 @@ export const ScrollToTopButton = () => {
           d="M11 20V7.825l-5.6 5.6L4 12l8-8l8 8l-1.4 1.425l-5.6-5.6V20z"
         />
       </svg>
-    </Link>
+    </SmoothScrollLink>
   );
 };

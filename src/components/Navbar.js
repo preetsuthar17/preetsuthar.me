@@ -1,6 +1,7 @@
 import Image from "next/image";
 import website_logo from "../../public/website_logo.svg";
 import Link from "next/link";
+import SmoothScrollLink from "./other/SmoothLinkScroll";
 
 export const Navbar = () => {
   return (
@@ -13,24 +14,10 @@ export const Navbar = () => {
           <div className="navbar_links">
             <ul>
               <li className="navbar_link">
-                <Link
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  href="/"
-                >
-                  Home
-                </Link>
+                <SmoothScrollLink href="#">Home</SmoothScrollLink>
               </li>
               <li className="navbar_link">
-                <Link
-                  style={{
-                    cursor: "pointer",
-                  }}
-                  href="#projects"
-                >
-                  Projects
-                </Link>
+                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
               </li>
               <li>
                 <Link href="#contact" className="navbar_contact_button">

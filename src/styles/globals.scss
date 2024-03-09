@@ -73,6 +73,10 @@ html.lenis body {
   scroll-behavior: auto !important;
 }
 
+.lenis.lenis-smooth a {
+  scroll-behavior: smooth !important;
+}
+
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
@@ -84,6 +88,7 @@ html.lenis body {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
 .orange-color {
   color: var(--orange-color);
 }
