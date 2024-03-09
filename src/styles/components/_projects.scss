@@ -62,7 +62,16 @@
         padding: 1rem;
         cursor: none !important;
 
-        &:nth-child(even) {
+        &:nth-child(3) {
+          flex-direction: row-reverse;
+        }
+        &:nth-child(4) {
+          flex-direction: row-reverse;
+        }
+        &:nth-child(6) {
+          flex-direction: row-reverse;
+        }
+        &:nth-child(8) {
           flex-direction: row-reverse;
         }
 

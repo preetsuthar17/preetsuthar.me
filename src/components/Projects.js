@@ -175,7 +175,7 @@ export const Projects = React.forwardRef((props, ref) => {
             projectLink="https://snippix.netlify.app"
           />
           <ProjectCard
-            image="https://i.imgur.com/3k0ngtQ.png"
+            image="https://i.imgur.com/38Gz1g3.png"
             title="Assistify AI"
             content="Assistify AI is an Artificial Intelligence which uses COHERE
                 services to allows users to process documents and use top notch
@@ -187,7 +187,7 @@ export const Projects = React.forwardRef((props, ref) => {
           {isAllProjects && (
             <>
               <ProjectCard
-                image="https://i.imgur.com/0wptgip.png"
+                image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot landing page"
                 content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
                 numbering="3"
