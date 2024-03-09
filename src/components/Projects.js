@@ -68,7 +68,7 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
             width={1920}
             height={1080}
             alt={title}
-            priority={true}
+            loading="lazy"
             quality={100}
             ref={imageRef}
           />
