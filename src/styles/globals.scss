@@ -65,26 +65,6 @@ body {
   height: auto;
 }
 
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
 .orange-color {
   color: var(--orange-color);
 }
@@ -199,4 +179,3 @@ button {
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   scale: 18;
 }
-

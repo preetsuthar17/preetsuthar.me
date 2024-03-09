@@ -1,6 +1,5 @@
 import Image from "next/image";
 import website_logo from "../../public/website_logo.svg";
-import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
 export const Navbar = () => {
@@ -8,7 +7,7 @@ export const Navbar = () => {
     <>
       <nav className="navbar">
         <Link href="/" className="navbar_icon section-1">
-          <Image src={website_logo} width={50} height={50} alt="Preet" />
+          <Image src={website_logo} width={50} height={50} alt="Preet Suthar" />
         </Link>
         <section className="section-2">
           <div className="navbar_links">
@@ -24,28 +23,19 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar_link">
-                <ScrollLink
+                <Link
                   style={{
                     cursor: "pointer",
                   }}
-                  to="projects"
-                  smooth={true}
-                  offset={70}
-                  duration={600}
+                  href="#projects"
                 >
                   Projects
-                </ScrollLink>
+                </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="contact"
-                  duration={600}
-                  offset={0}
-                  smooth={true}
-                  className="navbar_contact_button"
-                >
+                <Link href="#contact" className="navbar_contact_button">
                   Let's talk
-                </ScrollLink>
+                </Link>
               </li>
             </ul>
           </div>

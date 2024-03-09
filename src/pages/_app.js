@@ -12,7 +12,6 @@ import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
 
 import { Layout } from "@/components/Layout";
-import { SmoothScroll } from "@/utils/functions/SmoothScroll";
 import { Providers } from "@/components/Providers";
 
 export default function App({ Component, pageProps }) {
@@ -24,13 +23,11 @@ export default function App({ Component, pageProps }) {
           <feColorMatrix type="saturate" values="0"></feColorMatrix>
         </filter>
       </svg>
-      <SmoothScroll>
-        <Providers>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Providers>
-      </SmoothScroll>
+      <Providers>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Providers>
     </>
   );
 }

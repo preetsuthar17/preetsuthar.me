@@ -30,7 +30,7 @@ export const Hero = React.forwardRef((props, ref) => {
           scale={[0, 3]}
           className="shape-1"
         >
-          <Image src={shape1} ref={imageRef} />
+          <Image src={shape1} ref={imageRef} alt="Parallax Shape" />
         </Parallax>
       </div>
       <div className="section-1">

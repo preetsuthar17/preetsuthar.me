@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
-import { Link as ScrollLink } from "react-scroll";
 
 import { useEffect, useRef } from "react";
 import { ScrollToTopButton } from "./other/ScrollToTopButton";
@@ -30,7 +29,7 @@ export const Footer = React.forwardRef((props, ref) => {
     <>
       <footer className="footer" ref={ref}>
         <Parallax scale={[0, 10]} className="shape">
-          <Image ref={imageRef} src={shape} />
+          <Image ref={imageRef} src={shape} alt="Parallax Shape" />
         </Parallax>
         <section className="section-1">
           <p>Got a project?</p>
@@ -44,74 +43,58 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <ScrollLink
-                  to="home"
-                  duration={600}
+                <Link
+                  href="#home"
                   style={{
                     cursor: "pointer",
                   }}
-                  smooth={true}
-                  spy={true}
-                  offset={-70}
                 >
                   Home
-                </ScrollLink>
+                </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="about"
-                  duration={600}
+                <Link
+                  href="#about"
                   style={{
                     cursor: "pointer",
                   }}
                   smooth={true}
-                  spy={true}
-                  offset={-70}
                 >
                   About
-                </ScrollLink>
+                </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="projects"
-                  duration={600}
+                <Link
+                  href="#projects"
                   style={{
                     cursor: "pointer",
                   }}
                   smooth={true}
-                  spy={true}
-                  offset={-70}
                 >
                   Projects
-                </ScrollLink>
+                </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="services"
-                  duration={600}
+                <Link
+                  href="#services"
                   style={{
                     cursor: "pointer",
                   }}
                   smooth={true}
-                  spy={true}
-                  offset={-70}
                 >
                   Services
-                </ScrollLink>
+                </Link>
               </li>
               <li>
-                <ScrollLink
-                  to="contact"
-                  duration={600}
+                <Link
+                  href="#contact"
                   style={{
                     cursor: "pointer",
                   }}
                   smooth={true}
-                  spy={true}
-                  offset={-70}
                 >
                   Contact
-                </ScrollLink>
+                </Link>
               </li>
             </ul>
           </div>
