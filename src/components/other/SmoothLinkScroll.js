@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 
-const SmoothScrollLink = ({ href, children }) => {
+const SmoothScrollLink = ({ href, children, className }) => {
   const linkRef = useRef(null);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ const SmoothScrollLink = ({ href, children }) => {
     <Link
       href={href}
       ref={linkRef}
+      className={className}
       style={{
         cursor: "pointer",
       }}
