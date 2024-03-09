@@ -46,8 +46,14 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-
       .project-card {
+        &:nth-child(3) {
+          flex-direction: row-reverse !important;
+        }
+        &:nth-child(5) {
+          flex-direction: row-reverse !important;
+        }
+
         margin-inline: auto;
         overflow: hidden !important;
         display: flex;
@@ -61,19 +67,6 @@
         text-decoration: none;
         padding: 1rem;
         cursor: none !important;
-
-        &:nth-child(3) {
-          flex-direction: row-reverse;
-        }
-        &:nth-child(4) {
-          flex-direction: row-reverse;
-        }
-        &:nth-child(6) {
-          flex-direction: row-reverse;
-        }
-        &:nth-child(8) {
-          flex-direction: row-reverse;
-        }
 
         @media screen and (max-width: 922px) {
           flex-wrap: wrap !important;
@@ -94,7 +87,7 @@
           display: flex;
           flex-direction: column;
           position: relative;
-
+          width: 100%;
           .project-card-link {
             cursor: none;
           }

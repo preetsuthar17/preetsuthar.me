@@ -170,27 +170,33 @@ export const Projects = React.forwardRef((props, ref) => {
           <ProjectCard
             image="https://i.imgur.com/FO5kakY.png"
             title="Snippix"
-            content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. You can use it right now it's completely free, no watermark and you can share it anywhere you want to!"
+            content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
             numbering="1"
             projectLink="https://snippix.netlify.app"
           />
           <ProjectCard
             image="https://i.imgur.com/38Gz1g3.png"
             title="Assistify AI"
-            content="Assistify AI is an Artificial Intelligence which uses COHERE
-                services to allows users to process documents and use top notch
-                models like COHERE and GPT4 to talk with documents."
+            content="Assistify is an Artificial Intelligence which uses COHERE
+                services to allows users to process documents and use top notch AI
+                models to talk with documents."
             numbering="2"
             projectLink="https://assistifyai.org"
           />
-
+          <ProjectCard
+            image="https://i.imgur.com/F8uNCoz.png"
+            title="Ayaan Designs"
+            content="A collaborative project with Product Designer, Ayaan. I developed a website to showcase his portfolio, using modern web technologies to ensure visual appeal and robust functionality."
+            numbering="3"
+            projectLink="https://ayaandesigns.xyz/"
+          />
           {isAllProjects && (
             <>
               <ProjectCard
                 image="https://i.imgur.com/wfTWOVk.png"
-                title="Nooderbot landing page"
-                content="Nooderbot landing page was a freelancing work. Nooderbot is a all in one discord bot to manage your server completely. The developer wanted me to create the landing page fot this discord bot. with the new design website interaction and traffic increased by 60%."
-                numbering="3"
+                title="Nooderbot Landing Page"
+                content="A freelance project to develop a landing page for Nooderbot, a comprehensive Discord bot. The new design enhanced user interaction and increased website traffic by 60%."
+                numbering="4"
                 projectLink="https://nooderbot.com"
               />
             </>
