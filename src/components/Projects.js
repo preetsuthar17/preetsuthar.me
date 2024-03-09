@@ -10,6 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   const imageRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -23,14 +26,42 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
         },
       }
     );
+
+    const handleMouseMove = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
+
+  useEffect(() => {
+    if (cursorRef.current) {
+      gsap.to(cursorRef.current, {
+        x: cursorPosition.x,
+        y: cursorPosition.y,
+        scale: isHovered ? 2 : 0,
+        duration: 0.3,
+        transform: "translate(-50%, -50%)",
+      });
+    }
+  }, [cursorPosition, isHovered]);
 
   const handleClick = () => {
     window.open(projectLink, "_blank");
   };
+
   return (
     <>
-      <div onClick={handleClick} className="project-card">
+      <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleClick}
+        className="project-card"
+      >
         <div className="project-card-image">
           <Image
             src={image}
@@ -65,6 +96,37 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
             View project
           </Link>
         </div>
+      </div>
+      <div
+        ref={cursorRef}
+        className="project-card-custom-cursor"
+        style={{
+          position: "fixed",
+          pointerEvents: "none",
+          left: 0,
+          top: 0,
+          width: "40px",
+          height: "40px",
+          borderRadius: "50%",
+          backgroundColor: "#ff7b00",
+          zIndex: 9999,
+          color: "black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M6.188 17.288L5.5 16.6L15.58 6.5H6.289v-1h11v11h-1V7.208z"
+          />
+        </svg>
       </div>
     </>
   );
