@@ -12,6 +12,7 @@ import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
 
 import { Layout } from "@/components/Layout";
+import ReactLenis from "@studio-freight/react-lenis";
 import { Providers } from "@/components/Providers";
 
 export default function App({ Component, pageProps }) {
@@ -24,9 +25,20 @@ export default function App({ Component, pageProps }) {
         </filter>
       </svg>
       <Providers>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ReactLenis
+          root
+          options={{
+            duration: 1.5,
+            SmoothScroll: true,
+            smoothWheel: true,
+            syncTouch: true,
+            smoothTouch: true,
+          }}
+        >
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ReactLenis>
       </Providers>
     </>
   );
