@@ -58,7 +58,6 @@ export const Footer = React.forwardRef((props, ref) => {
                   style={{
                     cursor: "pointer",
                   }}
-                  smooth={true}
                 >
                   About
                 </Link>
@@ -69,7 +68,6 @@ export const Footer = React.forwardRef((props, ref) => {
                   style={{
                     cursor: "pointer",
                   }}
-                  smooth={true}
                 >
                   Projects
                 </Link>
@@ -80,7 +78,6 @@ export const Footer = React.forwardRef((props, ref) => {
                   style={{
                     cursor: "pointer",
                   }}
-                  smooth={true}
                 >
                   Services
                 </Link>
@@ -91,7 +88,6 @@ export const Footer = React.forwardRef((props, ref) => {
                   style={{
                     cursor: "pointer",
                   }}
-                  smooth={true}
                 >
                   Contact
                 </Link>
