@@ -13,8 +13,9 @@
   .contact-heading {
     h2 {
       font-size: 5rem;
-      font-weight: bold;
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      font-family: var(--poppins-font);
+      letter-spacing: -2px;
       @media screen and (max-width: 522px) {
         font-size: 3rem;
       }
@@ -64,7 +65,8 @@
       align-items: center;
       font-size: 1.4rem;
       font-weight: bold;
-      font-family: var(--switzer-font);
+      font-family: var(--poppins-font);
+      // letter-spacing: -2px;
       .contact-icon {
         z-index: 2;
         svg {

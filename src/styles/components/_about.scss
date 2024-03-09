@@ -12,8 +12,9 @@
   .about-heading {
     h2 {
       font-size: 5rem;
-      font-weight: bold;
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      font-family: var(--poppins-font);
+      letter-spacing: -2px;
       @media screen and (max-width: 522px) {
         font-size: 3rem;
       }
@@ -44,7 +45,7 @@
       }
       p {
         opacity: 85%;
-        font-size: 23px;
+        font-size: 22px;
         @media screen and (max-width: 522px) {
           font-size: 18px;
         }

@@ -48,8 +48,9 @@
       opacity: 85%;
     }
     h3 {
-      font-weight: 900;
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      font-family: var(--poppins-font);
+      letter-spacing: -2px;
       font-size: 6rem;
       margin: 1rem 0;
       line-height: 60px;
@@ -118,7 +119,8 @@
     gap: 2rem;
     .link_section {
       p {
-        font-family: var(--switzer-font);
+        font-weight: 800;
+        font-family: var(--poppins-font);
         opacity: 90%;
         border-bottom: 1px solid var(--background-color-1);
         padding: 0.5rem 0;
@@ -160,7 +162,8 @@
     flex-direction: row;
     line-height: 6rem;
     span {
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      font-family: var(--poppins-font);
       font-size: clamp(5rem, 17vw, 10rem);
     }
   }

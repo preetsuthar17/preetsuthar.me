@@ -21,8 +21,9 @@
     h2 {
       margin-inline: auto !important;
       font-size: 5rem;
-      font-weight: bold;
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      letter-spacing: -2px;
+      font-family: var(--poppins-font);
       @media screen and (max-width: 522px) {
         font-size: 3rem;
       }

@@ -25,7 +25,8 @@
     }
     .hero-main-heading {
       line-height: clamp(3rem, 17vw, 8rem);
-      font-family: var(--switzer-font);
+      font-weight: 800;
+      font-family: var(--poppins-font);
       text-wrap: nowrap;
       padding: 0 2rem;
       font-size: clamp(2.6rem, 17vw, 8rem);

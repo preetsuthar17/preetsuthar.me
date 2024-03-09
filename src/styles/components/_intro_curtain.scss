@@ -19,8 +19,9 @@
     font-size: 3rem;
     font-weight: normal;
     text-transform: capitalize;
-    font-family: var(--switzer-font);
-    letter-spacing: -1px;
+    font-family: var(--poppins-font);
+    letter-spacing: -2px;
+    font-weight: 700;
     position: relative;
     &::before {
       animation: textUnderline 0.8s ease-in-out forwards;
@@ -37,7 +38,8 @@
   }
   p {
     letter-spacing: -1px;
-    font-family: var(--switzer-font);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
     font-size: 3rem;
   }
 }
