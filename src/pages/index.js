@@ -46,6 +46,20 @@ const Home = () => {
           content="My personal portfolio website."
         />{" "}
         <meta name="subject" content="web development" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Z16QM0TSSW');
+            `,
+          }}
+        />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
