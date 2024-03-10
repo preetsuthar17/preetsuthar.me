@@ -14,17 +14,24 @@ export const Navbar = () => {
           <div className="navbar_links">
             <ul>
               <li className="navbar_link">
-                <SmoothScrollLink href="#">Home</SmoothScrollLink>
+                <SmoothScrollLink href="#" className="transforming-link">
+                  <span>Home</span>
+                  <span>Home</span>
+                </SmoothScrollLink>
               </li>
               <li className="navbar_link">
-                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
+                <SmoothScrollLink
+                  href="#projects"
+                  className="transforming-link"
+                >
+                  <span>Projects</span>
+                  <span>Projects</span>
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink
-                  href="#contact"
-                  className="navbar_contact_button"
-                >
-                  Let's talk
+                <SmoothScrollLink href="#contact" className="transforming-link">
+                  <span>Let's talk</span>
+                  <span>Let's talk</span>
                 </SmoothScrollLink>
               </li>
             </ul>

@@ -44,19 +44,40 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <SmoothScrollLink href="#home">Home</SmoothScrollLink>
+                <SmoothScrollLink className="transforming-link" href="#home">
+                  <span>Home</span>
+                  <span>Home</span>
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#about">About</SmoothScrollLink>
+                <SmoothScrollLink className="transforming-link" href="#about">
+                  <span>About</span>
+                  <span>About</span>
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
+                <SmoothScrollLink
+                  className="transforming-link"
+                  href="#projects"
+                >
+                  <span>Projects</span>
+                  <span>Projects</span>
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#services">Services</SmoothScrollLink>
+                <SmoothScrollLink
+                  className="transforming-link"
+                  href="#services"
+                >
+                  <span>Services</span>
+                  <span>Services</span>
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#contact">Contact</SmoothScrollLink>
+                <SmoothScrollLink className="transforming-link" href="#contact">
+                  <span>Contact</span>
+                  <span>Contact</span>
+                </SmoothScrollLink>
               </li>
             </ul>
           </div>
@@ -64,31 +85,53 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>LET'S CONNECT</p>
             <ul>
               <li>
-                <Link href="https://github.com/preetsuthar17" target="_blank">
-                  GitHub
+                <Link
+                  className="transforming-link"
+                  href="https://github.com/preetsuthar17"
+                  target="_blank"
+                >
+                  <span>GitHub</span>
+                  <span>GitHub</span>
                 </Link>
               </li>
               <li>
                 <Link
+                  className="transforming-link"
                   href="https://linkedin.com/in/preetsuthar17"
                   target="_blank"
                 >
-                  LinkedIn
+                  <span>LinkedIn</span>
+                  <span>LinkedIn</span>
                 </Link>
               </li>
               <li>
-                <Link href="mailto:preetsutharxd@gmail.com" target="_blank">
-                  Email
+                <Link
+                  className="transforming-link"
+                  href="mailto:preetsutharxd@gmail.com"
+                  target="_blank"
+                >
+                  <span>Email</span>
+                  <span>Email</span>
                 </Link>
               </li>
               <li>
-                <Link href="https://dsc.gg/preet" target="_blank">
-                  Discord
+                <Link
+                  className="transforming-link"
+                  href="https://dsc.gg/preet"
+                  target="_blank"
+                >
+                  <span>Discord</span>
+                  <span>Discord</span>
                 </Link>
               </li>
               <li>
-                <Link href="https://x.com/preetsuthar17" target="_blank">
-                  Twitter (X)
+                <Link
+                  className="transforming-link"
+                  href="https://x.com/preetsuthar17"
+                  target="_blank"
+                >
+                  <span>Twitter (X)</span>
+                  <span>Twitter (X)</span>
                 </Link>
               </li>
             </ul>
