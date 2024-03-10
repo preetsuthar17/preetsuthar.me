@@ -46,21 +46,17 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      .project-card {
-        &:nth-child(3) {
-          flex-direction: row-reverse !important;
-        }
-        &:nth-child(5) {
-          flex-direction: row-reverse !important;
-        }
 
+      .project-card:nth-child(even) {
+        flex-direction: row-reverse !important;
+      }
+      .project-card {
         margin-inline: auto;
         overflow: hidden !important;
         display: flex;
         border: 1px solid #ddddd22e;
         border-radius: 10px;
         justify-content: space-between;
-        flex-direction: row;
         gap: 3rem;
         align-items: center;
         color: var(--first-text-color-1);
