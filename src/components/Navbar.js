@@ -20,9 +20,12 @@ export const Navbar = () => {
                 <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
               </li>
               <li>
-                <Link href="#contact" className="navbar_contact_button">
+                <SmoothScrollLink
+                  href="#contact"
+                  className="navbar_contact_button"
+                >
                   Let's talk
-                </Link>
+                </SmoothScrollLink>
               </li>
             </ul>
           </div>
