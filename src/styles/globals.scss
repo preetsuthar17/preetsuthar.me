@@ -213,11 +213,10 @@ button {
 .transforming-link {
   display: flex;
   flex-direction: column;
-  // border: 1px solid red;
   position: relative;
   height: 20px;
-  width: 6rem;
   overflow: hidden;
+  width: 6rem;
   perspective: 1000px;
   span {
     transition: 0.9s all cubic-bezier(0.16, 1, 0.3, 1);
@@ -226,13 +225,13 @@ button {
   }
   &:hover {
     span:nth-child(1) {
-      transform: rotateX(40deg) translateY(-25px);
+      transform: rotateX(40deg) translateY(-30px);
     }
     span:nth-child(2) {
       transform: translateY(0px);
     }
   }
   span:nth-child(2) {
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
 }

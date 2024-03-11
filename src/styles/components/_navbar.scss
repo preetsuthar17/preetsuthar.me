@@ -11,6 +11,24 @@
     }
   }
   .section-2 {
+    display: flex;
+    gap: 15px;
+    align-items:center;
+    justify-content: space-between;
+    .open_for_work {
+      @media screen and (max-width:322px) {
+        display:none;
+      }
+      opacity: 85%;
+      display:flex; 
+      align-items: center;
+      a{
+        padding: 6px 10px;
+        font-size: 14px;  
+        border-radius: 5rem;
+        border: 1px solid var(--second-text-color-3);
+      }
+    }
     .navbar_links {
       ul {
         display: flex;
@@ -18,11 +36,6 @@
         flex-direction: column;
         gap: 8px;
 
-        .navbar_link {
-          @media screen and (max-width: 367px) {
-            display: none;
-          }
-        }
         li {
           a {
             color: var(--second-text-color-2);
