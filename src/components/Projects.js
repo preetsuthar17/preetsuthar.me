@@ -186,18 +186,16 @@ export const Projects = React.forwardRef((props, ref) => {
             numbering="3"
             projectLink="https://snippix.netlify.app"
           />
-          <ProjectCard
-            image="https://i.imgur.com/38Gz1g3.png"
-            title="Assistify AI"
-            content="Assistify is an Artificial Intelligence which uses COHERE
-                services to allows users to process documents and use top notch AI
-                models to talk with documents."
-            numbering="4"
-            projectLink="https://assistifyai.org"
-          />
 
           {isAllProjects && (
             <>
+              <ProjectCard
+                image="https://i.imgur.com/38Gz1g3.png"
+                title="Assistify AI"
+                content="Assistify is an Artificial Intelligence which uses COHERE services to allows users to process documents and use top notch AI models to talk with documents."
+                numbering="4"
+                projectLink="https://assistifyai.org"
+              />
               <ProjectCard
                 image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot Landing Page"
