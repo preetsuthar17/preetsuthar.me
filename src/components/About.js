@@ -47,7 +47,7 @@ export const About = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
-      gsap.to(imageRef.current, {
+      gsap.to(imageRef?.current, {
         x: (e.clientX - window.innerWidth / 2) / 40,
         y: (e.clientY - window.innerHeight / 2) / 40,
         ease: "Power1.easeOut",
