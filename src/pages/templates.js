@@ -6,7 +6,6 @@ const templates = () => {
     <>
       <Head>
         <title>
-          {" "}
           Templates ✨ | Buy ready to use website templates with very affordable
           price.
         </title>
