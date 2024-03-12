@@ -11,6 +11,7 @@ import "@/styles/components/_services.scss";
 import "@/styles/components/_contact_form.scss";
 import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
+import "@/styles/components/_templates.scss";
 
 import { Layout } from "@/components/Layout";
 import ReactLenis from "@studio-freight/react-lenis";

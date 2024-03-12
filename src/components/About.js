@@ -5,6 +5,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,6 +96,9 @@ export const About = React.forwardRef((props, ref) => {
             appealing design. I can help you create a website with the most
             appealing design.
           </p>
+          <Link href="/templates" className="primary-button">
+            Get Website Templates
+          </Link>
         </Parallax>
       </div>
     </Parallax>
