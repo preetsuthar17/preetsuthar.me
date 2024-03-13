@@ -137,9 +137,6 @@ export const Footer = React.forwardRef((props, ref) => {
             </ul>
           </div>
         </section>
-        // <section className="section-3">
-        //   <p>Made with 💖 by Preet Suthar - {year} </p>
-        // </section>
         <section className="section-4">
           <Parallax translateY={[50, -70]}>
             <span className="text-only-outline">PREET</span>
