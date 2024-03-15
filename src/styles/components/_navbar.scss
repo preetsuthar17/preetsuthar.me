@@ -13,29 +13,56 @@
   .section-2 {
     display: flex;
     gap: 15px;
-    align-items:center;
+    align-items: center;
     justify-content: space-between;
     .open_for_work {
-      @media screen and (max-width:322px) {
-        display:none;
-      }
-      opacity: 85%;
-      display:flex; 
+      display: flex;
       align-items: center;
-      a{
+      position: relative;
+      a {
         padding: 6px 10px;
-        font-size: 14px;  
+        font-size: 14px;
         border-radius: 5rem;
+        text-decoration: none;
         border: 1px solid var(--second-text-color-3);
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1) color;
+
+        &:hover {
+          text-decoration: none !important;
+        }
+        &:hover {
+          color: var(--first-text-color-1);
+        }
+        span {
+          z-index: 2 !important;
+          position: relative;
+          text-decoration: none;
+        }
+        &::before {
+          width: 100%;
+          z-index: 1;
+          bottom: 0;
+          content: "";
+          height: 0;
+          background-color: var(--background-color-1);
+          border-radius: 80% 80% 0 0;
+          left: 0;
+          position: absolute;
+          transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1) height;
+        }
+        &:hover::before {
+          height: 120%;
+        }
       }
     }
     .navbar_links {
       ul {
         display: flex;
         list-style: none;
-        flex-direction: column;
-        gap: 8px;
-
+        align-items: center;
+        gap: 15px;
         li {
           a {
             color: var(--second-text-color-2);

@@ -44,40 +44,19 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <SmoothScrollLink className="transforming-link" href="#home">
-                  <span>Home</span>
-                  <span>Home</span>
-                </SmoothScrollLink>
+                <SmoothScrollLink href="#home">Home</SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink className="transforming-link" href="#about">
-                  <span>About</span>
-                  <span>About</span>
-                </SmoothScrollLink>
+                <SmoothScrollLink href="#about">About</SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink
-                  className="transforming-link"
-                  href="#projects"
-                >
-                  <span>Projects</span>
-                  <span>Projects</span>
-                </SmoothScrollLink>
+                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink
-                  className="transforming-link"
-                  href="#services"
-                >
-                  <span>Services</span>
-                  <span>Services</span>
-                </SmoothScrollLink>
+                <SmoothScrollLink href="#services">Services</SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink className="transforming-link" href="#contact">
-                  <span>Contact</span>
-                  <span>Contact</span>
-                </SmoothScrollLink>
+                <SmoothScrollLink href="#contact">Contact</SmoothScrollLink>
               </li>
             </ul>
           </div>
@@ -85,60 +64,38 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>LET'S CONNECT</p>
             <ul>
               <li>
-                <Link
-                  className="transforming-link"
-                  href="https://github.com/preetsuthar17"
-                  target="_blank"
-                >
-                  <span>GitHub</span>
-                  <span>GitHub</span>
+                <Link href="https://github.com/preetsuthar17" target="_blank">
+                  GitHub
                 </Link>
               </li>
               <li>
                 <Link
-                  className="transforming-link"
                   href="https://linkedin.com/in/preetsuthar17"
                   target="_blank"
                 >
-                  <span>LinkedIn</span>
-                  <span>LinkedIn</span>
+                  LinkedIn
                 </Link>
               </li>
               <li>
-                <Link
-                  className="transforming-link"
-                  href="mailto:preetsutharxd@gmail.com"
-                  target="_blank"
-                >
-                  <span>Email</span>
-                  <span>Email</span>
+                <Link href="mailto:preetsutharxd@gmail.com" target="_blank">
+                  Email
                 </Link>
               </li>
               <li>
-                <Link
-                  className="transforming-link"
-                  href="https://dsc.gg/preet"
-                  target="_blank"
-                >
-                  <span>Discord</span>
-                  <span>Discord</span>
+                <Link href="https://dsc.gg/preet" target="_blank">
+                  Discord
                 </Link>
               </li>
               <li>
-                <Link
-                  className="transforming-link"
-                  href="https://x.com/preetsuthar17"
-                  target="_blank"
-                >
-                  <span>Twitter (X)</span>
-                  <span>Twitter (X)</span>
+                <Link href="https://x.com/preetsuthar17" target="_blank">
+                  Twitter (X)
                 </Link>
               </li>
             </ul>
           </div>
         </section>
         <section className="section-3">
-           <p>Made with 💖 by Preet Suthar - {year} </p>
+          <p>Made with 💖 by Preet Suthar - {year} </p>
         </section>
         <section className="section-4">
           <Parallax translateY={[50, -70]}>
