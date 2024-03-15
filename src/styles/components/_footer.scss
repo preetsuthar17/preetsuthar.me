@@ -160,10 +160,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
     flex-direction: row;
-    line-height: 6rem;
     span {
       font-weight: 800;
+      line-height: clamp(5rem, 17vw, 10rem);
       font-family: var(--poppins-font);
       font-size: clamp(5rem, 17vw, 10rem);
     }
