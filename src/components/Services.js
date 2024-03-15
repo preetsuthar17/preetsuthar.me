@@ -2,7 +2,7 @@ const ServiceCard = ({ service }) => {
   return (
     <div className="service-card">
       <div className="service-heading">
-        <h3 className="service-title">{service.title}</h3>
+        <h3 className="service-title">✦ {service.title}</h3>
         <p className="service-description">{service.description}</p>
       </div>
       <div className="service-content">
@@ -58,6 +58,23 @@ export const Services = () => {
         {services.map((service, index) => (
           <ServiceCard key={index} service={{ ...service }} />
         ))}
+      </div>
+      <div className="services-tilted-text">
+        <div className="scrolling-text">
+          <div>
+            <p>
+              &nbsp;&nbsp;&nbsp;WE BUILD EXPERIENCES
+              &nbsp;&nbsp;✦&nbsp;&nbsp;IMPROVE YOUR
+              DESIGN&nbsp;&nbsp;✦&nbsp;&nbsp;MAKE IT STUNNING
+            </p>
+          </div>
+          <div>
+            <p>
+              ✦&nbsp;&nbsp;WE BUILD EXPERIENCES&nbsp;&nbsp;✦&nbsp;&nbsp;IMPROVE
+              YOUR DESIGN&nbsp;&nbsp;✦&nbsp;&nbsp;MAKE IT STUNNING
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

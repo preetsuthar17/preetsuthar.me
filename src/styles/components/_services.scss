@@ -23,6 +23,53 @@
       }
     }
   }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-40%);
+    }
+  }
+  .services-tilted-text {
+    display: flex;
+    flex-direction: row;
+    transform: rotate(-1deg);
+    width: 101%;
+    overflow: hidden;
+    background-color: var(--orange-color);
+    gap: 3rem;
+
+    .scrolling-text {
+      display: flex;
+      flex-direction: row;
+      animation: scroll 30s linear infinite;
+      gap: 1rem;
+      > div {
+        display: flex;
+      }
+    }
+    p {
+      display: flex;
+      color: var(--white-color);
+      padding: 1rem 0;
+      margin-inline: auto;
+      font-size: 2rem;
+      flex-wrap: nowrap;
+      word-wrap: normal;
+      text-wrap: nowrap;
+      @media screen and (max-width: 1234px) {
+        font-size: 1.6rem;
+      }
+      @media screen and (max-width: 932px) {
+        font-size: 1.2rem;
+      }
+      @media screen and (max-width: 700px) {
+        font-size: 1rem;
+      }
+    }
+  }
   .services-cards-lists {
     display: flex;
     z-index: 4 !important;
@@ -49,6 +96,9 @@
         height: 100%;
         width: 60%;
         h3 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
           font-weight: 800;
           font-family: var(--poppins-font);
           font-size: 2.2rem;
