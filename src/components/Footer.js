@@ -138,7 +138,7 @@ export const Footer = React.forwardRef((props, ref) => {
           </div>
         </section>
         <section className="section-3">
-          <p>Made with 💖 by Preet Suthar - {year} </p>
+           <p>Made with 💖 by Preet Suthar - {year} </p>
         </section>
         <section className="section-4">
           <Parallax translateY={[50, -70]}>
