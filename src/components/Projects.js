@@ -166,41 +166,48 @@ export const Projects = React.forwardRef((props, ref) => {
       <div className="projects-content">
         <div className="projects-cards-lists" style={projectCardsListStyle}>
           <ProjectCard
+            image="https://i.imgur.com/sSuswrq.png"
+            title="Modern portfolio template"
+            content="A modern portfolio website template with multiple sections such as About, Contact, Specialties, etc. It contains Smooth Animations and beautiful custom cursor, with stunning UI."
+            numbering="1"
+            projectLink="https://portfolio-template-v3.netlify.app"
+          />
+          <ProjectCard
             image="https://i.imgur.com/TWXkv4D.png"
             title="Vultrex Website"
             content="A freelance project to develop the Vultrex website, delivered within a tight 3-day deadline. The website showcases Vultrex's services and capabilities, enhancing its online presence."
-            numbering="1"
+            numbering="2"
             projectLink="https://beta.vultrex.dev/"
           />
           <ProjectCard
             image="https://i.imgur.com/F8uNCoz.png"
             title="Ayaan Designs"
             content="A collaborative project with Product Designer, Ayaan. I developed a website to showcase his portfolio, using modern web technologies to ensure visual appeal and robust functionality."
-            numbering="2"
-            projectLink="https://ayaandesigns.xyz/"
-          />
-          <ProjectCard
-            image="https://i.imgur.com/FO5kakY.png"
-            title="Snippix"
-            content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
             numbering="3"
-            projectLink="https://snippix.netlify.app"
+            projectLink="https://ayaandesigns.xyz/"
           />
 
           {isAllProjects && (
             <>
               <ProjectCard
+                image="https://i.imgur.com/FO5kakY.png"
+                title="Snippix"
+                content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
+                numbering="4"
+                projectLink="https://snippix.netlify.app"
+              />
+              <ProjectCard
                 image="https://i.imgur.com/38Gz1g3.png"
                 title="Assistify AI"
                 content="Assistify is an Artificial Intelligence which uses COHERE services to allows users to process documents and use top notch AI models to talk with documents."
-                numbering="4"
+                numbering="5"
                 projectLink="https://assistifyai.org"
               />
               <ProjectCard
                 image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot Landing Page"
                 content="A freelance project to develop a landing page for Nooderbot, a comprehensive Discord bot. The new design enhanced user interaction and increased website traffic by 60%."
-                numbering="5"
+                numbering="6"
                 projectLink="https://nooderbot.com"
               />
             </>
