@@ -17,6 +17,11 @@ const ReviewCard = ({ review }) => {
 export const Reviews = () => {
   const reviews = [
     {
+      user: "Sophia",
+      title: "Back-end developer",
+      content: `I sent him a design file I had been working on and within 2 hours he had written the front end code down to the pixel. Genuinely incredible work and I would highly recommend for web development projects.`,
+    },
+    {
       user: "Axel",
       title: "Back-end developer",
       content: `The best web developer who is working with me. We both connected on
