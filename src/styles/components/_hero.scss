@@ -15,9 +15,10 @@
     bottom: 5%;
     right: 5%;
     p {
-      border: 1px solid var(--background-color-1);
+      border: 1px solid rgba(0, 0, 0, 0.221);
       border-radius: 50rem;
       padding: 10px;
+      opacity: 85%;
       font-size: 13px;
       display: flex;
       align-items: center;
