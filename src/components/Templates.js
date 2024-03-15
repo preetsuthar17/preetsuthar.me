@@ -24,7 +24,9 @@ const TemplateCard = ({ template }) => {
       <div className="template-content">
         <h2 className="template-title">{template.title}</h2>
         <p className="template-description">{template.description}</p>
-        <span className="template-price">{template.price}</span>
+        <span className="template-price">
+          {template.price} <s>$130</s>
+        </span>
         <Link className="primary-button" href={template.buyLink}>
           Buy now
         </Link>
@@ -38,20 +40,29 @@ export const Templates = () => {
     {
       title: "Portfolio v1",
       description:
+        "A modern portfolio website template with multiple sections such as About, Contact, Specialties, etc. It contains Smooth Animations and beautiful custom cursor, with stunning UI.",
+      image: "https://i.imgur.com/pTpQq0g.png",
+      gifImage: "https://i.imgur.com/kA7RJRy.gif",
+      buyLink: "https://dsc.gg/preet",
+      price: "$80",
+    },
+    {
+      title: "Portfolio v2",
+      description:
         "Elevate your creative prowess with our sleek, modern portfolio template.More than 5 section to showcasing your unique skills and work.",
       image: "https://i.imgur.com/Erf9nJ2.png",
       gifImage: "https://i.imgur.com/oc6dlzD.gif",
       buyLink: "https://dsc.gg/preet",
-      price: "$100",
+      price: "$80",
     },
     {
-      title: "Portfolio v2",
+      title: "Portfolio v3",
       description:
         "Maximize your potential with Portfolio v2, a template designed for UI/UX designers. Showcase your work and skills professionally with its sleek, modern design.",
       image: "https://i.imgur.com/BYkxs29.png",
       gifImage: "https://i.imgur.com/N6uIXOs.gif",
       buyLink: "https://dsc.gg/preet",
-      price: "$100",
+      price: "$80",
     },
   ];
   return (

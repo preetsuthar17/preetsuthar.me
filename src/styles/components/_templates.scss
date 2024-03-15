@@ -65,8 +65,12 @@
           font-size: 1.2rem;
           font-family: var(--poppins-font);
           font-weight: bolder;
-          opacity: 40%;
+          opacity: 80%;
           right: 1rem;
+          s {
+            font-weight: lighter;
+            font-size: 13px;
+          }
         }
         position: relative;
       }
