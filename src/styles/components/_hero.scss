@@ -8,6 +8,24 @@
   padding: 8rem 1rem 14rem 1rem;
   text-align: center;
   position: relative;
+  .available-for-work {
+    margin: 0 2rem;
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    p {
+      border: 1px solid var(--background-color-1);
+      border-radius: 50rem;
+      padding: 10px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--poppins-font);
+      font-weight: 700;
+    }
+  }
   .shape-1 {
     top: 60%;
     right: 0;
