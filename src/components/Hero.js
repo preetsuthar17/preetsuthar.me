@@ -3,7 +3,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import shape1 from "../assets/shape-1.svg";
 import Image from "next/image";
-
+import SmoothScrollLink from "./other/SmoothLinkScroll";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -35,7 +35,7 @@ export const Hero = React.forwardRef((props, ref) => {
       </div>
       <div className="section-1">
         <div className="heading-div">
-          <div className="available-for-work">
+          <SmoothScrollLink href="#contact" className="available-for-work ">
             <p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ export const Hero = React.forwardRef((props, ref) => {
               </svg>{" "}
               AVAILABLE FOR NEW PROJECT
             </p>
-          </div>
+          </SmoothScrollLink>
           <p className="hero-main-heading  hero-main-heading-1">
             <span className="text-only-outline">HEY THERE</span>
             <span className="orange-color">,</span>
