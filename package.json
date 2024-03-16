@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "partytown copylib public/~partytown & next dev",
+    "build": "partytown copylib public/~partytown & next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.0",
     "@studio-freight/react-lenis": "^0.0.45",
     "gsap": "^3.12.5",
     "next": "14.1.2",
