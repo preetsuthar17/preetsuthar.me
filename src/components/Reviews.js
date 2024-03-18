@@ -22,6 +22,11 @@ export const Reviews = () => {
       content: `I sent him a design file I had been working on and within 2 hours he had written the front end code down to the pixel. Genuinely incredible work and I would highly recommend for web development projects.`,
     },
     {
+      user: "ThunderDoesDev",
+      title: "Back-end developer",
+      content: `Preet created a stunning portfolio website for me, blending functionality with design beautifully. Quick, communicative, and skilled, he's highly recommended for impactful online presences.`,
+    },
+    {
       user: "Axel",
       title: "Back-end developer",
       content: `The best web developer who is working with me. We both connected on
