@@ -97,7 +97,7 @@ export const About = React.forwardRef((props, ref) => {
             appealing design.
           </p>
           <Link href="/templates" className="primary-button">
-            Get Website Templates
+            Buy Beautiful Websites
           </Link>
         </Parallax>
       </div>
