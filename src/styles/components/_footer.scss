@@ -5,7 +5,7 @@
   margin-inline: 1rem;
   overflow: hidden;
   padding: 0 1rem;
-  height: 100vh;
+  height: 100dvh;
   border-radius: 40px 40px 0 0;
   background-color: var(--background-color-2);
   z-index: 2;
@@ -34,6 +34,7 @@
   .shape {
     // top: 100%;
     bottom: -10rem;
+    z-index: -1;
     position: absolute;
     img {
       transform: rotate(180deg);
