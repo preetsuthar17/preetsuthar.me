@@ -44,19 +44,29 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>EXPLORE</p>
             <ul>
               <li>
-                <SmoothScrollLink href="#home">Home</SmoothScrollLink>
+                <SmoothScrollLink dataLink="Home" href="#home">
+                  Home
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#about">About</SmoothScrollLink>
+                <SmoothScrollLink dataLink="About" href="#about">
+                  About
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#projects">Projects</SmoothScrollLink>
+                <SmoothScrollLink dataLink="Projects" href="#projects">
+                  Projects
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#services">Services</SmoothScrollLink>
+                <SmoothScrollLink dataLink="Services" href="#services">
+                  Services
+                </SmoothScrollLink>
               </li>
               <li>
-                <SmoothScrollLink href="#contact">Contact</SmoothScrollLink>
+                <SmoothScrollLink dataLink="Contact" href="#contact">
+                  Contact
+                </SmoothScrollLink>
               </li>
             </ul>
           </div>
@@ -64,12 +74,17 @@ export const Footer = React.forwardRef((props, ref) => {
             <p>LET'S CONNECT</p>
             <ul>
               <li>
-                <Link href="https://github.com/preetsuthar17" target="_blank">
+                <Link
+                  data-link="Github"
+                  href="https://github.com/preetsuthar17"
+                  target="_blank"
+                >
                   GitHub
                 </Link>
               </li>
               <li>
                 <Link
+                  data-link="LinkedIn"
                   href="https://linkedin.com/in/preetsuthar17"
                   target="_blank"
                 >
@@ -77,18 +92,30 @@ export const Footer = React.forwardRef((props, ref) => {
                 </Link>
               </li>
               <li>
-                <Link href="mailto:preetsutharxd@gmail.com" target="_blank">
+                <Link
+                  data-link="Email"
+                  href="mailto:preetsutharxd@gmail.com"
+                  target="_blank"
+                >
                   Email
                 </Link>
               </li>
               <li>
-                <Link href="https://dsc.gg/preet" target="_blank">
+                <Link
+                  data-link="Discord"
+                  href="https://dsc.gg/preet"
+                  target="_blank"
+                >
                   Discord
                 </Link>
               </li>
               <li>
-                <Link href="https://x.com/preetsuthar17" target="_blank">
-                  Twitter (X)
+                <Link
+                  data-link="Twitter (x)"
+                  href="https://x.com/preetsuthar17"
+                  target="_blank"
+                >
+                  Twitter (x)
                 </Link>
               </li>
             </ul>

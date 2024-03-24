@@ -64,7 +64,12 @@
         align-items: center;
         gap: 15px;
         li {
+          overflow: hidden !important;
           a {
+            position: relative;
+            display: block;
+            top: 0;
+            transition: transform 390ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
             color: var(--second-text-color-2);
             font-weight: bold;
             text-decoration: none;
@@ -73,6 +78,15 @@
               opacity: 100%;
               text-decoration: underline;
             }
+          }
+          a::before {
+            content: attr(data-link);
+            position: absolute;
+            transform: translateY(100%);
+          }
+
+          &:hover a {
+            transform: translateY(-100%);
           }
         }
       }
