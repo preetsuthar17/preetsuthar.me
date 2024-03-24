@@ -6,9 +6,39 @@ import Image from "next/image";
 import SmoothScrollLink from "./other/SmoothLinkScroll";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import SplitType from "split-type";
 
 export const Hero = React.forwardRef((props, ref) => {
   const imageRef = useRef(null);
+  const headingRef1 = useRef(null);
+  const headingRef2 = useRef(null);
+  const headlineTextRef = useRef(null);
+
+  useEffect(() => {
+    const headlineText = new SplitType(headlineTextRef.current);
+
+    gsap.to(".char", {
+      y: 0,
+      stagger: 0.01,
+      delay: 3.7,
+      duration: 0.1,
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.to(headingRef2.current, {
+      y: 0,
+      delay: 3.4,
+      ease: "expo",
+      duration: 0.6,
+    });
+    gsap.to(headingRef1.current, {
+      y: 0,
+      delay: 3.5,
+      ease: "expo",
+      duration: 0.5,
+    });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
@@ -51,17 +81,21 @@ export const Hero = React.forwardRef((props, ref) => {
               AVAILABLE FOR NEW PROJECT
             </p>
           </SmoothScrollLink>
-          <p className="hero-main-heading  hero-main-heading-1">
-            <span className="text-only-outline">HEY THERE</span>
-            <span className="orange-color">,</span>
-          </p>
+          <div className="hero-main-heading  hero-main-heading-1">
+            <p ref={headingRef1} className="text-only-outline">
+              HEY THERE
+            </p>
+          </div>
         </div>
-        <div className="heading-div">
-          <h1 className="hero-main-heading hero-main-heading-2"> I'M PREET</h1>
+        <div className="hero-main-heading-2">
+          <h1 ref={headingRef2} className="hero-main-heading">
+            {" "}
+            I'M PREET
+          </h1>
         </div>
       </div>
       <div className="section-2">
-        <p>
+        <p className="headlineText" ref={headlineTextRef}>
           A Freelance Front-end Developer & Designer, crafting experiences that
           exceed expectations.
         </p>

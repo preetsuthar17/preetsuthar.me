@@ -10,10 +10,21 @@
   position: relative;
   .available-for-work {
     margin: 0 2rem;
+    opacity: 0;
     display: flex;
     position: absolute;
     bottom: 5%;
     right: 5%;
+    animation: fadeIn2 0.7s forwards ease;
+    animation-delay: 3.7s;
+    @keyframes fadeIn2 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 100%;
+      }
+    }
     p {
       border: 1px solid rgba(0, 0, 0, 0.221);
       border-radius: 50rem;
@@ -32,9 +43,19 @@
     right: 0;
     left: 0;
     position: absolute;
-    opacity: 50%;
     img {
+      opacity: 0;
+      animation: fadeIn 0.7s forwards ease;
+      animation-delay: 3.7s;
       z-index: 1 !important;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 50%;
+      }
     }
   }
   .section-1 {
@@ -53,8 +74,10 @@
     }
   }
   .section-2 {
-    padding: 1rem 0;
+    margin-top: 1rem;
+    padding: 10px 1rem 10px 1rem;
     overflow-y: hidden;
+    // border: 1px solid red;
     p {
       font-weight: bold;
       opacity: 85%;
@@ -78,4 +101,24 @@
       }
     }
   }
+}
+
+.hero-main-heading-2 {
+  // border: 1px solid red;
+  overflow: hidden;
+  h1 {
+    transform: translateY(150px);
+  }
+}
+.hero-main-heading-1 {
+  // border: 1px solid red;
+  overflow: hidden;
+  p {
+    transform: translateY(150px);
+  }
+}
+
+.char {
+  transform: translateY(50px);
+  transition: transform 0.5s;
 }

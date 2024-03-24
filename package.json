@@ -19,6 +19,7 @@
     "react-hot-toast": "^2.4.1",
     "react-scroll-parallax": "^3.4.5",
     "resend": "^3.2.0",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "split-type": "^0.3.4"
   }
 }
