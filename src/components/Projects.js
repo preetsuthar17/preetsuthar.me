@@ -179,13 +179,6 @@ export const Projects = React.forwardRef((props, ref) => {
             numbering="2"
             projectLink="https://beta.vultrex.dev/"
           />
-          <ProjectCard
-            image="https://i.imgur.com/F8uNCoz.png"
-            title="Ayaan Designs"
-            content="A collaborative project with Product Designer, Ayaan. I developed a website to showcase his portfolio, using modern web technologies to ensure visual appeal and robust functionality."
-            numbering="3"
-            projectLink="https://ayaandesigns.xyz/"
-          />
 
           {isAllProjects && (
             <>
@@ -193,21 +186,15 @@ export const Projects = React.forwardRef((props, ref) => {
                 image="https://i.imgur.com/FO5kakY.png"
                 title="Snippix"
                 content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
-                numbering="4"
+                numbering="3"
                 projectLink="https://snippix.netlify.app"
               />
-              <ProjectCard
-                image="https://i.imgur.com/38Gz1g3.png"
-                title="Assistify AI"
-                content="Assistify is an Artificial Intelligence which uses COHERE services to allows users to process documents and use top notch AI models to talk with documents."
-                numbering="5"
-                projectLink="https://assistifyai.org"
-              />
+
               <ProjectCard
                 image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot Landing Page"
                 content="A freelance project to develop a landing page for Nooderbot, a comprehensive Discord bot. The new design enhanced user interaction and increased website traffic by 60%."
-                numbering="6"
+                numbering="4"
                 projectLink="https://nooderbot.com"
               />
             </>
