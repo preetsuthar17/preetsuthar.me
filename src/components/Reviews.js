@@ -45,22 +45,12 @@ export const Reviews = () => {
       title: "Back-end developer",
       content: `Preet was really quick to complete a commission, even though he had to go out for a couple of days. He really crunched everything into a few days, thus making him quicker than other website commissions I've had.`,
     },
-    {
-      user: "Mohammed Ayaan",
-      title: "Product designer",
-      content:
-        "Designed, coded and delivered a fully fledged visually stunning portfolio website in less than 12 hrs, unreal speed and excellent communication skills. Good job 👍",
-    },
+
     {
       user: "Y345",
       title: "Full-stack developer",
       content: `I highly recommend this guy, if you are trying to find someone to make your website,and has great customer support with a quick and reliable response time.
       `,
-    },
-    {
-      user: "Mustafa",
-      title: "Web developer",
-      content: `Hey Preet! The new look of the website is soo sleek and decent, I like those small details that you made on this website, the time the dedication you have hats off to it, overall I like this new design of your portfolio :)      `,
     },
   ];
   return (
