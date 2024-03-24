@@ -15,7 +15,7 @@ export const Navbar = () => {
             <ul>
               <li className="navbar_link">
                 <SmoothScrollLink
-                  href="#"
+                  href="#projects"
                   className="transforming-link"
                   dataLink="Work"
                 >
@@ -24,7 +24,7 @@ export const Navbar = () => {
               </li>
               <li className="navbar_link">
                 <SmoothScrollLink
-                  href="#projects"
+                  href="#services"
                   className="transforming-link"
                   dataLink="Services"
                 >
@@ -33,8 +33,8 @@ export const Navbar = () => {
               </li>
 
               <li>
-                <SmoothScrollLink href="#contact" dataLink="Hire me">
-                  Hire me
+                <SmoothScrollLink href="#contact" dataLink="Let's talk">
+                  Let's talk
                 </SmoothScrollLink>
               </li>
             </ul>
