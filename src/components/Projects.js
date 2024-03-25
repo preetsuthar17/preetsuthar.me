@@ -141,6 +141,18 @@ export const Projects = React.forwardRef((props, ref) => {
     }`,
   };
 
+  useEffect(() => {
+    gsap.to(".projects", {
+      margin: 0,
+      scrollTrigger: {
+        trigger: ".projects",
+        start: "top 100%",
+        end: "end 40%",
+        scrub: true,
+      },
+    });
+  });
+
   const handleViewAllProjects = () => {
     setIsAllProjects(!isAllProjects);
   };
