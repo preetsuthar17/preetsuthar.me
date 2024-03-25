@@ -6,7 +6,12 @@ import Head from "next/head";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { IntroCurtain } from "@/components/other/IntroCurtain";
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
 
+const Earth = dynamic(() => import("@/components/other/Earth"), {
+  loading: () => <p>Loading...</p>,
+});
 const Home = () => {
   return (
     <>
@@ -71,6 +76,7 @@ const Home = () => {
       <Projects />
       <Services />
       <Contact />
+      <Earth />
     </>
   );
 };

@@ -11,6 +11,7 @@
   height: 100%;
   z-index: 10 !important;
   margin-inline: 2rem;
+
   .contact-heading {
     h2 {
       font-size: 5rem;
@@ -22,22 +23,27 @@
       }
     }
   }
+
   .contact-cards-list {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 2rem 0 0 0;
     height: auto;
+    position: relative;
+
     .contact-card {
       position: relative;
       transition: color 0.2s ease;
       cursor: pointer;
       flex-wrap: wrap;
       text-align: center;
+
+      z-index: 3 !important;
       &::before {
         content: "";
         width: 100%;
-        z-index: 1;
+        z-index: 1 !important;
         position: absolute;
         left: 0;
         height: 0%;
