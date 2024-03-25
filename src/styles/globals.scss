@@ -178,14 +178,14 @@ button {
   position: relative;
   padding: 10px 24px;
   font-size: 18px;
-  justify-content: center;
-  display: flex;
   gap: 5px;
-  align-items: center;
-  text-align: center;
   border-radius: 34px;
   background-color: transparent;
+  display: flex;
   font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
   margin: 2rem 0;
