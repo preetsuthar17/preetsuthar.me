@@ -19,7 +19,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    const dropdownElement = dropdownRef.current;
+    const dropdownElement = dropdownRef?.current;
     if (dropdownElement) {
       gsap.to(dropdownElement, {
         height: dropdown ? "0px" : "272px",

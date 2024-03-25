@@ -15,7 +15,7 @@ export const Hero = React.forwardRef((props, ref) => {
   const headlineTextRef = useRef(null);
 
   useEffect(() => {
-    const headlineText = new SplitType(headlineTextRef.current);
+    const headlineText = new SplitType(headlineTextRef?.current);
 
     gsap.to(".char", {
       y: 0,
@@ -26,13 +26,13 @@ export const Hero = React.forwardRef((props, ref) => {
   }, []);
 
   useEffect(() => {
-    gsap.to(headingRef2.current, {
+    gsap.to(headingRef2?.current, {
       y: 0,
       delay: 3.4,
       ease: "expo",
       duration: 0.6,
     });
-    gsap.to(headingRef1.current, {
+    gsap.to(headingRef1?.current, {
       y: 0,
       delay: 3.5,
       ease: "expo",
@@ -42,7 +42,7 @@ export const Hero = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     window.addEventListener("mousemove", (e) => {
-      gsap.to(imageRef.current, {
+      gsap.to(imageRef?.current, {
         y: (e.clientX - window.innerWidth / 2) / 40,
         x: -(e.clientY - window.innerHeight / 2) / 40,
         ease: "Power1.easeOut",

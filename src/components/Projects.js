@@ -17,12 +17,12 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 
   useEffect(() => {
     gsap.fromTo(
-      imageRef.current,
+      imageRef?.current,
       { y: "-20%" },
       {
         y: "1%",
         scrollTrigger: {
-          trigger: imageRef.current,
+          trigger: imageRef?.current,
           scrub: 1,
         },
       }
@@ -40,8 +40,8 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
   }, []);
 
   useEffect(() => {
-    if (cursorRef.current) {
-      gsap.to(cursorRef.current, {
+    if (cursorRef?.current) {
+      gsap.to(cursorRef?.current, {
         x: cursorPosition.x,
         y: cursorPosition.y,
         scale: isHovered ? 2 : 0,

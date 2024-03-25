@@ -6,7 +6,7 @@ const SmoothScrollLink = forwardRef(
     const linkRef = useRef(null);
 
     useEffect(() => {
-      const link = linkRef.current;
+      const link = linkRef?.current;
       if (link) {
         link.addEventListener("click", (e) => {
           e.preventDefault();

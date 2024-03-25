@@ -28,12 +28,12 @@ export const About = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     gsap.fromTo(
-      imageRef.current,
+      imageRef?.current,
       { y: "-10%" },
       {
         y: "1%",
         scrollTrigger: {
-          trigger: imageRef.current,
+          trigger: imageRef?.current,
           scrub: 1,
         },
       }
