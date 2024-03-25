@@ -65,7 +65,7 @@ export const Hero = React.forwardRef((props, ref) => {
       </div>
       <div className="section-1">
         <div className="heading-div">
-          <SmoothScrollLink href="#contact" className="available-for-work ">
+          {/* <SmoothScrollLink href="#contact" className="available-for-work ">
             <p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export const Hero = React.forwardRef((props, ref) => {
               </svg>{" "}
               AVAILABLE FOR NEW PROJECT
             </p>
-          </SmoothScrollLink>
+          </SmoothScrollLink> */}
           <div className="hero-main-heading  hero-main-heading-1">
             <p ref={headingRef1} className="text-only-outline">
               HEY THERE
@@ -96,8 +96,8 @@ export const Hero = React.forwardRef((props, ref) => {
       </div>
       <div className="section-2">
         <p className="headlineText" ref={headlineTextRef}>
-          A Freelance Front-end Developer & Designer, crafting experiences that
-          exceed expectations.
+          A Freelance Front-end Developer & Designer, crafting mesmerizing
+          experiences.
         </p>
       </div>
     </section>
