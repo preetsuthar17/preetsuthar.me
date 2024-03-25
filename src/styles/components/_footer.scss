@@ -134,8 +134,11 @@
         flex-direction: column;
         list-style: none;
         li {
+          width: fit-content;
+
           overflow: hidden !important;
           a {
+            width: fit-content;
             position: relative;
             display: block;
             top: 0;
@@ -150,6 +153,8 @@
             }
           }
           a::before {
+            width: fit-content;
+
             content: attr(data-link);
             position: absolute;
             transform: translateY(100%);
