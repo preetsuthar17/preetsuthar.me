@@ -22,7 +22,7 @@ export const Navbar = () => {
     const dropdownElement = dropdownRef?.current;
     if (dropdownElement) {
       gsap.to(dropdownElement, {
-        height: dropdown ? "0px" : "272px",
+        height: dropdown ? "0px" : "35  2px",
         filter: `blur(${dropdown ? "10px" : "0"})`,
         duration: 0.1,
         ease: "expo",
@@ -96,6 +96,15 @@ export const Navbar = () => {
       <div className="dropdown-menu" ref={dropdownRef}>
         <div className="dropdown-links">
           <ul>
+            <li>
+              <SmoothScrollLink
+                dataLink="Home"
+                className="transforming-link"
+                href="/"
+              >
+                Home
+              </SmoothScrollLink>
+            </li>
             <li>
               <SmoothScrollLink
                 dataLink="About"
