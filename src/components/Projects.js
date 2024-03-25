@@ -133,18 +133,6 @@ const ProjectCard = ({ image, title, content, numbering, projectLink }) => {
 export const Projects = React.forwardRef((props, ref) => {
   const [isAllProjects, setIsAllProjects] = useState(false);
 
-  useEffect(() => {
-    gsap.to(".projects", {
-      borderRadius: "20px",
-      scrollTrigger: {
-        trigger: ".projects",
-        start: "top 90%",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-  });
-
   const projectCardsListStyle = {
     maskImage: `${
       isAllProjects
