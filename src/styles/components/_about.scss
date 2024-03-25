@@ -27,6 +27,7 @@
     flex-wrap: wrap;
     gap: 3rem;
     .about-image {
+      overflow: hidden;
       img {
         border-radius: 30px;
         max-width: 100%;
@@ -34,8 +35,13 @@
         object-fit: cover;
       }
     }
+    .preet-suthar-image {
+      filter: blur(10px);
+    }
 
     .about-text {
+      filter: blur(10px);
+      opacity: 0;
       display: flex;
       flex-direction: column;
       gap: 20px;

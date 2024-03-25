@@ -35,13 +35,39 @@ export const About = React.forwardRef((props, ref) => {
         scrub: true,
       },
     });
+
+    gsap.fromTo(
+      imageRef.current,
+      { y: "-10%" },
+      {
+        y: "1%",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          scrub: 1,
+        },
+      }
+    );
+
     gsap.to(".preet-suthar-image", {
       borderRadius: "10px",
+      filter: "blur(0px)",
       scrollTrigger: {
         trigger: ".about",
-        start: "top 90%",
-        end: "bottom center",
+        start: "top 100%",
+        end: "center 40%",
         scrub: true,
+        // markers: true,
+      },
+    });
+    gsap.to(".about-text", {
+      filter: "blur(0px)",
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".about",
+        start: "top 100%",
+        end: "center 40%",
+        scrub: true,
+        // markers: true,
       },
     });
   });
@@ -67,12 +93,7 @@ export const About = React.forwardRef((props, ref) => {
         </h2>
       </div>
       <div className="about-content">
-        <Parallax
-          translateY={parallaxValues}
-          rotateZ={[10, -10]}
-          speed={4}
-          className="about-image"
-        >
+        <div className="about-image">
           <Image
             src={preetsuthar_image}
             width={360}
@@ -84,8 +105,8 @@ export const About = React.forwardRef((props, ref) => {
             alt="Preet Suthar"
             ref={imageRef}
           />
-        </Parallax>
-        <Parallax translateY={parallaxValues} className="about-text">
+        </div>
+        <div className="about-text">
           <p>
             Hello! I'm Preet Suthar, a self-taught web developer in India with
             more than two years of experience. I'm 17 years old and I am very
@@ -99,7 +120,7 @@ export const About = React.forwardRef((props, ref) => {
           <Link href="/templates" className="primary-button">
             Buy Website Templates
           </Link>
-        </Parallax>
+        </div>
       </div>
     </Parallax>
   );
