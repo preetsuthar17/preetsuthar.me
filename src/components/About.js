@@ -6,6 +6,7 @@ import { Parallax } from "react-scroll-parallax";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
+import MagneticLink from "./other/MagneticLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,9 +116,11 @@ export const About = React.forwardRef((props, ref) => {
             appealing design. I can help you create a website with the most
             appealing design.
           </p>
-          <Link href="/templates" className="custom-button-white">
-            Buy Website Templates
-          </Link>
+          <MagneticLink>
+            <Link href="/templates" className="custom-button-white">
+              Buy Website Templates
+            </Link>
+          </MagneticLink>
         </div>
       </div>
     </Parallax>

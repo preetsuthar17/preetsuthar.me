@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import MagneticLink from "./other/MagneticLink";
 
 export const ContactForm = () => {
   const [name, setName] = useState("");
@@ -192,24 +193,28 @@ export const ContactForm = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
         {loading ? (
-          <button type="submit" className="primary-button">
-            Sending..
-          </button>
+          <MagneticLink>
+            <button type="submit" className="primary-button">
+              Sending..
+            </button>
+          </MagneticLink>
         ) : (
-          <button type="submit" className="primary-button">
-            Send Message{" "}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
-              />
-            </svg>
-          </button>
+          <MagneticLink>
+            <button type="submit" className="primary-button">
+              Send Message{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
+                />
+              </svg>
+            </button>
+          </MagneticLink>
         )}
       </form>
     </section>

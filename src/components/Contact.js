@@ -9,7 +9,7 @@ export const Contact = () => {
   useEffect(() => {
     gsap.to(".contact", {
       margin: 0,
-      scrollTrigger: {
+    scrollTrigger: {
         trigger: ".contact",
         start: "top 100%",
         end: "end 40%",

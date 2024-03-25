@@ -2,6 +2,7 @@ import Image from "next/image";
 import website_logo from "../../public/website_logo.svg";
 import Link from "next/link";
 import SmoothScrollLink from "./other/SmoothLinkScroll";
+import MagneticLink from "./other/MagneticLink";
 
 export const Navbar = () => {
   return (
@@ -14,13 +15,15 @@ export const Navbar = () => {
           <div className="navbar_links">
             <ul>
               <li>
-                <SmoothScrollLink
-                  href="#contact"
-                  className="custom-button-black"
-                  dataLink="Let's talk"
-                >
-                  Let's talk
-                </SmoothScrollLink>
+                <MagneticLink>
+                  <SmoothScrollLink
+                    href="#contact"
+                    className="custom-button-black"
+                    dataLink="Let's talk"
+                  >
+                    Let's talk
+                  </SmoothScrollLink>
+                </MagneticLink>
               </li>
             </ul>
           </div>

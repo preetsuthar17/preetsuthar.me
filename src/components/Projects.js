@@ -5,6 +5,7 @@ import React from "react";
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import MagneticLink from "./other/MagneticLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -209,41 +210,45 @@ export const Projects = React.forwardRef((props, ref) => {
         </div>
       </div>
       {isAllProjects ? (
-        <span
-          className="custom-button-white view-all-projects-btn"
-          onClick={handleViewAllProjects}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 24 24"
+        <MagneticLink>
+          <span
+            className="custom-button-white view-all-projects-btn"
+            onClick={handleViewAllProjects}
           >
-            <path
-              fill="currentColor"
-              d="M11 20V7.825l-5.6 5.6L4 12l8-8l8 8l-1.4 1.425l-5.6-5.6V20z"
-            />
-          </svg>
-          Collapse list{" "}
-        </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M11 20V7.825l-5.6 5.6L4 12l8-8l8 8l-1.4 1.425l-5.6-5.6V20z"
+              />
+            </svg>
+            Collapse list{" "}
+          </span>
+        </MagneticLink>
       ) : (
-        <span
-          className="custom-button-white view-all-projects-btn"
-          onClick={handleViewAllProjects}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 24 24"
+        <MagneticLink>
+          <span
+            className="custom-button-white view-all-projects-btn"
+            onClick={handleViewAllProjects}
           >
-            <path
-              fill="currentColor"
-              d="M11 4v12.175l-5.6-5.6L4 12l8 8l8-8l-1.4-1.425l-5.6 5.6V4z"
-            />
-          </svg>
-          Expand list{" "}
-        </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M11 4v12.175l-5.6-5.6L4 12l8 8l8-8l-1.4-1.425l-5.6 5.6V4z"
+              />
+            </svg>
+            Expand list{" "}
+          </span>
+        </MagneticLink>
       )}
     </section>
   );
