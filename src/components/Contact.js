@@ -6,6 +6,17 @@ import { ContactForm } from "./ContactForm";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
+  useEffect(() => {
+    gsap.to(".contact", {
+      margin: 0,
+      scrollTrigger: {
+        trigger: ".contact",
+        start: "top 100%",
+        end: "end 40%",
+        scrub: true,
+      },
+    });
+  });
   return (
     <div className="contact" id="contact">
       <div className="contact-heading">
