@@ -107,6 +107,9 @@ export const About = React.forwardRef((props, ref) => {
         </div>
         <div className="about-text">
           <p>
+            <span className="green-pulsing-circle"></span> Available for work
+          </p>
+          <p>
             Hello! I'm Preet Suthar, a self-taught web developer in India with
             more than two years of experience. I'm 17 years old and I am very
             passionate about front-end development.

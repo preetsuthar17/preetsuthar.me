@@ -10,6 +10,7 @@
   padding: 7rem 1rem;
   margin-inline: 2rem;
   height: 100%;
+
   .about-heading {
     h2 {
       font-size: 5rem;
@@ -41,6 +42,30 @@
     }
 
     .about-text {
+      p:first-child {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 14px;
+        .green-pulsing-circle {
+          width: 10px;
+          border-radius: 50%;
+          height: 10px;
+          animation: online_pulsing infinite 2s ease both;
+          display: block;
+        }
+        @keyframes online_pulsing {
+          0% {
+            background-color: greenyellow;
+          }
+          50% {
+            background-color: gray;
+          }
+          100% {
+            background-color: greenyellow;
+          }
+        }
+      }
       filter: blur(10px);
       opacity: 0;
       display: flex;
