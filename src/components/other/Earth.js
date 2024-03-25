@@ -52,15 +52,24 @@ const Earth = () => {
           opacity: 0.4,
         });
         const clouds = new THREE.Mesh(geometryClouds, materialClouds);
+
+        const animate = () => {
+          requestAnimationFrame(animate);
+
+          clouds.rotation.y += 0.0009;
+          clouds.rotation.x += 0.0009;
+          clouds.rotation.z += 0.0009;
+
+          renderer.render(scene, camera);
+        };
+        animate();
         scene.add(clouds);
       });
 
       const animate = () => {
         requestAnimationFrame(animate);
 
-        sphere.rotation.y += 0.0001;
-        sphere.rotation.x += 0.0001;
-        sphere.rotation.z += 0.0001;
+        sphere.rotation.y += 0.0008;
 
         renderer.render(scene, camera);
       };
