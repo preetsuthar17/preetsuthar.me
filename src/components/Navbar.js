@@ -13,27 +13,12 @@ export const Navbar = () => {
         <section className="section-2">
           <div className="navbar_links">
             <ul>
-              <li className="navbar_link">
-                <SmoothScrollLink
-                  href="#projects"
-                  className="transforming-link"
-                  dataLink="Work"
-                >
-                  Work
-                </SmoothScrollLink>
-              </li>
-              <li className="navbar_link">
-                <SmoothScrollLink
-                  href="#services"
-                  className="transforming-link"
-                  dataLink="Services"
-                >
-                  Services
-                </SmoothScrollLink>
-              </li>
-
               <li>
-                <SmoothScrollLink href="#contact" dataLink="Let's talk">
+                <SmoothScrollLink
+                  href="#contact"
+                  className="custom-button-black"
+                  dataLink="Let's talk"
+                >
                   Let's talk
                 </SmoothScrollLink>
               </li>

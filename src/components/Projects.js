@@ -198,7 +198,7 @@ export const Projects = React.forwardRef((props, ref) => {
       </div>
       {isAllProjects ? (
         <span
-          className="primary-button view-all-projects-btn"
+          className="custom-button-white view-all-projects-btn"
           onClick={handleViewAllProjects}
         >
           <svg
@@ -216,7 +216,7 @@ export const Projects = React.forwardRef((props, ref) => {
         </span>
       ) : (
         <span
-          className="primary-button view-all-projects-btn"
+          className="custom-button-white view-all-projects-btn"
           onClick={handleViewAllProjects}
         >
           <svg

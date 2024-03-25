@@ -106,7 +106,7 @@ export const About = React.forwardRef((props, ref) => {
             appealing design. I can help you create a website with the most
             appealing design.
           </p>
-          <Link href="/templates" className="primary-button">
+          <Link href="/templates" className="custom-button-white">
             Buy Website Templates
           </Link>
         </div>

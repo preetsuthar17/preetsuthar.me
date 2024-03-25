@@ -15,48 +15,7 @@
     gap: 15px;
     align-items: center;
     justify-content: space-between;
-    .open_for_work {
-      display: flex;
-      align-items: center;
-      position: relative;
-      a {
-        padding: 6px 10px;
-        font-size: 14px;
-        border-radius: 5rem;
-        text-decoration: none;
-        border: 1px solid var(--second-text-color-3);
-        position: relative;
-        overflow: hidden;
-        transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1) color;
 
-        &:hover {
-          text-decoration: none !important;
-        }
-        &:hover {
-          color: var(--first-text-color-1);
-        }
-        span {
-          z-index: 2 !important;
-          position: relative;
-          text-decoration: none;
-        }
-        &::before {
-          width: 100%;
-          z-index: 1;
-          bottom: 0;
-          content: "";
-          height: 0;
-          background-color: var(--background-color-1);
-          border-radius: 80% 80% 0 0;
-          left: 0;
-          position: absolute;
-          transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1) height;
-        }
-        &:hover::before {
-          height: 120%;
-        }
-      }
-    }
     .navbar_links {
       ul {
         display: flex;
@@ -64,8 +23,10 @@
         align-items: center;
         gap: 15px;
         li {
-          overflow: hidden !important;
-          a {
+          .custom-button-black {
+            transform: translateX(-50px);
+          }
+          .transforming-link {
             position: relative;
             display: block;
             top: 0;
@@ -79,13 +40,13 @@
               text-decoration: underline;
             }
           }
-          a::before {
+          .transforming-link::before {
             content: attr(data-link);
             position: absolute;
             transform: translateY(100%);
           }
 
-          &:hover a {
+          &:hover .transforming-link {
             transform: translateY(-100%);
           }
         }
