@@ -26,16 +26,6 @@ export const About = React.forwardRef((props, ref) => {
   }, []);
 
   useEffect(() => {
-    gsap.to(".about", {
-      borderRadius: "20px",
-      scrollTrigger: {
-        trigger: ".about",
-        start: "top 90%",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-
     gsap.fromTo(
       imageRef.current,
       { y: "-10%" },
@@ -49,7 +39,6 @@ export const About = React.forwardRef((props, ref) => {
     );
 
     gsap.to(".preet-suthar-image", {
-      borderRadius: "10px",
       filter: "blur(0px)",
       scrollTrigger: {
         trigger: ".about",
