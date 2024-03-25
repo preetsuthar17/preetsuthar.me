@@ -173,10 +173,17 @@ export const Projects = React.forwardRef((props, ref) => {
             projectLink="https://portfolio-template-v3.netlify.app"
           />
           <ProjectCard
+            image="https://i.imgur.com/fpNzsCk.png"
+            title="Werktar"
+            content="Connect with talented web creators and bring your project to life. Find the perfect freelance writer, editor, designer, or programmer for your needs. Sign up today and start collaborating!"
+            numbering="2"
+            projectLink="https://werktar.vercel.app/"
+          />
+          <ProjectCard
             image="https://i.imgur.com/TWXkv4D.png"
             title="Vultrex Website"
             content="A freelance project to develop the Vultrex website, delivered within a tight 3-day deadline. The website showcases Vultrex's services and capabilities, enhancing its online presence."
-            numbering="2"
+            numbering="3"
             projectLink="https://beta.vultrex.dev/"
           />
 
@@ -186,7 +193,7 @@ export const Projects = React.forwardRef((props, ref) => {
                 image="https://i.imgur.com/FO5kakY.png"
                 title="Snippix"
                 content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
-                numbering="3"
+                numbering="4"
                 projectLink="https://snippix.netlify.app"
               />
 
@@ -194,7 +201,7 @@ export const Projects = React.forwardRef((props, ref) => {
                 image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot Landing Page"
                 content="A freelance project to develop a landing page for Nooderbot, a comprehensive Discord bot. The new design enhanced user interaction and increased website traffic by 60%."
-                numbering="4"
+                numbering="5"
                 projectLink="https://nooderbot.com"
               />
             </>
