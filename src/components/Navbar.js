@@ -22,7 +22,7 @@ export const Navbar = () => {
     const dropdownElement = dropdownRef?.current;
     if (dropdownElement) {
       gsap.to(dropdownElement, {
-        height: dropdown ? "0px" : "35  2px",
+        height: dropdown ? "0px" : "352px",
         filter: `blur(${dropdown ? "10px" : "0"})`,
         duration: 0.1,
         ease: "expo",
