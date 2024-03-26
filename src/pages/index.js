@@ -76,7 +76,6 @@ const Home = () => {
       <Projects />
       <Services />
       <Contact />
-  // {/ <Earth /> /}
     </>
   );
 };
