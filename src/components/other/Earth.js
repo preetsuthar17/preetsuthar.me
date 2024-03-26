@@ -36,7 +36,7 @@ const Earth = () => {
     const geometry = new THREE.SphereGeometry(2.5, 90, 90);
 
     const loader = new THREE.TextureLoader();
-    loader.load("8k_earth_daymap.jpg", (texture) => {
+    loader.load("8k_earth_daymap.webp", (texture) => {
       const material = new THREE.MeshPhongMaterial({
         map: texture,
       });
@@ -44,7 +44,7 @@ const Earth = () => {
       const sphere = new THREE.Mesh(geometry, material);
       scene.add(sphere);
 
-      loader.load("earth_clouds.png", (texture) => {
+      loader.load("earth_clouds.webp", (texture) => {
         const geometryClouds = new THREE.SphereGeometry(2.52, 90, 90);
         const materialClouds = new THREE.MeshPhongMaterial({
           map: texture,
