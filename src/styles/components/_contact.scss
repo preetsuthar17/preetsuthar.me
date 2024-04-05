@@ -46,9 +46,10 @@
         z-index: 1 !important;
         position: absolute;
         left: 0;
+        top: 0;
         height: 0%;
         background-color: var(--background-color-2);
-        transition: height 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: height 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
       }
 
       &:hover::before {
