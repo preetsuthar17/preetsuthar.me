@@ -166,7 +166,7 @@ export const Projects = React.forwardRef((props, ref) => {
       <div className="projects-content">
         <div className="projects-cards-lists" style={projectCardsListStyle}>
           <ProjectCard
-            image="https://impenny.me/impenny_preview.png"
+            image="https://i.imgur.com/K28jhFZ.png"
             title="Impenny"
             content="Modern solution for freelancers and individuals. A place for freelancers and business individuals to manage their expenses and clients seamlessly."
             numbering="1"
