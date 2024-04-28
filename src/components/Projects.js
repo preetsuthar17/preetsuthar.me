@@ -135,11 +135,10 @@ export const Projects = React.forwardRef((props, ref) => {
   const [isAllProjects, setIsAllProjects] = useState(false);
 
   const projectCardsListStyle = {
-    maskImage: `${
-      isAllProjects
+    maskImage: `${isAllProjects
         ? ""
         : "linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%)"
-    }`,
+      }`,
   };
 
   useEffect(() => {
@@ -167,42 +166,50 @@ export const Projects = React.forwardRef((props, ref) => {
       <div className="projects-content">
         <div className="projects-cards-lists" style={projectCardsListStyle}>
           <ProjectCard
+            image="https://i.imgur.com/K28jhFZ.png"
+            title="Impenny"
+            content="Modern solution for freelancers and individuals. A place for freelancers and business individuals to manage their expenses and clients seamlessly."
+            numbering="1"
+            projectLink="https://impenny.me"
+          />
+          <ProjectCard
             image="https://i.imgur.com/sSuswrq.png"
             title="Modern portfolio template"
             content="A modern portfolio website template with multiple sections such as About, Contact, Specialties, etc. It contains Smooth Animations and beautiful custom cursor, with stunning UI."
-            numbering="1"
+            numbering="2"
             projectLink="https://portfolio-template-v3.netlify.app"
           />
+          <ProjectCard
+            image="https://i.imgur.com/FO5kakY.png"
+            title="Snippix"
+            content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
+            numbering="3"
+            projectLink="https://snippix.netlify.app"
+          />
+
           <ProjectCard
             image="https://i.imgur.com/fpNzsCk.png"
             title="Werktar"
             content="Connect with talented web creators and bring your project to life. Find the perfect freelance writer, editor, designer, or programmer for your needs. Sign up today and start collaborating!"
-            numbering="2"
+            numbering="4"
             projectLink="https://werktar.vercel.app/"
           />
           <ProjectCard
             image="https://i.imgur.com/TWXkv4D.png"
             title="Vultrex Website"
             content="A freelance project to develop the Vultrex website, delivered within a tight 3-day deadline. The website showcases Vultrex's services and capabilities, enhancing its online presence."
-            numbering="3"
+            numbering="5"
             projectLink="https://beta.vultrex.dev/"
           />
 
           {isAllProjects && (
             <>
-              <ProjectCard
-                image="https://i.imgur.com/FO5kakY.png"
-                title="Snippix"
-                content="Snippix allows you to convert your boring code blocks in beautiful images and let your export as PNG with so many customization options. "
-                numbering="4"
-                projectLink="https://snippix.netlify.app"
-              />
 
               <ProjectCard
                 image="https://i.imgur.com/wfTWOVk.png"
                 title="Nooderbot Landing Page"
                 content="A freelance project to develop a landing page for Nooderbot, a comprehensive Discord bot. The new design enhanced user interaction and increased website traffic by 60%."
-                numbering="5"
+                numbering="6"
                 projectLink="https://nooderbot.com"
               />
             </>
