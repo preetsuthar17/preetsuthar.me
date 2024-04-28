@@ -10,7 +10,6 @@ import "@/styles/components/_services.scss";
 import "@/styles/components/_contact_form.scss";
 import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
-import "@/styles/components/_templates.scss";
 
 import Script from "next/script";
 import { Layout } from "@/components/Layout";
