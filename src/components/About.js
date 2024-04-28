@@ -118,8 +118,8 @@ export const About = React.forwardRef((props, ref) => {
             appealing design.
           </p>
           <MagneticLink>
-            <Link href="/templates" className="custom-button-white">
-              Buy Website Templates
+            <Link href="https://hextastudio.in" className="custom-button-white">
+              HextaStudio
             </Link>
           </MagneticLink>
         </div>
