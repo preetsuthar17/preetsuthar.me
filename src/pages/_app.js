@@ -12,6 +12,7 @@ import "@/styles/components/_contact.scss";
 import "@/styles/components/_footer.scss";
 import "@/styles/components/_templates.scss";
 
+import Script from "next/script";
 import { Layout } from "@/components/Layout";
 import ReactLenis from "@studio-freight/react-lenis";
 import { Providers } from "@/components/Providers";
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }) {
           src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
           type="text/partytown"
         ></script>
-        <script
+        <Script
           type="text/partytown"
           dangerouslySetInnerHTML={{
             __html: `
@@ -40,6 +41,11 @@ export default function App({ Component, pageProps }) {
           }}
         />
       </Head>
+      <Script
+        async
+        src="https://eu.umami.is/script.js"
+        data-website-id="b59ea046-ed0b-4f4e-ac6e-cf9606ff6f15"
+      ></Script>
       <svg className="grainy-filter pointer-events-none absolute cursor-none ">
         <filter id="grainy">
           <feTurbulence type="turbulence" baseFrequency="0.5"></feTurbulence>
