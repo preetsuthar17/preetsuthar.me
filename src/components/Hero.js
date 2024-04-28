@@ -20,7 +20,7 @@ export const Hero = React.forwardRef((props, ref) => {
     gsap.to(".char", {
       y: 0,
       stagger: 0.01,
-      delay: 3.7,
+      delay: 2.7,
       duration: 0.1,
     });
   }, []);
@@ -28,13 +28,13 @@ export const Hero = React.forwardRef((props, ref) => {
   useEffect(() => {
     gsap.to(headingRef2?.current, {
       y: 0,
-      delay: 3.4,
+      delay: 2.4,
       ease: "expo",
       duration: 0.6,
     });
     gsap.to(headingRef1?.current, {
       y: 0,
-      delay: 3.5,
+      delay: 2.5,
       ease: "expo",
       duration: 0.5,
     });
