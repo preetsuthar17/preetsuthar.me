@@ -48,7 +48,6 @@ export const About = React.forwardRef((props, ref) => {
       },
     });
     gsap.to(".preet-suthar-image", {
-      filter: "blur(0px)",
       scale: 1,
       scrollTrigger: {
         trigger: ".about",
@@ -59,7 +58,6 @@ export const About = React.forwardRef((props, ref) => {
       },
     });
     gsap.to(".about-text", {
-      filter: "blur(0px)",
       opacity: 1,
       scrollTrigger: {
         trigger: ".about",
