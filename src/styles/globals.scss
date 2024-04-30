@@ -28,6 +28,51 @@
     font-weight: 500;
     gap: 4px;
   }
+  .animated-underline {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      right: 0;
+      left: 0;
+      bottom: 1px;
+      position: absolute;
+      display: flex;
+      background-color: var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.transforming-link {
+  width: fit-content;
+  overflow: hidden !important;
+  a {
+    width: fit-content;
+    position: relative;
+    display: block;
+    top: 0;
+    transition: transform 390ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    color: var(--second-text-color-2);
+    perspective: 3000px;
+  }
+  a::before {
+    width: fit-content;
+    content: attr(data-link);
+    position: absolute;
+    transform: translateY(100%);
+  }
+
+  &:hover a {
+    transform: translateY(-110%);
+  }
 }
 
 :root {
