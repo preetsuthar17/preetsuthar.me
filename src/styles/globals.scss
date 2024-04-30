@@ -15,11 +15,31 @@
     font-family: var(--bricolage-fonts);
     font-weight: 800;
   }
+  .primary-button {
+    padding: 10px 15px;
+    background: var(--primary-button-background);
+    color: var(--white-color);
+    border-radius: 48rem;
+    letter-spacing: -0.025em;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    gap: 4px;
+  }
 }
 
 :root {
   --background-color: #fff;
   --text-color: #000;
+  --black-color: #000;
+  --white-color: #fff;
+  --primary-button-background: linear-gradient(
+    var(--black-color),
+    #2d2d2d,
+    var(--black-color)
+  );
   --accent-color: #ff6262;
   --inter-fonts: "Inter", sans-serif;
   --bricolage-fonts: '"Bricolage Grotesque", sans-serif';
