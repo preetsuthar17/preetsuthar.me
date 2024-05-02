@@ -14,7 +14,10 @@ export const About = () => {
       gap: "1rem",
       ease: "circ.inOut",
       scrollTrigger: {
-        scrub: true,
+        trigger: ".hero",
+        start: "center",
+        end: "bottom",
+        scrub: 0.9,
       },
     });
   }, []);
@@ -37,7 +40,7 @@ export const About = () => {
             </p>
             <MagneticLink>
               <Link
-                className="m-4 w-[8rem] h-[8rem] bg-[#f66a0e] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
+                className="m-4 w-[8rem] h-[8rem] bg-[#ff7b00] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
                 href="#contact"
               >
                 <span className="text-xl leading-5 text-center bricolage-fonts">
