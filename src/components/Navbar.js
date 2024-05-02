@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import logo from "../../public/portfolio-logo.svg";
 import { useState, useEffect, useRef } from "react";
@@ -14,7 +14,7 @@ const MenuBar = ({ isOpen, ref }) => {
           animate={{ scaleY: 1, translateY: 0 }}
           exit={{ scaleY: 0, translateY: "-150px" }}
           transition={{ duration: 0.3, ease: "circInOut" }}
-          className="absolute top-[7rem] right-[1rem] bg-black p-10 text-white rounded-2xl z-[1]"
+          className="absolute top-[7rem] right-[1rem] bg-black p-8 text-white rounded-2xl z-[1]"
         >
           <ul className="flex flex-col gap-4">
             <li className="transforming-link">
@@ -49,7 +49,7 @@ const MenuBar = ({ isOpen, ref }) => {
                 href="#contact"
                 className="text-[1.3rem] font-[700]  tracking-tight  flex gap-1 items-center px-[15px] py-[10px] bg-white text-black rounded-xl hover:brightness-95 transition-all"
               >
-                Let's Work Together{" "}
+                Let's Talk{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -104,7 +104,7 @@ export const Navbar = () => {
             width={40}
             height={40}
             alt="Preet Suthar"
-            priority
+            priority={true}
             className="rounded object-fit"
           />
         </div>
