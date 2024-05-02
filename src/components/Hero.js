@@ -109,7 +109,7 @@ export const Hero = () => {
   return (
     <>
       <section
-        className=" pt-[3rem] "
+        className=" pt-[9rem]"
         style={{
           minHeight: "calc(100dvh - 6.15rem)",
         }}
