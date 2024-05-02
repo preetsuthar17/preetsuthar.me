@@ -96,7 +96,7 @@ export const Navbar = () => {
       scrollTrigger: {
         scrub: 0.9,
         trigger: ".hero",
-        start: "bottom 80%",
+        start: "bottom 70%",
         onUpdate: (self) => {
           if (self.progress > 0) {
             navbarRef.current.classList.add("navbar-shadow");
@@ -126,7 +126,7 @@ export const Navbar = () => {
     <>
       <nav
         ref={navbarRef}
-        className="flex fixed w-full items-center justify-between px-10 py-7 z-[2] mx-auto left-[50%] translate-x-[-50%] bg-white"
+        className="flex fixed w-full items-center justify-between px-10 py-7  mx-auto left-[50%] translate-x-[-50%] bg-white z-[999]"
       >
         <div className="flex items-center">
           <Image
