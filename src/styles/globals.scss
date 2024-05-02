@@ -26,6 +26,10 @@
     justify-content: center;
     font-weight: 500;
     gap: 4px;
+    transition: scale ease 0.2s;
+    &:active {
+      scale: 0.98 !important;
+    }
   }
   .secondary-button {
     padding: 10px 15px;
