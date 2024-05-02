@@ -114,11 +114,11 @@ export const Hero = () => {
           minHeight: "calc(100dvh - 6.15rem)",
         }}
       >
-        <div className="flex flex-col px-10 leading-[10rem] max-[1060px]:leading-[7rem] py-7 justify-center items-center  max-[680px]:leading-[5rem] max-[556px]:leading-[3.2rem] ">
+        <div className="flex flex-col px-10 leading-[12rem] max-[1060px]:leading-[7rem] py-7 justify-center items-center  max-[680px]:leading-[5rem] max-[556px]:leading-[3.2rem] ">
           <div className="p-4 overflow-hidden">
             <p
               ref={para2Ref}
-              className="translate-y-[25rem] rotate-[-16deg] font-semi-bold text-[15.39rem] max-[1060px]:text-[9rem] max-[1060px]:tracking-[-7px] tracking-[-1.2rem]   max-[680px]:text-[7.6rem] max-[680px]:tracking-[-9px] max-[556px]:text-[6.6rem] max-[550px]:tracking-[-9px] max-[480px]:text-[5.3rem] max-[480px]:tracking-[-7px]  opacity-90"
+              className="translate-y-[25rem] rotate-[-16deg] font-semi-bold text-[15.39rem] max-[1060px]:text-[9rem] max-[1060px]:tracking-[-7px] tracking-[-1.2rem]   max-[680px]:text-[7.6rem] max-[680px]:tracking-[-9px] max-[556px]:text-[6.6rem] max-[550px]:tracking-[-9px] max-[480px]:text-[5.3rem] max-[480px]:tracking-[-7px]  opacity-90 px-[1rem]"
             >
               Freelance
             </p>
@@ -126,7 +126,7 @@ export const Hero = () => {
           <div className="overflow-hidden">
             <p
               ref={paraRef}
-              className="translate-y-[12rem] rotate-[-7deg] text-[7.2rem] max-[1060px]:text-[4.4rem] max-[1060px]:tracking-[-6px] tracking-[-11.5px]  max-[680px]:text-[3.4rem] max-[680px]:tracking-[-4px] max-[556px]:text-[2.93rem] max-[550px]:tracking-[-4px] max-[480px]:text-[2.5rem] max-[480px]:tracking-[-4px] text-nowrap opacity-80"
+              className="translate-y-[12rem] rotate-[-7deg] text-[7.2rem] max-[1060px]:text-[4.4rem] max-[1060px]:tracking-[-6px] tracking-[-11.5px]  max-[680px]:text-[3.4rem] max-[680px]:tracking-[-4px] max-[556px]:text-[2.93rem] max-[550px]:tracking-[-4px] max-[480px]:text-[2.5rem] max-[480px]:tracking-[-4px] text-nowrap opacity-80 px-[1rem]"
             >
               Designer & Developer
             </p>
