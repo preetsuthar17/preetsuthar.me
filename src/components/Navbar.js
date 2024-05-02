@@ -1,8 +1,14 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 import logo from "../../public/portfolio-logo.svg";
+
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MenuBar = ({ isOpen, ref }) => {
   return (
@@ -74,11 +80,32 @@ export const Navbar = () => {
   const [menuBar, setMenuBar] = useState(false);
   const menuBarRef = useRef(null);
   const toggleButtonRef = useRef(null);
+  const navbarRef = useRef(null);
 
   const toggleMenuBar = () => {
     setMenuBar(!menuBar);
   };
+
   useEffect(() => {
+    gsap.to(navbarRef.current, {
+      width: "90%",
+      marginTop: "1rem",
+      borderRadius: "10rem",
+      padding: "1rem 2rem",
+
+      scrollTrigger: {
+        scrub: 0.9,
+        trigger: ".hero",
+        start: "bottom 80%",
+        onUpdate: (self) => {
+          if (self.progress > 0) {
+            navbarRef.current.classList.add("navbar-shadow");
+          } else {
+            navbarRef.current.classList.remove("navbar-shadow");
+          }
+        },
+      },
+    });
     const handleClickOutside = (event) => {
       if (
         menuBarRef.current &&
@@ -97,19 +124,22 @@ export const Navbar = () => {
   }, []);
   return (
     <>
-      <nav className="flex items-center justify-between px-10 border py-7 border-b-zinc-200 z-[2] ">
-        <div>
+      <nav
+        ref={navbarRef}
+        className="flex fixed w-full items-center justify-between px-10 py-7 z-[2] mx-auto left-[50%] translate-x-[-50%] bg-white"
+      >
+        <div className="flex items-center">
           <Image
             src={logo}
-            width={40}
-            height={40}
+            width={35}
+            height={35}
             alt="Preet Suthar"
             priority={true}
             className="rounded object-fit"
           />
         </div>
         <div className="flex items-center gap-[3rem] max-[580px]:gap-5">
-          <ul className="flex gap-[3rem] max-[580px]:hidden">
+          <ul className="flex gap-[3rem] max-[663px]:hidden">
             <li className="transforming-link max-[550px]:hidden">
               <Link
                 data-link="Projects"
@@ -139,7 +169,7 @@ export const Navbar = () => {
             </li>
           </ul>
           <div
-            className="cursor-pointer max-[580px]:flex hidden items-center justify-center"
+            className="cursor-pointer max-[663px]:flex hidden items-center justify-center"
             onClick={toggleMenuBar}
             ref={toggleButtonRef}
           >
@@ -175,7 +205,7 @@ export const Navbar = () => {
               <MenuBar isOpen={menuBar}></MenuBar>
             </div>
           </div>
-          <div className="max-[580px]:hidden">
+          <div className="max-[663px]:hidden">
             <Link href="#contact" className="primary-button">
               Let's Work Together{" "}
               <svg
