@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @layer utilities {
   .text-balance {
@@ -13,6 +14,9 @@
   }
   .bricolage-fonts {
     font-family: var(--bricolage-fonts);
+  }
+  .poppins-fonts {
+    font-family: var(--poppins-fonts);
   }
   .primary-button {
     padding: 10px 15px;
@@ -103,6 +107,7 @@
   --accent-color: #ff6262;
   --inter-fonts: "Inter", sans-serif;
   --bricolage-fonts: "Bricolage Grotesque", sans-serif;
+  --poppins-fonts: "Poppins", sans-serif;
 }
 
 * {
@@ -120,4 +125,14 @@ html {
 }
 .navbar-shadow {
   border: 1px solid #00000020;
+}
+
+.hero-heading-container {
+  line-height: clamp(1rem, 18vw, 12rem);
+}
+.hero-heading {
+  font-size: clamp(2rem, 18vw, 14rem);
+}
+.hero-heading2 {
+  font-size: clamp(2rem, 8.1vw, 14rem);
 }
