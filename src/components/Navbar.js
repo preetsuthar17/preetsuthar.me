@@ -13,7 +13,7 @@ const MenuBar = ({ isOpen, ref }) => {
           initial={{ scaleY: 0, translateY: "-150px" }}
           animate={{ scaleY: 1, translateY: 0 }}
           exit={{ scaleY: 0, translateY: "-150px" }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "circInOut" }}
           className="absolute top-[7rem] right-[1rem] bg-black p-10 text-white rounded-2xl z-[1]"
         >
           <ul className="flex flex-col gap-4">
@@ -49,7 +49,7 @@ const MenuBar = ({ isOpen, ref }) => {
                 href="#contact"
                 className="text-[1.3rem] font-[700]  tracking-tight  flex gap-1 items-center px-[15px] py-[10px] bg-white text-black rounded-xl hover:brightness-95 transition-all"
               >
-                Let's talk{" "}
+                Let's Work Together{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -177,7 +177,7 @@ export const Navbar = () => {
           </div>
           <div className="max-[580px]:hidden">
             <Link href="#contact" className="primary-button">
-              Let's talk{" "}
+              Let's Work Together{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="21"
