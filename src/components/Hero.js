@@ -43,7 +43,7 @@ export const InfiniteScrollingTextV1 = () => {
       >
         <p>Let's work Together 💪</p>
       </div>
-      <main className="relative flex mt-[6rem] rotate-[-2deg] overflow-hidden w-vw bg-[#f66a0e]">
+      <main className="relative flex mt-[6rem] rotate-[-2deg] overflow-hidden w-vw bg-[#ff7b00]">
         <motion.div
           className="whitespace-nowrap "
           onMouseEnter={() => setIsHovered(true)}
