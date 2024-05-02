@@ -81,13 +81,26 @@ export const Hero = () => {
   const paraRef = useRef(null);
   const para2Ref = useRef(null);
 
+  const buttonRef = useRef(null);
+  const button2Ref = useRef(null);
+
   useEffect(() => {
     gsap.to(para2Ref.current, {
-      transform: "translateX(0) rotate(0)",
+      transform: "translateY(0) rotate(0)",
       ease: "circ.out",
     });
     gsap.to(paraRef.current, {
-      transform: "translateX(0) rotate(0)",
+      transform: "translateY(0) rotate(0)",
+      ease: "circ.out",
+      delay: 0.2,
+    });
+    gsap.to(buttonRef.current, {
+      transform: "translateY(0)",
+      ease: "circ.out",
+      delay: 0.2,
+    });
+    gsap.to(button2Ref.current, {
+      transform: "translateY(0)",
       ease: "circ.out",
       delay: 0.2,
     });
@@ -105,7 +118,7 @@ export const Hero = () => {
           <div className="p-4 overflow-hidden">
             <p
               ref={para2Ref}
-              className="translate-y-[12rem] rotate-[-16deg] font-semi-bold text-[15.39rem] max-[1060px]:text-[9rem] max-[1060px]:tracking-[-7px] tracking-[-1.2rem]   max-[680px]:text-[7.6rem] max-[680px]:tracking-[-9px] max-[556px]:text-[6.6rem] max-[550px]:tracking-[-9px] max-[480px]:text-[5.3rem] max-[480px]:tracking-[-7px]  opacity-90"
+              className="translate-y-[25rem] rotate-[-16deg] font-semi-bold text-[15.39rem] max-[1060px]:text-[9rem] max-[1060px]:tracking-[-7px] tracking-[-1.2rem]   max-[680px]:text-[7.6rem] max-[680px]:tracking-[-9px] max-[556px]:text-[6.6rem] max-[550px]:tracking-[-9px] max-[480px]:text-[5.3rem] max-[480px]:tracking-[-7px]  opacity-90"
             >
               Freelance
             </p>
@@ -118,6 +131,22 @@ export const Hero = () => {
               Designer & Developer
             </p>
           </div>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-1 mx-auto overflow-hidden w-fit">
+          <Link
+            className="primary-button translate-y-[12rem]"
+            ref={buttonRef}
+            href="#"
+          >
+            Let's work together
+          </Link>
+          <Link
+            className="secondary-button translate-y-[12rem]"
+            ref={button2Ref}
+            href="#"
+          >
+            Projects
+          </Link>
         </div>
         <InfiniteScrollingTextV1 />
       </section>
