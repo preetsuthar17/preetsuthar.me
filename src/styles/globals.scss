@@ -136,3 +136,10 @@ html {
 .hero-heading2 {
   font-size: clamp(2rem, 8.1vw, 14rem);
 }
+.scale-100 {
+  transform: scale(1);
+}
+
+.scale-0 {
+  transform: scale(0);
+}
