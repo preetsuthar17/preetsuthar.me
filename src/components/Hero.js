@@ -32,7 +32,7 @@ export const InfiniteScrollingTextV1 = () => {
   return (
     <>
       <div
-        className={`following-tooltip w-fit text-nowrap flex items-center justify-center text-black font-bold px-[3rem] py-[1.4rem] rounded-3xl fixed h-[2rem] bg-white  transition-opacity z-[99] duration-[0.3s] border border-black border-opacity-20 ${
+        className={`following-tooltip w-fit text-nowrap flex items-center justify-center text-black font-semi-bold px-[3rem] py-[1.4rem] rounded-3xl fixed h-[2rem] bg-white  transition-opacity z-[99] duration-[0.3s] border border-black border-opacity-20 ${
           isHovered ? "opacity-100" : "opacity-0"
         }`}
         style={{
@@ -109,16 +109,16 @@ export const Hero = () => {
   return (
     <>
       <section
-        className=" pt-[9rem]"
+        className=" pt-[9rem] hero"
         style={{
           minHeight: "calc(100dvh - 6.15rem)",
         }}
       >
-        <div className="flex flex-col px-10 leading-[12rem] max-[1060px]:leading-[7rem] py-7 justify-center items-center  max-[680px]:leading-[5rem] max-[556px]:leading-[3.2rem] ">
-          <div className="p-4 overflow-hidden">
+        <div className="flex flex-col items-center justify-center px-10 hero-heading-container py-7 -space-y-[2rem]">
+          <div className="p-4 overflow-hidden z-[9]">
             <h1
               ref={para2Ref}
-              className="translate-y-[25rem] rotate-[-16deg] font-semi-bold text-[15.39rem] max-[1060px]:text-[9rem] max-[1060px]:tracking-[-7px] tracking-[-1.2rem]   max-[680px]:text-[7.6rem] max-[680px]:tracking-[-9px] max-[556px]:text-[6.6rem] max-[550px]:tracking-[-9px] max-[480px]:text-[5.3rem] max-[480px]:tracking-[-7px]  opacity-90 px-[1rem]"
+              className="hero-heading poppins-fonts translate-y-[25rem] rotate-[-16deg] font-semi-bold   max-[1060px]:tracking-[-7px] tracking-[-1.2rem]    max-[680px]:tracking-[-9px]  max-[550px]:tracking-[-9px]  max-[480px]:tracking-[-7px]  opacity-90 px-[1rem]"
             >
               Freelance
             </h1>
@@ -126,7 +126,7 @@ export const Hero = () => {
           <div className="overflow-hidden">
             <h2
               ref={paraRef}
-              className="translate-y-[12rem] rotate-[-7deg] text-[7.2rem] max-[1060px]:text-[4.4rem] max-[1060px]:tracking-[-6px] tracking-[-11.5px]  max-[680px]:text-[3.4rem] max-[680px]:tracking-[-4px] max-[556px]:text-[2.93rem] max-[550px]:tracking-[-4px] max-[480px]:text-[2.5rem] max-[480px]:tracking-[-4px] text-nowrap opacity-80 px-[1rem]"
+              className="hero-heading2 poppins-fonts translate-y-[12rem] rotate-[-7deg]  max-[1060px]:tracking-[-6px] tracking-[-11.5px]  max-[680px]:tracking-[-4px] max-[550px]:tracking-[-4px] max-[480px]:tracking-[-4px] text-nowrap opacity-80 px-[1rem]"
             >
               Designer & Developer
             </h2>
