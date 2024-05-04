@@ -25,7 +25,7 @@ export const About = () => {
     <>
       <section className="  max-w-[65rem]  w-full mx-auto relative">
         <div className="flex flex-wrap justify-between max-[770px]:flex-col">
-          <p className="text-4xl max-w-[60%]  leading-tight tracking-tighter p-4 max-[770px]:max-w-full relative">
+          <p className="text-4xl max-w-[60%]  leading-tight tracking-tighter p-4 max-[770px]:max-w-full relative max-[770px]:text-3xl">
             Helping brands to stand out in digital era. As a dedicated
             developer, I create standout digital experiences. Let's elevate your
             personal brand or project beyond the digital noise.
