@@ -122,6 +122,9 @@ html {
   color: var(--text-color);
   font-family: var(--inter-fonts);
   overflow-x: hidden;
+  scroll-behavior: smooth !important;
+  scroll-behavior: -webkit-smooth !important;
+  -webkit-scroll-behavior: smooth !important  ;
 }
 .navbar-shadow {
   border: 1px solid #00000020;
@@ -131,7 +134,7 @@ html {
   line-height: clamp(3.5rem, 10vw, 14rem);
 }
 .hero-heading {
-  font-size: clamp(4.4rem, 12vw, 17rem);
+  font-size: clamp(4.2rem, 12vw, 17rem);
 }
 .hero-heading2 {
   font-size: clamp(1rem, 8vw, 14rem);
