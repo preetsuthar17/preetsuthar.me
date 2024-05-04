@@ -89,29 +89,29 @@ export const Hero = () => {
     gsap.to(para2Ref.current, {
       transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
-      delay: 3.6,
+      delay: 2.6,
     });
     gsap.to(paraRef.current, {
       transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
-      delay: 3.8,
+      delay: 2.8,
     });
     gsap.to(buttonRef.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 3.8,
+      delay: 2.8,
     });
     gsap.to(button2Ref.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 3.8,
+      delay: 2.8,
     });
   }, []);
 
   return (
     <>
       <section className="pt-[10rem] pb-[7rem] hero ">
-        <div className="relative flex flex-col items-start max-[415px]:items-center justify-normal px-10 py-8 m-4 border hero-heading-container">
+        <div className="relative flex flex-col items-start max-[515px]:items-center justify-center px-10 py-8 m-4 border hero-heading-container">
           <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
           <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
           <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
