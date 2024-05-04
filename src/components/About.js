@@ -17,7 +17,7 @@ export const About = () => {
         trigger: ".hero",
         start: "center",
         end: "bottom 10%",
-        scrub: true,
+        scrub: 0.9,
       },
     });
   }, []);

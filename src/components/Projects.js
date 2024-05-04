@@ -33,12 +33,12 @@ export const ProjectCard = ({ project }) => {
             alt={project.name}
             width={4186}
             height={2388}
-            loading="lazy"
             placeholder="blur"
             blurDataURL={project.image}
             objectFit="cover"
             className=" max-w-full hover:scale-[1.03] transition-all parallax-element w-full h-auto "
             quality={100}
+            loading="eager"
           />
         </div>
         <p className="text-3xl font-semibold tracking-tighter">
