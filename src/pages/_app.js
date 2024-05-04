@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import "@/styles/globals.scss";
-import "swiper/css";
+import "@splidejs/react-splide/css";
 
 export default function App({ Component, pageProps }) {
   return (
