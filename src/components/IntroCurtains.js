@@ -1,7 +1,29 @@
-import CountUp from "react-countup";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useMotionValue, animate } from "framer-motion";
 
+const FlippingCounter = () => {
+  const countValue = useMotionValue(0);
+
+  useEffect(() => {
+    const animation = animate(countValue, 105, {
+      duration: 3,
+      ease: [0.2, 0.8, 0.3, 1],
+    });
+
+    return animation.stop;
+  }, [countValue]);
+
+  return (
+    <div className="">
+      <div className="text-6xl font-bold">
+        <span className="text-2xl"> {Math.floor(countValue.get())}%</span>
+      </div>
+    </div>
+  );
+};
+
+export default FlippingCounter;
 export const IntroCurtains = () => {
   const curtainRef = useRef(null);
 
@@ -11,7 +33,7 @@ export const IntroCurtains = () => {
       borderBottomLeftRadius: "60%",
       borderBottomRightRadius: "60%",
       ease: "circ.inOut",
-      delay: 3.4,
+      delay: 2.3,
     });
     gsap.to(curtainRef.current, {
       opacity: 0,
@@ -55,14 +77,9 @@ export const IntroCurtains = () => {
       className="bg-gray-200 w-dvw h-dvh z-[9999999999999] fixed "
     >
       <div className="flex items-end h-full p-[4rem] text-3xl font-bold tracking-tighter">
-        <CountUp start={0} end={100} duration={3.5}>
-          {({ countUpRef }) => (
-            <div>
-              <span ref={countUpRef} />
-              <span>%</span>
-            </div>
-          )}
-        </CountUp>
+        <div>
+          <FlippingCounter />
+        </div>
       </div>
       <div className="z-[99999]  text-black  fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-6xl font-bold">
         <p className="text-nowrap">{currentGreeting}</p>
