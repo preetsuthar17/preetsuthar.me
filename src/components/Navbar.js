@@ -98,10 +98,10 @@ export const Navbar = () => {
         trigger: ".hero",
         start: "bottom 70%",
         onUpdate: (self) => {
-          if (self.progress > 0) {
-            navbarRef.current.classList.add("navbar-shadow");
+          if (self?.progress > 0) {
+            navbarRef?.current?.classList.add("navbar-shadow");
           } else {
-            navbarRef.current.classList.remove("navbar-shadow");
+            navbarRef?.current?.classList.remove("navbar-shadow");
           }
         },
       },
