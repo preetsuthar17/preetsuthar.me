@@ -24,20 +24,20 @@ export const ProjectCard = ({ project }) => {
         onClick={() => {
           window.open(project.url, "_blank");
         }}
-        className="relative flex flex-col max-w-full gap-4 m-2 overflow-hidden cursor-pointer project-card "
+        className="relative flex flex-col max-w-full gap-4 m-2 overflow-hidden project-card cursor-grab"
       >
         <div className="overflow-hidden">
           <Image
             ref={imageRef}
             src={project.image}
-            width={1200000}
-            height={800000}
             alt={project.name}
+            width={4186}
+            height={2388}
             loading="lazy"
             placeholder="blur"
-            blurDataURL="https://placeholder.co/2000"
+            blurDataURL={project.image}
             objectFit="cover"
-            className=" max-w-full hover:scale-[1.03] transition-all parallax-element w-full h-auto"
+            className=" max-w-full hover:scale-[1.03] transition-all parallax-element w-full h-auto "
             quality={100}
           />
         </div>
@@ -59,60 +59,37 @@ export const Projects = () => {
     {
       name: "HextaUI",
       url: "https://ui.hextastudio.in",
-      image: "https://i.imgur.com/p6fpP4F.png",
+      image: "/assets/hextaui_project.png",
       year: "2024",
       category: "Development",
     },
     {
       name: "Impenny",
       url: "https://impenny.me",
-      image: "https://i.imgur.com/KHtTwyH.png",
+      image: "/assets/impenny_project.png",
       year: "2023",
       category: "Development",
     },
     {
       name: "HextaStudio",
       url: "https://hextastudio.in",
-      image: "https://i.imgur.com/tvJyNeV.png",
-      year: "2023",
-      category: "Development",
-    },
-    {
-      name: "Vultrex",
-      url: "https://beta.vultrex.dev/",
-      image: "https://i.imgur.com/jhU4b85.png",
+      image: "/assets/hextastudio_project.png",
       year: "2023",
       category: "Development",
     },
     {
       name: "Assistify AI",
       url: "https://assistifyai.org",
-      image: "https://i.imgur.com/5cR04Nn.png",
-      year: "2023",
-      category: "Development",
-    },
-    {
-      name: "Hood.pw",
-      url: "https://hood.pw",
-      image: "https://i.imgur.com/1xDVnvA.png",
-      year: "2023",
-      category: "Development",
-    },
-    {
-      name: "Bidme.bot",
-      url: "https://bidme.bot",
-      image: "https://i.imgur.com/SHAf9zX.png",
+      image: "/assets/assistify_project.png",
       year: "2023",
       category: "Development",
     },
   ];
   return (
     <>
-      <section className="my-[10rem] py-[2rem] w-full mx-auto overflow-x-auto max-w-[90%]">
+      <section className="my-[10rem] py-[2rem] w-full mx-auto overflow-x-auto max-w-[95%]">
         <Swiper
-          freeMode={true}
           slidesPerView={1}
-          pagination={{ clickable: true }}
           loop={true}
           style={{
             padding: "2rem",
