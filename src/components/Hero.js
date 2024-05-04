@@ -59,15 +59,16 @@ export const InfiniteScrollingTextV1 = () => {
         >
           <Link href="#contact">
             <h3 className="relative transition-all hover:opacity-90 cursor-pointer text-white text-[4rem] font-[400]  w-full grow bricolage-fonts flex items-center gap-9 justify-center max-[500px]:text-[3rem]">
-              Preet Suthar <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar{" "}
-              <small className="text-md">✦</small> Preet Suthar
-              <small className="text-md">✦</small> Preet Suthar{" "}
+              I'm Preet Suthar <small className="text-md">✦</small>I'm Preet
+              Suthar
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
               <small className="text-md">✦</small>
             </h3>
           </Link>
@@ -108,17 +109,16 @@ export const Hero = () => {
 
   return (
     <>
-      <section
-        className=" pt-[9rem] hero"
-        style={{
-          minHeight: "calc(100dvh - 6.15rem)",
-        }}
-      >
-        <div className="flex flex-col items-center justify-center px-10 hero-heading-container py-7 -space-y-[2rem]">
-          <div className="p-4 overflow-hidden z-[9]">
+      <section className="pt-[10rem] pb-[7rem] hero ">
+        <div className="relative flex flex-col items-start max-[415px]:items-center justify-normal px-10 py-8 m-4 border hero-heading-container">
+          <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
+          <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
+          <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
+          <div className="absolute bottom-0 right-0 w-5 h-5 border border-t-0 border-l-0 border-black"></div>
+          <div className="overflow-hidden z-[9]">
             <h1
               ref={para2Ref}
-              className="hero-heading poppins-fonts translate-y-[25rem] rotate-[-16deg] font-semi-bold   max-[1060px]:tracking-[-7px] tracking-[-1.2rem]    max-[680px]:tracking-[-9px]  max-[550px]:tracking-[-9px]  max-[480px]:tracking-[-7px]  opacity-90 px-[1rem]"
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading bricolage-fonts"
             >
               Freelance
             </h1>
@@ -126,15 +126,19 @@ export const Hero = () => {
           <div className="overflow-hidden">
             <h2
               ref={paraRef}
-              className="hero-heading2 poppins-fonts translate-y-[12rem] rotate-[-7deg]  max-[1060px]:tracking-[-6px] tracking-[-11.5px]  max-[680px]:tracking-[-4px] max-[550px]:tracking-[-4px] max-[480px]:tracking-[-4px] text-nowrap opacity-80 px-[1rem]"
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading2 bricolage-fonts"
             >
-              Designer & Developer
+              Front-End Developer
             </h2>
           </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-1 mx-auto overflow-hidden w-fit">
+        <div className="relative flex flex-wrap items-start justify-start flex-grow gap-1 px-10 py-10 m-4 overflow-hidden border ">
+          <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
+          <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
+          <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
+          <div className="absolute bottom-0 right-0 w-5 h-5 border border-t-0 border-l-0 border-black"></div>
           <Link
-            className="primary-button translate-y-[12rem]"
+            className="primary-button text-white translate-y-[12rem]"
             ref={buttonRef}
             href="#"
           >
