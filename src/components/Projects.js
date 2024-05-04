@@ -1,46 +1,22 @@
 import Image from "next/legacy/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useState, useEffect, useRef, use } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/mousewheel";
+import "swiper/css/parallax";
+
+import SwiperCore, { Navigation, Pagination } from "swiper/core";
 
 gsap.registerPlugin(ScrollTrigger);
+SwiperCore.use([Navigation, Pagination]);
 
 export const ProjectCard = ({ project }) => {
   const imageRef = useRef(null);
-
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const cursorRef = useRef(null);
-
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-    };
-    const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (cursorRef?.current) {
-      gsap.to(cursorRef?.current, {
-        x: cursorPosition.x,
-        y: cursorPosition.y,
-        scale: isHovered ? 2 : 0,
-        duration: 0.3,
-        transform: "translate(-50%, -50%)",
-      });
-    }
-  }, [cursorPosition, isHovered]);
-
   return (
     <>
       {" "}
@@ -48,54 +24,20 @@ export const ProjectCard = ({ project }) => {
         onClick={() => {
           window.open(project.url, "_blank");
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="project-card flex max-w-[30rem] w-full flex-col gap-4 grow m-2 relative overflow-hidden cursor-pointer"
+        className="relative flex flex-col max-w-full gap-4 m-2 overflow-hidden cursor-pointer project-card "
       >
-        <div
-          ref={cursorRef}
-          className="project-card-custom-cursor"
-          style={{
-            position: "fixed",
-            pointerEvents: "none",
-            left: 0,
-            top: 0,
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            backgroundColor: "#ff7b00",
-            zIndex: 9999,
-            color: "black",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M6.188 17.288L5.5 16.6L15.58 6.5H6.289v-1h11v11h-1V7.208z"
-            />
-          </svg>
-        </div>
-
-        <div className="overflow-hidden ">
+        <div className="overflow-hidden">
           <Image
             ref={imageRef}
             src={project.image}
-            width={13000}
-            height={13000}
+            width={1200000}
+            height={800000}
             alt={project.name}
             loading="lazy"
             placeholder="blur"
             blurDataURL="https://placeholder.co/2000"
             objectFit="cover"
-            className="h-auto max-w-full hover:scale-[1.03] transition-all"
+            className=" max-w-full hover:scale-[1.03] transition-all parallax-element w-full h-auto"
             quality={100}
           />
         </div>
@@ -122,6 +64,13 @@ export const Projects = () => {
       category: "Development",
     },
     {
+      name: "Impenny",
+      url: "https://impenny.me",
+      image: "https://i.imgur.com/KHtTwyH.png",
+      year: "2023",
+      category: "Development",
+    },
+    {
       name: "HextaStudio",
       url: "https://hextastudio.in",
       image: "https://i.imgur.com/tvJyNeV.png",
@@ -132,13 +81,6 @@ export const Projects = () => {
       name: "Vultrex",
       url: "https://beta.vultrex.dev/",
       image: "https://i.imgur.com/jhU4b85.png",
-      year: "2023",
-      category: "Development",
-    },
-    {
-      name: "Impenny",
-      url: "https://impenny.me",
-      image: "https://i.imgur.com/KHtTwyH.png",
       year: "2023",
       category: "Development",
     },
@@ -166,21 +108,30 @@ export const Projects = () => {
   ];
   return (
     <>
-      <section className="my-[10rem] py-[2rem] max-w-[80rem]  w-full mx-auto ">
-        <div className="flex flex-wrap justify-center flex-grow gap-20 ">
+      <section className="my-[10rem] py-[2rem] w-full mx-auto overflow-x-auto max-w-[90%]">
+        <Swiper
+          freeMode={true}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          loop={true}
+          style={{
+            padding: "2rem",
+          }}
+        >
           {Projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={{
-                name: project.name,
-                url: project.url,
-                image: project.image,
-                year: project.year,
-                category: project.category,
-              }}
-            />
+            <SwiperSlide key={index}>
+              <ProjectCard
+                project={{
+                  name: project.name,
+                  url: project.url,
+                  image: project.image,
+                  year: project.year,
+                  category: project.category,
+                }}
+              />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </section>
     </>
   );
