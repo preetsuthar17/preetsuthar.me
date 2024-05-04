@@ -65,7 +65,7 @@ export const IntroCurtains = () => {
         </CountUp>
       </div>
       <div className="z-[99999]  text-black  fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-6xl font-bold">
-        <p>{currentGreeting}</p>
+        <p className="text-nowrap">{currentGreeting}</p>
       </div>
     </section>
   );
