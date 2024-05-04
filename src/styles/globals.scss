@@ -128,13 +128,14 @@ html {
 }
 
 .hero-heading-container {
-  line-height: clamp(1rem, 18vw, 12rem);
+  line-height: clamp(3.5rem, 10vw, 14rem);
 }
 .hero-heading {
-  font-size: clamp(2rem, 18vw, 14rem);
+  font-size: clamp(4.8rem, 12vw, 17rem);
 }
 .hero-heading2 {
-  font-size: clamp(2rem, 8.1vw, 14rem);
+  font-size: clamp(1rem, 8vw, 14rem);
+  text-wrap: nowrap;
 }
 .scale-100 {
   transform: scale(1);
