@@ -7,7 +7,7 @@ export const IntroCurtains = () => {
 
   useEffect(() => {
     gsap.to(curtainRef.current, {
-      translateY: "-800px",
+      translateY: "-900px",
       borderBottomLeftRadius: "60%",
       borderBottomRightRadius: "60%",
       ease: "circ.inOut",
