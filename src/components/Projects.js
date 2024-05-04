@@ -75,7 +75,7 @@ export const Projects = () => {
   return (
     <>
       <section
-        className="my-[15rem] pt-[2rem] w-full mx-auto overflow-x-auto max-w-[95%]"
+        className="mt-[10rem] pt-[2rem] w-full mx-auto max-w-[95%]"
         id="projects"
       >
         <div className="relative border border-t-0 border-l-0 border-r-0">
