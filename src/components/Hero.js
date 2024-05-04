@@ -87,23 +87,24 @@ export const Hero = () => {
 
   useEffect(() => {
     gsap.to(para2Ref.current, {
-      transform: "translateY(0) rotate(0)",
+      transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
+      delay: 3.6,
     });
     gsap.to(paraRef.current, {
-      transform: "translateY(0) rotate(0)",
+      transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
-      delay: 0.2,
+      delay: 3.8,
     });
     gsap.to(buttonRef.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 0.2,
+      delay: 3.8,
     });
     gsap.to(button2Ref.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 0.2,
+      delay: 3.8,
     });
   }, []);
 
@@ -118,7 +119,7 @@ export const Hero = () => {
           <div className="overflow-hidden z-[9]">
             <h1
               ref={para2Ref}
-              className="translate-y-[40rem] rotate-[-15deg] hero-heading bricolage-fonts"
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading bricolage-fonts scale-[1.5]"
             >
               Freelance
             </h1>
@@ -126,7 +127,7 @@ export const Hero = () => {
           <div className="overflow-hidden">
             <h2
               ref={paraRef}
-              className="translate-y-[40rem] rotate-[-15deg] hero-heading2 bricolage-fonts"
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading2 bricolage-fonts scale-[1.5]"
             >
               Front-End Developer
             </h2>
