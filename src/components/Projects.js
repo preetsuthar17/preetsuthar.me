@@ -2,21 +2,11 @@ import Image from "next/legacy/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useState, useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/mousewheel";
-import "swiper/css/parallax";
-
-import SwiperCore, { Navigation, Pagination } from "swiper/core";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 gsap.registerPlugin(ScrollTrigger);
-SwiperCore.use([Navigation, Pagination]);
 
 export const ProjectCard = ({ project }) => {
-  const imageRef = useRef(null);
   return (
     <>
       {" "}
@@ -24,17 +14,14 @@ export const ProjectCard = ({ project }) => {
         onClick={() => {
           window.open(project.url, "_blank");
         }}
-        className="relative flex flex-col max-w-full gap-4 m-2 overflow-hidden project-card cursor-grab"
+        className="relative flex flex-col max-w-full gap-4 overflow-hidden project-card cursor-grab"
       >
         <div className="overflow-hidden">
           <Image
-            ref={imageRef}
             src={project.image}
             alt={project.name}
             width={4186}
             height={2388}
-            placeholder="blur"
-            blurDataURL={project.image}
             objectFit="cover"
             className=" max-w-full hover:scale-[1.03] transition-all parallax-element w-full h-auto "
             quality={100}
@@ -87,28 +74,55 @@ export const Projects = () => {
   ];
   return (
     <>
-      <section className="my-[10rem] py-[2rem] w-full mx-auto overflow-x-auto max-w-[95%]">
-        <Swiper
-          slidesPerView={1}
-          loop={true}
-          style={{
-            padding: "2rem",
-          }}
-        >
-          {Projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <ProjectCard
-                project={{
-                  name: project.name,
-                  url: project.url,
-                  image: project.image,
-                  year: project.year,
-                  category: project.category,
-                }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <section
+        className="my-[15rem] pt-[2rem] w-full mx-auto overflow-x-auto max-w-[95%]"
+        id="projects"
+      >
+        <div className="relative border border-t-0 border-l-0 border-r-0">
+          <h2 className="text-5xl pb-[5rem]">Featured Work</h2>
+          <div className="absolute bottom-[7.5px] left-2">
+            <span className="absolute w-[1px] h-4 rotate-90 bg-black"></span>
+            <span className="absolute w-[1px] h-4  bg-black"></span>
+          </div>
+          <div className="absolute bottom-[7.5px] right-2">
+            <span className="absolute w-[1px] h-4 rotate-90 bg-black"></span>
+            <span className="absolute w-[1px] h-4  bg-black"></span>
+          </div>
+        </div>
+        <div className="py-[6rem]">
+          <Splide
+            aria-label="Projects"
+            style={{
+              cursor: "grab",
+            }}
+            options={{
+              type: "loop",
+              focus: 1,
+              autoplay: true,
+              interval: 5000,
+              drag: "free",
+              pagination: false,
+              arrows: false,
+              autoScroll: true,
+              pauseOnFocus: true,
+              gap: "2rem",
+            }}
+          >
+            {Projects.map((project, index) => (
+              <SplideSlide key={index}>
+                <ProjectCard
+                  project={{
+                    name: project.name,
+                    url: project.url,
+                    image: project.image,
+                    year: project.year,
+                    category: project.category,
+                  }}
+                />
+              </SplideSlide>
+            ))}
+          </Splide>
+        </div>
       </section>
     </>
   );
