@@ -74,26 +74,42 @@ export const Footer = () => {
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div className="flex flex-col">
             <p className="font-bold tracking-tighter uppercase">LOCAL TIME</p>
-            <small>{localtime}</small>
+            <p className="text-sm">{localtime}</p>
           </div>
           <div className="flex flex-col">
             <p className="font-bold tracking-tighter uppercase">SOCIALS</p>
             <ul className="flex gap-4 text-sm">
               <li>
-                <Link href="https://github.com/preetsuthar17">Github</Link>
+                <Link
+                  href="https://github.com/preetsuthar17"
+                  className=" opacity-80 hover:opacity-100 hover:underline"
+                >
+                  Github
+                </Link>
               </li>
               <li>
-                <Link href="https://twitter.com/preetsuthar17">
+                <Link
+                  href="https://twitter.com/preetsuthar17"
+                  className=" opacity-80 hover:opacity-100 hover:underline"
+                >
                   Twitter (x)
                 </Link>
               </li>
               <li>
-                <Link href="https://linkedin.com/in/preetsuthar17">
+                <Link
+                  href="https://linkedin.com/in/preetsuthar17"
+                  className=" opacity-80 hover:opacity-100 hover:underline"
+                >
                   LinkedIn
                 </Link>
               </li>
               <li>
-                <Link href="https://dsc.gg/preet">Discord</Link>
+                <Link
+                  href="https://dsc.gg/preet"
+                  className=" opacity-80 hover:opacity-100 hover:underline"
+                >
+                  Discord
+                </Link>
               </li>
             </ul>
           </div>
