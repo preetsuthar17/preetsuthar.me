@@ -16,7 +16,7 @@ export const About = () => {
       scrollTrigger: {
         trigger: ".hero",
         start: "center",
-        end: "bottom 10%",
+        end: "bottom",
         scrub: 0.9,
       },
     });
@@ -42,7 +42,7 @@ export const About = () => {
               <MagneticLink>
                 <Link
                   className="m-4 w-[8rem] h-[8rem] bg-[#ff7b00] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
-                  href="#contact"
+                  href="https://x.com/preetsuthar17"
                 >
                   <span className="text-xl leading-5 text-center bricolage-fonts">
                     Let's Talk
