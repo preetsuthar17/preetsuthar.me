@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
+    "@gsap/react": "^2.1.1",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
