@@ -90,7 +90,6 @@ export const Projects = () => {
         </div>
         <div className="py-[6rem]">
           <Splide
-            aria-label="Projects"
             style={{
               cursor: "grab",
             }}

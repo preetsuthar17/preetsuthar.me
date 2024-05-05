@@ -1,14 +1,25 @@
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import MagneticLink from "@/utils/MagneticLink";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export const Footer = () => {
+  const [localtime, setLocaltime] = useState(null);
+
   const date = new Date();
+  useEffect(() => {
+    setLocaltime(
+      date.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    );
+  }, []);
   const CTADivRef = useRef(null);
 
   useGSAP(() => {
@@ -22,12 +33,6 @@ export const Footer = () => {
       },
     });
   }, []);
-
-  const localtime = date.toLocaleTimeString("en-US", {
-    timeZone: "Asia/Kolkata",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 
   return (
     <>
