@@ -1,7 +1,6 @@
 import Image from "next/legacy/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useState, useEffect, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 gsap.registerPlugin(ScrollTrigger);
