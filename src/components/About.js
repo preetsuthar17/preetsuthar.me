@@ -43,7 +43,7 @@ export const About = () => {
             >
               <MagneticLink>
                 <Link
-                  className="m-4 w-[8rem] h-[8rem] bg-[#ff7b00] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
+                  className="m-4 w-[8rem] h-[8rem] bg-[#ff7b00] text-black flex items-center justify-center rounded-full font-bold -rotate-6 "
                   href="https://x.com/preetsuthar17"
                 >
                   <span className="text-xl leading-5 text-center bricolage-fonts">
