@@ -46,7 +46,7 @@ export const Footer = () => {
             <div className="absolute top-[-4.5rem] right-20" ref={CTADivRef}>
               <MagneticLink>
                 <Link
-                  className="m-4 w-[7rem] h-[7rem] bg-[#ff7b00] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
+                  className="m-4 w-[7rem] h-[7rem] bg-[#ff7b00] text-black flex items-center justify-center rounded-full font-bold -rotate-6 "
                   href="https://x.com/preetsuthar17"
                 >
                   <span className="text-xl leading-5 text-center bricolage-fonts">
