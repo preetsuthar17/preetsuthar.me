@@ -36,7 +36,7 @@ export const Services = () => {
         </div>
         <div className="py-[6rem] flex gap-[5rem] justify-evenly max-[850px]:flex-col overflow-hidden">
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small className="opacity-40">01</small>
+            <small className="opacity-90">01</small>
             <hr />
             <h3 className="text-2xl font-medium">Design</h3>
             <p className="opacity-90">
@@ -46,7 +46,7 @@ export const Services = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small className="opacity-40">02</small>
+            <small className="opacity-90">02</small>
             <hr />
             <h3 className="text-2xl font-medium">Development</h3>
             <p className="opacity-90">
@@ -56,7 +56,7 @@ export const Services = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small className="opacity-40">03</small>
+            <small className="opacity-90">03</small>
             <hr />
             <h3 className="text-2xl font-medium">✦ Combo</h3>
             <p className="opacity-90">
