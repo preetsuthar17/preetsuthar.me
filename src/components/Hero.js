@@ -133,7 +133,7 @@ export const Hero = () => {
             </h2>
           </div>
         </div>
-        <div className="relative flex flex-wrap items-start justify-start flex-grow gap-1 px-10 py-10 m-4 overflow-hidden border ">
+        <div className="relative flex flex-wrap items-center max-[515px]:justify-center justify-start flex-grow gap-1 px-10 py-10 m-4 overflow-hidden border ">
           <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
           <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
           <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
@@ -141,7 +141,7 @@ export const Hero = () => {
           <Link
             className="primary-button text-white translate-y-[12rem]"
             ref={buttonRef}
-            href="#"
+            href="https://x.com/preetsuthar17"
           >
             Let's work together
           </Link>
