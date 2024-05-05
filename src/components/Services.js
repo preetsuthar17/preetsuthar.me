@@ -36,9 +36,9 @@ export const Services = () => {
         </div>
         <div className="py-[6rem] flex gap-[5rem] justify-evenly max-[850px]:flex-col overflow-hidden">
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small>01</small>
+            <small className="opacity-40">01</small>
             <hr />
-            <h3 className="text-2xl">Design</h3>
+            <h3 className="text-2xl font-medium">Design</h3>
             <p className="opacity-90">
               With solid record in designing, I deliver awesome and modern
               designs for new or existing businesses that skyrockets their
@@ -46,9 +46,9 @@ export const Services = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small>02</small>
+            <small className="opacity-40">02</small>
             <hr />
-            <h3 className="text-2xl">Development</h3>
+            <h3 className="text-2xl font-medium">Development</h3>
             <p className="opacity-90">
               I can help you to create website large scalable website that fits
               my design with animations and micro interaction in website. Let's
@@ -56,9 +56,9 @@ export const Services = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
-            <small>03</small>
+            <small className="opacity-40">03</small>
             <hr />
-            <h3 className="text-2xl">✦ Combo</h3>
+            <h3 className="text-2xl font-medium">✦ Combo</h3>
             <p className="opacity-90">
               The combo including process of designing and developing website
               with max optimization for SEO and website Speed.
