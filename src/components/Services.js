@@ -2,7 +2,7 @@ export const Services = () => {
   return (
     <>
       <section
-        className=" pt-[4rem] w-full mx-auto max-w-[95%] overflow-hidden"
+        className="services pt-[4rem] w-full mx-auto max-w-[95%] overflow-hidden"
         id="services"
       >
         <div className="relative border border-t-0 border-l-0 border-r-0">
@@ -40,8 +40,8 @@ export const Services = () => {
             <hr />
             <h3 className="text-2xl font-medium">Design</h3>
             <p className="opacity-90">
-              With solid record in designing, I deliver awesome and modern
-              designs for new or existing businesses that skyrockets their
+              With a solid record in designing, I deliver awesome and modern
+              designs for new or existing businesses that skyrocket their
               impressions! (since 2024 with development work)
             </p>
           </div>
@@ -50,9 +50,9 @@ export const Services = () => {
             <hr />
             <h3 className="text-2xl font-medium">Development</h3>
             <p className="opacity-90">
-              I can help you to create website large scalable website that fits
-              my design with animations and micro interaction in website. Let's
-              turn your idea into reality together!
+              I can help you create a large, scalable website that fits my
+              design with animations and micro-interactions. Let's turn your
+              idea into reality together!
             </p>
           </div>
           <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
@@ -60,8 +60,8 @@ export const Services = () => {
             <hr />
             <h3 className="text-2xl font-medium">✦ Combo</h3>
             <p className="opacity-90">
-              The combo including process of designing and developing website
-              with max optimization for SEO and website Speed.
+              The combo includes the process of designing and developing a
+              website with maximum optimization for SEO and website speed.
             </p>
           </div>
         </div>
