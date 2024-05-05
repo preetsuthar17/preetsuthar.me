@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useMotionValue, animate } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const FlippingCounter = () => {
   const countValue = useMotionValue(0);
@@ -27,7 +30,7 @@ export default FlippingCounter;
 export const IntroCurtains = () => {
   const curtainRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to(curtainRef.current, {
       translateY: "-900px",
       borderBottomLeftRadius: "60%",
@@ -40,6 +43,7 @@ export const IntroCurtains = () => {
       delay: 5,
     });
   }, []);
+
   const greetings = [
     "Hello",
     "નમસ્તે",
@@ -54,6 +58,7 @@ export const IntroCurtains = () => {
     "你好",
     "नमस्ते",
   ];
+
   const [currentGreeting, setCurrentGreeting] = useState(greetings[0]);
   const [index, setIndex] = useState(0);
 

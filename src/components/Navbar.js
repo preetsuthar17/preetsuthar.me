@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const MenuBar = ({ isOpen, ref }) => {
   return (
@@ -86,7 +87,7 @@ export const Navbar = () => {
     setMenuBar(!menuBar);
   };
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to(navbarRef.current, {
       width: "90%",
       marginTop: "1rem",
@@ -106,6 +107,9 @@ export const Navbar = () => {
         },
       },
     });
+  }, []);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         menuBarRef.current &&

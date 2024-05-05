@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "partytown copylib public/~partytown & next dev",
+    "build": "partytown copylib public/~partytown & next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
+    "@gsap/react": "^2.1.1",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",

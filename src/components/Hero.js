@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 export const InfiniteScrollingTextV1 = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -85,7 +88,7 @@ export const Hero = () => {
   const buttonRef = useRef(null);
   const button2Ref = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.to(para2Ref.current, {
       transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",

@@ -1,15 +1,17 @@
 import Link from "next/link";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 import MagneticLink from "@/utils/MagneticLink";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export const About = () => {
   const CTADivRef = useRef(null);
-  useEffect(() => {
+
+  useGSAP(() => {
     gsap.to(CTADivRef.current, {
       bottom: "-3rem",
       scrollTrigger: {
@@ -20,6 +22,7 @@ export const About = () => {
       },
     });
   }, []);
+
   return (
     <>
       <section className="  max-w-[65rem]  w-full mx-auto relative">
