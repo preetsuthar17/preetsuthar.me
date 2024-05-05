@@ -52,7 +52,7 @@ const MenuBar = ({ isOpen, ref }) => {
             </li>
             <li>
               <Link
-                href="#contact"
+                href="https://x.com/preetsuthar17"
                 className="text-[1.3rem] font-[700]  tracking-tight  flex gap-1 items-center px-[15px] py-[10px] bg-white text-black rounded-xl hover:brightness-95 transition-all"
               >
                 Let's Talk{" "}
@@ -206,7 +206,7 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="max-[663px]:hidden">
-            <Link href="#contact" className="primary-button">
+            <Link href="https://x.com/preetsuthar17" className="primary-button">
               Let's Work Together{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
