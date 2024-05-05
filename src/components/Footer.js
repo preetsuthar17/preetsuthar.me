@@ -1,138 +1,102 @@
-import SmoothScrollLink from "./other/SmoothLinkScroll";
 import Link from "next/link";
-import React from "react";
-import { Parallax } from "react-scroll-parallax";
-
-import { useEffect, useRef } from "react";
-import { ScrollToTopButton } from "./other/ScrollToTopButton";
-
 import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
-import shape from "../assets/shape-1.svg";
-import Image from "next/image";
+import MagneticLink from "@/utils/MagneticLink";
 
-export const Footer = React.forwardRef((props, ref) => {
+gsap.registerPlugin(ScrollTrigger);
+
+export const Footer = () => {
   const date = new Date();
-  const year = date.getFullYear();
-  const imageRef = useRef(null);
+  const CTADivRef = useRef(null);
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
-      gsap.to(imageRef?.current, {
-        x: (e.clientX - window.innerWidth / 2) / 40,
-        y: (e.clientY - window.innerHeight / 2) / 40,
-        ease: "Power1.easeOut",
-        duration: 1.3,
-      });
+    gsap.to(CTADivRef.current, {
+      right: "0",
+      scrollTrigger: {
+        trigger: ".services",
+        start: "center",
+        end: "bottom",
+        scrub: 0.9,
+      },
     });
   }, []);
+  const localtime = date.toLocaleTimeString("en-US", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return (
     <>
-      <footer className="footer" ref={ref}>
-        <Parallax scale={[0, 10]} className="shape">
-          <Image ref={imageRef} src={shape} alt="Parallax Shape" />
-        </Parallax>
-        <section className="section-1">
-          <p>Got a project?</p>
-          <h3>
-            LET'S GET IN TOUCH<span className="orange-color">.</span>
-          </h3>
-        </section>
-
-        <section className="section-2">
-          <div className="link_section link_section_1">
-            <p>EXPLORE</p>
-            <ul>
-              <li>
-                <SmoothScrollLink dataLink="Home" href="#home">
-                  Home
-                </SmoothScrollLink>
-              </li>
-              <li>
-                <SmoothScrollLink dataLink="About" href="#about">
-                  About
-                </SmoothScrollLink>
-              </li>
-              <li>
-                <SmoothScrollLink dataLink="Projects" href="#projects">
-                  Projects
-                </SmoothScrollLink>
-              </li>
-              <li>
-                <SmoothScrollLink dataLink="Services" href="#services">
-                  Services
-                </SmoothScrollLink>
-              </li>
-              <li>
-                <SmoothScrollLink dataLink="Contact" href="#contact">
-                  Contact
-                </SmoothScrollLink>
-              </li>
-            </ul>
+      <footer
+        className="flex flex-col justify-between p-5 border-t"
+        style={{
+          height: "calc(100vh - 10rem)",
+        }}
+      >
+        <div className="flex flex-col  gap-[5rem] max-w-[60rem] mx-auto mt-[4rem]">
+          <div>
+            <p className="text-6xl tracking-tighter">Let's work together</p>
           </div>
-          <div className="link_section link_section_2">
-            <p>LET'S CONNECT</p>
-            <ul>
-              <li>
+          <div className="relative">
+            <hr />
+            <div className="absolute top-[-4.5rem] right-20" ref={CTADivRef}>
+              <MagneticLink>
                 <Link
-                  data-link="Github"
-                  href="https://github.com/preetsuthar17"
-                  target="_blank"
+                  className="m-4 w-[7rem] h-[7rem] bg-[#ff7b00] text-white flex items-center justify-center rounded-full font-bold -rotate-6 "
+                  href="https://x.com/preetsuthar17"
                 >
-                  GitHub
+                  <span className="text-xl leading-5 text-center bricolage-fonts">
+                    Let's Talk
+                  </span>
+                </Link>
+              </MagneticLink>
+            </div>
+          </div>
+          <div className="flex items-center gap-5">
+            <Link
+              className="primary-button"
+              href="mailto:preetsutharxd@gmail.com"
+            >
+              preetsutharxd@gmail.com
+            </Link>
+            <Link
+              className="secondary-button"
+              href="https://x.com/preetsuthar17"
+            >
+              Twitter (x)
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-wrap items-end justify-between gap-5">
+          <div className="flex flex-col">
+            <p className="font-bold tracking-tighter uppercase">LOCAL TIME</p>
+            <small>{localtime}</small>
+          </div>
+          <div className="flex flex-col">
+            <p className="font-bold tracking-tighter uppercase">SOCIALS</p>
+            <ul className="flex gap-4 text-sm">
+              <li>
+                <Link href="https://github.com/preetsuthar17">Github</Link>
+              </li>
+              <li>
+                <Link href="https://twitter.com/preetsuthar17">
+                  Twitter (x)
                 </Link>
               </li>
               <li>
-                <Link
-                  data-link="LinkedIn"
-                  href="https://linkedin.com/in/preetsuthar17"
-                  target="_blank"
-                >
+                <Link href="https://linkedin.com/in/preetsuthar17">
                   LinkedIn
                 </Link>
               </li>
               <li>
-                <Link
-                  data-link="Email"
-                  href="mailto:preetsutharxd@gmail.com"
-                  target="_blank"
-                >
-                  Email
-                </Link>
-              </li>
-              <li>
-                <Link
-                  data-link="Discord"
-                  href="https://dsc.gg/preet"
-                  target="_blank"
-                >
-                  Discord
-                </Link>
-              </li>
-              <li>
-                <Link
-                  data-link="Twitter (x)"
-                  href="https://x.com/preetsuthar17"
-                  target="_blank"
-                >
-                  Twitter (x)
-                </Link>
+                <Link href="https://dsc.gg/preet">Discord</Link>
               </li>
             </ul>
           </div>
-        </section>
-        <section className="section-3">
-          <p>Made with 💖 by Preet Suthar - {year} </p>
-        </section>
-        <section className="section-4">
-          <Parallax translateY={[30, -90]}>
-            <span className="text-only-outline">THANK YOU</span>
-            <span className="orange-color">.</span>
-          </Parallax>
-        </section>
-
-        <ScrollToTopButton />
+        </div>
       </footer>
     </>
   );
-});
+};

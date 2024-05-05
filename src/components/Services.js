@@ -1,81 +1,71 @@
-const ServiceCard = ({ service }) => {
-  return (
-    <div className="service-card">
-      <div className="service-heading">
-        <h3 className="service-title">✦ {service.title}</h3>
-        <p className="service-description">{service.description}</p>
-      </div>
-      <div className="service-content">
-        <ul className="service-tags">
-          <li>{service.content1}</li>
-          <li>{service.content2}</li>
-          <li>{service.content3}</li>
-          <li>{service.content4}</li>
-        </ul>
-        <p className="service-number">{service.number}</p>
-      </div>
-    </div>
-  );
-};
-
 export const Services = () => {
-  const services = [
-    {
-      title: "Website development",
-      description: `Rely on my expertise for a fast, visually appealing website that exceeds expectations. I'm dedicated to delivering results that boost your online presence and business success.`,
-      content1: "Landing page",
-      content2: "Product website",
-      content3: "Portfolio website",
-      number: "01.",
-    },
-    {
-      title: "SEO optimization",
-      description: `I'll help you rank on Google by optimizing your website and creating quality content. My goal is to drive traffic, increase visibility, and improve your online presence.`,
-      content1: "Ranking",
-      content2: "On-page SEO",
-      content3: "Off-page SEO",
-      number: "02.",
-    },
-    {
-      title: "Designing",
-      description: `I create visually appealing designs that align with your brand and business goals. I'm dedicated to delivering results that boost your online presence and business success.`,
-      content1: "UI/UX design",
-      content2: "Landing page",
-      content3: "Product page",
-      content4: "Portfolio website",
-      number: "03.",
-    },
-  ];
-
   return (
-    <section className="services" id="services">
-      <div className="services-heading">
-        <h2>
-          WHAT I DO<span className="orange-color"> .</span>
-        </h2>
-      </div>
-      <div className="services-cards-lists">
-        {services.map((service, index) => (
-          <ServiceCard key={index} service={{ ...service }} />
-        ))}
-      </div>
-      <div className="services-tilted-text">
-        <div className="scrolling-text">
-          <div>
-            <p>
-              &nbsp;&nbsp;&nbsp;WE BUILD EXPERIENCES
-              &nbsp;&nbsp;✦&nbsp;&nbsp;IMPROVE YOUR
-              DESIGN&nbsp;&nbsp;✦&nbsp;&nbsp;MAKE IT STUNNING
+    <>
+      <section
+        className=" pt-[4rem] w-full mx-auto max-w-[95%] overflow-hidden"
+        id="services"
+      >
+        <div className="relative border border-t-0 border-l-0 border-r-0">
+          <h2 className="text-5xl pb-[5rem]">
+            I can help you with <span className="animate-ping">.</span>
+            <span
+              className="animate-ping"
+              style={{
+                animationDelay: "0.4s",
+              }}
+            >
+              .
+            </span>
+            <span
+              className="animate-ping"
+              style={{
+                animationDelay: "0.5s",
+              }}
+            >
+              .
+            </span>
+          </h2>
+          <div className="absolute bottom-[7.5px] left-2">
+            <span className="absolute w-[1px] h-4 rotate-90 bg-black"></span>
+            <span className="absolute w-[1px] h-4  bg-black"></span>
+          </div>
+          <div className="absolute bottom-[7.5px] right-2">
+            <span className="absolute w-[1px] h-4 rotate-90 bg-black"></span>
+            <span className="absolute w-[1px] h-4  bg-black"></span>
+          </div>
+        </div>
+        <div className="py-[6rem] flex gap-[5rem] justify-evenly max-[850px]:flex-col overflow-hidden">
+          <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
+            <small className="opacity-40">01</small>
+            <hr />
+            <h3 className="text-2xl font-medium">Design</h3>
+            <p className="opacity-90">
+              With solid record in designing, I deliver awesome and modern
+              designs for new or existing businesses that skyrockets their
+              impressions! (since 2024 with development work)
             </p>
           </div>
-          <div>
-            <p>
-              ✦&nbsp;&nbsp;WE BUILD EXPERIENCES&nbsp;&nbsp;✦&nbsp;&nbsp;IMPROVE
-              YOUR DESIGN&nbsp;&nbsp;✦&nbsp;&nbsp;MAKE IT STUNNING
+          <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
+            <small className="opacity-40">02</small>
+            <hr />
+            <h3 className="text-2xl font-medium">Development</h3>
+            <p className="opacity-90">
+              I can help you to create website large scalable website that fits
+              my design with animations and micro interaction in website. Let's
+              turn your idea into reality together!
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 max-w-[20rem] max-[850px]:max-w-full w-full grow">
+            <small className="opacity-40">03</small>
+            <hr />
+            <h3 className="text-2xl font-medium">✦ Combo</h3>
+            <p className="opacity-90">
+              The combo including process of designing and developing website
+              with max optimization for SEO and website Speed.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

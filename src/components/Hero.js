@@ -1,105 +1,160 @@
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import Link from "next/link";
+import gsap from "gsap";
 
-import shape1 from "../assets/shape-1.svg";
-import Image from "next/image";
-import SmoothScrollLink from "./other/SmoothLinkScroll";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import SplitType from "split-type";
+export const InfiniteScrollingTextV1 = () => {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const [rotation, setRotation] = useState(0);
 
-export const Hero = React.forwardRef((props, ref) => {
-  const imageRef = useRef(null);
-  const headingRef1 = useRef(null);
-  const headingRef2 = useRef(null);
-  const headlineTextRef = useRef(null);
-
+  const maxRotation = 8;
   useEffect(() => {
-    const headlineText = new SplitType(headlineTextRef?.current);
+    const handleMouseMove = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
 
-    gsap.to(".char", {
-      y: 0,
-      stagger: 0.01,
-      delay: 2.7,
-      duration: 0.1,
-    });
+      const midpoint = window.innerWidth / 2;
+
+      const distanceFromMidpoint = Math.abs(e.clientX - midpoint);
+      const rotation = (distanceFromMidpoint / midpoint) * maxRotation;
+
+      setRotation(e.clientX > midpoint ? rotation : -rotation);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
-  useEffect(() => {
-    gsap.to(headingRef2?.current, {
-      y: 0,
-      delay: 2.4,
-      ease: "expo",
-      duration: 0.6,
-    });
-    gsap.to(headingRef1?.current, {
-      y: 0,
-      delay: 2.5,
-      ease: "expo",
-      duration: 0.5,
-    });
-  }, []);
+  return (
+    <>
+      <div
+        className={`following-tooltip w-fit text-nowrap flex items-center justify-center text-black font-semi-bold px-[3rem] py-[1.4rem] rounded-3xl fixed h-[2rem] bg-white  transition-opacity z-[99] duration-[0.3s] border border-black border-opacity-20 ${
+          isHovered ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          top: `${cursorPosition.y}px`,
+          left: `${cursorPosition.x}px`,
+          transform: `rotateZ(${rotation}deg) translate(-50%, -140%)`,
+        }}
+      >
+        <p>Let's work Together 💪</p>
+      </div>
+      <main className="relative flex mt-[6rem] rotate-[-2deg] overflow-hidden w-vw bg-[#ff7b00]">
+        <motion.div
+          className="whitespace-nowrap "
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          animate={{
+            x: [-1, -1000],
+            transition: {
+              repeat: Infinity,
+              duration: 10,
+              ease: "linear",
+            },
+          }}
+        >
+          <Link href="#contact">
+            <h3 className="relative transition-all hover:opacity-90 cursor-pointer text-white text-[4rem] font-[400]  w-full grow bricolage-fonts flex items-center gap-9 justify-center max-[500px]:text-[3rem]">
+              I'm Preet Suthar <small className="text-md">✦</small>I'm Preet
+              Suthar
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>I'm Preet Suthar
+              <small className="text-md">✦</small>I'm Preet Suthar{" "}
+              <small className="text-md">✦</small>
+            </h3>
+          </Link>
+        </motion.div>
+      </main>
+    </>
+  );
+};
+
+export const Hero = () => {
+  const paraRef = useRef(null);
+  const para2Ref = useRef(null);
+
+  const buttonRef = useRef(null);
+  const button2Ref = useRef(null);
 
   useEffect(() => {
-    window.addEventListener("mousemove", (e) => {
-      gsap.to(imageRef?.current, {
-        y: (e.clientX - window.innerWidth / 2) / 40,
-        x: -(e.clientY - window.innerHeight / 2) / 40,
-        ease: "Power1.easeOut",
-        duration: 1.3,
-      });
+    gsap.to(para2Ref.current, {
+      transform: "translateY(0) rotate(0) scale(1)",
+      ease: "circ.out",
+      delay: 2.6,
+    });
+    gsap.to(paraRef.current, {
+      transform: "translateY(0) rotate(0) scale(1)",
+      ease: "circ.out",
+      delay: 2.8,
+    });
+    gsap.to(buttonRef.current, {
+      transform: "translateY(0)",
+      ease: "circ.out",
+      delay: 2.8,
+    });
+    gsap.to(button2Ref.current, {
+      transform: "translateY(0)",
+      ease: "circ.out",
+      delay: 2.8,
     });
   }, []);
 
   return (
-    <section className="hero" ref={ref}>
-      <div className="floating-blocks-1">
-        <Parallax
-          translateY={[-100, 50]}
-          rotate={[180, 360]}
-          scale={[0, 3]}
-          className="shape-1"
-        >
-          <Image src={shape1} ref={imageRef} alt="Parallax Shape" />
-        </Parallax>
-      </div>
-      <div className="section-1">
-        <div className="heading-div">
-          {/* <SmoothScrollLink href="#contact" className="available-for-work ">
-            <p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 56 56"
-              >
-                <path
-                  fill="#fd7b01"
-                  d="M26.688 12.66c.28 0 .421-.164.492-.422c.726-3.914.68-4.008 4.758-4.781c.28-.047.445-.21.445-.492c0-.281-.164-.445-.446-.492c-4.054-.82-3.937-.914-4.757-4.782c-.07-.257-.211-.421-.492-.421c-.282 0-.422.164-.493.421c-.82 3.868-.68 3.961-4.757 4.782c-.258.046-.446.21-.446.492c0 .281.188.445.445.492c4.079.82 4.032.867 4.758 4.781c.07.258.211.422.492.422M15.344 28.785c.445 0 .75-.281.797-.703c.843-6.258 1.054-6.258 7.523-7.5c.422-.07.727-.352.727-.797c0-.422-.305-.726-.727-.797c-6.469-.89-6.703-1.101-7.523-7.476c-.047-.422-.352-.727-.797-.727c-.422 0-.727.305-.774.75c-.773 6.281-1.101 6.258-7.523 7.453c-.422.094-.727.375-.727.797c0 .469.305.727.82.797c6.376 1.031 6.657 1.195 7.43 7.453c.047.469.352.75.774.75m15.89 25.946c.61 0 1.055-.446 1.172-1.079c1.664-12.843 3.469-14.789 16.172-16.195c.656-.07 1.102-.562 1.102-1.172c0-.61-.446-1.078-1.102-1.172c-12.703-1.406-14.508-3.351-16.172-16.195c-.117-.633-.562-1.055-1.172-1.055c-.609 0-1.054.422-1.148 1.055c-1.664 12.844-3.492 14.789-16.172 16.195c-.68.094-1.125.563-1.125 1.172c0 .61.445 1.102 1.125 1.172c12.656 1.664 14.414 3.375 16.172 16.195c.094.633.539 1.078 1.148 1.078"
-                />
-              </svg>{" "}
-              AVAILABLE FOR NEW PROJECT
-            </p>
-          </SmoothScrollLink> */}
-          <div className="hero-main-heading  hero-main-heading-1">
-            <p ref={headingRef1} className="text-only-outline">
-              HEY THERE
-            </p>
+    <>
+      <section className="pt-[10rem] pb-[7rem] hero ">
+        <div className="relative flex flex-col items-start max-[515px]:items-center justify-center px-10 py-8 m-4 border hero-heading-container">
+          <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
+          <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
+          <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
+          <div className="absolute bottom-0 right-0 w-5 h-5 border border-t-0 border-l-0 border-black"></div>
+          <div className="overflow-hidden z-[9]">
+            <h1
+              ref={para2Ref}
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading bricolage-fonts scale-[1.5]"
+            >
+              Freelance
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <h2
+              ref={paraRef}
+              className="translate-y-[40rem] rotate-[-15deg] hero-heading2 bricolage-fonts scale-[1.5]"
+            >
+              Front-End Developer
+            </h2>
           </div>
         </div>
-        <div className="hero-main-heading-2">
-          <h1 ref={headingRef2} className="hero-main-heading">
-            {" "}
-            I'M PREET
-          </h1>
+        <div className="relative flex flex-wrap items-center max-[515px]:justify-center justify-start flex-grow gap-1 px-10 py-10 m-4 overflow-hidden border ">
+          <div className="absolute top-0 left-0 w-5 h-5 border border-t border-b-0 border-r-0 border-black"></div>
+          <div className="absolute top-0 right-0 w-5 h-5 border border-t border-b-0 border-l-0 border-black"></div>
+          <div className="absolute bottom-0 left-0 w-5 h-5 border border-t-0 border-r-0 border-black"></div>
+          <div className="absolute bottom-0 right-0 w-5 h-5 border border-t-0 border-l-0 border-black"></div>
+          <Link
+            className="primary-button text-white translate-y-[12rem]"
+            ref={buttonRef}
+            href="https://x.com/preetsuthar17"
+          >
+            Let's work together
+          </Link>
+          <Link
+            className="secondary-button translate-y-[12rem]"
+            ref={button2Ref}
+            href="#"
+          >
+            Projects
+          </Link>
         </div>
-      </div>
-      <div className="section-2">
-        <p className="headlineText" ref={headlineTextRef}>
-          A Freelance Front-end Developer & Designer, crafting mesmerizing
-          experiences.
-        </p>
-      </div>
-    </section>
+        <InfiniteScrollingTextV1 />
+      </section>
+    </>
   );
-});
+};
