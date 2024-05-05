@@ -92,22 +92,22 @@ export const Hero = () => {
     gsap.to(para2Ref.current, {
       transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
-      delay: 2.6,
+      delay: 2.4,
     });
     gsap.to(paraRef.current, {
       transform: "translateY(0) rotate(0) scale(1)",
       ease: "circ.out",
-      delay: 2.8,
+      delay: 2.6,
     });
     gsap.to(buttonRef.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 2.8,
+      delay: 2.6,
     });
     gsap.to(button2Ref.current, {
       transform: "translateY(0)",
       ease: "circ.out",
-      delay: 2.8,
+      delay: 2.6,
     });
   }, []);
 
