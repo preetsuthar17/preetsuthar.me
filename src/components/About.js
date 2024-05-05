@@ -12,7 +12,6 @@ export const About = () => {
   useEffect(() => {
     gsap.to(CTADivRef.current, {
       bottom: "-3rem",
-      ease: "circ.inOut",
       scrollTrigger: {
         trigger: ".hero",
         start: "center",
