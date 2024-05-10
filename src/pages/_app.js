@@ -1,6 +1,4 @@
-import { Layout } from "@/components/Layout";
-import "@/styles/globals.scss";
-import "@splidejs/react-splide/css";
+import "../styles/globals.scss";
 
 import { Partytown } from "@builder.io/partytown/react";
 import Script from "next/script";
@@ -33,9 +31,7 @@ export default function App({ Component, pageProps }) {
         src="https://eu.umami.is/script.js"
         data-website-id="b59ea046-ed0b-4f4e-ac6e-cf9606ff6f15"
       ></Script>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   );
 }

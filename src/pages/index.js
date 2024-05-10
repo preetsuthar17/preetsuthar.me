@@ -1,24 +1,20 @@
-import { About } from "@/components/About";
-import { Hero } from "@/components/Hero";
-import { IntroCurtains } from "@/components/IntroCurtains";
-import { Projects } from "@/components/Projects";
-import { Services } from "@/components/Services";
-
+import { Header } from "@/components/Header";
+import { Projects } from "@/components/Projcts";
 import Head from "next/head";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Preet Suthar 🚀 | Front-end developer/designer</title>
+        <title>Preet Suthar 🚀 - Creative Front-end developer</title>
         <meta name="robots" content="all" />
         <meta name="description" content="My personal portfolio website." />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#000000" />
         <meta httpEquiv="content-language" content="en" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
         <meta
           property="og:title"
-          content="Preet Suthar 🚀 | Front-end developer/designer"
+          content="Preet Suthar 🚀 - Creative Front-end developer"
         />
         <meta
           property="og:description"
@@ -38,7 +34,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="twitter:title"
-          content="Preet Suthar 🚀 | Front-end developer/designer"
+          content="Preet Suthar 🚀 - Creative Front-end developer"
         />
         <meta
           name="twitter:description"
@@ -59,15 +55,13 @@ export default function Home() {
               "https://preetsuthar.me",
               "https://dsc.gg/preet",
             ],
-            jobTitle: "Front-end developer/designer",
+            jobTitle: "Creative Front-end developer",
           })}
         </script>
       </Head>
-      <IntroCurtains />
-      <Hero />
-      <About />
+      <Header />
+      <hr className="opacity-30" />
       <Projects />
-      <Services />
     </>
   );
 }
