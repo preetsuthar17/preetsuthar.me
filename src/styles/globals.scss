@@ -70,3 +70,27 @@ h2 {
     opacity: 0.3;
   }
 }
+
+.project-image {
+  display: none;
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-card:hover {
+  .project-image {
+    display: flex;
+    position: fixed;
+    width: 20rem;
+    z-index: 99999;
+    height: auto;
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+}
