@@ -41,3 +41,32 @@ html {
   margin-inline: auto;
   width: 95%;
 }
+
+h1,
+h2 {
+  background: linear-gradient(
+    to bottom,
+    white 40%,
+    rgba(255, 255, 255, 0.407) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-weight: 800 !important;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  position: relative;
+  width: fit-content;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.2px;
+    width: 100rem;
+    background-color: white;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+  }
+}
