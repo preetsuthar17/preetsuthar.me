@@ -60,7 +60,6 @@ export default function Home() {
         </script>
       </Head>
       <Header />
-      <hr className="opacity-30" />
       <Projects />
     </>
   );
