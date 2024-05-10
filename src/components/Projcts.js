@@ -138,7 +138,7 @@ export const Projects = () => {
       description:
         "Web design and development agency providing top notch work in affordable pricing.",
       url: "https://hextastudio.in",
-      image: "https://i.imgur.com/IFf4hv8.png",
+      image: "https://i.imgur.com/huZGKSH.png",
     },
     {
       title: "HextaUI",
