@@ -22,10 +22,7 @@ export default function Home() {
         />
         <meta property="og:url" content="https://preetsuthar.me" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://preetsuthar.me/portfolio=logo.png"
-        />
+        <meta property="og:image" content="https://i.imgur.com/Pwhm0a2.png" />
         <meta
           name="keywords"
           content="Preet Suthar, Front-end Developer, Portfolio, Blog, web development, preet, front end development, front-end developer"
