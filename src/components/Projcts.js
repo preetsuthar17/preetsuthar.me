@@ -151,6 +151,11 @@ export const Projects = () => {
 
   const FreelanceProjects = [
     {
+      title: "Dhruvi Portfolio",
+      url: "https://dhruvisuthar.pages.dev",
+      image: "https://i.imgur.com/xRk1CAk.png",
+    },
+    {
       title: "Nooderbot website",
       url: "https://nooderbot.com",
       image: "https://i.imgur.com/rjJ1kQP.png",
