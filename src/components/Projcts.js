@@ -44,8 +44,10 @@ export const ProjectsCard = ({ project }) => {
         }}
         className="p-4 transition-all hover:bg-zinc-950 cursor-pointer rounded-xl duration-[0.2s] project-card"
       >
-        <h3 className="font-semibold text-md opacity-95">{project.title}</h3>
-        <p className="text-[14px] opacity-80 leading-tight">
+        <h3 className="font-semibold text-md opacity-95 lowercase">
+          {project.title}
+        </h3>
+        <p className="text-[14px] opacity-80 leading-tight lowercase">
           {project.description}
         </p>{" "}
         <div className="project-image" ref={projectImageRef}>
@@ -103,8 +105,10 @@ export const FreelanceProjectsCard = ({ project }) => {
         }}
         className="p-4 transition-all hover:bg-zinc-950 cursor-pointer rounded-xl duration-[0.2s] project-card"
       >
-        <h3 className="font-semibold text-md opacity-95">{project.title}</h3>
-        <p className="flex items-center gap-[3px] text-sm opacity-80">
+        <h3 className="font-semibold text-md opacity-95 lowercase">
+          {project.title}
+        </h3>
+        <p className="flex items-center gap-[3px] text-sm opacity-80 lowercase">
           view project{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +145,7 @@ export const Projects = () => {
       image: "https://i.imgur.com/huZGKSH.png",
     },
     {
-      title: "HextaUI",
+      title: "HextaStudio/ui",
       description:
         "Copy and paste some Stunning & Modern components in your website.",
       url: "https://ui.hextastudio.in",
