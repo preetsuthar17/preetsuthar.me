@@ -9,11 +9,6 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <Partytown debug={true} forward={["dataLayer.push"]} />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
-          type="text/partytown"
-        ></script>
         <Script
           type="text/partytown"
           dangerouslySetInnerHTML={{
@@ -26,6 +21,11 @@ export default function App({ Component, pageProps }) {
           }}
         />
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
+        type="text/partytown"
+      ></Script>
       <Script
         async
         src="https://eu.umami.is/script.js"

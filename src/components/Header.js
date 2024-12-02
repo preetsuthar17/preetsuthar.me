@@ -10,9 +10,9 @@ export const Header = () => {
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl font-bold tracking-tight">Preet Suthar</h1>
             <div>
-              <div class="absolute flex size-4 mt-[2px]">
-                <span class="absolute top-[4.5px] size-2 animate-ping rounded-full bg-green-500 opacity-75"></span>
-                <span class="relative top-[4.5px] size-2 rounded-full bg-green-500"></span>
+              <div className="absolute flex size-4 mt-[2px]">
+                <span className="absolute top-[4.5px] size-2 animate-ping rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative top-[4.5px] size-2 rounded-full bg-green-500"></span>
               </div>
               <p className="text-sm ml-4 text-zinc-300 flex items-center gap-4">
                 available for work
