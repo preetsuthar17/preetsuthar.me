@@ -21,7 +21,7 @@ export const Header = () => {
           </div>
           <div className="flex gap-2">
             <Link
-              href="https://twitter.com/preetsuthar17"
+              href="https://twitter.com/nott_preett"
               target="_blank"
               className="p-2 transition-all rounded hover:bg-zinc-900 duration-[0.2s] flex items-center h-fit m-auto"
             >
