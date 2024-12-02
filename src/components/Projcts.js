@@ -12,8 +12,8 @@ export const ProjectsCard = ({ project }) => {
         <h3 className="font-semibold text-[16px] opacity-95 lowercase flex items-center gap-3">
           <Image
             src={project.logo}
-            width={20}
-            height={20}
+            width={25}
+            height={25}
             alt="link"
             fetchPriority="auto"
           />
@@ -35,6 +35,13 @@ export const Projects = () => {
         "Web design and development agency providing top notch work in affordable pricing.",
       url: "https://hextastudio.in",
       logo: "/logos/hexta-studio.png",
+    },
+    {
+      title: "Roastt",
+      description:
+        "Get your website's hero section redesigned and maximise your conversions rate.",
+      url: "https://roastt.hextastudio.in",
+      logo: "/logos/roastt.png",
     },
     {
       title: "HextaStudio/ui",
