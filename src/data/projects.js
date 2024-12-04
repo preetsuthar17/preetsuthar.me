@@ -32,6 +32,14 @@ export const projects = [
     status: "",
   },
   {
+    title: "Impenny",
+    description:
+      "A place for freelancers and business individuals to manage their expenses and clients seamlessly",
+    url: "https://impenny.me",
+    logo: "/logos/impenny.svg",
+    status: "aquired",
+  },
+  {
     title: "Empirit Esports",
     description:
       "Host various esports tournaments, creating a competitive environment for players.",
