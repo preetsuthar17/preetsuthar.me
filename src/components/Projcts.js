@@ -1,6 +1,33 @@
 import Image from "next/image";
+import { projects } from "@/data/projects";
 
 export const ProjectsCard = ({ project }) => {
+  const Archived = () => {
+    return (
+      <div className="text-orange-500 text-center px-2 rounded-full text-[12px] bg-transparent border border-orange-500 font-medium">
+        Archived
+      </div>
+    );
+  };
+
+  const Aquired = () => {
+    return (
+      <div className="text-green-500 text-center px-2 rounded-full text-[12px] font-medium bg-transparent border border-green-500 ">
+        Aquired
+      </div>
+    );
+  };
+
+  const ProjectStatus = () => {
+    if (project.status === "archived") {
+      return <Archived />;
+    } else if (project.status === "aquired") {
+      return <Aquired />;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <>
       <div
@@ -17,9 +44,9 @@ export const ProjectsCard = ({ project }) => {
             alt="link"
             fetchPriority="auto"
           />
-          {project.title}
+          {project.title} {<ProjectStatus />}
         </h3>
-        <p className="text-[14px] pt-1 opacity-80 leading-tight lowercase">
+        <p className="text-[14px] opacity-80 pt-2 leading-tight lowercase">
           {project.description}
         </p>{" "}
       </div>
@@ -28,37 +55,6 @@ export const ProjectsCard = ({ project }) => {
 };
 
 export const Projects = () => {
-  const projects = [
-    {
-      title: "HextaStudio",
-      description:
-        "Web design and development agency providing top notch work in affordable pricing.",
-      url: "https://hextastudio.in",
-      logo: "/logos/hexta-studio.png",
-    },
-    {
-      title: "Roastt",
-      description:
-        "Get your website's hero section redesigned and maximise your conversions rate.",
-      url: "https://roastt.hextastudio.in",
-      logo: "/logos/roastt.png",
-    },
-    {
-      title: "HextaStudio/ui",
-      description:
-        "Copy and paste some Stunning & Modern components in your website.",
-      url: "https://ui.hextastudio.in",
-      logo: "/logos/hexta-studio.png",
-    },
-    {
-      title: "Strippy",
-      description:
-        "Manage your stripe account directly from discord using Strippy",
-      url: "https://strippy.in",
-      logo: "/logos/strippy.png",
-    },
-  ];
-
   return (
     <>
       <section className="flex flex-col gap-10 py-7">
@@ -74,6 +70,7 @@ export const Projects = () => {
                 description: project.description,
                 url: project.url,
                 logo: project.logo,
+                status: project.status,
               }}
             />
           ))}
