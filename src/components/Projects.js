@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 export const ProjectsCard = ({ project }) => {
   const Archived = () => {
     return (
-      <div className="text-orange-500 text-center px-2 rounded-full text-[12px] bg-transparent border border-orange-500 font-medium">
+      <div className="text-orange-950 dark:text-orange-300 text-center px-2 rounded-full text-[12px] bg-transparent border border-orange-950 dark:border-orange-300 font-medium">
         Archived
       </div>
     );
@@ -12,7 +12,7 @@ export const ProjectsCard = ({ project }) => {
 
   const Aquired = () => {
     return (
-      <div className="text-green-500 text-center px-2 rounded-full text-[12px] font-medium bg-transparent border border-green-500 ">
+      <div className="text-green-950 dark:text-green-300 text-center px-2 rounded-full text-[12px]  bg-transparent border border-green-950 dark:border-green-300 font-medium">
         Aquired
       </div>
     );

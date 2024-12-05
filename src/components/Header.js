@@ -19,6 +19,7 @@ export const Header = () => {
             <Link
               href="https://twitter.com/nott_preett"
               target="_blank"
+              aria-label="Visit Twitter profile"
               className="transition-all rounded hover:bg-gray-100 dark:hover:bg-zinc-800 duration-[0.2s] flex items-center h-fit m-auto"
             >
               <TooltipComponent
@@ -26,12 +27,13 @@ export const Header = () => {
                 className="border-none bg-gray-100 mt-4"
                 text="Twitter (x)"
               >
-                <FaTwitter size={35} className="text-zinc-500 p-2 " />
+                <FaTwitter size={35} className="text-zinc-500 p-2" />
               </TooltipComponent>
             </Link>
             <Link
               href="https://github.com/preetsuthar17"
               target="_blank"
+              aria-label="Visit GitHub profile"
               className="transition-all rounded hover:bg-gray-100 dark:hover:bg-zinc-800 duration-[0.2s]"
             >
               <TooltipComponent
@@ -39,12 +41,13 @@ export const Header = () => {
                 className="border-none bg-gray-100 mt-4"
                 text="Github"
               >
-                <FaGithub size={35} className="text-zinc-500 p-2 " />
+                <FaGithub size={35} className="text-zinc-500 p-2" />
               </TooltipComponent>
             </Link>
             <Link
               href="https://discord.com/users/741549223127941170"
               target="_blank"
+              aria-label="Connect on Discord"
               className="transition-all rounded hover:bg-gray-100 dark:hover:bg-zinc-800 duration-[0.2s]"
             >
               <TooltipComponent
@@ -52,7 +55,7 @@ export const Header = () => {
                 className="border-none bg-gray-100 mt-4"
                 text="Discord"
               >
-                <FaDiscord size={35} className="text-zinc-500 p-2 " />
+                <FaDiscord size={35} className="text-zinc-500 p-2" />
               </TooltipComponent>
             </Link>
           </div>

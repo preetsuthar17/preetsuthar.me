@@ -32,7 +32,7 @@ export const SpotifyStatus = () => {
     >
       <FaSpotify className="text-[#24e467]" size={16} />
       {playing.isPlaying && <BsPauseFill size={16} />}
-      <small className=" opacity-90 leading-tight flex gap-1">
+      <small className=" opacity-90 leading-tight flex gap-1 flex-wrap justify-start">
         {playing.title} <span>•</span> {playing.artist}
       </small>
     </Link>
