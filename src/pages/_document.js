@@ -7,26 +7,26 @@ export default function Document() {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                function getTheme() {
-                  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                    return localStorage.getItem('theme');
+                (function() {
+                  function getInitialTheme() {
+                    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                      return localStorage.getItem('theme');
+                    }
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      return 'dark';
+                    }
+                    return 'light';
                   }
-                  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    return 'dark';
+                  
+                  const theme = getInitialTheme();
+                  
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
                   }
-                  return 'light';
-                }
-                
-                const theme = getTheme();
-                
-                if (theme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              })();
-            `,
+                })();
+              `,
           }}
         />
       </Head>
