@@ -3,16 +3,12 @@ import { FiSun, FiMoon } from "react-icons/fi";
 
 export const ThemeToggle = () => {
   const [theme, setTheme] = useState("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
+    setMounted(true);
+    const isDark = document.documentElement.classList.contains("dark");
+    setTheme(isDark ? "dark" : "light");
   }, []);
 
   const toggleTheme = () => {
@@ -26,6 +22,10 @@ export const ThemeToggle = () => {
       localStorage.setItem("theme", "light");
     }
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <button
