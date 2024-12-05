@@ -43,9 +43,8 @@ export const ProjectsCard = ({ project }) => {
             height={25}
             alt="link"
             loading="lazy"
-            placeholder="blur"
-            blurDataURL={project.logo}
             className="rounded"
+            quality={75}
           />
           {project.title} {<ProjectStatus />}
         </h3>
