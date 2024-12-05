@@ -12,7 +12,7 @@ export const projects = [
     description:
       "Get your website's hero section redesigned and maximise your conversions rate.",
     url: "https://roastt.hextastudio.in",
-    logo: "/logos/roastt.png",
+    logo: "/logos/hexta-studio.png",
     status: "",
   },
   {
