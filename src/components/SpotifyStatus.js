@@ -19,7 +19,7 @@ export const SpotifyStatus = () => {
     };
 
     fetchNowPlaying();
-    const interval = setInterval(fetchNowPlaying, 10000);
+    const interval = setInterval(fetchNowPlaying, 60000);
     return () => clearInterval(interval);
   }, []);
 
