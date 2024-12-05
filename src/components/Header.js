@@ -42,7 +42,7 @@ export const Header = () => {
               </TooltipComponent>
             </Link>
             <Link
-              href="https://dsc.gg/preet"
+              href="https://discord.com/users/741549223127941170"
               target="_blank"
               className="transition-all rounded hover:bg-gray-100 duration-[0.2s]"
             >
@@ -67,7 +67,7 @@ export const Header = () => {
             </p>
             <Link
               className="primary-button"
-              href="https://cal.com/preet-suthar/30min"
+              href="https://cal.com/preetsuthar/20min"
               target="_blank"
             >
               Book a call
