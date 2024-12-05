@@ -36,13 +36,16 @@ export const ProjectsCard = ({ project }) => {
         }}
         className="p-4 transition-all hover:bg-gray-100 cursor-pointer rounded-xl duration-[0.2s] project-card hover:scale-[1.01] "
       >
-        <h3 className="font-semibold text-[16px] opacity-95 lowercase flex items-center gap-3">
+        <h3 className="font-medium text-[16px] opacity-95 lowercase flex items-center gap-3">
           <Image
             src={project.logo}
             width={25}
             height={25}
             alt="link"
-            fetchPriority="auto"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL={project.logo}
+            className="rounded"
           />
           {project.title} {<ProjectStatus />}
         </h3>

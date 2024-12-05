@@ -32,9 +32,9 @@ export const SpotifyStatus = () => {
     >
       <FaSpotify className="text-[#1DB954]" size={15} />
       {playing.isPlaying && <BsPauseFill size={15} />}
-      <span>
+      <small className="leading-tight">
         {playing.title} • {playing.artist}
-      </span>
+      </small>
     </Link>
   ) : (
     <div className="flex items-center gap-2 text-sm text-zinc-600">

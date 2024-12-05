@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Preet Suthar 🚀 - Creative Front-end developer</title>
+        <title>Preet Suthar 🚀 - Front-end developer</title>
         <meta name="robots" content="all" />
         <meta name="description" content="My personal portfolio website." />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#fffffff" />
         <meta httpEquiv="content-language" content="en" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
         <meta
           property="og:title"
-          content="Preet Suthar 🚀 - Creative Front-end developer"
+          content="Preet Suthar 🚀 - Front-end developer"
         />
         <meta
           property="og:description"
@@ -31,7 +31,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="twitter:title"
-          content="Preet Suthar 🚀 - Creative Front-end developer"
+          content="Preet Suthar 🚀 - Front-end developer"
         />
         <meta
           name="twitter:description"
@@ -48,11 +48,11 @@ export default function Home() {
             sameAs: [
               "https://www.linkedin.com/in/preetsuthar17/",
               "https://github.com/preetsuthar17",
-              "https://x.com/preetsuthar17",
+              "https://x.com/nott_preet",
               "https://preetsuthar.me",
-              "https://dsc.gg/preet",
+              "https://discord.com/users/741549223127941170",
             ],
-            jobTitle: "Creative Front-end developer",
+            jobTitle: "Front-end developer",
           })}
         </script>
       </Head>
