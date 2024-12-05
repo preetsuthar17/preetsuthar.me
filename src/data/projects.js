@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Web design and development agency providing top notch work in affordable pricing.",
     url: "https://hextastudio.in",
-    logo: "/logos/hexta-studio.png",
+    logo: "/logos/hexta-studio.webp",
     status: "",
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     description:
       "Get your website's hero section redesigned and maximise your conversions rate.",
     url: "https://roastt.hextastudio.in",
-    logo: "/logos/hexta-studio.png",
+    logo: "/logos/hexta-studio.webp",
     status: "",
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     description:
       "Copy and paste some Stunning & Modern components in your website.",
     url: "https://ui.hextastudio.in",
-    logo: "/logos/hexta-studio.png",
+    logo: "/logos/hexta-studio.webp",
     status: "",
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
     description:
       "Manage your stripe account directly from discord using Strippy",
     url: "https://strippy.in",
-    logo: "/logos/strippy.png",
+    logo: "/logos/strippy.webp",
     status: "",
   },
   {
