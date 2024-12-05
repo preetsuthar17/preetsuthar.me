@@ -13,6 +13,7 @@
     "@builder.io/partytown": "^0.10.2",
     "@gsap/react": "^2.1.1",
     "@hextastudio/ui": "^1.1.4",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
     "gsap": "^3.12.5",
     "next": "^15.0.3",
     "react": "^18",

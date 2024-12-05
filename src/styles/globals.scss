@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+
 
 @layer utilities {
   .text-balance {
@@ -12,6 +14,10 @@
   .bricolage-fonts {
     font-family: var(--bricolage-fonts);
   }
+
+  .old-standard-fonts {
+    font-family: var(--old-standard-fonts);
+  }
 }
 
 :root {
@@ -20,6 +26,7 @@
   --black-color: #000;
   --white-color: #fff;
   --inter-fonts: "Inter", sans-serif;
+  --old-standard-fonts: "Old Standard TT", serif;
 }
 
 * {
@@ -59,26 +66,16 @@ h2 {
   }
 }
 
-.project-image {
-  display: none;
-  @media screen and (max-width: 700px) {
-    display: none;
-  }
-}
-
-.project-card {
-  position: relative;
-}
-
-.project-card:hover {
-  .project-image {
-    display: flex;
-    position: fixed;
-    width: 20rem;
-    z-index: 99999;
-    height: auto;
-    @media screen and (max-width: 700px) {
-      display: none;
-    }
+.primary-button {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: fit-content;
+  &:hover {
+    transform: translateY(-3px);
   }
 }

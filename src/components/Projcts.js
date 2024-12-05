@@ -59,7 +59,7 @@ export const Projects = () => {
     <>
       <section className="flex flex-col gap-10 py-7">
         <div className="flex flex-col ">
-          <h2 className="px-4 text-2xl font-bold tracking-tight py-7 h2">
+          <h2 className="px-4 text-3xl  py-7 h2  old-standard-fonts font-medium tracking-tight">
             Projects
           </h2>
           {projects.map((project, index) => (
