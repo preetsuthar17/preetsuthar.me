@@ -34,7 +34,7 @@ export const ProjectsCard = ({ project }) => {
         onClick={() => {
           window.open(project.url, "_blank");
         }}
-        className="p-4 transition-all hover:bg-gray-100 cursor-pointer rounded-xl duration-[0.2s] project-card hover:scale-[1.01] "
+        className="p-4 transition-all dark:hover:bg-zinc-900 hover:bg-gray-100 cursor-pointer rounded-xl duration-[0.2s] project-card hover:scale-[1.01] "
       >
         <h3 className="font-medium text-[16px] opacity-95 lowercase flex items-center gap-3">
           <Image

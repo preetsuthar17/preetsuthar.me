@@ -29,6 +29,13 @@
   --old-standard-fonts: "Old Standard TT", serif;
 }
 
+:root[class~="dark"] {
+  --text-color: #fff;
+  --background-color: #121212;
+  --black-color: #fff;
+  --white-color: #000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -58,7 +65,7 @@ h2 {
     position: absolute;
     height: 0.2px;
     width: 100rem;
-    background-color: black;
+    background-color: var(--black-color);
     left: 100%;
     top: 50%;
     transform: translateY(-50%);

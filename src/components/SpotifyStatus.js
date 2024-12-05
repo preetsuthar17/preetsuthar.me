@@ -28,18 +28,18 @@ export const SpotifyStatus = () => {
       href={playing.songUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 text-sm hover:text-zinc-800 text-zinc-600 transition-colors"
+      className="flex items-center gap-2 text-sm justify-center hover:underline transition-colors"
     >
-      <FaSpotify className="text-[#1DB954]" size={15} />
-      {playing.isPlaying && <BsPauseFill size={15} />}
-      <small className="leading-tight">
-        {playing.title} • {playing.artist}
+      <FaSpotify className="text-[#24e467]" size={16} />
+      {playing.isPlaying && <BsPauseFill size={16} />}
+      <small className=" opacity-90 leading-tight flex gap-1">
+        {playing.title} <span>•</span> {playing.artist}
       </small>
     </Link>
   ) : (
-    <div className="flex items-center gap-2 text-sm text-zinc-600">
-      <FaSpotify className="text-[#1DB954]" size={15} />
-      <small>Not playing anything on Spotify</small>
+    <div className="flex items-center gap-2 text-sm">
+      <FaSpotify className="text-[#1DB954]" size={16} />
+      <small className=" opacity-90">Not playing anything on Spotify</small>
     </div>
   );
 };
