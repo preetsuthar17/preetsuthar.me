@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaSpotify } from "react-icons/fa";
-import { BsPauseFill, BsPlayFill } from "react-icons/bs";
+import { BsPauseFill } from "react-icons/bs";
 import Link from "next/link";
 
 export const SpotifyStatus = () => {

@@ -1,5 +1,3 @@
-import { AccessToken, SpotifyApi } from "@spotify/web-api-ts-sdk";
-
 export const runtime = "edge";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;

@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { Projects } from "@/components/Projcts";
+import { Projects } from "@/components/Projects";
 import Head from "next/head";
 
 export default function Home() {
