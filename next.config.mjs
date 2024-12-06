@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.imgur.com", "github.com"],
+    loader: "custom",
+    loaderFile: "./src/utils/cloudflare-loader.js",
+    domains: ["i.imgur.com", "github.com", "raw.githubusercontent.com"],
+    formats: ["image/webp"],
   },
   async headers() {
     return [

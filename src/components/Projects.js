@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 export const ProjectsCard = ({ project }) => {
   const Archived = () => {
@@ -37,12 +38,11 @@ export const ProjectsCard = ({ project }) => {
         className="p-4 transition-all dark:hover:bg-zinc-900 hover:bg-gray-100 cursor-pointer rounded-xl duration-[0.2s] project-card hover:scale-[1.01] "
       >
         <h3 className="font-medium text-[16px] opacity-95 lowercase flex items-center gap-3">
-          <Image
+          <OptimizedImage
             src={project.logo}
             width={25}
             height={25}
-            alt="link"
-            loading="lazy"
+            alt={`${project.title} logo`}
             className="rounded"
             quality={75}
           />

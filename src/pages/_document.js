@@ -29,6 +29,12 @@ export default function Document() {
               `,
           }}
         />
+        <meta httpEquiv="Accept-CH" content="DPR, Width, Viewport-Width" />
+        <link
+          rel="preconnect"
+          href="https://preetsuthar.me/cdn-cgi/"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body>
         <Main />

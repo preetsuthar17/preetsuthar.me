@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Web design and development agency providing top notch work in affordable pricing.",
     url: "https://hextastudio.in",
-    logo: "/logos/hexta-studio.webp",
+    logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     description:
       "Get your website's hero section redesigned and maximise your conversions rate.",
     url: "https://roastt.hextastudio.in",
-    logo: "/logos/hexta-studio.webp",
+    logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
   },
   {
@@ -20,7 +20,7 @@ export const projects = [
     description:
       "Copy and paste some Stunning & Modern components in your website.",
     url: "https://ui.hextastudio.in",
-    logo: "/logos/hexta-studio.webp",
+    logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
     description:
       "Manage your stripe account directly from discord using Strippy",
     url: "https://strippy.in",
-    logo: "/logos/strippy.webp",
+    logo: "https://i.imgur.com/GgIWzEb.png",
     status: "",
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     description:
       "A place for freelancers and business individuals to manage their expenses and clients seamlessly",
     url: "https://impenny.me",
-    logo: "/logos/impenny.svg",
+    logo: "https://i.imgur.com/aFMWkgS.png",
     status: "aquired",
   },
   {
@@ -44,7 +44,7 @@ export const projects = [
     description:
       "Host various esports tournaments, creating a competitive environment for players.",
     url: "https://preetsuthar.me",
-    logo: "/logos/empirit-esports.svg",
+    logo: "https://i.imgur.com/Tzi0Ni6.png",
     status: "archived",
   },
   {
