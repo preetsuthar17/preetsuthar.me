@@ -27,9 +27,9 @@ export const projects = [
     title: "Strippy",
     description:
       "Manage your stripe account directly from discord using Strippy",
-    url: "https://strippy.in",
+    url: "https://preetsuthar.me",
     logo: "https://i.imgur.com/GgIWzEb.png",
-    status: "",
+     status: "aquired",
   },
   {
     title: "Impenny",
