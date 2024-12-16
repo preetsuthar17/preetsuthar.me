@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "FlixFolio",
+    description:
+      "Create a stunning portfolio website without writing single line of code.",
+    url: "https://flixfolio.in",
+    logo: "https://i.imgur.com/VSaB2R2.png",
+    status: "",
+  },
+  {
     title: "HextaStudio",
     description:
       "Web design and development agency providing top notch work in affordable pricing.",
