@@ -59,23 +59,25 @@ export const ProjectsCard = ({ project }) => {
 export const Projects = () => {
   return (
     <>
-      <section className="flex flex-col gap-10 py-7">
-        <div className="flex flex-col ">
-          <h2 className="px-4 text-3xl  py-7 h2  old-standard-fonts font-medium tracking-tight">
+      <section className="flex flex-col">
+        <div className="flex flex-col gap-5 ">
+          <h2 className="px-4 text-3xl  h2  old-standard-fonts font-medium tracking-tight">
             Projects
           </h2>
-          {projects.map((project, index) => (
-            <ProjectsCard
-              key={index}
-              project={{
-                title: project.title,
-                description: project.description,
-                url: project.url,
-                logo: project.logo,
-                status: project.status,
-              }}
-            />
-          ))}
+          <div className="flex flex-col gap-2">
+            {projects.map((project, index) => (
+              <ProjectsCard
+                key={index}
+                project={{
+                  title: project.title,
+                  description: project.description,
+                  url: project.url,
+                  logo: project.logo,
+                  status: project.status,
+                }}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>

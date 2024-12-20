@@ -1,12 +1,15 @@
 import Link from "next/link";
+
 import { FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
 import { TooltipComponent } from "./hexta-ui/Tooltip";
+
 import { SpotifyStatus } from "./SpotifyStatus";
 import { ThemeToggle } from "./ThemeToggle";
+
 export const Header = () => {
   return (
     <>
-      <header className="flex flex-wrap items-center justify-between mt-[2rem] rounded-xl  gap-5">
+      <header className="flex flex-wrap items-center justify-between rounded-xl  gap-5">
         <div className="flex flex-wrap grow items-center justify-between p-4  rounded-xl  gap-2">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl old-standard-fonts font-medium tracking-tight ">
@@ -59,7 +62,7 @@ export const Header = () => {
               </TooltipComponent>
             </Link>
           </div>
-          <div className="mt-12 text-sm flex flex-col gap-5">
+          <div className="mt-5 text-sm flex flex-col gap-5">
             <p>
               Hi there! I’m Preet Suthar, a freelance Front-End Web Developer
               with expertise in Next.js, Tailwind CSS, and creative Web Design.

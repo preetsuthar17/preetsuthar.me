@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
 import { Projects } from "@/components/Projects";
+import { Freelancer } from "@/components/Services";
+
 import Head from "next/head";
 
 export default function Home() {
@@ -56,8 +58,11 @@ export default function Home() {
           })}
         </script>
       </Head>
-      <Header />
-      <Projects />
+      <div className="flex flex-col space-y-[3rem] py-10">
+        <Header />
+        <Freelancer />
+        <Projects />
+      </div>
     </>
   );
 }
