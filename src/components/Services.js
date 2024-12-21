@@ -35,10 +35,7 @@ export const Freelancer = () => {
 
         <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-800">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="px-4 py-6 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 transition-colors"
-            >
+            <div key={index} className="px-4 py-6  transition-colors">
               <h3 className="text-lg font-medium mb-2">{service.title}</h3>
               <p className="text-[14px] text-neutral-600 dark:text-neutral-400">
                 {service.description}

@@ -1,5 +1,13 @@
 export const projects = [
   {
+    title: "NextLaunch",
+    description:
+      "Launch Your SaaS Faster Than Ever with A complete Next.js boilerplate with authentication, payments, and UI components.",
+    url: "https://nextlaunch.hextastudio.in/",
+    logo: "https://i.imgur.com/I9NRg5R.png",
+    status: "",
+  },
+  {
     title: "FlixFolio",
     description:
       "Create a stunning portfolio website without writing single line of code.",
@@ -37,7 +45,7 @@ export const projects = [
       "Manage your stripe account directly from discord using Strippy",
     url: "https://preetsuthar.me",
     logo: "https://i.imgur.com/GgIWzEb.png",
-     status: "aquired",
+    status: "aquired",
   },
   {
     title: "Impenny",
