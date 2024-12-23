@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "ContraFast",
+    description: "Create & Sign Contracts 10x Faster",
+    url: "https://contrafast.in",
+    logo: "https://i.imgur.com/IWqFEPd.png",
+    status: "",
+  },
+  {
     title: "NextLaunch",
     description:
       "Launch Your SaaS Faster Than Ever with A complete Next.js boilerplate with authentication, payments, and UI components.",
