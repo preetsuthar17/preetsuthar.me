@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-import { FaTwitter, FaGithub, FaDiscord } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaGithub,
+  FaDiscord,
+  FaLocationArrow,
+} from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaMoneyBill } from "react-icons/fa";
+
 import { TooltipComponent } from "./hexta-ui/Tooltip";
 
 import { SpotifyStatus } from "./SpotifyStatus";
@@ -11,8 +19,8 @@ export const Header = () => {
     <>
       <header className="flex flex-wrap items-center justify-between rounded-xl  gap-5">
         <div className="flex flex-wrap grow items-center justify-between p-4  rounded-xl  gap-2">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-3xl old-standard-fonts font-medium tracking-tight ">
+          <div className="flex flex-col justify-center gap-1">
+            <h1 className="text-3xl flex gap-3 old-standard-fonts font-medium tracking-tight ">
               Preet Suthar
             </h1>
             <SpotifyStatus />
@@ -64,14 +72,22 @@ export const Header = () => {
           </div>
           <div className="mt-5 text-sm flex flex-col gap-5">
             <p>
-              Hi there! I’m Preet Suthar, a freelance Front-End Web Developer
-              with expertise in Next.js, Tailwind CSS, and creative Web Design.
+              Hi, I'm Preet Suthar, a full-time SaaS creator. I've started more
+              than 10 businesses, focusing on easy-to-use and secure tech
+              solutions.
             </p>
             <p>
-              I’m currently open to new projects and collaborations. Let’s
-              connect and discuss how we can turn your ideas into reality. Book
-              a call today, and let’s create something amazing together!
+              I'm looking for new projects and partners. Let's chat and see how
+              we can create something great together. Book a call with me now!
             </p>
+            <div className="flex gap-4 opacity-80 items-center">
+              <p className="flex items-center gap-1 text-sm ">
+                <FaLocationDot size={17} /> India
+              </p>
+              <p className="flex items-center gap-1 text-sm ">
+                <FaMoneyBill size={17} /> $40/month
+              </p>
+            </div>
             <Link
               className="primary-button"
               href="https://cal.com/preetsuthar/20min"

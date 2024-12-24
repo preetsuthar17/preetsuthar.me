@@ -46,7 +46,11 @@ export const ProjectsCard = ({ project }) => {
             className="rounded"
             quality={75}
           />
-          {project.title} {<ProjectStatus />}
+          {project.title}
+          {project.revenue && (
+            <span className="text-sm ">— {project.revenue}</span>
+          )}{" "}
+          {<ProjectStatus />}
         </h3>
         <p className="text-[14px] opacity-80 pt-2 leading-tight lowercase">
           {project.description}
@@ -62,7 +66,7 @@ export const Projects = () => {
       <section className="flex flex-col">
         <div className="flex flex-col gap-5 ">
           <h2 className="px-4 text-3xl  h2  old-standard-fonts font-medium tracking-tight">
-            Projects
+            Products
           </h2>
           <div className="flex flex-col gap-2">
             {projects.map((project, index) => (
@@ -74,6 +78,7 @@ export const Projects = () => {
                   url: project.url,
                   logo: project.logo,
                   status: project.status,
+                  revenue: project.revenue,
                 }}
               />
             ))}

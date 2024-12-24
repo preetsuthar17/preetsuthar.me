@@ -1,10 +1,12 @@
 export const projects = [
   {
     title: "ContraFast",
-    description: "Create & Sign Contracts 10x Faster",
+    description:
+      "Create & Sign Contracts 10x Faster. Create, customize, and get contracts signed in minutes, not days.",
     url: "https://contrafast.in",
     logo: "https://i.imgur.com/IWqFEPd.png",
     status: "",
+    revenue: "$0",
   },
   {
     title: "NextLaunch",
@@ -13,6 +15,7 @@ export const projects = [
     url: "https://nextlaunch.hextastudio.in/",
     logo: "https://i.imgur.com/I9NRg5R.png",
     status: "",
+    revenue: "$0",
   },
   {
     title: "FlixFolio",
@@ -21,6 +24,7 @@ export const projects = [
     url: "https://flixfolio.in",
     logo: "https://i.imgur.com/VSaB2R2.png",
     status: "",
+    revenue: "$0",
   },
   {
     title: "HextaStudio",
@@ -29,6 +33,7 @@ export const projects = [
     url: "https://hextastudio.in",
     logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
+    revenue: "$1,013",
   },
   {
     title: "Roastt",
@@ -37,6 +42,7 @@ export const projects = [
     url: "https://roastt.hextastudio.in",
     logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
+    revenue: "$0",
   },
   {
     title: "HextaStudio/ui",
@@ -45,6 +51,7 @@ export const projects = [
     url: "https://ui.hextastudio.in",
     logo: "https://i.imgur.com/ZHlRQC8.jpeg",
     status: "",
+    revenue: "$0",
   },
   {
     title: "Strippy",
