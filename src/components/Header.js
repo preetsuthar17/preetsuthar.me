@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <header className="flex flex-col gap-6  text-justify">
         <div className="flex flex-col gap-2">
-          <h1 className="[font:var(--type-heading-1)]">Preet Suthar</h1>
+          <h1 className="text-xl">Preet Suthar</h1>
           <SpotifyStatus />
         </div>
         <p>
