@@ -1,5 +1,5 @@
 ---
-title: Code Syntax highlighting in Next Js
+title: Syntax highlighting in Next Js
 excerpt: Guide to add syntax highlighting in your blog website built with Next.Js
 author: Preet Suthar
 date: "2024-12-25"
