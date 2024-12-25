@@ -290,6 +290,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
+  scroll-behavior: smooth !important;
+  scroll-behavior: -webkit-smooth !important;
+  -webkit-scroll-behavior: smooth !important;
 }
 
 body,

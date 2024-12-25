@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blog";
 
@@ -37,14 +38,45 @@ export default function BlogPost({ post, prevPost, nextPost }) {
 
   return (
     <>
-      {/* <NextSeo
-        title={post.title}
-        description={post.excerpt}
-        openGraph={{
-          title: post.title,
-          description: post.excerpt,
-        }}
-      /> */}
+      <Head>
+        <title>{post.title} - Preet Suthar</title>
+        <meta name="robots" content="all" />
+        <meta name="description" content={`${post.excerpt}`} />
+        <meta name="theme-color" content="#fffffff" />
+        <meta httpEquiv="content-language" content="en" />
+        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
+        <meta property="og:title" content={`${post.title} - Preet Suthar`} />
+        <meta property="og:description" content={`${post.excerpt}`} />
+        <meta property="og:url" content="https://preetsuthar.me/writings" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.imgur.com/Pwhm0a2.png" />
+        <meta
+          name="keywords"
+          content=" SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"
+        />
+        <meta name="author" content={`${post.title} - Preet Suthar`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="twitter:title" content={`${post.title} - Preet Suthar`} />
+        <meta name="twitter:description" content={`${post.excerpt}`} />{" "}
+        <meta name="subject" content="web development" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: `${post.title} - Preet Suthar`,
+            url: "https://preetsuthar.me/writingss",
+            image: "https://preetsuthar.me/website-icon.webp",
+            sameAs: [
+              "https://www.linkedin.com/in/preetsuthar17/",
+              "https://github.com/preetsuthar17",
+              "https://x.com/nott_preet",
+              "https://preetsuthar.me",
+              "https://discord.com/users/741549223127941170",
+            ],
+            jobTitle: "SaaS Creator",
+          })}
+        </script>
+      </Head>
       <article className="flex flex-col gap-10 basics-prose mx-auto py-20">
         <div>
           <Link
@@ -76,7 +108,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
       <nav className="container mx-auto px-4 py-8 border-t">
         <div className="flex justify-between items-center gap-4">
           {prevPost ? (
-            <Link href={`/blog/${prevPost.slug}`} className="flex-1 group">
+            <Link href={`/writing/${prevPost.slug}`} className="flex-1 group">
               <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary">
                 <ChevronLeft className="h-4 w-4" />
                 <span className="text-sm">Previous</span>
@@ -91,7 +123,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
 
           {nextPost ? (
             <Link
-              href={`/blog/${nextPost.slug}`}
+              href={`/writing/${nextPost.slug}`}
               className="flex-1 text-right group"
             >
               <div className="flex items-center justify-end gap-2 text-muted-foreground group-hover:text-primary">
