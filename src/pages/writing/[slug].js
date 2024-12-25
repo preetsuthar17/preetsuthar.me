@@ -18,14 +18,17 @@ import "prismjs/components/prism-bash";
 
 export default function BlogPost({ post, prevPost, nextPost }) {
   const [showButton, setShowButton] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setProgress(progress);
+
+      setShowButton(scrollTop > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -35,6 +38,14 @@ export default function BlogPost({ post, prevPost, nextPost }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const calculateReadingTime = (text) => {
+    const wordsPerMinute = 200; // Average reading speed
+    const wordCount = text.split(/\s+/).length;
+    return Math.ceil(wordCount / wordsPerMinute);
+  };
+
+  const readingTime = calculateReadingTime(post.content);
 
   return (
     <>
@@ -64,7 +75,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             "@context": "https://schema.org",
             "@type": "Person",
             name: `${post.title} - Preet Suthar`,
-            url: "https://preetsuthar.me/writingss",
+            url: "https://preetsuthar.me/writings",
             image: "https://preetsuthar.me/website-icon.webp",
             sameAs: [
               "https://www.linkedin.com/in/preetsuthar17/",
@@ -77,6 +88,13 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           })}
         </script>
       </Head>
+
+      {/* Progress Bar */}
+      <div
+        className="fixed top-0 left-0 h-1 bg-zinc-900 z-50"
+        style={{ width: `${progress}%` }}
+      />
+
       <article className="flex flex-col gap-10 basics-prose mx-auto py-20">
         <div>
           <Link
@@ -86,7 +104,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             <ArrowLeft size={12} /> Index
           </Link>
         </div>
-        <div className=" dark:prose-invert max-w-none flex flex-col gap-2">
+        <div className="dark:prose-invert max-w-none flex flex-col gap-2">
           <h1 className="text-4xl font-bold font-inter">{post.title}</h1>
           <div className="flex gap-3">
             <small className="text-muted-foreground">
@@ -94,10 +112,14 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             </small>
             <small>•</small>
             <small className="text-muted-foreground">{post.author}</small>
+            <small>•</small>
+            <small className="text-muted-foreground">
+              {readingTime} min read
+            </small>
           </div>
           <TableOfContents headings={post.headings} />
           <div
-            className="prose  dark:prose-invert max-w-none"
+            className="prose dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
             suppressHydrationWarning
           />
@@ -139,6 +161,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           )}
         </div>
       </nav>
+
       {/* scroll to top button */}
       <button
         onClick={scrollToTop}
