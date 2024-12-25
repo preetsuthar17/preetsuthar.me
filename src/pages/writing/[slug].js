@@ -106,7 +106,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
         </div>
         <div className="dark:prose-invert max-w-none flex flex-col gap-2">
           <h1 className="text-4xl font-bold font-inter">{post.title}</h1>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             <small className="text-muted-foreground">
               {new Date(post.date).toLocaleDateString()}
             </small>
@@ -127,7 +127,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
       </article>
 
       {/* blog navigation */}
-      <nav className="container mx-auto px-4 py-8 border-t">
+      <nav className="container mx-auto px-4 py-8 pb-20 border-t">
         <div className="flex justify-between items-center gap-4">
           {prevPost ? (
             <Link href={`/writing/${prevPost.slug}`} className="flex-1 group">
