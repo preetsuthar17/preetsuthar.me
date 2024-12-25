@@ -81,20 +81,18 @@ export default function work({ posts }) {
         </div>
         <div className="flex-1">
           <h2 className="font-medium opacity-80 mb-4">Writing</h2>
-          <ul>
-            <>
-              {posts?.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    className="flex items-center gap-1 font-medium font-inter"
-                    href={`/writing/${post.slug}`}
-                  >
-                    {post.title} <FiArrowUpRight size={18} />
-                  </Link>
-                  <p className="text-sm opacity-80 mt-1">{post.excerpt}</p>
-                </li>
-              ))}
-            </>
+          <ul className="flex flex-col gap-4">
+            {posts?.map((post) => (
+              <li key={post.slug}>
+                <Link
+                  className="flex items-center gap-1 font-medium font-inter"
+                  href={`/writing/${post.slug}`}
+                >
+                  {post.title} <FiArrowUpRight size={18} />
+                </Link>
+                <p className="text-sm opacity-80 mt-1">{post.excerpt}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </article>
