@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 import container from "markdown-it-container";
 import markdownItAnchor from "markdown-it-anchor";
 
-const postsDirectory = path.join(process.cwd(), "src/content/writings");
+const postsDirectory = path.join(process.cwd(), "content/writings");
 
 export function getAllPosts() {
   const fileNames = fs.readdirSync(postsDirectory);
