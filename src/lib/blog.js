@@ -8,21 +8,38 @@ import markdownItAnchor from "markdown-it-anchor";
 const postsDirectory = path.join(process.cwd(), "content/writings");
 
 export function getAllPosts() {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
+  try {
+    // If directory is empty or doesn't exist, return empty array
+    if (!fs.existsSync(postsDirectory)) {
+      return [];
+    }
 
-    return {
-      slug,
-      content,
-      ...data,
-    };
-  });
+    const fileNames = fs.readdirSync(postsDirectory);
 
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+    if (!fileNames.length) {
+      return [];
+    }
+
+    const allPostsData = fileNames
+      .filter((fileName) => fileName.endsWith(".md"))
+      .map((fileName) => {
+        const slug = fileName.replace(/\.md$/, "");
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, "utf8");
+        const { data, content } = matter(fileContents);
+
+        return {
+          slug,
+          content,
+          ...data,
+        };
+      });
+
+    return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  } catch (error) {
+    console.error("Error getting posts:", error);
+    return [];
+  }
 }
 
 export function getPostBySlug(slug) {
