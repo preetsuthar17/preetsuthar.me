@@ -97,7 +97,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           </div>
           <TableOfContents headings={post.headings} />
           <div
-            className="prose dark:prose-invert max-w-none"
+            className="prose  dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
             suppressHydrationWarning
           />
