@@ -1,4 +1,9 @@
-# preetsuthar.me
+---
+title: Introduction to Next.js Startup Boilerplate
+date: "2024-12-21"
+excerpt: A comprehensive guide to setting up and using the Next.js Startup Boilerplate for rapid SaaS application development.
+author: Preet Suthar
+---# preetsuthar.me
 
 ## Getting Started
 
@@ -38,3 +43,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+---
+
+title: Introduction to Next.js Startup Boilerplate
+date: "2024-12-21"
+excerpt: A comprehensive guide to setting up and using the Next.js Startup Boilerplate for rapid SaaS application development.
+author: Preet Suthar
+
+---
