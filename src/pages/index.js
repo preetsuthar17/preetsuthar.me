@@ -55,7 +55,7 @@ export default function Home({ posts }) {
           })}
         </script>
       </Head>
-      <div className="flex flex-col gap-10 py-20 basics-prose [font:var(--type)]">
+      <div className="flex flex-col gap-20 py-20 basics-prose [font:var(--type)]">
         <Header />
         <Work posts={posts} />
         <About />
