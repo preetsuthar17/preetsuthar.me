@@ -36,7 +36,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body>
+      <body antialiased>
         <Main />
         <NextScript />
       </body>

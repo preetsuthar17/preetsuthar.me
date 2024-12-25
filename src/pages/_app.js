@@ -27,11 +27,6 @@ export default function App({ Component, pageProps }) {
         src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
         type="text/partytown"
       ></Script>
-      <Script
-        async
-        src="https://eu.umami.is/script.js"
-        data-website-id="b59ea046-ed0b-4f4e-ac6e-cf9606ff6f15"
-      ></Script>
       <Link href="#main-content" className="sr-only focus:not-sr-only text-sm">
         Skip to main content
       </Link>

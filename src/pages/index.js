@@ -1,6 +1,13 @@
 import Head from "next/head";
 
-export default function Home() {
+import { getAllPosts } from "@/lib/blog";
+
+import Header from "@/components/Header";
+import Work from "@/components/Work";
+import About from "@/components/About";
+import Connect from "@/components/Connect";
+
+export default function Home({ posts }) {
   return (
     <>
       <Head>
@@ -48,7 +55,21 @@ export default function Home() {
           })}
         </script>
       </Head>
-      <div className="flex flex-col space-y-[3rem] py-10"></div>
+      <div className="flex flex-col gap-10 py-20 basics-prose [font:var(--type)]">
+        <Header />
+        <Work posts={posts} />
+        <About />
+        <Connect />
+      </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts();
+  return {
+    props: {
+      posts,
+    },
+  };
 }
