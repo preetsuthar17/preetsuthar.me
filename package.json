@@ -13,6 +13,7 @@
     "@builder.io/partytown": "^0.10.3",
     "@gsap/react": "^2.1.1",
     "@hextastudio/ui": "^1.4.7",
+    "@next/third-parties": "^15.1.2",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",

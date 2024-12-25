@@ -1,6 +1,9 @@
 import "../styles/globals.scss";
 
 import { Partytown } from "@builder.io/partytown/react";
+
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import Script from "next/script";
 import Head from "next/head";
 import Link from "next/link";
@@ -65,15 +68,12 @@ export default function App({ Component, pageProps }) {
           })}
         </script>
       </Head>
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-Z16QM0TSSW"
-        type="text/partytown"
-      ></Script>
+
       <Link href="#main-content" className="sr-only focus:not-sr-only text-sm">
         Skip to main content
       </Link>
       <Component {...pageProps} />
+      <GoogleAnalytics gaId="G-170WY51KQ8" />
     </>
   );
 }
