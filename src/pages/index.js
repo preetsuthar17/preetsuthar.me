@@ -1,19 +1,16 @@
-import { Header } from "@/components/Header";
-import { Projects } from "@/components/Projects";
-
 import Head from "next/head";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Preet Suthar 🚀 - SaaS Creator</title>
+        <title>Preet Suthar</title>
         <meta name="robots" content="all" />
         <meta name="description" content="My personal portfolio website." />
         <meta name="theme-color" content="#fffffff" />
         <meta httpEquiv="content-language" content="en" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta property="og:title" content="Preet Suthar 🚀 - SaaS Creator" />
+        <meta property="og:title" content="Preet Suthar" />
         <meta
           property="og:description"
           content="My personal portfolio website."
@@ -27,7 +24,7 @@ export default function Home() {
         />
         <meta name="author" content="Preet Suthar" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:title" content="Preet Suthar 🚀 - SaaS Creator" />
+        <meta name="twitter:title" content="Preet Suthar" />
         <meta
           name="twitter:description"
           content="My personal portfolio website."
@@ -51,10 +48,7 @@ export default function Home() {
           })}
         </script>
       </Head>
-      <div className="flex flex-col space-y-[3rem] py-10">
-        <Header />
-        <Projects />
-      </div>
+      <div className="flex flex-col space-y-[3rem] py-10"></div>
     </>
   );
 }
