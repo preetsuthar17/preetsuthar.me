@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-Z16QM0TSSW');
+              gtag('config', 'G-170WY51KQ8');
             `,
           }}
         />
