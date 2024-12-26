@@ -40,7 +40,7 @@ const working = [
   {
     title: "IndieHub",
     description:
-      "All the resources you need to build and grow your next project",
+      "The Only Hub made for Indie Hackers. All the resources you need to build and grow your next project",
     link: "https://indiehub.hextastudio.in",
   },
 ];
@@ -94,7 +94,7 @@ export default function work({ posts }) {
                   className="flex items-center gap-1 font-medium font-inter"
                   href={`/writing/${post.slug}`}
                 >
-                  {post.title} <FiArrowUpRight size={18} />
+                  {post.title} <span><FiArrowUpRight size={18} /></span>
                 </Link>
                 <p className="text-sm opacity-80 mt-1">{post.excerpt}</p>
               </li>
