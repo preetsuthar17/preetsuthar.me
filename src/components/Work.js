@@ -5,6 +5,11 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const projects = [
   {
+    title: "ContraFast",
+    description: "Create & Sign Contracts 10x Faster.",
+    link: "https://contrafast.hextastudio.in",
+  },
+  {
     title: "FlixFolio",
     description: "Create a Portfolio Without Writing Code.",
     link: "https://github.com",
@@ -33,9 +38,10 @@ const projects = [
 
 const working = [
   {
-    title: "ContraFast",
-    description: "Create & Sign Contracts 10x Faster.",
-    link: "https://contrafast.hextastudio.in",
+    title: "IndieHub",
+    description:
+      "All the resources you need to build and grow your next project",
+    link: "https://indiehub.hextastudio.in",
   },
 ];
 
