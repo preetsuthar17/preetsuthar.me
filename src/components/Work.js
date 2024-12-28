@@ -7,7 +7,7 @@ const projects = [
   {
     title: "ContraFast",
     description: "Create & Sign Contracts 10x Faster.",
-    link: "https://contrafast.hextastudio.in",
+    link: "https://contrafast.in",
   },
   {
     title: "FlixFolio",
