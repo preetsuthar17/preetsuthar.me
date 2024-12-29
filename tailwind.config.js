@@ -12,7 +12,7 @@ module.exports = {
         sans: ["var(--font-sans)"],
         serif: ["Merriweather", "serif"],
         mono: ["JetBrains Mono", "monospace"],
-        inter: ["Inter var", "sans-serif"],
+        inter: ["Inter var", "system-ui", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

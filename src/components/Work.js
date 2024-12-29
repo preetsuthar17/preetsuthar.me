@@ -48,12 +48,12 @@ const working = [
 export default function work({ posts }) {
   return (
     <>
-      <article className="flex justify-between flex-wrap gap-6 text-left">
-        <div className="flex-1 flex flex-col items-start justify-start gap-8">
+      <article className="flex justify-between flex-wrap gap-12 text-left">
+        <div className="flex-1 flex flex-col items-start justify-start gap-6">
           <h2 className="font-medium opacity-80 mb-4">Working</h2>
           <ul className="flex flex-col gap-4">
             {working.map((project, index) => (
-              <li key={index} className="flex flex-col">
+              <li key={index}  className="flex flex-col items-start  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
                   target="_blank"
@@ -62,16 +62,16 @@ export default function work({ posts }) {
                   {project.title}
                   <FiArrowUpRight size={18} />
                 </Link>
-                <p className="text-sm opacity-80 mt-1">{project.description}</p>
+                <p className="text-sm opacity-80">{project.description}</p>
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-8">
+        <div className="flex-1 flex flex-col items-start justify-start gap-6">
           <h2 className="font-medium opacity-80 mb-4">Projects</h2>
           <ul className="flex flex-col gap-4">
             {projects.slice(0, 5).map((project, index) => (
-              <li key={index} className="flex flex-col">
+              <li key={index}  className="flex flex-col items-start  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
                   target="_blank"
@@ -80,19 +80,19 @@ export default function work({ posts }) {
                   {project.title}
                   <FiArrowUpRight size={18} />
                 </Link>
-                <p className="text-sm opacity-80 mt-1">{project.description}</p>
+                <p className="text-sm opacity-80">{project.description}</p>
               </li>
             ))}
           </ul>
-          <Link href="/writing" className="font-medium font-sans underline">
+          <Link href="/writing" className="font-medium font-inter text-sm underline">
             View All Projects
           </Link>
         </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-8">
+        <div className="flex-1 flex flex-col items-start justify gap-6">
           <h2 className="font-medium opacity-80">Writing</h2>
           <ul className="flex flex-col gap-4">
             {posts?.slice(0, 5).map((post) => (
-              <li key={post.slug}>
+              <li key={post.slug} className="flex flex-col items-center  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
                   href={`/writing/${post.slug}`}
@@ -102,11 +102,11 @@ export default function work({ posts }) {
                     <FiArrowUpRight size={18} />
                   </span>
                 </Link>
-                <p className="text-sm opacity-80 mt-1">{post.excerpt}</p>
+                <p className="text-sm opacity-80">{post.excerpt}</p>
               </li>
             ))}
           </ul>
-          <Link href="/writings" className="font-medium font-sans underline">
+          <Link href="/writings" className="font-medium font-inter text-sm underline">
             View All Posts
           </Link>
         </div>
