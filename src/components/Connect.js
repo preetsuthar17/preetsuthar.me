@@ -12,7 +12,7 @@ const Connect = () => {
           </Link>{" "}
           <span className="opacity-80">or mail me at</span>{" "}
           <Link className="underline" href="mailto:hi@preetsuthar.me">
-            hi@preetsuthar.me
+            preetsutharxd@gmail.com
           </Link>
         </p>
       </section>
