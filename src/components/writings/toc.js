@@ -21,10 +21,10 @@ export function TableOfContents({ headings = [] }) {
                   heading.level === 2
                     ? "pl-4"
                     : heading.level === 3
-                    ? "pl-8"
-                    : heading.level === 4
-                    ? "pl-12"
-                    : ""
+                      ? "pl-8"
+                      : heading.level === 4
+                        ? "pl-12"
+                        : ""
                 }`}
               >
                 - {heading.text}

@@ -46,7 +46,7 @@ function FlareCursor() {
 
     // Check if the cursor is over a clickable element by inspecting the cursor style.
     setIsPointer(
-      window.getComputedStyle(target).getPropertyValue("cursor") === "pointer"
+      window.getComputedStyle(target).getPropertyValue("cursor") === "pointer",
     );
   };
 
@@ -98,7 +98,9 @@ We have successfully created the custom cursor component, now let's style it.
   z-index: 999999 !important ;
   backdrop-filter: blur(1px);
   background-color: #0000005e;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition:
+    width 0.2s ease-in-out,
+    height 0.2s ease-in-out;
   cursor: none !important; /* Let's hide the default cursor so it looks way better */
 }
 
@@ -107,13 +109,17 @@ We have successfully created the custom cursor component, now let's style it.
   .flare {
     width: 0;
     height: 0;
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+    transition:
+      width 0.2s ease-in-out,
+      height 0.2s ease-in-out,
       opacity 0.2s ease-in-out;
   }
 }
 .flare.pointer {
   opacity: 0 !important;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+  transition:
+    width 0.2s ease-in-out,
+    height 0.2s ease-in-out,
     opacity 0.2s ease-in-out;
 }
 ```

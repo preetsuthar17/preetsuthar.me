@@ -13,6 +13,6 @@ export default function cloudflareLoader({ src, width, quality }) {
   }
 
   return `https://preetsuthar.me/cdn-cgi/image/f=auto,${params.join(
-    ","
+    ",",
   )}/${src}`;
 }

@@ -66,7 +66,7 @@ export async function markdownToHtml(markdown) {
           return `<pre class="language-${lang}" tabindex="0"><code class="language-${lang}">${Prism.highlight(
             str,
             Prism.languages[lang],
-            lang
+            lang,
           )}</code></pre>`;
         } catch {
           return "";
