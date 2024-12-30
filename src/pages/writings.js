@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { ArrowLeft } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import Head from "next/head";
 
@@ -79,7 +80,7 @@ export default function blogs({ posts }) {
             <h1 className="text-3xl font-bold mb-8 font-inter">Writings</h1>
             {years.map((year) => (
               <div key={year} className="mb-8">
-                <h2 className="text-xl font-semibold mb-4 text-muted-foreground">
+                <h2 className="text-xl font-semibold mb-4 text-muted-foreground bg-gray-100 rounded-md p-4">
                   {year}
                 </h2>
                 <div className="flex flex-col gap-4">
@@ -89,8 +90,8 @@ export default function blogs({ posts }) {
                         href={`/writing/${post.slug}`}
                         className="flex justify-between gap-4 flex-wrap"
                       >
-                        <p className="text-muted-foreground underline">
-                          {post.title}
+                        <p className="text-muted-foreground underline flex items-center gap-2">
+                          {post.title} <ArrowUpRight size={14} />
                         </p>
                         <p className="text-muted-foreground">{post.date}</p>
                       </Link>

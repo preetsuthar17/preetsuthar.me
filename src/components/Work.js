@@ -3,38 +3,7 @@
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
-const projects = [
-  {
-    title: "ContraFast",
-    description: "Create & Sign Contracts 10x Faster.",
-    link: "https://contrafast.in",
-  },
-  {
-    title: "FlixFolio",
-    description: "Create a Portfolio Without Writing Code.",
-    link: "https://github.com",
-  },
-  {
-    title: "NextLaunch",
-    description: "Launch Your SaaS Faster Than Ever.",
-    link: "https://nextlaunch.hextastudio.in",
-  },
-  {
-    title: "HextaStudio",
-    description: "Web design and development agency.",
-    link: "https://hextastudio.in",
-  },
-  {
-    title: "Roastt",
-    description: "Get your website's hero section redesigned.",
-    link: "https://roastt.hextastudio.in",
-  },
-  {
-    title: "HextaStudio/ui",
-    description: "Copy and paste Modern components.",
-    link: "https://ui.hextastudio.in",
-  },
-];
+import projects from "@/data/projects";
 
 const working = [
   {
@@ -53,7 +22,7 @@ export default function work({ posts }) {
           <h2 className="font-medium opacity-80 mb-4">Working</h2>
           <ul className="flex flex-col gap-4">
             {working.map((project, index) => (
-              <li key={index}  className="flex flex-col items-start  gap-2">
+              <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
                   target="_blank"
@@ -71,7 +40,7 @@ export default function work({ posts }) {
           <h2 className="font-medium opacity-80 mb-4">Projects</h2>
           <ul className="flex flex-col gap-4">
             {projects.slice(0, 5).map((project, index) => (
-              <li key={index}  className="flex flex-col items-start  gap-2">
+              <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
                   target="_blank"
@@ -84,7 +53,10 @@ export default function work({ posts }) {
               </li>
             ))}
           </ul>
-          <Link href="/writing" className="font-medium font-inter text-sm underline">
+          <Link
+            href="/projects"
+            className="font-medium font-inter text-sm underline"
+          >
             View All Projects
           </Link>
         </div>
@@ -106,7 +78,10 @@ export default function work({ posts }) {
               </li>
             ))}
           </ul>
-          <Link href="/writings" className="font-medium font-inter text-sm underline">
+          <Link
+            href="/writings"
+            className="font-medium font-inter text-sm underline"
+          >
             View All Posts
           </Link>
         </div>
