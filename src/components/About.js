@@ -5,6 +5,10 @@ const About = () => {
         <h2 className="font-medium">Currently</h2>
         <div className="flex flex-col gap-4 opacity-80 text-justify">
           <p>
+            Focusing on YouTube channels and trying to create videos to provide
+            value to other developers and solo entrepreneurs.
+          </p>
+          <p>
             Launched my 11th SaaS called "ContraFast" which allows freelancers
             to create a contract between themselves and their clients. It's a
             simple solution to avoid scams and future disputes from clients.
