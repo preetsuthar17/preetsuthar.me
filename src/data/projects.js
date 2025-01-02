@@ -1,5 +1,10 @@
 const projects = [
   {
+    title: "RateThisTool",
+    description: "Effortless feedback system for your SaaS",
+    link: "https://ratethistool.vercel.app",
+  },
+  {
     title: "HextaStudio",
     description: "Web design and development agency.",
     link: "https://hextastudio.in",

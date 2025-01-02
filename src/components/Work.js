@@ -7,10 +7,9 @@ import projects from "@/data/projects";
 
 const working = [
   {
-    title: "IndieHub",
-    description:
-      "The Only Hub made for Indie Hackers. All the resources you need to build and grow your next project",
-    link: "https://indiehub.hextastudio.in",
+    title: "RateThisTool",
+    description: "Effortless feedback system for your SaaS",
+    link: "https://ratethistool.vercel.app",
   },
 ];
 
@@ -39,7 +38,7 @@ export default function work({ posts }) {
         <div className="flex-1 flex flex-col items-start justify-start gap-6">
           <h2 className="font-medium opacity-80 mb-4">Projects</h2>
           <ul className="flex flex-col gap-4">
-            {projects.slice(0, 5).map((project, index) => (
+            {projects.slice(0,5).map((project, index) => (
               <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
                   className="flex items-center gap-1 font-medium font-inter"
