@@ -16,22 +16,27 @@ const Header = () => {
   const links = [
     {
       name: "Twitter",
-      icon: <FaTwitter size={20} className="opacity-80 hover:opacity-100 hover:fill-[#1c96e9] transition-all"/>,
+      icon: <FaTwitter size={20} className=" fill-[#1c96e9] transition-all" />,
       link: "https://twitter.com/preetsuthar17",
     },
     {
       name: "YouTube",
-      icon: <FaYoutube size={20} className="opacity-80 hover:opacity-100 hover:fill-[#ff0033] transition-all"/>,
+      icon: <FaYoutube size={20} className=" fill-[#ff0033] transition-all" />,
       link: "https://youtube.com/preetsuthar17",
     },
     {
       name: "GitHub",
-      icon: <FaGithub size={20} className="opacity-80 hover:opacity-100 hover:fill-[#252a2f] transition-all" />,
+      icon: <FaGithub size={20} className=" fill-[#252a2f] transition-all" />,
       link: "https://github.com/preetsuthar17",
     },
     {
       name: "Instagram",
-      icon: <FaInstagram size={20} className="opacity-80 hover:opacity-100 hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] hover:fill-white rounded-md transition-all "/>,
+      icon: (
+        <FaInstagram
+          size={20}
+          className=" bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] fill-white rounded-md transition-all "
+        />
+      ),
       link: "https://instagram.com/preetsuthar17",
     },
   ];
