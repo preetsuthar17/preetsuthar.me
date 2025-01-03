@@ -65,7 +65,7 @@ export default function projectsPage() {
         </div>
         <div className="flex flex-col gap-4">
           <div className="container mx-auto">
-            <h1 className="text-3xl font-bold font-inter mb-8">Projects</h1>
+            <h1 className="text-3xl font-bold  mb-8">Projects</h1>
             <div className="flex flex-col gap-4">
               {projects.map((project) => (
                 <article key={project.id} className="group">

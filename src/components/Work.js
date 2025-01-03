@@ -23,7 +23,7 @@ export default function work({ posts }) {
             {working.map((project, index) => (
               <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
-                  className="flex items-center gap-1 font-medium font-inter"
+                  className="flex items-center gap-1 font-medium "
                   target="_blank"
                   href={project.link}
                 >
@@ -41,7 +41,7 @@ export default function work({ posts }) {
             {projects.slice(0,5).map((project, index) => (
               <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
-                  className="flex items-center gap-1 font-medium font-inter"
+                  className="flex items-center gap-1 font-medium "
                   target="_blank"
                   href={project.link}
                 >
@@ -54,7 +54,7 @@ export default function work({ posts }) {
           </ul>
           <Link
             href="/projects"
-            className="font-medium font-inter text-sm underline"
+            className="font-medium  text-sm underline"
           >
             View All Projects
           </Link>
@@ -65,7 +65,7 @@ export default function work({ posts }) {
             {posts?.slice(0, 5).map((post) => (
               <li key={post.slug} className="flex flex-col items-center  gap-2">
                 <Link
-                  className="flex items-center gap-1 font-medium font-inter"
+                  className="flex items-center gap-1 font-medium "
                   href={`/writing/${post.slug}`}
                 >
                   {post.title}{" "}
@@ -79,7 +79,7 @@ export default function work({ posts }) {
           </ul>
           <Link
             href="/writings"
-            className="font-medium font-inter text-sm underline"
+            className="font-medium  text-sm underline"
           >
             View All Posts
           </Link>

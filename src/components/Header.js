@@ -45,7 +45,7 @@ const Header = () => {
     <>
       <header className="flex flex-col gap-6 text-justify text-pretty">
         <div className="flex flex-col gap-2">
-          <h1 className="text-xl">Preet Suthar</h1>
+          <h1 className="text-xl font-medium tracking-tight">Preet Suthar</h1>
           <SpotifyStatus />
         </div>
         <p>

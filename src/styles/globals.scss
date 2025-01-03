@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 @layer utilities {
   .text-balance {
@@ -16,27 +16,27 @@
   }
 
   .prose h1 {
-    @apply py-3 text-4xl font-bold tracking-tight text-foreground font-inter;
+    @apply py-3 text-4xl font-bold tracking-tight text-foreground ;
   }
 
   .prose h2 {
-    @apply py-3 text-3xl font-semibold tracking-tight text-foreground font-inter;
+    @apply py-3 text-3xl font-semibold tracking-tight text-foreground ;
   }
 
   .prose h3 {
-    @apply py-3 text-2xl font-semibold tracking-tight text-foreground font-inter;
+    @apply py-3 text-2xl font-semibold tracking-tight text-foreground ;
   }
 
   .prose h4 {
-    @apply py-3 text-xl font-semibold tracking-tight text-foreground font-inter;
+    @apply py-3 text-xl font-semibold tracking-tight text-foreground ;
   }
 
   .prose h5 {
-    @apply py-3 text-lg font-semibold tracking-tight text-foreground font-inter;
+    @apply py-3 text-lg font-semibold tracking-tight text-foreground ;
   }
 
   .prose h6 {
-    @apply py-3 text-base font-semibold tracking-tight text-foreground font-inter;
+    @apply py-3 text-base font-semibold tracking-tight text-foreground ;
   }
 
   .prose p {
@@ -44,7 +44,7 @@
   }
 
   .prose strong {
-    @apply font-semibold font-inter;
+    @apply font-semibold ;
   }
 
   .prose ul {
@@ -245,9 +245,9 @@
   --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  --font-display: "Inter", var(--font-fallback);
-  --font-ui: "Inter", var(--font-fallback);
-  --font-sans: "Syne", var(--font-fallback);
+  --font-display: "DM Sans", var(--font-fallback);
+  --font-ui: "DM Sans", var(--font-fallback);
+  --font-sans: "DM Sans", var(--font-fallback);
   --font-mono: "Menlo", monospace;
   --font-serif: "Newsreader", "Signifier", "Times", serif;
   --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);

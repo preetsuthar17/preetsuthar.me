@@ -77,7 +77,7 @@ export default function blogs({ posts }) {
         </div>
         <div className="flex flex-col gap-4">
           <div className="container mx-auto">
-            <h1 className="text-3xl font-bold mb-8 font-inter">Writings</h1>
+            <h1 className="text-3xl font-bold mb-8 ">Writings</h1>
             {years.map((year) => (
               <div key={year} className="mb-8">
                 <h2 className="text-xl font-semibold mb-4 text-muted-foreground bg-gray-100 rounded-md p-4">
