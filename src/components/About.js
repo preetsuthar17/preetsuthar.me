@@ -9,11 +9,6 @@ const About = () => {
             value to other developers and solo entrepreneurs.
           </p>
           <p>
-            Launched my 11th SaaS called "ContraFast" which allows freelancers
-            to create a contract between themselves and their clients. It's a
-            simple solution to avoid scams and future disputes from clients.
-          </p>
-          <p>
             I'm learning more about SaaS and Startups. Trying to launch Startups
             as fast as possible to avoid burnout.
           </p>
