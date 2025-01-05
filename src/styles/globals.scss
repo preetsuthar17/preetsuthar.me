@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 @layer utilities {
   .text-balance {
@@ -16,35 +16,35 @@
   }
 
   .prose h1 {
-    @apply py-3 text-4xl font-bold tracking-tight text-foreground ;
+    @apply py-3 text-4xl font-bold tracking-tight text-foreground;
   }
 
   .prose h2 {
-    @apply py-3 text-3xl font-semibold tracking-tight text-foreground ;
+    @apply py-3 text-3xl font-semibold tracking-tight text-foreground;
   }
 
   .prose h3 {
-    @apply py-3 text-2xl font-semibold tracking-tight text-foreground ;
+    @apply py-3 text-2xl font-semibold tracking-tight text-foreground;
   }
 
   .prose h4 {
-    @apply py-3 text-xl font-semibold tracking-tight text-foreground ;
+    @apply py-3 text-xl font-semibold tracking-tight text-foreground;
   }
 
   .prose h5 {
-    @apply py-3 text-lg font-semibold tracking-tight text-foreground ;
+    @apply py-3 text-lg font-semibold tracking-tight text-foreground;
   }
 
   .prose h6 {
-    @apply py-3 text-base font-semibold tracking-tight text-foreground ;
+    @apply py-3 text-base font-semibold tracking-tight text-foreground;
   }
 
   .prose p {
-    @apply mb-4 leading-7 text-muted-foreground;
+    @apply mb-4 leading-7;
   }
 
   .prose strong {
-    @apply font-semibold ;
+    @apply font-semibold;
   }
 
   .prose ul {
@@ -192,7 +192,6 @@
     @apply opacity-100;
   }
 
-  
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
