@@ -21,9 +21,12 @@ export default function work({ posts }) {
           <h2 className="font-medium opacity-80 mb-4">Working</h2>
           <ul className="flex flex-col gap-4">
             {working.map((project, index) => (
-              <li key={index} className="flex flex-col items-start  gap-2">
+              <li
+                key={index}
+                className="flex flex-col items-start text-left gap-2"
+              >
                 <Link
-                  className="flex items-center gap-1 font-medium "
+                  className="flex items-start gap-1 font-medium  justify-between w-full"
                   target="_blank"
                   href={project.link}
                 >
@@ -35,13 +38,13 @@ export default function work({ posts }) {
             ))}
           </ul>
         </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-6">
+        <div className="flex-1 flex flex-col items-start justify-start text-left gap-6">
           <h2 className="font-medium opacity-80 mb-4">Projects</h2>
           <ul className="flex flex-col gap-4">
-            {projects.slice(0,5).map((project, index) => (
+            {projects.slice(0, 5).map((project, index) => (
               <li key={index} className="flex flex-col items-start  gap-2">
                 <Link
-                  className="flex items-center gap-1 font-medium "
+                  className="flex items-start gap-1 font-medium  justify-between w-full"
                   target="_blank"
                   href={project.link}
                 >
@@ -52,23 +55,23 @@ export default function work({ posts }) {
               </li>
             ))}
           </ul>
-          <Link
-            href="/projects"
-            className="font-medium  text-sm underline"
-          >
+          <Link href="/projects" className="font-medium  text-sm underline">
             View All Projects
           </Link>
         </div>
         <div className="flex-1 flex flex-col items-start justify gap-6">
           <h2 className="font-medium opacity-80">Writing</h2>
           <ul className="flex flex-col gap-4">
-            {posts?.slice(0, 5).map((post) => (
-              <li key={post.slug} className="flex flex-col items-center  gap-2">
+            {posts?.slice(0, 4).map((post) => (
+              <li
+                key={post.slug}
+                className="flex flex-col items-center text-left gap-2"
+              >
                 <Link
-                  className="flex items-center gap-1 font-medium "
+                  className="flex items-start gap-1 font-medium justify-between w-full"
                   href={`/writing/${post.slug}`}
                 >
-                  {post.title}{" "}
+                  {post.title}
                   <span>
                     <FiArrowUpRight size={18} />
                   </span>
@@ -77,10 +80,7 @@ export default function work({ posts }) {
               </li>
             ))}
           </ul>
-          <Link
-            href="/writings"
-            className="font-medium  text-sm underline"
-          >
+          <Link href="/writings" className="font-medium  text-sm underline">
             View All Posts
           </Link>
         </div>
