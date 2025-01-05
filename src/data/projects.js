@@ -10,6 +10,11 @@ const projects = [
     link: "https://ratethistool.vercel.app",
   },
   {
+    title: "IndieHub",
+    description: "The only Hub made for Indie Hackers",
+    link: "https://indiehub.hextastudio.in/",
+  },
+  {
     title: "HextaStudio",
     description: "Web design and development agency.",
     link: "https://hextastudio.in",
