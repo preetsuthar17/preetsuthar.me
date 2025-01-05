@@ -10,7 +10,7 @@ import { TableOfContents } from "@/components/writings/toc";
 
 import "prismjs/themes/prism-tomorrow.css";
 import Prism from "prismjs";
-// Load languages you want to support
+// Load languages you want to supportw
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-typescript";
@@ -108,7 +108,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           <h1 className="text-4xl font-bold ">{post.title}</h1>
           <div className="flex gap-3 flex-wrap">
             <small className="text-muted-foreground">
-              {new Date(post.date).toLocaleDateString()}
+              {new Date(post.date).toLocaleDateString("en-US")}
             </small>
             <small>•</small>
             <small className="text-muted-foreground">{post.author}</small>
@@ -119,7 +119,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           </div>
           <TableOfContents headings={post.headings} />
           <div
-            className="prose dark:prose-invert max-w-none"
+            className="prose  max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
             suppressHydrationWarning
           />
