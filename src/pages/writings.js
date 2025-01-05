@@ -90,7 +90,7 @@ export default function blogs({ posts }) {
                         href={`/writing/${post.slug}`}
                         className="flex justify-between gap-4 flex-wrap"
                       >
-                        <p className="text-muted-foreground underline flex items-center gap-2">
+                        <p className="font-medium  flex items-center gap-2">
                           {post.title} <ArrowUpRight size={14} />
                         </p>
                         <p className="text-muted-foreground">{post.date}</p>

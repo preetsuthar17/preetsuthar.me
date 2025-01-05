@@ -73,7 +73,7 @@ export default function projectsPage() {
                     href={`${project.link}`}
                     className="flex justify-between gap-4 flex-wrap"
                   >
-                    <p className="text-muted-foreground underline flex items-center gap-2">
+                    <p className="font-medium  flex items-center gap-2">
                       {project.title} <ArrowUpRight size={14} />
                     </p>
                     <p className="text-muted-foreground">
