@@ -2,7 +2,7 @@
 title: Animated Background Particles in React
 excerpt: Learn how to create a visually stunning animated background particles component using React and TypeScript.
 author: Preet Suthar
-date: "2024-12-25"
+date: "2023-12-25"
 ---
 
 ### Introduction

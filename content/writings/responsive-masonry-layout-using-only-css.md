@@ -2,7 +2,7 @@
 title: Responsive Masonry Layout using only CSS
 excerpt: Learn to create beautiful Pinterest layouts using only CSS.
 author: Preet Suthar
-date: "2024-12-25"
+date: "2023-12-25"
 ---
 
 ## Introduction

@@ -2,7 +2,7 @@
 title: Syntax highlighting in Next Js
 excerpt: Guide to add syntax highlighting in your blog website built with Next.Js
 author: Preet Suthar
-date: "2024-12-25"
+date: "2023-12-25"
 ---
 
 If you're running blog page or website you know that adding syntax highlighting can be very tough and complex process. but fortunately I have found a way to add syntax highlighting in your `next js` blog website.

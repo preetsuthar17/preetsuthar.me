@@ -2,7 +2,7 @@
 title: Custom Cursor in Next.Js
 excerpt: How to make a custom cursor in Next.Js website.
 author: Preet Suthar
-date: "2024-12-26"
+date: "2023-12-26"
 ---
 
 ![Custom cursor](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kcoaw3ccq6yz2byynvbk.png)
