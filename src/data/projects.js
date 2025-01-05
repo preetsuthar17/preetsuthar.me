@@ -1,5 +1,10 @@
 const projects = [
   {
+    title: "HextaUI",
+    description: "Build stunning websites with less effort.",
+    link: "https://hextaui.com",
+  },
+  {
     title: "RateThisTool",
     description: "Effortless feedback system for your SaaS",
     link: "https://ratethistool.vercel.app",
@@ -8,11 +13,6 @@ const projects = [
     title: "HextaStudio",
     description: "Web design and development agency.",
     link: "https://hextastudio.in",
-  },
-  {
-    title: "HextaStudio/ui",
-    description: "Copy and paste Modern components.",
-    link: "https://ui.hextastudio.in",
   },
   {
     title: "ContraFast",

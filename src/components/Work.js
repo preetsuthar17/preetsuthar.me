@@ -7,9 +7,9 @@ import projects from "@/data/projects";
 
 const working = [
   {
-    title: "RateThisTool",
-    description: "Effortless feedback system for your SaaS",
-    link: "https://ratethistool.vercel.app",
+    title: "HextaUI",
+    description: "Build stunning websites with less effort.",
+    link: "https://hextaui.com",
   },
 ];
 
