@@ -106,7 +106,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
         </div>
         <div className="dark:prose-invert max-w-none flex flex-col gap-2">
           <h1 className="text-4xl font-bold ">{post.title}</h1>
-          <div className="flex gap-3 flex-wrap">
+          <div className="flex gap-2 flex-wrap">
             <small className="text-muted-foreground">
               {new Date(post.date).toLocaleDateString("en-US")}
             </small>
