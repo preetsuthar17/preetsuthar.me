@@ -6,12 +6,12 @@ const projects = [
   },
   {
     title: "RateThisTool",
-    description: "Effortless feedback system for your SaaS",
+    description: "Effortless feedback system for your SaaS.",
     link: "https://ratethistool.vercel.app",
   },
   {
     title: "IndieHub",
-    description: "The only Hub made for Indie Hackers",
+    description: "The only Hub made for Indie Hackers.",
     link: "https://indiehub.hextastudio.in/",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "FlixFolio",
     description: "Create a Portfolio Without Writing Code.",
-    link: "https://github.com",
+    link: "https://flixfolio.in",
   },
   {
     title: "NextLaunch",
