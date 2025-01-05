@@ -284,6 +284,16 @@
   -webkit-scroll-behavior: smooth !important;
 }
 
+html,body::-moz-selection{
+  background: var(--black-color) !important;
+  color: var(--white-color) !important;
+}
+
+*::selection{
+  background: var(--black-color) !important;
+  color: var(--white-color) !important;
+}
+
 body,
 html {
   background-color: var(--background-color);
