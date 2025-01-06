@@ -60,12 +60,12 @@ export default function work({ posts }) {
           </Link>
         </div>
         <div className="flex-1 flex flex-col items-start justify gap-6">
-          <h2 className="font-medium opacity-80">Writing</h2>
+          <h2 className="font-medium opacity-80 mb-4">Writing</h2>
           <ul className="flex flex-col gap-4">
             {posts?.slice(0, 4).map((post) => (
               <li
                 key={post.slug}
-                className="flex flex-col items-center text-left gap-2"
+                className="flex flex-col items-start text-left gap-2"
               >
                 <Link
                   className="flex items-start gap-1 font-medium justify-between w-full"
@@ -76,7 +76,7 @@ export default function work({ posts }) {
                     <FiArrowUpRight size={18} />
                   </span>
                 </Link>
-                <p className="text-sm opacity-80">{post.excerpt}</p>
+                <p className="text-sm opacity-80 text-left">{post.excerpt}</p>
               </li>
             ))}
           </ul>

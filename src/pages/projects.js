@@ -73,12 +73,15 @@ export default function projectsPage() {
                 <article key={project.id} className="group">
                   <Link
                     href={`${project.link}`}
-                    className="flex justify-between gap-4 flex-wrap"
+                    className="flex justify-between gap-4 flex-wrap max-[500px]:gap-1 max-[500px]:flex-col"
                   >
-                    <p className="font-medium  flex items-center gap-2">
-                      {project.title} <ArrowUpRight size={14} />
+                    <p className="font-medium  flex items-center gap-2 max-[500px]:justify-between">
+                      {project.title}{" "}
+                      <span className="max-[370px]:hidden">
+                        <ArrowUpRight size={14} />
+                      </span>
                     </p>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground max-[500px]:text-sm">
                       {project.description}
                     </p>
                   </Link>

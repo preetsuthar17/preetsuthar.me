@@ -9,7 +9,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { Instagram, Twitter, Youtube, Github } from "lucide-react";
 import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from "react-icons/fa";
 
 const Header = () => {
@@ -22,7 +21,7 @@ const Header = () => {
     {
       name: "YouTube",
       icon: <FaYoutube size={20} className=" fill-[#ff0033] transition-all" />,
-      link: "https://youtube.com/preetsuthar17",
+      link: "https://youtube.com/@preetsuthar17",
     },
     {
       name: "GitHub",

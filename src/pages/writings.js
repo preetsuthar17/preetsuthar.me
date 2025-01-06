@@ -90,12 +90,17 @@ export default function blogs({ posts }) {
                     <article key={post.slug} className="group">
                       <Link
                         href={`/writing/${post.slug}`}
-                        className="flex justify-between gap-4 flex-wrap"
+                        className="flex justify-between gap-4 flex-wrap max-[500px]:gap-1 max-[500px]:flex-col"
                       >
-                        <p className="font-medium  flex items-center gap-2">
-                          {post.title} <ArrowUpRight size={14} />
+                        <p className="font-medium  flex items-center gap-2 max-[500px]:justify-between">
+                          {post.title}{" "}
+                          <span className="max-[370px]:hidden">
+                            <ArrowUpRight size={14} />
+                          </span>
                         </p>
-                        <p className="text-muted-foreground">{post.date}</p>
+                        <p className="text-muted-foreground max-[500px]:text-sm">
+                          {post.date}
+                        </p>
                       </Link>
                     </article>
                   ))}

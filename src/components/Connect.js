@@ -7,11 +7,11 @@ const Connect = () => {
         <h2 className="font-medium">Connect with me</h2>
         <p>
           <span className="opacity-80">Reach me at</span>{" "}
-          <Link className="underline" href="https://x.com/nott_preett">
-            @nott_preett
+          <Link className="underline" href="https://x.com/preetsuthar17">
+            @preetsuthar17
           </Link>{" "}
           <span className="opacity-80">or mail me at</span>{" "}
-          <Link className="underline" href="mailto:hi@preetsuthar.me">
+          <Link className="underline" href="mailto:preetsutharxd@gmail.com">
             preetsutharxd@gmail.com
           </Link>
         </p>
