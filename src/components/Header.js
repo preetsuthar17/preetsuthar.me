@@ -49,14 +49,20 @@ const Header = () => {
         </div>
         <p>
           <em className="[font:var(--type-italic)]">
-            I build & ship SaaS products.
+            Freelancer & Indie Hacker
           </em>
         </p>
         <p>
-          I am an Indie Hacker or a SaaS Creator. I've launched over 10 startups{" "}
-          <em className="[font:var(--type-italic)]">(SaaS)</em>  in the last 5
-          years, each focusing on easy-to-use and secure tech solutions.
+          A freelance web developer and Indie Hacker. I specialize in creating
+          fast, responsive, and interactive websites, as well as web
+          applications, e-commerce platforms, and landing pages.
         </p>
+        <p>
+          As an Indie Hacker, I've successfully launched over 10 startups (SaaS)
+          in the past 5 years, each designed to deliver secure, easy-to-use tech
+          solutions.
+        </p>
+
         <div className="flex items-center gap-4">
           {links.map((link, index) => (
             <TooltipProvider key={index} delayDuration={100}>

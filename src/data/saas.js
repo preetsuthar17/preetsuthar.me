@@ -1,4 +1,4 @@
-const projects = [
+const saas = [
   {
     title: "HextaUI",
     description: "Build stunning websites with less effort.",
@@ -41,4 +41,4 @@ const projects = [
   },
 ];
 
-export default projects;
+export default saas;
