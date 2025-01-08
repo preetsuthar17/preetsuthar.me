@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:url" content="https://preetsuthar.me" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://i.imgur.com/Pwhm0a2.png" />
+        <meta property="og:image" content="https://i.imgur.com/RqScUZ8.png" />
         <meta
           name="keywords"
           content="Preet Suthar, SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"

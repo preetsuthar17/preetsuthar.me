@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 import { ArrowLeft } from "lucide-react";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 
-import SaaS from "@/data/saas";
+import webDesignDev from "@/data/web-design-dev";
 
 import { motion } from "motion/react";
 
-export default function SaaSPage() {
+export default function WebDesignDev() {
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -38,27 +39,30 @@ export default function SaaSPage() {
   return (
     <>
       <Head>
-        <title>SaaS Projects - Preet Suthar</title>
+        <title>Web Design & Dev - Preet Suthar</title>
         <meta name="robots" content="all" />
         <meta name="description" content="My personal portfolio website." />
         <meta name="theme-color" content="#fffffff" />
         <meta httpEquiv="content-language" content="en" />
         <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta property="og:title" content="SaaS Projects - Preet Suthar" />
+        <meta property="og:title" content="Web Design & Dev - Preet Suthar" />
         <meta
           property="og:description"
           content="My personal portfolio website."
         />
-        <meta property="og:url" content="https://preetsuthar.me/saas" />
+        <meta
+          property="og:url"
+          content="https://preetsuthar.me/web-design-dev"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://i.imgur.com/RqScUZ8.png" />
         <meta
           name="keywords"
-          content="SaaS Projects - Preet Suthar, SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"
+          content="Web Design & Dev - Preet Suthar, SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"
         />
-        <meta name="author" content="SaaS Projects - Preet Suthar" />
+        <meta name="author" content="Web Design & Dev - Preet Suthar" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:title" content="SaaS Projects - Preet Suthar" />
+        <meta name="twitter:title" content="Web Design & Dev - Preet Suthar" />
         <meta
           name="twitter:description"
           content="My personal portfolio website."
@@ -68,8 +72,8 @@ export default function SaaSPage() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "SaaS Projects - Preet Suthar",
-            url: "https://preetsuthar.me/saas",
+            name: "Web Design & Dev - Preet Suthar",
+            url: "https://preetsuthar.me/web-design-dev",
             image: "https://preetsuthar.me/website-icon.webp",
             sameAs: [
               "https://www.linkedin.com/in/preetsuthar17/",
@@ -98,30 +102,39 @@ export default function SaaSPage() {
         </motion.div>
 
         <motion.h1 variants={itemVariants} className="text-3xl font-bold">
-          SaaS Projects ({SaaS.length})
+          Web Design & Dev Work({webDesignDev.length})
         </motion.h1>
 
-        <motion.div variants={containerVariants} className="grid gap-4">
-          {SaaS.map((project) => (
+        <motion.div variants={containerVariants} className="grid gap-12">
+          {webDesignDev.map((project) => (
             <motion.article
               key={project.id}
               variants={itemVariants}
-              className="group"
+              className="flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer"
+              onClick={() => window.open(project.link, "_blank")}
             >
-              <Link
-                href={project.link}
-                className="flex justify-between gap-4 flex-wrap max-[500px]:gap-1 max-[500px]:flex-col"
-              >
-                <p className="font-medium flex items-center gap-2 max-[500px]:justify-between">
-                  {project.title}
-                  <span className="max-[370px]:hidden">
-                    <ArrowUpRight size={14} />
-                  </span>
-                </p>
-                <p className="text-muted-foreground max-[500px]:text-sm">
-                  {project.description}
-                </p>
-              </Link>
+              <div className="relative rounded-xl">
+                <Image
+                  src={project.image}
+                  width={1920}
+                  height={1080}
+                  alt={project.title}
+                  className="rounded-xl grow max-w-full w-full h-auto"
+                />
+              </div>
+              <div className="flex items-center justify-between w-full">
+                <div className="flex flex-col items-start gap-3">
+                  <Link
+                    className="flex items-start gap-1 font-medium  justify-between w-full"
+                    target="_blank"
+                    href={project.link}
+                  >
+                    {project.title}
+                  </Link>
+                  <p className="text-sm opacity-80">{project.description}</p>
+                </div>
+                <FiArrowUpRight size={18} />
+              </div>
             </motion.article>
           ))}
         </motion.div>

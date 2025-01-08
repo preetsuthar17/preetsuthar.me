@@ -60,7 +60,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex flex-col gap-6 text-justify justify-evenly text-pretty">
+      <header className="flex flex-col gap-6 text-justify justify-evenly">
         <div className="flex flex-col gap-2">
           <h1 className="text-xl font-medium tracking-tight">Preet Suthar</h1>
           <SpotifyStatus />

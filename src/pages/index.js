@@ -7,7 +7,35 @@ import Work from "@/components/Work";
 import About from "@/components/About";
 import Connect from "@/components/Connect";
 
+import { motion } from "motion/react";
+
 export default function Home({ posts }) {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      filter: "blur(10px)",
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -24,7 +52,7 @@ export default function Home({ posts }) {
         />
         <meta property="og:url" content="https://preetsuthar.me" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://i.imgur.com/Pwhm0a2.png" />
+        <meta property="og:image" content="https://i.imgur.com/RqScUZ8.png" />
         <meta
           name="keywords"
           content="Preet Suthar, SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"
@@ -55,15 +83,28 @@ export default function Home({ posts }) {
           })}
         </script>
       </Head>
-      <div className="flex flex-col gap-20 py-20 basics-prose [font:var(--type)]">
-        <Header />
-        <hr />
-        <Work posts={posts} />
-        <hr />
-        <About />
-        <hr />
-        <Connect />
-      </div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="flex flex-col gap-20 py-20 basics-prose [font:var(--type)]"
+      >
+        <motion.div variants={itemVariants}>
+          <Header />
+        </motion.div>
+        <motion.hr variants={itemVariants} />
+        <motion.div variants={itemVariants}>
+          <Work posts={posts} />
+        </motion.div>
+        <motion.hr variants={itemVariants} />
+        <motion.div variants={itemVariants}>
+          <About />
+        </motion.div>
+        <motion.hr variants={itemVariants} />
+        <motion.div variants={itemVariants}>
+          <Connect />
+        </motion.div>
+      </motion.div>
     </>
   );
 }

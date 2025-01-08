@@ -11,16 +11,16 @@ import Image from "next/image";
 export default function work({ posts }) {
   return (
     <>
-      <article className="flex justify-between flex-col flex-wrap gap-12 text-left">
+      <article className="flex justify-between flex-col flex-wrap gap-20 text-left">
         <div className="flex-1 flex flex-col items-start justify-start gap-6">
           <h2 className="font-medium opacity-80 mb-4">
             Web Design & Development
           </h2>
-          <ul className="flex flex-col gap-12">
+          <ul className="flex flex-col gap-12 w-full  grow">
             {webDesignDev.map((project, index) => (
               <li
                 key={index}
-                className="flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer"
+                className="flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer w-full"
                 onClick={() => window.open(project.link, "_blank")}
               >
                 <div className="relative rounded-xl">
@@ -28,9 +28,8 @@ export default function work({ posts }) {
                     src={project.image}
                     width={1920}
                     height={1080}
-                    layout="responsive"
                     alt={project.title}
-                    className="rounded-xl"
+                    className="rounded-xl grow max-w-full w-full h-auto"
                   />
                 </div>
                 <div className="flex items-center justify-between w-full">
@@ -48,17 +47,23 @@ export default function work({ posts }) {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul>{" "}
+          <Link
+            href="/web-design-dev"
+            className="font-medium  text-sm underline"
+          >
+            View All Web Work
+          </Link>
         </div>
         <hr />
-        <div className="flex justify-between flex-wrap gap-12 text-left">
+        <div className="flex justify-between max-[480px]:flex-col gap-12 text-left">
           <div className="flex-1 flex flex-col items-start justify-start text-left gap-6">
             <h2 className="font-medium opacity-80 mb-4">SaaS Projects</h2>
             <ul className="flex flex-col gap-4">
               {saas.slice(0, 5).map((saas, index) => (
                 <li key={index} className="flex flex-col items-start  gap-2">
                   <Link
-                    className="flex items-start gap-1 font-medium  justify-start w-full"
+                    className="flex items-start gap-1 font-medium  justify-between w-full"
                     target="_blank"
                     href={saas.link}
                   >
