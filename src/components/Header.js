@@ -1,4 +1,7 @@
+" use client";
 import Link from "next/link";
+
+import { motion } from "motion/react";
 
 import { SpotifyStatus } from "./SpotifyStatus";
 
@@ -15,17 +18,32 @@ const Header = () => {
   const links = [
     {
       name: "Twitter",
-      icon: <FaTwitter size={20} className=" fill-[#1c96e9] transition-all" />,
+      icon: (
+        <FaTwitter
+          size={20}
+          className="fill-[#00000099] hover:fill-[#1c96e9] transition-all"
+        />
+      ),
       link: "https://twitter.com/preetsuthar17",
     },
     {
       name: "YouTube",
-      icon: <FaYoutube size={20} className=" fill-[#ff0033] transition-all" />,
+      icon: (
+        <FaYoutube
+          size={20}
+          className="fill-[#00000099] hover:fill-[#ff0033] transition-all"
+        />
+      ),
       link: "https://youtube.com/@preetsuthar17",
     },
     {
       name: "GitHub",
-      icon: <FaGithub size={20} className=" fill-[#252a2f] transition-all" />,
+      icon: (
+        <FaGithub
+          size={20}
+          className="fill-[#00000099] hover:fill-[#252a2f] transition-all"
+        />
+      ),
       link: "https://github.com/preetsuthar17",
     },
     {
@@ -33,7 +51,7 @@ const Header = () => {
       icon: (
         <FaInstagram
           size={20}
-          className=" bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] fill-white rounded-md transition-all "
+          className=" hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-[#00000099] hover:text-white rounded-md  "
         />
       ),
       link: "https://instagram.com/preetsuthar17",
@@ -42,15 +60,24 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex flex-col gap-6 text-justify text-pretty">
+      <header className="flex flex-col gap-6 text-justify justify-evenly text-pretty">
         <div className="flex flex-col gap-2">
           <h1 className="text-xl font-medium tracking-tight">Preet Suthar</h1>
           <SpotifyStatus />
         </div>
         <p>
-          <em className="[font:var(--type-italic)]">
+          <motion.em
+            className="bg-[linear-gradient(110deg,#000000,35%,#ffffff10,50%,#404040,75%,#000000)] bg-[length:200%_100%] bg-clip-text text-base font-medium text-transparent [font:var(--type-italic)]"
+            initial={{ backgroundPosition: "200% 0" }}
+            animate={{ backgroundPosition: "-200% 0" }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              ease: "linear",
+            }}
+          >
             Freelancer & Indie Hacker
-          </em>
+          </motion.em>
         </p>
         <p>
           A freelance web developer and Indie Hacker. I specialize in creating
