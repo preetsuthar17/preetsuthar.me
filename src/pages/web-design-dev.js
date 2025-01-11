@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 
 import { ArrowLeft } from "lucide-react";
-import { FiArrowUpRight } from "react-icons/fi";
 
 import webDesignDev from "@/data/web-design-dev";
+import designs from "@/data/designs";
+
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 import { motion } from "motion/react";
 
@@ -102,41 +103,61 @@ export default function WebDesignDev() {
         </motion.div>
 
         <motion.h1 variants={itemVariants} className="text-3xl font-bold">
-          Web Design & Dev Work({webDesignDev.length})
+          Web Design & Dev Work ({webDesignDev.length + designs.length})
         </motion.h1>
-
-        <motion.div variants={containerVariants} className="grid gap-12">
-          {webDesignDev.map((project) => (
-            <motion.article
-              key={project.id}
-              variants={itemVariants}
-              className="flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer"
-              onClick={() => window.open(project.link, "_blank")}
-            >
-              <div className="relative rounded-xl">
-                <Image
-                  src={project.image}
-                  width={1920}
-                  height={1080}
-                  alt={project.title}
-                  className="rounded-xl grow max-w-full w-full h-auto"
+        <motion.div className="flex-1 flex flex-col items-start justify-start gap-6">
+          <motion.div
+            variants={containerVariants}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full grow"
+          >
+            {designs.map((design, index) => (
+              <motion.article
+                variants={itemVariants}
+                key={index}
+                className="relative cursor-pointer group overflow-hidden"
+                onClick={() => window.open(design.dribbble, "_blank")}
+              >
+                <OptimizedImage
+                  src={design.image}
+                  alt={design.title}
+                  width={300}
+                  height={300}
+                  className="rounded-xl aspect-square object-cover"
                 />
-              </div>
-              <div className="flex items-center justify-between w-full">
-                <div className="flex flex-col items-start gap-3">
-                  <Link
-                    className="flex items-start gap-1 font-medium  justify-between w-full"
-                    target="_blank"
-                    href={project.link}
-                  >
-                    {project.title}
-                  </Link>
-                  <p className="text-sm opacity-80">{project.description}</p>
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-500">
+                  <p className="text-white font-medium">{design.title}</p>
                 </div>
-                <FiArrowUpRight size={18} />
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
+          </motion.div>
+          <motion.div variants={containerVariants} className="grid gap-6">
+            {webDesignDev.map((project, index) => (
+              <motion.article
+                key={index}
+                variants={itemVariants}
+                className="relative flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer w-full group"
+                onClick={() => window.open(project.link, "_blank")}
+              >
+                <div className="relative rounded-xl overflow-hidden">
+                  <OptimizedImage
+                    src={project.image}
+                    width={1920}
+                    height={1080}
+                    alt={project.title}
+                    className="rounded-xl grow max-w-full w-full h-auto"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-500">
+                    <div className="text-white text-center p-4">
+                      <h3 className="font-medium">{project.title}</h3>
+                      <p className="text-sm opacity-80">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
         </motion.div>
       </motion.div>
     </>

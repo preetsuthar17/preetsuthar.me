@@ -20,6 +20,7 @@ export const OptimizedImage = ({
       width={width}
       height={height}
       quality={quality}
+      unoptimized={true}
       className={`
         duration-700 ease-in-out
         ${
