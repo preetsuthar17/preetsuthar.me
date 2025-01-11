@@ -124,7 +124,7 @@ export default function WebDesignDev() {
                   height={300}
                   className="rounded-xl aspect-square object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-500">
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
                   <p className="text-white font-medium">{design.title}</p>
                 </div>
               </motion.article>
@@ -146,7 +146,7 @@ export default function WebDesignDev() {
                     alt={project.title}
                     className="rounded-xl grow max-w-full w-full h-auto"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-500">
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
                     <div className="text-white text-center p-4">
                       <h3 className="font-medium">{project.title}</h3>
                       <p className="text-sm opacity-80">
