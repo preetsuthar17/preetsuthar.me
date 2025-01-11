@@ -122,7 +122,7 @@ export default function WebDesignDev() {
                   alt={design.title}
                   width={300}
                   height={300}
-                  className="rounded-xl aspect-square object-cover"
+                  className="rounded-xl w-full h-auto aspect-square object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
                   <p className="text-white font-medium">{design.title}</p>

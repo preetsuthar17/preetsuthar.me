@@ -102,9 +102,9 @@ export default function SaaSPage() {
         </motion.h1>
 
         <motion.div variants={containerVariants} className="grid gap-4">
-          {SaaS.map((project) => (
+          {SaaS.map((project, index) => (
             <motion.article
-              key={project.id}
+              key={index}
               variants={itemVariants}
               className="group"
             >

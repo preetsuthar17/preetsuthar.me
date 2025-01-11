@@ -21,7 +21,7 @@ export default function work({ posts }) {
             {designs.map((design, index) => (
               <div
                 key={index}
-                className="relative cursor-pointer group  overflow-hidden"
+                className="relative cursor-pointer group  overflow-hidden w-full h-auto"
                 onClick={() => window.open(design.dribbble, "_blank")}
               >
                 <OptimizedImage
@@ -29,7 +29,7 @@ export default function work({ posts }) {
                   alt={design.title}
                   width={300}
                   height={300}
-                  className="rounded-xl aspect-square object-cover"
+                  className="rounded-xl w-full h-auto aspect-square object-cover"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
                   <p className="text-white font-medium">{design.title}</p>
@@ -75,9 +75,12 @@ export default function work({ posts }) {
         <div className="flex justify-between max-[480px]:flex-col gap-12 text-left">
           <div className="flex-1 flex flex-col items-start justify-start text-left gap-6">
             <h2 className="font-medium opacity-80 mb-4">SaaS Projects</h2>
-            <ul className="flex flex-col gap-6">
+            <ul className="flex flex-col gap-6 w-full">
               {saas.slice(0, 5).map((saas, index) => (
-                <li key={index} className="flex flex-col items-start gap-2">
+                <li
+                  key={index}
+                  className="flex flex-col items-start text-left gap-2 w-full"
+                >
                   <Link
                     className="flex items-start gap-1 font-medium justify-between w-full"
                     target="_blank"
@@ -94,7 +97,7 @@ export default function work({ posts }) {
               View All SaaS Projects
             </Link>
           </div>
-          <div className="flex-1 flex flex-col items-start justify-between gap-6">
+          <div className="flex-1 flex flex-col items-start justify-between gap-6 w-full">
             <h2 className="font-medium opacity-80 mb-4">Writing</h2>
             <ul className="flex flex-col gap-6">
               {posts?.slice(0, 5).map((post) => (
