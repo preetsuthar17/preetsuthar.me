@@ -95,7 +95,11 @@ const Header = () => {
             <TooltipProvider key={index} delayDuration={100}>
               <Tooltip>
                 <TooltipTrigger>
-                  <Link href={`${link.link}`} target="_blank">
+                  <Link
+                    href={`${link.link}`}
+                    target="_blank"
+                    aria-label={`Link to ${link.name}`}
+                  >
                     {link.icon}
                   </Link>
                 </TooltipTrigger>

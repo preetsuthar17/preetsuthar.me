@@ -10,6 +10,11 @@ export default function Document() {
           href="https://preetsuthar.me/cdn-cgi/"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </Head>
       <body antialiased>
         <Main />
