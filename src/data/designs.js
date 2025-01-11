@@ -6,6 +6,11 @@ const designs = [
       "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
   },
   {
+    title: "Checkout Page Design",
+    image: "https://i.imgur.com/IZjYSQr.png",
+    dribbble: "https://dribbble.com/shots/25459877-Checkout-page",
+  },
+  {
     title: "Clean Signup & Login",
     image: "https://i.imgur.com/qHpCP69.png",
     dribbble: "https://dribbble.com/shots/25454624-Clean-Signup-Login",
