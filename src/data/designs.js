@@ -1,14 +1,14 @@
 const designs = [
   {
+    title: "Checkout Page Design",
+    image: "https://i.imgur.com/IZjYSQr.png",
+    dribbble: "https://dribbble.com/shots/25459877-Checkout-page",
+  },
+  {
     title: "Hero Design for bolt.new AI website",
     image: "https://i.imgur.com/xUBflPl.png",
     dribbble:
       "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
-  },
-  {
-    title: "Checkout Page Design",
-    image: "https://i.imgur.com/IZjYSQr.png",
-    dribbble: "https://dribbble.com/shots/25459877-Checkout-page",
   },
   {
     title: "Clean Signup & Login",
