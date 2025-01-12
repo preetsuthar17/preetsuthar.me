@@ -5,6 +5,12 @@ const designs = [
     dribbble: "https://dribbble.com/shots/25459877-Checkout-page",
   },
   {
+    title: "Digital Pass with QR",
+    image: "https://i.imgur.com/FWZhePu.png",
+    dribbble:
+      "https://dribbble.com/shots/25462376-Digital-Pass-with-QR-Ticket-Component",
+  },
+  {
     title: "Hero Design for bolt.new AI website",
     image: "https://i.imgur.com/xUBflPl.png",
     dribbble:
