@@ -26,6 +26,11 @@ const designs = [
     image: "https://i.imgur.com/x60qhoM.png",
     dribbble: "https://dribbble.com/shots/25455532-Full-Screen-Sign-up-page",
   },
+  {
+    title: "Account Selection",
+    image: "https://i.imgur.com/ajNC3Wf.png",
+    dribbble: "https://dribbble.com/shots/25505923-Account-Selection",
+  },
 ];
 
 export default designs;
