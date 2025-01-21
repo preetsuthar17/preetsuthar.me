@@ -72,11 +72,11 @@ const Header = () => {
             animate={{ backgroundPosition: "-200% 0" }}
             transition={{
               repeat: Infinity,
-              duration: 2,
+              duration: 5,
               ease: "linear",
             }}
           >
-            Freelancer & Indie Hacker
+            Design and dev partner for startups and founders.
           </motion.em>
         </p>
         <p>
