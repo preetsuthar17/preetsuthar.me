@@ -1,2 +1,3 @@
-# My portfolio website
-[preetsuthar.me](https://preetsuthar.me)
+# preetsuthar.me
+
+My personal website built with Next.js and TailwindCSS.
