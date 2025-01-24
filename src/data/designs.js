@@ -10,12 +10,7 @@ const designs = [
     dribbble:
       "https://dribbble.com/shots/25462376-Digital-Pass-with-QR-Ticket-Component",
   },
-  {
-    title: "Hero Design for bolt.new AI website",
-    image: "https://i.imgur.com/xUBflPl.png",
-    dribbble:
-      "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
-  },
+
   {
     title: "Clean Signup & Login",
     image: "https://i.imgur.com/qHpCP69.png",
