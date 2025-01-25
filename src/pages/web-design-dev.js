@@ -106,30 +106,7 @@ export default function WebDesignDev() {
           Web Design & Dev Work ({webDesignDev.length + designs.length})
         </motion.h1>
         <motion.div className="flex-1 flex flex-col items-start justify-start gap-6">
-          <motion.div
-            variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full grow"
-          >
-            {designs.map((design, index) => (
-              <motion.article
-                variants={itemVariants}
-                key={index}
-                className="relative cursor-pointer group overflow-hidden"
-                onClick={() => window.open(design.dribbble, "_blank")}
-              >
-                <OptimizedImage
-                  src={design.image}
-                  alt={design.title}
-                  width={300}
-                  height={300}
-                  className="rounded-xl w-full h-auto aspect-square object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
-                  <p className="text-white font-medium">{design.title}</p>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
+          {" "}
           <motion.div variants={containerVariants} className="grid gap-6">
             {webDesignDev.map((project, index) => (
               <motion.article
@@ -154,6 +131,30 @@ export default function WebDesignDev() {
                       </p>
                     </div>
                   </div>
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full grow"
+          >
+            {designs.map((design, index) => (
+              <motion.article
+                variants={itemVariants}
+                key={index}
+                className="relative cursor-pointer group overflow-hidden"
+                onClick={() => window.open(design.dribbble, "_blank")}
+              >
+                <OptimizedImage
+                  src={design.image}
+                  alt={design.title}
+                  width={300}
+                  height={300}
+                  className="rounded-xl w-full h-auto aspect-square object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
+                  <p className="text-white font-medium">{design.title}</p>
                 </div>
               </motion.article>
             ))}
