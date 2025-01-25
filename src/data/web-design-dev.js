@@ -1,15 +1,21 @@
 const webDesignDev = [
   {
-    title: "Hero Design for bolt.new AI website",
-    description: "Roast design for bolt.new AI website.",
-    image: "https://i.imgur.com/xUBflPl.png",
-    link: "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
-  },
-  {
     title: "Hero Design for FeedWall - PlayFul & Clean",
     description: "Roast design for FeedWall website.",
     image: "https://i.imgur.com/uOyd2nI.png",
     link: "https://dribbble.com/shots/25529263-Hero-Design-for-FeedWall-PlayFul-Clean",
+  },
+  {
+    title: "Hero Design For Hero Design for Sonā - Sleek & Modern",
+    description: "Roast design for Sonā website.",
+    image: "https://i.imgur.com/NL7mM4s.png",
+    link: "https://dribbble.com/shots/25530624-Hero-Design-for-Son-Sleek-Modern",
+  },
+  {
+    title: "Hero Design for bolt.new AI website",
+    description: "Roast design for bolt.new AI website.",
+    image: "https://i.imgur.com/xUBflPl.png",
+    link: "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
   },
   {
     title: "kikxAI",
