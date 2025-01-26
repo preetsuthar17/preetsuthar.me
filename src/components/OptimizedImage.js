@@ -30,7 +30,7 @@ export const OptimizedImage = ({
         }
         ${className}
       `}
-      onLoadingComplete={() => setLoading(false)}
+      onLoad={() => setLoading(false)}
       loading="lazy"
       {...(isLocalImage
         ? {
