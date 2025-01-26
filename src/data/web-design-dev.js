@@ -2,7 +2,7 @@ const webDesignDev = [
   {
     title: "Hero Redesign for DodoPayments",
     description: "Roast design for DodoPayments website.",
-    image: "https://i.imgur.com/B1QtpKe.png",
+    image: "https://i.imgur.com/xB2K9Do.png",
     link: "https://dribbble.com/shots/25533470-Dodo-Payments-Hero-Redesign",
   },
   {
