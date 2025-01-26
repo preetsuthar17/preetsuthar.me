@@ -1,5 +1,11 @@
 const webDesignDev = [
   {
+    title: "Hero Redesign for DodoPayments",
+    description: "Roast design for DodoPayments website.",
+    image: "https://i.imgur.com/B1QtpKe.png",
+    link: "https://dribbble.com/shots/25533470-Dodo-Payments-Hero-Redesign",
+  },
+  {
     title: "Hero Design for FeedWall - PlayFul & Clean",
     description: "Roast design for FeedWall website.",
     image: "https://i.imgur.com/uOyd2nI.png",
