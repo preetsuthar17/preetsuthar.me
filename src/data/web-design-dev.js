@@ -12,13 +12,13 @@ const webDesignDev = [
     link: "https://dribbble.com/shots/25533470-Dodo-Payments-Hero-Redesign",
   },
   {
-    title: "Hero Redesign for FeedWall - PlayFul & Clean",
+    title: "Hero Redesign for FeedWall",
     description: "Roast design for FeedWall website.",
     image: "https://i.imgur.com/uOyd2nI.png",
     link: "https://dribbble.com/shots/25529263-Hero-Design-for-FeedWall-PlayFul-Clean",
   },
   {
-    title: "Hero Redesign For Hero Design for Sonā - Sleek & Modern",
+    title: "Hero Redesign For Hero Design for Sonā",
     description: "Roast design for Sonā website.",
     image: "https://i.imgur.com/NL7mM4s.png",
     link: "https://dribbble.com/shots/25530624-Hero-Design-for-Son-Sleek-Modern",
