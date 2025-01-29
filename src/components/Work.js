@@ -24,7 +24,7 @@ export default function work({ posts }) {
                 className="relative flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer w-full group"
                 onClick={() => window.open(project.link, "_blank")}
               >
-                <div className="relative rounded-xl overflow-hidden">
+                <div className="relative rounded-xl overflow-hidden border">
                   <OptimizedImage
                     src={project.image}
                     width={1920}
