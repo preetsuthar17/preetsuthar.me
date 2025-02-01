@@ -1,5 +1,11 @@
 const webDesignDev = [
   {
+    title: "Hero Redesign for RoastMyWeb",
+    description: "Roast design for RoastMyWeb website.",
+    image: "https://i.imgur.com/c3lV57E.png",
+    link: "https://dribbble.com/shots/25563481-Hero-Section-for-RoastMyWeb",
+  },
+  {
     title: "Hero Redesign for cursorful",
     description: "Roast design for cursorful website.",
     image: "https://i.imgur.com/RTrUfSp.png",
