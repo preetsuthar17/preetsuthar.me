@@ -4,7 +4,6 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import webDesignDev from "@/data/web-design-dev";
-import designs from "@/data/designs";
 import saas from "@/data/saas";
 
 import { OptimizedImage } from "./OptimizedImage";
@@ -47,29 +46,6 @@ export default function work({ posts }) {
               </li>
             ))}
           </ul>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full grow">
-            {designs.map((design, index) => (
-              <div
-                key={index}
-                className="relative cursor-pointer group  overflow-hidden w-full h-auto"
-                onClick={() => window.open(design.dribbble, "_blank")}
-              >
-                <OptimizedImage
-                  src={design.image}
-                  alt={design.title}
-                  width={300}
-                  height={300}
-                  className="rounded-xl w-full h-auto aspect-square object-cover"
-                  loading="eager"
-                  priority={index < 2}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
-                  <p className="text-white font-medium">{design.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
           <Link
             href="/web-design-dev"
             className="font-medium text-sm underline mt-4"
