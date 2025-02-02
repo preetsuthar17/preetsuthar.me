@@ -4,7 +4,6 @@ import Head from "next/head";
 import { ArrowLeft } from "lucide-react";
 
 import webDesignDev from "@/data/web-design-dev";
-import designs from "@/data/designs";
 
 import { OptimizedImage } from "@/components/OptimizedImage";
 
@@ -103,7 +102,7 @@ export default function WebDesignDev() {
         </motion.div>
 
         <motion.h1 variants={itemVariants} className="text-3xl font-bold">
-          Web Design & Dev Work ({webDesignDev.length + designs.length})
+          Web Design & Dev Work ({webDesignDev.length})
         </motion.h1>
         <motion.div className="flex-1 flex flex-col items-start justify-start gap-6">
           {" "}
@@ -131,30 +130,6 @@ export default function WebDesignDev() {
                       </p>
                     </div>
                   </div>
-                </div>
-              </motion.article>
-            ))}
-          </motion.div>
-          <motion.div
-            variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 w-full grow"
-          >
-            {designs.map((design, index) => (
-              <motion.article
-                variants={itemVariants}
-                key={index}
-                className="relative cursor-pointer group overflow-hidden"
-                onClick={() => window.open(design.dribbble, "_blank")}
-              >
-                <OptimizedImage
-                  src={design.image}
-                  alt={design.title}
-                  width={300}
-                  height={300}
-                  className="rounded-xl w-full h-auto aspect-square object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
-                  <p className="text-white font-medium">{design.title}</p>
                 </div>
               </motion.article>
             ))}
