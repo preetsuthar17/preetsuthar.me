@@ -6,7 +6,6 @@ import { motion } from "motion/react";
 import { SpotifyStatus } from "./SpotifyStatus";
 
 const Header = () => {
-  
   return (
     <>
       <header className="flex flex-col gap-6 text-justify justify-evenly">
