@@ -5,18 +5,7 @@ const webDesignDev = [
     image: "https://i.imgur.com/c3lV57E.png",
     link: "https://dribbble.com/shots/25563481-Hero-Section-for-RoastMyWeb",
   },
-  {
-    title: "Hero Redesign for cursorful",
-    description: "Roast design for cursorful website.",
-    image: "https://i.imgur.com/RTrUfSp.png",
-    link: "https://dribbble.com/shots/25552686-Hero-Redesign-for-cursorful",
-  },
-  {
-    title: "Hero Redesign for TwitterShots website",
-    description: "Roast design for TwitterShots website.",
-    image: "https://i.imgur.com/6G4Z3Dy.png",
-    link: "https://dribbble.com/shots/25548277-Hero-Redesign-for-Twittershots",
-  },
+
   {
     title: "Hero Redesign for ManageEasy productivty tool",
     description: "Roast design for ManageEasy website.",
@@ -48,16 +37,16 @@ const webDesignDev = [
     link: "https://dribbble.com/shots/25456845-Hero-Design-for-bolt-new-AI-website",
   },
   {
-    title: "kikxAI",
-    description: "Step Forward Your Hiring Process",
-    link: "https://kikxai.netlify.app/",
-    image: "https://i.imgur.com/y9M4sy0.png",
+    title: "Hero Redesign for cursorful",
+    description: "Roast design for cursorful website.",
+    image: "https://i.imgur.com/RTrUfSp.png",
+    link: "https://dribbble.com/shots/25552686-Hero-Redesign-for-cursorful",
   },
   {
-    title: "HextaUI",
-    description: "Build stunning websites with less effort.",
-    link: "https://hextaui.com",
-    image: "https://i.imgur.com/803BRuM.png",
+    title: "Hero Redesign for TwitterShots website",
+    description: "Roast design for TwitterShots website.",
+    image: "https://i.imgur.com/6G4Z3Dy.png",
+    link: "https://dribbble.com/shots/25548277-Hero-Redesign-for-Twittershots",
   },
 ];
 
