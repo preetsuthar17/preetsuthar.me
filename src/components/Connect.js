@@ -1,6 +1,58 @@
 import Link from "next/link";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from "react-icons/fa";
+
 const Connect = () => {
+  const links = [
+    {
+      name: "Twitter",
+      icon: (
+        <FaTwitter
+          size={20}
+          className="fill-[#00000099] hover:fill-[#1c96e9] transition-all"
+        />
+      ),
+      link: "https://twitter.com/preetsuthar17",
+    },
+    {
+      name: "YouTube",
+      icon: (
+        <FaYoutube
+          size={20}
+          className="fill-[#00000099] hover:fill-[#ff0033] transition-all"
+        />
+      ),
+      link: "https://youtube.com/@preetsuthar17",
+    },
+    {
+      name: "GitHub",
+      icon: (
+        <FaGithub
+          size={20}
+          className="fill-[#00000099] hover:fill-[#252a2f] transition-all"
+        />
+      ),
+      link: "https://github.com/preetsuthar17",
+    },
+    {
+      name: "Instagram",
+      icon: (
+        <FaInstagram
+          size={20}
+          className=" hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-[#00000099] hover:text-white rounded-md  "
+        />
+      ),
+      link: "https://instagram.com/preetsuthar17",
+    },
+  ];
+
   return (
     <>
       <section className="flex flex-col gap-6">
@@ -14,7 +66,25 @@ const Connect = () => {
           <Link className="underline" href="mailto:preetsutharxd@gmail.com">
             preetsutharxd@gmail.com
           </Link>
-        </p>
+        </p>{" "}
+        <div className="flex items-center gap-4">
+          {links.map((link, index) => (
+            <TooltipProvider key={index} delayDuration={100}>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Link
+                    href={`${link.link}`}
+                    target="_blank"
+                    aria-label={`Link to ${link.name}`}
+                  >
+                    {link.icon}
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent sideOffset={8}>{link.name}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+        </div>{" "}
       </section>
     </>
   );
