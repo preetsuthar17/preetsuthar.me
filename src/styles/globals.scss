@@ -493,3 +493,16 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+#sign {
+  stroke-dasharray: 58000;
+  stroke-dashoffset: 58000;
+  animation: signAnimate 5s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes signAnimate {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
