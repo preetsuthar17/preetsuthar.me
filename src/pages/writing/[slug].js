@@ -10,7 +10,7 @@ import { TableOfContents } from "@/components/writings/toc";
 
 import "prismjs/themes/prism-tomorrow.css";
 import Prism from "prismjs";
-// Load languages you want to supportw
+// Load languages you want to support
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-typescript";
@@ -50,7 +50,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
   return (
     <>
       <Head>
-        <title>{post.title} - Preet Suthar</title>
+        <title>{`${post.title} - Preet Suthar`}</title>
         <meta name="robots" content="all" />
         <meta name="description" content={`${post.excerpt}`} />
         <meta name="theme-color" content="#fffffff" />
