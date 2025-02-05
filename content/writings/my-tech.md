@@ -2,7 +2,7 @@
 title: "My Tech"
 excerpt: "A List of Everyday Tools and Tech I Use"
 author: Preet Suthar
-date: "2025-02-05"
+date: "2025-02-04"
 ---
 
 Hey there! This is just a random blog I'm writing because every time I reset my laptop, I forget what to install and what not to. 😭
