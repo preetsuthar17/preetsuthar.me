@@ -28,3 +28,5 @@ and here's and example of a clean and minimal website that focuses on providing 
 ## 4. Typography
 
 ## 5. Functionality
+
+_I still haven't finished writing the blog yet._
