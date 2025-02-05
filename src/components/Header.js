@@ -37,7 +37,13 @@ const Header = () => {
           in the past 5 years, each designed to deliver secure, easy-to-use tech
           solutions.
         </p>
-
+        <Link
+          href="https://cal.com/hextastudio/development-partner"
+          target="_blank"
+          className="px-4 py-2 rounded-full border w-fit text-sm border-orange-600 shadow-[0px_3px_0px_0px_#b64409] bg-orange-600 text-white font-medium active:bg-orange-700 active:shadow-[0px_0px_0px_0px_#b64409] active:translate-y-0.5 transition-all"
+        >
+          Book a free call
+        </Link>
         <p className="w-[6rem]">
           <svg
             viewBox="0 0 2489 1270"
