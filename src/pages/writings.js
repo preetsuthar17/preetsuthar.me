@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
-import { ArrowLeft } from "lucide-react";
+import { ArrowUpLeft } from "lucide-react";
 import { ArrowUpRight } from "lucide-react";
 
 import Head from "next/head";
@@ -113,7 +113,7 @@ export default function blogs({ posts }) {
             href="/"
             className="text-muted-foreground flex items-center gap-1 text-sm underline"
           >
-            <ArrowLeft size={12} /> Home
+            <ArrowUpLeft size={12} /> Home
           </Link>
         </div>
         <div className="flex flex-col gap-4">
