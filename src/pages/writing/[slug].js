@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blog";
 
-import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpLeft } from "lucide-react";
 
 import { TableOfContents } from "@/components/writings/toc";
 
@@ -101,7 +101,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             href="/writings"
             className="text-muted-foreground flex items-center gap-1 text-sm underline"
           >
-            <ArrowLeft size={12} /> Index
+            <ArrowUpLeft size={12} /> Index
           </Link>
         </div>
         <div className="dark:prose-invert max-w-none flex flex-col gap-2">
