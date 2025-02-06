@@ -7,7 +7,7 @@ date: "2025-02-06"
 
 Minimalist website design is a refined art form focused on simplicity, clarity, and functionality. By stripping away nonessential elements, it highlights what truly matters and creates a seamless experience for visitors.
 
-## 7 Fundamental Principles of Minimalist Web Design
+## 7 Principles of Minimalist Web Design
 
 1. Embrace Simplicity
 2. Prioritize User Experience
