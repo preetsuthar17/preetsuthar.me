@@ -5,9 +5,14 @@ const saas = [
     link: "https://hextaui.com",
   },
   {
-    title: "RateThisTool",
-    description: "Effortless feedback system for your SaaS.",
-    link: "https://ratethistool.vercel.app",
+    title: "Roastt",
+    description: "Get your website's hero section redesigned.",
+    link: "https://roastt.hextastudio.com",
+  },
+  {
+    title: "HextaStudio",
+    description: "Web design and development agency.",
+    link: "https://hextastudio.com",
   },
   {
     title: "IndieHub",
@@ -15,9 +20,9 @@ const saas = [
     link: "https://indiehub.hextastudio.in/",
   },
   {
-    title: "HextaStudio",
-    description: "Web design and development agency.",
-    link: "https://hextastudio.in",
+    title: "RateThisTool",
+    description: "Effortless feedback system for your SaaS.",
+    link: "https://ratethistool.vercel.app",
   },
   {
     title: "ContraFast",
@@ -33,11 +38,6 @@ const saas = [
     title: "NextLaunch",
     description: "Launch Your SaaS Faster Than Ever.",
     link: "https://nextlaunch.hextastudio.in",
-  },
-  {
-    title: "Roastt",
-    description: "Get your website's hero section redesigned.",
-    link: "https://roastt.hextastudio.in",
   },
 ];
 
