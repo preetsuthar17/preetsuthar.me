@@ -5,7 +5,12 @@ const webDesignDev = [
     image: "https://i.imgur.com/c3lV57E.png",
     link: "https://dribbble.com/shots/25563481-Hero-Section-for-RoastMyWeb",
   },
-
+  {
+    title: "Hero Redesign for Fastforms",
+    description: "Roast design for Fastforms website.",
+    image: "https://i.imgur.com/Xo6iJeN.png",
+    link: "https://x.com/preetsuthar17/status/1888488234558333056",
+  },
   {
     title: "Hero Redesign for ManageEasy productivty tool",
     description: "Roast design for ManageEasy website.",
