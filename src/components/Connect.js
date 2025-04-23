@@ -7,7 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaYoutube, FaGithub } from "react-icons/fa";
 
 const Connect = () => {
   const links = [
@@ -40,16 +40,6 @@ const Connect = () => {
         />
       ),
       link: "https://github.com/preetsuthar17",
-    },
-    {
-      name: "Instagram",
-      icon: (
-        <FaInstagram
-          size={20}
-          className=" hover:bg-linear-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-[#00000099] hover:text-white rounded-md  "
-        />
-      ),
-      link: "https://instagram.com/preetsuthar17",
     },
   ];
 
