@@ -95,18 +95,23 @@ layer(utilities);
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  border-color: var(--color-gray-200, currentcolor);
 }
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+* {
+  @apply border-border;
+}
+body {
+  @apply bg-background text-foreground;
 }
 
 .prose {
@@ -581,15 +586,6 @@ layer(utilities);
   .prose pre {
     background-color: #212121 !important;
     font-family: var(--font-mono) !important;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
