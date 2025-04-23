@@ -115,6 +115,11 @@ body {
   @apply bg-background text-foreground;
 }
 
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
 .prose {
   @apply max-w-none leading-10 flex flex-col gap-2 py-8;
 }
