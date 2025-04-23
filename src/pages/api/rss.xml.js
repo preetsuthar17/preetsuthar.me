@@ -27,12 +27,12 @@ export default async function handler(req, res) {
       (post) => `
     <item>
       <title>${escapeXml(post.title || post.slug)}</title>
-      <link>${siteUrl}/blog/${post.slug}</link>
-      <guid>${siteUrl}/blog/${post.slug}</guid>
+      <link>${siteUrl}/writing/${post.slug}</link>
+      <guid>${siteUrl}/writing/${post.slug}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${escapeXml(post.excerpt || "")}</description>
     </item>
-  `,
+  `
     )
     .join("");
 
