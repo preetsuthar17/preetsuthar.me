@@ -34,7 +34,7 @@ export default function work({ posts }) {
                     priority={index < 2}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
                     <div className="text-white text-center p-4">
                       <h3 className="font-medium">{project.title}</h3>
                       <p className="text-sm opacity-80">
