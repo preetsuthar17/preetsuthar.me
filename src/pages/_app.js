@@ -1,4 +1,4 @@
-import "../styles/globals.scss";
+import "../styles/globals.css";
 
 import { Partytown } from "@builder.io/partytown/react";
 
