@@ -16,7 +16,7 @@ export default function Document() {
           crossOrigin="anonymous"
         />
       </Head>
-      <body antialiased>
+      <body antialiased="true">
         <Main />
         <NextScript />
       </body>
