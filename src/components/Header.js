@@ -40,7 +40,7 @@ const Header = () => {
         <Link
           href="https://cal.com/hextastudio/development-partner"
           target="_blank"
-          className="px-4 py-2 rounded-full border w-fit text-sm border-orange-600 shadow-[0px_3px_0px_0px_#b64409] bg-orange-600 text-white font-medium active:bg-orange-700 active:shadow-[0px_0px_0px_0px_#b64409] active:translate-y-0.5 transition-all"
+          className="px-4 py-2 rounded-full border  border-orange-600 w-fit text-sm shadow-[0px_3px_0px_0px_#b64409] bg-orange-600 text-white font-medium active:bg-orange-700 active:shadow-[0px_0px_0px_0px_#b64409] active:translate-y-0.5 transition-all"
         >
           Book a free call
         </Link>
