@@ -431,8 +431,8 @@ html {
 
   html,
   body::-moz-selection {
-    background: var(--black-color) !important;
-    color: var(--white-color) !important;
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
   }
 
   *::selection {
