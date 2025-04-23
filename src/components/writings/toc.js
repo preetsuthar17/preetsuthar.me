@@ -6,7 +6,7 @@ export function TableOfContents({ headings = [] }) {
   }
 
   return (
-    <div type="single" collapsible className="w-full p-0 my-8">
+    <div type="single" collapsible className="w-full p-0 pt-8">
       <div value="toc" className="p-4 border rounded-xl ">
         <div className="p-0">
           <h2 className="font-medium">Table of Contents</h2>
