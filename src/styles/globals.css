@@ -1,13 +1,112 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap')
+layer(utilities);
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(class *));
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-serif: Merriweather, serif;
+  --font-mono: JetBrains Mono, monospace;
+  --font-inter: Inter var, system-ui, sans-serif;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
 
 @layer base {
@@ -221,268 +320,271 @@
   }
 }
 
-@font-face {
-  font-family: Inter;
-  font-display: block;
-  src: url(/fonts/inter-subset.woff2) format("woff2");
-  font-weight: 100 900;
-}
+@layer utilities {
+  @font-face {
+    font-family: Inter;
+    font-display: block;
+    src: url(/fonts/inter-subset.woff2) format('woff2');
+    font-weight: 100 900;
+  }
 
-@font-face {
-  font-family: Newsreader;
-  font-display: block;
-  src: url(/fonts/newsreader-subset-0.woff2) format("woff2");
-  font-weight: 400;
-  font-style: italic;
-}
+  @font-face {
+    font-family: Newsreader;
+    font-display: block;
+    src: url(/fonts/newsreader-subset-0.woff2) format('woff2');
+    font-weight: 400;
+    font-style: italic;
+  }
 
-:root {
-  --text-color: #101010;
-  --background-color: #fff;
-  --black-color: #000;
-  --white-color: #fff;
-  --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  --font-display: "DM Sans", var(--font-fallback);
-  --font-ui: "DM Sans", var(--font-fallback);
-  --font-sans: "DM Sans", var(--font-fallback);
-  --font-mono: "Menlo", monospace;
-  --font-serif: "Newsreader", "Signifier", "Times", serif;
-  --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);
-  --leading-xxl: 54px;
-  --leading-xl: 40px;
-  --leading-l: 32px;
-  --leading: 28px;
-  --leading-s: 20px;
-  --leading-xs: 18px;
-  --text-2xl: 30px;
-  --text-xl: 24px;
-  --text-l: 20px;
-  --text: 16px;
-  --text-s: 14px;
-  --text-xs: 12px;
-  --text-xxs: 10px;
-  --kerning-l: -0.33px;
-  --radius-xl: 14px;
-  --radius-l: 10px;
-  --radius: 8px;
-  --radius-s: 5px;
-  --radius-xs: 3px;
-}
+  :root {
+    --text-color: #101010;
+    --background-color: #fff;
+    --black-color: #000;
+    --white-color: #fff;
+    --font-fallback:
+      -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    --font-display: 'DM Sans', var(--font-fallback);
+    --font-ui: 'DM Sans', var(--font-fallback);
+    --font-sans: 'DM Sans', var(--font-fallback);
+    --font-mono: 'Menlo', monospace;
+    --font-serif: 'Newsreader', 'Signifier', 'Times', serif;
+    --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);
+    --leading-xxl: 54px;
+    --leading-xl: 40px;
+    --leading-l: 32px;
+    --leading: 28px;
+    --leading-s: 20px;
+    --leading-xs: 18px;
+    --text-2xl: 30px;
+    --text-xl: 24px;
+    --text-l: 20px;
+    --text: 16px;
+    --text-s: 14px;
+    --text-xs: 12px;
+    --text-xxs: 10px;
+    --kerning-l: -0.33px;
+    --radius-xl: 14px;
+    --radius-l: 10px;
+    --radius: 8px;
+    --radius-s: 5px;
+    --radius-xs: 3px;
+  }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  touch-action: manipulation;
-  scroll-behavior: smooth !important;
-  scroll-behavior: -webkit-smooth !important;
-  -webkit-scroll-behavior: smooth !important;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    scroll-behavior: smooth !important;
+    scroll-behavior: -webkit-smooth !important;
+    -webkit-scroll-behavior: smooth !important;
+  }
 
-html,
-body::-moz-selection {
-  background: var(--black-color) !important;
-  color: var(--white-color) !important;
-}
+  html,
+  body::-moz-selection {
+    background: var(--black-color) !important;
+    color: var(--white-color) !important;
+  }
 
-*::selection {
-  background: var(--black-color) !important;
-  color: var(--white-color) !important;
-}
+  *::selection {
+    background: var(--black-color) !important;
+    color: var(--white-color) !important;
+  }
 
-body,
-html {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  overflow-x: hidden;
-  scroll-behavior: smooth !important;
-  scroll-behavior: -webkit-smooth !important;
-  -webkit-scroll-behavior: smooth !important;
-  max-width: 45rem;
-  margin-inline: auto;
-  width: 95%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  touch-action: manipulation;
-}
+  body,
+  html {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth !important;
+    scroll-behavior: -webkit-smooth !important;
+    -webkit-scroll-behavior: smooth !important;
+    max-width: 45rem;
+    margin-inline: auto;
+    width: 95%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
 
-*:focus-visible {
-  outline: 1px solid var(--text-color);
-  outline-offset: 2px;
-}
+  *:focus-visible {
+    outline: 1px solid var(--text-color);
+    outline-offset: 2px;
+  }
 
-[basics-prose] p,
-[basics-text] {
-  margin: 0;
-  letter-spacing: 0;
-  font-size: var(--text);
-  line-height: var(--leading);
-  font-feature-settings: "kern", "frac", "kern", "ss02";
-}
+  [basics-prose] p,
+  [basics-text] {
+    margin: 0;
+    letter-spacing: 0;
+    font-size: var(--text);
+    line-height: var(--leading);
+    font-feature-settings: 'kern', 'frac', 'kern', 'ss02';
+  }
 
-[basics-prose] :where(h1, h2, h3, h4, h5, h6, p, li),
-[basics-text]:where(h1, h2, h3, h4, h5, h6, p, li) {
-  font: var(--type);
-}
+  [basics-prose] :where(h1, h2, h3, h4, h5, h6, p, li),
+  [basics-text]:where(h1, h2, h3, h4, h5, h6, p, li) {
+    font: var(--type);
+  }
 
-[basics-prose] :where(b),
-[basics-text] :where(b) {
-  font-weight: 500;
-  font-family: var(--font-ui);
-}
+  [basics-prose] :where(b),
+  [basics-text] :where(b) {
+    font-weight: 500;
+    font-family: var(--font-ui);
+  }
 
-[basics-heading],
-[basics-prose] :where(h1, h2, h3, h4, h5, h6) {
-  font: var(--type-heading);
-  font-feature-settings: "kern", "calt", "case";
-}
+  [basics-heading],
+  [basics-prose] :where(h1, h2, h3, h4, h5, h6) {
+    font: var(--type-heading);
+    font-feature-settings: 'kern', 'calt', 'case';
+  }
 
-[basics-prose] :where(em, i),
-[basics-text] :where(em, i),
-[basics-text]:where(em, i) {
-  font: var(--type-italic);
-  color: var(--fg);
-}
+  [basics-prose] :where(em, i),
+  [basics-text] :where(em, i),
+  [basics-text]:where(em, i) {
+    font: var(--type-italic);
+    color: var(--fg);
+  }
 
-[basics-text][basics-size="small"] {
-  font: var(--type-s);
-}
+  [basics-text][basics-size='small'] {
+    font: var(--type-s);
+  }
 
-[basics-text][basics-color="dim"] {
-  color: var(--mono11);
-}
+  [basics-text][basics-color='dim'] {
+    color: var(--mono11);
+  }
 
-[basics-text][basics-color="lowcontrast"],
-[basics-text][basics-color="lowcontrast"] * {
-  color: var(--mono9);
-}
+  [basics-text][basics-color='lowcontrast'],
+  [basics-text][basics-color='lowcontrast'] * {
+    color: var(--mono9);
+  }
 
-[basics-prose] {
-  width: 100%;
-  max-width: var(--content-width);
-  color: var(--text-color);
-}
+  [basics-prose] {
+    width: 100%;
+    max-width: var(--content-width);
+    color: var(--text-color);
+  }
 
-[basics-prose]::-moz-selection {
-  background: var(--transparent);
-}
+  [basics-prose]::-moz-selection {
+    background: var(--transparent);
+  }
 
-[basics-prose]::selection {
-  background: var(--transparent);
-}
+  [basics-prose]::selection {
+    background: var(--transparent);
+  }
 
-[basics-prose] > :first-child {
-  margin-top: 0;
-}
+  [basics-prose] > :first-child {
+    margin-top: 0;
+  }
 
-[basics-prose] > :not(:last-child),
-[basics-prose] > [basics-codeblock] {
-  margin-bottom: 28px;
-}
+  [basics-prose] > :not(:last-child),
+  [basics-prose] > [basics-codeblock] {
+    margin-bottom: 28px;
+  }
 
-[basics-prose] > :where(h1, h2, h3, h4, h5, h6) {
-  margin-top: 56px;
-  margin-bottom: 28px;
-}
+  [basics-prose] > :where(h1, h2, h3, h4, h5, h6) {
+    margin-top: 56px;
+    margin-bottom: 28px;
+  }
 
-[basics-prose] > :where([basics-scroller]) {
-  margin-top: 64px;
-}
+  [basics-prose] > :where([basics-scroller]) {
+    margin-top: 64px;
+  }
 
-[basics-prose] > :where([basics-separator]) {
-  margin: var(--gap-4x) 0;
-}
+  [basics-prose] > :where([basics-separator]) {
+    margin: var(--gap-4x) 0;
+  }
 
-[basics-prose][basics-variant~="dropcaps"] > p:first-of-type:first-letter {
-  float: left;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 4rem;
-  line-height: 0.8;
-  margin: 0 0.1em -0.3em 0;
-  padding: 0.2em 0.1em 0.1em;
-}
+  [basics-prose][basics-variant~='dropcaps'] > p:first-of-type:first-letter {
+    float: left;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 4rem;
+    line-height: 0.8;
+    margin: 0 0.1em -0.3em 0;
+    padding: 0.2em 0.1em 0.1em;
+  }
 
-[basics-prose] blockquote {
-  color: var(--mono11);
-  position: relative;
-  quotes: "“" "”" "‘" "’";
-  --quote-offset: 2px;
-}
+  [basics-prose] blockquote {
+    color: var(--mono11);
+    position: relative;
+    quotes: '“' '”' '‘' '’';
+    --quote-offset: 2px;
+  }
 
-[basics-prose] blockquote:before {
-  content: open-quote;
-  position: absolute;
-  left: calc(-1 * var(--quote-offset));
-  transform: translateX(-100%);
-  line-height: var(--leading);
-  font-size: var(--text);
-}
+  [basics-prose] blockquote:before {
+    content: open-quote;
+    position: absolute;
+    left: calc(-1 * var(--quote-offset));
+    transform: translateX(-100%);
+    line-height: var(--leading);
+    font-size: var(--text);
+  }
 
-[basics-prose] blockquote :last-child:after {
-  content: close-quote;
-  margin-left: var(--quote-offset);
-}
+  [basics-prose] blockquote :last-child:after {
+    content: close-quote;
+    margin-left: var(--quote-offset);
+  }
 
-[basics-prose] blockquote * {
-  color: var(--mono11);
-}
+  [basics-prose] blockquote * {
+    color: var(--mono11);
+  }
 
-[basics-prose] [basics-figure] {
-  margin: var(--gap-8x) 0;
-}
+  [basics-prose] [basics-figure] {
+    margin: var(--gap-8x) 0;
+  }
 
-[basics-prose] ul {
-  list-style-type: disc;
-  list-style-position: outside;
-  padding-left: 16px;
-}
+  [basics-prose] ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 16px;
+  }
 
-[basics-prose] li > ul {
-  list-style-type: circle;
-}
+  [basics-prose] li > ul {
+    list-style-type: circle;
+  }
 
-[basics-prose] ol {
-  --counter-space: 12px;
-  counter-reset: basics-ol;
-  list-style-type: none;
-  padding: 0;
-}
+  [basics-prose] ol {
+    --counter-space: 12px;
+    counter-reset: basics-ol;
+    list-style-type: none;
+    padding: 0;
+  }
 
-[basics-prose] ol:last-child li {
-  font-size: var(--text-s);
-  line-height: var(--leading-s);
-}
+  [basics-prose] ol:last-child li {
+    font-size: var(--text-s);
+    line-height: var(--leading-s);
+  }
 
-[basics-prose] li {
-  display: list-item;
-  line-height: var(--leading);
-}
+  [basics-prose] li {
+    display: list-item;
+    line-height: var(--leading);
+  }
 
-[basics-prose] li::marker {
-  color: var(--mono11);
-}
+  [basics-prose] li::marker {
+    color: var(--mono11);
+  }
 
-[basics-prose] li + li,
-[basics-prose] li > ul {
-  margin-top: var(--gap);
-}
+  [basics-prose] li + li,
+  [basics-prose] li > ul {
+    margin-top: var(--gap);
+  }
 
-[basics-prose] ol li {
-  --l: calc(var(--counter-space) + var(--gap-2x));
-  text-indent: calc(-1 * var(--l));
-  padding-left: var(--l);
-}
+  [basics-prose] ol li {
+    --l: calc(var(--counter-space) + var(--gap-2x));
+    text-indent: calc(-1 * var(--l));
+    padding-left: var(--l);
+  }
 
-.prose pre {
-  background-color: #212121 !important;
-  font-family: var(--font-mono) !important;
+  .prose pre {
+    background-color: #212121 !important;
+    font-family: var(--font-mono) !important;
+  }
 }
 
 @layer base {
