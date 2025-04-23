@@ -1,6 +1,6 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap')
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap")
 layer(utilities);
 
 @plugin 'tailwindcss-animate';
@@ -109,229 +109,227 @@ layer(utilities);
   text-wrap: balance;
 }
 
-@layer base {
-  .prose {
-    @apply max-w-none leading-10;
-  }
+.prose {
+  @apply max-w-none leading-10 flex flex-col gap-2 py-8;
+}
 
-  .prose h1 {
-    @apply py-3 text-4xl font-bold tracking-tight text-foreground;
-  }
+.prose h1 {
+  @apply py-3 text-4xl font-bold tracking-tight text-foreground;
+}
 
-  .prose h2 {
-    @apply py-3 text-3xl font-semibold tracking-tight text-foreground;
-  }
+.prose h2 {
+  @apply py-3 text-3xl font-semibold tracking-tight text-foreground;
+}
 
-  .prose h3 {
-    @apply py-3 text-2xl font-semibold tracking-tight text-foreground;
-  }
+.prose h3 {
+  @apply py-3 text-2xl font-semibold tracking-tight text-foreground;
+}
 
-  .prose h4 {
-    @apply py-3 text-xl font-semibold tracking-tight text-foreground;
-  }
+.prose h4 {
+  @apply py-3 text-xl font-semibold tracking-tight text-foreground;
+}
 
-  .prose h5 {
-    @apply py-3 text-lg font-semibold tracking-tight text-foreground;
-  }
+.prose h5 {
+  @apply py-3 text-lg font-semibold tracking-tight text-foreground;
+}
 
-  .prose h6 {
-    @apply py-3 text-base font-semibold tracking-tight text-foreground;
-  }
+.prose h6 {
+  @apply py-3 text-base font-semibold tracking-tight text-foreground;
+}
 
-  .prose p {
-    @apply mb-4 leading-7;
-  }
+.prose p {
+  @apply mb-4 leading-7;
+}
 
-  .prose strong {
-    @apply font-semibold;
-  }
+.prose strong {
+  @apply font-semibold;
+}
 
-  .prose ul {
-    @apply mb-4 ml-6 list-disc text-muted-foreground;
-  }
+.prose ul {
+  @apply mb-4 ml-6 list-disc text-muted-foreground;
+}
 
-  .prose ol {
-    @apply mb-4 ml-6 list-decimal text-muted-foreground;
-  }
+.prose ol {
+  @apply mb-4 ml-6 list-decimal text-muted-foreground;
+}
 
-  .prose blockquote {
-    @apply my-6 border-l-2 border-border pl-6 italic text-muted-foreground;
-  }
+.prose blockquote {
+  @apply my-6 border-l-2 border-border pl-6 italic text-muted-foreground;
+}
 
-  .prose pre {
-    @apply my-4 overflow-x-auto rounded-lg p-4 text-sm;
-  }
+.prose pre {
+  @apply my-4 overflow-x-auto rounded-lg p-4 text-sm;
+}
 
-  .prose code {
-    @apply rounded-md bg-muted px-1.5 py-0.5 font-mono text-sm;
-  }
+.prose code {
+  @apply rounded-md bg-muted px-1.5 py-0.5 font-mono text-sm;
+}
 
-  .prose a {
-    @apply font-medium text-primary underline underline-offset-4 hover:text-primary/80;
-  }
+.prose a {
+  @apply font-medium text-primary underline underline-offset-4 hover:text-primary/80;
+}
 
-  .prose img {
-    @apply rounded-lg border border-border;
-  }
+.prose img {
+  @apply rounded-lg border border-border;
+}
 
-  .prose hr {
-    @apply my-8 border-border;
-  }
+.prose hr {
+  @apply my-8 border-border;
+}
 
-  .prose pre[class*="language-"] {
-    @apply my-4 overflow-x-auto p-4;
-  }
+.prose pre[class*="language-"] {
+  @apply my-4 overflow-x-auto p-4;
+}
 
-  /* Table styles */
-  .prose table {
-    @apply my-6 w-full overflow-y-auto;
-  }
+/* Table styles */
+.prose table {
+  @apply my-6 w-full overflow-y-auto;
+}
 
-  .prose table th {
-    @apply border px-4 py-2 text-left font-semibold;
-  }
+.prose table th {
+  @apply border px-4 py-2 text-left font-semibold;
+}
 
-  .prose table td {
-    @apply border px-4 py-2;
-  }
+.prose table td {
+  @apply border px-4 py-2;
+}
 
-  /* Footnotes */
-  .prose .footnotes {
-    @apply mt-12 border-t pt-4 text-sm;
-  }
+/* Footnotes */
+.prose .footnotes {
+  @apply mt-12 border-t pt-4 text-sm;
+}
 
-  .prose .footnotes ol {
-    @apply ml-4;
-  }
+.prose .footnotes ol {
+  @apply ml-4;
+}
 
-  .prose .footnotes li {
-    @apply text-muted-foreground;
-  }
+.prose .footnotes li {
+  @apply text-muted-foreground;
+}
 
-  /* Task lists */
-  .prose ul li[type="checkbox"] {
-    @apply list-none;
-  }
+/* Task lists */
+.prose ul li[type="checkbox"] {
+  @apply list-none;
+}
 
-  .prose ul li[type="checkbox"]::before {
-    @apply hidden;
-  }
+.prose ul li[type="checkbox"]::before {
+  @apply hidden;
+}
 
-  /* Emoji */
-  .prose .emoji {
-    @apply inline-block align-text-bottom;
-  }
+/* Emoji */
+.prose .emoji {
+  @apply inline-block align-text-bottom;
+}
 
-  /* Abbreviations */
-  .prose abbr[title] {
-    @apply cursor-help border-dotted border-b;
-  }
+/* Abbreviations */
+.prose abbr[title] {
+  @apply cursor-help border-dotted border-b;
+}
 
-  .prose ins {
-    @apply bg-green-100 dark:bg-green-900/30 no-underline;
-  }
+.prose ins {
+  @apply bg-green-100 dark:bg-green-900/30 no-underline;
+}
 
-  /* Marked text */
-  .prose mark {
-    @apply bg-yellow-100 dark:bg-yellow-900/30 px-1;
-  }
+/* Marked text */
+.prose mark {
+  @apply bg-yellow-100 dark:bg-yellow-900/30 px-1;
+}
 
-  /* Custom containers */
+/* Custom containers */
 
-  .prose .alert {
-    @apply my-6 border-l-4 border-red-500 bg-red-50 p-4 dark:bg-red-900/20 [&>p]:m-0;
-  }
+.prose .alert {
+  @apply my-6 border-l-4 border-red-500 bg-red-50 p-4 dark:bg-red-900/20 [&>p]:m-0;
+}
 
-  .prose .warning {
-    @apply my-6 border-l-4 border-yellow-500 bg-yellow-50 p-4 dark:bg-yellow-900/20 [&>p]:m-0;
-  }
+.prose .warning {
+  @apply my-6 border-l-4 border-yellow-500 bg-yellow-50 p-4 dark:bg-yellow-900/20 [&>p]:m-0;
+}
 
-  .prose .info {
-    @apply my-6 border-l-4 border-blue-500 bg-blue-50 p-4 dark:bg-blue-900/20 [&>p]:m-0;
-  }
+.prose .info {
+  @apply my-6 border-l-4 border-blue-500 bg-blue-50 p-4 dark:bg-blue-900/20 [&>p]:m-0;
+}
 
-  /* New containers */
-  .prose .note {
-    @apply my-6 border-l-4 border-purple-500 bg-purple-50 p-4 dark:bg-purple-900/20 [&>p]:m-0;
-  }
+/* New containers */
+.prose .note {
+  @apply my-6 border-l-4 border-purple-500 bg-purple-50 p-4 dark:bg-purple-900/20 [&>p]:m-0;
+}
 
-  .prose .tip {
-    @apply my-6 border-l-4 border-green-500 bg-green-50 p-4 dark:bg-green-900/20 [&>p]:m-0;
-  }
+.prose .tip {
+  @apply my-6 border-l-4 border-green-500 bg-green-50 p-4 dark:bg-green-900/20 [&>p]:m-0;
+}
 
-  /* Abbreviations */
-  .prose abbr {
-    @apply cursor-help border-dotted border-b border-muted-foreground;
-  }
+/* Abbreviations */
+.prose abbr {
+  @apply cursor-help border-dotted border-b border-muted-foreground;
+}
 
-  /* Table of Contents styles */
-  .prose .table-of-contents {
-    @apply my-8 rounded-lg border border-border bg-card p-6;
-  }
+/* Table of Contents styles */
+.prose .table-of-contents {
+  @apply my-8 rounded-lg border border-border bg-card p-6;
+}
 
-  .prose .table-of-contents ul {
-    @apply mt-4 list-none pl-0;
-  }
+.prose .table-of-contents ul {
+  @apply mt-4 list-none pl-0;
+}
 
-  .prose .table-of-contents ul ul {
-    @apply ml-4;
-  }
+.prose .table-of-contents ul ul {
+  @apply ml-4;
+}
 
-  .prose .table-of-contents li {
-    @apply my-2 text-muted-foreground hover:text-foreground;
-  }
+.prose .table-of-contents li {
+  @apply my-2 text-muted-foreground hover:text-foreground;
+}
 
-  .prose .anchor {
-    @apply ml-2 text-muted-foreground no-underline opacity-0 transition-opacity hover:text-foreground;
-  }
+.prose .anchor {
+  @apply ml-2 text-muted-foreground no-underline opacity-0 transition-opacity hover:text-foreground;
+}
 
-  .prose h1:hover .anchor,
-  .prose h2:hover .anchor,
-  .prose h3:hover .anchor {
-    @apply opacity-100;
-  }
+.prose h1:hover .anchor,
+.prose h2:hover .anchor,
+.prose h3:hover .anchor {
+  @apply opacity-100;
+}
 
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 10% 3.9%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
 }
 
 @layer utilities {
   @font-face {
     font-family: Inter;
     font-display: block;
-    src: url(/fonts/inter-subset.woff2) format('woff2');
+    src: url(/fonts/inter-subset.woff2) format("woff2");
     font-weight: 100 900;
   }
 
   @font-face {
     font-family: Newsreader;
     font-display: block;
-    src: url(/fonts/newsreader-subset-0.woff2) format('woff2');
+    src: url(/fonts/newsreader-subset-0.woff2) format("woff2");
     font-weight: 400;
     font-style: italic;
   }
@@ -341,15 +339,14 @@ layer(utilities);
     --background-color: #fff;
     --black-color: #000;
     --white-color: #fff;
-    --font-fallback:
-      -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    --font-display: 'DM Sans', var(--font-fallback);
-    --font-ui: 'DM Sans', var(--font-fallback);
-    --font-sans: 'DM Sans', var(--font-fallback);
-    --font-mono: 'Menlo', monospace;
-    --font-serif: 'Newsreader', 'Signifier', 'Times', serif;
+    --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    --font-display: "DM Sans", var(--font-fallback);
+    --font-ui: "DM Sans", var(--font-fallback);
+    --font-sans: "DM Sans", var(--font-fallback);
+    --font-mono: "Menlo", monospace;
+    --font-serif: "Newsreader", "Signifier", "Times", serif;
     --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);
     --leading-xxl: 54px;
     --leading-xl: 40px;
@@ -424,7 +421,7 @@ layer(utilities);
     letter-spacing: 0;
     font-size: var(--text);
     line-height: var(--leading);
-    font-feature-settings: 'kern', 'frac', 'kern', 'ss02';
+    font-feature-settings: "kern", "frac", "kern", "ss02";
   }
 
   [basics-prose] :where(h1, h2, h3, h4, h5, h6, p, li),
@@ -441,7 +438,7 @@ layer(utilities);
   [basics-heading],
   [basics-prose] :where(h1, h2, h3, h4, h5, h6) {
     font: var(--type-heading);
-    font-feature-settings: 'kern', 'calt', 'case';
+    font-feature-settings: "kern", "calt", "case";
   }
 
   [basics-prose] :where(em, i),
@@ -451,16 +448,16 @@ layer(utilities);
     color: var(--fg);
   }
 
-  [basics-text][basics-size='small'] {
+  [basics-text][basics-size="small"] {
     font: var(--type-s);
   }
 
-  [basics-text][basics-color='dim'] {
+  [basics-text][basics-color="dim"] {
     color: var(--mono11);
   }
 
-  [basics-text][basics-color='lowcontrast'],
-  [basics-text][basics-color='lowcontrast'] * {
+  [basics-text][basics-color="lowcontrast"],
+  [basics-text][basics-color="lowcontrast"] * {
     color: var(--mono9);
   }
 
@@ -500,7 +497,7 @@ layer(utilities);
     margin: var(--gap-4x) 0;
   }
 
-  [basics-prose][basics-variant~='dropcaps'] > p:first-of-type:first-letter {
+  [basics-prose][basics-variant~="dropcaps"] > p:first-of-type:first-letter {
     float: left;
     font-family: var(--font-serif);
     font-style: italic;
@@ -513,7 +510,7 @@ layer(utilities);
   [basics-prose] blockquote {
     color: var(--mono11);
     position: relative;
-    quotes: '“' '”' '‘' '’';
+    quotes: "“" "”" "‘" "’";
     --quote-offset: 2px;
   }
 
