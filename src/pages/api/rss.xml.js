@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description>${escapeXml(post.excerpt || "")}</description>
     </item>
-  `
+  `,
     )
     .join("");
 
