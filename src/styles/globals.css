@@ -99,6 +99,41 @@ layer(utilities);
   color utility to any element that depends on these defaults.
 */
 
+:root {
+  --text-color: #101010;
+  --background-color: #fff;
+  --black-color: #000;
+  --white-color: #fff;
+  --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --font-display: "DM Sans", var(--font-fallback);
+  --font-ui: "DM Sans", var(--font-fallback);
+  --font-sans: "DM Sans", var(--font-fallback);
+  --font-mono: "Menlo", monospace;
+  --font-serif: "Newsreader", "Signifier", "Times", serif;
+  --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);
+  --leading-xxl: 54px;
+  --leading-xl: 40px;
+  --leading-l: 32px;
+  --leading: 28px;
+  --leading-s: 20px;
+  --leading-xs: 18px;
+  --text-2xl: 30px;
+  --text-xl: 24px;
+  --text-l: 20px;
+  --text: 16px;
+  --text-s: 14px;
+  --text-xs: 12px;
+  --text-xxs: 10px;
+  --kerning-l: -0.33px;
+  --radius-xl: 14px;
+  --radius-l: 10px;
+  --radius: 8px;
+  --radius-s: 5px;
+  --radius-xs: 3px;
+}
+
 @utility text-balance {
   text-wrap: balance;
 }
@@ -115,9 +150,10 @@ body {
   @apply bg-background text-foreground;
 }
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+body,
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .prose {
