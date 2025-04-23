@@ -108,12 +108,21 @@ export default function blogs({ posts }) {
         </script>
       </Head>
       <div className="flex flex-col gap-10 py-20 basics-prose [font:var(--type)]">
-        <div>
+        <div className="flex gap-4">
           <Link
             href="/"
             className="text-muted-foreground flex items-center gap-1 text-sm underline"
           >
             <ArrowUpLeft size={12} /> Home
+          </Link>
+          <Link
+            rel="alternate"
+            type="application/rss+xml"
+            title="RSS Feed"
+            className="text-muted-foreground flex items-center gap-1 text-sm underline"
+            href="/api/rss.xml"
+          >
+            <ArrowUpLeft size={12} /> RSS
           </Link>
         </div>
         <div className="flex flex-col gap-4">
@@ -129,6 +138,10 @@ export default function blogs({ posts }) {
             >
               Writings ({posts.length})
             </motion.h1>
+            <motion.p
+              variants={yearVariants}
+              className="text-muted-foreground flex items-center gap-1 text-sm underline"
+            ></motion.p>
             {years.map((year) => (
               <motion.div key={year} variants={yearVariants} className="mb-8">
                 <motion.h2
