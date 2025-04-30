@@ -44,7 +44,7 @@ const Header = () => {
         >
           Book a free call
         </Link>
-        <p className="w-[6rem]">
+        {/* <p className="w-[6rem]">
           <svg
             viewBox="0 0 2489 1270"
             id="sign"
@@ -58,7 +58,7 @@ const Header = () => {
               strokeLinecap="round"
             />
           </svg>
-        </p>
+        </p> */}
       </header>
     </>
   );
