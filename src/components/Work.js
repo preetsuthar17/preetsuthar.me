@@ -37,10 +37,10 @@ export default function work({ posts }) {
               View All SaaS Projects
             </Link>
           </div>
-          <div className="flex-1 flex flex-col  justify-between max-[480px]:gap-6 w-full">
-            <h2 className="font-medium opacity-80 max-[480px]:mb-4">Writing</h2>
+          <div className="flex-1 flex flex-col  justify-between gap-6 w-full">
+            <h2 className="font-medium opacity-80 mb-4">Writing</h2>
             <ul className="flex flex-col gap-6">
-              {posts?.slice(0, 5).map((post) => (
+              {posts?.slice(0, 4).map((post) => (
                 <li
                   key={post.slug}
                   className="flex flex-col items-start text-left gap-2 w-full"
