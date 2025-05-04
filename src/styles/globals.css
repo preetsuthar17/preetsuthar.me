@@ -199,7 +199,7 @@ html {
 }
 
 .prose p {
-  @apply mb-4 leading-7;
+  @apply leading-7;
 }
 
 .prose strong {
@@ -223,7 +223,7 @@ html {
 }
 
 .prose code {
-  @apply rounded-md bg-muted px-1.5 py-0.5 font-mono text-sm;
+  @apply rounded-md bg-muted  py-0.5 font-mono text-sm;
 }
 
 .prose a {

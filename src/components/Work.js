@@ -12,48 +12,6 @@ export default function work({ posts }) {
   return (
     <>
       <article className="flex justify-between flex-col flex-wrap gap-20 text-left">
-        <div className="flex-1 flex flex-col items-start justify-start gap-6">
-          <h2 className="font-medium opacity-80 mb-6">
-            Web Design & Development
-          </h2>{" "}
-          <ul className="flex flex-col gap-6 w-full grow">
-            {webDesignDev.map((project, index) => (
-              <li
-                key={index}
-                className="relative flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer w-full group"
-                onClick={() => window.open(project.link, "_blank")}
-              >
-                <div className="relative rounded-xl overflow-hidden border">
-                  <OptimizedImage
-                    src={project.image}
-                    width={1920}
-                    height={1080}
-                    alt={project.title}
-                    className="rounded-xl grow max-w-full w-full h-auto"
-                    loading="eager"
-                    priority={index < 2}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
-                    <div className="text-white text-center p-4">
-                      <h3 className="font-medium">{project.title}</h3>
-                      <p className="text-sm opacity-80">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/web-design-dev"
-            className="font-medium text-sm underline mt-4"
-          >
-            View All Web Work
-          </Link>
-        </div>
-        <hr />
         <div className="flex justify-between max-[480px]:flex-col gap-12 text-left">
           <div className="flex-1 flex flex-col items-start justify-start text-left gap-6">
             <h2 className="font-medium opacity-80 mb-4">SaaS Projects</h2>
@@ -104,6 +62,48 @@ export default function work({ posts }) {
               View All Posts
             </Link>
           </div>
+        </div>{" "}
+        <hr />
+        <div className="flex-1 flex flex-col items-start justify-start gap-6">
+          <h2 className="font-medium opacity-80 mb-6">
+            Web Design & Development
+          </h2>{" "}
+          <ul className="flex flex-col gap-6 w-full grow">
+            {webDesignDev.map((project, index) => (
+              <li
+                key={index}
+                className="relative flex flex-col items-start text-left rounded-xl transition-all gap-3 cursor-pointer w-full group"
+                onClick={() => window.open(project.link, "_blank")}
+              >
+                <div className="relative rounded-xl overflow-hidden border">
+                  <OptimizedImage
+                    src={project.image}
+                    width={1920}
+                    height={1080}
+                    alt={project.title}
+                    className="rounded-xl grow max-w-full w-full h-auto"
+                    loading="eager"
+                    priority={index < 2}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl backdrop-blur-xl text-center p-4 duration-300">
+                    <div className="text-white text-center p-4">
+                      <h3 className="font-medium">{project.title}</h3>
+                      <p className="text-sm opacity-80">
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/web-design-dev"
+            className="font-medium text-sm underline mt-4"
+          >
+            View All Web Work
+          </Link>
         </div>
       </article>
     </>
