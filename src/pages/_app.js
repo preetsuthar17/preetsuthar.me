@@ -74,7 +74,12 @@ export default function App({ Component, pageProps }) {
             ],
             jobTitle: "SaaS Creator",
           })}
-        </script>
+        </script>{" "}
+        <script
+          data-goatcounter="https://preett.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
       </Head>
 
       <Link href="#main-content" className="sr-only focus:not-sr-only text-sm">
