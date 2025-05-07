@@ -56,7 +56,7 @@ const Header = () => {
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
-              href="https://cal.com/hextastudio/development-partner"
+              href="https://github.com/sponsors/preetsuthar17"
               target="_blank"
               className="px-5 py-3 bg-primary hover:bg-[var(--blue-color)] text-white w-fit border border-primary hover:border-[var(--blue-color)]"
             >
