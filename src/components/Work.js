@@ -16,10 +16,10 @@ export default function work({ posts }) {
               {posts?.map((post) => (
                 <li
                   key={post.slug}
-                  className="flex items-center text-left gap-2 w-full justify-between"
+                  className="flex items-center text-left gap-2 w-full justify-between max-[590px]:flex-col max-[590px]:items-start"
                 >
                   <Link
-                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)]"
+                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)] max-[590px]:w-full"
                     href={`/writing/${post.slug}`}
                   >
                     {post.title}
@@ -37,10 +37,10 @@ export default function work({ posts }) {
               {saas.map((saas, index) => (
                 <li
                   key={index}
-                  className="flex items-center text-left gap-2 w-full justify-between"
+                  className="flex items-center text-left gap-2 w-full justify-between  max-[590px]:flex-col max-[590px]:items-start"
                 >
                   <Link
-                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)]"
+                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)]  max-[590px]:w-full"
                     target="_blank"
                     href={saas.link}
                   >

@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <header className="flex flex-col gap-24 text-justify justify-evenly ">
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <Link
             className="underline text-[var(--blue-color)] underline-offset-4"
             href="https://x.com/preetsuthar17"
@@ -51,8 +51,10 @@ const Header = () => {
           <div className="grayscale-100">
             <SpotifyStatus />
           </div>
-          <p>Design and dev partner for startups and founders.</p>
-          <div className="flex gap-2">
+          <p className="text-left">
+            Design and dev partner for startups and founders.
+          </p>
+          <div className="flex gap-2 flex-wrap">
             <Link
               href="https://cal.com/hextastudio/development-partner"
               target="_blank"

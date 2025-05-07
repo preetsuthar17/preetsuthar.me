@@ -37,7 +37,7 @@ export const SpotifyStatus = () => {
       </small>
     </Link>
   ) : (
-    <div className="flex items-center gap-2 text-sm font-sans basics-prose">
+    <div className="flex items-center gap-2 text-sm font-sans basics-prose text-left">
       <FaSpotify className="text-[#1DB954]" size={16} />
       <small className=" opacity-90">Not playing anything on Spotify</small>
     </div>
