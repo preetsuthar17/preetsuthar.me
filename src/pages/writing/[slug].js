@@ -98,14 +98,16 @@ export default function BlogPost({ post, prevPost, nextPost }) {
       <article className="flex flex-col gap-10 basics-prose mx-auto py-20">
         <div>
           <Link
-            href="/writings"
+            href="/"
             className="text-muted-foreground flex items-center gap-1 text-sm underline"
           >
-            <ArrowUpLeft size={12} /> Index
+            <ArrowUpLeft size={12} /> Home
           </Link>
         </div>
         <div className="dark:prose-invert max-w-none flex flex-col gap-2">
-          <h1 className="text-4xl font-bold ">{post.title}</h1>
+          <h1 className="text-4xl font-semibold text-[var(--blue-color)] ">
+            {post.title}
+          </h1>
           <div className="flex gap-2 flex-wrap">
             <small className="text-muted-foreground">
               {new Date(post.date).toLocaleDateString("en-US")}

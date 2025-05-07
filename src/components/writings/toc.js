@@ -7,7 +7,7 @@ export function TableOfContents({ headings = [] }) {
 
   return (
     <div type="single" collapsible className="w-full p-0 pt-8">
-      <div value="toc" className="p-4 border rounded-xl ">
+      <div value="toc" className="p-4 border ">
         <div className="p-0">
           <h2 className="font-medium">Table of Contents</h2>
         </div>
@@ -21,19 +21,19 @@ export function TableOfContents({ headings = [] }) {
                   heading.level === 2
                     ? "pl-4"
                     : heading.level === 3
-                      ? "pl-8"
-                      : heading.level === 4
-                        ? "pl-12"
-                        : ""
+                    ? "pl-8"
+                    : heading.level === 4
+                    ? "pl-12"
+                    : ""
                 }`}
               >
                 {heading.level === 2
                   ? "• "
                   : heading.level === 3
-                    ? "◦ "
-                    : heading.level === 4
-                      ? "◦ "
-                      : ""}
+                  ? "◦ "
+                  : heading.level === 4
+                  ? "◦ "
+                  : ""}
                 {"  "}
                 {heading.text}
               </Link>

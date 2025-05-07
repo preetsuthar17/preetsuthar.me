@@ -4,8 +4,7 @@ import { getAllPosts } from "@/lib/blog";
 
 import Header from "@/components/Header";
 import Work from "@/components/Work";
-import About from "@/components/About";
-import Connect from "@/components/Connect";
+
 
 import { motion } from "motion/react";
 
@@ -85,22 +84,13 @@ export default function Home({ posts }) {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="flex flex-col gap-20 py-20 basics-prose [font:var(--type)]"
+        className="flex flex-col py-20 basics-prose gap-24"
       >
         <motion.div variants={itemVariants}>
           <Header />
         </motion.div>
-        <motion.hr variants={itemVariants} />
         <motion.div variants={itemVariants}>
           <Work posts={posts} />
-        </motion.div>
-        <motion.hr variants={itemVariants} />
-        <motion.div variants={itemVariants}>
-          <About />
-        </motion.div>
-        <motion.hr variants={itemVariants} />
-        <motion.div variants={itemVariants}>
-          <Connect />
         </motion.div>
       </motion.div>
     </>

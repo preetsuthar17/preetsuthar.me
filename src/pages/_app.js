@@ -8,11 +8,12 @@ import Script from "next/script";
 import Head from "next/head";
 import Link from "next/link";
 
-import { DM_Sans } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 
-const dm_sans = DM_Sans({
+const geist_Mono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-geist-mono",
 });
 
 export default function App({ Component, pageProps }) {
@@ -79,7 +80,10 @@ export default function App({ Component, pageProps }) {
       <Link href="#main-content" className="sr-only focus:not-sr-only text-sm">
         Skip to main content
       </Link>
-      <Component {...pageProps} className={dm_sans.className} />
+      <Component
+        {...pageProps}
+        className={`${geist_Mono.className} ${geist_Mono.variable}`}
+      />
       <GoogleAnalytics gaId="G-170WY51KQ8" />
     </>
   );
