@@ -174,7 +174,7 @@ html {
 }
 
 .prose h1 {
-  @apply py-3 text-4xl font-bold tracking-tight text-foreground text-justify;
+  @apply py-3 text-4xl font-bold tracking-tight text-foreground;
 }
 
 .prose h2 {
