@@ -9,9 +9,25 @@ import saas from "@/data/saas";
 export default function work({ posts }) {
   return (
     <>
-      <article className="flex justify-between flex-col flex-wrap text-left font-medium">
-        <div className="flex justify-between flex-col gap-24  text-left">
-          <div className="flex flex-col items-center w-full justify-between text-left gap-6">
+      <article className="flex justify-between flex-col flex-wrap text-left font-medium relative">
+        {/* Cross repeating line pattern background */}
+
+        <div className="flex justify-between flex-col gap-24 text-left relative z-10">
+          {/* divider */}
+          <div className="h-6 border-y relative">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+                opacity: 1,
+              }}
+            />
+          </div>
+          {/* divider */}
+
+          <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
             <ul className="flex flex-col gap-5 w-full">
               {posts?.map((post) => (
                 <li
@@ -32,7 +48,22 @@ export default function work({ posts }) {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col items-center w-full justify-between text-left gap-6">
+
+          {/* divider */}
+          <div className="h-6 border-y relative">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+                opacity: 1,
+              }}
+            />
+          </div>
+          {/* divider */}
+
+          <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
             <ul className="flex flex-col gap-5 w-full">
               {saas.map((saas, index) => (
                 <li
@@ -52,7 +83,7 @@ export default function work({ posts }) {
               ))}
             </ul>
           </div>
-        </div>{" "}
+        </div>
       </article>
     </>
   );

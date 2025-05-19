@@ -6,8 +6,8 @@ export function TableOfContents({ headings = [] }) {
   }
 
   return (
-    <div type="single" collapsible className="w-full p-0 pt-8">
-      <div value="toc" className="p-4 border ">
+    <div type="single" collapsible className="w-full p-0 ">
+      <div value="toc" className="border-b px-10 py-10 ">
         <div className="p-0">
           <h2 className="font-medium">Table of Contents</h2>
         </div>
@@ -17,7 +17,7 @@ export function TableOfContents({ headings = [] }) {
               <Link
                 key={heading.id}
                 href={`#${heading.id}`}
-                className={`text-muted-foreground hover:text-foreground transition-colors hover:underline ${
+                className={`text-muted-foreground hover:text-foreground transition-colors  ${
                   heading.level === 2
                     ? "pl-4"
                     : heading.level === 3

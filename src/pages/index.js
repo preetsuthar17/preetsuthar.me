@@ -5,7 +5,6 @@ import { getAllPosts } from "@/lib/blog";
 import Header from "@/components/Header";
 import Work from "@/components/Work";
 
-
 import { motion } from "motion/react";
 
 export default function Home({ posts }) {
@@ -84,7 +83,7 @@ export default function Home({ posts }) {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="flex flex-col py-20 basics-prose gap-24"
+        className="flex flex-col py-20 basics-prose gap-24 border border-t-0 border-b-0"
       >
         <motion.div variants={itemVariants}>
           <Header />

@@ -95,74 +95,104 @@ export default function BlogPost({ post, prevPost, nextPost }) {
         style={{ width: `${progress}%` }}
       />
 
-      <article className="flex flex-col gap-10 basics-prose mx-auto py-20">
-        <div>
+      <article className="flex flex-col gap-10 basics-prose mx-auto py-20 border border-t-0 border-b-0 ">
+        <div className="px-10 ">
           <Link
             href="/"
-            className="text-muted-foreground flex items-center gap-1 text-sm underline"
+            className="text-muted-foreground flex items-center gap-1 text-sm underline w-fit"
           >
             <ArrowUpLeft size={12} /> Home
           </Link>
         </div>
         <div className="dark:prose-invert max-w-none flex flex-col gap-2">
-          <h1 className="text-4xl font-semibold text-[var(--blue-color)] ">
-            {post.title}
-          </h1>
-          <div className="flex gap-2 flex-wrap">
-            <small className="text-muted-foreground">
-              {new Date(post.date).toLocaleDateString("en-US")}
-            </small>
-            <small>•</small>
-            <small className="text-muted-foreground">{post.author}</small>
-            <small>•</small>
-            <small className="text-muted-foreground">
-              {readingTime} min read
-            </small>
+          {/* divider */}
+          <div className="h-6 border-y relative">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+                opacity: 1,
+              }}
+            />
           </div>
+          {/* divider */}
+          <div className="flex flex-col gap-4 py-14">
+            <h1 className="px-10 text-4xl font-semibold text-[var(--blue-color)] ">
+              {post.title}
+            </h1>
+
+            <div className="px-10 flex gap-2 flex-wrap">
+              <small className="text-muted-foreground">
+                {new Date(post.date).toLocaleDateString("en-US")}
+              </small>
+              <small>•</small>
+              <small className="text-muted-foreground">{post.author}</small>
+              <small>•</small>
+              <small className="text-muted-foreground">
+                {readingTime} min read
+              </small>
+            </div>
+          </div>
+
+          {/* divider */}
+          <div className="h-6 border-y relative">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+                opacity: 1,
+              }}
+            />
+          </div>
+          {/* divider */}
+
           <TableOfContents headings={post.headings} />
           <div
-            className="prose  max-w-none"
+            className="prose text-justify max-sm:text-pretty px-10 py-10 max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
             suppressHydrationWarning
           />
         </div>
+        {/* blog navigation */}
+        <nav className="container mx-auto px-4 py-8 pb-20 border-t">
+          <div className="flex justify-between items-center gap-4">
+            {prevPost ? (
+              <Link href={`/writing/${prevPost.slug}`} className="flex-1 group">
+                <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary">
+                  <ChevronLeft className="h-4 w-4" />
+                  <span className="text-sm">Previous</span>
+                </div>
+                <p className="text-lg font-medium mt-1 line-clamp-1">
+                  {prevPost.title}
+                </p>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+
+            {nextPost ? (
+              <Link
+                href={`/writing/${nextPost.slug}`}
+                className="flex-1 text-right group"
+              >
+                <div className="flex items-center justify-end gap-2 text-muted-foreground group-hover:text-primary">
+                  <span className="text-sm">Next</span>
+                  <ChevronRight className="h-4 w-4" />
+                </div>
+                <p className="text-lg font-medium mt-1 line-clamp-1">
+                  {nextPost.title}
+                </p>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+          </div>
+        </nav>
       </article>
-
-      {/* blog navigation */}
-      <nav className="container mx-auto px-4 py-8 pb-20 border-t">
-        <div className="flex justify-between items-center gap-4">
-          {prevPost ? (
-            <Link href={`/writing/${prevPost.slug}`} className="flex-1 group">
-              <div className="flex items-center gap-2 text-muted-foreground group-hover:text-primary">
-                <ChevronLeft className="h-4 w-4" />
-                <span className="text-sm">Previous</span>
-              </div>
-              <p className="text-lg font-medium mt-1 line-clamp-1">
-                {prevPost.title}
-              </p>
-            </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
-
-          {nextPost ? (
-            <Link
-              href={`/writing/${nextPost.slug}`}
-              className="flex-1 text-right group"
-            >
-              <div className="flex items-center justify-end gap-2 text-muted-foreground group-hover:text-primary">
-                <span className="text-sm">Next</span>
-                <ChevronRight className="h-4 w-4" />
-              </div>
-              <p className="text-lg font-medium mt-1 line-clamp-1">
-                {nextPost.title}
-              </p>
-            </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
-        </div>
-      </nav>
 
       {/* scroll to top button */}
       <button

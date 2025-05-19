@@ -170,7 +170,7 @@ html {
 }
 
 .prose {
-  @apply max-w-none leading-10 flex flex-col gap-6 py-8;
+  @apply max-w-none leading-10 flex flex-col gap-6 py-10;
 }
 
 .prose h1 {
@@ -198,7 +198,7 @@ html {
 }
 
 .prose p {
-  @apply leading-7 text-justify;
+  @apply leading-7 text-pretty;
 }
 
 .prose strong {
@@ -384,9 +384,9 @@ html {
     scroll-behavior: smooth !important;
     scroll-behavior: -webkit-smooth !important;
     -webkit-scroll-behavior: smooth !important;
-    max-width: 45rem;
+    max-width: 50rem;
     margin-inline: auto;
-    width: 95%;
+    width: 100%;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

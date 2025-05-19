@@ -7,8 +7,8 @@ import { SpotifyStatus } from "./SpotifyStatus";
 const Header = () => {
   return (
     <>
-      <header className="flex flex-col gap-24 text-justify justify-evenly ">
-        <div className="flex gap-4 flex-wrap">
+      <header className="flex flex-col gap-24  text-justify justify-evenly">
+        <div className="flex gap-4 flex-wrap  px-10 ">
           <Link
             className="underline text-[var(--blue-color)] underline-offset-4"
             href="https://x.com/preetsuthar17"
@@ -44,7 +44,21 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-6">
+        {/* divider */}
+        <div className="h-6 border-y relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+              opacity: 1,
+            }}
+          />
+        </div>
+        {/* divider */}
+
+        <div className="flex flex-col gap-6  px-10  ">
           <div>
             <h1 className="tracking-tight text-lg">Preet Suthar</h1>
           </div>
