@@ -1,19 +1,17 @@
 import "../styles/globals.css";
 
 import { Partytown } from "@builder.io/partytown/react";
-
 import { GoogleAnalytics } from "@next/third-parties/google";
-
 import Script from "next/script";
 import Head from "next/head";
 import Link from "next/link";
 
-import { Geist_Mono } from "next/font/google";
+// Change font import here
+import { JetBrains_Mono } from "next/font/google";
 
-const geist_Mono = Geist_Mono({
+const jetBrains_Mono = JetBrains_Mono({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-mono",
+  variable: "--font-jetbrains-mono",
 });
 
 export default function App({ Component, pageProps }) {
@@ -87,7 +85,7 @@ export default function App({ Component, pageProps }) {
       </Link>
       <Component
         {...pageProps}
-        className={`${geist_Mono.className} ${geist_Mono.variable}`}
+        className={`${jetBrains_Mono.className} ${jetBrains_Mono.variable}`}
       />
       <GoogleAnalytics gaId="G-170WY51KQ8" />
     </>
