@@ -8,9 +8,9 @@
 @custom-variant dark (&:is(class *));
 
 @theme {
-  --font-sans: Geist Mono, monospace;
+  --font-sans: Jetbrains Mono, monospace;
   --font-serif: Merriweather, serif;
-  --font-mono: Geist Mono, monospace;
+  --font-mono: Jetbrains Mono, monospace;
   --font-inter: Inter var, system-ui, sans-serif;
 
   --blue: var(--blue-color)
@@ -397,5 +397,10 @@ html {
     outline: 1px solid var(--text-color);
     outline-offset: 2px;
   }
+
+  code,pre {
+    font-family: var(--font-mono) !important;
+  }
+
 }
 
