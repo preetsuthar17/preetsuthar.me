@@ -29,21 +29,20 @@ export default function work({ posts }) {
 
           <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
             <ul className="flex flex-col gap-5 w-full">
-              {posts?.map((post) => (
+              {saas.map((saas, index) => (
                 <li
-                  key={post.slug}
-                  className="flex items-center text-left gap-2 w-full justify-between max-[590px]:flex-col max-[590px]:items-start"
+                  key={index}
+                  className="flex items-center text-left gap-2 w-full justify-between  max-[590px]:flex-col max-[590px]:items-start"
                 >
                   <Link
-                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)] max-[590px]:w-full"
-                    href={`/writing/${post.slug}`}
+                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)]  max-[590px]:w-full"
+                    target="_blank"
+                    href={saas.link}
                   >
-                    {post.title}
-                    <span>
-                      <FiArrowUpRight size={18} />
-                    </span>
+                    {saas.title}
+                    <FiArrowUpRight size={18} />
                   </Link>
-                  <p className="opacity-80 text-left">{post.date}</p>
+                  <p className="opacity-80">{saas.description}</p>
                 </li>
               ))}
             </ul>
@@ -65,20 +64,21 @@ export default function work({ posts }) {
 
           <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
             <ul className="flex flex-col gap-5 w-full">
-              {saas.map((saas, index) => (
+              {posts?.map((post) => (
                 <li
-                  key={index}
-                  className="flex items-center text-left gap-2 w-full justify-between  max-[590px]:flex-col max-[590px]:items-start"
+                  key={post.slug}
+                  className="flex items-center text-left gap-2 w-full justify-between max-[590px]:flex-col max-[590px]:items-start"
                 >
                   <Link
-                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)]  max-[590px]:w-full"
-                    target="_blank"
-                    href={saas.link}
+                    className="flex items-center gap-1 font-medium justify-between text-[var(--blue-color)] max-[590px]:w-full"
+                    href={`/writing/${post.slug}`}
                   >
-                    {saas.title}
-                    <FiArrowUpRight size={18} />
+                    {post.title}
+                    <span>
+                      <FiArrowUpRight size={18} />
+                    </span>
                   </Link>
-                  <p className="opacity-80">{saas.description}</p>
+                  <p className="opacity-80 text-left">{post.date}</p>
                 </li>
               ))}
             </ul>
