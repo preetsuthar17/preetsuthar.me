@@ -5,11 +5,6 @@ const saas = [
     link: "https://hextaui.com",
   },
   {
-    title: "Ikiform",
-    description: "Beautiful, budget-friendly forms without compromises",
-    link: "https://ikiform.com",
-  },
-  {
     title: "HextaStudio",
     description: "Web design and development agency.",
     link: "https://hextastudio.com",
