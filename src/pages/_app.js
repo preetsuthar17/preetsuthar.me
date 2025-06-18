@@ -30,6 +30,12 @@ export default function App({ Component, pageProps }) {
             `,
           }}
         />
+        <Script
+          defer
+          data-website-id="68523f42230bcd292f2d73f1"
+          data-domain="preetsuthar.me"
+          src="https://datafa.st/js/script.js"
+        ></Script>
         <title>Preet Suthar</title>
         <meta name="robots" content="all" />
         <meta name="description" content="My personal portfolio website." />
