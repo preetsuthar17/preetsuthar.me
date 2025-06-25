@@ -1,0 +1,1376 @@
+# https://preetsuthar.me llms-full.txt
+
+## Web Design Insights
+[Skip to main content](https://preetsuthar.me/#main-content)
+
+- [HextaUI](https://hextaui.com/)
+Build stunning websites with less effort.
+
+- [HextaStudio](https://hextastudio.com/)
+Web design and development agency.
+
+- [Roastt](https://roastt.hextastudio.com/)
+Get your website's hero section redesigned.
+
+
+- [Prevent Spam Bot Attacks in Form Submissions](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions)
+2025-05-21
+
+- [Add a badge to the filename in Fumadocs](https://preetsuthar.me/writing/add-badge-to-the-filename-in-fumadocs)
+2025-05-04
+
+- [Prefetching content in Next.js](https://preetsuthar.me/writing/prefetching-content-in-nextjs)
+2025-04-23
+
+- [Force refresh page in Next.js](https://preetsuthar.me/writing/force-refresh-page-in-nextjs)
+2025-04-23
+
+- [Guide to minimal website design](https://preetsuthar.me/writing/guide-to-minimal-website-design)
+2025-02-06
+
+- [My Tech](https://preetsuthar.me/writing/my-tech)
+2025-02-04
+
+- [My Freelance Journey](https://preetsuthar.me/writing/my-freelance-journey)
+2025-01-05
+
+- [Custom Cursor in Next.Js](https://preetsuthar.me/writing/custom-cursor-in-next-js)
+2023-12-26
+
+- [Syntax highlighting in Next Js](https://preetsuthar.me/writing/syntax-highlighting-in-next-js)
+2023-12-25
+
+- [Responsive Masonry Layout using only CSS](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css)
+2023-12-25
+
+- [Animated Background Particles in React](https://preetsuthar.me/writing/background-particles)
+2023-12-25
+
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128743)
+
+## 404 Error Page
+[Skip to main content](https://www.preetsuthar.me/404#main-content)
+
+# 404
+
+## This page could not be found.
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128956)
+
+## Animated Background Particles
+[Skip to main content](https://preetsuthar.me/writing/background-particles#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Animated Background Particles in React
+
+12/24/2023•Preet Suthar•11 min read
+
+## Table of Contents
+
+### Introduction [\#](https://preetsuthar.me/writing/background-particles\#introduction)
+
+Adding interactive and animated backgrounds can elevate the user experience of any web application. In this post, we will explore how to create a customizable animated background particles component in React using TypeScript. The component will support various properties for customization, making it versatile for different use cases.
+
+### Features [\#](https://preetsuthar.me/writing/background-particles\#features)
+
+The `BackgroundParticles` component provides:
+
+- Fully animated particle effects.
+- Customization options for particle quantity, size, color, movement, and more.
+- Performance optimization through efficient canvas rendering.
+- Mouse interaction for dynamic particle behavior.
+
+Let’s dive into the implementation step by step.
+
+* * *
+
+### Step 1: Setting Up the Component [\#](https://preetsuthar.me/writing/background-particles\#step-1%3A-setting-up-the-component)
+
+We’ll start by creating the `BackgroundParticles` component with basic props and hooks to manage canvas rendering.
+
+```js
+import React, { useEffect, useRef, useState } from "react";
+
+interface ParticlesProps {
+  className?: string;
+  quantity?: number;
+  staticity?: number;
+  ease?: number;
+  size?: number;
+  refresh?: boolean;
+  color?: string;
+  vx?: number;
+  vy?: number;
+}
+
+const BackgroundParticles: React.FC<ParticlesProps> = ({
+  className = "",
+  quantity = 100,
+  staticity = 50,
+  ease = 50,
+  size = 0.4,
+  refresh = false,
+  color = "#ffffff",
+  vx = 0,
+  vy = 0,
+}) => {
+  interface MousePosition {
+    x: number;
+    y: number;
+  }
+
+  const MousePosition = (): MousePosition => {
+    const [mousePosition, setMousePosition] =
+      useState <
+      MousePosition >
+      {
+        x: 0,
+        y: 0,
+      };
+
+    useEffect(() => {
+      const handleMouseMove = (event: MouseEvent) => {
+        setMousePosition({ x: event.clientX, y: event.clientY });
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    }, []);
+
+    return mousePosition;
+  };
+
+  // Rest of the component follows...
+};
+
+export default BackgroundParticles;
+
+```
+
+* * *
+
+### Step 2: Managing the Canvas and Particles [\#](https://preetsuthar.me/writing/background-particles\#step-2%3A-managing-the-canvas-and-particles)
+
+The component uses a `canvas` element to render particles. We handle rendering and animation through `requestAnimationFrame` for smooth transitions.
+
+Here’s how we initialize the canvas and draw the particles:
+
+```js
+const canvasRef = useRef<HTMLCanvasElement>(null);
+const canvasContainerRef = useRef<HTMLDivElement>(null);
+const context = useRef<CanvasRenderingContext2D | null>(null);
+const circles = useRef<any[]>([]);
+const mousePosition = MousePosition();
+const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+
+useEffect(() => {
+  if (canvasRef.current) {
+    context.current = canvasRef.current.getContext("2d");
+  }
+  initCanvas();
+  animate();
+  window.addEventListener("resize", initCanvas);
+
+  return () => {
+    window.removeEventListener("resize", initCanvas);
+  };
+}, [color]);
+
+const initCanvas = () => {
+  resizeCanvas();
+  drawParticles();
+};
+
+const resizeCanvas = () => {
+  if (canvasContainerRef.current && canvasRef.current && context.current) {
+    circles.current.length = 0;
+    canvasSize.current.w = canvasContainerRef.current.offsetWidth;
+    canvasSize.current.h = canvasContainerRef.current.offsetHeight;
+    canvasRef.current.width = canvasSize.current.w * dpr;
+    canvasRef.current.height = canvasSize.current.h * dpr;
+    canvasRef.current.style.width = `${canvasSize.current.w}px`;
+    canvasRef.current.style.height = `${canvasSize.current.h}px`;
+    context.current.scale(dpr, dpr);
+  }
+};
+
+```
+
+* * *
+
+### Step 3: Particle Animation [\#](https://preetsuthar.me/writing/background-particles\#step-3%3A-particle-animation)
+
+The animation logic determines how the particles move and interact with the mouse position.
+
+```js
+const animate = () => {
+  clearContext();
+  circles.current.forEach((circle, i) => {
+    const edge = [\
+      circle.x + circle.translateX - circle.size,\
+      canvasSize.current.w - circle.x - circle.translateX - circle.size,\
+      circle.y + circle.translateY - circle.size,\
+      canvasSize.current.h - circle.y - circle.translateY - circle.size,\
+    ];
+    const closestEdge = edge.reduce((a, b) => Math.min(a, b));
+    const remapClosestEdge = parseFloat(
+      remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
+    );
+    if (remapClosestEdge > 1) {
+      circle.alpha += 0.02;
+      if (circle.alpha > circle.targetAlpha) {
+        circle.alpha = circle.targetAlpha;
+      }
+    } else {
+      circle.alpha = circle.targetAlpha * remapClosestEdge;
+    }
+    circle.x += circle.dx + vx;
+    circle.y += circle.dy + vy;
+    circle.translateX +=
+      (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
+      ease;
+    circle.translateY +=
+      (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
+      ease;
+
+    drawCircle(circle, true);
+
+    if (
+      circle.x < -circle.size ||
+      circle.x > canvasSize.current.w + circle.size ||
+      circle.y < -circle.size ||
+      circle.y > canvasSize.current.h + circle.size
+    ) {
+      circles.current.splice(i, 1);
+      const newCircle = circleParams();
+      drawCircle(newCircle);
+    }
+  });
+  window.requestAnimationFrame(animate);
+};
+
+```
+
+* * *
+
+### Step 4: Using the Component [\#](https://preetsuthar.me/writing/background-particles\#step-4%3A-using-the-component)
+
+To use the component, simply import and render it in your application.
+
+```js
+<div className="w-screen h-screen absolute">
+  <BackgroundParticles quantity={300} />
+</div>
+
+```
+
+* * *
+
+### Conclusion [\#](https://preetsuthar.me/writing/background-particles\#conclusion)
+
+The `BackgroundParticles` component is a flexible and visually appealing feature to add to any React application. With its customizable properties, you can tweak it to suit a variety of contexts, from landing pages to dashboard backgrounds.
+
+Feel free to experiment with the settings and integrate it into your next project.
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839129354)
+
+## My Tech Setup
+[Skip to main content](https://preetsuthar.me/writing/my-tech#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# My Tech
+
+2/3/2025•Preet Suthar•1 min read
+
+## Table of Contents
+
+Hey there! This is just a random blog I’m writing because every time I reset my laptop, I forget what to install and what not to. 😭
+
+## Laptop & Accessories [\#](https://preetsuthar.me/writing/my-tech\#laptop-%26-accessories)
+
+- **Device:** Asus A15 Gaming Laptop (Still dreaming of a MacBook 😅)
+- **External Keyboard:** Portronics Hydra 10 Mechanical Wireless (Red Switches)
+- **External Mouse:** Logitech G304 Wireless
+- **Mic:** MAONO AU-PM461TR USB Condenser Mic
+
+## Software [\#](https://preetsuthar.me/writing/my-tech\#software)
+
+- **Coding:** VS Code
+- **Designing:** Figma
+- **Music:** Spotify
+- **Browser:** Brave
+
+## Tech Stack [\#](https://preetsuthar.me/writing/my-tech\#tech-stack)
+
+- **Front-end:** Next.js, Tailwind CSS, SCSS
+- **Back-end:** Supabase, MongoDB
+- **Hosting:** Vercel, Netlify
+
+## Games I Play [\#](https://preetsuthar.me/writing/my-tech\#games-i-play)
+
+- Valorant
+- Clash of Clans
+
+_(I’ll keep updating this list over time!)_
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128864)
+
+## Freelancing Journey
+[Skip to main content](https://preetsuthar.me/writing/my-freelance-journey#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# My Freelance Journey
+
+1/4/2025•Preet Suthar•3 min read
+
+## Table of Contents
+
+Today, I’m going to share the story of my freelancing journey—how I earned my first dollar online and eventually built my own web development and design agency.
+
+* * *
+
+## Discovering Freelancing [\#](https://preetsuthar.me/writing/my-freelance-journey\#discovering-freelancing)
+
+It all started four years ago. Back then, I was just playing around with HTML and CSS, creating simple websites and showing off to my friends. I had no clue about freelancing. One day, while scrolling through YouTube, I stumbled upon a video explaining freelancing: how you could get paid for building websites for others.
+
+That video was a game-changer. I realized there was a world where my skills could be valuable. I was determined, excited, and ready to dive in. I started out on platforms like Fiverr and Upwork, spending an entire year messaging potential clients, sending emails, and pitching my services.
+
+But after a year, the results were… _zero_. Zero clients. Zero money. I was frustrated and burned out. I gave up.
+
+* * *
+
+## Hitting Rock Bottom [\#](https://preetsuthar.me/writing/my-freelance-journey\#hitting-rock-bottom)
+
+After abandoning freelancing, I spent the next six to seven months playing video games, doing nothing productive. I was stuck in a rut, convinced I was done.
+
+Then one day, as I sat on my balcony watching the sunset, something clicked. It was like one of those protagonist moments in a movie. I realized I couldn’t stop here. Giving up wasn’t the answer. I had wasted time feeling sorry for myself instead of improving my skills and focusing on what truly mattered.
+
+* * *
+
+## I’m protagonist [\#](https://preetsuthar.me/writing/my-freelance-journey\#i%E2%80%99m-protagonist)
+
+That day, I made a decision: I was going to turn my freelancing journey around. I got back to learning, but this time, I focused on modern frameworks like React.js and Next.js instead of just HTML and CSS.
+
+I joined freelancing communities and Discord servers, posted about my services, and connected with as many people as possible. For almost a year, I hustled relentlessly, doing everything I could to get noticed.
+
+* * *
+
+## Landing My First Client [\#](https://preetsuthar.me/writing/my-freelance-journey\#landing-my-first-client)
+
+One day, I received a message on Discord:
+
+_“Hey, I like your designs and your work. Can we talk?”_
+
+That single message changed everything. After nearly three years of struggle and self-doubt, I landed my first client. I poured my heart into the project, delivering my absolute best. The deal closed for $70—not much, but it was a start.
+
+A few days later, the same client returned with another project. This time, I charged $100. Slowly but surely, word of mouth began to spread. I started earning $150 per project, then $1,200 over the course of a year.
+
+* * *
+
+## Building HextaStudio [\#](https://preetsuthar.me/writing/my-freelance-journey\#building-hextastudio)
+
+Fast forward to today, I’m a solo entrepreneur running HextaStudio, my own web development agency. I’ve also created over 10 startup and SaaS projects. None of them have been monetized or widely recognized yet, but I’m not giving up.
+
+I’m constantly refining my skills, shipping projects, and pushing forward because I know hard work never goes to waste.
+
+* * *
+
+## Lesson [\#](https://preetsuthar.me/writing/my-freelance-journey\#lesson)
+
+If there’s one thing my journey has taught me, it’s that success doesn’t come easy. It requires time, effort, and resilience. I’ve faced countless rejections, burnouts, and self-doubts, but each struggle has made me stronger.
+
+To anyone out there struggling with freelancing or feeling stuck, remember this: **It’s not about how many times you fail—it’s about getting back up every time. Your hard work will always pay off. Just keep going.**
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128769)
+
+## Next.js Prefetching
+[Skip to main content](https://preetsuthar.me/writing/prefetching-content-in-nextjs#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Prefetching content in Next.js
+
+4/22/2025•Preet Suthar•2 min read
+
+When linking two pages in a Next.js application, the built-in `<Link>` component allows for seamless client-side navigation. Instead of triggering a full page reload like traditional websites, Next.js uses frontend routing to display the new page instantly, making for a faster user experience.
+
+But that’s not all—Next.js also prefetches linked pages automatically. As soon as a `<Link>` element enters the viewport (i.e., becomes visible on screen), Next.js begins preloading the linked page in the background—provided it’s an internal link within your site. This makes navigation nearly instant when users click the link.
+
+However, this prefetching behavior only works in **production mode**. If you’re running your app in development with `npm run dev`, prefetching won’t be triggered. To see it in action, stop the dev server, run `npm run build` to generate your production bundle, and start the app with `npm run start`.
+
+You can observe this behavior in your browser’s Network tab. Once the page finishes loading (after the `load` event fires), links that are already visible (i.e., above the fold) start prefetching. Links that are out of view will be prefetched as the user scrolls them into the viewport.
+
+Prefetching happens automatically on fast internet connections (like Wi-Fi or 3G+), unless the browser sends a `Save-Data` header indicating a preference for reduced data usage.
+
+If you want to disable prefetching for a specific link, you can do so by passing `prefetch={false}` to the `<Link>` component:
+
+```jsx
+<Link href="/contact" prefetch={false}>
+  Contact
+</Link>
+
+```
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128759)
+
+## Next.js Syntax Highlighting
+[Skip to main content](https://preetsuthar.me/writing/syntax-highlighting-in-next-js#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Syntax highlighting in Next Js
+
+12/24/2023•Preet Suthar•14 min read
+
+## Table of Contents
+
+If you’re running blog page or website you know that adding syntax highlighting can be very tough and complex process. but fortunately I have found a way to add syntax highlighting in your `next js` blog website.
+
+To add syntax highlighting in next js website we are gonna use library called `highlightjs`. This library supports ton of languages and themes for customizing as per your needs.
+
+Let’s get started by installing the [highlight js](https://highlightjs.org/)
+
+## Setup [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#setup)
+
+we can use yarn or npm to install this package.
+
+```shell
+npm install highlight.js
+# or
+yarn add highlight.js
+
+```
+
+After installation we import this package in our file. For me I’m gonna be using `[slug].js` which is basically dynamic page for blog posts.
+
+```javascript
+import hljs from "highlight.js/lib/core";
+
+```
+
+Now we will need to import some of the required files for this package using `<script/>` tag but since we’re using next js we’re gonna use `next/script`.
+
+```javascript
+import Script from "next/script";
+
+```
+
+Now to use this feature we have to enable experimental feature in our next config file.
+
+`next.config.js`
+
+```javascript
+module.exports = {
+  experimental: {
+    nextScriptWorkers: true,
+  },
+};
+
+```
+
+We’re done with config file. Now we head back to our `[slug].js` file and start using `<Script/>` tag
+
+```javascript
+import Script from "next/script";
+
+const post = ({ post }) => {
+  return (
+    <>
+      <div>{/*Post content goes here*/}</div>
+    </>
+  );
+};
+
+```
+
+This is our basic setup now let’s import `highlight.js` file using our `<Script/>` tag
+
+## Importing highlight.js [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#importing-highlight.js)
+
+```javascript
+import Script from "next/script";
+
+const post = ({ post }) => {
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+```
+
+## Importing stylesheet for highlighting [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#importing-stylesheet-for-highlighting)
+
+Now after importing `highlight.js` library we’ll need to import stylesheet for highlighting. In our next js project we have a file `_document.js` we’ll import this stylesheet in that page.
+
+```javascript
+import { Html, Head, Main, NextScript } from "next/document";
+
+export default function Document() {
+  return (
+    <Html lang="en">
+      <Head />
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+```
+
+This is my `_document.js`, yours can be different depends on the project. We import the stylesheet inside the `Head` tag which is basically replacement of default `<head/>` to `<Head/>` by next js.
+
+```javascript
+import { Html, Head, Main, NextScript } from "next/document";
+
+export default function Document() {
+  return (
+    <Html lang="en">
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css"
+        />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+```
+
+Here I have imported the stylesheet inside the `Head` tag. You can find large collection of these stylesheet [here](https://cdnjs.com/libraries/highlight.js). Just select the Asset type to `Styling` and keep experimenting with theme until you find the right one.
+
+![CDN for themes](https://i.imgur.com/p4TF3XP.png)
+
+We’re done with the `_document.js` file. let’s head back to `[slug].js` and finish the final process.
+
+Now to enable syntax highlighting for various languages we need to register those languages.
+
+`[slug].js`
+
+```javascript
+import Script from "next/script";
+
+const post = ({ post }) => {
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+```
+
+First let’s import the `highlight.js`.
+
+```javascript
+import Script from "next/script";
+import hljs from "highlight.js/lib/core";
+
+const post = ({ post }) => {
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+```
+
+## Enabling various language support [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#enabling-various-language-support)
+
+Now let’s import various languages highlighting support
+
+```javascript
+import Script from "next/script";
+
+// Importing libraries
+import hljs from "highlight.js/lib/core";
+
+// Importing languages
+import sql from "highlight.js/lib/languages/sql";
+import javascript from "highlight.js/lib/languages/javascript";
+import c from "highlight.js/lib/languages/c";
+import css from "highlight.js/lib/languages/css";
+import scss from "highlight.js/lib/languages/scss";
+import shell from "highlight.js/lib/languages/shell";
+import python from "highlight.js/lib/languages/python";
+import powershell from "highlight.js/lib/languages/powershell";
+import cpp from "highlight.js/lib/languages/cpp";
+import php from "highlight.js/lib/languages/php";
+import phpTemplate from "highlight.js/lib/languages/php-template";
+import xml from "highlight.js/lib/languages/xml";
+
+const post = ({ post }) => {
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+```
+
+Here I have import most common languages but you can find more languages in the list.
+![other lang](https://i.imgur.com/seii9ZV.gif)
+
+## Registering languages for highlighting [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#registering-languages-for-highlighting)
+
+Now we register these languages. We’ll need to `useEffect()` to register these language onReady.
+
+```javascript
+import Script from "next/script";
+
+// Importing useEffect
+import { useEffect } from "react";
+
+import hljs from "highlight.js/lib/core";
+
+import sql from "highlight.js/lib/languages/sql";
+import javascript from "highlight.js/lib/languages/javascript";
+import c from "highlight.js/lib/languages/c";
+import css from "highlight.js/lib/languages/css";
+import scss from "highlight.js/lib/languages/scss";
+import shell from "highlight.js/lib/languages/shell";
+import python from "highlight.js/lib/languages/python";
+import powershell from "highlight.js/lib/languages/powershell";
+import cpp from "highlight.js/lib/languages/cpp";
+import php from "highlight.js/lib/languages/php";
+import phpTemplate from "highlight.js/lib/languages/php-template";
+import xml from "highlight.js/lib/languages/xml";
+
+const post = ({ post }) => {
+  // Registering languages
+  useEffect(() => {
+    hljs.registerLanguage("sql", sql);
+    hljs.registerLanguage("javascript", javascript);
+    hljs.registerLanguage("python", python);
+    hljs.registerLanguage("c", c);
+    hljs.registerLanguage("cpp", cpp);
+    hljs.registerLanguage("powershell", powershell);
+    hljs.registerLanguage("shell", shell);
+    hljs.registerLanguage("scss", scss);
+    hljs.registerLanguage("css", css);
+    hljs.registerLanguage("php", php);
+    hljs.registerLanguage("php-template", phpTemplate);
+    hljs.registerLanguage("html", xml);
+    hljs.registerLanguage("xml", xml);
+  });
+
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+```
+
+## Final step [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#final-step)
+
+We have successfully registered all the languages now final step is to highlight the code. for that we’ll be using `highlightAll()` function from the `hljs` means `Highlight.Js`
+
+We’ll be wrapping the `highlightAll()` function inside `useEffect()` so that it highlight only when window is loaded.
+
+`[slug].js`
+
+```javascript
+useEffect(() => {
+  hljs.highlightAll({ detectLanguage: true });
+});
+
+```
+
+And that’s it! Our final code should look like this
+
+```javascript
+import Script from "next/script";
+
+// Importing useEffect
+import { useEffect } from "react";
+
+import hljs from "highlight.js/lib/core";
+
+import sql from "highlight.js/lib/languages/sql";
+import javascript from "highlight.js/lib/languages/javascript";
+import c from "highlight.js/lib/languages/c";
+import css from "highlight.js/lib/languages/css";
+import scss from "highlight.js/lib/languages/scss";
+import shell from "highlight.js/lib/languages/shell";
+import python from "highlight.js/lib/languages/python";
+import powershell from "highlight.js/lib/languages/powershell";
+import cpp from "highlight.js/lib/languages/cpp";
+import php from "highlight.js/lib/languages/php";
+import phpTemplate from "highlight.js/lib/languages/php-template";
+import xml from "highlight.js/lib/languages/xml";
+
+const post = ({ post }) => {
+  // Registering languages
+  useEffect(() => {
+    hljs.registerLanguage("sql", sql);
+    hljs.registerLanguage("javascript", javascript);
+    hljs.registerLanguage("python", python);
+    hljs.registerLanguage("c", c);
+    hljs.registerLanguage("cpp", cpp);
+    hljs.registerLanguage("powershell", powershell);
+    hljs.registerLanguage("shell", shell);
+    hljs.registerLanguage("scss", scss);
+    hljs.registerLanguage("css", css);
+    hljs.registerLanguage("php", php);
+    hljs.registerLanguage("php-template", phpTemplate);
+    hljs.registerLanguage("html", xml);
+    hljs.registerLanguage("xml", xml);
+  });
+
+  useEffect(() => {
+    hljs.highlightAll({ detectLanguage: true });
+  });
+
+  return (
+    <>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></Script>
+      {/* Import highlight js */}
+      <div>{/* Post content goes here */}</div>
+    </>
+  );
+};
+
+export default post;
+
+```
+
+## Wrapping up [\#](https://preetsuthar.me/writing/syntax-highlighting-in-next-js\#wrapping-up)
+
+So that was it for this blog. If you get any issues or need any help feel free to post comment or reaching me at [@nott\_preett](https://x.com/nott_preett)
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839132542)
+
+## Minimal Website Design Guide
+[Skip to main content](https://preetsuthar.me/writing/guide-to-minimal-website-design#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Guide to minimal website design
+
+2/5/2025•Preet Suthar•3 min read
+
+## Table of Contents
+
+Minimalist website design is a refined art form focused on simplicity, clarity, and functionality. By stripping away nonessential elements, it highlights what truly matters and creates a seamless experience for visitors.
+
+## 7 Principles of Minimalist Web Design [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#7-principles-of-minimalist-web-design)
+
+1. Embrace Simplicity
+2. Prioritize User Experience
+3. Showcase Quality Visuals
+4. Leverage Whitespace
+5. Highlight Content
+6. Ensure Fast Load Times
+7. Implement Clear Calls to Action
+
+### 1\. Embrace Simplicity [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#1.-embrace-simplicity)
+
+At the heart of minimalist design is simplicity. A straightforward, uncluttered layout with a restrained color palette, fonts, and graphics creates an inviting environment. Generous whitespace not only enhances aesthetics but also improves readability, allowing your content to shine.
+
+A good example is SquareSpace website, simple and clean showing only content that is important
+
+![squarespace](https://i.imgur.com/5UdMe3o.png)
+
+### 2\. Prioritize User Experience [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#2.-prioritize-user-experience)
+
+A user-centric approach is essential in minimalist design. Your website should be intuitive, with streamlined navigation and legible typography. Given the increasing use of mobile devices, ensure that your site is responsive and offers a smooth experience on all screen sizes.
+
+![vercel's website](https://i.imgur.com/6EXviAn.png)
+
+### 3\. Showcase Quality Visuals [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#3.-showcase-quality-visuals)
+
+Minimalism does not equate to a lack of visual appeal. Instead, select high-caliber images or illustrations that resonate with your brand’s identity. Opt for unique visuals rather than generic stock photos to add a touch of personality and distinction.
+
+### 4\. Leverage Whitespace [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#4.-leverage-whitespace)
+
+Whitespace, or negative space, is a critical design element that lends structure and focus to your layout. It helps guide the visitor’s eye toward key content and creates a sense of balance and harmony throughout the site.
+
+### 5\. Highlight Content [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#5.-highlight-content)
+
+In minimalist design, content remains the focal point. Employ concise and precise language to communicate your message effectively. Use headings and subheadings to break up text, making it both engaging and easy to navigate, while avoiding distractions that detract from your core message.
+
+Stripe‘s website is both functional and visually appealing. The website features a clean white background, straightforward typography, and plenty of negative space, making it easy to navigate and understand. The design highlights the company’s products and services without distracting users with unnecessary graphics or information.
+
+![stripe website](https://i.imgur.com/B9F6Mnp.png)
+
+### 6\. Ensure Fast Load Times [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#6.-ensure-fast-load-times)
+
+A hallmark of minimalist design is its ability to enhance performance. By using a lightweight theme, compressing images, and minimizing extraneous code, you can achieve faster load times, thereby improving overall user satisfaction and search engine performance.
+
+### 7\. Implement Clear Calls to Action [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#7.-implement-clear-calls-to-action)
+
+While the design is minimalist, your calls to action (CTAs) should be unmistakably clear and compelling. Use direct language and contrasting elements to ensure that your CTAs stand out, guiding visitors seamlessly toward the desired actions.
+
+## Conclusion [\#](https://preetsuthar.me/writing/guide-to-minimal-website-design\#conclusion)
+
+In summary, minimalist website design is both an art and a science—a pursuit of elegance through simplicity. By adhering to these seven principles, you can craft a website that not only captivates visually but also delivers a superb user experience.
+
+A minimalist approach ensures that every element has a purpose, transforming your website into a sophisticated, efficient, and enjoyable digital space that leaves a lasting impression on visitors. Embrace simplicity, enhance functionality, and let your content take center stage while delighting your audience with a touch of fun and refinement.
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839129098)
+
+## Custom Cursor Tutorial
+[Skip to main content](https://preetsuthar.me/writing/custom-cursor-in-next-js#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Custom Cursor in Next.Js
+
+12/25/2023•Preet Suthar•7 min read
+
+## Table of Contents
+
+![Custom cursor](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/kcoaw3ccq6yz2byynvbk.png)
+
+Creating a custom cursor in next js website is as easy as creating a component in next js. we can create a cursor component and then import it in `_app.js` to make it globally accessible.
+
+## Files 📂 [\#](https://preetsuthar.me/writing/custom-cursor-in-next-js\#files-%F0%9F%93%82)
+
+We we’ll need to create two files or maybe just one.
+
+- `FlareCursor.js` (Main custom cursor component)
+- `style.css` (It could be your own style file)
+- `_app.js` (It is prebuilt file in next js)
+
+Let’s get started!
+
+## Coding time 🚀 [\#](https://preetsuthar.me/writing/custom-cursor-in-next-js\#coding-time-%F0%9F%9A%80)
+
+First of all let’s create the main component,
+
+`FlareCusror.js`
+
+```js
+import React, { useState, useEffect } from "react";
+
+// This functional component represents a custom cursor with a flare effect.
+function FlareCursor() {
+  // State to track the current cursor position (x, y coordinates).
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  // State to track whether the cursor is over a clickable element.
+  const [isPointer, setIsPointer] = useState(false);
+
+  // Event handler for the mousemove event.
+  const handleMouseMove = (e) => {
+    // Update the cursor position based on the mouse coordinates.
+    setPosition({ x: e.clientX, y: e.clientY });
+
+    // Get the target element that the cursor is currently over.
+    const target = e.target;
+
+    // Check if the cursor is over a clickable element by inspecting the cursor style.
+    setIsPointer(
+      window.getComputedStyle(target).getPropertyValue("cursor") === "pointer",
+    );
+  };
+
+  // Set up an effect to add and remove the mousemove event listener.
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []); // The empty dependency array ensures that this effect runs only once on mount.
+
+  // Calculate the size of the flare based on whether the cursor is over a clickable element.
+  const flareSize = isPointer ? 0 : 30;
+
+  // Adjust the cursor position to create a visual effect when over a clickable element.
+  const cursorStyle = isPointer ? { left: "-100px", top: "-100px" } : {};
+
+  // Render the custom cursor element with dynamic styles based on cursor state.
+  return (
+    <div
+      className={`flare ${isPointer ? "pointer" : ""}`}
+      style={{
+        ...cursorStyle,
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        width: `${flareSize}px`,
+        height: `${flareSize}px`,
+      }}
+    ></div>
+  );
+}
+
+// Export the FlareCursor component to be used in other parts of the application.
+export default FlareCursor;
+
+```
+
+We have successfully created the custom cursor component, now let’s style it.
+
+`style.css`
+
+```css
+.flare {
+  position: fixed;
+  border: 2px solid #ffffff2b;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999 !important ;
+  backdrop-filter: blur(1px);
+  background-color: #0000005e;
+  transition:
+    width 0.2s ease-in-out,
+    height 0.2s ease-in-out;
+  cursor: none !important; /* Let's hide the default cursor so it looks way better */
+}
+
+/* We need to remove this custom cursor in mobile devices */
+@media screen and (max-width: 768px) {
+  .flare {
+    width: 0;
+    height: 0;
+    transition:
+      width 0.2s ease-in-out,
+      height 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
+  }
+}
+.flare.pointer {
+  opacity: 0 !important;
+  transition:
+    width 0.2s ease-in-out,
+    height 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+```
+
+So we have successfully created and styled our component now let’s head over to the `_app.js` to import it all.
+
+`_app.js`
+
+```jsx
+import "../src/styles/globals.css"; // Make sure to change this path to your own css file path.
+
+import FlareCursor from "../src/components/FlareCursor"; // Don't forget to update this path to your own component file.
+
+// Now we can add the component in return () code should look like this.
+
+return <Component {...pageProps} />;
+
+```
+
+```js
+// Now before the <Component/> add this code,
+
+<>
+  <FlareCursor />
+</>
+
+```
+
+And Tadaaa!! 🎉 We’re done now restart your dev server `npm run dev` and you should be good to go!
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839128884)
+
+## Force Refresh Next.js Page
+[Skip to main content](https://preetsuthar.me/writing/force-refresh-page-in-nextjs#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Force refresh page in Next.js
+
+4/22/2025•Preet Suthar•1 min read
+
+If you’re inside a React component, grab the router instance with the `useRouter` hook:
+
+```js
+import { useRouter } from "next/router";
+
+function MyComponent() {
+  const router = useRouter();
+
+  // reload the current page
+  router.reload(window.location.pathname);
+}
+
+```
+
+If you need to trigger a reload from outside a component—for example, in a plain utility module—just import the singleton `Router` instead:
+
+```js
+import Router from "next/router";
+
+// reload the current page
+Router.reload(window.location.pathname);
+
+```
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839132494)
+
+## Responsive Masonry Layout
+[Skip to main content](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Responsive Masonry Layout using only CSS
+
+12/24/2023•Preet Suthar•6 min read
+
+## Table of Contents
+
+## Introduction [\#](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css\#introduction)
+
+First of all let’s talk what is a masonry layout. Well Masonry means “craft of building a structure with brick, stone, or similar material” - According to google definition.
+
+Well if you ask me I’ll say creating responsive and beautiful layouts in HTML with different sizes of elements.
+
+In this article we are going to create a Image Gallery website using masonry layout which will be pretty and responsive.
+
+![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cz5k7dqncu0v5a97djlh.png)
+
+## Let’s get started! [\#](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css\#let%E2%80%99s-get-started!)
+
+Before learning to create masonry layouts let’s learn how to make images responsive using CSS only.
+
+## Making images responsive [\#](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css\#making-images-responsive)
+
+Let’s assume we have image in our website,
+
+```html
+<img
+  class="image"
+  src="https://images.unsplash.com/photo-1693761935441-ad0ffad6905b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+/>
+
+```
+
+![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3nc2lohrj6hamh27o8pe.png)
+
+Now to make this image responsive we have to use only two lines of css.
+
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+```
+
+just by using these two CSS lines we can make every image in our responsive. No matter what device width will get the `max-width` of image will always stay `100%` and we added `height: auto` so when width changes with device width it also updates the height by itself.
+
+## Let’s create masonry layout [\#](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css\#let%E2%80%99s-create-masonry-layout)
+
+It’s time we create masonry layout. First of all let’s add some images in our HTML
+
+```html
+<div class="image-gallery">
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1693761935441-ad0ffad6905b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1694009606218-eb46476e6300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1693165074962-ae564d6b16ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1693754079764-d90b63861dd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1693057205752-f7cabeaff629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+  <div class="image-card">
+    <img
+      src="https://images.unsplash.com/photo-1693928626612-629e0b697ce1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+      alt="ShowCaseGallery"
+    />
+  </div>
+</div>
+
+```
+
+Here I’ve added bunch of images from unsplash and all of them have different heights and widths.
+
+Currently the images looks like this in straight line,
+
+![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lcvcd8nfsdwuuwlip42y.png)
+
+Now we want images to be in row and also we want them to update as the device width changes.
+
+We want layout to look something like this,
+
+![Preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nnp2kpr8eotlbkaqkk4h.png)
+
+So we’ll define number of columns to display in page, Let’s write some css to make things looks beautiful.
+
+```css
+/* Parent container of .image-card */
+.image-gallery {
+  columns: 3;
+  column-gap: 16px;
+  margin: 1rem;
+}
+
+```
+
+So we defined `3 columns` on page and we also gave `column-gap: 16px` so that it looks cleaner with bit of space around every `.image-card` we also added `margin: 1rem` so add some spacing around the entire container.
+
+Let’s target our `.image-card` in CSS and minor CSS.
+
+```css
+.image-card {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+```
+
+Our masonry layout is ready :D It’s time to make it responsive with some `@media queries` Check out [this post](https://www.preetsuthar.me/posts/media-screens---css) to learn more about `@media queries`
+
+```css
+@media screen and (max-width: 1200px) {
+  .image-gallery {
+    columns: 3;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .image-gallery {
+    columns: 2;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image-gallery {
+    columns: 1;
+  }
+}
+
+```
+
+And we’re done!
+
+![Small width preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/19gb00c9wvawo9ikosvi.png)
+
+![Small width preview](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bwq0zrmoyr7s9kedxzvs.png)
+
+## Wrapping up [\#](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css\#wrapping-up)
+
+It’s is pretty basic to create masonry layout using only CSS and still you can spice it up by implementing Javascript and more feature.
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839138783)
+
+## Prevent Spam Bot Attacks
+[Skip to main content](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Prevent Spam Bot Attacks in Form Submissions
+
+5/20/2025•Preet Suthar•4 min read
+
+## Table of Contents
+
+Spam bot attacks on forms can be a nuisance, leading to spam submissions and potential security risks. Here’s a simple method to prevent spam bot attacks in form submissions using a hidden field.
+
+### Step 1: Add a Hidden Field [\#](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions\#step-1%3A-add-a-hidden-field)
+
+Add a hidden field to your form. This field should be invisible to users but visible to bots. For example:
+
+```jsx
+const [honey, setHoney] = useState("");
+
+<input
+  type="text"
+  value={honey}
+  onChange={(e) => setHoney(e.target.value)}
+  tabIndex="-1"
+  area-hidden="true"
+/>;
+
+```
+
+### Step 2: Validate the Hidden Field [\#](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions\#step-2%3A-validate-the-hidden-field)
+
+When processing the form submission, check if the hidden field is empty. If it’s not empty, it’s likely a bot submission.
+
+```jsx
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (honey) {
+    // This is a bot submission
+    console.log("Spam bot detected!");
+    return;
+  }
+
+  // Process the form submission
+  console.log("Form submitted successfully!");
+};
+
+```
+
+### Complete Example [\#](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions\#complete-example)
+
+```jsx
+import React, { useState } from "react";
+
+const Form = () => {
+  const [honey, setHoney] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (honey) {
+      console.log("Spam bot detected!");
+      return;
+    }
+
+    console.log("Form submitted successfully!");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={honey}
+        onChange={(e) => setHoney(e.target.value)}
+        tabIndex="-1"
+        area-hidden="true"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+```
+
+Actual users won’t see the hidden field, but bots will fill it out, allowing you to filter out spam submissions easily. This method is simple and effective for preventing spam bot attacks in form submissions.
+
+Actual Twitter thread: [link](https://x.com/preetsuthar17/status/1926188828169015371)
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839138583)
+
+## Add Badge to Filename
+[Skip to main content](https://preetsuthar.me/writing/add-badge-to-the-filename-in-fumadocs#main-content)
+
+[Home](https://preetsuthar.me/)
+
+# Add a badge to the filename in Fumadocs
+
+5/3/2025•Preet Suthar•3 min read
+
+This is the type of badge you can add to the filename in Fumadocs.
+
+![image](https://pbs.twimg.com/media/GqGozTTbAAAj1ay?format=png&name=360x360)
+
+It is very easy to add a badge to the filename in Fumadocs.
+
+first step is to extend the frontmatter schema.
+
+go to `source.config.ts` file in root folder of fumadocs project and add the following code.
+
+```ts
+export const docs = defineDocs({
+  docs: {
+    schema: frontmatterSchema.extend({
+      new: z.boolean().default(false),
+    }),
+  },
+});
+
+```
+
+now we can basically add the frontmatter prop in `lib/source.ts` file.
+
+> Make sure to rename the `lib/source.ts` to `lib/source.tsx`
+
+```ts
+export const source = loader({
+  baseUrl: "/docs",
+  source: docs.toFumadocsSource(),
+  pageTree: {
+    attachFile(node, file) {
+      if (!file) return node;
+
+      const data = file.data.data as {
+        new: boolean;
+      };
+
+      // JSX nodes are allowed
+      if (data.new) {
+        node.name = (
+          <>
+            {node.name}
+            <div className="bg-fd-primary">NEW</div>
+          </>
+        );
+      }
+
+      return node;
+    },
+  },
+});
+
+```
+
+now to use this we can just use `new` prop in the frontmatter.
+
+```plaintext
+---
+title: File Upload
+description: Animated and interactive file upload component.
+new: true
+---
+
+```
+
+final result would be like this.
+
+![image](https://pbs.twimg.com/media/GqGozTTbAAAj1ay?format=png&name=360x360)
+
+[iframe](/~partytown/debug/partytown-sandbox-sw.html?1750839138473)
+
