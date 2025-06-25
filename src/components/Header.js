@@ -42,6 +42,14 @@ const Header = () => {
           >
             RSS
           </Link>
+          //
+          <Link
+            className="underline text-[var(--blue-color)] underline-offset-4"
+            href="/llms.txt"
+            target="_blank"
+          >
+            llms.txt
+          </Link>
         </div>
 
         {/* divider */}
