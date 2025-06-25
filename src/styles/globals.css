@@ -344,6 +344,10 @@ html {
   @apply ml-2 text-muted-foreground no-underline opacity-0 transition-opacity hover:text-foreground;
 }
 
+.prose img{
+  @apply max-w-full h-auto w-full;
+}
+
 .prose h1:hover .anchor,
 .prose h2:hover .anchor,
 .prose h3:hover .anchor {

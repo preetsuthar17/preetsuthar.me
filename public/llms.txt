@@ -12,3 +12,4 @@
 - [Responsive Masonry Layout](https://preetsuthar.me/writing/responsive-masonry-layout-using-only-css): Learn to create a responsive masonry layout using CSS.
 - [Prevent Spam Bot Attacks](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions): Learn to prevent spam bot attacks in form submissions.
 - [Add Badge to Filename](https://preetsuthar.me/writing/add-badge-to-the-filename-in-fumadocs): Learn to add badges to filenames in Fumadocs easily.
+- [Add llms.txt to Your Website](https://preetsuthar.me/writing/add-llms-txt-to-your-website): Learn how to add llms.txt to your website for better AI understanding.
