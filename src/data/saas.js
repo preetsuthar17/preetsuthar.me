@@ -1,7 +1,7 @@
 const saas = [
   {
     title: "Forms0",
-    descriptio: "Beautiful, budget-friendly forms without compromises."
+    description: "Beautiful, budget-friendly forms without compromises.",
     link: "https://forms0.com",
   },
   {
