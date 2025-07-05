@@ -1,8 +1,8 @@
 const saas = [
   {
-    title: "Forms0",
+    title: "Ikiform",
     description: "Beautiful, budget-friendly forms without compromises.",
-    link: "https://forms0.com",
+    link: "https://ikiform.com",
   },
   {
     title: "HextaUI",
