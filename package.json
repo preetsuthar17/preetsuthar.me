@@ -13,7 +13,7 @@
   "dependencies": {
     "@builder.io/partytown": "^0.10.3",
     "@gsap/react": "^2.1.2",
-    "@next/third-parties": "^15.3.4",
+    "@next/third-parties": "^15.3.5",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "class-variance-authority": "^0.7.1",
@@ -21,7 +21,7 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
-    "lucide-react": "^0.523.0",
+    "lucide-react": "^0.525.0",
     "markdown-it": "^14.1.0",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-anchor": "^9.2.0",
@@ -33,8 +33,8 @@
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^0.9.0",
-    "motion": "^12.19.1",
-    "next": "^15.3.4",
+    "motion": "^12.23.0",
+    "next": "^15.3.5",
     "node-fetch": "^3.3.2",
     "prismjs": "^1.30.0",
     "react": "^19",
@@ -53,15 +53,15 @@
     "remark-toc": "^9.0.0",
     "sass": "^1.89.2",
     "sharp": "^0.34.2",
-    "sonner": "^2.0.5",
+    "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "zod": "^3.25.67"
+    "zod": "^3.25.74"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.11",
     "postcss": "^8",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.11"
   }
 }
