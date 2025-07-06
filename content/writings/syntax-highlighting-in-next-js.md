@@ -120,7 +120,7 @@ export default function Document() {
 }
 ```
 
-Here I have imported the stylesheet inside the `Head` tag. You can find large collection of these stylesheet [here](https://cdnjs.com/libraries/highlight.js). Just select the Asset type to `Styling` and keep experimenting with theme until you find the right one.
+Here I have imported the stylesheet inside the `Head` tag. You can find a large collection of these stylesheets on the [highlight.js CDN library page](https://cdnjs.com/libraries/highlight.js). Just select the Asset type to `Styling` and keep experimenting with themes until you find the right one.
 
 ![CDN for themes](https://i.imgur.com/p4TF3XP.png)
 
