@@ -182,7 +182,7 @@ html {
 }
 
 .prose h3 {
-  @apply py-3 text-2xl font-semibold tracking-tight text-foreground;
+  @apply py-3 text-xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h4 {
