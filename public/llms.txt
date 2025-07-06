@@ -13,3 +13,4 @@
 - [Prevent Spam Bot Attacks](https://preetsuthar.me/writing/prevent-spam-bot-attacks-in-form-submissions): Learn to prevent spam bot attacks in form submissions.
 - [Add Badge to Filename](https://preetsuthar.me/writing/add-badge-to-the-filename-in-fumadocs): Learn to add badges to filenames in Fumadocs easily.
 - [Add llms.txt to Your Website](https://preetsuthar.me/writing/add-llms-txt-to-your-website): Learn how to add llms.txt to your website for better AI understanding.
+- [Adding Copy as Markdown & Open in ChatGPT Buttons in Next.js](https://preetsuthar.me/writing/adding-copy-as-markdown-and-open-in-chatgpt): Add a button to copy blog content as Markdown and open it in ChatGPT.
