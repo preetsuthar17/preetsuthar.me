@@ -97,7 +97,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
         style={{ width: `${progress}%` }}
       />
 
-      <article className="flex flex-col gap-10 basics-prose mx-auto py-20 border border-t-0 border-b-0 ">
+      <main className="flex flex-col gap-10 basics-prose mx-auto py-20 border border-t-0 border-b-0 ">
         <div className="px-10 ">
           <Link
             href="/"
@@ -159,11 +159,13 @@ export default function BlogPost({ post, prevPost, nextPost }) {
           {/* divider */}
 
           <TableOfContents headings={post.headings} />
-          <div
-            className="prose text-justify max-sm:text-pretty px-10 py-10 max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-            suppressHydrationWarning
-          />
+          <article>
+            <div
+              className="prose text-justify max-sm:text-pretty px-10 py-10 max-w-none"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              suppressHydrationWarning
+            />
+          </article>
         </div>
         {/* blog navigation */}
         <nav className="container mx-auto px-4 py-8 pb-20 border-t">
@@ -200,7 +202,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             )}
           </div>
         </nav>
-      </article>
+      </main>
 
       {/* scroll to top button */}
       <button
