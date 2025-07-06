@@ -404,7 +404,7 @@ html {
 
   code,pre {
     font-family: var(--font-mono) !important;
+    font-size: 15px !important;
   }
-
 }
 

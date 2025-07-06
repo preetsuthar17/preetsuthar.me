@@ -15,6 +15,8 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-bash";
+import AskAIButton from "@/components/writings/ask-ai-button";
+import CopyMarkdownButton from "@/components/writings/copy-markdown";
 
 export default function BlogPost({ post, prevPost, nextPost }) {
   const [showButton, setShowButton] = useState(false);
@@ -123,16 +125,22 @@ export default function BlogPost({ post, prevPost, nextPost }) {
               {post.title}
             </h1>
 
-            <div className="px-10 flex gap-2 flex-wrap">
-              <small className="text-muted-foreground">
-                {new Date(post.date).toLocaleDateString("en-US")}
-              </small>
-              <small>•</small>
-              <small className="text-muted-foreground">{post.author}</small>
-              <small>•</small>
-              <small className="text-muted-foreground">
-                {readingTime} min read
-              </small>
+            <div className="px-10 flex gap-4 flex-col">
+              <div className="flex gap-2 flex-wrap">
+                <small className="text-muted-foreground">
+                  {new Date(post.date).toLocaleDateString("en-US")}
+                </small>
+                <small>•</small>
+                <small className="text-muted-foreground">{post.author}</small>
+                <small>•</small>
+                <small className="text-muted-foreground">
+                  {readingTime} min read
+                </small>
+              </div>
+              <div className="flex gap-2 flex-wrap">
+                <AskAIButton />
+                <CopyMarkdownButton />
+              </div>
             </div>
           </div>
 
