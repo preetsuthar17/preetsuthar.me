@@ -80,17 +80,17 @@ const Header = () => {
             <Link
               href="https://github.com/sponsors/preetsuthar17"
               target="_blank"
-              className="px-5 py-3 bg-primary hover:bg-[var(--blue-color)] text-white w-fit border border-primary hover:border-[var(--blue-color)]"
+              className="px-5 py-3 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90"
             >
               Sponsor My Work
             </Link>
-            <Link
+            {/* <Link
               href="https://cal.com/hextastudio/development-partner"
               target="_blank"
               className="px-5 py-3 border border-primary text-primary w-fit hover:bg-secondary"
             >
               Book a Call
-            </Link>
+            </Link> */}
           </div>
         </div>
       </header>
