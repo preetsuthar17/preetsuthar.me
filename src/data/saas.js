@@ -11,7 +11,7 @@ const saas = [
   },
   {
     title: "HextaUI",
-    description: "build stunning websites with less effort.",
+    description: "modern, responsive, and customizable ui components.",
     link: "https://hextaui.com",
   },
 ];

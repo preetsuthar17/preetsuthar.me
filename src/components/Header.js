@@ -14,7 +14,7 @@ const Header = () => {
             href="https://x.com/preetsuthar17"
             target="_blank"
           >
-            twitter/x
+            twitter
           </Link>
           //
           <Link
@@ -74,7 +74,7 @@ const Header = () => {
             <SpotifyStatus />
           </div>
           <p className="text-left">
-            I'm software engineer and I build open-source projects
+            software engineer // building open-source projects
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
