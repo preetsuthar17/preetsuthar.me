@@ -73,7 +73,7 @@ export default function App({ Component, pageProps }) {
             jobTitle: "SaaS Creator",
           })}
         </script>{" "}
-          <script
+        <script
           defer
           src="https://assets.onedollarstats.com/stonks.js"
         ></script>

@@ -14,7 +14,9 @@
   --font-inter: Inter var, system-ui, sans-serif;
 
   --blue: var(--blue-color)
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+    --background-image-gradient-radial: radial-gradient(
+      var(--tw-gradient-stops)
+    );
   --background-image-gradient-conic: conic-gradient(
     from 180deg at 50% 50%,
     var(--tw-gradient-stops)
@@ -94,9 +96,10 @@
   --black-color: #000;
   --white-color: #fff;
   --blue-color: #1d4ed8;
-  
-  --font-fallback: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+
+  --font-fallback:
+    -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   --font-serif: "Newsreader", "Signifier", "Times", serif;
   --type-italic: 400 italic calc(1em + 1px) / normal var(--font-serif);
@@ -222,7 +225,7 @@ html {
 }
 
 .prose code {
-  @apply  bg-muted  py-0.5 font-mono text-sm;
+  @apply bg-muted  py-0.5 font-mono text-sm;
 }
 
 .prose a {
@@ -230,7 +233,7 @@ html {
 }
 
 .prose img {
-  @apply  border border-border;
+  @apply border border-border;
 }
 
 .prose hr {
@@ -344,7 +347,7 @@ html {
   @apply ml-2 text-muted-foreground no-underline opacity-0 transition-opacity hover:text-foreground;
 }
 
-.prose img{
+.prose img {
   @apply max-w-full h-auto w-full;
 }
 
@@ -355,7 +358,6 @@ html {
 }
 
 @layer utilities {
-
   * {
     margin: 0;
     padding: 0;
@@ -402,9 +404,9 @@ html {
     outline-offset: 2px;
   }
 
-  code,pre {
+  code,
+  pre {
     font-family: var(--font-mono) !important;
     font-size: 15px !important;
   }
 }
-

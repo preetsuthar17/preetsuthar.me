@@ -4,6 +4,7 @@ import { getAllPosts } from "@/lib/blog";
 
 import Header from "@/components/Header";
 import Work from "@/components/Work";
+import Writing from "@/components/Writing";
 
 import { motion } from "motion/react";
 
@@ -90,6 +91,9 @@ export default function Home({ posts }) {
         </motion.div>
         <motion.div variants={itemVariants}>
           <Work posts={posts} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <Writing posts={posts} />
         </motion.div>
       </motion.div>
     </>
