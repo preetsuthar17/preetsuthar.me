@@ -1,12 +1,17 @@
 const saas = [
   {
     title: "Ikiform",
-    description: "Beautiful, budget-friendly forms without compromises.",
+    description: "an open-source, ai-native alternative to google forms.",
     link: "https://ikiform.com",
   },
   {
+    title: "Iki",
+    description: "beautiful open-source notes with ai features.",
+    link: "https://iki.preetsuthar.me",
+  },
+  {
     title: "HextaUI",
-    description: "Build stunning websites with less effort.",
+    description: "build stunning websites with less effort.",
     link: "https://hextaui.com",
   },
 ];
