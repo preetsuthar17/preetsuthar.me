@@ -78,4 +78,4 @@ const Form = () => {
 
 Actual users won't see the hidden field, but bots will fill it out, allowing you to filter out spam submissions easily. This method is simple and effective for preventing spam bot attacks in form submissions.
 
-Actual Twitter thread: [link](https://x.com/preetsuthar17/status/1926188828169015371)
+Read the actual Twitter thread: [Prevent spam bot attacks in form submissions — Twitter thread](https://x.com/preetsuthar17/status/1926188828169015371)
