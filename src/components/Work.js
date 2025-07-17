@@ -13,20 +13,6 @@ export default function work() {
         {/* Cross repeating line pattern background */}
 
         <div className="flex justify-between flex-col gap-24 text-left relative z-10">
-          {/* divider */}
-          <div className="h-6 border-y relative">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 z-0"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
-                opacity: 1,
-              }}
-            />
-          </div>
-          {/* divider */}
-
           <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
             {/* SaaS list with hover muting effect */}
             <ul className="flex flex-col w-full group/saas-list">
@@ -65,20 +51,6 @@ export default function work() {
               ))}
             </ul>
           </div>
-
-          {/* divider */}
-          <div className="h-6 border-y relative">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 z-0"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
-                opacity: 1,
-              }}
-            />
-          </div>
-          {/* divider */}
         </div>
       </article>
     </>

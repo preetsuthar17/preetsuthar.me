@@ -207,7 +207,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
       {/* scroll to top button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-4 right-4 w-10 h-10 transition-all duration-300 ease-in-out bg-zinc-900 rounded-full text-white text-center justify-center flex-col items-center flex ${
+        className={`fixed bottom-4 right-4 w-10 h-10 transition-all duration-300 ease-in-out bg-zinc-900 rounded-ele text-white text-center justify-center flex-col items-center flex ${
           showButton
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10 pointer-events-none"
