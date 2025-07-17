@@ -39,7 +39,17 @@ export default function Writing({ posts }) {
                     <FiArrowUpRight size={18} />
                   </span>
                 </Link>
-                <p className="opacity-80 text-left">{post.date}</p>
+                <p className="opacity-80 text-left">
+                  {(() => {
+                    const date = new Date(post.date);
+                    const day = date.getDate();
+                    const month = date
+                      .toLocaleString("en-US", { month: "short" })
+                      .toLowerCase();
+                    const year = date.getFullYear();
+                    return `${day} ${month}, ${year}`;
+                  })()}
+                </p>
               </li>
             ))}
           </ul>

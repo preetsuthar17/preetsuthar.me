@@ -136,7 +136,15 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
             <div className="px-10 flex gap-4 flex-col">
               <div className="flex gap-2 flex-wrap">
                 <small className="text-muted-foreground">
-                  {new Date(post.date).toLocaleDateString("en-US")}
+                  {(() => {
+                    const date = new Date(post.date);
+                    const day = date.getDate();
+                    const month = date
+                      .toLocaleString("en-US", { month: "long" })
+                      .toLowerCase();
+                    const year = date.getFullYear();
+                    return `${day} ${month}, ${year}`;
+                  })()}
                 </small>
                 <small>•</small>
                 <small className="text-muted-foreground">{post.author}</small>
