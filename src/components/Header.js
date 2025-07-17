@@ -68,13 +68,13 @@ const Header = () => {
 
         <div className="flex flex-col gap-6  px-10  ">
           <div>
-            <h1 className="tracking-tight text-lg">Preet Suthar</h1>
+            <h1 className="tracking-tight text-xl">Preet Suthar</h1>
           </div>
           <div className="grayscale-100">
             <SpotifyStatus />
           </div>
           <p className="text-left">
-            software engineer // building open-source projects
+            software engineer / building open-source projects
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
