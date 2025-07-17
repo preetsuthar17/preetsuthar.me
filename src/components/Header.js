@@ -80,7 +80,7 @@ const Header = () => {
             <Link
               href="https://github.com/sponsors/preetsuthar17"
               target="_blank"
-              className="px-5 py-3 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90"
+              className="px-4 py-2 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90"
             >
               Sponsor My Work
             </Link>

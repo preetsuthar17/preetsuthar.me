@@ -8,6 +8,7 @@ import Writing from "@/components/Writing";
 
 import { motion } from "motion/react";
 import Contact from "@/components/Contact";
+import Sponsors from "@/components/Sponsors";
 
 export default function Home({ posts }) {
   const containerVariants = {
@@ -116,6 +117,20 @@ export default function Home({ posts }) {
         </div>
         {/* divider */}
         <Writing posts={posts} />
+        {/* divider */}
+        <div className="h-6 border-y relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)",
+              opacity: 1,
+            }}
+          />
+        </div>
+        {/* divider */}
+        <Sponsors />
         {/* divider */}
         <div className="h-6 border-y relative">
           <div
