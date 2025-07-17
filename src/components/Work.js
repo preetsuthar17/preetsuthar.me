@@ -9,9 +9,10 @@ import saas from "@/data/saas";
 export default function work() {
   return (
     <>
-      <article className="flex justify-between flex-col flex-wrap text-left font-medium relative">
-        <div className="flex justify-between flex-col gap-24 text-left relative z-10">
-          <div className="flex flex-col items-center w-full justify-between text-left gap-6 px-10">
+      <section className="flex flex-col gap-24 text-left items-center w-full">
+        <div className="flex flex-col gap-8 w-full">
+          <h2 className="tracking-tight text-lg px-10">Work</h2>
+          <div className="px-10">
             {/* SaaS list with hover muting effect */}
             <ul className="flex flex-col w-full group/saas-list">
               {saas.map((saas, idx) => (
@@ -49,7 +50,7 @@ export default function work() {
             </ul>
           </div>
         </div>
-      </article>
+      </section>
     </>
   );
 }

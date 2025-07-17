@@ -29,8 +29,8 @@ const Sponsors = () => {
 
   return (
     <section className="flex flex-col gap-24 text-left items-center w-full">
-      <div className="flex flex-col gap-6 w-full">
-        <h2 className="tracking-tight text-xl px-10">Sponsors</h2>
+      <div className="flex flex-col gap-8 w-full">
+        <h2 className="tracking-tight text-lg px-10">Sponsors</h2>
 
         <div className="px-10">
           {hasError ? (
