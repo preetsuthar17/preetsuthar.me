@@ -10,6 +10,11 @@ const saas = [
     link: "https://iki.preetsuthar.me",
   },
   {
+    title: "HextaUI blocks",
+    description: "complete blocks for rapid front-end development",
+    link: "https://pro.hextaui.com",
+  },
+  {
     title: "HextaUI",
     description: "modern, responsive, and customizable ui components.",
     link: "https://hextaui.com",
