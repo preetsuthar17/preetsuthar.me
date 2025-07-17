@@ -84,13 +84,6 @@ const Header = () => {
             >
               Sponsor My Work
             </Link>
-            {/* <Link
-              href="https://cal.com/hextastudio/development-partner"
-              target="_blank"
-              className="px-5 py-3 border border-primary text-primary w-fit hover:bg-secondary"
-            >
-              Book a Call
-            </Link> */}
           </div>
         </div>
       </header>
