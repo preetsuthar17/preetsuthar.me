@@ -5,19 +5,23 @@ import { Copy } from "lucide-react";
 
 import { useState } from "react";
 
-export default function CopyMarkdownButton({ slug }) {
+export default function CopyMarkdownButton({ slug, markdown: markdownProp }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyMarkdown = () => {
     let markdown = "";
-    const script = document.getElementById("__MARKDOWN__");
-    if (script && script.textContent) {
-      markdown = script.textContent;
-    } else if (window.__BLOG_MARKDOWN__) {
-      markdown = window.__BLOG_MARKDOWN__;
+    if (markdownProp) {
+      markdown = markdownProp;
     } else {
-      const article = document.querySelector("article");
-      markdown = article ? article.innerText : "";
+      const script = document.getElementById("__MARKDOWN__");
+      if (script && script.textContent) {
+        markdown = script.textContent;
+      } else if (window.__BLOG_MARKDOWN__) {
+        markdown = window.__BLOG_MARKDOWN__;
+      } else {
+        const article = document.querySelector("article");
+        markdown = article ? article.innerText : "";
+      }
     }
     if (markdown) {
       navigator.clipboard.writeText(markdown);

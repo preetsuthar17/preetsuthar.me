@@ -18,7 +18,7 @@ import "prismjs/components/prism-bash";
 import AskAIButton from "@/components/writings/ask-ai-button";
 import CopyMarkdownButton from "@/components/writings/copy-markdown";
 
-export default function BlogPost({ post, prevPost, nextPost }) {
+export default function BlogPost({ post, prevPost, nextPost, markdown }) {
   const [showButton, setShowButton] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -89,6 +89,14 @@ export default function BlogPost({ post, prevPost, nextPost }) {
             jobTitle: "SaaS Creator",
           })}
         </script>
+        {/* Inject raw markdown for copy button */}
+        <script
+          id="__MARKDOWN__"
+          type="text/plain"
+          dangerouslySetInnerHTML={{
+            __html: markdown ? markdown.replace(/<\//g, "<\\/") : "",
+          }}
+        />
       </Head>
 
       {/* Progress Bar */}
@@ -139,7 +147,7 @@ export default function BlogPost({ post, prevPost, nextPost }) {
               </div>
               <div className="flex gap-2 flex-wrap">
                 <AskAIButton />
-                <CopyMarkdownButton />
+                <CopyMarkdownButton markdown={markdown} />
               </div>
             </div>
           </div>
@@ -273,6 +281,7 @@ export async function getStaticProps({ params }) {
             slug: nextPost.slug,
           }
         : null,
+      markdown: currentPost.content,
     },
   };
 }
