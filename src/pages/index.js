@@ -87,9 +87,7 @@ export default function Home({ posts }) {
         animate="show"
         className="flex flex-col py-20 basics-prose gap-24 border border-t-0 border-b-0"
       >
-        <motion.div variants={itemVariants}>
-          <Header />
-        </motion.div>
+        <Header />
         {/* divider */}
         <div className="h-6 border-y relative">
           <div
@@ -103,9 +101,7 @@ export default function Home({ posts }) {
           />
         </div>
         {/* divider */}
-        <motion.div variants={itemVariants}>
-          <Work posts={posts} />
-        </motion.div>
+        <Work posts={posts} />
         {/* divider */}
         <div className="h-6 border-y relative">
           <div
@@ -119,9 +115,7 @@ export default function Home({ posts }) {
           />
         </div>
         {/* divider */}
-        <motion.div variants={itemVariants}>
-          <Writing posts={posts} />
-        </motion.div>
+        <Writing posts={posts} />
         {/* divider */}
         <div className="h-6 border-y relative">
           <div
@@ -135,9 +129,7 @@ export default function Home({ posts }) {
           />
         </div>
         {/* divider */}
-        <motion.div variants={itemVariants}>
-          <Contact />
-        </motion.div>
+        <Contact />
       </motion.div>
     </>
   );
