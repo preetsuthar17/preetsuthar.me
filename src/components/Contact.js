@@ -79,10 +79,10 @@ const Contact = () => {
               />
               <button
                 type="submit"
-                className="px-5 py-3 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90 mt-2 disabled:opacity-60"
+                className="px-4 py-2 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90 mt-2 disabled:opacity-60"
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? "Sending" : "Send Message"}
               </button>
               {error && (
                 <div className="text-red-500 text-sm mt-2">{error}</div>
