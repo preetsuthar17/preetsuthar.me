@@ -38,7 +38,7 @@ const Contact = () => {
         <h2 className="tracking-tight text-lg px-10">Contact</h2>
         <div className="px-10">
           {submitted ? (
-            <div className="text-center text-[var(--blue-color)] font-medium">
+            <div className="text-left text-[var(--blue-color)] font-medium">
               Thank you for reaching out! I will get back to you soon.
             </div>
           ) : (
