@@ -60,7 +60,7 @@ const Sponsors = () => {
               Be the first one to sponsor! 🥳
             </a>
           ) : (
-            <div className="flex flex-wrap gap-4 w-full justify-between">
+            <div className="flex flex-wrap gap-4 w-full justify-left">
               {sponsors.map((sponsor, idx) => (
                 <a
                   key={sponsor.url}
