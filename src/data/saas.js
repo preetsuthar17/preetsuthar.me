@@ -19,7 +19,6 @@ const saas = [
     description: "beautiful open-source notes with ai features.",
     link: "https://iki.preetsuthar.me",
   },
-  s,
 ];
 
 export default saas;
