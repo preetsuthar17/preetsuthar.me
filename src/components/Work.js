@@ -19,7 +19,7 @@ export default function work() {
                 <li
                   key={idx}
                   onClick={() => {
-                    window.open(`${saas.link}`);
+                    window.open(`${saas.link}?ref=preetsuthar.me`, "_blank");
                   }}
                   className="flex items-center text-left gap-2 w-full justify-between max-[590px]:flex-col max-[590px]:items-start group/saas-item transition-opacity cursor-pointer duration-300 py-2"
                   onMouseEnter={(e) => {

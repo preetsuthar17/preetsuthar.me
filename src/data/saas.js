@@ -5,11 +5,6 @@ const saas = [
     link: "https://ikiform.com",
   },
   {
-    title: "Iki",
-    description: "beautiful open-source notes with ai features.",
-    link: "https://iki.preetsuthar.me",
-  },
-  {
     title: "HextaUI blocks",
     description: "complete blocks for rapid front-end development",
     link: "https://pro.hextaui.com",
@@ -19,6 +14,12 @@ const saas = [
     description: "modern, responsive, and customizable ui components.",
     link: "https://hextaui.com",
   },
+  {
+    title: "Iki",
+    description: "beautiful open-source notes with ai features.",
+    link: "https://iki.preetsuthar.me",
+  },
+  s,
 ];
 
 export default saas;
