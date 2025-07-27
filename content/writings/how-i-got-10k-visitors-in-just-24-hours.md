@@ -29,8 +29,12 @@ And for the first time, it blew up. I got a crazy ton of readers, a ton of upvot
 
 I never thought that my post, which I literally took 2 minutes to write, would blow up like this, and within just 24 hours, it got me 8,000 visitors on the Ikiform website and a few more sales!
 
+[Ikiform on Y Combinator News](https://news.ycombinator.com/item?id=44518898?ref=preetsuthar.me)
+
 Although it was really nice to see new signups, new sales, traffic, and everything, readers still criticized me on Y Combinator.
 
 But as they say, criticism is good, so I took it in a good way. I read every single comment and implemented all the improvements and changes.
+
+[Ikiform](https://ikiform.com?ref=preetsuthar.me)
 
 So, that's the story of how I got 10,000+ visitors in just 24 hours after launching on Y Combinator News.
