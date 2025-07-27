@@ -2,10 +2,10 @@ const requests = new Map();
 
 const rateLimit = (limit, interval) => (handler) => async (req, res) => {
   const ip =
-    req.headers["x-forwarded-for"] ||
+    req.headers['x-forwarded-for'] ||
     req.connection?.remoteAddress ||
     req.socket?.remoteAddress ||
-    "unknown";
+    'unknown';
   if (!requests.has(ip)) {
     requests.set(ip, { count: 0, firstRequest: Date.now() });
   }
@@ -19,7 +19,7 @@ const rateLimit = (limit, interval) => (handler) => async (req, res) => {
   if (data.count > limit) {
     return res
       .status(429)
-      .json({ message: "Too many requests, please try again later." });
+      .json({ message: 'Too many requests, please try again later.' });
   }
   requests.set(ip, data);
   return handler(req, res);

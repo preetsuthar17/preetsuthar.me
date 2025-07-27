@@ -1,25 +1,25 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from '@/lib/blog';
 
-const siteUrl = "https://preetsuthar.me";
+const siteUrl = 'https://preetsuthar.me';
 
 function escapeXml(unsafe) {
-  return unsafe.replace(/[<>&'"]/g, function (c) {
+  return unsafe.replace(/[<>&'"]/g, (c) => {
     switch (c) {
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case "&":
-        return "&amp;";
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '&':
+        return '&amp;';
       case "'":
-        return "&apos;";
+        return '&apos;';
       case '"':
-        return "&quot;";
+        return '&quot;';
     }
   });
 }
 
-export default async function handler(req, res) {
+export default async function handler(_req, res) {
   const posts = getAllPosts();
 
   const feedItems = posts
@@ -30,11 +30,11 @@ export default async function handler(req, res) {
       <link>${siteUrl}/writing/${post.slug}</link>
       <guid>${siteUrl}/writing/${post.slug}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <description>${escapeXml(post.excerpt || "")}</description>
+      <description>${escapeXml(post.excerpt || '')}</description>
     </item>
-  `,
+  `
     )
-    .join("");
+    .join('');
 
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
@@ -47,6 +47,6 @@ export default async function handler(req, res) {
     </channel>
   </rss>`;
 
-  res.setHeader("Content-Type", "application/xml");
+  res.setHeader('Content-Type', 'application/xml');
   res.status(200).send(rss);
 }

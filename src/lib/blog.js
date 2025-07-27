@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import MarkdownIt from "markdown-it";
-import container from "markdown-it-container";
-import markdownItAnchor from "markdown-it-anchor";
+import path from 'node:path';
+import fs from 'fs';
+import matter from 'gray-matter';
+import MarkdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import container from 'markdown-it-container';
 
-const postsDirectory = path.join(process.cwd(), "content/writings");
+const postsDirectory = path.join(process.cwd(), 'content/writings');
 
 export function getAllPosts() {
   try {
@@ -21,11 +21,11 @@ export function getAllPosts() {
     }
 
     const allPostsData = fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
+      .filter((fileName) => fileName.endsWith('.md'))
       .map((fileName) => {
-        const slug = fileName.replace(/\.md$/, "");
+        const slug = fileName.replace(/\.md$/, '');
         const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf8");
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data, content } = matter(fileContents);
 
         return {
@@ -36,15 +36,14 @@ export function getAllPosts() {
       });
 
     return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
-  } catch (error) {
-    console.error("Error getting posts:", error);
+  } catch (_error) {
     return [];
   }
 }
 
 export function getPostBySlug(slug) {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return {
@@ -60,45 +59,45 @@ export async function markdownToHtml(markdown) {
     html: true,
     linkify: true,
     typographer: true,
-    highlight: function (str, lang) {
+    highlight(str, lang) {
       if (lang && Prism.languages[lang]) {
         try {
           return `<pre class="language-${lang}" tabindex="0"><code class="language-${lang}">${Prism.highlight(
             str,
             Prism.languages[lang],
-            lang,
+            lang
           )}</code></pre>`;
         } catch {
-          return "";
+          return '';
         }
       }
-      return "";
+      return '';
     },
   })
     .use(markdownItAnchor, {
       permalink: true,
-      permalinkClass: "anchor",
-      permalinkSymbol: "#",
+      permalinkClass: 'anchor',
+      permalinkSymbol: '#',
       callback: (token, info) => {
         headings.push({
-          level: parseInt(token.tag.slice(1)),
+          level: Number.parseInt(token.tag.slice(1), 10),
           text: info.title,
           id: info.slug,
         });
       },
     })
-    .use(require("markdown-it-footnote"))
-    .use(require("markdown-it-sup"))
-    .use(require("markdown-it-sub"))
-    .use(require("markdown-it-ins"))
-    .use(require("markdown-it-mark"))
-    .use(require("markdown-it-deflist"))
-    .use(require("markdown-it-abbr"))
-    .use(container, "warning")
-    .use(container, "alert")
-    .use(container, "info")
-    .use(container, "note")
-    .use(container, "tip");
+    .use(require('markdown-it-footnote'))
+    .use(require('markdown-it-sup'))
+    .use(require('markdown-it-sub'))
+    .use(require('markdown-it-ins'))
+    .use(require('markdown-it-mark'))
+    .use(require('markdown-it-deflist'))
+    .use(require('markdown-it-abbr'))
+    .use(container, 'warning')
+    .use(container, 'alert')
+    .use(container, 'info')
+    .use(container, 'note')
+    .use(container, 'tip');
 
   const html = md.render(markdown);
   return { html, headings };

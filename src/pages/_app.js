@@ -1,26 +1,24 @@
-import "../styles/globals.css";
+import '../styles/globals.css';
 
-import { Partytown } from "@builder.io/partytown/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
-import Head from "next/head";
-import Link from "next/link";
-
+import { Partytown } from '@builder.io/partytown/react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 // Change font import here
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono } from 'next/font/google';
+import Head from 'next/head';
+import Link from 'next/link';
+import Script from 'next/script';
 
 const jetBrains_Mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
 });
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <Partytown debug={true} forward={["dataLayer.push"]} />
+        <Partytown debug={true} forward={['dataLayer.push']} />
         <Script
-          type="text/partytown"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -29,57 +27,55 @@ export default function App({ Component, pageProps }) {
               gtag('config', 'G-170WY51KQ8');
             `,
           }}
+          type="text/partytown"
         />
         <title>Preet Suthar</title>
-        <meta name="robots" content="all" />
-        <meta name="description" content="My personal portfolio website." />
-        <meta name="theme-color" content="#fffffff" />
-        <meta httpEquiv="content-language" content="en" />
-        <meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
-        <meta property="og:title" content="Preet Suthar" />
+        <meta content="all" name="robots" />
+        <meta content="My personal portfolio website." name="description" />
+        <meta content="#fffffff" name="theme-color" />
+        <meta content="en" httpEquiv="content-language" />
+        <meta content="text/html; charset=UTF-8" httpEquiv="content-type" />
+        <meta content="Preet Suthar" property="og:title" />
         <meta
+          content="My personal portfolio website."
           property="og:description"
-          content="My personal portfolio website."
         />
-        <meta property="og:url" content="https://preetsuthar.me" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://i.imgur.com/RqScUZ8.png" />
+        <meta content="https://preetsuthar.me" property="og:url" />
+        <meta content="website" property="og:type" />
+        <meta content="https://i.imgur.com/RqScUZ8.png" property="og:image" />
         <meta
-          name="keywords"
           content="Preet Suthar, SaaS Creator, Portfolio, Blog, web development, preet, front end development, SaaS Creator"
+          name="keywords"
         />
-        <meta name="author" content="Preet Suthar" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:title" content="Preet Suthar" />
+        <meta content="Preet Suthar" name="author" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="Preet Suthar" name="twitter:title" />
         <meta
-          name="twitter:description"
           content="My personal portfolio website."
-        />{" "}
-        <meta name="subject" content="web development" />
+          name="twitter:description"
+        />{' '}
+        <meta content="web development" name="subject" />
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Preet Suthar",
-            url: "https://preetsuthar.me",
-            image: "https://preetsuthar.me/website-icon.webp",
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Preet Suthar',
+            url: 'https://preetsuthar.me',
+            image: 'https://preetsuthar.me/website-icon.webp',
             sameAs: [
-              "https://www.linkedin.com/in/preetsuthar17/",
-              "https://github.com/preetsuthar17",
-              "https://x.com/nott_preet",
-              "https://preetsuthar.me",
-              "https://discord.com/users/741549223127941170",
+              'https://www.linkedin.com/in/preetsuthar17/',
+              'https://github.com/preetsuthar17',
+              'https://x.com/nott_preet',
+              'https://preetsuthar.me',
+              'https://discord.com/users/741549223127941170',
             ],
-            jobTitle: "SaaS Creator",
+            jobTitle: 'SaaS Creator',
           })}
-        </script>{" "}
-        <script
-          defer
-          src="https://assets.onedollarstats.com/stonks.js"
-        ></script>
+        </script>{' '}
+        <script defer src="https://assets.onedollarstats.com/stonks.js" />
       </Head>
 
-      <Link href="#main-content" className="sr-only focus:not-sr-only text-sm">
+      <Link className="sr-only text-sm focus:not-sr-only" href="#main-content">
         Skip to main content
       </Link>
       <Component

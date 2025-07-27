@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ExternalLinkIcon } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { ExternalLinkIcon } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function AskAIButton({ slug }) {
   const [open, setOpen] = useState(false);
@@ -15,20 +15,20 @@ export default function AskAIButton({ slug }) {
       }
     }
     if (open) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [open]);
 
-  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
-  const pageTitle = typeof window !== "undefined" ? document.title : "";
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const pageTitle = typeof window !== 'undefined' ? document.title : '';
   const q = `Please read the documentation from ${currentUrl} (titled: "${pageTitle}"). I want to discuss or get help with it.`;
   const gpt = `https://chatgpt.com/?${new URLSearchParams({
-    hints: "search",
+    hints: 'search',
     q,
   })}`;
   const claude = `https://claude.ai/new?${new URLSearchParams({ q })}`;
@@ -37,43 +37,43 @@ export default function AskAIButton({ slug }) {
   return (
     <div className="relative inline-block" ref={dropdownRef}>
       <button
-        type="button"
-        className="flex items-center gap-2 px-2 py-2 border border-primary text-primary w-fit hover:bg-secondary text-sm"
+        className="flex w-fit items-center gap-2 border border-primary px-2 py-2 text-primary text-sm hover:bg-secondary"
         onClick={() => setOpen((v) => !v)}
+        type="button"
       >
         Ask AI
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M7 10l5 5 5-5H7z" />
+        <svg fill="none" height="16" viewBox="0 0 24 24" width="16">
+          <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
         </svg>
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 min-w-[160px] bg-background border border-primary flex flex-col p-2">
+        <div className="absolute z-50 mt-2 flex min-w-[160px] flex-col border border-primary bg-background p-2">
           <a
+            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary"
             href={gpt}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-center justify-between gap-2 px-2 py-3 hover:bg-secondary text-sm"
             onClick={() => setOpen(false)}
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Ask ChatGPT
             <ExternalLinkIcon className="size-4" />
           </a>
           <a
+            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary"
             href={claude}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-center justify-between gap-2 px-2 py-3 hover:bg-secondary text-sm"
             onClick={() => setOpen(false)}
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Ask Claude
             <ExternalLinkIcon className="size-4" />
           </a>
           <a
+            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary"
             href={t3}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="flex items-center justify-between gap-2 px-2 py-3 hover:bg-secondary text-sm"
             onClick={() => setOpen(false)}
+            rel="noreferrer noopener"
+            target="_blank"
           >
             Ask T3 Chat
             <ExternalLinkIcon className="size-4" />

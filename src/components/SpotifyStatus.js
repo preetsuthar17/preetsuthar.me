@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { FaSpotify } from "react-icons/fa";
-import { BsPauseFill } from "react-icons/bs";
-import Link from "next/link";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { BsPauseFill } from 'react-icons/bs';
+import { FaSpotify } from 'react-icons/fa';
 
 export const SpotifyStatus = () => {
   const [playing, setPlaying] = useState(null);
@@ -9,37 +9,34 @@ export const SpotifyStatus = () => {
   useEffect(() => {
     const fetchNowPlaying = async () => {
       try {
-        const response = await fetch("/api/spotify");
+        const response = await fetch('/api/spotify');
         const data = await response.json();
         setPlaying(data.isPlaying ? data : null);
-      } catch (error) {
-        console.error("Error fetching Spotify status:", error);
+      } catch (_error) {
         setPlaying(null);
       }
     };
 
     fetchNowPlaying();
-    const interval = setInterval(fetchNowPlaying, 60000);
+    const interval = setInterval(fetchNowPlaying, 60_000);
     return () => clearInterval(interval);
   }, []);
 
-  return playing && playing.title ? (
-    <Link
-      href={playing.songUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 text-sm  font-sans basics-prose hover:underline transition-colors"
-    >
-      <FaSpotify className="text-[#24e467]" size={16} />
-      {playing.isPlaying && <BsPauseFill size={16} />}
-      <small className=" opacity-90 leading-tight flex gap-1 flex-wrap justify-start">
-        {playing.title} <span>•</span> {playing.artist}
-      </small>
-    </Link>
-  ) : (
-    <div className="flex items-center gap-2 text-sm font-sans basics-prose text-left">
-      <FaSpotify className="text-[#1DB954]" size={16} />
-      <small className=" opacity-90">Not playing anything on Spotify</small>
-    </div>
-  );
+  return playing?.title
+    ? <Link
+        className="basics-prose flex items-center gap-2 font-sans text-sm transition-colors hover:underline"
+        href={playing.songUrl}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <FaSpotify className="text-[#24e467]" size={16} />
+        {playing.isPlaying && <BsPauseFill size={16} />}
+        <small className=" flex flex-wrap justify-start gap-1 leading-tight opacity-90">
+          {playing.title} <span>•</span> {playing.artist}
+        </small>
+      </Link>
+    : <div className="basics-prose flex items-center gap-2 text-left font-sans text-sm">
+        <FaSpotify className="text-[#1DB954]" size={16} />
+        <small className=" opacity-90">Not playing anything on Spotify</small>
+      </div>;
 };

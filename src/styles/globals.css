@@ -15,8 +15,8 @@
 
   --blue: var(--blue-color)
     --background-image-gradient-radial: radial-gradient(
-      var(--tw-gradient-stops)
-    );
+      var(--tw-gradient-stops);
+  )
   --background-image-gradient-conic: conic-gradient(
     from 180deg at 50% 50%,
     var(--tw-gradient-stops)
@@ -366,20 +366,20 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     touch-action: manipulation;
-    scroll-behavior: smooth !important;
-    scroll-behavior: -webkit-smooth !important;
-    -webkit-scroll-behavior: smooth !important;
+    scroll-behavior: smooth;
+    scroll-behavior: -webkit-smooth;
+    -webkit-scroll-behavior: smooth;
   }
 
   html,
   body::-moz-selection {
-    background: var(--background-color) !important;
-    color: var(--text-color) !important;
+    background: var(--background-color);
+    color: var(--text-color);
   }
 
   *::selection {
-    background: var(--black-color) !important;
-    color: var(--white-color) !important;
+    background: var(--black-color);
+    color: var(--white-color);
   }
 
   body,
@@ -387,9 +387,9 @@ html {
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
-    scroll-behavior: smooth !important;
-    scroll-behavior: -webkit-smooth !important;
-    -webkit-scroll-behavior: smooth !important;
+    scroll-behavior: smooth;
+    scroll-behavior: -webkit-smooth;
+    -webkit-scroll-behavior: smooth;
     max-width: 50rem;
     margin-inline: auto;
     width: 100%;
@@ -406,7 +406,7 @@ html {
 
   code,
   pre {
-    font-family: var(--font-mono) !important;
-    font-size: 15px !important;
+    font-family: var(--font-mono);
+    font-size: 15px;
   }
 }

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,88 +13,86 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setError('');
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        throw new Error("Failed to send message");
+        throw new Error('Failed to send message');
       }
       setSubmitted(true);
-      setForm({ name: "", email: "", message: "" });
-    } catch (err) {
-      setError("Failed to send message. Please try again later.");
+      setForm({ name: '', email: '', message: '' });
+    } catch (_err) {
+      setError('Failed to send message. Please try again later.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="flex flex-col gap-24 text-left items-center w-full">
-      <div className="flex flex-col gap-8 w-full">
-        <h2 className="tracking-tight text-lg px-10">Contact</h2>
+    <section className="flex w-full flex-col items-center gap-24 text-left">
+      <div className="flex w-full flex-col gap-8">
+        <h2 className="px-10 text-lg tracking-tight">Contact</h2>
         <div className="px-10">
-          {submitted ? (
-            <div className="text-left text-[var(--blue-color)] font-medium">
-              Thank you for reaching out! I will get back to you soon.
-            </div>
-          ) : (
-            <form
-              className="flex flex-col gap-4"
-              onSubmit={handleSubmit}
-              autoComplete="off"
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-[var(--blue-color)] transition-colors"
-                disabled={loading}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-[var(--blue-color)] transition-colors"
-                disabled={loading}
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={form.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="px-4 py-3 border border-border bg-transparent focus:outline-none focus:border-[var(--blue-color)] transition-colors resize-none"
-                disabled={loading}
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90 mt-2 disabled:opacity-60"
-                disabled={loading}
+          {submitted
+            ? <div className="text-left font-medium text-[var(--blue-color)]">
+                Thank you for reaching out! I will get back to you soon.
+              </div>
+            : <form
+                autoComplete="off"
+                className="flex flex-col gap-4"
+                onSubmit={handleSubmit}
               >
-                {loading ? "Sending" : "Send Message"}
-              </button>
-              {error && (
-                <div className="text-red-500 text-sm mt-2">{error}</div>
-              )}
-            </form>
-          )}
+                <input
+                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  disabled={loading}
+                  name="name"
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  required
+                  type="text"
+                  value={form.name}
+                />
+                <input
+                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  disabled={loading}
+                  name="email"
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  required
+                  type="email"
+                  value={form.email}
+                />
+                <textarea
+                  className="resize-none border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  disabled={loading}
+                  name="message"
+                  onChange={handleChange}
+                  placeholder="Your Message"
+                  required
+                  rows={5}
+                  value={form.message}
+                />
+                <button
+                  className="mt-2 w-fit border border-[var(--blue-color)] bg-[var(--blue-color)] px-4 py-2 text-white hover:brightness-90 disabled:opacity-60"
+                  disabled={loading}
+                  type="submit"
+                >
+                  {loading ? 'Sending' : 'Send Message'}
+                </button>
+                {error && (
+                  <div className="mt-2 text-red-500 text-sm">{error}</div>
+                )}
+              </form>}
         </div>
-        <div className="text-sm opacity-80 px-10">
-          Or email me directly at{" "}
+        <div className="px-10 text-sm opacity-80">
+          Or email me directly at{' '}
           <a
+            className="text-[var(--blue-color)] underline underline-offset-4"
             href="mailto:preetsuthar17@gmail.com"
-            className="underline text-[var(--blue-color)] underline-offset-4"
           >
             hi@preetsuthar.me
           </a>

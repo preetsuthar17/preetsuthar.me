@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export function TableOfContents({ headings = [] }) {
   if (headings.length === 0) {
@@ -6,32 +6,32 @@ export function TableOfContents({ headings = [] }) {
   }
 
   return (
-    <div type="single" collapsible className="w-full p-0 ">
-      <div value="toc" className="border-b px-10 py-10 ">
+    <div className="w-full p-0 " collapsible type="single">
+      <div className="border-b px-10 py-10 " value="toc">
         <div>
           <nav className="flex flex-col space-y-2">
             {headings.map((heading) => (
               <Link
-                key={heading.id}
-                href={`#${heading.id}`}
-                className={`text-muted-foreground hover:text-foreground transition-colors  ${
+                className={`text-muted-foreground transition-colors hover:text-foreground ${
                   heading.level === 2
-                    ? "pl-4"
+                    ? 'pl-4'
                     : heading.level === 3
-                    ? "pl-8"
-                    : heading.level === 4
-                    ? "pl-12"
-                    : ""
+                      ? 'pl-8'
+                      : heading.level === 4
+                        ? 'pl-12'
+                        : ''
                 }`}
+                href={`#${heading.id}`}
+                key={heading.id}
               >
                 {heading.level === 2
-                  ? "• "
+                  ? '• '
                   : heading.level === 3
-                  ? "◦ "
-                  : heading.level === 4
-                  ? "◦ "
-                  : ""}
-                {"  "}
+                    ? '◦ '
+                    : heading.level === 4
+                      ? '◦ '
+                      : ''}
+                {'  '}
                 {heading.text}
               </Link>
             ))}

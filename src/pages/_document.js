@@ -1,19 +1,19 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta httpEquiv="Accept-CH" content="DPR, Width, Viewport-Width" />
+        <meta content="DPR, Width, Viewport-Width" httpEquiv="Accept-CH" />
         <link
-          rel="preconnect"
-          href="https://preetsuthar.me/cdn-cgi/"
           crossOrigin="anonymous"
+          href="https://preetsuthar.me/cdn-cgi/"
+          rel="preconnect"
         />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+          href="https://fonts.gstatic.com"
+          rel="preconnect"
         />
       </Head>
       <body antialiased="true">

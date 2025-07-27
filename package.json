@@ -7,7 +7,7 @@
     "build": "partytown copylib public/~partytown & next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write . --ignore-path .gitignore",
+    "format": "pnpx ultracite format --unsafe",
     "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
@@ -61,11 +61,13 @@
     "zod": "^4.0.10"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.1.2",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "24.1.0",
     "@types/react": "19.1.8",
     "postcss": "^8",
     "tailwindcss": "^4.1.11",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "ultracite": "5.1.1"
   }
 }
