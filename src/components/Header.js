@@ -74,7 +74,7 @@ const Header = () => {
             <SpotifyStatus />
           </div>
           <p className="text-left">
-            software engineer / building open-source projects
+            front-end design engineer / building open-source projects
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
