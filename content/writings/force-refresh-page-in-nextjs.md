@@ -1,7 +1,7 @@
 ---
 title: "Force refresh page in Next.js"
-excerpt: "Using useRouter hook in Next.js"
-author: Preet Suthar
+excerpt: "How to reload a page in Next.js"
+author: "Preet Suthar"
 date: "2025-04-23"
 ---
 

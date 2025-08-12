@@ -1,7 +1,7 @@
 ---
 title: "Prefetching content in Next.js"
-excerpt: "How prefetching content in Next.js works"
-author: Preet Suthar
+excerpt: "How Next.js loads pages early to make navigation faster"
+author: "Preet Suthar"
 date: "2025-04-23"
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Add llms.txt to your website
-excerpt: How to add llms.txt to your website
-author: Preet Suthar
+title: "Add llms.txt to your website"
+excerpt: "A simple guide to putting llms.txt on your website"
+author: "Preet Suthar"
 date: "2025-06-25"
 ---
 

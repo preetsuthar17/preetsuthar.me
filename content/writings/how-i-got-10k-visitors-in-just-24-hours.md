@@ -1,7 +1,7 @@
 ---
-title: how I got 10k+ visitors in just 24 hours
-excerpt: How I got 10k+ visitors in just 24 hours
-author: Preet Suthar
+title: "How I got 10k+ visitors in just 24 hours"
+excerpt: "How I got over 10,000 visitors in one day"
+author: "Preet Suthar"
 date: "2025-07-27"
 ---
 

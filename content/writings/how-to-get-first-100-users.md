@@ -1,7 +1,7 @@
 ---
-title: How to get first 100 users
-excerpt: Simple ways to get your first 100 users for your product.
-author: Preet Suthar
+title: "How to get first 100 users"
+excerpt: "Easy steps to find your first 100 users."
+author: "Preet Suthar"
 date: "2025-08-12"
 ---
 

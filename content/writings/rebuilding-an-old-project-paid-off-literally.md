@@ -1,7 +1,7 @@
 ---
-title: Rebuilding an old project paid off, literally!
-excerpt: How I rebuilt a few years old project and now it pays my bill
-author: Preet Suthar
+title: "Rebuilding an old project paid off, literally!"
+excerpt: "I rebuilt an old project, and now it helps me earn money"
+author: "Preet Suthar"
 date: "2025-07-27"
 ---
 

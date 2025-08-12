@@ -1,7 +1,7 @@
 ---
 title: "Add an Ask AI Button in Next.js"
-excerpt: "How to add ask AI button in Next.js to help users get instant answers from AI"
-author: Preet Suthar
+excerpt: "Add a button in Next.js so users can quickly ask AI questions about your page."
+author: "Preet Suthar"
 date: "2025-07-06"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Guide to minimal website design"
-excerpt: "A Brief Introduction to Minimal Website Designing"
-author: Preet Suthar
+excerpt: "A short and simple guide to minimal website design"
+author: "Preet Suthar"
 date: "2025-02-06"
 ---
 

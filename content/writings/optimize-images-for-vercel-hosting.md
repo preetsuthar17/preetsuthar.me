@@ -1,7 +1,7 @@
 ---
 title: "Optimize images for vercel hosting"
-excerpt: "How to optimize images for vercel hosting to avoid high costs"
-author: Preet Suthar
+excerpt: "Save money on Vercel by shrinking images and hosting them outside the /public folder"
+author: "Preet Suthar"
 date: "2025-07-17"
 ---
 

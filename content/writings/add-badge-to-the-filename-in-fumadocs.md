@@ -1,7 +1,7 @@
 ---
-title: Add a badge to the filename in Fumadocs
-excerpt: How to add a badge to the filename in Fumadocs
-author: Preet Suthar
+title: "Add a badge to the filename in Fumadocs"
+excerpt: "How to show a badge next to a filename in Fumadocs"
+author: "Preet Suthar"
 date: "2025-05-04"
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Prevent Spam Bot Attacks in Form Submissions
-excerpt: Simple method to prevent spam bot attacks in form submissions
-author: Preet Suthar
+title: "Prevent Spam Bot Attacks in Form Submissions"
+excerpt: "Easy way to stop spam bots from submitting forms"
+author: "Preet Suthar"
 date: "2025-05-21"
 ---
 
