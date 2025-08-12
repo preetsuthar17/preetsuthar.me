@@ -73,7 +73,7 @@ export default function Design() {
                   className="group cursor-pointer"
                   onClick={() => openModal(design)}
                 >
-                  <div className="relative w-full overflow-hidden bg-gray-50 transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="relative w-full overflow-hidden bg-gray-50 transition-transform duration-300">
                     <ExternalOptimizedImage
                       src={design.imageUrl}
                       alt={`${design.category} design`}

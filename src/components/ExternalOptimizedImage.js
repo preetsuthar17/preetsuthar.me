@@ -49,7 +49,7 @@ export const ExternalOptimizedImage = ({
         height={height}
         className={`duration-700 ease-in-out transition-all ${
           isLoading
-            ? 'scale-105 blur-sm opacity-70'
+            ? 'scale-100 blur-sm opacity-70'
             : 'scale-100 blur-0 opacity-100'
         } ${className}`}
         quality={quality}
