@@ -181,7 +181,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
           </article>
         </div>
         {/* blog navigation */}
-        <nav className="container mx-auto border-t px-4 py-8 pb-20">
+        <nav className="container mx-auto border-t px-8 py-8 pb-20">
           <div className="flex items-center justify-between gap-4">
             {prevPost
               ? <Link
