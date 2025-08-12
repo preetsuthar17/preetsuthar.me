@@ -74,7 +74,7 @@ const Header = () => {
             <SpotifyStatus />
           </div>
           <p className="text-left">
-            front-end design engineer / building open-source projects
+             design engineer / building open-source projects
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
@@ -82,7 +82,7 @@ const Header = () => {
               target="_blank"
               className="px-4 py-2 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90"
             >
-              Sponsor My Work
+              Sponsor my work
             </Link>
           </div>
         </div>

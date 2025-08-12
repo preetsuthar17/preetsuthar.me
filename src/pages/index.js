@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import Head from 'next/head';
 import Contact from '@/components/Contact';
+import Design from '@/components/Design';
 import Header from '@/components/Header';
 import Sponsors from '@/components/Sponsors';
 import Work from '@/components/Work';
@@ -100,6 +101,20 @@ export default function Home({ posts }) {
         </div>
         {/* divider */}
         <Work posts={posts} />
+        {/* divider */}
+        <div className="relative h-6 border-y">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-0"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)',
+              opacity: 1,
+            }}
+          />
+        </div>
+        {/* divider */}
+        <Design />
         {/* divider */}
         <div className="relative h-6 border-y">
           <div
