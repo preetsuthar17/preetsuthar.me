@@ -8,7 +8,7 @@ export const ExternalOptimizedImage = ({
   width = 800,
   height = 600,
   className = '',
-  quality = 85,
+  quality = 45,
   priority = false,
   ...props
 }) => {

@@ -80,7 +80,7 @@ export default function Design() {
                       width={800}
                       height={600}
                       className="w-full h-auto object-cover"
-                      quality={85}
+                      quality={45}
                     />
                   </div>
                 </div>
