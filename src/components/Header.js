@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex gap-4 flex-wrap  px-10 ">
           <Link
             className="underline text-[var(--blue-color)] underline-offset-4"
-            href="https://x.com/preetsuthar17"
+            href="/twitter"
             target="_blank"
           >
             twitter
@@ -19,7 +19,7 @@ const Header = () => {
           //
           <Link
             className="underline text-[var(--blue-color)] underline-offset-4"
-            href="https://github.com/preetsuthar17"
+            href="/github"
             target="_blank"
           >
             github
@@ -27,7 +27,7 @@ const Header = () => {
           //
           <Link
             className="underline text-[var(--blue-color)] underline-offset-4"
-            href="https://youtube.com/@preetsuthar17"
+            href="/youtube"
             target="_blank"
           >
             youtube

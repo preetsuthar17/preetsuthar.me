@@ -5,6 +5,30 @@ const nextConfig = {
     domains: ['i.imgur.com', 'github.com', 'raw.githubusercontent.com', 'mluigse36i.ufs.sh'],
     formats: ['image/webp'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/github',
+        destination: 'https://github.com/preetsuthar17',
+        permanent: false, 
+      },
+      {
+        source: '/twitter',
+        destination: 'https://x.com/preetsuthar17',
+        permanent: false, 
+      },
+      {
+        source: '/youtube',
+        destination: 'https://youtube.com/@preetsuthar17',
+        permanent: false, 
+      },
+      {
+        source: '/linkedin',
+        destination: 'https://www.linkedin.com/in/preetsuthar17/',
+        permanent: false, 
+      }
+    ]
+  },
   async headers() {
     return [
       {
