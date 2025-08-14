@@ -14,3 +14,9 @@
 - [Add Badge to Filename](https://preetsuthar.me/writing/add-badge-to-the-filename-in-fumadocs): Learn to add badges to filenames in Fumadocs easily.
 - [Add llms.txt to Your Website](https://preetsuthar.me/writing/add-llms-txt-to-your-website): Learn how to add llms.txt to your website for better AI understanding.
 - [Adding Copy as Markdown & Open in ChatGPT Buttons in Next.js](https://preetsuthar.me/writing/adding-copy-as-markdown-and-open-in-chatgpt): Add a button to copy blog content as Markdown and open it in ChatGPT.
+- [Add an Ask AI Button in Next.js](https://preetsuthar.me/writing/add-an-ask-ai-button-in-next-js): Add a button in Next.js so users can quickly ask AI questions about your page.
+- [How to setup redirects in Next.js](https://preetsuthar.me/writing/create-github-redirect-in-nextjs): How to setup redirects in Next.js for cleaner URLs and better user experience.
+- [Optimize images for vercel hosting](https://preetsuthar.me/writing/optimize-images-for-vercel-hosting): Save money on Vercel by shrinking images and hosting them outside the /public folder.
+- [How I got 10k+ visitors in just 24 hours](https://preetsuthar.me/writing/how-i-got-10k-visitors-in-just-24-hours): How I got over 10,000 visitors in one day.
+- [How to get first 100 users](https://preetsuthar.me/writing/how-to-get-first-100-users): Easy steps to find your first 100 users.
+- [Rebuilding an old project paid off, literally!](https://preetsuthar.me/writing/rebuilding-an-old-project-paid-off-literally): I rebuilt an old project, and now it helps me earn money.
