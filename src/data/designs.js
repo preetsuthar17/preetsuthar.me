@@ -18,6 +18,21 @@ const designs = [
     id: 4,
     imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HTiucKOgJBZ5jnwXfsioMkahSmRI3QF0DtzOp',
     category: 'Product Design',
+  },
+  {
+    id: 5,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HG54R8GIxKQhrPMoRTWmON56luvYt421L7HnS',
+    category: 'Product Design',
+  },
+  {
+    id: 6,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HnQzWHgrK7MazrHbUZwyWQsBl1S54dCL2ickO',
+    category: 'Product Design',
+  },
+  {
+    id: 7,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HCkczsQZObPDuc81dxFtIrZJTV5mkY2qNgwKS',
+    category: 'Product Design',
   }
 ];
 
