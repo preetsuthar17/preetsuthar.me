@@ -174,7 +174,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
           <TableOfContents headings={post.headings} />
           <article>
             <div
-              className="prose max-w-none px-10 py-10 text-justify max-sm:text-pretty"
+              className="prose max-w-none px-10 py-10 text-pretty max-sm:text-pretty"
               dangerouslySetInnerHTML={{ __html: post.content }}
               suppressHydrationWarning
             />

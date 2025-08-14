@@ -195,35 +195,35 @@ html {
 }
 
 .prose {
-  @apply max-w-none leading-10 flex flex-col gap-6 py-10;
+  @apply max-w-none leading-7 flex flex-col gap-6 py-10;
 }
 
 .prose h1 {
-  @apply py-3 text-4xl font-bold tracking-tight text-foreground;
+  @apply  text-4xl font-bold tracking-tight text-foreground;
 }
 
 .prose h2 {
-  @apply py-3 text-3xl font-semibold tracking-tight text-foreground;
+  @apply  text-3xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h3 {
-  @apply py-3 text-xl font-semibold tracking-tight text-foreground;
+  @apply  text-xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h4 {
-  @apply py-3 text-xl font-semibold tracking-tight text-foreground;
+  @apply  text-xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h5 {
-  @apply py-3 text-lg font-semibold tracking-tight text-foreground;
+  @apply  text-lg font-semibold tracking-tight text-foreground;
 }
 
 .prose h6 {
-  @apply py-3 text-base font-semibold tracking-tight text-foreground;
+  @apply  text-base font-semibold tracking-tight text-foreground;
 }
 
 .prose p {
-  @apply leading-7 text-pretty;
+  @apply leading-7 text-left;
 }
 
 .prose strong {
@@ -243,7 +243,17 @@ html {
 }
 
 .prose pre {
-  @apply my-4 overflow-x-auto  p-4 text-sm;
+  @apply my-4 overflow-x-auto p-4 text-sm;
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d8 transparent;
+}
+.prose pre::-webkit-scrollbar {
+  height: 6px;
+  background: transparent;
+}
+.prose pre::-webkit-scrollbar-thumb {
+  background: #9b9b9b;
+  border-radius: 4px;
 }
 
 .prose code {
