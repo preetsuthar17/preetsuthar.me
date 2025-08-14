@@ -15,6 +15,11 @@ const designs = [
     category: 'Web Design',
   },
   {
+    id: 8,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HY44aw4tb0OMdq53SWQJBHemf1wLGc4riZlnA',
+    category: 'Web Design',
+  },
+  {
     id: 4,
     imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HTiucKOgJBZ5jnwXfsioMkahSmRI3QF0DtzOp',
     category: 'Product Design',
@@ -32,6 +37,11 @@ const designs = [
   {
     id: 7,
     imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HCkczsQZObPDuc81dxFtIrZJTV5mkY2qNgwKS',
+    category: 'Product Design',
+  },
+  {
+    id: 9,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HKO5EZePGzetwHYr6oIWjCp581yENXU7si3DA',
     category: 'Product Design',
   }
 ];
