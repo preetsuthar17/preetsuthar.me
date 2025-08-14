@@ -11,6 +11,11 @@ const designs = [
   },
   {
     id: 3,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HQqQvxI0DOZ0mvbXHwlep7N3qfFixj5ackyYu',
+    category: 'Web Design',
+  },
+  {
+    id: 4,
     imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HTiucKOgJBZ5jnwXfsioMkahSmRI3QF0DtzOp',
     category: 'Product Design',
   }
