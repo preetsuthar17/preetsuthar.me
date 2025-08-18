@@ -26,6 +26,11 @@ const nextConfig = {
         source: '/linkedin',
         destination: 'https://www.linkedin.com/in/preetsuthar17/',
         permanent: false, 
+      },
+      {
+        source: "/sponsor",
+        destination: "https://github.com/sponsors/preetsuthar17",
+        permanent: false,
       }
     ]
   },
