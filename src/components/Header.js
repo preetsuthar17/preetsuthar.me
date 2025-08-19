@@ -7,7 +7,7 @@ import { SpotifyStatus } from "./SpotifyStatus";
 const Header = () => {
   return (
     <>
-      <header className="flex flex-col gap-24  text-pretty justify-evenly">
+      <header className="flex flex-col gap-12  text-pretty justify-evenly">
         <div className="flex gap-4 flex-wrap  px-10 ">
           <Link
             className="underline text-blue underline-offset-4"

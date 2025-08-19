@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex w-full flex-col items-center gap-24 text-left">
+    <section className="flex w-full flex-col items-center gap-12 text-left">
       <div className="flex w-full flex-col gap-8">
         <h2 className="px-10 text-lg tracking-tight">Contact</h2>
         <div className="px-10">

@@ -30,7 +30,7 @@ const Sponsors = () => {
   }, []);
 
   return (
-    <section className="flex w-full flex-col items-center gap-24 text-left">
+    <section className="flex w-full flex-col items-center gap-12 text-left">
       <div className="flex w-full flex-col gap-8">
         <h2 className="px-10 text-lg tracking-tight">Sponsors</h2>
 

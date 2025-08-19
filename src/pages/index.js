@@ -57,7 +57,7 @@ export default function Home({ posts }) {
         </script>
       </Head>
       <div
-        className="basics-prose flex flex-col gap-24 border border-t-0 border-b-0 py-20"
+        className="basics-prose flex flex-col gap-12 border border-t-0 border-b-0 py-12"
       >
         <Header />
         {/* divider */}

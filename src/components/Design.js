@@ -43,7 +43,7 @@ export default function Design() {
 
   return (
     <>
-      <section className="flex w-full flex-col items-center gap-24 text-left">
+      <section className="flex w-full flex-col items-center gap-12 text-left">
         <div className="flex w-full flex-col gap-8">
           <div className="px-10">
             <h2 className="text-lg tracking-tight">Design</h2>
