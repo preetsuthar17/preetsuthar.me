@@ -8,8 +8,8 @@
 @custom-variant dark (&:is(class *));
 
 @theme {
-  --font-sans: Geist, sans-serif;
-  --font-mono: Geist Mono, monospace;
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 
   --color-blue: var(--blue-color);
 
@@ -242,7 +242,7 @@ html {
 }
 
 .prose code {
-  @apply bg-muted  py-0.5 font-mono text-sm;
+  @apply bg-muted  py-0.5 text-sm;
 }
 
 .prose a {
@@ -423,7 +423,6 @@ html {
 
   code,
   pre {
-    font-family: var(--font-mono);
-    font-size: 15px;
+    font-family: "Geist Mono", monospace !important;
   }
 }

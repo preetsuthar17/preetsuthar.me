@@ -1,17 +1,17 @@
 const saas = [
   {
     title: 'BaseUI x HextaUI',
-    description: 'HextaUI but built on top of BaseUI.',
+    description: 'hexta-ui but built on top of base-ui',
     link: 'https://base.hextaui.com',
   },
   {
     title: 'Ikiform',
-    description: 'an open-source, ai-native alternative to google forms.',
+    description: 'an open-source, ai-native alternative to google forms',
     link: 'https://www.ikiform.com',
   },
   {
     title: 'HextaUI',
-    description: 'modern, responsive, and customizable ui components.',
+    description: 'modern, responsive, and customizable ui components',
     link: 'https://www.hextaui.com',
   },
   {

@@ -81,7 +81,7 @@ const Sponsors = () => {
                           className="h-8 w-8 bg-gray-200 object-cover"
                           src={sponsor.logo}
                         />
-                        <span className="font-mono text-[1rem] text-blue underline-offset-2">
+                        <span className="text-[1rem] text-blue underline-offset-2">
                           {sponsor.url.replace('https://github.com/', '')}
                         </span>
                       </a>
