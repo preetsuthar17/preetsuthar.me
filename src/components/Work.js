@@ -40,7 +40,7 @@ export default function work() {
                   }
                 }}
               >
-                <p className="flex items-center justify-between gap-1 font-medium text-[var(--blue-color)] max-[590px]:w-full">
+                <p className="flex items-center justify-between gap-1 font-medium text-blue max-[590px]:w-full">
                   {saas.title}
                   <FiArrowUpRight size={18} />
                 </p>

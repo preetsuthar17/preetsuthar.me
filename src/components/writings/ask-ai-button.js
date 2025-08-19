@@ -37,7 +37,7 @@ export default function AskAIButton({ slug }) {
   return (
     <div className="relative inline-block" ref={dropdownRef}>
       <button
-        className="flex w-fit items-center gap-2 border border-primary px-2 py-2 text-primary text-sm hover:bg-secondary"
+        className="flex w-fit items-center gap-2 border border-border px-2 py-2 text-primary text-sm hover:bg-secondary"
         onClick={() => setOpen((v) => !v)}
         type="button"
       >
@@ -47,7 +47,7 @@ export default function AskAIButton({ slug }) {
         </svg>
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 flex min-w-[160px] flex-col border border-primary bg-background p-2">
+        <div className="absolute z-50 mt-2 flex min-w-[160px] flex-col border border-border bg-background p-2">
           <a
             className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary"
             href={gpt}

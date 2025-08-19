@@ -30,7 +30,7 @@ export default function CopyMarkdownButton({ slug, markdown: markdownProp }) {
   };
   return (
     <button
-      className="flex w-fit items-center gap-3 border border-primary px-2 py-2 text-primary text-sm hover:bg-secondary"
+      className="flex w-fit items-center gap-3 border border-border px-2 py-2 text-primary text-sm hover:bg-secondary"
       disabled={copied}
       onClick={handleCopyMarkdown}
       type="button"

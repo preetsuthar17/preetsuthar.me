@@ -47,14 +47,14 @@ const Sponsors = () => {
                       className="flex animate-pulse items-center gap-3 p-2"
                       key={index}
                     >
-                      <div className="h-8 w-8 rounded bg-gray-200" />
-                      <div className="h-4 w-24 rounded bg-gray-100" />
+                      <div className="h-8 w-8 bg-gray-200" />
+                      <div className="h-4 w-24 bg-gray-100" />
                     </div>
                   ))}
                 </div>
               : sponsors.length === 0
                 ? <a
-                    className="rounded-lg bg-gray-100 px-8 py-4 font-medium text-gray-700 transition hover:bg-gray-200"
+                    className="bg-gray-100 px-8 py-4 font-medium text-gray-700 transition hover:bg-gray-200"
                     href="https://github.com/sponsors/preetsuthar17"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -64,7 +64,7 @@ const Sponsors = () => {
                 : <div className="justify-left flex w-full flex-wrap gap-4">
                     {sponsors.map((sponsor, idx) => (
                       <a
-                        className={`flex items-center justify-start gap-3 rounded p-2 text-left transition-opacity duration-300 ${
+                        className={`flex items-center justify-start gap-3 p-2 text-left transition-opacity duration-300 ${
                           hovered !== null && hovered !== idx
                             ? 'opacity-40'
                             : 'opacity-100'
@@ -78,10 +78,10 @@ const Sponsors = () => {
                       >
                         <img
                           alt={sponsor.alt || sponsor.name || 'Sponsor'}
-                          className="h-8 w-8 rounded bg-gray-200 object-cover"
+                          className="h-8 w-8 bg-gray-200 object-cover"
                           src={sponsor.logo}
                         />
-                        <span className="font-mono text-[1rem] text-[var(--blue-color)] underline-offset-2">
+                        <span className="font-mono text-[1rem] text-blue underline-offset-2">
                           {sponsor.url.replace('https://github.com/', '')}
                         </span>
                       </a>

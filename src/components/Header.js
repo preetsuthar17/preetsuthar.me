@@ -10,7 +10,7 @@ const Header = () => {
       <header className="flex flex-col gap-24  text-pretty justify-evenly">
         <div className="flex gap-4 flex-wrap  px-10 ">
           <Link
-            className="underline text-[var(--blue-color)] underline-offset-4"
+            className="underline text-blue underline-offset-4"
             href="/twitter"
             target="_blank"
           >
@@ -18,7 +18,7 @@ const Header = () => {
           </Link>
           //
           <Link
-            className="underline text-[var(--blue-color)] underline-offset-4"
+            className="underline text-blue underline-offset-4"
             href="/github"
             target="_blank"
           >
@@ -26,7 +26,7 @@ const Header = () => {
           </Link>
           //
           <Link
-            className="underline text-[var(--blue-color)] underline-offset-4"
+            className="underline text-blue underline-offset-4"
             href="/youtube"
             target="_blank"
           >
@@ -37,14 +37,14 @@ const Header = () => {
             rel="alternate"
             type="application/rss+xml"
             title="RSS Feed"
-            className="underline text-[var(--blue-color)] underline-offset-4"
+            className="underline text-blue underline-offset-4"
             href="/api/rss.xml"
           >
             RSS
           </Link>
           //
           <Link
-            className="underline text-[var(--blue-color)] underline-offset-4"
+            className="underline text-blue underline-offset-4"
             href="/llms.txt"
             target="_blank"
           >

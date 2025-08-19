@@ -38,7 +38,7 @@ const Contact = () => {
         <h2 className="px-10 text-lg tracking-tight">Contact</h2>
         <div className="px-10">
           {submitted
-            ? <div className="text-left font-medium text-[var(--blue-color)]">
+            ? <div className="text-left font-medium text-blue">
                 Thank you for reaching out! I will get back to you soon.
               </div>
             : <form
@@ -67,7 +67,7 @@ const Contact = () => {
                   value={form.email}
                 />
                 <textarea
-                  className="resize-none border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  className="resize-none border border-border bg-transparent px-4 py-3 transition-colors focus:border-blue focus:outline-none"
                   disabled={loading}
                   name="message"
                   onChange={handleChange}
@@ -77,7 +77,7 @@ const Contact = () => {
                   value={form.message}
                 />
                 <button
-                  className="mt-2 w-fit border border-[var(--blue-color)] bg-[var(--blue-color)] px-4 py-2 text-white hover:brightness-90 disabled:opacity-60"
+                  className="mt-2 w-fit border border-blue bg-blue px-4 py-2 text-white hover:brightness-90 disabled:opacity-60"
                   disabled={loading}
                   type="submit"
                 >
@@ -91,7 +91,7 @@ const Contact = () => {
         <div className="px-10 text-sm opacity-80">
           Or email me directly at{' '}
           <a
-            className="text-[var(--blue-color)] underline underline-offset-4"
+            className="text-blue underline underline-offset-4"
             href="mailto:preetsuthar17@gmail.com"
           >
             hi@preetsuthar.me

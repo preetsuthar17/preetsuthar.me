@@ -34,7 +34,7 @@ export default function Writing({ posts }) {
                 }}
               >
                 <Link
-                  className="flex items-center justify-between gap-1 font-medium text-[var(--blue-color)] max-[590px]:w-full"
+                  className="flex items-center justify-between gap-1 font-medium text-blue max-[590px]:w-full"
                   href={`/writing/${post.slug}`}
                 >
                   {post.title}

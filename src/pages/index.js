@@ -9,30 +9,6 @@ import Writing from '@/components/Writing';
 import { getAllPosts } from '@/lib/blog';
 
 export default function Home({ posts }) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const _itemVariants = {
-    hidden: {
-      filter: 'blur(10px)',
-      y: 20,
-    },
-    show: {
-      filter: 'blur(0px)',
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <>
       <Head>
@@ -80,11 +56,8 @@ export default function Home({ posts }) {
           })}
         </script>
       </Head>
-      <motion.div
-        animate="show"
+      <div
         className="basics-prose flex flex-col gap-24 border border-t-0 border-b-0 py-20"
-        initial="hidden"
-        variants={containerVariants}
       >
         <Header />
         {/* divider */}
@@ -157,7 +130,7 @@ export default function Home({ posts }) {
         </div>
         {/* divider */}
         <Contact />
-      </motion.div>
+      </div>
     </>
   );
 }

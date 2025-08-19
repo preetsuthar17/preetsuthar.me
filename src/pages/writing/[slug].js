@@ -126,7 +126,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
           </div>
           {/* divider */}
           <div className="flex flex-col gap-4 py-14">
-            <h1 className="px-10 font-semibold text-4xl text-[var(--blue-color)] ">
+            <h1 className="px-10 font-semibold text-4xl text-blue ">
               {post.title}
             </h1>
 
@@ -218,7 +218,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
 
       {/* scroll to top button */}
       <button
-        className={`fixed right-4 bottom-4 flex h-10 w-10 flex-col items-center justify-center rounded-ele bg-zinc-900 text-center text-white transition-all duration-300 ease-in-out ${
+        className={`fixed right-4 bottom-4 flex h-10 w-10 flex-col items-center justify-center bg-zinc-900 text-center text-white transition-all duration-300 ease-in-out ${
           showButton
             ? 'translate-y-0 opacity-100'
             : 'pointer-events-none translate-y-10 opacity-0'
