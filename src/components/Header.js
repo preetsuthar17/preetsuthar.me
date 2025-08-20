@@ -36,11 +36,11 @@ const Header = () => {
           <Link
             rel="alternate"
             type="application/rss+xml"
-            title="RSS Feed"
+            title="rss Feed"
             className="underline text-blue underline-offset-4"
             href="/api/rss.xml"
           >
-            RSS
+            rss feed
           </Link>
           //
           <Link
@@ -74,15 +74,22 @@ const Header = () => {
             <SpotifyStatus />
           </div>
           <p className="text-left">
-             design engineer / building open-source projects
+             design engineer
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
               href="https://github.com/sponsors/preetsuthar17"
               target="_blank"
-              className="px-4 py-2 bg-[var(--blue-color)] text-white w-fit border border-[var(--blue-color)] hover:brightness-90"
+              className="px-4 py-2 bg-blue text-white w-fit border border-blue hover:brightness-90"
             >
               Sponsor my work
+            </Link>
+            <Link
+              href="https://github.com/sponsors/preetsuthar17"
+              target="_blank"
+              className="px-4 py-2 bg-transparent text-blue w-fit border border-blue hover:bg-blue hover:text-white"
+            >
+              Hire me
             </Link>
           </div>
         </div>

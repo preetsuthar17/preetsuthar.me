@@ -47,7 +47,7 @@ const Contact = () => {
                 onSubmit={handleSubmit}
               >
                 <input
-                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-blue focus:outline-none"
                   disabled={loading}
                   name="name"
                   onChange={handleChange}
@@ -57,7 +57,7 @@ const Contact = () => {
                   value={form.name}
                 />
                 <input
-                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-[var(--blue-color)] focus:outline-none"
+                  className="border border-border bg-transparent px-4 py-3 transition-colors focus:border-blue focus:outline-none"
                   disabled={loading}
                   name="email"
                   onChange={handleChange}
@@ -89,7 +89,7 @@ const Contact = () => {
               </form>}
         </div>
         <div className="px-10 text-sm opacity-80">
-          Or email me directly at{' '}
+          or email me directly at{' '}
           <a
             className="text-blue underline underline-offset-4"
             href="mailto:preetsuthar17@gmail.com"

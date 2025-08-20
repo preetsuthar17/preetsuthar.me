@@ -55,7 +55,7 @@ export default function Design() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-3 py-1 text-sm transition-colors duration-200 ${
                     selectedCategory === category
-                      ? 'bg-[var(--blue-color)] text-white'
+                      ? 'bg-blue text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
