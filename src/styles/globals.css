@@ -139,6 +139,12 @@
   text-wrap: balance;
 }
 
+html {
+  scroll-behavior: smooth !important;
+  -webkit-scroll-behavior: smooth !important;
+  scroll-behavior: -webkit-smooth !important;
+}
+
 /* Line clamp utilities */
 .line-clamp-1 {
   overflow: hidden;

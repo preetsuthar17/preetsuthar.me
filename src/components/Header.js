@@ -78,15 +78,14 @@ const Header = () => {
           </p>
           <div className="flex gap-2 flex-wrap">
             <Link
-              href="https://github.com/sponsors/preetsuthar17"
+              href="/sponsor"
               target="_blank"
               className="px-4 py-2 bg-blue text-white w-fit border border-blue hover:brightness-90"
             >
               Sponsor my work
             </Link>
             <Link
-              href="https://github.com/sponsors/preetsuthar17"
-              target="_blank"
+              href="/#contact"
               className="px-4 py-2 bg-transparent text-blue w-fit border border-blue hover:bg-blue hover:text-white"
             >
               Hire me

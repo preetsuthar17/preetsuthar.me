@@ -55,7 +55,7 @@ const Sponsors = () => {
               : sponsors.length === 0
                 ? <a
                     className="bg-gray-100 px-8 py-4 font-medium text-gray-700 transition hover:bg-gray-200"
-                    href="https://github.com/sponsors/preetsuthar17"
+                    href="/sponsor"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -90,7 +90,7 @@ const Sponsors = () => {
         </div>
         <div className="flex flex-wrap gap-2 px-10">
            <Link
-              href="https://github.com/sponsors/preetsuthar17"
+              href="/sponsor"
               target="_blank"
               className="px-4 py-2 bg-transparent text-blue w-fit border border-blue hover:bg-blue hover:text-white"
             >
