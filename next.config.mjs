@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['i.imgur.com', 'github.com', 'raw.githubusercontent.com', 'mluigse36i.ufs.sh'],
     formats: ['image/webp'],
+      qualities: [25, 50, 75, 45],
   },
   async redirects() {
     return [
