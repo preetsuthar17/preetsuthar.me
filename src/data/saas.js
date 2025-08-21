@@ -1,5 +1,10 @@
 const saas = [
   {
+    title: 'Sorex Studio',
+    description: 'world-class design partner for saas & startups',
+    link: 'https://sorex.studio',
+  },
+  {
     title: 'BaseUI x HextaUI',
     description: 'hexta-ui but built on top of base-ui',
     link: 'https://base.hextaui.com',
