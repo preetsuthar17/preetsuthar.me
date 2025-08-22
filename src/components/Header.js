@@ -35,6 +35,15 @@ const Header = () => {
           //
           <Link
             rel="alternate"
+            title="my story"
+            className="underline text-blue underline-offset-4"
+            href="/story"
+          >
+            my story
+          </Link>
+          //
+          <Link
+            rel="alternate"
             type="application/rss+xml"
             title="rss Feed"
             className="underline text-blue underline-offset-4"
