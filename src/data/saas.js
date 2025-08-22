@@ -21,7 +21,7 @@ const saas = [
   },
   {
     title: 'HextaUI blocks',
-    description: 'complete blocks for rapid front-end development',
+    description: 'complete ui blocks for rapid front-end development',
     link: 'https://pro.hextaui.com',
   },
 ];
