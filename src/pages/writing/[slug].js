@@ -7,6 +7,7 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from '@/lib/blog';
 
 import 'prismjs/themes/prism-tomorrow.css';
 // Load languages you want to support
+import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-typescript';
