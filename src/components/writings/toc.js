@@ -10,16 +10,19 @@ export function TableOfContents({ headings = [] }) {
 
   return (
     <div className="w-full p-0">
-      <div className="border-b px-10 py-4 flex items-center justify-between cursor-pointer select-none" onClick={() => setOpen((prev) => !prev)}>
+      <div
+        className="flex cursor-pointer select-none items-center justify-between border-b px-10 py-4"
+        onClick={() => setOpen((prev) => !prev)}
+      >
         <span className="font-semibold text-lg">Table of Contents</span>
         <svg
           className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
-          width="20"
-          height="20"
           fill="none"
+          height="20"
           stroke="currentColor"
           strokeWidth="2"
           viewBox="0 0 24 24"
+          width="20"
         >
           <path d="M6 9l6 6 6-6" />
         </svg>

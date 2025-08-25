@@ -89,13 +89,13 @@ const Sponsors = () => {
                   </div>}
         </div>
         <div className="flex flex-wrap gap-2 px-10">
-           <Link
-              href="/sponsor"
-              target="_blank"
-              className="px-4 py-2 bg-transparent text-blue w-fit border border-blue hover:bg-blue hover:text-white"
-            >
-              Sponsor My Work
-            </Link>
+          <Link
+            className="w-fit border border-blue bg-transparent px-4 py-2 text-blue hover:bg-blue hover:text-white"
+            href="/sponsor"
+            target="_blank"
+          >
+            Sponsor My Work
+          </Link>
         </div>
       </div>
     </section>

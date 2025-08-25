@@ -190,27 +190,27 @@ html {
 }
 
 .prose h1 {
-  @apply  text-4xl font-bold tracking-tight text-foreground;
+  @apply text-4xl font-bold tracking-tight text-foreground;
 }
 
 .prose h2 {
-  @apply  text-3xl font-semibold tracking-tight text-foreground;
+  @apply text-3xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h3 {
-  @apply  text-xl font-semibold tracking-tight text-foreground;
+  @apply text-xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h4 {
-  @apply  text-xl font-semibold tracking-tight text-foreground;
+  @apply text-xl font-semibold tracking-tight text-foreground;
 }
 
 .prose h5 {
-  @apply  text-lg font-semibold tracking-tight text-foreground;
+  @apply text-lg font-semibold tracking-tight text-foreground;
 }
 
 .prose h6 {
-  @apply  text-base font-semibold tracking-tight text-foreground;
+  @apply text-base font-semibold tracking-tight text-foreground;
 }
 
 .prose p {

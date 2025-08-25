@@ -2,38 +2,43 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.imgur.com', 'github.com', 'raw.githubusercontent.com', 'mluigse36i.ufs.sh'],
+    domains: [
+      'i.imgur.com',
+      'github.com',
+      'raw.githubusercontent.com',
+      'mluigse36i.ufs.sh',
+    ],
     formats: ['image/webp'],
-      qualities: [25, 50, 75, 45],
+    qualities: [25, 50, 75, 45],
   },
   async redirects() {
     return [
       {
         source: '/github',
         destination: 'https://github.com/preetsuthar17',
-        permanent: false, 
+        permanent: false,
       },
       {
         source: '/twitter',
         destination: 'https://x.com/preetsuthar17',
-        permanent: false, 
+        permanent: false,
       },
       {
         source: '/youtube',
         destination: 'https://youtube.com/@preetsuthar17',
-        permanent: false, 
+        permanent: false,
       },
       {
         source: '/linkedin',
         destination: 'https://www.linkedin.com/in/preetsuthar17/',
-        permanent: false, 
+        permanent: false,
       },
       {
-        source: "/sponsor",
-        destination: "https://github.com/sponsors/preetsuthar17",
+        source: '/sponsor',
+        destination: 'https://github.com/sponsors/preetsuthar17',
         permanent: false,
-      }
-    ]
+      },
+    ];
   },
   async headers() {
     return [

@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import Head from 'next/head';
 import Contact from '@/components/Contact';
 import Design from '@/components/Design';
@@ -56,9 +55,7 @@ export default function Home({ posts }) {
           })}
         </script>
       </Head>
-      <div
-        className="basics-prose flex flex-col gap-12 border border-t-0 border-b-0 py-12"
-      >
+      <div className="basics-prose flex flex-col gap-12 border border-t-0 border-b-0 py-12">
         <Header />
         {/* divider */}
         <div className="relative h-6 border-y">

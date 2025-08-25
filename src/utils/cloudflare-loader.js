@@ -1,10 +1,5 @@
 export default function cloudflareLoader({ src, width, quality = 85 }) {
-  const params = [
-    `width=${width}`,
-    'f=auto',
-    'fit=scale-down',
-    'q=' + quality,
-  ];
+  const params = [`width=${width}`, 'f=auto', 'fit=scale-down', `q=${quality}`];
 
   if (src.includes('github.com') || src.includes('raw.githubusercontent.com')) {
     return src;

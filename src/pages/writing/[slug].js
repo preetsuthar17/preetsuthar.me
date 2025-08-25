@@ -6,7 +6,6 @@ import { TableOfContents } from '@/components/writings/toc';
 import { getAllPosts, getPostBySlug, markdownToHtml } from '@/lib/blog';
 
 import 'prismjs/themes/prism-tomorrow.css';
-import Prism from "prismjs";
 // Load languages you want to support
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-jsx';
@@ -102,8 +101,8 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
         style={{ width: `${progress}%` }}
       />
 
-      <main className="basics-prose mx-auto flex flex-col gap-10 border border-t-0 border-b-0 py-20 ">
-        <div className="px-10 ">
+      <main className="basics-prose mx-auto flex flex-col gap-10 border border-t-0 border-b-0 py-20">
+        <div className="px-10">
           <Link
             className="flex w-fit items-center gap-1 text-muted-foreground text-sm underline"
             href="/"
@@ -126,7 +125,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
           </div>
           {/* divider */}
           <div className="flex flex-col gap-4 py-14">
-            <h1 className="px-10 font-semibold text-4xl text-blue ">
+            <h1 className="px-10 font-semibold text-4xl text-blue">
               {post.title}
             </h1>
 
@@ -174,7 +173,7 @@ export default function BlogPost({ post, prevPost, nextPost, markdown }) {
           <TableOfContents headings={post.headings} />
           <article>
             <div
-              className="prose max-w-none px-10 py-10 text-pretty max-sm:text-pretty"
+              className="prose max-w-none text-pretty px-10 py-10 max-sm:text-pretty"
               dangerouslySetInnerHTML={{ __html: post.content }}
               suppressHydrationWarning
             />
