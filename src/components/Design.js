@@ -67,10 +67,10 @@ export default function Design() {
 
           <div className="px-10">
             <div className="flex flex-col gap-6">
-              {filteredDesigns.map((design) => (
+              {filteredDesigns.sort((a, b) => b.id - a.id).map((design) => (
                 <div
                   key={design.id}
-                  className="group cursor-pointer"
+                  className="group cursor-pointer border"
                   onClick={() => openModal(design)}
                 >
                   <div className="relative w-full overflow-hidden bg-gray-50 transition-transform duration-300">

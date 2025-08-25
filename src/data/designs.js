@@ -20,8 +20,11 @@ const designs = [
     imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HJlKaShDg73kTPyV0dF4vQHYEMiIsp8NKC21m',
     category: 'Product Design',
   },
- 
-
+  {
+    id: 5,
+    imageUrl: 'https://mluigse36i.ufs.sh/f/AcQ6R0fsbk8HEUsoPecxjbaFUGAvDZBIYq0c42VsgterKlHu',
+    category: 'Product Design'
+  },
 ];
 
 export default designs;
